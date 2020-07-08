@@ -120,8 +120,8 @@ public final class Proto {
    * A Ref is a reference to a RootEntity. When serializing an entity (e.g. a
    * Process) that references another standalone entity (e.g. a Flow in an
    * Exchange) we do not want to write the complete referenced entity into the
-   * serialized JSON object but just a reference. However, the reference contains
-   * some meta-data like name, category path etc. that are useful to display.
+   * serialized object but just a reference. However, the reference contains some
+   * meta-data like name, category path etc. that are useful to display.
    * </pre>
    *
    * Protobuf type {@code Ref}
@@ -745,8 +745,8 @@ public final class Proto {
      * A Ref is a reference to a RootEntity. When serializing an entity (e.g. a
      * Process) that references another standalone entity (e.g. a Flow in an
      * Exchange) we do not want to write the complete referenced entity into the
-     * serialized JSON object but just a reference. However, the reference contains
-     * some meta-data like name, category path etc. that are useful to display.
+     * serialized object but just a reference. However, the reference contains some
+     * meta-data like name, category path etc. that are useful to display.
      * </pre>
      *
      * Protobuf type {@code Ref}
