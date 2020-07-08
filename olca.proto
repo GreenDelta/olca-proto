@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "org.openlca.proto";
+option java_outer_classname = "Proto";
+
+// A Ref is a reference to a RootEntity. When serializing an entity (e.g. a
+// Process) that references another standalone entity (e.g. a Flow in an
+// Exchange) we do not want to write the complete referenced entity into the
+// serialized JSON object but just a reference. However, the reference contains
+// some meta-data like name, category path etc. that are useful to display.
+message Ref {
+  string type = 1 [json_name = "@type"];
+  string id = 2 [json_name = "@id"];
+  string name = 3;
+  string description = 4;
+  string version = 5;
+  string lastChange = 6;
+  repeated string categoryPath = 7;
+}
+
+message Process {
+  string id = 1 [json_name = "@id"];
+  string name = 2;
+  string description = 3;
+  string version = 4;
+  string lastChange = 5;
+}
