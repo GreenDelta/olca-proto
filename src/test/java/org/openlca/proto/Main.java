@@ -20,10 +20,17 @@ public class Main {
     JsonFormat.parser().merge(json, clone);
     json = JsonFormat.printer().print(clone.build());
     System.out.println(json);
+    genFlow();
+  }
 
-    var flow = Proto.Flow.newBuilder();
-    flow.setName("Steel");
-    flow.setFlowType(Proto.FlowType.PRODUCT_FLOW);
-		System.out.println(JsonFormat.printer().print(flow));
+  private static void genFlow() throws Exception {
+    var flow = Proto.Flow.newBuilder()
+        .setType("Flow")
+        .setId(UUID.randomUUID().toString())
+        .setName("Steel")
+        .setFlowType(Proto.FlowType.PRODUCT_FLOW)
+        .build();
+    var json = JsonFormat.printer().print(flow);
+    System.out.println(json);
   }
 }
