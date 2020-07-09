@@ -99,6 +99,11 @@ func main() {
 
 	// create the message types
 	var buff bytes.Buffer
+	buff.WriteString(`syntax = "proto3";
+option java_package = "org.openlca.proto";
+option java_outer_classname = "Proto";
+
+`)
 	for _, typeDef := range list {
 		switch typeDef.name() {
 		case "Entity", "RootEntity", "CategorizedEntity":
@@ -112,7 +117,14 @@ func main() {
 		}
 	}
 
-	fmt.Println(buff.String())
+	// print to console or write to file
+	if len(os.Args) < 3 {
+		fmt.Println(buff.String())
+	} else {
+		outFile := os.Args[2]
+		err = ioutil.WriteFile(outFile, buff.Bytes(), os.ModePerm)
+		check(err, "failed to write to file", outFile)
+	}
 }
 
 func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offset int) int {
@@ -139,7 +151,38 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 		count++
 	}
 
+	for _, field := range class.Fields {
+		buff.WriteString("  " + protoType(field.Type) + " " + field.Name +
+			" = " + strconv.Itoa(count) + ";\n\n")
+		count++
+	}
+
 	return count
+}
+
+func protoType(schemaType string) string {
+	switch schemaType {
+	case "string", "double", "float":
+		return schemaType
+	case "dateTime", "date":
+		return "string"
+	case "int", "integer":
+		return "int32"
+	case "boolean":
+		return "bool"
+	}
+
+	if strings.HasPrefix(schemaType, "Ref[") {
+		return "Ref"
+	}
+
+	if strings.HasPrefix(schemaType, "List[") {
+		t := strings.TrimSuffix(
+			strings.TrimPrefix(schemaType, "List["), "]")
+		return "repeated " + protoType(t)
+	}
+
+	return schemaType
 }
 
 func check(err error, msg ...interface{}) {
