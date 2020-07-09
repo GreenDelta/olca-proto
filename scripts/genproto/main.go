@@ -204,8 +204,10 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 		if comment != "" {
 			buff.WriteString(comment)
 		}
-		buff.WriteString("  " + mapType(field.Type) + " " + field.Name +
-			" = " + strconv.Itoa(count) + ";\n\n")
+		buff.WriteString(
+			"  " + mapType(field.Type) +
+				" " + toSnakeCase(field.Name) +
+				" = " + strconv.Itoa(count) + ";\n\n")
 		count++
 	}
 
@@ -293,6 +295,18 @@ func undefinedOf(enum *EnumDef) string {
 		buff.WriteRune(char)
 	}
 	return "UNDEFINED" + strings.ToUpper(buff.String())
+}
+
+// Converts the given identifier from camelCase to snake_case.
+func toSnakeCase(identifier string) string {
+	var buff bytes.Buffer
+	for i, char := range identifier {
+		if i > 0 && unicode.IsUpper(char) {
+			buff.WriteRune('_')
+		}
+		buff.WriteRune(unicode.ToLower(char))
+	}
+	return buff.String()
 }
 
 func check(err error, msg ...interface{}) {

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\021org.openlca.protoB\005Proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nolca.proto\"\x92\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0f\n\x07\x61\x64\x64ress\x18\x08 \x01(\t\x12\x0c\n\x04\x63ity\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07telefax\x18\x0c \x01(\t\x12\x11\n\ttelephone\x18\r \x01(\t\x12\x0f\n\x07website\x18\x0e \x01(\t\x12\x0f\n\x07zipCode\x18\x0f \x01(\t\"\xa9\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\"\n\x0fproductExchange\x18\x02 \x01(\x0b\x32\t.Exchange\x12\'\n\x0e\x61llocationType\x18\x03 \x01(\x0e\x32\x0f.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12$\n\x11\x61llocatedExchange\x18\x05 \x01(\x0b\x32\t.Exchange\"\xc8\x02\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12)\n\x0f\x63\x61lculationType\x18\x02 \x01(\x0e\x32\x10.CalculationType\x12\x1b\n\rproductSystem\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x1a\n\x0cimpactMethod\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x11\n\twithCosts\x18\x05 \x01(\x08\x12\x13\n\x05nwSet\x18\x06 \x01(\x0b\x32\x04.Ref\x12)\n\x10\x61llocationMethod\x18\x07 \x01(\x0e\x32\x0f.AllocationType\x12(\n\x0fparameterRedefs\x18\x08 \x03(\x0b\x32\x0f.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x12\n\x04unit\x18\n \x01(\x0b\x32\x04.Ref\x12\x1a\n\x0c\x66lowProperty\x18\x0b \x01(\x0b\x32\x04.Ref\"\xaf\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1d\n\tmodelType\x18\x08 \x01(\x0e\x32\n.ModelType\"\\\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12\x18\n\x06scores\x18\x04 \x03(\x0b\x32\x08.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\xe2\x01\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x18\n\x10hasUncertainties\x18\x08 \x01(\x08\x12\x14\n\x06source\x18\t \x01(\x0b\x32\x04.Ref\x12 \n\nindicators\x18\n \x03(\x0b\x32\x0c.DqIndicator\"\xf0\x02\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x12\n\ninternalId\x18\x02 \x01(\x05\x12\x16\n\x0e\x61voidedProduct\x18\x03 \x01(\x08\x12\x16\n\x04\x66low\x18\x04 \x01(\x0b\x32\x08.FlowRef\x12\x1a\n\x0c\x66lowProperty\x18\x05 \x01(\x0b\x32\x04.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1d\n\x15quantitativeReference\x18\x07 \x01(\x08\x12\x17\n\x0f\x62\x61seUncertainty\x18\x08 \x01(\x01\x12$\n\x0f\x64\x65\x66\x61ultProvider\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x15\n\ramountFormula\x18\x0b \x01(\t\x12\x12\n\x04unit\x18\x0c \x01(\x0b\x32\x04.Ref\x12\x0f\n\x07\x64qEntry\x18\r \x01(\t\x12!\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x0c.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\x8c\x02\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1b\n\x08\x66lowType\x18\x08 \x01(\x0e\x32\t.FlowType\x12\x0b\n\x03\x63\x61s\x18\t \x01(\t\x12\x0f\n\x07\x66ormula\x18\n \x01(\t\x12+\n\x0e\x66lowProperties\x18\x0b \x03(\x0b\x32\x13.FlowPropertyFactor\x12\x16\n\x08location\x18\x0c \x01(\x0b\x32\x04.Ref\"\xc4\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x14\n\x06source\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x14\n\x06target\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x1f\n\x08mappings\x18\t \x03(\x0b\x32\r.FlowMapEntry\"\xca\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x19\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x0b.FlowMapRef\x12\x17\n\x02to\x18\x08 \x01(\x0b\x32\x0b.FlowMapRef\x12\x18\n\x10\x63onversionFactor\x18\t \x01(\x01\"i\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1a\n\x0c\x66lowProperty\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\"\xda\x01\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12+\n\x10\x66lowPropertyType\x18\x08 \x01(\x0e\x32\x11.FlowPropertyType\x12\x17\n\tunitGroup\x18\t \x01(\x0b\x32\x04.Ref\"~\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1a\n\x0c\x66lowProperty\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x18\n\x10\x63onversionFactor\x18\x03 \x01(\x01\x12\x1d\n\x15referenceFlowProperty\x18\x04 \x01(\x08\"I\n\x07\x46lowRef\x12\x0f\n\x07refUnit\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x1b\n\x08\x66lowType\x18\x03 \x01(\x0e\x32\t.FlowType\"W\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\xbf\x01\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x19\n\x11referenceUnitName\x18\x07 \x01(\t\x12$\n\rimpactFactors\x18\x08 \x03(\x0b\x32\r.ImpactFactor\"$\n\x11ImpactCategoryRef\x12\x0f\n\x07refUnit\x18\x01 \x01(\t\"\xae\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1a\n\x0c\x66lowProperty\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\x12\r\n\x05value\x18\x05 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x06 \x01(\t\x12!\n\x0buncertainty\x18\x07 \x01(\x0b\x32\x0c.Uncertainty\"\xe2\x01\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12,\n\x10impactCategories\x18\x08 \x03(\x0b\x32\x12.ImpactCategoryRef\x12\x1e\n\nparameters\x18\t \x03(\x0b\x32\n.Parameter\"^\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x0eimpactCategory\x18\x02 \x01(\x0b\x32\x12.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\xb8\x01\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\x12\x10\n\x08latitude\x18\x08 \x01(\x01\x12\x11\n\tlongitude\x18\t \x01(\x01\x12\x0b\n\x03kml\x18\n \x01(\t\"\xf3\x01\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\'\n\x0eparameterScope\x18\x04 \x01(\x0e\x32\x0f.ParameterScope\x12\x16\n\x0einputParameter\x18\x05 \x01(\x08\x12\r\n\x05value\x18\x06 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x07 \x01(\t\x12\x16\n\x0e\x65xternalSource\x18\x08 \x01(\t\x12\x12\n\nsourceType\x18\t \x01(\t\x12!\n\x0buncertainty\x18\n \x01(\x0b\x32\x0c.Uncertainty\"Y\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x15\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x04.Ref\"\x89\x04\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x30\n\x17\x64\x65\x66\x61ultAllocationMethod\x18\x08 \x01(\x0e\x32\x0f.AllocationType\x12,\n\x11\x61llocationFactors\x18\t \x03(\x0b\x32\x11.AllocationFactor\x12\x1c\n\texchanges\x18\n \x03(\x0b\x32\t.Exchange\x12\x1b\n\x08location\x18\x0b \x01(\x0b\x32\t.Location\x12\x1e\n\nparameters\x18\x0c \x03(\x0b\x32\n.Parameter\x12\x33\n\x14processDocumentation\x18\r \x01(\x0b\x32\x15.ProcessDocumentation\x12!\n\x0bprocessType\x18\x0e \x01(\x0e\x32\x0c.ProcessType\x12\x16\n\x08\x64qSystem\x18\x0f \x01(\x0b\x32\x04.Ref\x12\x1e\n\x10\x65xchangeDqSystem\x18\x10 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x0esocialDqSystem\x18\x11 \x01(\x0b\x32\x04.Ref\x12\x0f\n\x07\x64qEntry\x18\x12 \x01(\t\"\xd2\x05\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x17\n\x0ftimeDescription\x18\x02 \x01(\t\x12\x12\n\nvalidUntil\x18\x03 \x01(\t\x12\x11\n\tvalidFrom\x18\x04 \x01(\t\x12\x1d\n\x15technologyDescription\x18\x05 \x01(\t\x12!\n\x19\x64\x61taCollectionDescription\x18\x06 \x01(\t\x12\x1f\n\x17\x63ompletenessDescription\x18\x07 \x01(\t\x12 \n\x18\x64\x61taSelectionDescription\x18\x08 \x01(\t\x12\x15\n\rreviewDetails\x18\t \x01(\t\x12 \n\x18\x64\x61taTreatmentDescription\x18\n \x01(\t\x12\"\n\x1ainventoryMethodDescription\x18\x0b \x01(\t\x12$\n\x1cmodelingConstantsDescription\x18\x0c \x01(\t\x12\x16\n\x08reviewer\x18\r \x01(\x0b\x32\x04.Ref\x12\x1b\n\x13samplingDescription\x18\x0e \x01(\t\x12\x15\n\x07sources\x18\x0f \x03(\x0b\x32\x04.Ref\x12\x1f\n\x17restrictionsDescription\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x14\n\x0c\x63reationDate\x18\x12 \x01(\t\x12\x1c\n\x0e\x64\x61taDocumentor\x18\x13 \x01(\x0b\x32\x04.Ref\x12\x1b\n\rdataGenerator\x18\x14 \x01(\x0b\x32\x04.Ref\x12\x1a\n\x0c\x64\x61taSetOwner\x18\x15 \x01(\x0b\x32\x04.Ref\x12\x1b\n\x13intendedApplication\x18\x16 \x01(\t\x12\x1a\n\x12projectDescription\x18\x17 \x01(\t\x12\x19\n\x0bpublication\x18\x18 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x14geographyDescription\x18\x19 \x01(\t\"\x82\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x08provider\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04\x66low\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x15\n\x07process\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x1b\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\t.Exchange\"A\n\nProcessRef\x12\x10\n\x08location\x18\x01 \x01(\t\x12!\n\x0bprocessType\x18\x02 \x01(\x0e\x32\x0c.ProcessType\"\xf8\x02\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1e\n\tprocesses\x18\x08 \x03(\x0b\x32\x0b.ProcessRef\x12%\n\x10referenceProcess\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12$\n\x11referenceExchange\x18\n \x01(\x0b\x32\t.Exchange\x12\x14\n\x0ctargetAmount\x18\x0b \x01(\x01\x12\x18\n\ntargetUnit\x18\x0c \x01(\x0b\x32\x04.Ref\x12 \n\x12targetFlowProperty\x18\r \x01(\x0b\x32\x04.Ref\x12\"\n\x0cprocessLinks\x18\x0e \x03(\x0b\x32\x0c.ProcessLink\"\x89\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x14\n\x0c\x63\x61tegoryPath\x18\x07 \x03(\t\"k\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12 \n\x0b\x66lowResults\x18\x02 \x03(\x0b\x32\x0b.FlowResult\x12$\n\rimpactResults\x18\x03 \x03(\x0b\x32\r.ImpactResult\"\xa2\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x18\n\x10\x61\x63tivityVariable\x18\x08 \x01(\t\x12\x1e\n\x10\x61\x63tivityQuantity\x18\t \x01(\x0b\x32\x04.Ref\x12\x1a\n\x0c\x61\x63tivityUnit\x18\n \x01(\x0b\x32\x04.Ref\x12\x19\n\x11unitOfMeasurement\x18\x0b \x01(\t\x12\x18\n\x10\x65valuationScheme\x18\x0c \x01(\t\"\xd6\x01\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0b\n\x03\x64oi\x18\x08 \x01(\t\x12\x15\n\rtextReference\x18\t \x01(\t\x12\x0c\n\x04year\x18\n \x01(\x05\x12\x14\n\x0c\x65xternalFile\x18\x0b \x01(\t\"\xd7\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x10\x64istributionType\x18\x02 \x01(\x0e\x32\x10.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x13\n\x0bmeanFormula\x18\x04 \x01(\t\x12\x10\n\x08geomMean\x18\x05 \x01(\x01\x12\x17\n\x0fgeomMeanFormula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x16\n\x0eminimumFormula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x11\n\tsdFormula\x18\n \x01(\t\x12\x0e\n\x06geomSd\x18\x0b \x01(\x01\x12\x15\n\rgeomSdFormula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x13\n\x0bmodeFormula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x16\n\x0emaximumFormula\x18\x10 \x01(\t\"\xb7\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x18\n\x10\x63onversionFactor\x18\x07 \x01(\x01\x12\x15\n\rreferenceUnit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\xca\x01\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x12\n\nlastChange\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12!\n\x13\x64\x65\x66\x61ultFlowProperty\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x14\n\x05units\x18\t \x03(\x0b\x32\x05.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*k\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x15\n\x11LCIA_METHOD_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42\x1a\n\x11org.openlca.protoB\x05Protob\x06proto3'
+  serialized_pb=b'\n\nolca.proto\"\x94\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0f\n\x07\x61\x64\x64ress\x18\x08 \x01(\t\x12\x0c\n\x04\x63ity\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07telefax\x18\x0c \x01(\t\x12\x11\n\ttelephone\x18\r \x01(\t\x12\x0f\n\x07website\x18\x0e \x01(\t\x12\x10\n\x08zip_code\x18\x0f \x01(\t\"\xac\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12#\n\x10product_exchange\x18\x02 \x01(\x0b\x32\t.Exchange\x12(\n\x0f\x61llocation_type\x18\x03 \x01(\x0e\x32\x0f.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12%\n\x12\x61llocated_exchange\x18\x05 \x01(\x0b\x32\t.Exchange\"\xd0\x02\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x10\x63\x61lculation_type\x18\x02 \x01(\x0e\x32\x10.CalculationType\x12\x1c\n\x0eproduct_system\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x1b\n\rimpact_method\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x12\n\nwith_costs\x18\x05 \x01(\x08\x12\x14\n\x06nw_set\x18\x06 \x01(\x0b\x32\x04.Ref\x12*\n\x11\x61llocation_method\x18\x07 \x01(\x0e\x32\x0f.AllocationType\x12)\n\x10parameter_redefs\x18\x08 \x03(\x0b\x32\x0f.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x12\n\x04unit\x18\n \x01(\x0b\x32\x04.Ref\x12\x1b\n\rflow_property\x18\x0b \x01(\x0b\x32\x04.Ref\"\xb1\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1e\n\nmodel_type\x18\x08 \x01(\x0e\x32\n.ModelType\"\\\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12\x18\n\x06scores\x18\x04 \x03(\x0b\x32\x08.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\xe4\x01\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11has_uncertainties\x18\x08 \x01(\x08\x12\x14\n\x06source\x18\t \x01(\x0b\x32\x04.Ref\x12 \n\nindicators\x18\n \x03(\x0b\x32\x0c.DqIndicator\"\xf8\x02\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x13\n\x0binternal_id\x18\x02 \x01(\x05\x12\x17\n\x0f\x61voided_product\x18\x03 \x01(\x08\x12\x16\n\x04\x66low\x18\x04 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x05 \x01(\x0b\x32\x04.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1e\n\x16quantitative_reference\x18\x07 \x01(\x08\x12\x18\n\x10\x62\x61se_uncertainty\x18\x08 \x01(\x01\x12%\n\x10\x64\x65\x66\x61ult_provider\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x16\n\x0e\x61mount_formula\x18\x0b \x01(\t\x12\x12\n\x04unit\x18\x0c \x01(\x0b\x32\x04.Ref\x12\x10\n\x08\x64q_entry\x18\r \x01(\t\x12!\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x0c.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\x8f\x02\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1c\n\tflow_type\x18\x08 \x01(\x0e\x32\t.FlowType\x12\x0b\n\x03\x63\x61s\x18\t \x01(\t\x12\x0f\n\x07\x66ormula\x18\n \x01(\t\x12,\n\x0f\x66low_properties\x18\x0b \x03(\x0b\x32\x13.FlowPropertyFactor\x12\x16\n\x08location\x18\x0c \x01(\x0b\x32\x04.Ref\"\xc5\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x14\n\x06source\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x14\n\x06target\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x1f\n\x08mappings\x18\t \x03(\x0b\x32\r.FlowMapEntry\"\xcc\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x0b.FlowMapRef\x12\x17\n\x02to\x18\x08 \x01(\x0b\x32\x0b.FlowMapRef\x12\x19\n\x11\x63onversion_factor\x18\t \x01(\x01\"j\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\"\xde\x01\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12-\n\x12\x66low_property_type\x18\x08 \x01(\x0e\x32\x11.FlowPropertyType\x12\x18\n\nunit_group\x18\t \x01(\x0b\x32\x04.Ref\"\x82\x01\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1b\n\rflow_property\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11\x63onversion_factor\x18\x03 \x01(\x01\x12\x1f\n\x17reference_flow_property\x18\x04 \x01(\x08\"K\n\x07\x46lowRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x1c\n\tflow_type\x18\x03 \x01(\x0e\x32\t.FlowType\"W\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\xc3\x01\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1b\n\x13reference_unit_name\x18\x07 \x01(\t\x12%\n\x0eimpact_factors\x18\x08 \x03(\x0b\x32\r.ImpactFactor\"%\n\x11ImpactCategoryRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\"\xaf\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\x12\r\n\x05value\x18\x05 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x06 \x01(\t\x12!\n\x0buncertainty\x18\x07 \x01(\x0b\x32\x0c.Uncertainty\"\xe4\x01\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12-\n\x11impact_categories\x18\x08 \x03(\x0b\x32\x12.ImpactCategoryRef\x12\x1e\n\nparameters\x18\t \x03(\x0b\x32\n.Parameter\"_\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12+\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\x12.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\xb9\x01\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\x12\x10\n\x08latitude\x18\x08 \x01(\x01\x12\x11\n\tlongitude\x18\t \x01(\x01\x12\x0b\n\x03kml\x18\n \x01(\t\"\xf7\x01\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12(\n\x0fparameter_scope\x18\x04 \x01(\x0e\x32\x0f.ParameterScope\x12\x17\n\x0finput_parameter\x18\x05 \x01(\x08\x12\r\n\x05value\x18\x06 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x07 \x01(\t\x12\x17\n\x0f\x65xternal_source\x18\x08 \x01(\t\x12\x13\n\x0bsource_type\x18\t \x01(\t\x12!\n\x0buncertainty\x18\n \x01(\x0b\x32\x0c.Uncertainty\"Y\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x15\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x04.Ref\"\x95\x04\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x32\n\x19\x64\x65\x66\x61ult_allocation_method\x18\x08 \x01(\x0e\x32\x0f.AllocationType\x12-\n\x12\x61llocation_factors\x18\t \x03(\x0b\x32\x11.AllocationFactor\x12\x1c\n\texchanges\x18\n \x03(\x0b\x32\t.Exchange\x12\x1b\n\x08location\x18\x0b \x01(\x0b\x32\t.Location\x12\x1e\n\nparameters\x18\x0c \x03(\x0b\x32\n.Parameter\x12\x34\n\x15process_documentation\x18\r \x01(\x0b\x32\x15.ProcessDocumentation\x12\"\n\x0cprocess_type\x18\x0e \x01(\x0e\x32\x0c.ProcessType\x12\x17\n\tdq_system\x18\x0f \x01(\x0b\x32\x04.Ref\x12 \n\x12\x65xchange_dq_system\x18\x10 \x01(\x0b\x32\x04.Ref\x12\x1e\n\x10social_dq_system\x18\x11 \x01(\x0b\x32\x04.Ref\x12\x10\n\x08\x64q_entry\x18\x12 \x01(\t\"\xec\x05\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x18\n\x10time_description\x18\x02 \x01(\t\x12\x13\n\x0bvalid_until\x18\x03 \x01(\t\x12\x12\n\nvalid_from\x18\x04 \x01(\t\x12\x1e\n\x16technology_description\x18\x05 \x01(\t\x12#\n\x1b\x64\x61ta_collection_description\x18\x06 \x01(\t\x12 \n\x18\x63ompleteness_description\x18\x07 \x01(\t\x12\"\n\x1a\x64\x61ta_selection_description\x18\x08 \x01(\t\x12\x16\n\x0ereview_details\x18\t \x01(\t\x12\"\n\x1a\x64\x61ta_treatment_description\x18\n \x01(\t\x12$\n\x1cinventory_method_description\x18\x0b \x01(\t\x12&\n\x1emodeling_constants_description\x18\x0c \x01(\t\x12\x16\n\x08reviewer\x18\r \x01(\x0b\x32\x04.Ref\x12\x1c\n\x14sampling_description\x18\x0e \x01(\t\x12\x15\n\x07sources\x18\x0f \x03(\x0b\x32\x04.Ref\x12 \n\x18restrictions_description\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x15\n\rcreation_date\x18\x12 \x01(\t\x12\x1d\n\x0f\x64\x61ta_documentor\x18\x13 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x0e\x64\x61ta_generator\x18\x14 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x0e\x64\x61ta_set_owner\x18\x15 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x14intended_application\x18\x16 \x01(\t\x12\x1b\n\x13project_description\x18\x17 \x01(\t\x12\x19\n\x0bpublication\x18\x18 \x01(\x0b\x32\x04.Ref\x12\x1d\n\x15geography_description\x18\x19 \x01(\t\"\x82\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x08provider\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04\x66low\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x15\n\x07process\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x1b\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\t.Exchange\"B\n\nProcessRef\x12\x10\n\x08location\x18\x01 \x01(\t\x12\"\n\x0cprocess_type\x18\x02 \x01(\x0e\x32\x0c.ProcessType\"\x80\x03\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1e\n\tprocesses\x18\x08 \x03(\x0b\x32\x0b.ProcessRef\x12&\n\x11reference_process\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12%\n\x12reference_exchange\x18\n \x01(\x0b\x32\t.Exchange\x12\x15\n\rtarget_amount\x18\x0b \x01(\x01\x12\x19\n\x0btarget_unit\x18\x0c \x01(\x0b\x32\x04.Ref\x12\"\n\x14target_flow_property\x18\r \x01(\x0b\x32\x04.Ref\x12#\n\rprocess_links\x18\x0e \x03(\x0b\x32\x0c.ProcessLink\"\x8b\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\"m\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12!\n\x0c\x66low_results\x18\x02 \x03(\x0b\x32\x0b.FlowResult\x12%\n\x0eimpact_results\x18\x03 \x03(\x0b\x32\r.ImpactResult\"\xa9\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11\x61\x63tivity_variable\x18\x08 \x01(\t\x12\x1f\n\x11\x61\x63tivity_quantity\x18\t \x01(\x0b\x32\x04.Ref\x12\x1b\n\ractivity_unit\x18\n \x01(\x0b\x32\x04.Ref\x12\x1b\n\x13unit_of_measurement\x18\x0b \x01(\t\x12\x19\n\x11\x65valuation_scheme\x18\x0c \x01(\t\"\xd9\x01\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0b\n\x03\x64oi\x18\x08 \x01(\t\x12\x16\n\x0etext_reference\x18\t \x01(\t\x12\x0c\n\x04year\x18\n \x01(\x05\x12\x15\n\rexternal_file\x18\x0b \x01(\t\"\xe3\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12+\n\x11\x64istribution_type\x18\x02 \x01(\x0e\x32\x10.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x14\n\x0cmean_formula\x18\x04 \x01(\t\x12\x11\n\tgeom_mean\x18\x05 \x01(\x01\x12\x19\n\x11geom_mean_formula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x17\n\x0fminimum_formula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x12\n\nsd_formula\x18\n \x01(\t\x12\x0f\n\x07geom_sd\x18\x0b \x01(\x01\x12\x17\n\x0fgeom_sd_formula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x14\n\x0cmode_formula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x17\n\x0fmaximum_formula\x18\x10 \x01(\t\"\xba\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x07 \x01(\x01\x12\x16\n\x0ereference_unit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\xcd\x01\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12#\n\x15\x64\x65\x66\x61ult_flow_property\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x14\n\x05units\x18\t \x03(\x0b\x32\x05.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*k\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x15\n\x11LCIA_METHOD_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42\x1a\n\x11org.openlca.protoB\x05Protob\x06proto3'
 )
 
 _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
@@ -63,8 +63,8 @@ _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7651,
-  serialized_end=7818,
+  serialized_start=7787,
+  serialized_end=7954,
 )
 _sym_db.RegisterEnumDescriptor(_ALLOCATIONTYPE)
 
@@ -109,8 +109,8 @@ _CALCULATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7821,
-  serialized_end=8002,
+  serialized_start=7957,
+  serialized_end=8138,
 )
 _sym_db.RegisterEnumDescriptor(_CALCULATIONTYPE)
 
@@ -140,8 +140,8 @@ _FLOWPROPERTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8004,
-  serialized_end=8102,
+  serialized_start=8140,
+  serialized_end=8238,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWPROPERTYTYPE)
 
@@ -176,8 +176,8 @@ _FLOWTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8104,
-  serialized_end=8194,
+  serialized_start=8240,
+  serialized_end=8330,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWTYPE)
 
@@ -272,8 +272,8 @@ _MODELTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8197,
-  serialized_end=8460,
+  serialized_start=8333,
+  serialized_end=8596,
 )
 _sym_db.RegisterEnumDescriptor(_MODELTYPE)
 
@@ -308,8 +308,8 @@ _PARAMETERSCOPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8462,
-  serialized_end=8569,
+  serialized_start=8598,
+  serialized_end=8705,
 )
 _sym_db.RegisterEnumDescriptor(_PARAMETERSCOPE)
 
@@ -339,8 +339,8 @@ _PROCESSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8571,
-  serialized_end=8646,
+  serialized_start=8707,
+  serialized_end=8782,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSTYPE)
 
@@ -380,8 +380,8 @@ _UNCERTAINTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8649,
-  serialized_end=8805,
+  serialized_start=8785,
+  serialized_end=8941,
 )
 _sym_db.RegisterEnumDescriptor(_UNCERTAINTYTYPE)
 
@@ -480,7 +480,7 @@ _ACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Actor.lastChange', index=5,
+      name='last_change', full_name='Actor.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -543,7 +543,7 @@ _ACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='zipCode', full_name='Actor.zipCode', index=14,
+      name='zip_code', full_name='Actor.zip_code', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -562,7 +562,7 @@ _ACTOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=289,
+  serialized_end=291,
 )
 
 
@@ -582,14 +582,14 @@ _ALLOCATIONFACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='productExchange', full_name='AllocationFactor.productExchange', index=1,
+      name='product_exchange', full_name='AllocationFactor.product_exchange', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocationType', full_name='AllocationFactor.allocationType', index=2,
+      name='allocation_type', full_name='AllocationFactor.allocation_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -603,7 +603,7 @@ _ALLOCATIONFACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocatedExchange', full_name='AllocationFactor.allocatedExchange', index=4,
+      name='allocated_exchange', full_name='AllocationFactor.allocated_exchange', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -621,8 +621,8 @@ _ALLOCATIONFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=292,
-  serialized_end=461,
+  serialized_start=294,
+  serialized_end=466,
 )
 
 
@@ -642,49 +642,49 @@ _CALCULATIONSETUP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='calculationType', full_name='CalculationSetup.calculationType', index=1,
+      name='calculation_type', full_name='CalculationSetup.calculation_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='productSystem', full_name='CalculationSetup.productSystem', index=2,
+      name='product_system', full_name='CalculationSetup.product_system', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impactMethod', full_name='CalculationSetup.impactMethod', index=3,
+      name='impact_method', full_name='CalculationSetup.impact_method', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='withCosts', full_name='CalculationSetup.withCosts', index=4,
+      name='with_costs', full_name='CalculationSetup.with_costs', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nwSet', full_name='CalculationSetup.nwSet', index=5,
+      name='nw_set', full_name='CalculationSetup.nw_set', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocationMethod', full_name='CalculationSetup.allocationMethod', index=6,
+      name='allocation_method', full_name='CalculationSetup.allocation_method', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameterRedefs', full_name='CalculationSetup.parameterRedefs', index=7,
+      name='parameter_redefs', full_name='CalculationSetup.parameter_redefs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -705,7 +705,7 @@ _CALCULATIONSETUP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperty', full_name='CalculationSetup.flowProperty', index=10,
+      name='flow_property', full_name='CalculationSetup.flow_property', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -723,8 +723,8 @@ _CALCULATIONSETUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=464,
-  serialized_end=792,
+  serialized_start=469,
+  serialized_end=805,
 )
 
 
@@ -772,7 +772,7 @@ _CATEGORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Category.lastChange', index=5,
+      name='last_change', full_name='Category.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -786,7 +786,7 @@ _CATEGORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelType', full_name='Category.modelType', index=7,
+      name='model_type', full_name='Category.model_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -804,8 +804,8 @@ _CATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=795,
-  serialized_end=970,
+  serialized_start=808,
+  serialized_end=985,
 )
 
 
@@ -857,8 +857,8 @@ _DQINDICATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=972,
-  serialized_end=1064,
+  serialized_start=987,
+  serialized_end=1079,
 )
 
 
@@ -917,8 +917,8 @@ _DQSCORE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1066,
-  serialized_end=1171,
+  serialized_start=1081,
+  serialized_end=1186,
 )
 
 
@@ -966,7 +966,7 @@ _DQSYSTEM = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='DqSystem.lastChange', index=5,
+      name='last_change', full_name='DqSystem.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -980,7 +980,7 @@ _DQSYSTEM = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hasUncertainties', full_name='DqSystem.hasUncertainties', index=7,
+      name='has_uncertainties', full_name='DqSystem.has_uncertainties', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1012,8 +1012,8 @@ _DQSYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1174,
-  serialized_end=1400,
+  serialized_start=1189,
+  serialized_end=1417,
 )
 
 
@@ -1033,14 +1033,14 @@ _EXCHANGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='internalId', full_name='Exchange.internalId', index=1,
+      name='internal_id', full_name='Exchange.internal_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='avoidedProduct', full_name='Exchange.avoidedProduct', index=2,
+      name='avoided_product', full_name='Exchange.avoided_product', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1054,7 +1054,7 @@ _EXCHANGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperty', full_name='Exchange.flowProperty', index=4,
+      name='flow_property', full_name='Exchange.flow_property', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1068,21 +1068,21 @@ _EXCHANGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantitativeReference', full_name='Exchange.quantitativeReference', index=6,
+      name='quantitative_reference', full_name='Exchange.quantitative_reference', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='baseUncertainty', full_name='Exchange.baseUncertainty', index=7,
+      name='base_uncertainty', full_name='Exchange.base_uncertainty', index=7,
       number=8, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='defaultProvider', full_name='Exchange.defaultProvider', index=8,
+      name='default_provider', full_name='Exchange.default_provider', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1096,7 +1096,7 @@ _EXCHANGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='amountFormula', full_name='Exchange.amountFormula', index=10,
+      name='amount_formula', full_name='Exchange.amount_formula', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1110,7 +1110,7 @@ _EXCHANGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dqEntry', full_name='Exchange.dqEntry', index=12,
+      name='dq_entry', full_name='Exchange.dq_entry', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1142,8 +1142,8 @@ _EXCHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1403,
-  serialized_end=1771,
+  serialized_start=1420,
+  serialized_end=1796,
 )
 
 
@@ -1191,7 +1191,7 @@ _FLOW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Flow.lastChange', index=5,
+      name='last_change', full_name='Flow.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1205,7 +1205,7 @@ _FLOW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowType', full_name='Flow.flowType', index=7,
+      name='flow_type', full_name='Flow.flow_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1226,7 +1226,7 @@ _FLOW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperties', full_name='Flow.flowProperties', index=10,
+      name='flow_properties', full_name='Flow.flow_properties', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1251,8 +1251,8 @@ _FLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1774,
-  serialized_end=2042,
+  serialized_start=1799,
+  serialized_end=2070,
 )
 
 
@@ -1300,7 +1300,7 @@ _FLOWMAP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='FlowMap.lastChange', index=5,
+      name='last_change', full_name='FlowMap.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1339,8 +1339,8 @@ _FLOWMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2045,
-  serialized_end=2241,
+  serialized_start=2073,
+  serialized_end=2270,
 )
 
 
@@ -1388,7 +1388,7 @@ _FLOWMAPENTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='FlowMapEntry.lastChange', index=5,
+      name='last_change', full_name='FlowMapEntry.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1409,7 +1409,7 @@ _FLOWMAPENTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversionFactor', full_name='FlowMapEntry.conversionFactor', index=8,
+      name='conversion_factor', full_name='FlowMapEntry.conversion_factor', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -1427,8 +1427,8 @@ _FLOWMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2244,
-  serialized_end=2446,
+  serialized_start=2273,
+  serialized_end=2477,
 )
 
 
@@ -1455,7 +1455,7 @@ _FLOWMAPREF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperty', full_name='FlowMapRef.flowProperty', index=2,
+      name='flow_property', full_name='FlowMapRef.flow_property', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1480,8 +1480,8 @@ _FLOWMAPREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2448,
-  serialized_end=2553,
+  serialized_start=2479,
+  serialized_end=2585,
 )
 
 
@@ -1529,7 +1529,7 @@ _FLOWPROPERTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='FlowProperty.lastChange', index=5,
+      name='last_change', full_name='FlowProperty.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1543,14 +1543,14 @@ _FLOWPROPERTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowPropertyType', full_name='FlowProperty.flowPropertyType', index=7,
+      name='flow_property_type', full_name='FlowProperty.flow_property_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unitGroup', full_name='FlowProperty.unitGroup', index=8,
+      name='unit_group', full_name='FlowProperty.unit_group', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1568,8 +1568,8 @@ _FLOWPROPERTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2556,
-  serialized_end=2774,
+  serialized_start=2588,
+  serialized_end=2810,
 )
 
 
@@ -1589,21 +1589,21 @@ _FLOWPROPERTYFACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperty', full_name='FlowPropertyFactor.flowProperty', index=1,
+      name='flow_property', full_name='FlowPropertyFactor.flow_property', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversionFactor', full_name='FlowPropertyFactor.conversionFactor', index=2,
+      name='conversion_factor', full_name='FlowPropertyFactor.conversion_factor', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='referenceFlowProperty', full_name='FlowPropertyFactor.referenceFlowProperty', index=3,
+      name='reference_flow_property', full_name='FlowPropertyFactor.reference_flow_property', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1621,8 +1621,8 @@ _FLOWPROPERTYFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2776,
-  serialized_end=2902,
+  serialized_start=2813,
+  serialized_end=2943,
 )
 
 
@@ -1635,7 +1635,7 @@ _FLOWREF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='refUnit', full_name='FlowRef.refUnit', index=0,
+      name='ref_unit', full_name='FlowRef.ref_unit', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1649,7 +1649,7 @@ _FLOWREF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowType', full_name='FlowRef.flowType', index=2,
+      name='flow_type', full_name='FlowRef.flow_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1667,8 +1667,8 @@ _FLOWREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2904,
-  serialized_end=2977,
+  serialized_start=2945,
+  serialized_end=3020,
 )
 
 
@@ -1720,8 +1720,8 @@ _FLOWRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2979,
-  serialized_end=3066,
+  serialized_start=3022,
+  serialized_end=3109,
 )
 
 
@@ -1769,21 +1769,21 @@ _IMPACTCATEGORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='ImpactCategory.lastChange', index=5,
+      name='last_change', full_name='ImpactCategory.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='referenceUnitName', full_name='ImpactCategory.referenceUnitName', index=6,
+      name='reference_unit_name', full_name='ImpactCategory.reference_unit_name', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impactFactors', full_name='ImpactCategory.impactFactors', index=7,
+      name='impact_factors', full_name='ImpactCategory.impact_factors', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1801,8 +1801,8 @@ _IMPACTCATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3069,
-  serialized_end=3260,
+  serialized_start=3112,
+  serialized_end=3307,
 )
 
 
@@ -1815,7 +1815,7 @@ _IMPACTCATEGORYREF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='refUnit', full_name='ImpactCategoryRef.refUnit', index=0,
+      name='ref_unit', full_name='ImpactCategoryRef.ref_unit', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1833,8 +1833,8 @@ _IMPACTCATEGORYREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3262,
-  serialized_end=3298,
+  serialized_start=3309,
+  serialized_end=3346,
 )
 
 
@@ -1861,7 +1861,7 @@ _IMPACTFACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowProperty', full_name='ImpactFactor.flowProperty', index=2,
+      name='flow_property', full_name='ImpactFactor.flow_property', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1907,8 +1907,8 @@ _IMPACTFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3301,
-  serialized_end=3475,
+  serialized_start=3349,
+  serialized_end=3524,
 )
 
 
@@ -1956,7 +1956,7 @@ _IMPACTMETHOD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='ImpactMethod.lastChange', index=5,
+      name='last_change', full_name='ImpactMethod.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1970,7 +1970,7 @@ _IMPACTMETHOD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impactCategories', full_name='ImpactMethod.impactCategories', index=7,
+      name='impact_categories', full_name='ImpactMethod.impact_categories', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1995,8 +1995,8 @@ _IMPACTMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3478,
-  serialized_end=3704,
+  serialized_start=3527,
+  serialized_end=3755,
 )
 
 
@@ -2016,7 +2016,7 @@ _IMPACTRESULT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impactCategory', full_name='ImpactResult.impactCategory', index=1,
+      name='impact_category', full_name='ImpactResult.impact_category', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2041,8 +2041,8 @@ _IMPACTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3706,
-  serialized_end=3800,
+  serialized_start=3757,
+  serialized_end=3852,
 )
 
 
@@ -2090,7 +2090,7 @@ _LOCATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Location.lastChange', index=5,
+      name='last_change', full_name='Location.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2136,8 +2136,8 @@ _LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3803,
-  serialized_end=3987,
+  serialized_start=3855,
+  serialized_end=4040,
 )
 
 
@@ -2171,14 +2171,14 @@ _PARAMETER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameterScope', full_name='Parameter.parameterScope', index=3,
+      name='parameter_scope', full_name='Parameter.parameter_scope', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='inputParameter', full_name='Parameter.inputParameter', index=4,
+      name='input_parameter', full_name='Parameter.input_parameter', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2199,14 +2199,14 @@ _PARAMETER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='externalSource', full_name='Parameter.externalSource', index=7,
+      name='external_source', full_name='Parameter.external_source', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sourceType', full_name='Parameter.sourceType', index=8,
+      name='source_type', full_name='Parameter.source_type', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2231,8 +2231,8 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3990,
-  serialized_end=4233,
+  serialized_start=4043,
+  serialized_end=4290,
 )
 
 
@@ -2284,8 +2284,8 @@ _PARAMETERREDEF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4235,
-  serialized_end=4324,
+  serialized_start=4292,
+  serialized_end=4381,
 )
 
 
@@ -2333,7 +2333,7 @@ _PROCESS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Process.lastChange', index=5,
+      name='last_change', full_name='Process.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2347,14 +2347,14 @@ _PROCESS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='defaultAllocationMethod', full_name='Process.defaultAllocationMethod', index=7,
+      name='default_allocation_method', full_name='Process.default_allocation_method', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocationFactors', full_name='Process.allocationFactors', index=8,
+      name='allocation_factors', full_name='Process.allocation_factors', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2382,42 +2382,42 @@ _PROCESS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='processDocumentation', full_name='Process.processDocumentation', index=12,
+      name='process_documentation', full_name='Process.process_documentation', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='processType', full_name='Process.processType', index=13,
+      name='process_type', full_name='Process.process_type', index=13,
       number=14, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dqSystem', full_name='Process.dqSystem', index=14,
+      name='dq_system', full_name='Process.dq_system', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeDqSystem', full_name='Process.exchangeDqSystem', index=15,
+      name='exchange_dq_system', full_name='Process.exchange_dq_system', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='socialDqSystem', full_name='Process.socialDqSystem', index=16,
+      name='social_dq_system', full_name='Process.social_dq_system', index=16,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dqEntry', full_name='Process.dqEntry', index=17,
+      name='dq_entry', full_name='Process.dq_entry', index=17,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2435,8 +2435,8 @@ _PROCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4327,
-  serialized_end=4848,
+  serialized_start=4384,
+  serialized_end=4917,
 )
 
 
@@ -2456,77 +2456,77 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeDescription', full_name='ProcessDocumentation.timeDescription', index=1,
+      name='time_description', full_name='ProcessDocumentation.time_description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validUntil', full_name='ProcessDocumentation.validUntil', index=2,
+      name='valid_until', full_name='ProcessDocumentation.valid_until', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validFrom', full_name='ProcessDocumentation.validFrom', index=3,
+      name='valid_from', full_name='ProcessDocumentation.valid_from', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='technologyDescription', full_name='ProcessDocumentation.technologyDescription', index=4,
+      name='technology_description', full_name='ProcessDocumentation.technology_description', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataCollectionDescription', full_name='ProcessDocumentation.dataCollectionDescription', index=5,
+      name='data_collection_description', full_name='ProcessDocumentation.data_collection_description', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='completenessDescription', full_name='ProcessDocumentation.completenessDescription', index=6,
+      name='completeness_description', full_name='ProcessDocumentation.completeness_description', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataSelectionDescription', full_name='ProcessDocumentation.dataSelectionDescription', index=7,
+      name='data_selection_description', full_name='ProcessDocumentation.data_selection_description', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reviewDetails', full_name='ProcessDocumentation.reviewDetails', index=8,
+      name='review_details', full_name='ProcessDocumentation.review_details', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataTreatmentDescription', full_name='ProcessDocumentation.dataTreatmentDescription', index=9,
+      name='data_treatment_description', full_name='ProcessDocumentation.data_treatment_description', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='inventoryMethodDescription', full_name='ProcessDocumentation.inventoryMethodDescription', index=10,
+      name='inventory_method_description', full_name='ProcessDocumentation.inventory_method_description', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelingConstantsDescription', full_name='ProcessDocumentation.modelingConstantsDescription', index=11,
+      name='modeling_constants_description', full_name='ProcessDocumentation.modeling_constants_description', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2540,7 +2540,7 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='samplingDescription', full_name='ProcessDocumentation.samplingDescription', index=13,
+      name='sampling_description', full_name='ProcessDocumentation.sampling_description', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2554,7 +2554,7 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='restrictionsDescription', full_name='ProcessDocumentation.restrictionsDescription', index=15,
+      name='restrictions_description', full_name='ProcessDocumentation.restrictions_description', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2568,42 +2568,42 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='creationDate', full_name='ProcessDocumentation.creationDate', index=17,
+      name='creation_date', full_name='ProcessDocumentation.creation_date', index=17,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataDocumentor', full_name='ProcessDocumentation.dataDocumentor', index=18,
+      name='data_documentor', full_name='ProcessDocumentation.data_documentor', index=18,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataGenerator', full_name='ProcessDocumentation.dataGenerator', index=19,
+      name='data_generator', full_name='ProcessDocumentation.data_generator', index=19,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataSetOwner', full_name='ProcessDocumentation.dataSetOwner', index=20,
+      name='data_set_owner', full_name='ProcessDocumentation.data_set_owner', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='intendedApplication', full_name='ProcessDocumentation.intendedApplication', index=21,
+      name='intended_application', full_name='ProcessDocumentation.intended_application', index=21,
       number=22, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='projectDescription', full_name='ProcessDocumentation.projectDescription', index=22,
+      name='project_description', full_name='ProcessDocumentation.project_description', index=22,
       number=23, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2617,7 +2617,7 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geographyDescription', full_name='ProcessDocumentation.geographyDescription', index=24,
+      name='geography_description', full_name='ProcessDocumentation.geography_description', index=24,
       number=25, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2635,8 +2635,8 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4851,
-  serialized_end=5573,
+  serialized_start=4920,
+  serialized_end=5668,
 )
 
 
@@ -2695,8 +2695,8 @@ _PROCESSLINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5576,
-  serialized_end=5706,
+  serialized_start=5671,
+  serialized_end=5801,
 )
 
 
@@ -2716,7 +2716,7 @@ _PROCESSREF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='processType', full_name='ProcessRef.processType', index=1,
+      name='process_type', full_name='ProcessRef.process_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2734,8 +2734,8 @@ _PROCESSREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5708,
-  serialized_end=5773,
+  serialized_start=5803,
+  serialized_end=5869,
 )
 
 
@@ -2783,7 +2783,7 @@ _PRODUCTSYSTEM = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='ProductSystem.lastChange', index=5,
+      name='last_change', full_name='ProductSystem.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2804,42 +2804,42 @@ _PRODUCTSYSTEM = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='referenceProcess', full_name='ProductSystem.referenceProcess', index=8,
+      name='reference_process', full_name='ProductSystem.reference_process', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='referenceExchange', full_name='ProductSystem.referenceExchange', index=9,
+      name='reference_exchange', full_name='ProductSystem.reference_exchange', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='targetAmount', full_name='ProductSystem.targetAmount', index=10,
+      name='target_amount', full_name='ProductSystem.target_amount', index=10,
       number=11, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='targetUnit', full_name='ProductSystem.targetUnit', index=11,
+      name='target_unit', full_name='ProductSystem.target_unit', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='targetFlowProperty', full_name='ProductSystem.targetFlowProperty', index=12,
+      name='target_flow_property', full_name='ProductSystem.target_flow_property', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='processLinks', full_name='ProductSystem.processLinks', index=13,
+      name='process_links', full_name='ProductSystem.process_links', index=13,
       number=14, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2857,8 +2857,8 @@ _PRODUCTSYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5776,
-  serialized_end=6152,
+  serialized_start=5872,
+  serialized_end=6256,
 )
 
 
@@ -2906,14 +2906,14 @@ _REF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Ref.lastChange', index=5,
+      name='last_change', full_name='Ref.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='categoryPath', full_name='Ref.categoryPath', index=6,
+      name='category_path', full_name='Ref.category_path', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2931,8 +2931,8 @@ _REF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6155,
-  serialized_end=6292,
+  serialized_start=6259,
+  serialized_end=6398,
 )
 
 
@@ -2952,14 +2952,14 @@ _SIMPLERESULT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flowResults', full_name='SimpleResult.flowResults', index=1,
+      name='flow_results', full_name='SimpleResult.flow_results', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impactResults', full_name='SimpleResult.impactResults', index=2,
+      name='impact_results', full_name='SimpleResult.impact_results', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2977,8 +2977,8 @@ _SIMPLERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6294,
-  serialized_end=6401,
+  serialized_start=6400,
+  serialized_end=6509,
 )
 
 
@@ -3026,7 +3026,7 @@ _SOCIALINDICATOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='SocialIndicator.lastChange', index=5,
+      name='last_change', full_name='SocialIndicator.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3040,35 +3040,35 @@ _SOCIALINDICATOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activityVariable', full_name='SocialIndicator.activityVariable', index=7,
+      name='activity_variable', full_name='SocialIndicator.activity_variable', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activityQuantity', full_name='SocialIndicator.activityQuantity', index=8,
+      name='activity_quantity', full_name='SocialIndicator.activity_quantity', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activityUnit', full_name='SocialIndicator.activityUnit', index=9,
+      name='activity_unit', full_name='SocialIndicator.activity_unit', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unitOfMeasurement', full_name='SocialIndicator.unitOfMeasurement', index=10,
+      name='unit_of_measurement', full_name='SocialIndicator.unit_of_measurement', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='evaluationScheme', full_name='SocialIndicator.evaluationScheme', index=11,
+      name='evaluation_scheme', full_name='SocialIndicator.evaluation_scheme', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3086,8 +3086,8 @@ _SOCIALINDICATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6404,
-  serialized_end=6694,
+  serialized_start=6512,
+  serialized_end=6809,
 )
 
 
@@ -3135,7 +3135,7 @@ _SOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Source.lastChange', index=5,
+      name='last_change', full_name='Source.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3156,7 +3156,7 @@ _SOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='textReference', full_name='Source.textReference', index=8,
+      name='text_reference', full_name='Source.text_reference', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3170,7 +3170,7 @@ _SOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='externalFile', full_name='Source.externalFile', index=10,
+      name='external_file', full_name='Source.external_file', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3188,8 +3188,8 @@ _SOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6697,
-  serialized_end=6911,
+  serialized_start=6812,
+  serialized_end=7029,
 )
 
 
@@ -3209,7 +3209,7 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='distributionType', full_name='Uncertainty.distributionType', index=1,
+      name='distribution_type', full_name='Uncertainty.distribution_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -3223,21 +3223,21 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='meanFormula', full_name='Uncertainty.meanFormula', index=3,
+      name='mean_formula', full_name='Uncertainty.mean_formula', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geomMean', full_name='Uncertainty.geomMean', index=4,
+      name='geom_mean', full_name='Uncertainty.geom_mean', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geomMeanFormula', full_name='Uncertainty.geomMeanFormula', index=5,
+      name='geom_mean_formula', full_name='Uncertainty.geom_mean_formula', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3251,7 +3251,7 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='minimumFormula', full_name='Uncertainty.minimumFormula', index=7,
+      name='minimum_formula', full_name='Uncertainty.minimum_formula', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3265,21 +3265,21 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sdFormula', full_name='Uncertainty.sdFormula', index=9,
+      name='sd_formula', full_name='Uncertainty.sd_formula', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geomSd', full_name='Uncertainty.geomSd', index=10,
+      name='geom_sd', full_name='Uncertainty.geom_sd', index=10,
       number=11, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geomSdFormula', full_name='Uncertainty.geomSdFormula', index=11,
+      name='geom_sd_formula', full_name='Uncertainty.geom_sd_formula', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3293,7 +3293,7 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modeFormula', full_name='Uncertainty.modeFormula', index=13,
+      name='mode_formula', full_name='Uncertainty.mode_formula', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3307,7 +3307,7 @@ _UNCERTAINTY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maximumFormula', full_name='Uncertainty.maximumFormula', index=15,
+      name='maximum_formula', full_name='Uncertainty.maximum_formula', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3325,8 +3325,8 @@ _UNCERTAINTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6914,
-  serialized_end=7257,
+  serialized_start=7032,
+  serialized_end=7387,
 )
 
 
@@ -3374,21 +3374,21 @@ _UNIT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='Unit.lastChange', index=5,
+      name='last_change', full_name='Unit.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversionFactor', full_name='Unit.conversionFactor', index=6,
+      name='conversion_factor', full_name='Unit.conversion_factor', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='referenceUnit', full_name='Unit.referenceUnit', index=7,
+      name='reference_unit', full_name='Unit.reference_unit', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -3413,8 +3413,8 @@ _UNIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7260,
-  serialized_end=7443,
+  serialized_start=7390,
+  serialized_end=7576,
 )
 
 
@@ -3462,7 +3462,7 @@ _UNITGROUP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastChange', full_name='UnitGroup.lastChange', index=5,
+      name='last_change', full_name='UnitGroup.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3476,7 +3476,7 @@ _UNITGROUP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='defaultFlowProperty', full_name='UnitGroup.defaultFlowProperty', index=7,
+      name='default_flow_property', full_name='UnitGroup.default_flow_property', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3501,36 +3501,36 @@ _UNITGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7446,
-  serialized_end=7648,
+  serialized_start=7579,
+  serialized_end=7784,
 )
 
 _ACTOR.fields_by_name['category'].message_type = _REF
-_ALLOCATIONFACTOR.fields_by_name['productExchange'].message_type = _EXCHANGE
-_ALLOCATIONFACTOR.fields_by_name['allocationType'].enum_type = _ALLOCATIONTYPE
-_ALLOCATIONFACTOR.fields_by_name['allocatedExchange'].message_type = _EXCHANGE
-_CALCULATIONSETUP.fields_by_name['calculationType'].enum_type = _CALCULATIONTYPE
-_CALCULATIONSETUP.fields_by_name['productSystem'].message_type = _REF
-_CALCULATIONSETUP.fields_by_name['impactMethod'].message_type = _REF
-_CALCULATIONSETUP.fields_by_name['nwSet'].message_type = _REF
-_CALCULATIONSETUP.fields_by_name['allocationMethod'].enum_type = _ALLOCATIONTYPE
-_CALCULATIONSETUP.fields_by_name['parameterRedefs'].message_type = _PARAMETERREDEF
+_ALLOCATIONFACTOR.fields_by_name['product_exchange'].message_type = _EXCHANGE
+_ALLOCATIONFACTOR.fields_by_name['allocation_type'].enum_type = _ALLOCATIONTYPE
+_ALLOCATIONFACTOR.fields_by_name['allocated_exchange'].message_type = _EXCHANGE
+_CALCULATIONSETUP.fields_by_name['calculation_type'].enum_type = _CALCULATIONTYPE
+_CALCULATIONSETUP.fields_by_name['product_system'].message_type = _REF
+_CALCULATIONSETUP.fields_by_name['impact_method'].message_type = _REF
+_CALCULATIONSETUP.fields_by_name['nw_set'].message_type = _REF
+_CALCULATIONSETUP.fields_by_name['allocation_method'].enum_type = _ALLOCATIONTYPE
+_CALCULATIONSETUP.fields_by_name['parameter_redefs'].message_type = _PARAMETERREDEF
 _CALCULATIONSETUP.fields_by_name['unit'].message_type = _REF
-_CALCULATIONSETUP.fields_by_name['flowProperty'].message_type = _REF
+_CALCULATIONSETUP.fields_by_name['flow_property'].message_type = _REF
 _CATEGORY.fields_by_name['category'].message_type = _REF
-_CATEGORY.fields_by_name['modelType'].enum_type = _MODELTYPE
+_CATEGORY.fields_by_name['model_type'].enum_type = _MODELTYPE
 _DQINDICATOR.fields_by_name['scores'].message_type = _DQSCORE
 _DQSYSTEM.fields_by_name['category'].message_type = _REF
 _DQSYSTEM.fields_by_name['source'].message_type = _REF
 _DQSYSTEM.fields_by_name['indicators'].message_type = _DQINDICATOR
 _EXCHANGE.fields_by_name['flow'].message_type = _FLOWREF
-_EXCHANGE.fields_by_name['flowProperty'].message_type = _REF
-_EXCHANGE.fields_by_name['defaultProvider'].message_type = _PROCESSREF
+_EXCHANGE.fields_by_name['flow_property'].message_type = _REF
+_EXCHANGE.fields_by_name['default_provider'].message_type = _PROCESSREF
 _EXCHANGE.fields_by_name['unit'].message_type = _REF
 _EXCHANGE.fields_by_name['uncertainty'].message_type = _UNCERTAINTY
 _FLOW.fields_by_name['category'].message_type = _REF
-_FLOW.fields_by_name['flowType'].enum_type = _FLOWTYPE
-_FLOW.fields_by_name['flowProperties'].message_type = _FLOWPROPERTYFACTOR
+_FLOW.fields_by_name['flow_type'].enum_type = _FLOWTYPE
+_FLOW.fields_by_name['flow_properties'].message_type = _FLOWPROPERTYFACTOR
 _FLOW.fields_by_name['location'].message_type = _REF
 _FLOWMAP.fields_by_name['source'].message_type = _REF
 _FLOWMAP.fields_by_name['target'].message_type = _REF
@@ -3538,64 +3538,64 @@ _FLOWMAP.fields_by_name['mappings'].message_type = _FLOWMAPENTRY
 _FLOWMAPENTRY.fields_by_name['from'].message_type = _FLOWMAPREF
 _FLOWMAPENTRY.fields_by_name['to'].message_type = _FLOWMAPREF
 _FLOWMAPREF.fields_by_name['flow'].message_type = _FLOWREF
-_FLOWMAPREF.fields_by_name['flowProperty'].message_type = _REF
+_FLOWMAPREF.fields_by_name['flow_property'].message_type = _REF
 _FLOWMAPREF.fields_by_name['unit'].message_type = _REF
 _FLOWPROPERTY.fields_by_name['category'].message_type = _REF
-_FLOWPROPERTY.fields_by_name['flowPropertyType'].enum_type = _FLOWPROPERTYTYPE
-_FLOWPROPERTY.fields_by_name['unitGroup'].message_type = _REF
-_FLOWPROPERTYFACTOR.fields_by_name['flowProperty'].message_type = _REF
-_FLOWREF.fields_by_name['flowType'].enum_type = _FLOWTYPE
+_FLOWPROPERTY.fields_by_name['flow_property_type'].enum_type = _FLOWPROPERTYTYPE
+_FLOWPROPERTY.fields_by_name['unit_group'].message_type = _REF
+_FLOWPROPERTYFACTOR.fields_by_name['flow_property'].message_type = _REF
+_FLOWREF.fields_by_name['flow_type'].enum_type = _FLOWTYPE
 _FLOWRESULT.fields_by_name['flow'].message_type = _FLOWREF
-_IMPACTCATEGORY.fields_by_name['impactFactors'].message_type = _IMPACTFACTOR
+_IMPACTCATEGORY.fields_by_name['impact_factors'].message_type = _IMPACTFACTOR
 _IMPACTFACTOR.fields_by_name['flow'].message_type = _FLOWREF
-_IMPACTFACTOR.fields_by_name['flowProperty'].message_type = _REF
+_IMPACTFACTOR.fields_by_name['flow_property'].message_type = _REF
 _IMPACTFACTOR.fields_by_name['unit'].message_type = _REF
 _IMPACTFACTOR.fields_by_name['uncertainty'].message_type = _UNCERTAINTY
 _IMPACTMETHOD.fields_by_name['category'].message_type = _REF
-_IMPACTMETHOD.fields_by_name['impactCategories'].message_type = _IMPACTCATEGORYREF
+_IMPACTMETHOD.fields_by_name['impact_categories'].message_type = _IMPACTCATEGORYREF
 _IMPACTMETHOD.fields_by_name['parameters'].message_type = _PARAMETER
-_IMPACTRESULT.fields_by_name['impactCategory'].message_type = _IMPACTCATEGORYREF
-_PARAMETER.fields_by_name['parameterScope'].enum_type = _PARAMETERSCOPE
+_IMPACTRESULT.fields_by_name['impact_category'].message_type = _IMPACTCATEGORYREF
+_PARAMETER.fields_by_name['parameter_scope'].enum_type = _PARAMETERSCOPE
 _PARAMETER.fields_by_name['uncertainty'].message_type = _UNCERTAINTY
 _PARAMETERREDEF.fields_by_name['context'].message_type = _REF
 _PROCESS.fields_by_name['category'].message_type = _REF
-_PROCESS.fields_by_name['defaultAllocationMethod'].enum_type = _ALLOCATIONTYPE
-_PROCESS.fields_by_name['allocationFactors'].message_type = _ALLOCATIONFACTOR
+_PROCESS.fields_by_name['default_allocation_method'].enum_type = _ALLOCATIONTYPE
+_PROCESS.fields_by_name['allocation_factors'].message_type = _ALLOCATIONFACTOR
 _PROCESS.fields_by_name['exchanges'].message_type = _EXCHANGE
 _PROCESS.fields_by_name['location'].message_type = _LOCATION
 _PROCESS.fields_by_name['parameters'].message_type = _PARAMETER
-_PROCESS.fields_by_name['processDocumentation'].message_type = _PROCESSDOCUMENTATION
-_PROCESS.fields_by_name['processType'].enum_type = _PROCESSTYPE
-_PROCESS.fields_by_name['dqSystem'].message_type = _REF
-_PROCESS.fields_by_name['exchangeDqSystem'].message_type = _REF
-_PROCESS.fields_by_name['socialDqSystem'].message_type = _REF
+_PROCESS.fields_by_name['process_documentation'].message_type = _PROCESSDOCUMENTATION
+_PROCESS.fields_by_name['process_type'].enum_type = _PROCESSTYPE
+_PROCESS.fields_by_name['dq_system'].message_type = _REF
+_PROCESS.fields_by_name['exchange_dq_system'].message_type = _REF
+_PROCESS.fields_by_name['social_dq_system'].message_type = _REF
 _PROCESSDOCUMENTATION.fields_by_name['reviewer'].message_type = _REF
 _PROCESSDOCUMENTATION.fields_by_name['sources'].message_type = _REF
-_PROCESSDOCUMENTATION.fields_by_name['dataDocumentor'].message_type = _REF
-_PROCESSDOCUMENTATION.fields_by_name['dataGenerator'].message_type = _REF
-_PROCESSDOCUMENTATION.fields_by_name['dataSetOwner'].message_type = _REF
+_PROCESSDOCUMENTATION.fields_by_name['data_documentor'].message_type = _REF
+_PROCESSDOCUMENTATION.fields_by_name['data_generator'].message_type = _REF
+_PROCESSDOCUMENTATION.fields_by_name['data_set_owner'].message_type = _REF
 _PROCESSDOCUMENTATION.fields_by_name['publication'].message_type = _REF
 _PROCESSLINK.fields_by_name['provider'].message_type = _REF
 _PROCESSLINK.fields_by_name['flow'].message_type = _REF
 _PROCESSLINK.fields_by_name['process'].message_type = _REF
 _PROCESSLINK.fields_by_name['exchange'].message_type = _EXCHANGE
-_PROCESSREF.fields_by_name['processType'].enum_type = _PROCESSTYPE
+_PROCESSREF.fields_by_name['process_type'].enum_type = _PROCESSTYPE
 _PRODUCTSYSTEM.fields_by_name['category'].message_type = _REF
 _PRODUCTSYSTEM.fields_by_name['processes'].message_type = _PROCESSREF
-_PRODUCTSYSTEM.fields_by_name['referenceProcess'].message_type = _PROCESSREF
-_PRODUCTSYSTEM.fields_by_name['referenceExchange'].message_type = _EXCHANGE
-_PRODUCTSYSTEM.fields_by_name['targetUnit'].message_type = _REF
-_PRODUCTSYSTEM.fields_by_name['targetFlowProperty'].message_type = _REF
-_PRODUCTSYSTEM.fields_by_name['processLinks'].message_type = _PROCESSLINK
-_SIMPLERESULT.fields_by_name['flowResults'].message_type = _FLOWRESULT
-_SIMPLERESULT.fields_by_name['impactResults'].message_type = _IMPACTRESULT
+_PRODUCTSYSTEM.fields_by_name['reference_process'].message_type = _PROCESSREF
+_PRODUCTSYSTEM.fields_by_name['reference_exchange'].message_type = _EXCHANGE
+_PRODUCTSYSTEM.fields_by_name['target_unit'].message_type = _REF
+_PRODUCTSYSTEM.fields_by_name['target_flow_property'].message_type = _REF
+_PRODUCTSYSTEM.fields_by_name['process_links'].message_type = _PROCESSLINK
+_SIMPLERESULT.fields_by_name['flow_results'].message_type = _FLOWRESULT
+_SIMPLERESULT.fields_by_name['impact_results'].message_type = _IMPACTRESULT
 _SOCIALINDICATOR.fields_by_name['category'].message_type = _REF
-_SOCIALINDICATOR.fields_by_name['activityQuantity'].message_type = _REF
-_SOCIALINDICATOR.fields_by_name['activityUnit'].message_type = _REF
+_SOCIALINDICATOR.fields_by_name['activity_quantity'].message_type = _REF
+_SOCIALINDICATOR.fields_by_name['activity_unit'].message_type = _REF
 _SOURCE.fields_by_name['category'].message_type = _REF
-_UNCERTAINTY.fields_by_name['distributionType'].enum_type = _UNCERTAINTYTYPE
+_UNCERTAINTY.fields_by_name['distribution_type'].enum_type = _UNCERTAINTYTYPE
 _UNITGROUP.fields_by_name['category'].message_type = _REF
-_UNITGROUP.fields_by_name['defaultFlowProperty'].message_type = _REF
+_UNITGROUP.fields_by_name['default_flow_property'].message_type = _REF
 _UNITGROUP.fields_by_name['units'].message_type = _UNIT
 DESCRIPTOR.message_types_by_name['Actor'] = _ACTOR
 DESCRIPTOR.message_types_by_name['AllocationFactor'] = _ALLOCATIONFACTOR

@@ -60,8 +60,13 @@ flow = proto.Flow()
 flow.type = 'Flow'
 flow.id = str(uuid.uuid4())
 flow.name = 'Steel'
-flow.flowType = proto.FlowType.PRODUCT_FLOW
+flow.flow_type = proto.FlowType.PRODUCT_FLOW
 print(json.MessageToJson(flow))
 ```
 
 This will generate the same output as for the Java version above.
+
+__TODO__
+* move Java version to sub-folder
+* test / generate Go version
+* test / generate C# version

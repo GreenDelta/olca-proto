@@ -1452,7 +1452,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -1461,7 +1461,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -1579,12 +1579,12 @@ public final class Proto {
         getWebsiteBytes();
 
     /**
-     * <code>string zipCode = 15;</code>
+     * <code>string zip_code = 15;</code>
      * @return The zipCode.
      */
     java.lang.String getZipCode();
     /**
-     * <code>string zipCode = 15;</code>
+     * <code>string zip_code = 15;</code>
      * @return The bytes for zipCode.
      */
     com.google.protobuf.ByteString
@@ -2018,14 +2018,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -2046,7 +2046,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -2368,10 +2368,10 @@ public final class Proto {
       }
     }
 
-    public static final int ZIPCODE_FIELD_NUMBER = 15;
+    public static final int ZIP_CODE_FIELD_NUMBER = 15;
     private volatile java.lang.Object zipCode_;
     /**
-     * <code>string zipCode = 15;</code>
+     * <code>string zip_code = 15;</code>
      * @return The zipCode.
      */
     @java.lang.Override
@@ -2388,7 +2388,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string zipCode = 15;</code>
+     * <code>string zip_code = 15;</code>
      * @return The bytes for zipCode.
      */
     @java.lang.Override
@@ -2589,7 +2589,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
@@ -2609,7 +2609,7 @@ public final class Proto {
       hash = (53 * hash) + getTelephone().hashCode();
       hash = (37 * hash) + WEBSITE_FIELD_NUMBER;
       hash = (53 * hash) + getWebsite().hashCode();
-      hash = (37 * hash) + ZIPCODE_FIELD_NUMBER;
+      hash = (37 * hash) + ZIP_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getZipCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3464,7 +3464,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -3484,7 +3484,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -3505,7 +3505,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -3524,7 +3524,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -3538,7 +3538,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -4243,7 +4243,7 @@ public final class Proto {
 
       private java.lang.Object zipCode_ = "";
       /**
-       * <code>string zipCode = 15;</code>
+       * <code>string zip_code = 15;</code>
        * @return The zipCode.
        */
       public java.lang.String getZipCode() {
@@ -4259,7 +4259,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string zipCode = 15;</code>
+       * <code>string zip_code = 15;</code>
        * @return The bytes for zipCode.
        */
       public com.google.protobuf.ByteString
@@ -4276,7 +4276,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string zipCode = 15;</code>
+       * <code>string zip_code = 15;</code>
        * @param value The zipCode to set.
        * @return This builder for chaining.
        */
@@ -4291,7 +4291,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string zipCode = 15;</code>
+       * <code>string zip_code = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearZipCode() {
@@ -4301,7 +4301,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string zipCode = 15;</code>
+       * <code>string zip_code = 15;</code>
        * @param value The bytes for zipCode to set.
        * @return This builder for chaining.
        */
@@ -4400,7 +4400,7 @@ public final class Proto {
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      * @return Whether the productExchange field is set.
      */
     boolean hasProductExchange();
@@ -4409,7 +4409,7 @@ public final class Proto {
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      * @return The productExchange.
      */
     org.openlca.proto.Proto.Exchange getProductExchange();
@@ -4418,7 +4418,7 @@ public final class Proto {
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder();
 
@@ -4427,7 +4427,7 @@ public final class Proto {
      * The type of allocation.
      * </pre>
      *
-     * <code>.AllocationType allocationType = 3;</code>
+     * <code>.AllocationType allocation_type = 3;</code>
      * @return The enum numeric value on the wire for allocationType.
      */
     int getAllocationTypeValue();
@@ -4436,7 +4436,7 @@ public final class Proto {
      * The type of allocation.
      * </pre>
      *
-     * <code>.AllocationType allocationType = 3;</code>
+     * <code>.AllocationType allocation_type = 3;</code>
      * @return The allocationType.
      */
     org.openlca.proto.Proto.AllocationType getAllocationType();
@@ -4458,7 +4458,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      * @return Whether the allocatedExchange field is set.
      */
     boolean hasAllocatedExchange();
@@ -4469,7 +4469,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      * @return The allocatedExchange.
      */
     org.openlca.proto.Proto.Exchange getAllocatedExchange();
@@ -4480,7 +4480,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder();
   }
@@ -4658,14 +4658,14 @@ public final class Proto {
       }
     }
 
-    public static final int PRODUCTEXCHANGE_FIELD_NUMBER = 2;
+    public static final int PRODUCT_EXCHANGE_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Exchange productExchange_;
     /**
      * <pre>
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      * @return Whether the productExchange field is set.
      */
     @java.lang.Override
@@ -4677,7 +4677,7 @@ public final class Proto {
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      * @return The productExchange.
      */
     @java.lang.Override
@@ -4689,21 +4689,21 @@ public final class Proto {
      * The output product.
      * </pre>
      *
-     * <code>.Exchange productExchange = 2;</code>
+     * <code>.Exchange product_exchange = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder() {
       return getProductExchange();
     }
 
-    public static final int ALLOCATIONTYPE_FIELD_NUMBER = 3;
+    public static final int ALLOCATION_TYPE_FIELD_NUMBER = 3;
     private int allocationType_;
     /**
      * <pre>
      * The type of allocation.
      * </pre>
      *
-     * <code>.AllocationType allocationType = 3;</code>
+     * <code>.AllocationType allocation_type = 3;</code>
      * @return The enum numeric value on the wire for allocationType.
      */
     @java.lang.Override public int getAllocationTypeValue() {
@@ -4714,7 +4714,7 @@ public final class Proto {
      * The type of allocation.
      * </pre>
      *
-     * <code>.AllocationType allocationType = 3;</code>
+     * <code>.AllocationType allocation_type = 3;</code>
      * @return The allocationType.
      */
     @java.lang.Override public org.openlca.proto.Proto.AllocationType getAllocationType() {
@@ -4738,7 +4738,7 @@ public final class Proto {
       return value_;
     }
 
-    public static final int ALLOCATEDEXCHANGE_FIELD_NUMBER = 5;
+    public static final int ALLOCATED_EXCHANGE_FIELD_NUMBER = 5;
     private org.openlca.proto.Proto.Exchange allocatedExchange_;
     /**
      * <pre>
@@ -4747,7 +4747,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      * @return Whether the allocatedExchange field is set.
      */
     @java.lang.Override
@@ -4761,7 +4761,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      * @return The allocatedExchange.
      */
     @java.lang.Override
@@ -4775,7 +4775,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.Exchange allocatedExchange = 5;</code>
+     * <code>.Exchange allocated_exchange = 5;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
@@ -4884,16 +4884,16 @@ public final class Proto {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       if (hasProductExchange()) {
-        hash = (37 * hash) + PRODUCTEXCHANGE_FIELD_NUMBER;
+        hash = (37 * hash) + PRODUCT_EXCHANGE_FIELD_NUMBER;
         hash = (53 * hash) + getProductExchange().hashCode();
       }
-      hash = (37 * hash) + ALLOCATIONTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ALLOCATION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + allocationType_;
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getValue()));
       if (hasAllocatedExchange()) {
-        hash = (37 * hash) + ALLOCATEDEXCHANGE_FIELD_NUMBER;
+        hash = (37 * hash) + ALLOCATED_EXCHANGE_FIELD_NUMBER;
         hash = (53 * hash) + getAllocatedExchange().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5292,7 +5292,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        * @return Whether the productExchange field is set.
        */
       public boolean hasProductExchange() {
@@ -5303,7 +5303,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        * @return The productExchange.
        */
       public org.openlca.proto.Proto.Exchange getProductExchange() {
@@ -5318,7 +5318,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public Builder setProductExchange(org.openlca.proto.Proto.Exchange value) {
         if (productExchangeBuilder_ == null) {
@@ -5338,7 +5338,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public Builder setProductExchange(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -5356,7 +5356,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public Builder mergeProductExchange(org.openlca.proto.Proto.Exchange value) {
         if (productExchangeBuilder_ == null) {
@@ -5378,7 +5378,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public Builder clearProductExchange() {
         if (productExchangeBuilder_ == null) {
@@ -5396,7 +5396,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getProductExchangeBuilder() {
         
@@ -5408,7 +5408,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder() {
         if (productExchangeBuilder_ != null) {
@@ -5423,7 +5423,7 @@ public final class Proto {
        * The output product.
        * </pre>
        *
-       * <code>.Exchange productExchange = 2;</code>
+       * <code>.Exchange product_exchange = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -5445,7 +5445,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.AllocationType allocationType = 3;</code>
+       * <code>.AllocationType allocation_type = 3;</code>
        * @return The enum numeric value on the wire for allocationType.
        */
       @java.lang.Override public int getAllocationTypeValue() {
@@ -5456,7 +5456,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.AllocationType allocationType = 3;</code>
+       * <code>.AllocationType allocation_type = 3;</code>
        * @param value The enum numeric value on the wire for allocationType to set.
        * @return This builder for chaining.
        */
@@ -5471,7 +5471,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.AllocationType allocationType = 3;</code>
+       * <code>.AllocationType allocation_type = 3;</code>
        * @return The allocationType.
        */
       @java.lang.Override
@@ -5485,7 +5485,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.AllocationType allocationType = 3;</code>
+       * <code>.AllocationType allocation_type = 3;</code>
        * @param value The allocationType to set.
        * @return This builder for chaining.
        */
@@ -5503,7 +5503,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.AllocationType allocationType = 3;</code>
+       * <code>.AllocationType allocation_type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllocationType() {
@@ -5566,7 +5566,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        * @return Whether the allocatedExchange field is set.
        */
       public boolean hasAllocatedExchange() {
@@ -5579,7 +5579,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        * @return The allocatedExchange.
        */
       public org.openlca.proto.Proto.Exchange getAllocatedExchange() {
@@ -5596,7 +5596,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public Builder setAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
         if (allocatedExchangeBuilder_ == null) {
@@ -5618,7 +5618,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public Builder setAllocatedExchange(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -5638,7 +5638,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public Builder mergeAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
         if (allocatedExchangeBuilder_ == null) {
@@ -5662,7 +5662,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public Builder clearAllocatedExchange() {
         if (allocatedExchangeBuilder_ == null) {
@@ -5682,7 +5682,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getAllocatedExchangeBuilder() {
         
@@ -5696,7 +5696,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
         if (allocatedExchangeBuilder_ != null) {
@@ -5713,7 +5713,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.Exchange allocatedExchange = 5;</code>
+       * <code>.Exchange allocated_exchange = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -5812,7 +5812,7 @@ public final class Proto {
      * The type of calculation that should be performed.
      * </pre>
      *
-     * <code>.CalculationType calculationType = 2;</code>
+     * <code>.CalculationType calculation_type = 2;</code>
      * @return The enum numeric value on the wire for calculationType.
      */
     int getCalculationTypeValue();
@@ -5821,7 +5821,7 @@ public final class Proto {
      * The type of calculation that should be performed.
      * </pre>
      *
-     * <code>.CalculationType calculationType = 2;</code>
+     * <code>.CalculationType calculation_type = 2;</code>
      * @return The calculationType.
      */
     org.openlca.proto.Proto.CalculationType getCalculationType();
@@ -5831,7 +5831,7 @@ public final class Proto {
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      * @return Whether the productSystem field is set.
      */
     boolean hasProductSystem();
@@ -5840,7 +5840,7 @@ public final class Proto {
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      * @return The productSystem.
      */
     org.openlca.proto.Proto.Ref getProductSystem();
@@ -5849,7 +5849,7 @@ public final class Proto {
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getProductSystemOrBuilder();
 
@@ -5858,7 +5858,7 @@ public final class Proto {
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      * @return Whether the impactMethod field is set.
      */
     boolean hasImpactMethod();
@@ -5867,7 +5867,7 @@ public final class Proto {
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      * @return The impactMethod.
      */
     org.openlca.proto.Proto.Ref getImpactMethod();
@@ -5876,7 +5876,7 @@ public final class Proto {
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getImpactMethodOrBuilder();
 
@@ -5885,7 +5885,7 @@ public final class Proto {
      * Indicates whether life cycle costs should be also calculated (optional).
      * </pre>
      *
-     * <code>bool withCosts = 5;</code>
+     * <code>bool with_costs = 5;</code>
      * @return The withCosts.
      */
     boolean getWithCosts();
@@ -5895,7 +5895,7 @@ public final class Proto {
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      * @return Whether the nwSet field is set.
      */
     boolean hasNwSet();
@@ -5904,7 +5904,7 @@ public final class Proto {
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      * @return The nwSet.
      */
     org.openlca.proto.Proto.Ref getNwSet();
@@ -5913,7 +5913,7 @@ public final class Proto {
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getNwSetOrBuilder();
 
@@ -5922,7 +5922,7 @@ public final class Proto {
      * The calculation type to be used in the calculation (optional).
      * </pre>
      *
-     * <code>.AllocationType allocationMethod = 7;</code>
+     * <code>.AllocationType allocation_method = 7;</code>
      * @return The enum numeric value on the wire for allocationMethod.
      */
     int getAllocationMethodValue();
@@ -5931,7 +5931,7 @@ public final class Proto {
      * The calculation type to be used in the calculation (optional).
      * </pre>
      *
-     * <code>.AllocationType allocationMethod = 7;</code>
+     * <code>.AllocationType allocation_method = 7;</code>
      * @return The allocationMethod.
      */
     org.openlca.proto.Proto.AllocationType getAllocationMethod();
@@ -5942,7 +5942,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     java.util.List<org.openlca.proto.Proto.ParameterRedef> 
         getParameterRedefsList();
@@ -5952,7 +5952,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     org.openlca.proto.Proto.ParameterRedef getParameterRedefs(int index);
     /**
@@ -5961,7 +5961,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     int getParameterRedefsCount();
     /**
@@ -5970,7 +5970,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
         getParameterRedefsOrBuilderList();
@@ -5980,7 +5980,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     org.openlca.proto.Proto.ParameterRedefOrBuilder getParameterRedefsOrBuilder(
         int index);
@@ -6027,7 +6027,7 @@ public final class Proto {
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -6036,7 +6036,7 @@ public final class Proto {
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -6045,7 +6045,7 @@ public final class Proto {
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
   }
@@ -6288,14 +6288,14 @@ public final class Proto {
       }
     }
 
-    public static final int CALCULATIONTYPE_FIELD_NUMBER = 2;
+    public static final int CALCULATION_TYPE_FIELD_NUMBER = 2;
     private int calculationType_;
     /**
      * <pre>
      * The type of calculation that should be performed.
      * </pre>
      *
-     * <code>.CalculationType calculationType = 2;</code>
+     * <code>.CalculationType calculation_type = 2;</code>
      * @return The enum numeric value on the wire for calculationType.
      */
     @java.lang.Override public int getCalculationTypeValue() {
@@ -6306,7 +6306,7 @@ public final class Proto {
      * The type of calculation that should be performed.
      * </pre>
      *
-     * <code>.CalculationType calculationType = 2;</code>
+     * <code>.CalculationType calculation_type = 2;</code>
      * @return The calculationType.
      */
     @java.lang.Override public org.openlca.proto.Proto.CalculationType getCalculationType() {
@@ -6315,14 +6315,14 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.CalculationType.UNRECOGNIZED : result;
     }
 
-    public static final int PRODUCTSYSTEM_FIELD_NUMBER = 3;
+    public static final int PRODUCT_SYSTEM_FIELD_NUMBER = 3;
     private org.openlca.proto.Proto.Ref productSystem_;
     /**
      * <pre>
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      * @return Whether the productSystem field is set.
      */
     @java.lang.Override
@@ -6334,7 +6334,7 @@ public final class Proto {
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      * @return The productSystem.
      */
     @java.lang.Override
@@ -6346,21 +6346,21 @@ public final class Proto {
      * The product system that should be calculated (required).
      * </pre>
      *
-     * <code>.Ref productSystem = 3;</code>
+     * <code>.Ref product_system = 3;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getProductSystemOrBuilder() {
       return getProductSystem();
     }
 
-    public static final int IMPACTMETHOD_FIELD_NUMBER = 4;
+    public static final int IMPACT_METHOD_FIELD_NUMBER = 4;
     private org.openlca.proto.Proto.Ref impactMethod_;
     /**
      * <pre>
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      * @return Whether the impactMethod field is set.
      */
     @java.lang.Override
@@ -6372,7 +6372,7 @@ public final class Proto {
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      * @return The impactMethod.
      */
     @java.lang.Override
@@ -6384,21 +6384,21 @@ public final class Proto {
      * The LCIA method for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref impactMethod = 4;</code>
+     * <code>.Ref impact_method = 4;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getImpactMethodOrBuilder() {
       return getImpactMethod();
     }
 
-    public static final int WITHCOSTS_FIELD_NUMBER = 5;
+    public static final int WITH_COSTS_FIELD_NUMBER = 5;
     private boolean withCosts_;
     /**
      * <pre>
      * Indicates whether life cycle costs should be also calculated (optional).
      * </pre>
      *
-     * <code>bool withCosts = 5;</code>
+     * <code>bool with_costs = 5;</code>
      * @return The withCosts.
      */
     @java.lang.Override
@@ -6406,14 +6406,14 @@ public final class Proto {
       return withCosts_;
     }
 
-    public static final int NWSET_FIELD_NUMBER = 6;
+    public static final int NW_SET_FIELD_NUMBER = 6;
     private org.openlca.proto.Proto.Ref nwSet_;
     /**
      * <pre>
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      * @return Whether the nwSet field is set.
      */
     @java.lang.Override
@@ -6425,7 +6425,7 @@ public final class Proto {
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      * @return The nwSet.
      */
     @java.lang.Override
@@ -6437,21 +6437,21 @@ public final class Proto {
      * The normalisation and weighting set for the calculation (optional).
      * </pre>
      *
-     * <code>.Ref nwSet = 6;</code>
+     * <code>.Ref nw_set = 6;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getNwSetOrBuilder() {
       return getNwSet();
     }
 
-    public static final int ALLOCATIONMETHOD_FIELD_NUMBER = 7;
+    public static final int ALLOCATION_METHOD_FIELD_NUMBER = 7;
     private int allocationMethod_;
     /**
      * <pre>
      * The calculation type to be used in the calculation (optional).
      * </pre>
      *
-     * <code>.AllocationType allocationMethod = 7;</code>
+     * <code>.AllocationType allocation_method = 7;</code>
      * @return The enum numeric value on the wire for allocationMethod.
      */
     @java.lang.Override public int getAllocationMethodValue() {
@@ -6462,7 +6462,7 @@ public final class Proto {
      * The calculation type to be used in the calculation (optional).
      * </pre>
      *
-     * <code>.AllocationType allocationMethod = 7;</code>
+     * <code>.AllocationType allocation_method = 7;</code>
      * @return The allocationMethod.
      */
     @java.lang.Override public org.openlca.proto.Proto.AllocationType getAllocationMethod() {
@@ -6471,7 +6471,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
     }
 
-    public static final int PARAMETERREDEFS_FIELD_NUMBER = 8;
+    public static final int PARAMETER_REDEFS_FIELD_NUMBER = 8;
     private java.util.List<org.openlca.proto.Proto.ParameterRedef> parameterRedefs_;
     /**
      * <pre>
@@ -6479,7 +6479,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ParameterRedef> getParameterRedefsList() {
@@ -6491,7 +6491,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
@@ -6504,7 +6504,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     @java.lang.Override
     public int getParameterRedefsCount() {
@@ -6516,7 +6516,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterRedef getParameterRedefs(int index) {
@@ -6528,7 +6528,7 @@ public final class Proto {
      * (optional).
      * </pre>
      *
-     * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+     * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterRedefOrBuilder getParameterRedefsOrBuilder(
@@ -6589,14 +6589,14 @@ public final class Proto {
       return getUnit();
     }
 
-    public static final int FLOWPROPERTY_FIELD_NUMBER = 11;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 11;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -6608,7 +6608,7 @@ public final class Proto {
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -6620,7 +6620,7 @@ public final class Proto {
      * (optional)
      * </pre>
      *
-     * <code>.Ref flowProperty = 11;</code>
+     * <code>.Ref flow_property = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
@@ -6790,27 +6790,27 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + CALCULATIONTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + CALCULATION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + calculationType_;
       if (hasProductSystem()) {
-        hash = (37 * hash) + PRODUCTSYSTEM_FIELD_NUMBER;
+        hash = (37 * hash) + PRODUCT_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getProductSystem().hashCode();
       }
       if (hasImpactMethod()) {
-        hash = (37 * hash) + IMPACTMETHOD_FIELD_NUMBER;
+        hash = (37 * hash) + IMPACT_METHOD_FIELD_NUMBER;
         hash = (53 * hash) + getImpactMethod().hashCode();
       }
-      hash = (37 * hash) + WITHCOSTS_FIELD_NUMBER;
+      hash = (37 * hash) + WITH_COSTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWithCosts());
       if (hasNwSet()) {
-        hash = (37 * hash) + NWSET_FIELD_NUMBER;
+        hash = (37 * hash) + NW_SET_FIELD_NUMBER;
         hash = (53 * hash) + getNwSet().hashCode();
       }
-      hash = (37 * hash) + ALLOCATIONMETHOD_FIELD_NUMBER;
+      hash = (37 * hash) + ALLOCATION_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + allocationMethod_;
       if (getParameterRedefsCount() > 0) {
-        hash = (37 * hash) + PARAMETERREDEFS_FIELD_NUMBER;
+        hash = (37 * hash) + PARAMETER_REDEFS_FIELD_NUMBER;
         hash = (53 * hash) + getParameterRedefsList().hashCode();
       }
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
@@ -6821,7 +6821,7 @@ public final class Proto {
         hash = (53 * hash) + getUnit().hashCode();
       }
       if (hasFlowProperty()) {
-        hash = (37 * hash) + FLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -7316,7 +7316,7 @@ public final class Proto {
        * The type of calculation that should be performed.
        * </pre>
        *
-       * <code>.CalculationType calculationType = 2;</code>
+       * <code>.CalculationType calculation_type = 2;</code>
        * @return The enum numeric value on the wire for calculationType.
        */
       @java.lang.Override public int getCalculationTypeValue() {
@@ -7327,7 +7327,7 @@ public final class Proto {
        * The type of calculation that should be performed.
        * </pre>
        *
-       * <code>.CalculationType calculationType = 2;</code>
+       * <code>.CalculationType calculation_type = 2;</code>
        * @param value The enum numeric value on the wire for calculationType to set.
        * @return This builder for chaining.
        */
@@ -7342,7 +7342,7 @@ public final class Proto {
        * The type of calculation that should be performed.
        * </pre>
        *
-       * <code>.CalculationType calculationType = 2;</code>
+       * <code>.CalculationType calculation_type = 2;</code>
        * @return The calculationType.
        */
       @java.lang.Override
@@ -7356,7 +7356,7 @@ public final class Proto {
        * The type of calculation that should be performed.
        * </pre>
        *
-       * <code>.CalculationType calculationType = 2;</code>
+       * <code>.CalculationType calculation_type = 2;</code>
        * @param value The calculationType to set.
        * @return This builder for chaining.
        */
@@ -7374,7 +7374,7 @@ public final class Proto {
        * The type of calculation that should be performed.
        * </pre>
        *
-       * <code>.CalculationType calculationType = 2;</code>
+       * <code>.CalculationType calculation_type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCalculationType() {
@@ -7392,7 +7392,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        * @return Whether the productSystem field is set.
        */
       public boolean hasProductSystem() {
@@ -7403,7 +7403,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        * @return The productSystem.
        */
       public org.openlca.proto.Proto.Ref getProductSystem() {
@@ -7418,7 +7418,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public Builder setProductSystem(org.openlca.proto.Proto.Ref value) {
         if (productSystemBuilder_ == null) {
@@ -7438,7 +7438,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public Builder setProductSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -7456,7 +7456,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public Builder mergeProductSystem(org.openlca.proto.Proto.Ref value) {
         if (productSystemBuilder_ == null) {
@@ -7478,7 +7478,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public Builder clearProductSystem() {
         if (productSystemBuilder_ == null) {
@@ -7496,7 +7496,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getProductSystemBuilder() {
         
@@ -7508,7 +7508,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getProductSystemOrBuilder() {
         if (productSystemBuilder_ != null) {
@@ -7523,7 +7523,7 @@ public final class Proto {
        * The product system that should be calculated (required).
        * </pre>
        *
-       * <code>.Ref productSystem = 3;</code>
+       * <code>.Ref product_system = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -7547,7 +7547,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        * @return Whether the impactMethod field is set.
        */
       public boolean hasImpactMethod() {
@@ -7558,7 +7558,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        * @return The impactMethod.
        */
       public org.openlca.proto.Proto.Ref getImpactMethod() {
@@ -7573,7 +7573,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public Builder setImpactMethod(org.openlca.proto.Proto.Ref value) {
         if (impactMethodBuilder_ == null) {
@@ -7593,7 +7593,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public Builder setImpactMethod(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -7611,7 +7611,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public Builder mergeImpactMethod(org.openlca.proto.Proto.Ref value) {
         if (impactMethodBuilder_ == null) {
@@ -7633,7 +7633,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public Builder clearImpactMethod() {
         if (impactMethodBuilder_ == null) {
@@ -7651,7 +7651,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getImpactMethodBuilder() {
         
@@ -7663,7 +7663,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getImpactMethodOrBuilder() {
         if (impactMethodBuilder_ != null) {
@@ -7678,7 +7678,7 @@ public final class Proto {
        * The LCIA method for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref impactMethod = 4;</code>
+       * <code>.Ref impact_method = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -7700,7 +7700,7 @@ public final class Proto {
        * Indicates whether life cycle costs should be also calculated (optional).
        * </pre>
        *
-       * <code>bool withCosts = 5;</code>
+       * <code>bool with_costs = 5;</code>
        * @return The withCosts.
        */
       @java.lang.Override
@@ -7712,7 +7712,7 @@ public final class Proto {
        * Indicates whether life cycle costs should be also calculated (optional).
        * </pre>
        *
-       * <code>bool withCosts = 5;</code>
+       * <code>bool with_costs = 5;</code>
        * @param value The withCosts to set.
        * @return This builder for chaining.
        */
@@ -7727,7 +7727,7 @@ public final class Proto {
        * Indicates whether life cycle costs should be also calculated (optional).
        * </pre>
        *
-       * <code>bool withCosts = 5;</code>
+       * <code>bool with_costs = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearWithCosts() {
@@ -7745,7 +7745,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        * @return Whether the nwSet field is set.
        */
       public boolean hasNwSet() {
@@ -7756,7 +7756,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        * @return The nwSet.
        */
       public org.openlca.proto.Proto.Ref getNwSet() {
@@ -7771,7 +7771,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public Builder setNwSet(org.openlca.proto.Proto.Ref value) {
         if (nwSetBuilder_ == null) {
@@ -7791,7 +7791,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public Builder setNwSet(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -7809,7 +7809,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public Builder mergeNwSet(org.openlca.proto.Proto.Ref value) {
         if (nwSetBuilder_ == null) {
@@ -7831,7 +7831,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public Builder clearNwSet() {
         if (nwSetBuilder_ == null) {
@@ -7849,7 +7849,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getNwSetBuilder() {
         
@@ -7861,7 +7861,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getNwSetOrBuilder() {
         if (nwSetBuilder_ != null) {
@@ -7876,7 +7876,7 @@ public final class Proto {
        * The normalisation and weighting set for the calculation (optional).
        * </pre>
        *
-       * <code>.Ref nwSet = 6;</code>
+       * <code>.Ref nw_set = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -7898,7 +7898,7 @@ public final class Proto {
        * The calculation type to be used in the calculation (optional).
        * </pre>
        *
-       * <code>.AllocationType allocationMethod = 7;</code>
+       * <code>.AllocationType allocation_method = 7;</code>
        * @return The enum numeric value on the wire for allocationMethod.
        */
       @java.lang.Override public int getAllocationMethodValue() {
@@ -7909,7 +7909,7 @@ public final class Proto {
        * The calculation type to be used in the calculation (optional).
        * </pre>
        *
-       * <code>.AllocationType allocationMethod = 7;</code>
+       * <code>.AllocationType allocation_method = 7;</code>
        * @param value The enum numeric value on the wire for allocationMethod to set.
        * @return This builder for chaining.
        */
@@ -7924,7 +7924,7 @@ public final class Proto {
        * The calculation type to be used in the calculation (optional).
        * </pre>
        *
-       * <code>.AllocationType allocationMethod = 7;</code>
+       * <code>.AllocationType allocation_method = 7;</code>
        * @return The allocationMethod.
        */
       @java.lang.Override
@@ -7938,7 +7938,7 @@ public final class Proto {
        * The calculation type to be used in the calculation (optional).
        * </pre>
        *
-       * <code>.AllocationType allocationMethod = 7;</code>
+       * <code>.AllocationType allocation_method = 7;</code>
        * @param value The allocationMethod to set.
        * @return This builder for chaining.
        */
@@ -7956,7 +7956,7 @@ public final class Proto {
        * The calculation type to be used in the calculation (optional).
        * </pre>
        *
-       * <code>.AllocationType allocationMethod = 7;</code>
+       * <code>.AllocationType allocation_method = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllocationMethod() {
@@ -7984,7 +7984,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ParameterRedef> getParameterRedefsList() {
         if (parameterRedefsBuilder_ == null) {
@@ -7999,7 +7999,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public int getParameterRedefsCount() {
         if (parameterRedefsBuilder_ == null) {
@@ -8014,7 +8014,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public org.openlca.proto.Proto.ParameterRedef getParameterRedefs(int index) {
         if (parameterRedefsBuilder_ == null) {
@@ -8029,7 +8029,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder setParameterRedefs(
           int index, org.openlca.proto.Proto.ParameterRedef value) {
@@ -8051,7 +8051,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder setParameterRedefs(
           int index, org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
@@ -8070,7 +8070,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder addParameterRedefs(org.openlca.proto.Proto.ParameterRedef value) {
         if (parameterRedefsBuilder_ == null) {
@@ -8091,7 +8091,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder addParameterRedefs(
           int index, org.openlca.proto.Proto.ParameterRedef value) {
@@ -8113,7 +8113,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder addParameterRedefs(
           org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
@@ -8132,7 +8132,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder addParameterRedefs(
           int index, org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
@@ -8151,7 +8151,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder addAllParameterRedefs(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ParameterRedef> values) {
@@ -8171,7 +8171,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder clearParameterRedefs() {
         if (parameterRedefsBuilder_ == null) {
@@ -8189,7 +8189,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public Builder removeParameterRedefs(int index) {
         if (parameterRedefsBuilder_ == null) {
@@ -8207,7 +8207,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public org.openlca.proto.Proto.ParameterRedef.Builder getParameterRedefsBuilder(
           int index) {
@@ -8219,7 +8219,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public org.openlca.proto.Proto.ParameterRedefOrBuilder getParameterRedefsOrBuilder(
           int index) {
@@ -8234,7 +8234,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
            getParameterRedefsOrBuilderList() {
@@ -8250,7 +8250,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public org.openlca.proto.Proto.ParameterRedef.Builder addParameterRedefsBuilder() {
         return getParameterRedefsFieldBuilder().addBuilder(
@@ -8262,7 +8262,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public org.openlca.proto.Proto.ParameterRedef.Builder addParameterRedefsBuilder(
           int index) {
@@ -8275,7 +8275,7 @@ public final class Proto {
        * (optional).
        * </pre>
        *
-       * <code>repeated .ParameterRedef parameterRedefs = 8;</code>
+       * <code>repeated .ParameterRedef parameter_redefs = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ParameterRedef.Builder> 
            getParameterRedefsBuilderList() {
@@ -8502,7 +8502,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -8513,7 +8513,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -8528,7 +8528,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -8548,7 +8548,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -8566,7 +8566,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -8588,7 +8588,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -8606,7 +8606,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -8618,7 +8618,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -8633,7 +8633,7 @@ public final class Proto {
        * (optional)
        * </pre>
        *
-       * <code>.Ref flowProperty = 11;</code>
+       * <code>.Ref flow_property = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -8816,7 +8816,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -8825,7 +8825,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -8863,7 +8863,7 @@ public final class Proto {
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.ModelType modelType = 8;</code>
+     * <code>.ModelType model_type = 8;</code>
      * @return The enum numeric value on the wire for modelType.
      */
     int getModelTypeValue();
@@ -8872,7 +8872,7 @@ public final class Proto {
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.ModelType modelType = 8;</code>
+     * <code>.ModelType model_type = 8;</code>
      * @return The modelType.
      */
     org.openlca.proto.Proto.ModelType getModelType();
@@ -9259,14 +9259,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -9287,7 +9287,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -9343,14 +9343,14 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int MODELTYPE_FIELD_NUMBER = 8;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 8;
     private int modelType_;
     /**
      * <pre>
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.ModelType modelType = 8;</code>
+     * <code>.ModelType model_type = 8;</code>
      * @return The enum numeric value on the wire for modelType.
      */
     @java.lang.Override public int getModelTypeValue() {
@@ -9361,7 +9361,7 @@ public final class Proto {
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.ModelType modelType = 8;</code>
+     * <code>.ModelType model_type = 8;</code>
      * @return The modelType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ModelType getModelType() {
@@ -9497,13 +9497,13 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + MODELTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + modelType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10311,7 +10311,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -10331,7 +10331,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -10352,7 +10352,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -10371,7 +10371,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -10385,7 +10385,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -10562,7 +10562,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.ModelType modelType = 8;</code>
+       * <code>.ModelType model_type = 8;</code>
        * @return The enum numeric value on the wire for modelType.
        */
       @java.lang.Override public int getModelTypeValue() {
@@ -10573,7 +10573,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.ModelType modelType = 8;</code>
+       * <code>.ModelType model_type = 8;</code>
        * @param value The enum numeric value on the wire for modelType to set.
        * @return This builder for chaining.
        */
@@ -10588,7 +10588,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.ModelType modelType = 8;</code>
+       * <code>.ModelType model_type = 8;</code>
        * @return The modelType.
        */
       @java.lang.Override
@@ -10602,7 +10602,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.ModelType modelType = 8;</code>
+       * <code>.ModelType model_type = 8;</code>
        * @param value The modelType to set.
        * @return This builder for chaining.
        */
@@ -10620,7 +10620,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.ModelType modelType = 8;</code>
+       * <code>.ModelType model_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearModelType() {
@@ -13078,7 +13078,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -13087,7 +13087,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -13121,7 +13121,7 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>bool hasUncertainties = 8;</code>
+     * <code>bool has_uncertainties = 8;</code>
      * @return The hasUncertainties.
      */
     boolean getHasUncertainties();
@@ -13569,14 +13569,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -13597,7 +13597,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -13653,10 +13653,10 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int HASUNCERTAINTIES_FIELD_NUMBER = 8;
+    public static final int HAS_UNCERTAINTIES_FIELD_NUMBER = 8;
     private boolean hasUncertainties_;
     /**
-     * <code>bool hasUncertainties = 8;</code>
+     * <code>bool has_uncertainties = 8;</code>
      * @return The hasUncertainties.
      */
     @java.lang.Override
@@ -13879,13 +13879,13 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + HASUNCERTAINTIES_FIELD_NUMBER;
+      hash = (37 * hash) + HAS_UNCERTAINTIES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasUncertainties());
       if (hasSource()) {
@@ -14757,7 +14757,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -14777,7 +14777,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -14798,7 +14798,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -14817,7 +14817,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -14831,7 +14831,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -15004,7 +15004,7 @@ public final class Proto {
 
       private boolean hasUncertainties_ ;
       /**
-       * <code>bool hasUncertainties = 8;</code>
+       * <code>bool has_uncertainties = 8;</code>
        * @return The hasUncertainties.
        */
       @java.lang.Override
@@ -15012,7 +15012,7 @@ public final class Proto {
         return hasUncertainties_;
       }
       /**
-       * <code>bool hasUncertainties = 8;</code>
+       * <code>bool has_uncertainties = 8;</code>
        * @param value The hasUncertainties to set.
        * @return This builder for chaining.
        */
@@ -15023,7 +15023,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>bool hasUncertainties = 8;</code>
+       * <code>bool has_uncertainties = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasUncertainties() {
@@ -15478,7 +15478,7 @@ public final class Proto {
      * The value should be &gt;= 1.
      * </pre>
      *
-     * <code>int32 internalId = 2;</code>
+     * <code>int32 internal_id = 2;</code>
      * @return The internalId.
      */
     int getInternalId();
@@ -15488,7 +15488,7 @@ public final class Proto {
      * Indicates whether this exchange is an avoided product.
      * </pre>
      *
-     * <code>bool avoidedProduct = 3;</code>
+     * <code>bool avoided_product = 3;</code>
      * @return The avoidedProduct.
      */
     boolean getAvoidedProduct();
@@ -15525,7 +15525,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -15534,7 +15534,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -15543,7 +15543,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
@@ -15559,13 +15559,13 @@ public final class Proto {
      * process.
      * </pre>
      *
-     * <code>bool quantitativeReference = 7;</code>
+     * <code>bool quantitative_reference = 7;</code>
      * @return The quantitativeReference.
      */
     boolean getQuantitativeReference();
 
     /**
-     * <code>double baseUncertainty = 8;</code>
+     * <code>double base_uncertainty = 8;</code>
      * @return The baseUncertainty.
      */
     double getBaseUncertainty();
@@ -15580,7 +15580,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      * @return Whether the defaultProvider field is set.
      */
     boolean hasDefaultProvider();
@@ -15594,7 +15594,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      * @return The defaultProvider.
      */
     org.openlca.proto.Proto.ProcessRef getDefaultProvider();
@@ -15608,7 +15608,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      */
     org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder();
 
@@ -15619,12 +15619,12 @@ public final class Proto {
     double getAmount();
 
     /**
-     * <code>string amountFormula = 11;</code>
+     * <code>string amount_formula = 11;</code>
      * @return The amountFormula.
      */
     java.lang.String getAmountFormula();
     /**
-     * <code>string amountFormula = 11;</code>
+     * <code>string amount_formula = 11;</code>
      * @return The bytes for amountFormula.
      */
     com.google.protobuf.ByteString
@@ -15654,7 +15654,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 13;</code>
+     * <code>string dq_entry = 13;</code>
      * @return The dqEntry.
      */
     java.lang.String getDqEntry();
@@ -15667,7 +15667,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 13;</code>
+     * <code>string dq_entry = 13;</code>
      * @return The bytes for dqEntry.
      */
     com.google.protobuf.ByteString
@@ -15964,7 +15964,7 @@ public final class Proto {
       }
     }
 
-    public static final int INTERNALID_FIELD_NUMBER = 2;
+    public static final int INTERNAL_ID_FIELD_NUMBER = 2;
     private int internalId_;
     /**
      * <pre>
@@ -15974,7 +15974,7 @@ public final class Proto {
      * The value should be &gt;= 1.
      * </pre>
      *
-     * <code>int32 internalId = 2;</code>
+     * <code>int32 internal_id = 2;</code>
      * @return The internalId.
      */
     @java.lang.Override
@@ -15982,14 +15982,14 @@ public final class Proto {
       return internalId_;
     }
 
-    public static final int AVOIDEDPRODUCT_FIELD_NUMBER = 3;
+    public static final int AVOIDED_PRODUCT_FIELD_NUMBER = 3;
     private boolean avoidedProduct_;
     /**
      * <pre>
      * Indicates whether this exchange is an avoided product.
      * </pre>
      *
-     * <code>bool avoidedProduct = 3;</code>
+     * <code>bool avoided_product = 3;</code>
      * @return The avoidedProduct.
      */
     @java.lang.Override
@@ -16035,14 +16035,14 @@ public final class Proto {
       return getFlow();
     }
 
-    public static final int FLOWPROPERTY_FIELD_NUMBER = 5;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 5;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -16054,7 +16054,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -16066,7 +16066,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.Ref flowProperty = 5;</code>
+     * <code>.Ref flow_property = 5;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
@@ -16084,7 +16084,7 @@ public final class Proto {
       return input_;
     }
 
-    public static final int QUANTITATIVEREFERENCE_FIELD_NUMBER = 7;
+    public static final int QUANTITATIVE_REFERENCE_FIELD_NUMBER = 7;
     private boolean quantitativeReference_;
     /**
      * <pre>
@@ -16092,7 +16092,7 @@ public final class Proto {
      * process.
      * </pre>
      *
-     * <code>bool quantitativeReference = 7;</code>
+     * <code>bool quantitative_reference = 7;</code>
      * @return The quantitativeReference.
      */
     @java.lang.Override
@@ -16100,10 +16100,10 @@ public final class Proto {
       return quantitativeReference_;
     }
 
-    public static final int BASEUNCERTAINTY_FIELD_NUMBER = 8;
+    public static final int BASE_UNCERTAINTY_FIELD_NUMBER = 8;
     private double baseUncertainty_;
     /**
-     * <code>double baseUncertainty = 8;</code>
+     * <code>double base_uncertainty = 8;</code>
      * @return The baseUncertainty.
      */
     @java.lang.Override
@@ -16111,7 +16111,7 @@ public final class Proto {
       return baseUncertainty_;
     }
 
-    public static final int DEFAULTPROVIDER_FIELD_NUMBER = 9;
+    public static final int DEFAULT_PROVIDER_FIELD_NUMBER = 9;
     private org.openlca.proto.Proto.ProcessRef defaultProvider_;
     /**
      * <pre>
@@ -16123,7 +16123,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      * @return Whether the defaultProvider field is set.
      */
     @java.lang.Override
@@ -16140,7 +16140,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      * @return The defaultProvider.
      */
     @java.lang.Override
@@ -16157,7 +16157,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.ProcessRef defaultProvider = 9;</code>
+     * <code>.ProcessRef default_provider = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder() {
@@ -16175,10 +16175,10 @@ public final class Proto {
       return amount_;
     }
 
-    public static final int AMOUNTFORMULA_FIELD_NUMBER = 11;
+    public static final int AMOUNT_FORMULA_FIELD_NUMBER = 11;
     private volatile java.lang.Object amountFormula_;
     /**
-     * <code>string amountFormula = 11;</code>
+     * <code>string amount_formula = 11;</code>
      * @return The amountFormula.
      */
     @java.lang.Override
@@ -16195,7 +16195,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string amountFormula = 11;</code>
+     * <code>string amount_formula = 11;</code>
      * @return The bytes for amountFormula.
      */
     @java.lang.Override
@@ -16239,7 +16239,7 @@ public final class Proto {
       return getUnit();
     }
 
-    public static final int DQENTRY_FIELD_NUMBER = 13;
+    public static final int DQ_ENTRY_FIELD_NUMBER = 13;
     private volatile java.lang.Object dqEntry_;
     /**
      * <pre>
@@ -16250,7 +16250,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 13;</code>
+     * <code>string dq_entry = 13;</code>
      * @return The dqEntry.
      */
     @java.lang.Override
@@ -16275,7 +16275,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 13;</code>
+     * <code>string dq_entry = 13;</code>
      * @return The bytes for dqEntry.
      */
     @java.lang.Override
@@ -16564,9 +16564,9 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + INTERNALID_FIELD_NUMBER;
+      hash = (37 * hash) + INTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInternalId();
-      hash = (37 * hash) + AVOIDEDPRODUCT_FIELD_NUMBER;
+      hash = (37 * hash) + AVOIDED_PRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAvoidedProduct());
       if (hasFlow()) {
@@ -16574,32 +16574,32 @@ public final class Proto {
         hash = (53 * hash) + getFlow().hashCode();
       }
       if (hasFlowProperty()) {
-        hash = (37 * hash) + FLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
       }
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getInput());
-      hash = (37 * hash) + QUANTITATIVEREFERENCE_FIELD_NUMBER;
+      hash = (37 * hash) + QUANTITATIVE_REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getQuantitativeReference());
-      hash = (37 * hash) + BASEUNCERTAINTY_FIELD_NUMBER;
+      hash = (37 * hash) + BASE_UNCERTAINTY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getBaseUncertainty()));
       if (hasDefaultProvider()) {
-        hash = (37 * hash) + DEFAULTPROVIDER_FIELD_NUMBER;
+        hash = (37 * hash) + DEFAULT_PROVIDER_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultProvider().hashCode();
       }
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getAmount()));
-      hash = (37 * hash) + AMOUNTFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + AMOUNT_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getAmountFormula().hashCode();
       if (hasUnit()) {
         hash = (37 * hash) + UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getUnit().hashCode();
       }
-      hash = (37 * hash) + DQENTRY_FIELD_NUMBER;
+      hash = (37 * hash) + DQ_ENTRY_FIELD_NUMBER;
       hash = (53 * hash) + getDqEntry().hashCode();
       if (hasUncertainty()) {
         hash = (37 * hash) + UNCERTAINTY_FIELD_NUMBER;
@@ -17095,7 +17095,7 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internalId = 2;</code>
+       * <code>int32 internal_id = 2;</code>
        * @return The internalId.
        */
       @java.lang.Override
@@ -17110,7 +17110,7 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internalId = 2;</code>
+       * <code>int32 internal_id = 2;</code>
        * @param value The internalId to set.
        * @return This builder for chaining.
        */
@@ -17128,7 +17128,7 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internalId = 2;</code>
+       * <code>int32 internal_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearInternalId() {
@@ -17144,7 +17144,7 @@ public final class Proto {
        * Indicates whether this exchange is an avoided product.
        * </pre>
        *
-       * <code>bool avoidedProduct = 3;</code>
+       * <code>bool avoided_product = 3;</code>
        * @return The avoidedProduct.
        */
       @java.lang.Override
@@ -17156,7 +17156,7 @@ public final class Proto {
        * Indicates whether this exchange is an avoided product.
        * </pre>
        *
-       * <code>bool avoidedProduct = 3;</code>
+       * <code>bool avoided_product = 3;</code>
        * @param value The avoidedProduct to set.
        * @return This builder for chaining.
        */
@@ -17171,7 +17171,7 @@ public final class Proto {
        * Indicates whether this exchange is an avoided product.
        * </pre>
        *
-       * <code>bool avoidedProduct = 3;</code>
+       * <code>bool avoided_product = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvoidedProduct() {
@@ -17344,7 +17344,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -17355,7 +17355,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -17370,7 +17370,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -17390,7 +17390,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -17408,7 +17408,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -17430,7 +17430,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -17448,7 +17448,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -17460,7 +17460,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -17475,7 +17475,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.Ref flowProperty = 5;</code>
+       * <code>.Ref flow_property = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -17529,7 +17529,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitativeReference = 7;</code>
+       * <code>bool quantitative_reference = 7;</code>
        * @return The quantitativeReference.
        */
       @java.lang.Override
@@ -17542,7 +17542,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitativeReference = 7;</code>
+       * <code>bool quantitative_reference = 7;</code>
        * @param value The quantitativeReference to set.
        * @return This builder for chaining.
        */
@@ -17558,7 +17558,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitativeReference = 7;</code>
+       * <code>bool quantitative_reference = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuantitativeReference() {
@@ -17570,7 +17570,7 @@ public final class Proto {
 
       private double baseUncertainty_ ;
       /**
-       * <code>double baseUncertainty = 8;</code>
+       * <code>double base_uncertainty = 8;</code>
        * @return The baseUncertainty.
        */
       @java.lang.Override
@@ -17578,7 +17578,7 @@ public final class Proto {
         return baseUncertainty_;
       }
       /**
-       * <code>double baseUncertainty = 8;</code>
+       * <code>double base_uncertainty = 8;</code>
        * @param value The baseUncertainty to set.
        * @return This builder for chaining.
        */
@@ -17589,7 +17589,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>double baseUncertainty = 8;</code>
+       * <code>double base_uncertainty = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearBaseUncertainty() {
@@ -17612,7 +17612,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        * @return Whether the defaultProvider field is set.
        */
       public boolean hasDefaultProvider() {
@@ -17628,7 +17628,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        * @return The defaultProvider.
        */
       public org.openlca.proto.Proto.ProcessRef getDefaultProvider() {
@@ -17648,7 +17648,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public Builder setDefaultProvider(org.openlca.proto.Proto.ProcessRef value) {
         if (defaultProviderBuilder_ == null) {
@@ -17673,7 +17673,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public Builder setDefaultProvider(
           org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -17696,7 +17696,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public Builder mergeDefaultProvider(org.openlca.proto.Proto.ProcessRef value) {
         if (defaultProviderBuilder_ == null) {
@@ -17723,7 +17723,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public Builder clearDefaultProvider() {
         if (defaultProviderBuilder_ == null) {
@@ -17746,7 +17746,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder getDefaultProviderBuilder() {
         
@@ -17763,7 +17763,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       public org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder() {
         if (defaultProviderBuilder_ != null) {
@@ -17783,7 +17783,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.ProcessRef defaultProvider = 9;</code>
+       * <code>.ProcessRef default_provider = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> 
@@ -17832,7 +17832,7 @@ public final class Proto {
 
       private java.lang.Object amountFormula_ = "";
       /**
-       * <code>string amountFormula = 11;</code>
+       * <code>string amount_formula = 11;</code>
        * @return The amountFormula.
        */
       public java.lang.String getAmountFormula() {
@@ -17848,7 +17848,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string amountFormula = 11;</code>
+       * <code>string amount_formula = 11;</code>
        * @return The bytes for amountFormula.
        */
       public com.google.protobuf.ByteString
@@ -17865,7 +17865,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string amountFormula = 11;</code>
+       * <code>string amount_formula = 11;</code>
        * @param value The amountFormula to set.
        * @return This builder for chaining.
        */
@@ -17880,7 +17880,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string amountFormula = 11;</code>
+       * <code>string amount_formula = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearAmountFormula() {
@@ -17890,7 +17890,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string amountFormula = 11;</code>
+       * <code>string amount_formula = 11;</code>
        * @param value The bytes for amountFormula to set.
        * @return This builder for chaining.
        */
@@ -18035,7 +18035,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 13;</code>
+       * <code>string dq_entry = 13;</code>
        * @return The dqEntry.
        */
       public java.lang.String getDqEntry() {
@@ -18059,7 +18059,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 13;</code>
+       * <code>string dq_entry = 13;</code>
        * @return The bytes for dqEntry.
        */
       public com.google.protobuf.ByteString
@@ -18084,7 +18084,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 13;</code>
+       * <code>string dq_entry = 13;</code>
        * @param value The dqEntry to set.
        * @return This builder for chaining.
        */
@@ -18107,7 +18107,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 13;</code>
+       * <code>string dq_entry = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearDqEntry() {
@@ -18125,7 +18125,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 13;</code>
+       * <code>string dq_entry = 13;</code>
        * @param value The bytes for dqEntry to set.
        * @return This builder for chaining.
        */
@@ -18523,7 +18523,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -18532,7 +18532,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -18571,7 +18571,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.FlowType flowType = 8;</code>
+     * <code>.FlowType flow_type = 8;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     int getFlowTypeValue();
@@ -18581,7 +18581,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.FlowType flowType = 8;</code>
+     * <code>.FlowType flow_type = 8;</code>
      * @return The flowType.
      */
     org.openlca.proto.Proto.FlowType getFlowType();
@@ -18633,7 +18633,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> 
         getFlowPropertiesList();
@@ -18644,7 +18644,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index);
     /**
@@ -18654,7 +18654,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     int getFlowPropertiesCount();
     /**
@@ -18664,7 +18664,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
         getFlowPropertiesOrBuilderList();
@@ -18675,7 +18675,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
         int index);
@@ -19134,14 +19134,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -19162,7 +19162,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -19218,7 +19218,7 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int FLOWTYPE_FIELD_NUMBER = 8;
+    public static final int FLOW_TYPE_FIELD_NUMBER = 8;
     private int flowType_;
     /**
      * <pre>
@@ -19226,7 +19226,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.FlowType flowType = 8;</code>
+     * <code>.FlowType flow_type = 8;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     @java.lang.Override public int getFlowTypeValue() {
@@ -19238,7 +19238,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.FlowType flowType = 8;</code>
+     * <code>.FlowType flow_type = 8;</code>
      * @return The flowType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowType getFlowType() {
@@ -19339,7 +19339,7 @@ public final class Proto {
       }
     }
 
-    public static final int FLOWPROPERTIES_FIELD_NUMBER = 11;
+    public static final int FLOW_PROPERTIES_FIELD_NUMBER = 11;
     private java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> flowProperties_;
     /**
      * <pre>
@@ -19348,7 +19348,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> getFlowPropertiesList() {
@@ -19361,7 +19361,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
@@ -19375,7 +19375,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     @java.lang.Override
     public int getFlowPropertiesCount() {
@@ -19388,7 +19388,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index) {
@@ -19401,7 +19401,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+     * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
@@ -19617,20 +19617,20 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + FLOWTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + FLOW_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + flowType_;
       hash = (37 * hash) + CAS_FIELD_NUMBER;
       hash = (53 * hash) + getCas().hashCode();
       hash = (37 * hash) + FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getFormula().hashCode();
       if (getFlowPropertiesCount() > 0) {
-        hash = (37 * hash) + FLOWPROPERTIES_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getFlowPropertiesList().hashCode();
       }
       if (hasLocation()) {
@@ -20513,7 +20513,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -20533,7 +20533,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -20554,7 +20554,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -20573,7 +20573,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -20587,7 +20587,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -20765,7 +20765,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.FlowType flowType = 8;</code>
+       * <code>.FlowType flow_type = 8;</code>
        * @return The enum numeric value on the wire for flowType.
        */
       @java.lang.Override public int getFlowTypeValue() {
@@ -20777,7 +20777,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.FlowType flowType = 8;</code>
+       * <code>.FlowType flow_type = 8;</code>
        * @param value The enum numeric value on the wire for flowType to set.
        * @return This builder for chaining.
        */
@@ -20793,7 +20793,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.FlowType flowType = 8;</code>
+       * <code>.FlowType flow_type = 8;</code>
        * @return The flowType.
        */
       @java.lang.Override
@@ -20808,7 +20808,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.FlowType flowType = 8;</code>
+       * <code>.FlowType flow_type = 8;</code>
        * @param value The flowType to set.
        * @return This builder for chaining.
        */
@@ -20827,7 +20827,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.FlowType flowType = 8;</code>
+       * <code>.FlowType flow_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowType() {
@@ -21048,7 +21048,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> getFlowPropertiesList() {
         if (flowPropertiesBuilder_ == null) {
@@ -21064,7 +21064,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public int getFlowPropertiesCount() {
         if (flowPropertiesBuilder_ == null) {
@@ -21080,7 +21080,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index) {
         if (flowPropertiesBuilder_ == null) {
@@ -21096,7 +21096,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder setFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor value) {
@@ -21119,7 +21119,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder setFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21139,7 +21139,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder addFlowProperties(org.openlca.proto.Proto.FlowPropertyFactor value) {
         if (flowPropertiesBuilder_ == null) {
@@ -21161,7 +21161,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder addFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor value) {
@@ -21184,7 +21184,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder addFlowProperties(
           org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21204,7 +21204,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder addFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21224,7 +21224,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder addAllFlowProperties(
           java.lang.Iterable<? extends org.openlca.proto.Proto.FlowPropertyFactor> values) {
@@ -21245,7 +21245,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder clearFlowProperties() {
         if (flowPropertiesBuilder_ == null) {
@@ -21264,7 +21264,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public Builder removeFlowProperties(int index) {
         if (flowPropertiesBuilder_ == null) {
@@ -21283,7 +21283,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder getFlowPropertiesBuilder(
           int index) {
@@ -21296,7 +21296,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
           int index) {
@@ -21312,7 +21312,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
            getFlowPropertiesOrBuilderList() {
@@ -21329,7 +21329,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder addFlowPropertiesBuilder() {
         return getFlowPropertiesFieldBuilder().addBuilder(
@@ -21342,7 +21342,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder addFlowPropertiesBuilder(
           int index) {
@@ -21356,7 +21356,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .FlowPropertyFactor flowProperties = 11;</code>
+       * <code>repeated .FlowPropertyFactor flow_properties = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor.Builder> 
            getFlowPropertiesBuilderList() {
@@ -21717,7 +21717,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -21726,7 +21726,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -22234,14 +22234,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -22262,7 +22262,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -22561,7 +22561,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasSource()) {
         hash = (37 * hash) + SOURCE_FIELD_NUMBER;
@@ -23430,7 +23430,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -23450,7 +23450,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -23471,7 +23471,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -23490,7 +23490,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -23504,7 +23504,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -24327,7 +24327,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -24336,7 +24336,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -24401,7 +24401,7 @@ public final class Proto {
      * The factor to convert the original source flow to the target flow.
      * </pre>
      *
-     * <code>double conversionFactor = 9;</code>
+     * <code>double conversion_factor = 9;</code>
      * @return The conversionFactor.
      */
     double getConversionFactor();
@@ -24796,14 +24796,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -24824,7 +24824,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -24918,14 +24918,14 @@ public final class Proto {
       return getTo();
     }
 
-    public static final int CONVERSIONFACTOR_FIELD_NUMBER = 9;
+    public static final int CONVERSION_FACTOR_FIELD_NUMBER = 9;
     private double conversionFactor_;
     /**
      * <pre>
      * The factor to convert the original source flow to the target flow.
      * </pre>
      *
-     * <code>double conversionFactor = 9;</code>
+     * <code>double conversion_factor = 9;</code>
      * @return The conversionFactor.
      */
     @java.lang.Override
@@ -25074,7 +25074,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasFrom()) {
         hash = (37 * hash) + FROM_FIELD_NUMBER;
@@ -25084,7 +25084,7 @@ public final class Proto {
         hash = (37 * hash) + TO_FIELD_NUMBER;
         hash = (53 * hash) + getTo().hashCode();
       }
-      hash = (37 * hash) + CONVERSIONFACTOR_FIELD_NUMBER;
+      hash = (37 * hash) + CONVERSION_FACTOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getConversionFactor()));
       hash = (29 * hash) + unknownFields.hashCode();
@@ -25904,7 +25904,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -25924,7 +25924,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -25945,7 +25945,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -25964,7 +25964,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -25978,7 +25978,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -26310,7 +26310,7 @@ public final class Proto {
        * The factor to convert the original source flow to the target flow.
        * </pre>
        *
-       * <code>double conversionFactor = 9;</code>
+       * <code>double conversion_factor = 9;</code>
        * @return The conversionFactor.
        */
       @java.lang.Override
@@ -26322,7 +26322,7 @@ public final class Proto {
        * The factor to convert the original source flow to the target flow.
        * </pre>
        *
-       * <code>double conversionFactor = 9;</code>
+       * <code>double conversion_factor = 9;</code>
        * @param value The conversionFactor to set.
        * @return This builder for chaining.
        */
@@ -26337,7 +26337,7 @@ public final class Proto {
        * The factor to convert the original source flow to the target flow.
        * </pre>
        *
-       * <code>double conversionFactor = 9;</code>
+       * <code>double conversion_factor = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearConversionFactor() {
@@ -26458,7 +26458,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -26468,7 +26468,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -26478,7 +26478,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
@@ -26726,7 +26726,7 @@ public final class Proto {
       return getFlow();
     }
 
-    public static final int FLOWPROPERTY_FIELD_NUMBER = 3;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 3;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
@@ -26734,7 +26734,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -26747,7 +26747,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -26760,7 +26760,7 @@ public final class Proto {
      * is valid.
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
@@ -26905,7 +26905,7 @@ public final class Proto {
         hash = (53 * hash) + getFlow().hashCode();
       }
       if (hasFlowProperty()) {
-        hash = (37 * hash) + FLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
       }
       if (hasUnit()) {
@@ -27470,7 +27470,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -27482,7 +27482,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -27498,7 +27498,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -27519,7 +27519,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -27538,7 +27538,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -27561,7 +27561,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -27580,7 +27580,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -27593,7 +27593,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -27609,7 +27609,7 @@ public final class Proto {
        * is valid.
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -27947,7 +27947,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -27956,7 +27956,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -27994,7 +27994,7 @@ public final class Proto {
      * The type of the flow property
      * </pre>
      *
-     * <code>.FlowPropertyType flowPropertyType = 8;</code>
+     * <code>.FlowPropertyType flow_property_type = 8;</code>
      * @return The enum numeric value on the wire for flowPropertyType.
      */
     int getFlowPropertyTypeValue();
@@ -28003,7 +28003,7 @@ public final class Proto {
      * The type of the flow property
      * </pre>
      *
-     * <code>.FlowPropertyType flowPropertyType = 8;</code>
+     * <code>.FlowPropertyType flow_property_type = 8;</code>
      * @return The flowPropertyType.
      */
     org.openlca.proto.Proto.FlowPropertyType getFlowPropertyType();
@@ -28014,7 +28014,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      * @return Whether the unitGroup field is set.
      */
     boolean hasUnitGroup();
@@ -28024,7 +28024,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      * @return The unitGroup.
      */
     org.openlca.proto.Proto.Ref getUnitGroup();
@@ -28034,7 +28034,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder();
   }
@@ -28430,14 +28430,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -28458,7 +28458,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -28514,14 +28514,14 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int FLOWPROPERTYTYPE_FIELD_NUMBER = 8;
+    public static final int FLOW_PROPERTY_TYPE_FIELD_NUMBER = 8;
     private int flowPropertyType_;
     /**
      * <pre>
      * The type of the flow property
      * </pre>
      *
-     * <code>.FlowPropertyType flowPropertyType = 8;</code>
+     * <code>.FlowPropertyType flow_property_type = 8;</code>
      * @return The enum numeric value on the wire for flowPropertyType.
      */
     @java.lang.Override public int getFlowPropertyTypeValue() {
@@ -28532,7 +28532,7 @@ public final class Proto {
      * The type of the flow property
      * </pre>
      *
-     * <code>.FlowPropertyType flowPropertyType = 8;</code>
+     * <code>.FlowPropertyType flow_property_type = 8;</code>
      * @return The flowPropertyType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowPropertyType getFlowPropertyType() {
@@ -28541,7 +28541,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.FlowPropertyType.UNRECOGNIZED : result;
     }
 
-    public static final int UNITGROUP_FIELD_NUMBER = 9;
+    public static final int UNIT_GROUP_FIELD_NUMBER = 9;
     private org.openlca.proto.Proto.Ref unitGroup_;
     /**
      * <pre>
@@ -28549,7 +28549,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      * @return Whether the unitGroup field is set.
      */
     @java.lang.Override
@@ -28562,7 +28562,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      * @return The unitGroup.
      */
     @java.lang.Override
@@ -28575,7 +28575,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.Ref unitGroup = 9;</code>
+     * <code>.Ref unit_group = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder() {
@@ -28721,16 +28721,16 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + FLOWPROPERTYTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + FLOW_PROPERTY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + flowPropertyType_;
       if (hasUnitGroup()) {
-        hash = (37 * hash) + UNITGROUP_FIELD_NUMBER;
+        hash = (37 * hash) + UNIT_GROUP_FIELD_NUMBER;
         hash = (53 * hash) + getUnitGroup().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -29550,7 +29550,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -29570,7 +29570,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -29591,7 +29591,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -29610,7 +29610,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -29624,7 +29624,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -29801,7 +29801,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.FlowPropertyType flowPropertyType = 8;</code>
+       * <code>.FlowPropertyType flow_property_type = 8;</code>
        * @return The enum numeric value on the wire for flowPropertyType.
        */
       @java.lang.Override public int getFlowPropertyTypeValue() {
@@ -29812,7 +29812,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.FlowPropertyType flowPropertyType = 8;</code>
+       * <code>.FlowPropertyType flow_property_type = 8;</code>
        * @param value The enum numeric value on the wire for flowPropertyType to set.
        * @return This builder for chaining.
        */
@@ -29827,7 +29827,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.FlowPropertyType flowPropertyType = 8;</code>
+       * <code>.FlowPropertyType flow_property_type = 8;</code>
        * @return The flowPropertyType.
        */
       @java.lang.Override
@@ -29841,7 +29841,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.FlowPropertyType flowPropertyType = 8;</code>
+       * <code>.FlowPropertyType flow_property_type = 8;</code>
        * @param value The flowPropertyType to set.
        * @return This builder for chaining.
        */
@@ -29859,7 +29859,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.FlowPropertyType flowPropertyType = 8;</code>
+       * <code>.FlowPropertyType flow_property_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowPropertyType() {
@@ -29878,7 +29878,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        * @return Whether the unitGroup field is set.
        */
       public boolean hasUnitGroup() {
@@ -29890,7 +29890,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        * @return The unitGroup.
        */
       public org.openlca.proto.Proto.Ref getUnitGroup() {
@@ -29906,7 +29906,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public Builder setUnitGroup(org.openlca.proto.Proto.Ref value) {
         if (unitGroupBuilder_ == null) {
@@ -29927,7 +29927,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public Builder setUnitGroup(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -29946,7 +29946,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public Builder mergeUnitGroup(org.openlca.proto.Proto.Ref value) {
         if (unitGroupBuilder_ == null) {
@@ -29969,7 +29969,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public Builder clearUnitGroup() {
         if (unitGroupBuilder_ == null) {
@@ -29988,7 +29988,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getUnitGroupBuilder() {
         
@@ -30001,7 +30001,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder() {
         if (unitGroupBuilder_ != null) {
@@ -30017,7 +30017,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.Ref unitGroup = 9;</code>
+       * <code>.Ref unit_group = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -30116,7 +30116,7 @@ public final class Proto {
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -30125,7 +30125,7 @@ public final class Proto {
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -30134,7 +30134,7 @@ public final class Proto {
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
@@ -30143,7 +30143,7 @@ public final class Proto {
      * The value of the conversion factor.
      * </pre>
      *
-     * <code>double conversionFactor = 3;</code>
+     * <code>double conversion_factor = 3;</code>
      * @return The conversionFactor.
      */
     double getConversionFactor();
@@ -30155,7 +30155,7 @@ public final class Proto {
      * factor of 1.0 and there should be only one reference flow property.
      * </pre>
      *
-     * <code>bool referenceFlowProperty = 4;</code>
+     * <code>bool reference_flow_property = 4;</code>
      * @return The referenceFlowProperty.
      */
     boolean getReferenceFlowProperty();
@@ -30339,14 +30339,14 @@ public final class Proto {
       }
     }
 
-    public static final int FLOWPROPERTY_FIELD_NUMBER = 2;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -30358,7 +30358,7 @@ public final class Proto {
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -30370,21 +30370,21 @@ public final class Proto {
      * The flow property (quantity) of the factor.
      * </pre>
      *
-     * <code>.Ref flowProperty = 2;</code>
+     * <code>.Ref flow_property = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
       return getFlowProperty();
     }
 
-    public static final int CONVERSIONFACTOR_FIELD_NUMBER = 3;
+    public static final int CONVERSION_FACTOR_FIELD_NUMBER = 3;
     private double conversionFactor_;
     /**
      * <pre>
      * The value of the conversion factor.
      * </pre>
      *
-     * <code>double conversionFactor = 3;</code>
+     * <code>double conversion_factor = 3;</code>
      * @return The conversionFactor.
      */
     @java.lang.Override
@@ -30392,7 +30392,7 @@ public final class Proto {
       return conversionFactor_;
     }
 
-    public static final int REFERENCEFLOWPROPERTY_FIELD_NUMBER = 4;
+    public static final int REFERENCE_FLOW_PROPERTY_FIELD_NUMBER = 4;
     private boolean referenceFlowProperty_;
     /**
      * <pre>
@@ -30401,7 +30401,7 @@ public final class Proto {
      * factor of 1.0 and there should be only one reference flow property.
      * </pre>
      *
-     * <code>bool referenceFlowProperty = 4;</code>
+     * <code>bool reference_flow_property = 4;</code>
      * @return The referenceFlowProperty.
      */
     @java.lang.Override
@@ -30500,13 +30500,13 @@ public final class Proto {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       if (hasFlowProperty()) {
-        hash = (37 * hash) + FLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
       }
-      hash = (37 * hash) + CONVERSIONFACTOR_FIELD_NUMBER;
+      hash = (37 * hash) + CONVERSION_FACTOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getConversionFactor()));
-      hash = (37 * hash) + REFERENCEFLOWPROPERTY_FIELD_NUMBER;
+      hash = (37 * hash) + REFERENCE_FLOW_PROPERTY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReferenceFlowProperty());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -30911,7 +30911,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -30922,7 +30922,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -30937,7 +30937,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -30957,7 +30957,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -30975,7 +30975,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -30997,7 +30997,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -31015,7 +31015,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -31027,7 +31027,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -31042,7 +31042,7 @@ public final class Proto {
        * The flow property (quantity) of the factor.
        * </pre>
        *
-       * <code>.Ref flowProperty = 2;</code>
+       * <code>.Ref flow_property = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -31064,7 +31064,7 @@ public final class Proto {
        * The value of the conversion factor.
        * </pre>
        *
-       * <code>double conversionFactor = 3;</code>
+       * <code>double conversion_factor = 3;</code>
        * @return The conversionFactor.
        */
       @java.lang.Override
@@ -31076,7 +31076,7 @@ public final class Proto {
        * The value of the conversion factor.
        * </pre>
        *
-       * <code>double conversionFactor = 3;</code>
+       * <code>double conversion_factor = 3;</code>
        * @param value The conversionFactor to set.
        * @return This builder for chaining.
        */
@@ -31091,7 +31091,7 @@ public final class Proto {
        * The value of the conversion factor.
        * </pre>
        *
-       * <code>double conversionFactor = 3;</code>
+       * <code>double conversion_factor = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearConversionFactor() {
@@ -31109,7 +31109,7 @@ public final class Proto {
        * factor of 1.0 and there should be only one reference flow property.
        * </pre>
        *
-       * <code>bool referenceFlowProperty = 4;</code>
+       * <code>bool reference_flow_property = 4;</code>
        * @return The referenceFlowProperty.
        */
       @java.lang.Override
@@ -31123,7 +31123,7 @@ public final class Proto {
        * factor of 1.0 and there should be only one reference flow property.
        * </pre>
        *
-       * <code>bool referenceFlowProperty = 4;</code>
+       * <code>bool reference_flow_property = 4;</code>
        * @param value The referenceFlowProperty to set.
        * @return This builder for chaining.
        */
@@ -31140,7 +31140,7 @@ public final class Proto {
        * factor of 1.0 and there should be only one reference flow property.
        * </pre>
        *
-       * <code>bool referenceFlowProperty = 4;</code>
+       * <code>bool reference_flow_property = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReferenceFlowProperty() {
@@ -31211,7 +31211,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The refUnit.
      */
     java.lang.String getRefUnit();
@@ -31220,7 +31220,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The bytes for refUnit.
      */
     com.google.protobuf.ByteString
@@ -31253,7 +31253,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.FlowType flowType = 3;</code>
+     * <code>.FlowType flow_type = 3;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     int getFlowTypeValue();
@@ -31262,7 +31262,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.FlowType flowType = 3;</code>
+     * <code>.FlowType flow_type = 3;</code>
      * @return The flowType.
      */
     org.openlca.proto.Proto.FlowType getFlowType();
@@ -31369,14 +31369,14 @@ public final class Proto {
               org.openlca.proto.Proto.FlowRef.class, org.openlca.proto.Proto.FlowRef.Builder.class);
     }
 
-    public static final int REFUNIT_FIELD_NUMBER = 1;
+    public static final int REF_UNIT_FIELD_NUMBER = 1;
     private volatile java.lang.Object refUnit_;
     /**
      * <pre>
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The refUnit.
      */
     @java.lang.Override
@@ -31397,7 +31397,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The bytes for refUnit.
      */
     @java.lang.Override
@@ -31463,14 +31463,14 @@ public final class Proto {
       }
     }
 
-    public static final int FLOWTYPE_FIELD_NUMBER = 3;
+    public static final int FLOW_TYPE_FIELD_NUMBER = 3;
     private int flowType_;
     /**
      * <pre>
      * The type of the flow.
      * </pre>
      *
-     * <code>.FlowType flowType = 3;</code>
+     * <code>.FlowType flow_type = 3;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     @java.lang.Override public int getFlowTypeValue() {
@@ -31481,7 +31481,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.FlowType flowType = 3;</code>
+     * <code>.FlowType flow_type = 3;</code>
      * @return The flowType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowType getFlowType() {
@@ -31563,11 +31563,11 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REFUNIT_FIELD_NUMBER;
+      hash = (37 * hash) + REF_UNIT_FIELD_NUMBER;
       hash = (53 * hash) + getRefUnit().hashCode();
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
-      hash = (37 * hash) + FLOWTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + FLOW_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + flowType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -31835,7 +31835,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return The refUnit.
        */
       public java.lang.String getRefUnit() {
@@ -31855,7 +31855,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return The bytes for refUnit.
        */
       public com.google.protobuf.ByteString
@@ -31876,7 +31876,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @param value The refUnit to set.
        * @return This builder for chaining.
        */
@@ -31895,7 +31895,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefUnit() {
@@ -31909,7 +31909,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @param value The bytes for refUnit to set.
        * @return This builder for chaining.
        */
@@ -32032,7 +32032,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.FlowType flowType = 3;</code>
+       * <code>.FlowType flow_type = 3;</code>
        * @return The enum numeric value on the wire for flowType.
        */
       @java.lang.Override public int getFlowTypeValue() {
@@ -32043,7 +32043,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.FlowType flowType = 3;</code>
+       * <code>.FlowType flow_type = 3;</code>
        * @param value The enum numeric value on the wire for flowType to set.
        * @return This builder for chaining.
        */
@@ -32058,7 +32058,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.FlowType flowType = 3;</code>
+       * <code>.FlowType flow_type = 3;</code>
        * @return The flowType.
        */
       @java.lang.Override
@@ -32072,7 +32072,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.FlowType flowType = 3;</code>
+       * <code>.FlowType flow_type = 3;</code>
        * @param value The flowType to set.
        * @return This builder for chaining.
        */
@@ -32090,7 +32090,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.FlowType flowType = 3;</code>
+       * <code>.FlowType flow_type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowType() {
@@ -33334,7 +33334,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -33343,7 +33343,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -33354,7 +33354,7 @@ public final class Proto {
      * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
      * </pre>
      *
-     * <code>string referenceUnitName = 7;</code>
+     * <code>string reference_unit_name = 7;</code>
      * @return The referenceUnitName.
      */
     java.lang.String getReferenceUnitName();
@@ -33363,7 +33363,7 @@ public final class Proto {
      * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
      * </pre>
      *
-     * <code>string referenceUnitName = 7;</code>
+     * <code>string reference_unit_name = 7;</code>
      * @return The bytes for referenceUnitName.
      */
     com.google.protobuf.ByteString
@@ -33374,7 +33374,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     java.util.List<org.openlca.proto.Proto.ImpactFactor> 
         getImpactFactorsList();
@@ -33383,7 +33383,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index);
     /**
@@ -33391,7 +33391,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     int getImpactFactorsCount();
     /**
@@ -33399,7 +33399,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
         getImpactFactorsOrBuilderList();
@@ -33408,7 +33408,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
         int index);
@@ -33794,14 +33794,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -33822,7 +33822,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -33840,14 +33840,14 @@ public final class Proto {
       }
     }
 
-    public static final int REFERENCEUNITNAME_FIELD_NUMBER = 7;
+    public static final int REFERENCE_UNIT_NAME_FIELD_NUMBER = 7;
     private volatile java.lang.Object referenceUnitName_;
     /**
      * <pre>
      * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
      * </pre>
      *
-     * <code>string referenceUnitName = 7;</code>
+     * <code>string reference_unit_name = 7;</code>
      * @return The referenceUnitName.
      */
     @java.lang.Override
@@ -33868,7 +33868,7 @@ public final class Proto {
      * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
      * </pre>
      *
-     * <code>string referenceUnitName = 7;</code>
+     * <code>string reference_unit_name = 7;</code>
      * @return The bytes for referenceUnitName.
      */
     @java.lang.Override
@@ -33886,14 +33886,14 @@ public final class Proto {
       }
     }
 
-    public static final int IMPACTFACTORS_FIELD_NUMBER = 8;
+    public static final int IMPACT_FACTORS_FIELD_NUMBER = 8;
     private java.util.List<org.openlca.proto.Proto.ImpactFactor> impactFactors_;
     /**
      * <pre>
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ImpactFactor> getImpactFactorsList() {
@@ -33904,7 +33904,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
@@ -33916,7 +33916,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     @java.lang.Override
     public int getImpactFactorsCount() {
@@ -33927,7 +33927,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index) {
@@ -33938,7 +33938,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .ImpactFactor impactFactors = 8;</code>
+     * <code>repeated .ImpactFactor impact_factors = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
@@ -34070,12 +34070,12 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
-      hash = (37 * hash) + REFERENCEUNITNAME_FIELD_NUMBER;
+      hash = (37 * hash) + REFERENCE_UNIT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceUnitName().hashCode();
       if (getImpactFactorsCount() > 0) {
-        hash = (37 * hash) + IMPACTFACTORS_FIELD_NUMBER;
+        hash = (37 * hash) + IMPACT_FACTORS_FIELD_NUMBER;
         hash = (53 * hash) + getImpactFactorsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -34913,7 +34913,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -34933,7 +34933,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -34954,7 +34954,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -34973,7 +34973,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -34987,7 +34987,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -35009,7 +35009,7 @@ public final class Proto {
        * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
        * </pre>
        *
-       * <code>string referenceUnitName = 7;</code>
+       * <code>string reference_unit_name = 7;</code>
        * @return The referenceUnitName.
        */
       public java.lang.String getReferenceUnitName() {
@@ -35029,7 +35029,7 @@ public final class Proto {
        * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
        * </pre>
        *
-       * <code>string referenceUnitName = 7;</code>
+       * <code>string reference_unit_name = 7;</code>
        * @return The bytes for referenceUnitName.
        */
       public com.google.protobuf.ByteString
@@ -35050,7 +35050,7 @@ public final class Proto {
        * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
        * </pre>
        *
-       * <code>string referenceUnitName = 7;</code>
+       * <code>string reference_unit_name = 7;</code>
        * @param value The referenceUnitName to set.
        * @return This builder for chaining.
        */
@@ -35069,7 +35069,7 @@ public final class Proto {
        * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
        * </pre>
        *
-       * <code>string referenceUnitName = 7;</code>
+       * <code>string reference_unit_name = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearReferenceUnitName() {
@@ -35083,7 +35083,7 @@ public final class Proto {
        * The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
        * </pre>
        *
-       * <code>string referenceUnitName = 7;</code>
+       * <code>string reference_unit_name = 7;</code>
        * @param value The bytes for referenceUnitName to set.
        * @return This builder for chaining.
        */
@@ -35116,7 +35116,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactFactor> getImpactFactorsList() {
         if (impactFactorsBuilder_ == null) {
@@ -35130,7 +35130,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public int getImpactFactorsCount() {
         if (impactFactorsBuilder_ == null) {
@@ -35144,7 +35144,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index) {
         if (impactFactorsBuilder_ == null) {
@@ -35158,7 +35158,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder setImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor value) {
@@ -35179,7 +35179,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder setImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -35197,7 +35197,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder addImpactFactors(org.openlca.proto.Proto.ImpactFactor value) {
         if (impactFactorsBuilder_ == null) {
@@ -35217,7 +35217,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder addImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor value) {
@@ -35238,7 +35238,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder addImpactFactors(
           org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -35256,7 +35256,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder addImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -35274,7 +35274,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder addAllImpactFactors(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ImpactFactor> values) {
@@ -35293,7 +35293,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder clearImpactFactors() {
         if (impactFactorsBuilder_ == null) {
@@ -35310,7 +35310,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public Builder removeImpactFactors(int index) {
         if (impactFactorsBuilder_ == null) {
@@ -35327,7 +35327,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder getImpactFactorsBuilder(
           int index) {
@@ -35338,7 +35338,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
           int index) {
@@ -35352,7 +35352,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
            getImpactFactorsOrBuilderList() {
@@ -35367,7 +35367,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder addImpactFactorsBuilder() {
         return getImpactFactorsFieldBuilder().addBuilder(
@@ -35378,7 +35378,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder addImpactFactorsBuilder(
           int index) {
@@ -35390,7 +35390,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .ImpactFactor impactFactors = 8;</code>
+       * <code>repeated .ImpactFactor impact_factors = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactFactor.Builder> 
            getImpactFactorsBuilderList() {
@@ -35472,7 +35472,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The refUnit.
      */
     java.lang.String getRefUnit();
@@ -35481,7 +35481,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The bytes for refUnit.
      */
     com.google.protobuf.ByteString
@@ -35575,14 +35575,14 @@ public final class Proto {
               org.openlca.proto.Proto.ImpactCategoryRef.class, org.openlca.proto.Proto.ImpactCategoryRef.Builder.class);
     }
 
-    public static final int REFUNIT_FIELD_NUMBER = 1;
+    public static final int REF_UNIT_FIELD_NUMBER = 1;
     private volatile java.lang.Object refUnit_;
     /**
      * <pre>
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The refUnit.
      */
     @java.lang.Override
@@ -35603,7 +35603,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string refUnit = 1;</code>
+     * <code>string ref_unit = 1;</code>
      * @return The bytes for refUnit.
      */
     @java.lang.Override
@@ -35678,7 +35678,7 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REFUNIT_FIELD_NUMBER;
+      hash = (37 * hash) + REF_UNIT_FIELD_NUMBER;
       hash = (53 * hash) + getRefUnit().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -35933,7 +35933,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return The refUnit.
        */
       public java.lang.String getRefUnit() {
@@ -35953,7 +35953,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return The bytes for refUnit.
        */
       public com.google.protobuf.ByteString
@@ -35974,7 +35974,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @param value The refUnit to set.
        * @return This builder for chaining.
        */
@@ -35993,7 +35993,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefUnit() {
@@ -36007,7 +36007,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string refUnit = 1;</code>
+       * <code>string ref_unit = 1;</code>
        * @param value The bytes for refUnit to set.
        * @return This builder for chaining.
        */
@@ -36133,7 +36133,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -36142,7 +36142,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -36151,7 +36151,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
@@ -36477,14 +36477,14 @@ public final class Proto {
       return getFlow();
     }
 
-    public static final int FLOWPROPERTY_FIELD_NUMBER = 3;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 3;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -36496,7 +36496,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -36508,7 +36508,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.Ref flowProperty = 3;</code>
+     * <code>.Ref flow_property = 3;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
@@ -36782,7 +36782,7 @@ public final class Proto {
         hash = (53 * hash) + getFlow().hashCode();
       }
       if (hasFlowProperty()) {
-        hash = (37 * hash) + FLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
       }
       if (hasUnit()) {
@@ -37378,7 +37378,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -37389,7 +37389,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -37404,7 +37404,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -37424,7 +37424,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -37442,7 +37442,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -37464,7 +37464,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -37482,7 +37482,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -37494,7 +37494,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -37509,7 +37509,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.Ref flowProperty = 3;</code>
+       * <code>.Ref flow_property = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -38141,7 +38141,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -38150,7 +38150,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -38188,7 +38188,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> 
         getImpactCategoriesList();
@@ -38197,7 +38197,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index);
     /**
@@ -38205,7 +38205,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     int getImpactCategoriesCount();
     /**
@@ -38213,7 +38213,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
         getImpactCategoriesOrBuilderList();
@@ -38222,7 +38222,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
         int index);
@@ -38675,14 +38675,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -38703,7 +38703,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -38759,14 +38759,14 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int IMPACTCATEGORIES_FIELD_NUMBER = 8;
+    public static final int IMPACT_CATEGORIES_FIELD_NUMBER = 8;
     private java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> impactCategories_;
     /**
      * <pre>
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> getImpactCategoriesList() {
@@ -38777,7 +38777,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
@@ -38789,7 +38789,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     @java.lang.Override
     public int getImpactCategoriesCount() {
@@ -38800,7 +38800,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index) {
@@ -38811,7 +38811,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+     * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
@@ -39021,14 +39021,14 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
       if (getImpactCategoriesCount() > 0) {
-        hash = (37 * hash) + IMPACTCATEGORIES_FIELD_NUMBER;
+        hash = (37 * hash) + IMPACT_CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategoriesList().hashCode();
       }
       if (getParametersCount() > 0) {
@@ -39918,7 +39918,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -39938,7 +39938,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -39959,7 +39959,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -39978,7 +39978,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -39992,7 +39992,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -40180,7 +40180,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> getImpactCategoriesList() {
         if (impactCategoriesBuilder_ == null) {
@@ -40194,7 +40194,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public int getImpactCategoriesCount() {
         if (impactCategoriesBuilder_ == null) {
@@ -40208,7 +40208,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index) {
         if (impactCategoriesBuilder_ == null) {
@@ -40222,7 +40222,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder setImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef value) {
@@ -40243,7 +40243,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder setImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40261,7 +40261,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder addImpactCategories(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoriesBuilder_ == null) {
@@ -40281,7 +40281,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder addImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef value) {
@@ -40302,7 +40302,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder addImpactCategories(
           org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40320,7 +40320,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder addImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40338,7 +40338,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder addAllImpactCategories(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ImpactCategoryRef> values) {
@@ -40357,7 +40357,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder clearImpactCategories() {
         if (impactCategoriesBuilder_ == null) {
@@ -40374,7 +40374,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public Builder removeImpactCategories(int index) {
         if (impactCategoriesBuilder_ == null) {
@@ -40391,7 +40391,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder getImpactCategoriesBuilder(
           int index) {
@@ -40402,7 +40402,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
           int index) {
@@ -40416,7 +40416,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
            getImpactCategoriesOrBuilderList() {
@@ -40431,7 +40431,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder addImpactCategoriesBuilder() {
         return getImpactCategoriesFieldBuilder().addBuilder(
@@ -40442,7 +40442,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder addImpactCategoriesBuilder(
           int index) {
@@ -40454,7 +40454,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .ImpactCategoryRef impactCategories = 8;</code>
+       * <code>repeated .ImpactCategoryRef impact_categories = 8;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef.Builder> 
            getImpactCategoriesBuilderList() {
@@ -40888,7 +40888,7 @@ public final class Proto {
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     boolean hasImpactCategory();
@@ -40897,7 +40897,7 @@ public final class Proto {
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      * @return The impactCategory.
      */
     org.openlca.proto.Proto.ImpactCategoryRef getImpactCategory();
@@ -40906,7 +40906,7 @@ public final class Proto {
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder();
 
@@ -41074,14 +41074,14 @@ public final class Proto {
       }
     }
 
-    public static final int IMPACTCATEGORY_FIELD_NUMBER = 2;
+    public static final int IMPACT_CATEGORY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.ImpactCategoryRef impactCategory_;
     /**
      * <pre>
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     @java.lang.Override
@@ -41093,7 +41093,7 @@ public final class Proto {
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      * @return The impactCategory.
      */
     @java.lang.Override
@@ -41105,7 +41105,7 @@ public final class Proto {
      * The reference to the impact assessment category.
      * </pre>
      *
-     * <code>.ImpactCategoryRef impactCategory = 2;</code>
+     * <code>.ImpactCategoryRef impact_category = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder() {
@@ -41209,7 +41209,7 @@ public final class Proto {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       if (hasImpactCategory()) {
-        hash = (37 * hash) + IMPACTCATEGORY_FIELD_NUMBER;
+        hash = (37 * hash) + IMPACT_CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategory().hashCode();
       }
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -41591,7 +41591,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        * @return Whether the impactCategory field is set.
        */
       public boolean hasImpactCategory() {
@@ -41602,7 +41602,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        * @return The impactCategory.
        */
       public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategory() {
@@ -41617,7 +41617,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder setImpactCategory(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoryBuilder_ == null) {
@@ -41637,7 +41637,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder setImpactCategory(
           org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -41655,7 +41655,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder mergeImpactCategory(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoryBuilder_ == null) {
@@ -41677,7 +41677,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder clearImpactCategory() {
         if (impactCategoryBuilder_ == null) {
@@ -41695,7 +41695,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder getImpactCategoryBuilder() {
         
@@ -41707,7 +41707,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder() {
         if (impactCategoryBuilder_ != null) {
@@ -41722,7 +41722,7 @@ public final class Proto {
        * The reference to the impact assessment category.
        * </pre>
        *
-       * <code>.ImpactCategoryRef impactCategory = 2;</code>
+       * <code>.ImpactCategoryRef impact_category = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ImpactCategoryRef, org.openlca.proto.Proto.ImpactCategoryRef.Builder, org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
@@ -41948,7 +41948,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -41957,7 +41957,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -42406,14 +42406,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -42434,7 +42434,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -42717,7 +42717,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode().hashCode();
@@ -43538,7 +43538,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -43558,7 +43558,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -43579,7 +43579,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -43598,7 +43598,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -43612,7 +43612,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -44029,7 +44029,7 @@ public final class Proto {
      * The scope where the parameter is valid.
      * </pre>
      *
-     * <code>.ParameterScope parameterScope = 4;</code>
+     * <code>.ParameterScope parameter_scope = 4;</code>
      * @return The enum numeric value on the wire for parameterScope.
      */
     int getParameterScopeValue();
@@ -44038,7 +44038,7 @@ public final class Proto {
      * The scope where the parameter is valid.
      * </pre>
      *
-     * <code>.ParameterScope parameterScope = 4;</code>
+     * <code>.ParameterScope parameter_scope = 4;</code>
      * @return The parameterScope.
      */
     org.openlca.proto.Proto.ParameterScope getParameterScope();
@@ -44050,7 +44050,7 @@ public final class Proto {
      * it is not an input parameter.
      * </pre>
      *
-     * <code>bool inputParameter = 5;</code>
+     * <code>bool input_parameter = 5;</code>
      * @return The inputParameter.
      */
     boolean getInputParameter();
@@ -44091,7 +44091,7 @@ public final class Proto {
      * Excel table, shapefile, etc.).
      * </pre>
      *
-     * <code>string externalSource = 8;</code>
+     * <code>string external_source = 8;</code>
      * @return The externalSource.
      */
     java.lang.String getExternalSource();
@@ -44101,7 +44101,7 @@ public final class Proto {
      * Excel table, shapefile, etc.).
      * </pre>
      *
-     * <code>string externalSource = 8;</code>
+     * <code>string external_source = 8;</code>
      * @return The bytes for externalSource.
      */
     com.google.protobuf.ByteString
@@ -44113,7 +44113,7 @@ public final class Proto {
      * parameter.
      * </pre>
      *
-     * <code>string sourceType = 9;</code>
+     * <code>string source_type = 9;</code>
      * @return The sourceType.
      */
     java.lang.String getSourceType();
@@ -44123,7 +44123,7 @@ public final class Proto {
      * parameter.
      * </pre>
      *
-     * <code>string sourceType = 9;</code>
+     * <code>string source_type = 9;</code>
      * @return The bytes for sourceType.
      */
     com.google.protobuf.ByteString
@@ -44448,14 +44448,14 @@ public final class Proto {
       }
     }
 
-    public static final int PARAMETERSCOPE_FIELD_NUMBER = 4;
+    public static final int PARAMETER_SCOPE_FIELD_NUMBER = 4;
     private int parameterScope_;
     /**
      * <pre>
      * The scope where the parameter is valid.
      * </pre>
      *
-     * <code>.ParameterScope parameterScope = 4;</code>
+     * <code>.ParameterScope parameter_scope = 4;</code>
      * @return The enum numeric value on the wire for parameterScope.
      */
     @java.lang.Override public int getParameterScopeValue() {
@@ -44466,7 +44466,7 @@ public final class Proto {
      * The scope where the parameter is valid.
      * </pre>
      *
-     * <code>.ParameterScope parameterScope = 4;</code>
+     * <code>.ParameterScope parameter_scope = 4;</code>
      * @return The parameterScope.
      */
     @java.lang.Override public org.openlca.proto.Proto.ParameterScope getParameterScope() {
@@ -44475,7 +44475,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.ParameterScope.UNRECOGNIZED : result;
     }
 
-    public static final int INPUTPARAMETER_FIELD_NUMBER = 5;
+    public static final int INPUT_PARAMETER_FIELD_NUMBER = 5;
     private boolean inputParameter_;
     /**
      * <pre>
@@ -44484,7 +44484,7 @@ public final class Proto {
      * it is not an input parameter.
      * </pre>
      *
-     * <code>bool inputParameter = 5;</code>
+     * <code>bool input_parameter = 5;</code>
      * @return The inputParameter.
      */
     @java.lang.Override
@@ -44553,7 +44553,7 @@ public final class Proto {
       }
     }
 
-    public static final int EXTERNALSOURCE_FIELD_NUMBER = 8;
+    public static final int EXTERNAL_SOURCE_FIELD_NUMBER = 8;
     private volatile java.lang.Object externalSource_;
     /**
      * <pre>
@@ -44561,7 +44561,7 @@ public final class Proto {
      * Excel table, shapefile, etc.).
      * </pre>
      *
-     * <code>string externalSource = 8;</code>
+     * <code>string external_source = 8;</code>
      * @return The externalSource.
      */
     @java.lang.Override
@@ -44583,7 +44583,7 @@ public final class Proto {
      * Excel table, shapefile, etc.).
      * </pre>
      *
-     * <code>string externalSource = 8;</code>
+     * <code>string external_source = 8;</code>
      * @return The bytes for externalSource.
      */
     @java.lang.Override
@@ -44601,7 +44601,7 @@ public final class Proto {
       }
     }
 
-    public static final int SOURCETYPE_FIELD_NUMBER = 9;
+    public static final int SOURCE_TYPE_FIELD_NUMBER = 9;
     private volatile java.lang.Object sourceType_;
     /**
      * <pre>
@@ -44609,7 +44609,7 @@ public final class Proto {
      * parameter.
      * </pre>
      *
-     * <code>string sourceType = 9;</code>
+     * <code>string source_type = 9;</code>
      * @return The sourceType.
      */
     @java.lang.Override
@@ -44631,7 +44631,7 @@ public final class Proto {
      * parameter.
      * </pre>
      *
-     * <code>string sourceType = 9;</code>
+     * <code>string source_type = 9;</code>
      * @return The bytes for sourceType.
      */
     @java.lang.Override
@@ -44832,9 +44832,9 @@ public final class Proto {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (37 * hash) + PARAMETERSCOPE_FIELD_NUMBER;
+      hash = (37 * hash) + PARAMETER_SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + parameterScope_;
-      hash = (37 * hash) + INPUTPARAMETER_FIELD_NUMBER;
+      hash = (37 * hash) + INPUT_PARAMETER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getInputParameter());
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -44842,9 +44842,9 @@ public final class Proto {
           java.lang.Double.doubleToLongBits(getValue()));
       hash = (37 * hash) + FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getFormula().hashCode();
-      hash = (37 * hash) + EXTERNALSOURCE_FIELD_NUMBER;
+      hash = (37 * hash) + EXTERNAL_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getExternalSource().hashCode();
-      hash = (37 * hash) + SOURCETYPE_FIELD_NUMBER;
+      hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getSourceType().hashCode();
       if (hasUncertainty()) {
         hash = (37 * hash) + UNCERTAINTY_FIELD_NUMBER;
@@ -45459,7 +45459,7 @@ public final class Proto {
        * The scope where the parameter is valid.
        * </pre>
        *
-       * <code>.ParameterScope parameterScope = 4;</code>
+       * <code>.ParameterScope parameter_scope = 4;</code>
        * @return The enum numeric value on the wire for parameterScope.
        */
       @java.lang.Override public int getParameterScopeValue() {
@@ -45470,7 +45470,7 @@ public final class Proto {
        * The scope where the parameter is valid.
        * </pre>
        *
-       * <code>.ParameterScope parameterScope = 4;</code>
+       * <code>.ParameterScope parameter_scope = 4;</code>
        * @param value The enum numeric value on the wire for parameterScope to set.
        * @return This builder for chaining.
        */
@@ -45485,7 +45485,7 @@ public final class Proto {
        * The scope where the parameter is valid.
        * </pre>
        *
-       * <code>.ParameterScope parameterScope = 4;</code>
+       * <code>.ParameterScope parameter_scope = 4;</code>
        * @return The parameterScope.
        */
       @java.lang.Override
@@ -45499,7 +45499,7 @@ public final class Proto {
        * The scope where the parameter is valid.
        * </pre>
        *
-       * <code>.ParameterScope parameterScope = 4;</code>
+       * <code>.ParameterScope parameter_scope = 4;</code>
        * @param value The parameterScope to set.
        * @return This builder for chaining.
        */
@@ -45517,7 +45517,7 @@ public final class Proto {
        * The scope where the parameter is valid.
        * </pre>
        *
-       * <code>.ParameterScope parameterScope = 4;</code>
+       * <code>.ParameterScope parameter_scope = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearParameterScope() {
@@ -45535,7 +45535,7 @@ public final class Proto {
        * it is not an input parameter.
        * </pre>
        *
-       * <code>bool inputParameter = 5;</code>
+       * <code>bool input_parameter = 5;</code>
        * @return The inputParameter.
        */
       @java.lang.Override
@@ -45549,7 +45549,7 @@ public final class Proto {
        * it is not an input parameter.
        * </pre>
        *
-       * <code>bool inputParameter = 5;</code>
+       * <code>bool input_parameter = 5;</code>
        * @param value The inputParameter to set.
        * @return This builder for chaining.
        */
@@ -45566,7 +45566,7 @@ public final class Proto {
        * it is not an input parameter.
        * </pre>
        *
-       * <code>bool inputParameter = 5;</code>
+       * <code>bool input_parameter = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearInputParameter() {
@@ -45722,7 +45722,7 @@ public final class Proto {
        * Excel table, shapefile, etc.).
        * </pre>
        *
-       * <code>string externalSource = 8;</code>
+       * <code>string external_source = 8;</code>
        * @return The externalSource.
        */
       public java.lang.String getExternalSource() {
@@ -45743,7 +45743,7 @@ public final class Proto {
        * Excel table, shapefile, etc.).
        * </pre>
        *
-       * <code>string externalSource = 8;</code>
+       * <code>string external_source = 8;</code>
        * @return The bytes for externalSource.
        */
       public com.google.protobuf.ByteString
@@ -45765,7 +45765,7 @@ public final class Proto {
        * Excel table, shapefile, etc.).
        * </pre>
        *
-       * <code>string externalSource = 8;</code>
+       * <code>string external_source = 8;</code>
        * @param value The externalSource to set.
        * @return This builder for chaining.
        */
@@ -45785,7 +45785,7 @@ public final class Proto {
        * Excel table, shapefile, etc.).
        * </pre>
        *
-       * <code>string externalSource = 8;</code>
+       * <code>string external_source = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearExternalSource() {
@@ -45800,7 +45800,7 @@ public final class Proto {
        * Excel table, shapefile, etc.).
        * </pre>
        *
-       * <code>string externalSource = 8;</code>
+       * <code>string external_source = 8;</code>
        * @param value The bytes for externalSource to set.
        * @return This builder for chaining.
        */
@@ -45823,7 +45823,7 @@ public final class Proto {
        * parameter.
        * </pre>
        *
-       * <code>string sourceType = 9;</code>
+       * <code>string source_type = 9;</code>
        * @return The sourceType.
        */
       public java.lang.String getSourceType() {
@@ -45844,7 +45844,7 @@ public final class Proto {
        * parameter.
        * </pre>
        *
-       * <code>string sourceType = 9;</code>
+       * <code>string source_type = 9;</code>
        * @return The bytes for sourceType.
        */
       public com.google.protobuf.ByteString
@@ -45866,7 +45866,7 @@ public final class Proto {
        * parameter.
        * </pre>
        *
-       * <code>string sourceType = 9;</code>
+       * <code>string source_type = 9;</code>
        * @param value The sourceType to set.
        * @return This builder for chaining.
        */
@@ -45886,7 +45886,7 @@ public final class Proto {
        * parameter.
        * </pre>
        *
-       * <code>string sourceType = 9;</code>
+       * <code>string source_type = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceType() {
@@ -45901,7 +45901,7 @@ public final class Proto {
        * parameter.
        * </pre>
        *
-       * <code>string sourceType = 9;</code>
+       * <code>string source_type = 9;</code>
        * @param value The bytes for sourceType to set.
        * @return This builder for chaining.
        */
@@ -47425,7 +47425,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -47434,7 +47434,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -47468,36 +47468,36 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>.AllocationType defaultAllocationMethod = 8;</code>
+     * <code>.AllocationType default_allocation_method = 8;</code>
      * @return The enum numeric value on the wire for defaultAllocationMethod.
      */
     int getDefaultAllocationMethodValue();
     /**
-     * <code>.AllocationType defaultAllocationMethod = 8;</code>
+     * <code>.AllocationType default_allocation_method = 8;</code>
      * @return The defaultAllocationMethod.
      */
     org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod();
 
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     java.util.List<org.openlca.proto.Proto.AllocationFactor> 
         getAllocationFactorsList();
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index);
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     int getAllocationFactorsCount();
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
         getAllocationFactorsOrBuilderList();
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
         int index);
@@ -47586,27 +47586,27 @@ public final class Proto {
         int index);
 
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      * @return Whether the processDocumentation field is set.
      */
     boolean hasProcessDocumentation();
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      * @return The processDocumentation.
      */
     org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation();
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      */
     org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder();
 
     /**
-     * <code>.ProcessType processType = 14;</code>
+     * <code>.ProcessType process_type = 14;</code>
      * @return The enum numeric value on the wire for processType.
      */
     int getProcessTypeValue();
     /**
-     * <code>.ProcessType processType = 14;</code>
+     * <code>.ProcessType process_type = 14;</code>
      * @return The processType.
      */
     org.openlca.proto.Proto.ProcessType getProcessType();
@@ -47617,7 +47617,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      * @return Whether the dqSystem field is set.
      */
     boolean hasDqSystem();
@@ -47627,7 +47627,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      * @return The dqSystem.
      */
     org.openlca.proto.Proto.Ref getDqSystem();
@@ -47637,7 +47637,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder();
 
@@ -47648,7 +47648,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     boolean hasExchangeDqSystem();
@@ -47659,7 +47659,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      * @return The exchangeDqSystem.
      */
     org.openlca.proto.Proto.Ref getExchangeDqSystem();
@@ -47670,7 +47670,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder();
 
@@ -47680,7 +47680,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      * @return Whether the socialDqSystem field is set.
      */
     boolean hasSocialDqSystem();
@@ -47690,7 +47690,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      * @return The socialDqSystem.
      */
     org.openlca.proto.Proto.Ref getSocialDqSystem();
@@ -47700,7 +47700,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder();
 
@@ -47713,7 +47713,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 18;</code>
+     * <code>string dq_entry = 18;</code>
      * @return The dqEntry.
      */
     java.lang.String getDqEntry();
@@ -47726,7 +47726,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 18;</code>
+     * <code>string dq_entry = 18;</code>
      * @return The bytes for dqEntry.
      */
     com.google.protobuf.ByteString
@@ -48226,14 +48226,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -48254,7 +48254,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -48310,17 +48310,17 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int DEFAULTALLOCATIONMETHOD_FIELD_NUMBER = 8;
+    public static final int DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER = 8;
     private int defaultAllocationMethod_;
     /**
-     * <code>.AllocationType defaultAllocationMethod = 8;</code>
+     * <code>.AllocationType default_allocation_method = 8;</code>
      * @return The enum numeric value on the wire for defaultAllocationMethod.
      */
     @java.lang.Override public int getDefaultAllocationMethodValue() {
       return defaultAllocationMethod_;
     }
     /**
-     * <code>.AllocationType defaultAllocationMethod = 8;</code>
+     * <code>.AllocationType default_allocation_method = 8;</code>
      * @return The defaultAllocationMethod.
      */
     @java.lang.Override public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
@@ -48329,17 +48329,17 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
     }
 
-    public static final int ALLOCATIONFACTORS_FIELD_NUMBER = 9;
+    public static final int ALLOCATION_FACTORS_FIELD_NUMBER = 9;
     private java.util.List<org.openlca.proto.Proto.AllocationFactor> allocationFactors_;
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
@@ -48347,21 +48347,21 @@ public final class Proto {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     @java.lang.Override
     public int getAllocationFactorsCount() {
       return allocationFactors_.size();
     }
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
       return allocationFactors_.get(index);
     }
     /**
-     * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+     * <code>repeated .AllocationFactor allocation_factors = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
@@ -48495,10 +48495,10 @@ public final class Proto {
       return parameters_.get(index);
     }
 
-    public static final int PROCESSDOCUMENTATION_FIELD_NUMBER = 13;
+    public static final int PROCESS_DOCUMENTATION_FIELD_NUMBER = 13;
     private org.openlca.proto.Proto.ProcessDocumentation processDocumentation_;
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      * @return Whether the processDocumentation field is set.
      */
     @java.lang.Override
@@ -48506,7 +48506,7 @@ public final class Proto {
       return processDocumentation_ != null;
     }
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      * @return The processDocumentation.
      */
     @java.lang.Override
@@ -48514,24 +48514,24 @@ public final class Proto {
       return processDocumentation_ == null ? org.openlca.proto.Proto.ProcessDocumentation.getDefaultInstance() : processDocumentation_;
     }
     /**
-     * <code>.ProcessDocumentation processDocumentation = 13;</code>
+     * <code>.ProcessDocumentation process_documentation = 13;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
       return getProcessDocumentation();
     }
 
-    public static final int PROCESSTYPE_FIELD_NUMBER = 14;
+    public static final int PROCESS_TYPE_FIELD_NUMBER = 14;
     private int processType_;
     /**
-     * <code>.ProcessType processType = 14;</code>
+     * <code>.ProcessType process_type = 14;</code>
      * @return The enum numeric value on the wire for processType.
      */
     @java.lang.Override public int getProcessTypeValue() {
       return processType_;
     }
     /**
-     * <code>.ProcessType processType = 14;</code>
+     * <code>.ProcessType process_type = 14;</code>
      * @return The processType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ProcessType getProcessType() {
@@ -48540,7 +48540,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
     }
 
-    public static final int DQSYSTEM_FIELD_NUMBER = 15;
+    public static final int DQ_SYSTEM_FIELD_NUMBER = 15;
     private org.openlca.proto.Proto.Ref dqSystem_;
     /**
      * <pre>
@@ -48548,7 +48548,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      * @return Whether the dqSystem field is set.
      */
     @java.lang.Override
@@ -48561,7 +48561,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      * @return The dqSystem.
      */
     @java.lang.Override
@@ -48574,14 +48574,14 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref dqSystem = 15;</code>
+     * <code>.Ref dq_system = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
       return getDqSystem();
     }
 
-    public static final int EXCHANGEDQSYSTEM_FIELD_NUMBER = 16;
+    public static final int EXCHANGE_DQ_SYSTEM_FIELD_NUMBER = 16;
     private org.openlca.proto.Proto.Ref exchangeDqSystem_;
     /**
      * <pre>
@@ -48590,7 +48590,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     @java.lang.Override
@@ -48604,7 +48604,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      * @return The exchangeDqSystem.
      */
     @java.lang.Override
@@ -48618,14 +48618,14 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.Ref exchangeDqSystem = 16;</code>
+     * <code>.Ref exchange_dq_system = 16;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
       return getExchangeDqSystem();
     }
 
-    public static final int SOCIALDQSYSTEM_FIELD_NUMBER = 17;
+    public static final int SOCIAL_DQ_SYSTEM_FIELD_NUMBER = 17;
     private org.openlca.proto.Proto.Ref socialDqSystem_;
     /**
      * <pre>
@@ -48633,7 +48633,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      * @return Whether the socialDqSystem field is set.
      */
     @java.lang.Override
@@ -48646,7 +48646,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      * @return The socialDqSystem.
      */
     @java.lang.Override
@@ -48659,14 +48659,14 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.Ref socialDqSystem = 17;</code>
+     * <code>.Ref social_dq_system = 17;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
       return getSocialDqSystem();
     }
 
-    public static final int DQENTRY_FIELD_NUMBER = 18;
+    public static final int DQ_ENTRY_FIELD_NUMBER = 18;
     private volatile java.lang.Object dqEntry_;
     /**
      * <pre>
@@ -48677,7 +48677,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 18;</code>
+     * <code>string dq_entry = 18;</code>
      * @return The dqEntry.
      */
     @java.lang.Override
@@ -48702,7 +48702,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dqEntry = 18;</code>
+     * <code>string dq_entry = 18;</code>
      * @return The bytes for dqEntry.
      */
     @java.lang.Override
@@ -48950,16 +48950,16 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + DEFAULTALLOCATIONMETHOD_FIELD_NUMBER;
+      hash = (37 * hash) + DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + defaultAllocationMethod_;
       if (getAllocationFactorsCount() > 0) {
-        hash = (37 * hash) + ALLOCATIONFACTORS_FIELD_NUMBER;
+        hash = (37 * hash) + ALLOCATION_FACTORS_FIELD_NUMBER;
         hash = (53 * hash) + getAllocationFactorsList().hashCode();
       }
       if (getExchangesCount() > 0) {
@@ -48975,24 +48975,24 @@ public final class Proto {
         hash = (53 * hash) + getParametersList().hashCode();
       }
       if (hasProcessDocumentation()) {
-        hash = (37 * hash) + PROCESSDOCUMENTATION_FIELD_NUMBER;
+        hash = (37 * hash) + PROCESS_DOCUMENTATION_FIELD_NUMBER;
         hash = (53 * hash) + getProcessDocumentation().hashCode();
       }
-      hash = (37 * hash) + PROCESSTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + PROCESS_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + processType_;
       if (hasDqSystem()) {
-        hash = (37 * hash) + DQSYSTEM_FIELD_NUMBER;
+        hash = (37 * hash) + DQ_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getDqSystem().hashCode();
       }
       if (hasExchangeDqSystem()) {
-        hash = (37 * hash) + EXCHANGEDQSYSTEM_FIELD_NUMBER;
+        hash = (37 * hash) + EXCHANGE_DQ_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getExchangeDqSystem().hashCode();
       }
       if (hasSocialDqSystem()) {
-        hash = (37 * hash) + SOCIALDQSYSTEM_FIELD_NUMBER;
+        hash = (37 * hash) + SOCIAL_DQ_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getSocialDqSystem().hashCode();
       }
-      hash = (37 * hash) + DQENTRY_FIELD_NUMBER;
+      hash = (37 * hash) + DQ_ENTRY_FIELD_NUMBER;
       hash = (53 * hash) + getDqEntry().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -50004,7 +50004,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -50024,7 +50024,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -50045,7 +50045,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -50064,7 +50064,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -50078,7 +50078,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -50251,14 +50251,14 @@ public final class Proto {
 
       private int defaultAllocationMethod_ = 0;
       /**
-       * <code>.AllocationType defaultAllocationMethod = 8;</code>
+       * <code>.AllocationType default_allocation_method = 8;</code>
        * @return The enum numeric value on the wire for defaultAllocationMethod.
        */
       @java.lang.Override public int getDefaultAllocationMethodValue() {
         return defaultAllocationMethod_;
       }
       /**
-       * <code>.AllocationType defaultAllocationMethod = 8;</code>
+       * <code>.AllocationType default_allocation_method = 8;</code>
        * @param value The enum numeric value on the wire for defaultAllocationMethod to set.
        * @return This builder for chaining.
        */
@@ -50269,7 +50269,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.AllocationType defaultAllocationMethod = 8;</code>
+       * <code>.AllocationType default_allocation_method = 8;</code>
        * @return The defaultAllocationMethod.
        */
       @java.lang.Override
@@ -50279,7 +50279,7 @@ public final class Proto {
         return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AllocationType defaultAllocationMethod = 8;</code>
+       * <code>.AllocationType default_allocation_method = 8;</code>
        * @param value The defaultAllocationMethod to set.
        * @return This builder for chaining.
        */
@@ -50293,7 +50293,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.AllocationType defaultAllocationMethod = 8;</code>
+       * <code>.AllocationType default_allocation_method = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDefaultAllocationMethod() {
@@ -50316,7 +50316,7 @@ public final class Proto {
           org.openlca.proto.Proto.AllocationFactor, org.openlca.proto.Proto.AllocationFactor.Builder, org.openlca.proto.Proto.AllocationFactorOrBuilder> allocationFactorsBuilder_;
 
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
         if (allocationFactorsBuilder_ == null) {
@@ -50326,7 +50326,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public int getAllocationFactorsCount() {
         if (allocationFactorsBuilder_ == null) {
@@ -50336,7 +50336,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -50346,7 +50346,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -50363,7 +50363,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50377,7 +50377,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder addAllocationFactors(org.openlca.proto.Proto.AllocationFactor value) {
         if (allocationFactorsBuilder_ == null) {
@@ -50393,7 +50393,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -50410,7 +50410,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder addAllocationFactors(
           org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50424,7 +50424,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50438,7 +50438,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder addAllAllocationFactors(
           java.lang.Iterable<? extends org.openlca.proto.Proto.AllocationFactor> values) {
@@ -50453,7 +50453,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder clearAllocationFactors() {
         if (allocationFactorsBuilder_ == null) {
@@ -50466,7 +50466,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public Builder removeAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -50479,14 +50479,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder getAllocationFactorsBuilder(
           int index) {
         return getAllocationFactorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
           int index) {
@@ -50496,7 +50496,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
            getAllocationFactorsOrBuilderList() {
@@ -50507,14 +50507,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder() {
         return getAllocationFactorsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder(
           int index) {
@@ -50522,7 +50522,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .AllocationFactor allocationFactors = 9;</code>
+       * <code>repeated .AllocationFactor allocation_factors = 9;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor.Builder> 
            getAllocationFactorsBuilderList() {
@@ -51218,14 +51218,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> processDocumentationBuilder_;
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        * @return Whether the processDocumentation field is set.
        */
       public boolean hasProcessDocumentation() {
         return processDocumentationBuilder_ != null || processDocumentation_ != null;
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        * @return The processDocumentation.
        */
       public org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation() {
@@ -51236,7 +51236,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public Builder setProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -51252,7 +51252,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public Builder setProcessDocumentation(
           org.openlca.proto.Proto.ProcessDocumentation.Builder builderForValue) {
@@ -51266,7 +51266,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public Builder mergeProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -51284,7 +51284,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public Builder clearProcessDocumentation() {
         if (processDocumentationBuilder_ == null) {
@@ -51298,7 +51298,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentation.Builder getProcessDocumentationBuilder() {
         
@@ -51306,7 +51306,7 @@ public final class Proto {
         return getProcessDocumentationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
         if (processDocumentationBuilder_ != null) {
@@ -51317,7 +51317,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.ProcessDocumentation processDocumentation = 13;</code>
+       * <code>.ProcessDocumentation process_documentation = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> 
@@ -51335,14 +51335,14 @@ public final class Proto {
 
       private int processType_ = 0;
       /**
-       * <code>.ProcessType processType = 14;</code>
+       * <code>.ProcessType process_type = 14;</code>
        * @return The enum numeric value on the wire for processType.
        */
       @java.lang.Override public int getProcessTypeValue() {
         return processType_;
       }
       /**
-       * <code>.ProcessType processType = 14;</code>
+       * <code>.ProcessType process_type = 14;</code>
        * @param value The enum numeric value on the wire for processType to set.
        * @return This builder for chaining.
        */
@@ -51353,7 +51353,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessType processType = 14;</code>
+       * <code>.ProcessType process_type = 14;</code>
        * @return The processType.
        */
       @java.lang.Override
@@ -51363,7 +51363,7 @@ public final class Proto {
         return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ProcessType processType = 14;</code>
+       * <code>.ProcessType process_type = 14;</code>
        * @param value The processType to set.
        * @return This builder for chaining.
        */
@@ -51377,7 +51377,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.ProcessType processType = 14;</code>
+       * <code>.ProcessType process_type = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearProcessType() {
@@ -51396,7 +51396,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        * @return Whether the dqSystem field is set.
        */
       public boolean hasDqSystem() {
@@ -51408,7 +51408,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        * @return The dqSystem.
        */
       public org.openlca.proto.Proto.Ref getDqSystem() {
@@ -51424,7 +51424,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public Builder setDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -51445,7 +51445,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public Builder setDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51464,7 +51464,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public Builder mergeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -51487,7 +51487,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public Builder clearDqSystem() {
         if (dqSystemBuilder_ == null) {
@@ -51506,7 +51506,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDqSystemBuilder() {
         
@@ -51519,7 +51519,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
         if (dqSystemBuilder_ != null) {
@@ -51535,7 +51535,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref dqSystem = 15;</code>
+       * <code>.Ref dq_system = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51561,7 +51561,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        * @return Whether the exchangeDqSystem field is set.
        */
       public boolean hasExchangeDqSystem() {
@@ -51574,7 +51574,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        * @return The exchangeDqSystem.
        */
       public org.openlca.proto.Proto.Ref getExchangeDqSystem() {
@@ -51591,7 +51591,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public Builder setExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51613,7 +51613,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public Builder setExchangeDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51633,7 +51633,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public Builder mergeExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51657,7 +51657,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public Builder clearExchangeDqSystem() {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51677,7 +51677,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getExchangeDqSystemBuilder() {
         
@@ -51691,7 +51691,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
         if (exchangeDqSystemBuilder_ != null) {
@@ -51708,7 +51708,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.Ref exchangeDqSystem = 16;</code>
+       * <code>.Ref exchange_dq_system = 16;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51733,7 +51733,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        * @return Whether the socialDqSystem field is set.
        */
       public boolean hasSocialDqSystem() {
@@ -51745,7 +51745,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        * @return The socialDqSystem.
        */
       public org.openlca.proto.Proto.Ref getSocialDqSystem() {
@@ -51761,7 +51761,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public Builder setSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -51782,7 +51782,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public Builder setSocialDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51801,7 +51801,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public Builder mergeSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -51824,7 +51824,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public Builder clearSocialDqSystem() {
         if (socialDqSystemBuilder_ == null) {
@@ -51843,7 +51843,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getSocialDqSystemBuilder() {
         
@@ -51856,7 +51856,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
         if (socialDqSystemBuilder_ != null) {
@@ -51872,7 +51872,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.Ref socialDqSystem = 17;</code>
+       * <code>.Ref social_dq_system = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51898,7 +51898,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 18;</code>
+       * <code>string dq_entry = 18;</code>
        * @return The dqEntry.
        */
       public java.lang.String getDqEntry() {
@@ -51922,7 +51922,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 18;</code>
+       * <code>string dq_entry = 18;</code>
        * @return The bytes for dqEntry.
        */
       public com.google.protobuf.ByteString
@@ -51947,7 +51947,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 18;</code>
+       * <code>string dq_entry = 18;</code>
        * @param value The dqEntry to set.
        * @return This builder for chaining.
        */
@@ -51970,7 +51970,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 18;</code>
+       * <code>string dq_entry = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearDqEntry() {
@@ -51988,7 +51988,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dqEntry = 18;</code>
+       * <code>string dq_entry = 18;</code>
        * @param value The bytes for dqEntry to set.
        * @return This builder for chaining.
        */
@@ -52083,132 +52083,132 @@ public final class Proto {
         getTypeBytes();
 
     /**
-     * <code>string timeDescription = 2;</code>
+     * <code>string time_description = 2;</code>
      * @return The timeDescription.
      */
     java.lang.String getTimeDescription();
     /**
-     * <code>string timeDescription = 2;</code>
+     * <code>string time_description = 2;</code>
      * @return The bytes for timeDescription.
      */
     com.google.protobuf.ByteString
         getTimeDescriptionBytes();
 
     /**
-     * <code>string validUntil = 3;</code>
+     * <code>string valid_until = 3;</code>
      * @return The validUntil.
      */
     java.lang.String getValidUntil();
     /**
-     * <code>string validUntil = 3;</code>
+     * <code>string valid_until = 3;</code>
      * @return The bytes for validUntil.
      */
     com.google.protobuf.ByteString
         getValidUntilBytes();
 
     /**
-     * <code>string validFrom = 4;</code>
+     * <code>string valid_from = 4;</code>
      * @return The validFrom.
      */
     java.lang.String getValidFrom();
     /**
-     * <code>string validFrom = 4;</code>
+     * <code>string valid_from = 4;</code>
      * @return The bytes for validFrom.
      */
     com.google.protobuf.ByteString
         getValidFromBytes();
 
     /**
-     * <code>string technologyDescription = 5;</code>
+     * <code>string technology_description = 5;</code>
      * @return The technologyDescription.
      */
     java.lang.String getTechnologyDescription();
     /**
-     * <code>string technologyDescription = 5;</code>
+     * <code>string technology_description = 5;</code>
      * @return The bytes for technologyDescription.
      */
     com.google.protobuf.ByteString
         getTechnologyDescriptionBytes();
 
     /**
-     * <code>string dataCollectionDescription = 6;</code>
+     * <code>string data_collection_description = 6;</code>
      * @return The dataCollectionDescription.
      */
     java.lang.String getDataCollectionDescription();
     /**
-     * <code>string dataCollectionDescription = 6;</code>
+     * <code>string data_collection_description = 6;</code>
      * @return The bytes for dataCollectionDescription.
      */
     com.google.protobuf.ByteString
         getDataCollectionDescriptionBytes();
 
     /**
-     * <code>string completenessDescription = 7;</code>
+     * <code>string completeness_description = 7;</code>
      * @return The completenessDescription.
      */
     java.lang.String getCompletenessDescription();
     /**
-     * <code>string completenessDescription = 7;</code>
+     * <code>string completeness_description = 7;</code>
      * @return The bytes for completenessDescription.
      */
     com.google.protobuf.ByteString
         getCompletenessDescriptionBytes();
 
     /**
-     * <code>string dataSelectionDescription = 8;</code>
+     * <code>string data_selection_description = 8;</code>
      * @return The dataSelectionDescription.
      */
     java.lang.String getDataSelectionDescription();
     /**
-     * <code>string dataSelectionDescription = 8;</code>
+     * <code>string data_selection_description = 8;</code>
      * @return The bytes for dataSelectionDescription.
      */
     com.google.protobuf.ByteString
         getDataSelectionDescriptionBytes();
 
     /**
-     * <code>string reviewDetails = 9;</code>
+     * <code>string review_details = 9;</code>
      * @return The reviewDetails.
      */
     java.lang.String getReviewDetails();
     /**
-     * <code>string reviewDetails = 9;</code>
+     * <code>string review_details = 9;</code>
      * @return The bytes for reviewDetails.
      */
     com.google.protobuf.ByteString
         getReviewDetailsBytes();
 
     /**
-     * <code>string dataTreatmentDescription = 10;</code>
+     * <code>string data_treatment_description = 10;</code>
      * @return The dataTreatmentDescription.
      */
     java.lang.String getDataTreatmentDescription();
     /**
-     * <code>string dataTreatmentDescription = 10;</code>
+     * <code>string data_treatment_description = 10;</code>
      * @return The bytes for dataTreatmentDescription.
      */
     com.google.protobuf.ByteString
         getDataTreatmentDescriptionBytes();
 
     /**
-     * <code>string inventoryMethodDescription = 11;</code>
+     * <code>string inventory_method_description = 11;</code>
      * @return The inventoryMethodDescription.
      */
     java.lang.String getInventoryMethodDescription();
     /**
-     * <code>string inventoryMethodDescription = 11;</code>
+     * <code>string inventory_method_description = 11;</code>
      * @return The bytes for inventoryMethodDescription.
      */
     com.google.protobuf.ByteString
         getInventoryMethodDescriptionBytes();
 
     /**
-     * <code>string modelingConstantsDescription = 12;</code>
+     * <code>string modeling_constants_description = 12;</code>
      * @return The modelingConstantsDescription.
      */
     java.lang.String getModelingConstantsDescription();
     /**
-     * <code>string modelingConstantsDescription = 12;</code>
+     * <code>string modeling_constants_description = 12;</code>
      * @return The bytes for modelingConstantsDescription.
      */
     com.google.protobuf.ByteString
@@ -52230,12 +52230,12 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getReviewerOrBuilder();
 
     /**
-     * <code>string samplingDescription = 14;</code>
+     * <code>string sampling_description = 14;</code>
      * @return The samplingDescription.
      */
     java.lang.String getSamplingDescription();
     /**
-     * <code>string samplingDescription = 14;</code>
+     * <code>string sampling_description = 14;</code>
      * @return The bytes for samplingDescription.
      */
     com.google.protobuf.ByteString
@@ -52266,12 +52266,12 @@ public final class Proto {
         int index);
 
     /**
-     * <code>string restrictionsDescription = 16;</code>
+     * <code>string restrictions_description = 16;</code>
      * @return The restrictionsDescription.
      */
     java.lang.String getRestrictionsDescription();
     /**
-     * <code>string restrictionsDescription = 16;</code>
+     * <code>string restrictions_description = 16;</code>
      * @return The bytes for restrictionsDescription.
      */
     com.google.protobuf.ByteString
@@ -52284,81 +52284,81 @@ public final class Proto {
     boolean getCopyright();
 
     /**
-     * <code>string creationDate = 18;</code>
+     * <code>string creation_date = 18;</code>
      * @return The creationDate.
      */
     java.lang.String getCreationDate();
     /**
-     * <code>string creationDate = 18;</code>
+     * <code>string creation_date = 18;</code>
      * @return The bytes for creationDate.
      */
     com.google.protobuf.ByteString
         getCreationDateBytes();
 
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      * @return Whether the dataDocumentor field is set.
      */
     boolean hasDataDocumentor();
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      * @return The dataDocumentor.
      */
     org.openlca.proto.Proto.Ref getDataDocumentor();
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDataDocumentorOrBuilder();
 
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      * @return Whether the dataGenerator field is set.
      */
     boolean hasDataGenerator();
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      * @return The dataGenerator.
      */
     org.openlca.proto.Proto.Ref getDataGenerator();
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDataGeneratorOrBuilder();
 
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      * @return Whether the dataSetOwner field is set.
      */
     boolean hasDataSetOwner();
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      * @return The dataSetOwner.
      */
     org.openlca.proto.Proto.Ref getDataSetOwner();
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDataSetOwnerOrBuilder();
 
     /**
-     * <code>string intendedApplication = 22;</code>
+     * <code>string intended_application = 22;</code>
      * @return The intendedApplication.
      */
     java.lang.String getIntendedApplication();
     /**
-     * <code>string intendedApplication = 22;</code>
+     * <code>string intended_application = 22;</code>
      * @return The bytes for intendedApplication.
      */
     com.google.protobuf.ByteString
         getIntendedApplicationBytes();
 
     /**
-     * <code>string projectDescription = 23;</code>
+     * <code>string project_description = 23;</code>
      * @return The projectDescription.
      */
     java.lang.String getProjectDescription();
     /**
-     * <code>string projectDescription = 23;</code>
+     * <code>string project_description = 23;</code>
      * @return The bytes for projectDescription.
      */
     com.google.protobuf.ByteString
@@ -52380,12 +52380,12 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getPublicationOrBuilder();
 
     /**
-     * <code>string geographyDescription = 25;</code>
+     * <code>string geography_description = 25;</code>
      * @return The geographyDescription.
      */
     java.lang.String getGeographyDescription();
     /**
-     * <code>string geographyDescription = 25;</code>
+     * <code>string geography_description = 25;</code>
      * @return The bytes for geographyDescription.
      */
     com.google.protobuf.ByteString
@@ -52726,10 +52726,10 @@ public final class Proto {
       }
     }
 
-    public static final int TIMEDESCRIPTION_FIELD_NUMBER = 2;
+    public static final int TIME_DESCRIPTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object timeDescription_;
     /**
-     * <code>string timeDescription = 2;</code>
+     * <code>string time_description = 2;</code>
      * @return The timeDescription.
      */
     @java.lang.Override
@@ -52746,7 +52746,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string timeDescription = 2;</code>
+     * <code>string time_description = 2;</code>
      * @return The bytes for timeDescription.
      */
     @java.lang.Override
@@ -52764,10 +52764,10 @@ public final class Proto {
       }
     }
 
-    public static final int VALIDUNTIL_FIELD_NUMBER = 3;
+    public static final int VALID_UNTIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object validUntil_;
     /**
-     * <code>string validUntil = 3;</code>
+     * <code>string valid_until = 3;</code>
      * @return The validUntil.
      */
     @java.lang.Override
@@ -52784,7 +52784,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string validUntil = 3;</code>
+     * <code>string valid_until = 3;</code>
      * @return The bytes for validUntil.
      */
     @java.lang.Override
@@ -52802,10 +52802,10 @@ public final class Proto {
       }
     }
 
-    public static final int VALIDFROM_FIELD_NUMBER = 4;
+    public static final int VALID_FROM_FIELD_NUMBER = 4;
     private volatile java.lang.Object validFrom_;
     /**
-     * <code>string validFrom = 4;</code>
+     * <code>string valid_from = 4;</code>
      * @return The validFrom.
      */
     @java.lang.Override
@@ -52822,7 +52822,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string validFrom = 4;</code>
+     * <code>string valid_from = 4;</code>
      * @return The bytes for validFrom.
      */
     @java.lang.Override
@@ -52840,10 +52840,10 @@ public final class Proto {
       }
     }
 
-    public static final int TECHNOLOGYDESCRIPTION_FIELD_NUMBER = 5;
+    public static final int TECHNOLOGY_DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object technologyDescription_;
     /**
-     * <code>string technologyDescription = 5;</code>
+     * <code>string technology_description = 5;</code>
      * @return The technologyDescription.
      */
     @java.lang.Override
@@ -52860,7 +52860,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string technologyDescription = 5;</code>
+     * <code>string technology_description = 5;</code>
      * @return The bytes for technologyDescription.
      */
     @java.lang.Override
@@ -52878,10 +52878,10 @@ public final class Proto {
       }
     }
 
-    public static final int DATACOLLECTIONDESCRIPTION_FIELD_NUMBER = 6;
+    public static final int DATA_COLLECTION_DESCRIPTION_FIELD_NUMBER = 6;
     private volatile java.lang.Object dataCollectionDescription_;
     /**
-     * <code>string dataCollectionDescription = 6;</code>
+     * <code>string data_collection_description = 6;</code>
      * @return The dataCollectionDescription.
      */
     @java.lang.Override
@@ -52898,7 +52898,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string dataCollectionDescription = 6;</code>
+     * <code>string data_collection_description = 6;</code>
      * @return The bytes for dataCollectionDescription.
      */
     @java.lang.Override
@@ -52916,10 +52916,10 @@ public final class Proto {
       }
     }
 
-    public static final int COMPLETENESSDESCRIPTION_FIELD_NUMBER = 7;
+    public static final int COMPLETENESS_DESCRIPTION_FIELD_NUMBER = 7;
     private volatile java.lang.Object completenessDescription_;
     /**
-     * <code>string completenessDescription = 7;</code>
+     * <code>string completeness_description = 7;</code>
      * @return The completenessDescription.
      */
     @java.lang.Override
@@ -52936,7 +52936,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string completenessDescription = 7;</code>
+     * <code>string completeness_description = 7;</code>
      * @return The bytes for completenessDescription.
      */
     @java.lang.Override
@@ -52954,10 +52954,10 @@ public final class Proto {
       }
     }
 
-    public static final int DATASELECTIONDESCRIPTION_FIELD_NUMBER = 8;
+    public static final int DATA_SELECTION_DESCRIPTION_FIELD_NUMBER = 8;
     private volatile java.lang.Object dataSelectionDescription_;
     /**
-     * <code>string dataSelectionDescription = 8;</code>
+     * <code>string data_selection_description = 8;</code>
      * @return The dataSelectionDescription.
      */
     @java.lang.Override
@@ -52974,7 +52974,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string dataSelectionDescription = 8;</code>
+     * <code>string data_selection_description = 8;</code>
      * @return The bytes for dataSelectionDescription.
      */
     @java.lang.Override
@@ -52992,10 +52992,10 @@ public final class Proto {
       }
     }
 
-    public static final int REVIEWDETAILS_FIELD_NUMBER = 9;
+    public static final int REVIEW_DETAILS_FIELD_NUMBER = 9;
     private volatile java.lang.Object reviewDetails_;
     /**
-     * <code>string reviewDetails = 9;</code>
+     * <code>string review_details = 9;</code>
      * @return The reviewDetails.
      */
     @java.lang.Override
@@ -53012,7 +53012,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string reviewDetails = 9;</code>
+     * <code>string review_details = 9;</code>
      * @return The bytes for reviewDetails.
      */
     @java.lang.Override
@@ -53030,10 +53030,10 @@ public final class Proto {
       }
     }
 
-    public static final int DATATREATMENTDESCRIPTION_FIELD_NUMBER = 10;
+    public static final int DATA_TREATMENT_DESCRIPTION_FIELD_NUMBER = 10;
     private volatile java.lang.Object dataTreatmentDescription_;
     /**
-     * <code>string dataTreatmentDescription = 10;</code>
+     * <code>string data_treatment_description = 10;</code>
      * @return The dataTreatmentDescription.
      */
     @java.lang.Override
@@ -53050,7 +53050,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string dataTreatmentDescription = 10;</code>
+     * <code>string data_treatment_description = 10;</code>
      * @return The bytes for dataTreatmentDescription.
      */
     @java.lang.Override
@@ -53068,10 +53068,10 @@ public final class Proto {
       }
     }
 
-    public static final int INVENTORYMETHODDESCRIPTION_FIELD_NUMBER = 11;
+    public static final int INVENTORY_METHOD_DESCRIPTION_FIELD_NUMBER = 11;
     private volatile java.lang.Object inventoryMethodDescription_;
     /**
-     * <code>string inventoryMethodDescription = 11;</code>
+     * <code>string inventory_method_description = 11;</code>
      * @return The inventoryMethodDescription.
      */
     @java.lang.Override
@@ -53088,7 +53088,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string inventoryMethodDescription = 11;</code>
+     * <code>string inventory_method_description = 11;</code>
      * @return The bytes for inventoryMethodDescription.
      */
     @java.lang.Override
@@ -53106,10 +53106,10 @@ public final class Proto {
       }
     }
 
-    public static final int MODELINGCONSTANTSDESCRIPTION_FIELD_NUMBER = 12;
+    public static final int MODELING_CONSTANTS_DESCRIPTION_FIELD_NUMBER = 12;
     private volatile java.lang.Object modelingConstantsDescription_;
     /**
-     * <code>string modelingConstantsDescription = 12;</code>
+     * <code>string modeling_constants_description = 12;</code>
      * @return The modelingConstantsDescription.
      */
     @java.lang.Override
@@ -53126,7 +53126,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string modelingConstantsDescription = 12;</code>
+     * <code>string modeling_constants_description = 12;</code>
      * @return The bytes for modelingConstantsDescription.
      */
     @java.lang.Override
@@ -53170,10 +53170,10 @@ public final class Proto {
       return getReviewer();
     }
 
-    public static final int SAMPLINGDESCRIPTION_FIELD_NUMBER = 14;
+    public static final int SAMPLING_DESCRIPTION_FIELD_NUMBER = 14;
     private volatile java.lang.Object samplingDescription_;
     /**
-     * <code>string samplingDescription = 14;</code>
+     * <code>string sampling_description = 14;</code>
      * @return The samplingDescription.
      */
     @java.lang.Override
@@ -53190,7 +53190,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string samplingDescription = 14;</code>
+     * <code>string sampling_description = 14;</code>
      * @return The bytes for samplingDescription.
      */
     @java.lang.Override
@@ -53248,10 +53248,10 @@ public final class Proto {
       return sources_.get(index);
     }
 
-    public static final int RESTRICTIONSDESCRIPTION_FIELD_NUMBER = 16;
+    public static final int RESTRICTIONS_DESCRIPTION_FIELD_NUMBER = 16;
     private volatile java.lang.Object restrictionsDescription_;
     /**
-     * <code>string restrictionsDescription = 16;</code>
+     * <code>string restrictions_description = 16;</code>
      * @return The restrictionsDescription.
      */
     @java.lang.Override
@@ -53268,7 +53268,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string restrictionsDescription = 16;</code>
+     * <code>string restrictions_description = 16;</code>
      * @return The bytes for restrictionsDescription.
      */
     @java.lang.Override
@@ -53297,10 +53297,10 @@ public final class Proto {
       return copyright_;
     }
 
-    public static final int CREATIONDATE_FIELD_NUMBER = 18;
+    public static final int CREATION_DATE_FIELD_NUMBER = 18;
     private volatile java.lang.Object creationDate_;
     /**
-     * <code>string creationDate = 18;</code>
+     * <code>string creation_date = 18;</code>
      * @return The creationDate.
      */
     @java.lang.Override
@@ -53317,7 +53317,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string creationDate = 18;</code>
+     * <code>string creation_date = 18;</code>
      * @return The bytes for creationDate.
      */
     @java.lang.Override
@@ -53335,10 +53335,10 @@ public final class Proto {
       }
     }
 
-    public static final int DATADOCUMENTOR_FIELD_NUMBER = 19;
+    public static final int DATA_DOCUMENTOR_FIELD_NUMBER = 19;
     private org.openlca.proto.Proto.Ref dataDocumentor_;
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      * @return Whether the dataDocumentor field is set.
      */
     @java.lang.Override
@@ -53346,7 +53346,7 @@ public final class Proto {
       return dataDocumentor_ != null;
     }
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      * @return The dataDocumentor.
      */
     @java.lang.Override
@@ -53354,17 +53354,17 @@ public final class Proto {
       return dataDocumentor_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : dataDocumentor_;
     }
     /**
-     * <code>.Ref dataDocumentor = 19;</code>
+     * <code>.Ref data_documentor = 19;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDataDocumentorOrBuilder() {
       return getDataDocumentor();
     }
 
-    public static final int DATAGENERATOR_FIELD_NUMBER = 20;
+    public static final int DATA_GENERATOR_FIELD_NUMBER = 20;
     private org.openlca.proto.Proto.Ref dataGenerator_;
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      * @return Whether the dataGenerator field is set.
      */
     @java.lang.Override
@@ -53372,7 +53372,7 @@ public final class Proto {
       return dataGenerator_ != null;
     }
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      * @return The dataGenerator.
      */
     @java.lang.Override
@@ -53380,17 +53380,17 @@ public final class Proto {
       return dataGenerator_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : dataGenerator_;
     }
     /**
-     * <code>.Ref dataGenerator = 20;</code>
+     * <code>.Ref data_generator = 20;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDataGeneratorOrBuilder() {
       return getDataGenerator();
     }
 
-    public static final int DATASETOWNER_FIELD_NUMBER = 21;
+    public static final int DATA_SET_OWNER_FIELD_NUMBER = 21;
     private org.openlca.proto.Proto.Ref dataSetOwner_;
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      * @return Whether the dataSetOwner field is set.
      */
     @java.lang.Override
@@ -53398,7 +53398,7 @@ public final class Proto {
       return dataSetOwner_ != null;
     }
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      * @return The dataSetOwner.
      */
     @java.lang.Override
@@ -53406,17 +53406,17 @@ public final class Proto {
       return dataSetOwner_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : dataSetOwner_;
     }
     /**
-     * <code>.Ref dataSetOwner = 21;</code>
+     * <code>.Ref data_set_owner = 21;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDataSetOwnerOrBuilder() {
       return getDataSetOwner();
     }
 
-    public static final int INTENDEDAPPLICATION_FIELD_NUMBER = 22;
+    public static final int INTENDED_APPLICATION_FIELD_NUMBER = 22;
     private volatile java.lang.Object intendedApplication_;
     /**
-     * <code>string intendedApplication = 22;</code>
+     * <code>string intended_application = 22;</code>
      * @return The intendedApplication.
      */
     @java.lang.Override
@@ -53433,7 +53433,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string intendedApplication = 22;</code>
+     * <code>string intended_application = 22;</code>
      * @return The bytes for intendedApplication.
      */
     @java.lang.Override
@@ -53451,10 +53451,10 @@ public final class Proto {
       }
     }
 
-    public static final int PROJECTDESCRIPTION_FIELD_NUMBER = 23;
+    public static final int PROJECT_DESCRIPTION_FIELD_NUMBER = 23;
     private volatile java.lang.Object projectDescription_;
     /**
-     * <code>string projectDescription = 23;</code>
+     * <code>string project_description = 23;</code>
      * @return The projectDescription.
      */
     @java.lang.Override
@@ -53471,7 +53471,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string projectDescription = 23;</code>
+     * <code>string project_description = 23;</code>
      * @return The bytes for projectDescription.
      */
     @java.lang.Override
@@ -53515,10 +53515,10 @@ public final class Proto {
       return getPublication();
     }
 
-    public static final int GEOGRAPHYDESCRIPTION_FIELD_NUMBER = 25;
+    public static final int GEOGRAPHY_DESCRIPTION_FIELD_NUMBER = 25;
     private volatile java.lang.Object geographyDescription_;
     /**
-     * <code>string geographyDescription = 25;</code>
+     * <code>string geography_description = 25;</code>
      * @return The geographyDescription.
      */
     @java.lang.Override
@@ -53535,7 +53535,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string geographyDescription = 25;</code>
+     * <code>string geography_description = 25;</code>
      * @return The bytes for geographyDescription.
      */
     @java.lang.Override
@@ -53826,66 +53826,66 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + TIMEDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getTimeDescription().hashCode();
-      hash = (37 * hash) + VALIDUNTIL_FIELD_NUMBER;
+      hash = (37 * hash) + VALID_UNTIL_FIELD_NUMBER;
       hash = (53 * hash) + getValidUntil().hashCode();
-      hash = (37 * hash) + VALIDFROM_FIELD_NUMBER;
+      hash = (37 * hash) + VALID_FROM_FIELD_NUMBER;
       hash = (53 * hash) + getValidFrom().hashCode();
-      hash = (37 * hash) + TECHNOLOGYDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + TECHNOLOGY_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getTechnologyDescription().hashCode();
-      hash = (37 * hash) + DATACOLLECTIONDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + DATA_COLLECTION_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDataCollectionDescription().hashCode();
-      hash = (37 * hash) + COMPLETENESSDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + COMPLETENESS_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getCompletenessDescription().hashCode();
-      hash = (37 * hash) + DATASELECTIONDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + DATA_SELECTION_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDataSelectionDescription().hashCode();
-      hash = (37 * hash) + REVIEWDETAILS_FIELD_NUMBER;
+      hash = (37 * hash) + REVIEW_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getReviewDetails().hashCode();
-      hash = (37 * hash) + DATATREATMENTDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + DATA_TREATMENT_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDataTreatmentDescription().hashCode();
-      hash = (37 * hash) + INVENTORYMETHODDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + INVENTORY_METHOD_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getInventoryMethodDescription().hashCode();
-      hash = (37 * hash) + MODELINGCONSTANTSDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + MODELING_CONSTANTS_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getModelingConstantsDescription().hashCode();
       if (hasReviewer()) {
         hash = (37 * hash) + REVIEWER_FIELD_NUMBER;
         hash = (53 * hash) + getReviewer().hashCode();
       }
-      hash = (37 * hash) + SAMPLINGDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + SAMPLING_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getSamplingDescription().hashCode();
       if (getSourcesCount() > 0) {
         hash = (37 * hash) + SOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getSourcesList().hashCode();
       }
-      hash = (37 * hash) + RESTRICTIONSDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + RESTRICTIONS_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getRestrictionsDescription().hashCode();
       hash = (37 * hash) + COPYRIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getCopyright());
-      hash = (37 * hash) + CREATIONDATE_FIELD_NUMBER;
+      hash = (37 * hash) + CREATION_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getCreationDate().hashCode();
       if (hasDataDocumentor()) {
-        hash = (37 * hash) + DATADOCUMENTOR_FIELD_NUMBER;
+        hash = (37 * hash) + DATA_DOCUMENTOR_FIELD_NUMBER;
         hash = (53 * hash) + getDataDocumentor().hashCode();
       }
       if (hasDataGenerator()) {
-        hash = (37 * hash) + DATAGENERATOR_FIELD_NUMBER;
+        hash = (37 * hash) + DATA_GENERATOR_FIELD_NUMBER;
         hash = (53 * hash) + getDataGenerator().hashCode();
       }
       if (hasDataSetOwner()) {
-        hash = (37 * hash) + DATASETOWNER_FIELD_NUMBER;
+        hash = (37 * hash) + DATA_SET_OWNER_FIELD_NUMBER;
         hash = (53 * hash) + getDataSetOwner().hashCode();
       }
-      hash = (37 * hash) + INTENDEDAPPLICATION_FIELD_NUMBER;
+      hash = (37 * hash) + INTENDED_APPLICATION_FIELD_NUMBER;
       hash = (53 * hash) + getIntendedApplication().hashCode();
-      hash = (37 * hash) + PROJECTDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + PROJECT_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getProjectDescription().hashCode();
       if (hasPublication()) {
         hash = (37 * hash) + PUBLICATION_FIELD_NUMBER;
         hash = (53 * hash) + getPublication().hashCode();
       }
-      hash = (37 * hash) + GEOGRAPHYDESCRIPTION_FIELD_NUMBER;
+      hash = (37 * hash) + GEOGRAPHY_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getGeographyDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -54472,7 +54472,7 @@ public final class Proto {
 
       private java.lang.Object timeDescription_ = "";
       /**
-       * <code>string timeDescription = 2;</code>
+       * <code>string time_description = 2;</code>
        * @return The timeDescription.
        */
       public java.lang.String getTimeDescription() {
@@ -54488,7 +54488,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string timeDescription = 2;</code>
+       * <code>string time_description = 2;</code>
        * @return The bytes for timeDescription.
        */
       public com.google.protobuf.ByteString
@@ -54505,7 +54505,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string timeDescription = 2;</code>
+       * <code>string time_description = 2;</code>
        * @param value The timeDescription to set.
        * @return This builder for chaining.
        */
@@ -54520,7 +54520,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string timeDescription = 2;</code>
+       * <code>string time_description = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeDescription() {
@@ -54530,7 +54530,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string timeDescription = 2;</code>
+       * <code>string time_description = 2;</code>
        * @param value The bytes for timeDescription to set.
        * @return This builder for chaining.
        */
@@ -54548,7 +54548,7 @@ public final class Proto {
 
       private java.lang.Object validUntil_ = "";
       /**
-       * <code>string validUntil = 3;</code>
+       * <code>string valid_until = 3;</code>
        * @return The validUntil.
        */
       public java.lang.String getValidUntil() {
@@ -54564,7 +54564,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string validUntil = 3;</code>
+       * <code>string valid_until = 3;</code>
        * @return The bytes for validUntil.
        */
       public com.google.protobuf.ByteString
@@ -54581,7 +54581,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string validUntil = 3;</code>
+       * <code>string valid_until = 3;</code>
        * @param value The validUntil to set.
        * @return This builder for chaining.
        */
@@ -54596,7 +54596,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string validUntil = 3;</code>
+       * <code>string valid_until = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearValidUntil() {
@@ -54606,7 +54606,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string validUntil = 3;</code>
+       * <code>string valid_until = 3;</code>
        * @param value The bytes for validUntil to set.
        * @return This builder for chaining.
        */
@@ -54624,7 +54624,7 @@ public final class Proto {
 
       private java.lang.Object validFrom_ = "";
       /**
-       * <code>string validFrom = 4;</code>
+       * <code>string valid_from = 4;</code>
        * @return The validFrom.
        */
       public java.lang.String getValidFrom() {
@@ -54640,7 +54640,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string validFrom = 4;</code>
+       * <code>string valid_from = 4;</code>
        * @return The bytes for validFrom.
        */
       public com.google.protobuf.ByteString
@@ -54657,7 +54657,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string validFrom = 4;</code>
+       * <code>string valid_from = 4;</code>
        * @param value The validFrom to set.
        * @return This builder for chaining.
        */
@@ -54672,7 +54672,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string validFrom = 4;</code>
+       * <code>string valid_from = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearValidFrom() {
@@ -54682,7 +54682,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string validFrom = 4;</code>
+       * <code>string valid_from = 4;</code>
        * @param value The bytes for validFrom to set.
        * @return This builder for chaining.
        */
@@ -54700,7 +54700,7 @@ public final class Proto {
 
       private java.lang.Object technologyDescription_ = "";
       /**
-       * <code>string technologyDescription = 5;</code>
+       * <code>string technology_description = 5;</code>
        * @return The technologyDescription.
        */
       public java.lang.String getTechnologyDescription() {
@@ -54716,7 +54716,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string technologyDescription = 5;</code>
+       * <code>string technology_description = 5;</code>
        * @return The bytes for technologyDescription.
        */
       public com.google.protobuf.ByteString
@@ -54733,7 +54733,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string technologyDescription = 5;</code>
+       * <code>string technology_description = 5;</code>
        * @param value The technologyDescription to set.
        * @return This builder for chaining.
        */
@@ -54748,7 +54748,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string technologyDescription = 5;</code>
+       * <code>string technology_description = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTechnologyDescription() {
@@ -54758,7 +54758,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string technologyDescription = 5;</code>
+       * <code>string technology_description = 5;</code>
        * @param value The bytes for technologyDescription to set.
        * @return This builder for chaining.
        */
@@ -54776,7 +54776,7 @@ public final class Proto {
 
       private java.lang.Object dataCollectionDescription_ = "";
       /**
-       * <code>string dataCollectionDescription = 6;</code>
+       * <code>string data_collection_description = 6;</code>
        * @return The dataCollectionDescription.
        */
       public java.lang.String getDataCollectionDescription() {
@@ -54792,7 +54792,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataCollectionDescription = 6;</code>
+       * <code>string data_collection_description = 6;</code>
        * @return The bytes for dataCollectionDescription.
        */
       public com.google.protobuf.ByteString
@@ -54809,7 +54809,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataCollectionDescription = 6;</code>
+       * <code>string data_collection_description = 6;</code>
        * @param value The dataCollectionDescription to set.
        * @return This builder for chaining.
        */
@@ -54824,7 +54824,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataCollectionDescription = 6;</code>
+       * <code>string data_collection_description = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearDataCollectionDescription() {
@@ -54834,7 +54834,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataCollectionDescription = 6;</code>
+       * <code>string data_collection_description = 6;</code>
        * @param value The bytes for dataCollectionDescription to set.
        * @return This builder for chaining.
        */
@@ -54852,7 +54852,7 @@ public final class Proto {
 
       private java.lang.Object completenessDescription_ = "";
       /**
-       * <code>string completenessDescription = 7;</code>
+       * <code>string completeness_description = 7;</code>
        * @return The completenessDescription.
        */
       public java.lang.String getCompletenessDescription() {
@@ -54868,7 +54868,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string completenessDescription = 7;</code>
+       * <code>string completeness_description = 7;</code>
        * @return The bytes for completenessDescription.
        */
       public com.google.protobuf.ByteString
@@ -54885,7 +54885,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string completenessDescription = 7;</code>
+       * <code>string completeness_description = 7;</code>
        * @param value The completenessDescription to set.
        * @return This builder for chaining.
        */
@@ -54900,7 +54900,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string completenessDescription = 7;</code>
+       * <code>string completeness_description = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompletenessDescription() {
@@ -54910,7 +54910,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string completenessDescription = 7;</code>
+       * <code>string completeness_description = 7;</code>
        * @param value The bytes for completenessDescription to set.
        * @return This builder for chaining.
        */
@@ -54928,7 +54928,7 @@ public final class Proto {
 
       private java.lang.Object dataSelectionDescription_ = "";
       /**
-       * <code>string dataSelectionDescription = 8;</code>
+       * <code>string data_selection_description = 8;</code>
        * @return The dataSelectionDescription.
        */
       public java.lang.String getDataSelectionDescription() {
@@ -54944,7 +54944,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataSelectionDescription = 8;</code>
+       * <code>string data_selection_description = 8;</code>
        * @return The bytes for dataSelectionDescription.
        */
       public com.google.protobuf.ByteString
@@ -54961,7 +54961,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataSelectionDescription = 8;</code>
+       * <code>string data_selection_description = 8;</code>
        * @param value The dataSelectionDescription to set.
        * @return This builder for chaining.
        */
@@ -54976,7 +54976,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataSelectionDescription = 8;</code>
+       * <code>string data_selection_description = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDataSelectionDescription() {
@@ -54986,7 +54986,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataSelectionDescription = 8;</code>
+       * <code>string data_selection_description = 8;</code>
        * @param value The bytes for dataSelectionDescription to set.
        * @return This builder for chaining.
        */
@@ -55004,7 +55004,7 @@ public final class Proto {
 
       private java.lang.Object reviewDetails_ = "";
       /**
-       * <code>string reviewDetails = 9;</code>
+       * <code>string review_details = 9;</code>
        * @return The reviewDetails.
        */
       public java.lang.String getReviewDetails() {
@@ -55020,7 +55020,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string reviewDetails = 9;</code>
+       * <code>string review_details = 9;</code>
        * @return The bytes for reviewDetails.
        */
       public com.google.protobuf.ByteString
@@ -55037,7 +55037,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string reviewDetails = 9;</code>
+       * <code>string review_details = 9;</code>
        * @param value The reviewDetails to set.
        * @return This builder for chaining.
        */
@@ -55052,7 +55052,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string reviewDetails = 9;</code>
+       * <code>string review_details = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearReviewDetails() {
@@ -55062,7 +55062,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string reviewDetails = 9;</code>
+       * <code>string review_details = 9;</code>
        * @param value The bytes for reviewDetails to set.
        * @return This builder for chaining.
        */
@@ -55080,7 +55080,7 @@ public final class Proto {
 
       private java.lang.Object dataTreatmentDescription_ = "";
       /**
-       * <code>string dataTreatmentDescription = 10;</code>
+       * <code>string data_treatment_description = 10;</code>
        * @return The dataTreatmentDescription.
        */
       public java.lang.String getDataTreatmentDescription() {
@@ -55096,7 +55096,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataTreatmentDescription = 10;</code>
+       * <code>string data_treatment_description = 10;</code>
        * @return The bytes for dataTreatmentDescription.
        */
       public com.google.protobuf.ByteString
@@ -55113,7 +55113,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string dataTreatmentDescription = 10;</code>
+       * <code>string data_treatment_description = 10;</code>
        * @param value The dataTreatmentDescription to set.
        * @return This builder for chaining.
        */
@@ -55128,7 +55128,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataTreatmentDescription = 10;</code>
+       * <code>string data_treatment_description = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearDataTreatmentDescription() {
@@ -55138,7 +55138,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string dataTreatmentDescription = 10;</code>
+       * <code>string data_treatment_description = 10;</code>
        * @param value The bytes for dataTreatmentDescription to set.
        * @return This builder for chaining.
        */
@@ -55156,7 +55156,7 @@ public final class Proto {
 
       private java.lang.Object inventoryMethodDescription_ = "";
       /**
-       * <code>string inventoryMethodDescription = 11;</code>
+       * <code>string inventory_method_description = 11;</code>
        * @return The inventoryMethodDescription.
        */
       public java.lang.String getInventoryMethodDescription() {
@@ -55172,7 +55172,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string inventoryMethodDescription = 11;</code>
+       * <code>string inventory_method_description = 11;</code>
        * @return The bytes for inventoryMethodDescription.
        */
       public com.google.protobuf.ByteString
@@ -55189,7 +55189,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string inventoryMethodDescription = 11;</code>
+       * <code>string inventory_method_description = 11;</code>
        * @param value The inventoryMethodDescription to set.
        * @return This builder for chaining.
        */
@@ -55204,7 +55204,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string inventoryMethodDescription = 11;</code>
+       * <code>string inventory_method_description = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearInventoryMethodDescription() {
@@ -55214,7 +55214,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string inventoryMethodDescription = 11;</code>
+       * <code>string inventory_method_description = 11;</code>
        * @param value The bytes for inventoryMethodDescription to set.
        * @return This builder for chaining.
        */
@@ -55232,7 +55232,7 @@ public final class Proto {
 
       private java.lang.Object modelingConstantsDescription_ = "";
       /**
-       * <code>string modelingConstantsDescription = 12;</code>
+       * <code>string modeling_constants_description = 12;</code>
        * @return The modelingConstantsDescription.
        */
       public java.lang.String getModelingConstantsDescription() {
@@ -55248,7 +55248,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string modelingConstantsDescription = 12;</code>
+       * <code>string modeling_constants_description = 12;</code>
        * @return The bytes for modelingConstantsDescription.
        */
       public com.google.protobuf.ByteString
@@ -55265,7 +55265,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string modelingConstantsDescription = 12;</code>
+       * <code>string modeling_constants_description = 12;</code>
        * @param value The modelingConstantsDescription to set.
        * @return This builder for chaining.
        */
@@ -55280,7 +55280,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string modelingConstantsDescription = 12;</code>
+       * <code>string modeling_constants_description = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearModelingConstantsDescription() {
@@ -55290,7 +55290,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string modelingConstantsDescription = 12;</code>
+       * <code>string modeling_constants_description = 12;</code>
        * @param value The bytes for modelingConstantsDescription to set.
        * @return This builder for chaining.
        */
@@ -55427,7 +55427,7 @@ public final class Proto {
 
       private java.lang.Object samplingDescription_ = "";
       /**
-       * <code>string samplingDescription = 14;</code>
+       * <code>string sampling_description = 14;</code>
        * @return The samplingDescription.
        */
       public java.lang.String getSamplingDescription() {
@@ -55443,7 +55443,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string samplingDescription = 14;</code>
+       * <code>string sampling_description = 14;</code>
        * @return The bytes for samplingDescription.
        */
       public com.google.protobuf.ByteString
@@ -55460,7 +55460,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string samplingDescription = 14;</code>
+       * <code>string sampling_description = 14;</code>
        * @param value The samplingDescription to set.
        * @return This builder for chaining.
        */
@@ -55475,7 +55475,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string samplingDescription = 14;</code>
+       * <code>string sampling_description = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearSamplingDescription() {
@@ -55485,7 +55485,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string samplingDescription = 14;</code>
+       * <code>string sampling_description = 14;</code>
        * @param value The bytes for samplingDescription to set.
        * @return This builder for chaining.
        */
@@ -55743,7 +55743,7 @@ public final class Proto {
 
       private java.lang.Object restrictionsDescription_ = "";
       /**
-       * <code>string restrictionsDescription = 16;</code>
+       * <code>string restrictions_description = 16;</code>
        * @return The restrictionsDescription.
        */
       public java.lang.String getRestrictionsDescription() {
@@ -55759,7 +55759,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string restrictionsDescription = 16;</code>
+       * <code>string restrictions_description = 16;</code>
        * @return The bytes for restrictionsDescription.
        */
       public com.google.protobuf.ByteString
@@ -55776,7 +55776,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string restrictionsDescription = 16;</code>
+       * <code>string restrictions_description = 16;</code>
        * @param value The restrictionsDescription to set.
        * @return This builder for chaining.
        */
@@ -55791,7 +55791,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string restrictionsDescription = 16;</code>
+       * <code>string restrictions_description = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearRestrictionsDescription() {
@@ -55801,7 +55801,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string restrictionsDescription = 16;</code>
+       * <code>string restrictions_description = 16;</code>
        * @param value The bytes for restrictionsDescription to set.
        * @return This builder for chaining.
        */
@@ -55850,7 +55850,7 @@ public final class Proto {
 
       private java.lang.Object creationDate_ = "";
       /**
-       * <code>string creationDate = 18;</code>
+       * <code>string creation_date = 18;</code>
        * @return The creationDate.
        */
       public java.lang.String getCreationDate() {
@@ -55866,7 +55866,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string creationDate = 18;</code>
+       * <code>string creation_date = 18;</code>
        * @return The bytes for creationDate.
        */
       public com.google.protobuf.ByteString
@@ -55883,7 +55883,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string creationDate = 18;</code>
+       * <code>string creation_date = 18;</code>
        * @param value The creationDate to set.
        * @return This builder for chaining.
        */
@@ -55898,7 +55898,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string creationDate = 18;</code>
+       * <code>string creation_date = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreationDate() {
@@ -55908,7 +55908,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string creationDate = 18;</code>
+       * <code>string creation_date = 18;</code>
        * @param value The bytes for creationDate to set.
        * @return This builder for chaining.
        */
@@ -55928,14 +55928,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> dataDocumentorBuilder_;
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        * @return Whether the dataDocumentor field is set.
        */
       public boolean hasDataDocumentor() {
         return dataDocumentorBuilder_ != null || dataDocumentor_ != null;
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        * @return The dataDocumentor.
        */
       public org.openlca.proto.Proto.Ref getDataDocumentor() {
@@ -55946,7 +55946,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public Builder setDataDocumentor(org.openlca.proto.Proto.Ref value) {
         if (dataDocumentorBuilder_ == null) {
@@ -55962,7 +55962,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public Builder setDataDocumentor(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -55976,7 +55976,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public Builder mergeDataDocumentor(org.openlca.proto.Proto.Ref value) {
         if (dataDocumentorBuilder_ == null) {
@@ -55994,7 +55994,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public Builder clearDataDocumentor() {
         if (dataDocumentorBuilder_ == null) {
@@ -56008,7 +56008,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDataDocumentorBuilder() {
         
@@ -56016,7 +56016,7 @@ public final class Proto {
         return getDataDocumentorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDataDocumentorOrBuilder() {
         if (dataDocumentorBuilder_ != null) {
@@ -56027,7 +56027,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataDocumentor = 19;</code>
+       * <code>.Ref data_documentor = 19;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -56047,14 +56047,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> dataGeneratorBuilder_;
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        * @return Whether the dataGenerator field is set.
        */
       public boolean hasDataGenerator() {
         return dataGeneratorBuilder_ != null || dataGenerator_ != null;
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        * @return The dataGenerator.
        */
       public org.openlca.proto.Proto.Ref getDataGenerator() {
@@ -56065,7 +56065,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public Builder setDataGenerator(org.openlca.proto.Proto.Ref value) {
         if (dataGeneratorBuilder_ == null) {
@@ -56081,7 +56081,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public Builder setDataGenerator(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -56095,7 +56095,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public Builder mergeDataGenerator(org.openlca.proto.Proto.Ref value) {
         if (dataGeneratorBuilder_ == null) {
@@ -56113,7 +56113,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public Builder clearDataGenerator() {
         if (dataGeneratorBuilder_ == null) {
@@ -56127,7 +56127,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDataGeneratorBuilder() {
         
@@ -56135,7 +56135,7 @@ public final class Proto {
         return getDataGeneratorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDataGeneratorOrBuilder() {
         if (dataGeneratorBuilder_ != null) {
@@ -56146,7 +56146,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataGenerator = 20;</code>
+       * <code>.Ref data_generator = 20;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -56166,14 +56166,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> dataSetOwnerBuilder_;
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        * @return Whether the dataSetOwner field is set.
        */
       public boolean hasDataSetOwner() {
         return dataSetOwnerBuilder_ != null || dataSetOwner_ != null;
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        * @return The dataSetOwner.
        */
       public org.openlca.proto.Proto.Ref getDataSetOwner() {
@@ -56184,7 +56184,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public Builder setDataSetOwner(org.openlca.proto.Proto.Ref value) {
         if (dataSetOwnerBuilder_ == null) {
@@ -56200,7 +56200,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public Builder setDataSetOwner(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -56214,7 +56214,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public Builder mergeDataSetOwner(org.openlca.proto.Proto.Ref value) {
         if (dataSetOwnerBuilder_ == null) {
@@ -56232,7 +56232,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public Builder clearDataSetOwner() {
         if (dataSetOwnerBuilder_ == null) {
@@ -56246,7 +56246,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDataSetOwnerBuilder() {
         
@@ -56254,7 +56254,7 @@ public final class Proto {
         return getDataSetOwnerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDataSetOwnerOrBuilder() {
         if (dataSetOwnerBuilder_ != null) {
@@ -56265,7 +56265,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.Ref dataSetOwner = 21;</code>
+       * <code>.Ref data_set_owner = 21;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -56283,7 +56283,7 @@ public final class Proto {
 
       private java.lang.Object intendedApplication_ = "";
       /**
-       * <code>string intendedApplication = 22;</code>
+       * <code>string intended_application = 22;</code>
        * @return The intendedApplication.
        */
       public java.lang.String getIntendedApplication() {
@@ -56299,7 +56299,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string intendedApplication = 22;</code>
+       * <code>string intended_application = 22;</code>
        * @return The bytes for intendedApplication.
        */
       public com.google.protobuf.ByteString
@@ -56316,7 +56316,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string intendedApplication = 22;</code>
+       * <code>string intended_application = 22;</code>
        * @param value The intendedApplication to set.
        * @return This builder for chaining.
        */
@@ -56331,7 +56331,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string intendedApplication = 22;</code>
+       * <code>string intended_application = 22;</code>
        * @return This builder for chaining.
        */
       public Builder clearIntendedApplication() {
@@ -56341,7 +56341,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string intendedApplication = 22;</code>
+       * <code>string intended_application = 22;</code>
        * @param value The bytes for intendedApplication to set.
        * @return This builder for chaining.
        */
@@ -56359,7 +56359,7 @@ public final class Proto {
 
       private java.lang.Object projectDescription_ = "";
       /**
-       * <code>string projectDescription = 23;</code>
+       * <code>string project_description = 23;</code>
        * @return The projectDescription.
        */
       public java.lang.String getProjectDescription() {
@@ -56375,7 +56375,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string projectDescription = 23;</code>
+       * <code>string project_description = 23;</code>
        * @return The bytes for projectDescription.
        */
       public com.google.protobuf.ByteString
@@ -56392,7 +56392,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string projectDescription = 23;</code>
+       * <code>string project_description = 23;</code>
        * @param value The projectDescription to set.
        * @return This builder for chaining.
        */
@@ -56407,7 +56407,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string projectDescription = 23;</code>
+       * <code>string project_description = 23;</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectDescription() {
@@ -56417,7 +56417,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string projectDescription = 23;</code>
+       * <code>string project_description = 23;</code>
        * @param value The bytes for projectDescription to set.
        * @return This builder for chaining.
        */
@@ -56554,7 +56554,7 @@ public final class Proto {
 
       private java.lang.Object geographyDescription_ = "";
       /**
-       * <code>string geographyDescription = 25;</code>
+       * <code>string geography_description = 25;</code>
        * @return The geographyDescription.
        */
       public java.lang.String getGeographyDescription() {
@@ -56570,7 +56570,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string geographyDescription = 25;</code>
+       * <code>string geography_description = 25;</code>
        * @return The bytes for geographyDescription.
        */
       public com.google.protobuf.ByteString
@@ -56587,7 +56587,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string geographyDescription = 25;</code>
+       * <code>string geography_description = 25;</code>
        * @param value The geographyDescription to set.
        * @return This builder for chaining.
        */
@@ -56602,7 +56602,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string geographyDescription = 25;</code>
+       * <code>string geography_description = 25;</code>
        * @return This builder for chaining.
        */
       public Builder clearGeographyDescription() {
@@ -56612,7 +56612,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string geographyDescription = 25;</code>
+       * <code>string geography_description = 25;</code>
        * @param value The bytes for geographyDescription to set.
        * @return This builder for chaining.
        */
@@ -58427,7 +58427,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.ProcessType processType = 2;</code>
+     * <code>.ProcessType process_type = 2;</code>
      * @return The enum numeric value on the wire for processType.
      */
     int getProcessTypeValue();
@@ -58436,7 +58436,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.ProcessType processType = 2;</code>
+     * <code>.ProcessType process_type = 2;</code>
      * @return The processType.
      */
     org.openlca.proto.Proto.ProcessType getProcessType();
@@ -58582,14 +58582,14 @@ public final class Proto {
       }
     }
 
-    public static final int PROCESSTYPE_FIELD_NUMBER = 2;
+    public static final int PROCESS_TYPE_FIELD_NUMBER = 2;
     private int processType_;
     /**
      * <pre>
      * The type of the process.
      * </pre>
      *
-     * <code>.ProcessType processType = 2;</code>
+     * <code>.ProcessType process_type = 2;</code>
      * @return The enum numeric value on the wire for processType.
      */
     @java.lang.Override public int getProcessTypeValue() {
@@ -58600,7 +58600,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.ProcessType processType = 2;</code>
+     * <code>.ProcessType process_type = 2;</code>
      * @return The processType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ProcessType getProcessType() {
@@ -58676,7 +58676,7 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
-      hash = (37 * hash) + PROCESSTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + PROCESS_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + processType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -59033,7 +59033,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.ProcessType processType = 2;</code>
+       * <code>.ProcessType process_type = 2;</code>
        * @return The enum numeric value on the wire for processType.
        */
       @java.lang.Override public int getProcessTypeValue() {
@@ -59044,7 +59044,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.ProcessType processType = 2;</code>
+       * <code>.ProcessType process_type = 2;</code>
        * @param value The enum numeric value on the wire for processType to set.
        * @return This builder for chaining.
        */
@@ -59059,7 +59059,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.ProcessType processType = 2;</code>
+       * <code>.ProcessType process_type = 2;</code>
        * @return The processType.
        */
       @java.lang.Override
@@ -59073,7 +59073,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.ProcessType processType = 2;</code>
+       * <code>.ProcessType process_type = 2;</code>
        * @param value The processType to set.
        * @return This builder for chaining.
        */
@@ -59091,7 +59091,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.ProcessType processType = 2;</code>
+       * <code>.ProcessType process_type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearProcessType() {
@@ -59268,7 +59268,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -59277,7 +59277,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -59360,7 +59360,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      * @return Whether the referenceProcess field is set.
      */
     boolean hasReferenceProcess();
@@ -59370,7 +59370,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      * @return The referenceProcess.
      */
     org.openlca.proto.Proto.ProcessRef getReferenceProcess();
@@ -59380,7 +59380,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      */
     org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder();
 
@@ -59390,7 +59390,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      * @return Whether the referenceExchange field is set.
      */
     boolean hasReferenceExchange();
@@ -59400,7 +59400,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      * @return The referenceExchange.
      */
     org.openlca.proto.Proto.Exchange getReferenceExchange();
@@ -59410,7 +59410,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder();
 
@@ -59419,7 +59419,7 @@ public final class Proto {
      * The flow amount of the functional unit of the product system.
      * </pre>
      *
-     * <code>double targetAmount = 11;</code>
+     * <code>double target_amount = 11;</code>
      * @return The targetAmount.
      */
     double getTargetAmount();
@@ -59429,7 +59429,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      * @return Whether the targetUnit field is set.
      */
     boolean hasTargetUnit();
@@ -59438,7 +59438,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      * @return The targetUnit.
      */
     org.openlca.proto.Proto.Ref getTargetUnit();
@@ -59447,7 +59447,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder();
 
@@ -59457,7 +59457,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      * @return Whether the targetFlowProperty field is set.
      */
     boolean hasTargetFlowProperty();
@@ -59467,7 +59467,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      * @return The targetFlowProperty.
      */
     org.openlca.proto.Proto.Ref getTargetFlowProperty();
@@ -59477,7 +59477,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder();
 
@@ -59486,7 +59486,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     java.util.List<org.openlca.proto.Proto.ProcessLink> 
         getProcessLinksList();
@@ -59495,7 +59495,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     org.openlca.proto.Proto.ProcessLink getProcessLinks(int index);
     /**
@@ -59503,7 +59503,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     int getProcessLinksCount();
     /**
@@ -59511,7 +59511,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
         getProcessLinksOrBuilderList();
@@ -59520,7 +59520,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
         int index);
@@ -59982,14 +59982,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -60010,7 +60010,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -60126,7 +60126,7 @@ public final class Proto {
       return processes_.get(index);
     }
 
-    public static final int REFERENCEPROCESS_FIELD_NUMBER = 9;
+    public static final int REFERENCE_PROCESS_FIELD_NUMBER = 9;
     private org.openlca.proto.Proto.ProcessRef referenceProcess_;
     /**
      * <pre>
@@ -60134,7 +60134,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      * @return Whether the referenceProcess field is set.
      */
     @java.lang.Override
@@ -60147,7 +60147,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      * @return The referenceProcess.
      */
     @java.lang.Override
@@ -60160,14 +60160,14 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.ProcessRef referenceProcess = 9;</code>
+     * <code>.ProcessRef reference_process = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder() {
       return getReferenceProcess();
     }
 
-    public static final int REFERENCEEXCHANGE_FIELD_NUMBER = 10;
+    public static final int REFERENCE_EXCHANGE_FIELD_NUMBER = 10;
     private org.openlca.proto.Proto.Exchange referenceExchange_;
     /**
      * <pre>
@@ -60175,7 +60175,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      * @return Whether the referenceExchange field is set.
      */
     @java.lang.Override
@@ -60188,7 +60188,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      * @return The referenceExchange.
      */
     @java.lang.Override
@@ -60201,21 +60201,21 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.Exchange referenceExchange = 10;</code>
+     * <code>.Exchange reference_exchange = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder() {
       return getReferenceExchange();
     }
 
-    public static final int TARGETAMOUNT_FIELD_NUMBER = 11;
+    public static final int TARGET_AMOUNT_FIELD_NUMBER = 11;
     private double targetAmount_;
     /**
      * <pre>
      * The flow amount of the functional unit of the product system.
      * </pre>
      *
-     * <code>double targetAmount = 11;</code>
+     * <code>double target_amount = 11;</code>
      * @return The targetAmount.
      */
     @java.lang.Override
@@ -60223,14 +60223,14 @@ public final class Proto {
       return targetAmount_;
     }
 
-    public static final int TARGETUNIT_FIELD_NUMBER = 12;
+    public static final int TARGET_UNIT_FIELD_NUMBER = 12;
     private org.openlca.proto.Proto.Ref targetUnit_;
     /**
      * <pre>
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      * @return Whether the targetUnit field is set.
      */
     @java.lang.Override
@@ -60242,7 +60242,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      * @return The targetUnit.
      */
     @java.lang.Override
@@ -60254,14 +60254,14 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.Ref targetUnit = 12;</code>
+     * <code>.Ref target_unit = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder() {
       return getTargetUnit();
     }
 
-    public static final int TARGETFLOWPROPERTY_FIELD_NUMBER = 13;
+    public static final int TARGET_FLOW_PROPERTY_FIELD_NUMBER = 13;
     private org.openlca.proto.Proto.Ref targetFlowProperty_;
     /**
      * <pre>
@@ -60269,7 +60269,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      * @return Whether the targetFlowProperty field is set.
      */
     @java.lang.Override
@@ -60282,7 +60282,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      * @return The targetFlowProperty.
      */
     @java.lang.Override
@@ -60295,21 +60295,21 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.Ref targetFlowProperty = 13;</code>
+     * <code>.Ref target_flow_property = 13;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder() {
       return getTargetFlowProperty();
     }
 
-    public static final int PROCESSLINKS_FIELD_NUMBER = 14;
+    public static final int PROCESS_LINKS_FIELD_NUMBER = 14;
     private java.util.List<org.openlca.proto.Proto.ProcessLink> processLinks_;
     /**
      * <pre>
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ProcessLink> getProcessLinksList() {
@@ -60320,7 +60320,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
@@ -60332,7 +60332,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     @java.lang.Override
     public int getProcessLinksCount() {
@@ -60343,7 +60343,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessLink getProcessLinks(int index) {
@@ -60354,7 +60354,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .ProcessLink processLinks = 14;</code>
+     * <code>repeated .ProcessLink process_links = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
@@ -60557,7 +60557,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
@@ -60568,26 +60568,26 @@ public final class Proto {
         hash = (53 * hash) + getProcessesList().hashCode();
       }
       if (hasReferenceProcess()) {
-        hash = (37 * hash) + REFERENCEPROCESS_FIELD_NUMBER;
+        hash = (37 * hash) + REFERENCE_PROCESS_FIELD_NUMBER;
         hash = (53 * hash) + getReferenceProcess().hashCode();
       }
       if (hasReferenceExchange()) {
-        hash = (37 * hash) + REFERENCEEXCHANGE_FIELD_NUMBER;
+        hash = (37 * hash) + REFERENCE_EXCHANGE_FIELD_NUMBER;
         hash = (53 * hash) + getReferenceExchange().hashCode();
       }
-      hash = (37 * hash) + TARGETAMOUNT_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getTargetAmount()));
       if (hasTargetUnit()) {
-        hash = (37 * hash) + TARGETUNIT_FIELD_NUMBER;
+        hash = (37 * hash) + TARGET_UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getTargetUnit().hashCode();
       }
       if (hasTargetFlowProperty()) {
-        hash = (37 * hash) + TARGETFLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + TARGET_FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getTargetFlowProperty().hashCode();
       }
       if (getProcessLinksCount() > 0) {
-        hash = (37 * hash) + PROCESSLINKS_FIELD_NUMBER;
+        hash = (37 * hash) + PROCESS_LINKS_FIELD_NUMBER;
         hash = (53 * hash) + getProcessLinksList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -61536,7 +61536,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -61556,7 +61556,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -61577,7 +61577,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -61596,7 +61596,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -61610,7 +61610,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -62102,7 +62102,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        * @return Whether the referenceProcess field is set.
        */
       public boolean hasReferenceProcess() {
@@ -62114,7 +62114,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        * @return The referenceProcess.
        */
       public org.openlca.proto.Proto.ProcessRef getReferenceProcess() {
@@ -62130,7 +62130,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public Builder setReferenceProcess(org.openlca.proto.Proto.ProcessRef value) {
         if (referenceProcessBuilder_ == null) {
@@ -62151,7 +62151,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public Builder setReferenceProcess(
           org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -62170,7 +62170,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public Builder mergeReferenceProcess(org.openlca.proto.Proto.ProcessRef value) {
         if (referenceProcessBuilder_ == null) {
@@ -62193,7 +62193,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public Builder clearReferenceProcess() {
         if (referenceProcessBuilder_ == null) {
@@ -62212,7 +62212,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder getReferenceProcessBuilder() {
         
@@ -62225,7 +62225,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       public org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder() {
         if (referenceProcessBuilder_ != null) {
@@ -62241,7 +62241,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.ProcessRef referenceProcess = 9;</code>
+       * <code>.ProcessRef reference_process = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> 
@@ -62266,7 +62266,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        * @return Whether the referenceExchange field is set.
        */
       public boolean hasReferenceExchange() {
@@ -62278,7 +62278,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        * @return The referenceExchange.
        */
       public org.openlca.proto.Proto.Exchange getReferenceExchange() {
@@ -62294,7 +62294,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public Builder setReferenceExchange(org.openlca.proto.Proto.Exchange value) {
         if (referenceExchangeBuilder_ == null) {
@@ -62315,7 +62315,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public Builder setReferenceExchange(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -62334,7 +62334,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public Builder mergeReferenceExchange(org.openlca.proto.Proto.Exchange value) {
         if (referenceExchangeBuilder_ == null) {
@@ -62357,7 +62357,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public Builder clearReferenceExchange() {
         if (referenceExchangeBuilder_ == null) {
@@ -62376,7 +62376,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getReferenceExchangeBuilder() {
         
@@ -62389,7 +62389,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder() {
         if (referenceExchangeBuilder_ != null) {
@@ -62405,7 +62405,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.Exchange referenceExchange = 10;</code>
+       * <code>.Exchange reference_exchange = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -62427,7 +62427,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double targetAmount = 11;</code>
+       * <code>double target_amount = 11;</code>
        * @return The targetAmount.
        */
       @java.lang.Override
@@ -62439,7 +62439,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double targetAmount = 11;</code>
+       * <code>double target_amount = 11;</code>
        * @param value The targetAmount to set.
        * @return This builder for chaining.
        */
@@ -62454,7 +62454,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double targetAmount = 11;</code>
+       * <code>double target_amount = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetAmount() {
@@ -62472,7 +62472,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        * @return Whether the targetUnit field is set.
        */
       public boolean hasTargetUnit() {
@@ -62483,7 +62483,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        * @return The targetUnit.
        */
       public org.openlca.proto.Proto.Ref getTargetUnit() {
@@ -62498,7 +62498,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public Builder setTargetUnit(org.openlca.proto.Proto.Ref value) {
         if (targetUnitBuilder_ == null) {
@@ -62518,7 +62518,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public Builder setTargetUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -62536,7 +62536,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public Builder mergeTargetUnit(org.openlca.proto.Proto.Ref value) {
         if (targetUnitBuilder_ == null) {
@@ -62558,7 +62558,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public Builder clearTargetUnit() {
         if (targetUnitBuilder_ == null) {
@@ -62576,7 +62576,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getTargetUnitBuilder() {
         
@@ -62588,7 +62588,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder() {
         if (targetUnitBuilder_ != null) {
@@ -62603,7 +62603,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.Ref targetUnit = 12;</code>
+       * <code>.Ref target_unit = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -62628,7 +62628,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        * @return Whether the targetFlowProperty field is set.
        */
       public boolean hasTargetFlowProperty() {
@@ -62640,7 +62640,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        * @return The targetFlowProperty.
        */
       public org.openlca.proto.Proto.Ref getTargetFlowProperty() {
@@ -62656,7 +62656,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public Builder setTargetFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62677,7 +62677,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public Builder setTargetFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -62696,7 +62696,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public Builder mergeTargetFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62719,7 +62719,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public Builder clearTargetFlowProperty() {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62738,7 +62738,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getTargetFlowPropertyBuilder() {
         
@@ -62751,7 +62751,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder() {
         if (targetFlowPropertyBuilder_ != null) {
@@ -62767,7 +62767,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.Ref targetFlowProperty = 13;</code>
+       * <code>.Ref target_flow_property = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -62800,7 +62800,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessLink> getProcessLinksList() {
         if (processLinksBuilder_ == null) {
@@ -62814,7 +62814,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public int getProcessLinksCount() {
         if (processLinksBuilder_ == null) {
@@ -62828,7 +62828,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public org.openlca.proto.Proto.ProcessLink getProcessLinks(int index) {
         if (processLinksBuilder_ == null) {
@@ -62842,7 +62842,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder setProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink value) {
@@ -62863,7 +62863,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder setProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62881,7 +62881,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder addProcessLinks(org.openlca.proto.Proto.ProcessLink value) {
         if (processLinksBuilder_ == null) {
@@ -62901,7 +62901,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder addProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink value) {
@@ -62922,7 +62922,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder addProcessLinks(
           org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62940,7 +62940,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder addProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62958,7 +62958,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder addAllProcessLinks(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ProcessLink> values) {
@@ -62977,7 +62977,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder clearProcessLinks() {
         if (processLinksBuilder_ == null) {
@@ -62994,7 +62994,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public Builder removeProcessLinks(int index) {
         if (processLinksBuilder_ == null) {
@@ -63011,7 +63011,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder getProcessLinksBuilder(
           int index) {
@@ -63022,7 +63022,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
           int index) {
@@ -63036,7 +63036,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
            getProcessLinksOrBuilderList() {
@@ -63051,7 +63051,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder addProcessLinksBuilder() {
         return getProcessLinksFieldBuilder().addBuilder(
@@ -63062,7 +63062,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder addProcessLinksBuilder(
           int index) {
@@ -63074,7 +63074,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .ProcessLink processLinks = 14;</code>
+       * <code>repeated .ProcessLink process_links = 14;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessLink.Builder> 
            getProcessLinksBuilderList() {
@@ -63262,7 +63262,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -63271,7 +63271,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -63283,7 +63283,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @return A list containing the categoryPath.
      */
     java.util.List<java.lang.String>
@@ -63294,7 +63294,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @return The count of categoryPath.
      */
     int getCategoryPathCount();
@@ -63304,7 +63304,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @param index The index of the element to return.
      * @return The categoryPath at the given index.
      */
@@ -63315,7 +63315,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @param index The index of the value to return.
      * @return The bytes of the categoryPath at the given index.
      */
@@ -63699,14 +63699,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -63727,7 +63727,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -63745,7 +63745,7 @@ public final class Proto {
       }
     }
 
-    public static final int CATEGORYPATH_FIELD_NUMBER = 7;
+    public static final int CATEGORY_PATH_FIELD_NUMBER = 7;
     private com.google.protobuf.LazyStringList categoryPath_;
     /**
      * <pre>
@@ -63753,7 +63753,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @return A list containing the categoryPath.
      */
     public com.google.protobuf.ProtocolStringList
@@ -63766,7 +63766,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @return The count of categoryPath.
      */
     public int getCategoryPathCount() {
@@ -63778,7 +63778,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @param index The index of the element to return.
      * @return The categoryPath at the given index.
      */
@@ -63791,7 +63791,7 @@ public final class Proto {
      * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
      * </pre>
      *
-     * <code>repeated string categoryPath = 7;</code>
+     * <code>repeated string category_path = 7;</code>
      * @param index The index of the value to return.
      * @return The bytes of the categoryPath at the given index.
      */
@@ -63920,10 +63920,10 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (getCategoryPathCount() > 0) {
-        hash = (37 * hash) + CATEGORYPATH_FIELD_NUMBER;
+        hash = (37 * hash) + CATEGORY_PATH_FIELD_NUMBER;
         hash = (53 * hash) + getCategoryPathList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -64732,7 +64732,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -64752,7 +64752,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -64773,7 +64773,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -64792,7 +64792,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -64806,7 +64806,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -64835,7 +64835,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @return A list containing the categoryPath.
        */
       public com.google.protobuf.ProtocolStringList
@@ -64848,7 +64848,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @return The count of categoryPath.
        */
       public int getCategoryPathCount() {
@@ -64860,7 +64860,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param index The index of the element to return.
        * @return The categoryPath at the given index.
        */
@@ -64873,7 +64873,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param index The index of the value to return.
        * @return The bytes of the categoryPath at the given index.
        */
@@ -64887,7 +64887,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param index The index to set the value at.
        * @param value The categoryPath to set.
        * @return This builder for chaining.
@@ -64908,7 +64908,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param value The categoryPath to add.
        * @return This builder for chaining.
        */
@@ -64928,7 +64928,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param values The categoryPath to add.
        * @return This builder for chaining.
        */
@@ -64946,7 +64946,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCategoryPath() {
@@ -64961,7 +64961,7 @@ public final class Proto {
        * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
        * </pre>
        *
-       * <code>repeated string categoryPath = 7;</code>
+       * <code>repeated string category_path = 7;</code>
        * @param value The bytes of the categoryPath to add.
        * @return This builder for chaining.
        */
@@ -65056,49 +65056,49 @@ public final class Proto {
         getTypeBytes();
 
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     java.util.List<org.openlca.proto.Proto.FlowResult> 
         getFlowResultsList();
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     org.openlca.proto.Proto.FlowResult getFlowResults(int index);
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     int getFlowResultsCount();
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.FlowResultOrBuilder> 
         getFlowResultsOrBuilderList();
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     org.openlca.proto.Proto.FlowResultOrBuilder getFlowResultsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     java.util.List<org.openlca.proto.Proto.ImpactResult> 
         getImpactResultsList();
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     org.openlca.proto.Proto.ImpactResult getImpactResults(int index);
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     int getImpactResultsCount();
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ImpactResultOrBuilder> 
         getImpactResultsOrBuilderList();
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     org.openlca.proto.Proto.ImpactResultOrBuilder getImpactResultsOrBuilder(
         int index);
@@ -65262,17 +65262,17 @@ public final class Proto {
       }
     }
 
-    public static final int FLOWRESULTS_FIELD_NUMBER = 2;
+    public static final int FLOW_RESULTS_FIELD_NUMBER = 2;
     private java.util.List<org.openlca.proto.Proto.FlowResult> flowResults_;
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.FlowResult> getFlowResultsList() {
       return flowResults_;
     }
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.FlowResultOrBuilder> 
@@ -65280,21 +65280,21 @@ public final class Proto {
       return flowResults_;
     }
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     @java.lang.Override
     public int getFlowResultsCount() {
       return flowResults_.size();
     }
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowResult getFlowResults(int index) {
       return flowResults_.get(index);
     }
     /**
-     * <code>repeated .FlowResult flowResults = 2;</code>
+     * <code>repeated .FlowResult flow_results = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowResultOrBuilder getFlowResultsOrBuilder(
@@ -65302,17 +65302,17 @@ public final class Proto {
       return flowResults_.get(index);
     }
 
-    public static final int IMPACTRESULTS_FIELD_NUMBER = 3;
+    public static final int IMPACT_RESULTS_FIELD_NUMBER = 3;
     private java.util.List<org.openlca.proto.Proto.ImpactResult> impactResults_;
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ImpactResult> getImpactResultsList() {
       return impactResults_;
     }
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ImpactResultOrBuilder> 
@@ -65320,21 +65320,21 @@ public final class Proto {
       return impactResults_;
     }
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     @java.lang.Override
     public int getImpactResultsCount() {
       return impactResults_.size();
     }
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactResult getImpactResults(int index) {
       return impactResults_.get(index);
     }
     /**
-     * <code>repeated .ImpactResult impactResults = 3;</code>
+     * <code>repeated .ImpactResult impact_results = 3;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactResultOrBuilder getImpactResultsOrBuilder(
@@ -65420,11 +65420,11 @@ public final class Proto {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       if (getFlowResultsCount() > 0) {
-        hash = (37 * hash) + FLOWRESULTS_FIELD_NUMBER;
+        hash = (37 * hash) + FLOW_RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getFlowResultsList().hashCode();
       }
       if (getImpactResultsCount() > 0) {
-        hash = (37 * hash) + IMPACTRESULTS_FIELD_NUMBER;
+        hash = (37 * hash) + IMPACT_RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getImpactResultsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -65870,7 +65870,7 @@ public final class Proto {
           org.openlca.proto.Proto.FlowResult, org.openlca.proto.Proto.FlowResult.Builder, org.openlca.proto.Proto.FlowResultOrBuilder> flowResultsBuilder_;
 
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowResult> getFlowResultsList() {
         if (flowResultsBuilder_ == null) {
@@ -65880,7 +65880,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public int getFlowResultsCount() {
         if (flowResultsBuilder_ == null) {
@@ -65890,7 +65890,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public org.openlca.proto.Proto.FlowResult getFlowResults(int index) {
         if (flowResultsBuilder_ == null) {
@@ -65900,7 +65900,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder setFlowResults(
           int index, org.openlca.proto.Proto.FlowResult value) {
@@ -65917,7 +65917,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder setFlowResults(
           int index, org.openlca.proto.Proto.FlowResult.Builder builderForValue) {
@@ -65931,7 +65931,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder addFlowResults(org.openlca.proto.Proto.FlowResult value) {
         if (flowResultsBuilder_ == null) {
@@ -65947,7 +65947,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder addFlowResults(
           int index, org.openlca.proto.Proto.FlowResult value) {
@@ -65964,7 +65964,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder addFlowResults(
           org.openlca.proto.Proto.FlowResult.Builder builderForValue) {
@@ -65978,7 +65978,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder addFlowResults(
           int index, org.openlca.proto.Proto.FlowResult.Builder builderForValue) {
@@ -65992,7 +65992,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder addAllFlowResults(
           java.lang.Iterable<? extends org.openlca.proto.Proto.FlowResult> values) {
@@ -66007,7 +66007,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder clearFlowResults() {
         if (flowResultsBuilder_ == null) {
@@ -66020,7 +66020,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public Builder removeFlowResults(int index) {
         if (flowResultsBuilder_ == null) {
@@ -66033,14 +66033,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public org.openlca.proto.Proto.FlowResult.Builder getFlowResultsBuilder(
           int index) {
         return getFlowResultsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public org.openlca.proto.Proto.FlowResultOrBuilder getFlowResultsOrBuilder(
           int index) {
@@ -66050,7 +66050,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.FlowResultOrBuilder> 
            getFlowResultsOrBuilderList() {
@@ -66061,14 +66061,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public org.openlca.proto.Proto.FlowResult.Builder addFlowResultsBuilder() {
         return getFlowResultsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.FlowResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public org.openlca.proto.Proto.FlowResult.Builder addFlowResultsBuilder(
           int index) {
@@ -66076,7 +66076,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.FlowResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .FlowResult flowResults = 2;</code>
+       * <code>repeated .FlowResult flow_results = 2;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowResult.Builder> 
            getFlowResultsBuilderList() {
@@ -66110,7 +66110,7 @@ public final class Proto {
           org.openlca.proto.Proto.ImpactResult, org.openlca.proto.Proto.ImpactResult.Builder, org.openlca.proto.Proto.ImpactResultOrBuilder> impactResultsBuilder_;
 
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactResult> getImpactResultsList() {
         if (impactResultsBuilder_ == null) {
@@ -66120,7 +66120,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public int getImpactResultsCount() {
         if (impactResultsBuilder_ == null) {
@@ -66130,7 +66130,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public org.openlca.proto.Proto.ImpactResult getImpactResults(int index) {
         if (impactResultsBuilder_ == null) {
@@ -66140,7 +66140,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder setImpactResults(
           int index, org.openlca.proto.Proto.ImpactResult value) {
@@ -66157,7 +66157,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder setImpactResults(
           int index, org.openlca.proto.Proto.ImpactResult.Builder builderForValue) {
@@ -66171,7 +66171,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder addImpactResults(org.openlca.proto.Proto.ImpactResult value) {
         if (impactResultsBuilder_ == null) {
@@ -66187,7 +66187,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder addImpactResults(
           int index, org.openlca.proto.Proto.ImpactResult value) {
@@ -66204,7 +66204,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder addImpactResults(
           org.openlca.proto.Proto.ImpactResult.Builder builderForValue) {
@@ -66218,7 +66218,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder addImpactResults(
           int index, org.openlca.proto.Proto.ImpactResult.Builder builderForValue) {
@@ -66232,7 +66232,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder addAllImpactResults(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ImpactResult> values) {
@@ -66247,7 +66247,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder clearImpactResults() {
         if (impactResultsBuilder_ == null) {
@@ -66260,7 +66260,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public Builder removeImpactResults(int index) {
         if (impactResultsBuilder_ == null) {
@@ -66273,14 +66273,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public org.openlca.proto.Proto.ImpactResult.Builder getImpactResultsBuilder(
           int index) {
         return getImpactResultsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public org.openlca.proto.Proto.ImpactResultOrBuilder getImpactResultsOrBuilder(
           int index) {
@@ -66290,7 +66290,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ImpactResultOrBuilder> 
            getImpactResultsOrBuilderList() {
@@ -66301,14 +66301,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public org.openlca.proto.Proto.ImpactResult.Builder addImpactResultsBuilder() {
         return getImpactResultsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.ImpactResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public org.openlca.proto.Proto.ImpactResult.Builder addImpactResultsBuilder(
           int index) {
@@ -66316,7 +66316,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.ImpactResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .ImpactResult impactResults = 3;</code>
+       * <code>repeated .ImpactResult impact_results = 3;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactResult.Builder> 
            getImpactResultsBuilderList() {
@@ -66504,7 +66504,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -66513,7 +66513,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -66551,7 +66551,7 @@ public final class Proto {
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activityVariable = 8;</code>
+     * <code>string activity_variable = 8;</code>
      * @return The activityVariable.
      */
     java.lang.String getActivityVariable();
@@ -66560,7 +66560,7 @@ public final class Proto {
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activityVariable = 8;</code>
+     * <code>string activity_variable = 8;</code>
      * @return The bytes for activityVariable.
      */
     com.google.protobuf.ByteString
@@ -66571,7 +66571,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      * @return Whether the activityQuantity field is set.
      */
     boolean hasActivityQuantity();
@@ -66580,7 +66580,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      * @return The activityQuantity.
      */
     org.openlca.proto.Proto.Ref getActivityQuantity();
@@ -66589,7 +66589,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder();
 
@@ -66598,7 +66598,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      * @return Whether the activityUnit field is set.
      */
     boolean hasActivityUnit();
@@ -66607,7 +66607,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      * @return The activityUnit.
      */
     org.openlca.proto.Proto.Ref getActivityUnit();
@@ -66616,7 +66616,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder();
 
@@ -66625,7 +66625,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unitOfMeasurement = 11;</code>
+     * <code>string unit_of_measurement = 11;</code>
      * @return The unitOfMeasurement.
      */
     java.lang.String getUnitOfMeasurement();
@@ -66634,7 +66634,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unitOfMeasurement = 11;</code>
+     * <code>string unit_of_measurement = 11;</code>
      * @return The bytes for unitOfMeasurement.
      */
     com.google.protobuf.ByteString
@@ -66645,7 +66645,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluationScheme = 12;</code>
+     * <code>string evaluation_scheme = 12;</code>
      * @return The evaluationScheme.
      */
     java.lang.String getEvaluationScheme();
@@ -66654,7 +66654,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluationScheme = 12;</code>
+     * <code>string evaluation_scheme = 12;</code>
      * @return The bytes for evaluationScheme.
      */
     com.google.protobuf.ByteString
@@ -67075,14 +67075,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -67103,7 +67103,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -67159,14 +67159,14 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int ACTIVITYVARIABLE_FIELD_NUMBER = 8;
+    public static final int ACTIVITY_VARIABLE_FIELD_NUMBER = 8;
     private volatile java.lang.Object activityVariable_;
     /**
      * <pre>
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activityVariable = 8;</code>
+     * <code>string activity_variable = 8;</code>
      * @return The activityVariable.
      */
     @java.lang.Override
@@ -67187,7 +67187,7 @@ public final class Proto {
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activityVariable = 8;</code>
+     * <code>string activity_variable = 8;</code>
      * @return The bytes for activityVariable.
      */
     @java.lang.Override
@@ -67205,14 +67205,14 @@ public final class Proto {
       }
     }
 
-    public static final int ACTIVITYQUANTITY_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_QUANTITY_FIELD_NUMBER = 9;
     private org.openlca.proto.Proto.Ref activityQuantity_;
     /**
      * <pre>
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      * @return Whether the activityQuantity field is set.
      */
     @java.lang.Override
@@ -67224,7 +67224,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      * @return The activityQuantity.
      */
     @java.lang.Override
@@ -67236,21 +67236,21 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityQuantity = 9;</code>
+     * <code>.Ref activity_quantity = 9;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder() {
       return getActivityQuantity();
     }
 
-    public static final int ACTIVITYUNIT_FIELD_NUMBER = 10;
+    public static final int ACTIVITY_UNIT_FIELD_NUMBER = 10;
     private org.openlca.proto.Proto.Ref activityUnit_;
     /**
      * <pre>
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      * @return Whether the activityUnit field is set.
      */
     @java.lang.Override
@@ -67262,7 +67262,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      * @return The activityUnit.
      */
     @java.lang.Override
@@ -67274,21 +67274,21 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.Ref activityUnit = 10;</code>
+     * <code>.Ref activity_unit = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder() {
       return getActivityUnit();
     }
 
-    public static final int UNITOFMEASUREMENT_FIELD_NUMBER = 11;
+    public static final int UNIT_OF_MEASUREMENT_FIELD_NUMBER = 11;
     private volatile java.lang.Object unitOfMeasurement_;
     /**
      * <pre>
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unitOfMeasurement = 11;</code>
+     * <code>string unit_of_measurement = 11;</code>
      * @return The unitOfMeasurement.
      */
     @java.lang.Override
@@ -67309,7 +67309,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unitOfMeasurement = 11;</code>
+     * <code>string unit_of_measurement = 11;</code>
      * @return The bytes for unitOfMeasurement.
      */
     @java.lang.Override
@@ -67327,14 +67327,14 @@ public final class Proto {
       }
     }
 
-    public static final int EVALUATIONSCHEME_FIELD_NUMBER = 12;
+    public static final int EVALUATION_SCHEME_FIELD_NUMBER = 12;
     private volatile java.lang.Object evaluationScheme_;
     /**
      * <pre>
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluationScheme = 12;</code>
+     * <code>string evaluation_scheme = 12;</code>
      * @return The evaluationScheme.
      */
     @java.lang.Override
@@ -67355,7 +67355,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluationScheme = 12;</code>
+     * <code>string evaluation_scheme = 12;</code>
      * @return The bytes for evaluationScheme.
      */
     @java.lang.Override
@@ -67540,25 +67540,25 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + ACTIVITYVARIABLE_FIELD_NUMBER;
+      hash = (37 * hash) + ACTIVITY_VARIABLE_FIELD_NUMBER;
       hash = (53 * hash) + getActivityVariable().hashCode();
       if (hasActivityQuantity()) {
-        hash = (37 * hash) + ACTIVITYQUANTITY_FIELD_NUMBER;
+        hash = (37 * hash) + ACTIVITY_QUANTITY_FIELD_NUMBER;
         hash = (53 * hash) + getActivityQuantity().hashCode();
       }
       if (hasActivityUnit()) {
-        hash = (37 * hash) + ACTIVITYUNIT_FIELD_NUMBER;
+        hash = (37 * hash) + ACTIVITY_UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getActivityUnit().hashCode();
       }
-      hash = (37 * hash) + UNITOFMEASUREMENT_FIELD_NUMBER;
+      hash = (37 * hash) + UNIT_OF_MEASUREMENT_FIELD_NUMBER;
       hash = (53 * hash) + getUnitOfMeasurement().hashCode();
-      hash = (37 * hash) + EVALUATIONSCHEME_FIELD_NUMBER;
+      hash = (37 * hash) + EVALUATION_SCHEME_FIELD_NUMBER;
       hash = (53 * hash) + getEvaluationScheme().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -68402,7 +68402,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -68422,7 +68422,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -68443,7 +68443,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -68462,7 +68462,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -68476,7 +68476,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -68653,7 +68653,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activityVariable = 8;</code>
+       * <code>string activity_variable = 8;</code>
        * @return The activityVariable.
        */
       public java.lang.String getActivityVariable() {
@@ -68673,7 +68673,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activityVariable = 8;</code>
+       * <code>string activity_variable = 8;</code>
        * @return The bytes for activityVariable.
        */
       public com.google.protobuf.ByteString
@@ -68694,7 +68694,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activityVariable = 8;</code>
+       * <code>string activity_variable = 8;</code>
        * @param value The activityVariable to set.
        * @return This builder for chaining.
        */
@@ -68713,7 +68713,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activityVariable = 8;</code>
+       * <code>string activity_variable = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityVariable() {
@@ -68727,7 +68727,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activityVariable = 8;</code>
+       * <code>string activity_variable = 8;</code>
        * @param value The bytes for activityVariable to set.
        * @return This builder for chaining.
        */
@@ -68751,7 +68751,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        * @return Whether the activityQuantity field is set.
        */
       public boolean hasActivityQuantity() {
@@ -68762,7 +68762,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        * @return The activityQuantity.
        */
       public org.openlca.proto.Proto.Ref getActivityQuantity() {
@@ -68777,7 +68777,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public Builder setActivityQuantity(org.openlca.proto.Proto.Ref value) {
         if (activityQuantityBuilder_ == null) {
@@ -68797,7 +68797,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public Builder setActivityQuantity(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -68815,7 +68815,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public Builder mergeActivityQuantity(org.openlca.proto.Proto.Ref value) {
         if (activityQuantityBuilder_ == null) {
@@ -68837,7 +68837,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public Builder clearActivityQuantity() {
         if (activityQuantityBuilder_ == null) {
@@ -68855,7 +68855,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getActivityQuantityBuilder() {
         
@@ -68867,7 +68867,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder() {
         if (activityQuantityBuilder_ != null) {
@@ -68882,7 +68882,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityQuantity = 9;</code>
+       * <code>.Ref activity_quantity = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -68906,7 +68906,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        * @return Whether the activityUnit field is set.
        */
       public boolean hasActivityUnit() {
@@ -68917,7 +68917,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        * @return The activityUnit.
        */
       public org.openlca.proto.Proto.Ref getActivityUnit() {
@@ -68932,7 +68932,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public Builder setActivityUnit(org.openlca.proto.Proto.Ref value) {
         if (activityUnitBuilder_ == null) {
@@ -68952,7 +68952,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public Builder setActivityUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -68970,7 +68970,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public Builder mergeActivityUnit(org.openlca.proto.Proto.Ref value) {
         if (activityUnitBuilder_ == null) {
@@ -68992,7 +68992,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public Builder clearActivityUnit() {
         if (activityUnitBuilder_ == null) {
@@ -69010,7 +69010,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getActivityUnitBuilder() {
         
@@ -69022,7 +69022,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder() {
         if (activityUnitBuilder_ != null) {
@@ -69037,7 +69037,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.Ref activityUnit = 10;</code>
+       * <code>.Ref activity_unit = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -69059,7 +69059,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unitOfMeasurement = 11;</code>
+       * <code>string unit_of_measurement = 11;</code>
        * @return The unitOfMeasurement.
        */
       public java.lang.String getUnitOfMeasurement() {
@@ -69079,7 +69079,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unitOfMeasurement = 11;</code>
+       * <code>string unit_of_measurement = 11;</code>
        * @return The bytes for unitOfMeasurement.
        */
       public com.google.protobuf.ByteString
@@ -69100,7 +69100,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unitOfMeasurement = 11;</code>
+       * <code>string unit_of_measurement = 11;</code>
        * @param value The unitOfMeasurement to set.
        * @return This builder for chaining.
        */
@@ -69119,7 +69119,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unitOfMeasurement = 11;</code>
+       * <code>string unit_of_measurement = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnitOfMeasurement() {
@@ -69133,7 +69133,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unitOfMeasurement = 11;</code>
+       * <code>string unit_of_measurement = 11;</code>
        * @param value The bytes for unitOfMeasurement to set.
        * @return This builder for chaining.
        */
@@ -69155,7 +69155,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluationScheme = 12;</code>
+       * <code>string evaluation_scheme = 12;</code>
        * @return The evaluationScheme.
        */
       public java.lang.String getEvaluationScheme() {
@@ -69175,7 +69175,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluationScheme = 12;</code>
+       * <code>string evaluation_scheme = 12;</code>
        * @return The bytes for evaluationScheme.
        */
       public com.google.protobuf.ByteString
@@ -69196,7 +69196,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluationScheme = 12;</code>
+       * <code>string evaluation_scheme = 12;</code>
        * @param value The evaluationScheme to set.
        * @return This builder for chaining.
        */
@@ -69215,7 +69215,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluationScheme = 12;</code>
+       * <code>string evaluation_scheme = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearEvaluationScheme() {
@@ -69229,7 +69229,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluationScheme = 12;</code>
+       * <code>string evaluation_scheme = 12;</code>
        * @param value The bytes for evaluationScheme to set.
        * @return This builder for chaining.
        */
@@ -69412,7 +69412,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -69421,7 +69421,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -69481,7 +69481,7 @@ public final class Proto {
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string textReference = 9;</code>
+     * <code>string text_reference = 9;</code>
      * @return The textReference.
      */
     java.lang.String getTextReference();
@@ -69490,7 +69490,7 @@ public final class Proto {
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string textReference = 9;</code>
+     * <code>string text_reference = 9;</code>
      * @return The bytes for textReference.
      */
     com.google.protobuf.ByteString
@@ -69511,7 +69511,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string externalFile = 11;</code>
+     * <code>string external_file = 11;</code>
      * @return The externalFile.
      */
     java.lang.String getExternalFile();
@@ -69520,7 +69520,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string externalFile = 11;</code>
+     * <code>string external_file = 11;</code>
      * @return The bytes for externalFile.
      */
     com.google.protobuf.ByteString
@@ -69924,14 +69924,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -69952,7 +69952,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -70056,14 +70056,14 @@ public final class Proto {
       }
     }
 
-    public static final int TEXTREFERENCE_FIELD_NUMBER = 9;
+    public static final int TEXT_REFERENCE_FIELD_NUMBER = 9;
     private volatile java.lang.Object textReference_;
     /**
      * <pre>
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string textReference = 9;</code>
+     * <code>string text_reference = 9;</code>
      * @return The textReference.
      */
     @java.lang.Override
@@ -70084,7 +70084,7 @@ public final class Proto {
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string textReference = 9;</code>
+     * <code>string text_reference = 9;</code>
      * @return The bytes for textReference.
      */
     @java.lang.Override
@@ -70117,14 +70117,14 @@ public final class Proto {
       return year_;
     }
 
-    public static final int EXTERNALFILE_FIELD_NUMBER = 11;
+    public static final int EXTERNAL_FILE_FIELD_NUMBER = 11;
     private volatile java.lang.Object externalFile_;
     /**
      * <pre>
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string externalFile = 11;</code>
+     * <code>string external_file = 11;</code>
      * @return The externalFile.
      */
     @java.lang.Override
@@ -70145,7 +70145,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string externalFile = 11;</code>
+     * <code>string external_file = 11;</code>
      * @return The bytes for externalFile.
      */
     @java.lang.Override
@@ -70315,7 +70315,7 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
@@ -70323,11 +70323,11 @@ public final class Proto {
       }
       hash = (37 * hash) + DOI_FIELD_NUMBER;
       hash = (53 * hash) + getDoi().hashCode();
-      hash = (37 * hash) + TEXTREFERENCE_FIELD_NUMBER;
+      hash = (37 * hash) + TEXT_REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getTextReference().hashCode();
       hash = (37 * hash) + YEAR_FIELD_NUMBER;
       hash = (53 * hash) + getYear();
-      hash = (37 * hash) + EXTERNALFILE_FIELD_NUMBER;
+      hash = (37 * hash) + EXTERNAL_FILE_FIELD_NUMBER;
       hash = (53 * hash) + getExternalFile().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -71153,7 +71153,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -71173,7 +71173,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -71194,7 +71194,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -71213,7 +71213,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -71227,7 +71227,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -71505,7 +71505,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string textReference = 9;</code>
+       * <code>string text_reference = 9;</code>
        * @return The textReference.
        */
       public java.lang.String getTextReference() {
@@ -71525,7 +71525,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string textReference = 9;</code>
+       * <code>string text_reference = 9;</code>
        * @return The bytes for textReference.
        */
       public com.google.protobuf.ByteString
@@ -71546,7 +71546,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string textReference = 9;</code>
+       * <code>string text_reference = 9;</code>
        * @param value The textReference to set.
        * @return This builder for chaining.
        */
@@ -71565,7 +71565,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string textReference = 9;</code>
+       * <code>string text_reference = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearTextReference() {
@@ -71579,7 +71579,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string textReference = 9;</code>
+       * <code>string text_reference = 9;</code>
        * @param value The bytes for textReference to set.
        * @return This builder for chaining.
        */
@@ -71644,7 +71644,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string externalFile = 11;</code>
+       * <code>string external_file = 11;</code>
        * @return The externalFile.
        */
       public java.lang.String getExternalFile() {
@@ -71664,7 +71664,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string externalFile = 11;</code>
+       * <code>string external_file = 11;</code>
        * @return The bytes for externalFile.
        */
       public com.google.protobuf.ByteString
@@ -71685,7 +71685,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string externalFile = 11;</code>
+       * <code>string external_file = 11;</code>
        * @param value The externalFile to set.
        * @return This builder for chaining.
        */
@@ -71704,7 +71704,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string externalFile = 11;</code>
+       * <code>string external_file = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearExternalFile() {
@@ -71718,7 +71718,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string externalFile = 11;</code>
+       * <code>string external_file = 11;</code>
        * @param value The bytes for externalFile to set.
        * @return This builder for chaining.
        */
@@ -71817,7 +71817,7 @@ public final class Proto {
      * The uncertainty distribution type
      * </pre>
      *
-     * <code>.UncertaintyType distributionType = 2;</code>
+     * <code>.UncertaintyType distribution_type = 2;</code>
      * @return The enum numeric value on the wire for distributionType.
      */
     int getDistributionTypeValue();
@@ -71826,7 +71826,7 @@ public final class Proto {
      * The uncertainty distribution type
      * </pre>
      *
-     * <code>.UncertaintyType distributionType = 2;</code>
+     * <code>.UncertaintyType distribution_type = 2;</code>
      * @return The distributionType.
      */
     org.openlca.proto.Proto.UncertaintyType getDistributionType();
@@ -71846,7 +71846,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic mean.
      * </pre>
      *
-     * <code>string meanFormula = 4;</code>
+     * <code>string mean_formula = 4;</code>
      * @return The meanFormula.
      */
     java.lang.String getMeanFormula();
@@ -71855,7 +71855,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic mean.
      * </pre>
      *
-     * <code>string meanFormula = 4;</code>
+     * <code>string mean_formula = 4;</code>
      * @return The bytes for meanFormula.
      */
     com.google.protobuf.ByteString
@@ -71866,7 +71866,7 @@ public final class Proto {
      * The geometric mean value (used for log-normal distributions).
      * </pre>
      *
-     * <code>double geomMean = 5;</code>
+     * <code>double geom_mean = 5;</code>
      * @return The geomMean.
      */
     double getGeomMean();
@@ -71876,7 +71876,7 @@ public final class Proto {
      * A mathematical formula for the geometric mean.
      * </pre>
      *
-     * <code>string geomMeanFormula = 6;</code>
+     * <code>string geom_mean_formula = 6;</code>
      * @return The geomMeanFormula.
      */
     java.lang.String getGeomMeanFormula();
@@ -71885,7 +71885,7 @@ public final class Proto {
      * A mathematical formula for the geometric mean.
      * </pre>
      *
-     * <code>string geomMeanFormula = 6;</code>
+     * <code>string geom_mean_formula = 6;</code>
      * @return The bytes for geomMeanFormula.
      */
     com.google.protobuf.ByteString
@@ -71906,7 +71906,7 @@ public final class Proto {
      * A mathematical formula for the minimum value.
      * </pre>
      *
-     * <code>string minimumFormula = 8;</code>
+     * <code>string minimum_formula = 8;</code>
      * @return The minimumFormula.
      */
     java.lang.String getMinimumFormula();
@@ -71915,7 +71915,7 @@ public final class Proto {
      * A mathematical formula for the minimum value.
      * </pre>
      *
-     * <code>string minimumFormula = 8;</code>
+     * <code>string minimum_formula = 8;</code>
      * @return The bytes for minimumFormula.
      */
     com.google.protobuf.ByteString
@@ -71936,7 +71936,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic standard deviation.
      * </pre>
      *
-     * <code>string sdFormula = 10;</code>
+     * <code>string sd_formula = 10;</code>
      * @return The sdFormula.
      */
     java.lang.String getSdFormula();
@@ -71945,7 +71945,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic standard deviation.
      * </pre>
      *
-     * <code>string sdFormula = 10;</code>
+     * <code>string sd_formula = 10;</code>
      * @return The bytes for sdFormula.
      */
     com.google.protobuf.ByteString
@@ -71956,7 +71956,7 @@ public final class Proto {
      * The geometric standard deviation (used for log-normal distributions).
      * </pre>
      *
-     * <code>double geomSd = 11;</code>
+     * <code>double geom_sd = 11;</code>
      * @return The geomSd.
      */
     double getGeomSd();
@@ -71966,7 +71966,7 @@ public final class Proto {
      * A mathematical formula for the geometric standard deviation.
      * </pre>
      *
-     * <code>string geomSdFormula = 12;</code>
+     * <code>string geom_sd_formula = 12;</code>
      * @return The geomSdFormula.
      */
     java.lang.String getGeomSdFormula();
@@ -71975,7 +71975,7 @@ public final class Proto {
      * A mathematical formula for the geometric standard deviation.
      * </pre>
      *
-     * <code>string geomSdFormula = 12;</code>
+     * <code>string geom_sd_formula = 12;</code>
      * @return The bytes for geomSdFormula.
      */
     com.google.protobuf.ByteString
@@ -71996,7 +71996,7 @@ public final class Proto {
      * A mathematical formula for the most likely value.
      * </pre>
      *
-     * <code>string modeFormula = 14;</code>
+     * <code>string mode_formula = 14;</code>
      * @return The modeFormula.
      */
     java.lang.String getModeFormula();
@@ -72005,7 +72005,7 @@ public final class Proto {
      * A mathematical formula for the most likely value.
      * </pre>
      *
-     * <code>string modeFormula = 14;</code>
+     * <code>string mode_formula = 14;</code>
      * @return The bytes for modeFormula.
      */
     com.google.protobuf.ByteString
@@ -72026,7 +72026,7 @@ public final class Proto {
      * A mathematical formula for the maximum value.
      * </pre>
      *
-     * <code>string maximumFormula = 16;</code>
+     * <code>string maximum_formula = 16;</code>
      * @return The maximumFormula.
      */
     java.lang.String getMaximumFormula();
@@ -72035,7 +72035,7 @@ public final class Proto {
      * A mathematical formula for the maximum value.
      * </pre>
      *
-     * <code>string maximumFormula = 16;</code>
+     * <code>string maximum_formula = 16;</code>
      * @return The bytes for maximumFormula.
      */
     com.google.protobuf.ByteString
@@ -72269,14 +72269,14 @@ public final class Proto {
       }
     }
 
-    public static final int DISTRIBUTIONTYPE_FIELD_NUMBER = 2;
+    public static final int DISTRIBUTION_TYPE_FIELD_NUMBER = 2;
     private int distributionType_;
     /**
      * <pre>
      * The uncertainty distribution type
      * </pre>
      *
-     * <code>.UncertaintyType distributionType = 2;</code>
+     * <code>.UncertaintyType distribution_type = 2;</code>
      * @return The enum numeric value on the wire for distributionType.
      */
     @java.lang.Override public int getDistributionTypeValue() {
@@ -72287,7 +72287,7 @@ public final class Proto {
      * The uncertainty distribution type
      * </pre>
      *
-     * <code>.UncertaintyType distributionType = 2;</code>
+     * <code>.UncertaintyType distribution_type = 2;</code>
      * @return The distributionType.
      */
     @java.lang.Override public org.openlca.proto.Proto.UncertaintyType getDistributionType() {
@@ -72311,14 +72311,14 @@ public final class Proto {
       return mean_;
     }
 
-    public static final int MEANFORMULA_FIELD_NUMBER = 4;
+    public static final int MEAN_FORMULA_FIELD_NUMBER = 4;
     private volatile java.lang.Object meanFormula_;
     /**
      * <pre>
      * A mathematical formula for the arithmetic mean.
      * </pre>
      *
-     * <code>string meanFormula = 4;</code>
+     * <code>string mean_formula = 4;</code>
      * @return The meanFormula.
      */
     @java.lang.Override
@@ -72339,7 +72339,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic mean.
      * </pre>
      *
-     * <code>string meanFormula = 4;</code>
+     * <code>string mean_formula = 4;</code>
      * @return The bytes for meanFormula.
      */
     @java.lang.Override
@@ -72357,14 +72357,14 @@ public final class Proto {
       }
     }
 
-    public static final int GEOMMEAN_FIELD_NUMBER = 5;
+    public static final int GEOM_MEAN_FIELD_NUMBER = 5;
     private double geomMean_;
     /**
      * <pre>
      * The geometric mean value (used for log-normal distributions).
      * </pre>
      *
-     * <code>double geomMean = 5;</code>
+     * <code>double geom_mean = 5;</code>
      * @return The geomMean.
      */
     @java.lang.Override
@@ -72372,14 +72372,14 @@ public final class Proto {
       return geomMean_;
     }
 
-    public static final int GEOMMEANFORMULA_FIELD_NUMBER = 6;
+    public static final int GEOM_MEAN_FORMULA_FIELD_NUMBER = 6;
     private volatile java.lang.Object geomMeanFormula_;
     /**
      * <pre>
      * A mathematical formula for the geometric mean.
      * </pre>
      *
-     * <code>string geomMeanFormula = 6;</code>
+     * <code>string geom_mean_formula = 6;</code>
      * @return The geomMeanFormula.
      */
     @java.lang.Override
@@ -72400,7 +72400,7 @@ public final class Proto {
      * A mathematical formula for the geometric mean.
      * </pre>
      *
-     * <code>string geomMeanFormula = 6;</code>
+     * <code>string geom_mean_formula = 6;</code>
      * @return The bytes for geomMeanFormula.
      */
     @java.lang.Override
@@ -72433,14 +72433,14 @@ public final class Proto {
       return minimum_;
     }
 
-    public static final int MINIMUMFORMULA_FIELD_NUMBER = 8;
+    public static final int MINIMUM_FORMULA_FIELD_NUMBER = 8;
     private volatile java.lang.Object minimumFormula_;
     /**
      * <pre>
      * A mathematical formula for the minimum value.
      * </pre>
      *
-     * <code>string minimumFormula = 8;</code>
+     * <code>string minimum_formula = 8;</code>
      * @return The minimumFormula.
      */
     @java.lang.Override
@@ -72461,7 +72461,7 @@ public final class Proto {
      * A mathematical formula for the minimum value.
      * </pre>
      *
-     * <code>string minimumFormula = 8;</code>
+     * <code>string minimum_formula = 8;</code>
      * @return The bytes for minimumFormula.
      */
     @java.lang.Override
@@ -72494,14 +72494,14 @@ public final class Proto {
       return sd_;
     }
 
-    public static final int SDFORMULA_FIELD_NUMBER = 10;
+    public static final int SD_FORMULA_FIELD_NUMBER = 10;
     private volatile java.lang.Object sdFormula_;
     /**
      * <pre>
      * A mathematical formula for the arithmetic standard deviation.
      * </pre>
      *
-     * <code>string sdFormula = 10;</code>
+     * <code>string sd_formula = 10;</code>
      * @return The sdFormula.
      */
     @java.lang.Override
@@ -72522,7 +72522,7 @@ public final class Proto {
      * A mathematical formula for the arithmetic standard deviation.
      * </pre>
      *
-     * <code>string sdFormula = 10;</code>
+     * <code>string sd_formula = 10;</code>
      * @return The bytes for sdFormula.
      */
     @java.lang.Override
@@ -72540,14 +72540,14 @@ public final class Proto {
       }
     }
 
-    public static final int GEOMSD_FIELD_NUMBER = 11;
+    public static final int GEOM_SD_FIELD_NUMBER = 11;
     private double geomSd_;
     /**
      * <pre>
      * The geometric standard deviation (used for log-normal distributions).
      * </pre>
      *
-     * <code>double geomSd = 11;</code>
+     * <code>double geom_sd = 11;</code>
      * @return The geomSd.
      */
     @java.lang.Override
@@ -72555,14 +72555,14 @@ public final class Proto {
       return geomSd_;
     }
 
-    public static final int GEOMSDFORMULA_FIELD_NUMBER = 12;
+    public static final int GEOM_SD_FORMULA_FIELD_NUMBER = 12;
     private volatile java.lang.Object geomSdFormula_;
     /**
      * <pre>
      * A mathematical formula for the geometric standard deviation.
      * </pre>
      *
-     * <code>string geomSdFormula = 12;</code>
+     * <code>string geom_sd_formula = 12;</code>
      * @return The geomSdFormula.
      */
     @java.lang.Override
@@ -72583,7 +72583,7 @@ public final class Proto {
      * A mathematical formula for the geometric standard deviation.
      * </pre>
      *
-     * <code>string geomSdFormula = 12;</code>
+     * <code>string geom_sd_formula = 12;</code>
      * @return The bytes for geomSdFormula.
      */
     @java.lang.Override
@@ -72616,14 +72616,14 @@ public final class Proto {
       return mode_;
     }
 
-    public static final int MODEFORMULA_FIELD_NUMBER = 14;
+    public static final int MODE_FORMULA_FIELD_NUMBER = 14;
     private volatile java.lang.Object modeFormula_;
     /**
      * <pre>
      * A mathematical formula for the most likely value.
      * </pre>
      *
-     * <code>string modeFormula = 14;</code>
+     * <code>string mode_formula = 14;</code>
      * @return The modeFormula.
      */
     @java.lang.Override
@@ -72644,7 +72644,7 @@ public final class Proto {
      * A mathematical formula for the most likely value.
      * </pre>
      *
-     * <code>string modeFormula = 14;</code>
+     * <code>string mode_formula = 14;</code>
      * @return The bytes for modeFormula.
      */
     @java.lang.Override
@@ -72677,14 +72677,14 @@ public final class Proto {
       return maximum_;
     }
 
-    public static final int MAXIMUMFORMULA_FIELD_NUMBER = 16;
+    public static final int MAXIMUM_FORMULA_FIELD_NUMBER = 16;
     private volatile java.lang.Object maximumFormula_;
     /**
      * <pre>
      * A mathematical formula for the maximum value.
      * </pre>
      *
-     * <code>string maximumFormula = 16;</code>
+     * <code>string maximum_formula = 16;</code>
      * @return The maximumFormula.
      */
     @java.lang.Override
@@ -72705,7 +72705,7 @@ public final class Proto {
      * A mathematical formula for the maximum value.
      * </pre>
      *
-     * <code>string maximumFormula = 16;</code>
+     * <code>string maximum_formula = 16;</code>
      * @return The bytes for maximumFormula.
      */
     @java.lang.Override
@@ -72916,42 +72916,42 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + DISTRIBUTIONTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + DISTRIBUTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + distributionType_;
       hash = (37 * hash) + MEAN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMean()));
-      hash = (37 * hash) + MEANFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + MEAN_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getMeanFormula().hashCode();
-      hash = (37 * hash) + GEOMMEAN_FIELD_NUMBER;
+      hash = (37 * hash) + GEOM_MEAN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getGeomMean()));
-      hash = (37 * hash) + GEOMMEANFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + GEOM_MEAN_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getGeomMeanFormula().hashCode();
       hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMinimum()));
-      hash = (37 * hash) + MINIMUMFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + MINIMUM_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumFormula().hashCode();
       hash = (37 * hash) + SD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getSd()));
-      hash = (37 * hash) + SDFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + SD_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getSdFormula().hashCode();
-      hash = (37 * hash) + GEOMSD_FIELD_NUMBER;
+      hash = (37 * hash) + GEOM_SD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getGeomSd()));
-      hash = (37 * hash) + GEOMSDFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + GEOM_SD_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getGeomSdFormula().hashCode();
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMode()));
-      hash = (37 * hash) + MODEFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + MODE_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getModeFormula().hashCode();
       hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMaximum()));
-      hash = (37 * hash) + MAXIMUMFORMULA_FIELD_NUMBER;
+      hash = (37 * hash) + MAXIMUM_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getMaximumFormula().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -73405,7 +73405,7 @@ public final class Proto {
        * The uncertainty distribution type
        * </pre>
        *
-       * <code>.UncertaintyType distributionType = 2;</code>
+       * <code>.UncertaintyType distribution_type = 2;</code>
        * @return The enum numeric value on the wire for distributionType.
        */
       @java.lang.Override public int getDistributionTypeValue() {
@@ -73416,7 +73416,7 @@ public final class Proto {
        * The uncertainty distribution type
        * </pre>
        *
-       * <code>.UncertaintyType distributionType = 2;</code>
+       * <code>.UncertaintyType distribution_type = 2;</code>
        * @param value The enum numeric value on the wire for distributionType to set.
        * @return This builder for chaining.
        */
@@ -73431,7 +73431,7 @@ public final class Proto {
        * The uncertainty distribution type
        * </pre>
        *
-       * <code>.UncertaintyType distributionType = 2;</code>
+       * <code>.UncertaintyType distribution_type = 2;</code>
        * @return The distributionType.
        */
       @java.lang.Override
@@ -73445,7 +73445,7 @@ public final class Proto {
        * The uncertainty distribution type
        * </pre>
        *
-       * <code>.UncertaintyType distributionType = 2;</code>
+       * <code>.UncertaintyType distribution_type = 2;</code>
        * @param value The distributionType to set.
        * @return This builder for chaining.
        */
@@ -73463,7 +73463,7 @@ public final class Proto {
        * The uncertainty distribution type
        * </pre>
        *
-       * <code>.UncertaintyType distributionType = 2;</code>
+       * <code>.UncertaintyType distribution_type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearDistributionType() {
@@ -73522,7 +73522,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic mean.
        * </pre>
        *
-       * <code>string meanFormula = 4;</code>
+       * <code>string mean_formula = 4;</code>
        * @return The meanFormula.
        */
       public java.lang.String getMeanFormula() {
@@ -73542,7 +73542,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic mean.
        * </pre>
        *
-       * <code>string meanFormula = 4;</code>
+       * <code>string mean_formula = 4;</code>
        * @return The bytes for meanFormula.
        */
       public com.google.protobuf.ByteString
@@ -73563,7 +73563,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic mean.
        * </pre>
        *
-       * <code>string meanFormula = 4;</code>
+       * <code>string mean_formula = 4;</code>
        * @param value The meanFormula to set.
        * @return This builder for chaining.
        */
@@ -73582,7 +73582,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic mean.
        * </pre>
        *
-       * <code>string meanFormula = 4;</code>
+       * <code>string mean_formula = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMeanFormula() {
@@ -73596,7 +73596,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic mean.
        * </pre>
        *
-       * <code>string meanFormula = 4;</code>
+       * <code>string mean_formula = 4;</code>
        * @param value The bytes for meanFormula to set.
        * @return This builder for chaining.
        */
@@ -73618,7 +73618,7 @@ public final class Proto {
        * The geometric mean value (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomMean = 5;</code>
+       * <code>double geom_mean = 5;</code>
        * @return The geomMean.
        */
       @java.lang.Override
@@ -73630,7 +73630,7 @@ public final class Proto {
        * The geometric mean value (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomMean = 5;</code>
+       * <code>double geom_mean = 5;</code>
        * @param value The geomMean to set.
        * @return This builder for chaining.
        */
@@ -73645,7 +73645,7 @@ public final class Proto {
        * The geometric mean value (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomMean = 5;</code>
+       * <code>double geom_mean = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearGeomMean() {
@@ -73661,7 +73661,7 @@ public final class Proto {
        * A mathematical formula for the geometric mean.
        * </pre>
        *
-       * <code>string geomMeanFormula = 6;</code>
+       * <code>string geom_mean_formula = 6;</code>
        * @return The geomMeanFormula.
        */
       public java.lang.String getGeomMeanFormula() {
@@ -73681,7 +73681,7 @@ public final class Proto {
        * A mathematical formula for the geometric mean.
        * </pre>
        *
-       * <code>string geomMeanFormula = 6;</code>
+       * <code>string geom_mean_formula = 6;</code>
        * @return The bytes for geomMeanFormula.
        */
       public com.google.protobuf.ByteString
@@ -73702,7 +73702,7 @@ public final class Proto {
        * A mathematical formula for the geometric mean.
        * </pre>
        *
-       * <code>string geomMeanFormula = 6;</code>
+       * <code>string geom_mean_formula = 6;</code>
        * @param value The geomMeanFormula to set.
        * @return This builder for chaining.
        */
@@ -73721,7 +73721,7 @@ public final class Proto {
        * A mathematical formula for the geometric mean.
        * </pre>
        *
-       * <code>string geomMeanFormula = 6;</code>
+       * <code>string geom_mean_formula = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGeomMeanFormula() {
@@ -73735,7 +73735,7 @@ public final class Proto {
        * A mathematical formula for the geometric mean.
        * </pre>
        *
-       * <code>string geomMeanFormula = 6;</code>
+       * <code>string geom_mean_formula = 6;</code>
        * @param value The bytes for geomMeanFormula to set.
        * @return This builder for chaining.
        */
@@ -73800,7 +73800,7 @@ public final class Proto {
        * A mathematical formula for the minimum value.
        * </pre>
        *
-       * <code>string minimumFormula = 8;</code>
+       * <code>string minimum_formula = 8;</code>
        * @return The minimumFormula.
        */
       public java.lang.String getMinimumFormula() {
@@ -73820,7 +73820,7 @@ public final class Proto {
        * A mathematical formula for the minimum value.
        * </pre>
        *
-       * <code>string minimumFormula = 8;</code>
+       * <code>string minimum_formula = 8;</code>
        * @return The bytes for minimumFormula.
        */
       public com.google.protobuf.ByteString
@@ -73841,7 +73841,7 @@ public final class Proto {
        * A mathematical formula for the minimum value.
        * </pre>
        *
-       * <code>string minimumFormula = 8;</code>
+       * <code>string minimum_formula = 8;</code>
        * @param value The minimumFormula to set.
        * @return This builder for chaining.
        */
@@ -73860,7 +73860,7 @@ public final class Proto {
        * A mathematical formula for the minimum value.
        * </pre>
        *
-       * <code>string minimumFormula = 8;</code>
+       * <code>string minimum_formula = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinimumFormula() {
@@ -73874,7 +73874,7 @@ public final class Proto {
        * A mathematical formula for the minimum value.
        * </pre>
        *
-       * <code>string minimumFormula = 8;</code>
+       * <code>string minimum_formula = 8;</code>
        * @param value The bytes for minimumFormula to set.
        * @return This builder for chaining.
        */
@@ -73939,7 +73939,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic standard deviation.
        * </pre>
        *
-       * <code>string sdFormula = 10;</code>
+       * <code>string sd_formula = 10;</code>
        * @return The sdFormula.
        */
       public java.lang.String getSdFormula() {
@@ -73959,7 +73959,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic standard deviation.
        * </pre>
        *
-       * <code>string sdFormula = 10;</code>
+       * <code>string sd_formula = 10;</code>
        * @return The bytes for sdFormula.
        */
       public com.google.protobuf.ByteString
@@ -73980,7 +73980,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic standard deviation.
        * </pre>
        *
-       * <code>string sdFormula = 10;</code>
+       * <code>string sd_formula = 10;</code>
        * @param value The sdFormula to set.
        * @return This builder for chaining.
        */
@@ -73999,7 +73999,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic standard deviation.
        * </pre>
        *
-       * <code>string sdFormula = 10;</code>
+       * <code>string sd_formula = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearSdFormula() {
@@ -74013,7 +74013,7 @@ public final class Proto {
        * A mathematical formula for the arithmetic standard deviation.
        * </pre>
        *
-       * <code>string sdFormula = 10;</code>
+       * <code>string sd_formula = 10;</code>
        * @param value The bytes for sdFormula to set.
        * @return This builder for chaining.
        */
@@ -74035,7 +74035,7 @@ public final class Proto {
        * The geometric standard deviation (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomSd = 11;</code>
+       * <code>double geom_sd = 11;</code>
        * @return The geomSd.
        */
       @java.lang.Override
@@ -74047,7 +74047,7 @@ public final class Proto {
        * The geometric standard deviation (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomSd = 11;</code>
+       * <code>double geom_sd = 11;</code>
        * @param value The geomSd to set.
        * @return This builder for chaining.
        */
@@ -74062,7 +74062,7 @@ public final class Proto {
        * The geometric standard deviation (used for log-normal distributions).
        * </pre>
        *
-       * <code>double geomSd = 11;</code>
+       * <code>double geom_sd = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearGeomSd() {
@@ -74078,7 +74078,7 @@ public final class Proto {
        * A mathematical formula for the geometric standard deviation.
        * </pre>
        *
-       * <code>string geomSdFormula = 12;</code>
+       * <code>string geom_sd_formula = 12;</code>
        * @return The geomSdFormula.
        */
       public java.lang.String getGeomSdFormula() {
@@ -74098,7 +74098,7 @@ public final class Proto {
        * A mathematical formula for the geometric standard deviation.
        * </pre>
        *
-       * <code>string geomSdFormula = 12;</code>
+       * <code>string geom_sd_formula = 12;</code>
        * @return The bytes for geomSdFormula.
        */
       public com.google.protobuf.ByteString
@@ -74119,7 +74119,7 @@ public final class Proto {
        * A mathematical formula for the geometric standard deviation.
        * </pre>
        *
-       * <code>string geomSdFormula = 12;</code>
+       * <code>string geom_sd_formula = 12;</code>
        * @param value The geomSdFormula to set.
        * @return This builder for chaining.
        */
@@ -74138,7 +74138,7 @@ public final class Proto {
        * A mathematical formula for the geometric standard deviation.
        * </pre>
        *
-       * <code>string geomSdFormula = 12;</code>
+       * <code>string geom_sd_formula = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearGeomSdFormula() {
@@ -74152,7 +74152,7 @@ public final class Proto {
        * A mathematical formula for the geometric standard deviation.
        * </pre>
        *
-       * <code>string geomSdFormula = 12;</code>
+       * <code>string geom_sd_formula = 12;</code>
        * @param value The bytes for geomSdFormula to set.
        * @return This builder for chaining.
        */
@@ -74217,7 +74217,7 @@ public final class Proto {
        * A mathematical formula for the most likely value.
        * </pre>
        *
-       * <code>string modeFormula = 14;</code>
+       * <code>string mode_formula = 14;</code>
        * @return The modeFormula.
        */
       public java.lang.String getModeFormula() {
@@ -74237,7 +74237,7 @@ public final class Proto {
        * A mathematical formula for the most likely value.
        * </pre>
        *
-       * <code>string modeFormula = 14;</code>
+       * <code>string mode_formula = 14;</code>
        * @return The bytes for modeFormula.
        */
       public com.google.protobuf.ByteString
@@ -74258,7 +74258,7 @@ public final class Proto {
        * A mathematical formula for the most likely value.
        * </pre>
        *
-       * <code>string modeFormula = 14;</code>
+       * <code>string mode_formula = 14;</code>
        * @param value The modeFormula to set.
        * @return This builder for chaining.
        */
@@ -74277,7 +74277,7 @@ public final class Proto {
        * A mathematical formula for the most likely value.
        * </pre>
        *
-       * <code>string modeFormula = 14;</code>
+       * <code>string mode_formula = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearModeFormula() {
@@ -74291,7 +74291,7 @@ public final class Proto {
        * A mathematical formula for the most likely value.
        * </pre>
        *
-       * <code>string modeFormula = 14;</code>
+       * <code>string mode_formula = 14;</code>
        * @param value The bytes for modeFormula to set.
        * @return This builder for chaining.
        */
@@ -74356,7 +74356,7 @@ public final class Proto {
        * A mathematical formula for the maximum value.
        * </pre>
        *
-       * <code>string maximumFormula = 16;</code>
+       * <code>string maximum_formula = 16;</code>
        * @return The maximumFormula.
        */
       public java.lang.String getMaximumFormula() {
@@ -74376,7 +74376,7 @@ public final class Proto {
        * A mathematical formula for the maximum value.
        * </pre>
        *
-       * <code>string maximumFormula = 16;</code>
+       * <code>string maximum_formula = 16;</code>
        * @return The bytes for maximumFormula.
        */
       public com.google.protobuf.ByteString
@@ -74397,7 +74397,7 @@ public final class Proto {
        * A mathematical formula for the maximum value.
        * </pre>
        *
-       * <code>string maximumFormula = 16;</code>
+       * <code>string maximum_formula = 16;</code>
        * @param value The maximumFormula to set.
        * @return This builder for chaining.
        */
@@ -74416,7 +74416,7 @@ public final class Proto {
        * A mathematical formula for the maximum value.
        * </pre>
        *
-       * <code>string maximumFormula = 16;</code>
+       * <code>string maximum_formula = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaximumFormula() {
@@ -74430,7 +74430,7 @@ public final class Proto {
        * A mathematical formula for the maximum value.
        * </pre>
        *
-       * <code>string maximumFormula = 16;</code>
+       * <code>string maximum_formula = 16;</code>
        * @param value The bytes for maximumFormula to set.
        * @return This builder for chaining.
        */
@@ -74613,7 +74613,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -74622,7 +74622,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -74634,7 +74634,7 @@ public final class Proto {
      * this unit belongs.
      * </pre>
      *
-     * <code>double conversionFactor = 7;</code>
+     * <code>double conversion_factor = 7;</code>
      * @return The conversionFactor.
      */
     double getConversionFactor();
@@ -74648,7 +74648,7 @@ public final class Proto {
      * amounts given in another unit of the respective unit group.
      * </pre>
      *
-     * <code>bool referenceUnit = 8;</code>
+     * <code>bool reference_unit = 8;</code>
      * @return The referenceUnit.
      */
     boolean getReferenceUnit();
@@ -75077,14 +75077,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -75105,7 +75105,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -75123,7 +75123,7 @@ public final class Proto {
       }
     }
 
-    public static final int CONVERSIONFACTOR_FIELD_NUMBER = 7;
+    public static final int CONVERSION_FACTOR_FIELD_NUMBER = 7;
     private double conversionFactor_;
     /**
      * <pre>
@@ -75131,7 +75131,7 @@ public final class Proto {
      * this unit belongs.
      * </pre>
      *
-     * <code>double conversionFactor = 7;</code>
+     * <code>double conversion_factor = 7;</code>
      * @return The conversionFactor.
      */
     @java.lang.Override
@@ -75139,7 +75139,7 @@ public final class Proto {
       return conversionFactor_;
     }
 
-    public static final int REFERENCEUNIT_FIELD_NUMBER = 8;
+    public static final int REFERENCE_UNIT_FIELD_NUMBER = 8;
     private boolean referenceUnit_;
     /**
      * <pre>
@@ -75150,7 +75150,7 @@ public final class Proto {
      * amounts given in another unit of the respective unit group.
      * </pre>
      *
-     * <code>bool referenceUnit = 8;</code>
+     * <code>bool reference_unit = 8;</code>
      * @return The referenceUnit.
      */
     @java.lang.Override
@@ -75348,12 +75348,12 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
-      hash = (37 * hash) + CONVERSIONFACTOR_FIELD_NUMBER;
+      hash = (37 * hash) + CONVERSION_FACTOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getConversionFactor()));
-      hash = (37 * hash) + REFERENCEUNIT_FIELD_NUMBER;
+      hash = (37 * hash) + REFERENCE_UNIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReferenceUnit());
       if (getSynonymsCount() > 0) {
@@ -76174,7 +76174,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -76194,7 +76194,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -76215,7 +76215,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -76234,7 +76234,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -76248,7 +76248,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -76271,7 +76271,7 @@ public final class Proto {
        * this unit belongs.
        * </pre>
        *
-       * <code>double conversionFactor = 7;</code>
+       * <code>double conversion_factor = 7;</code>
        * @return The conversionFactor.
        */
       @java.lang.Override
@@ -76284,7 +76284,7 @@ public final class Proto {
        * this unit belongs.
        * </pre>
        *
-       * <code>double conversionFactor = 7;</code>
+       * <code>double conversion_factor = 7;</code>
        * @param value The conversionFactor to set.
        * @return This builder for chaining.
        */
@@ -76300,7 +76300,7 @@ public final class Proto {
        * this unit belongs.
        * </pre>
        *
-       * <code>double conversionFactor = 7;</code>
+       * <code>double conversion_factor = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearConversionFactor() {
@@ -76320,7 +76320,7 @@ public final class Proto {
        * amounts given in another unit of the respective unit group.
        * </pre>
        *
-       * <code>bool referenceUnit = 8;</code>
+       * <code>bool reference_unit = 8;</code>
        * @return The referenceUnit.
        */
       @java.lang.Override
@@ -76336,7 +76336,7 @@ public final class Proto {
        * amounts given in another unit of the respective unit group.
        * </pre>
        *
-       * <code>bool referenceUnit = 8;</code>
+       * <code>bool reference_unit = 8;</code>
        * @param value The referenceUnit to set.
        * @return This builder for chaining.
        */
@@ -76355,7 +76355,7 @@ public final class Proto {
        * amounts given in another unit of the respective unit group.
        * </pre>
        *
-       * <code>bool referenceUnit = 8;</code>
+       * <code>bool reference_unit = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearReferenceUnit() {
@@ -76678,7 +76678,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     java.lang.String getLastChange();
@@ -76687,7 +76687,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     com.google.protobuf.ByteString
@@ -76727,7 +76727,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      * @return Whether the defaultFlowProperty field is set.
      */
     boolean hasDefaultFlowProperty();
@@ -76738,7 +76738,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      * @return The defaultFlowProperty.
      */
     org.openlca.proto.Proto.Ref getDefaultFlowProperty();
@@ -76749,7 +76749,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder();
 
@@ -77196,14 +77196,14 @@ public final class Proto {
       }
     }
 
-    public static final int LASTCHANGE_FIELD_NUMBER = 6;
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastChange_;
     /**
      * <pre>
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -77224,7 +77224,7 @@ public final class Proto {
      * The timestamp when the entity was changed the last time.
      * </pre>
      *
-     * <code>string lastChange = 6;</code>
+     * <code>string last_change = 6;</code>
      * @return The bytes for lastChange.
      */
     @java.lang.Override
@@ -77280,7 +77280,7 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int DEFAULTFLOWPROPERTY_FIELD_NUMBER = 8;
+    public static final int DEFAULT_FLOW_PROPERTY_FIELD_NUMBER = 8;
     private org.openlca.proto.Proto.Ref defaultFlowProperty_;
     /**
      * <pre>
@@ -77289,7 +77289,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      * @return Whether the defaultFlowProperty field is set.
      */
     @java.lang.Override
@@ -77303,7 +77303,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      * @return The defaultFlowProperty.
      */
     @java.lang.Override
@@ -77317,7 +77317,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.Ref defaultFlowProperty = 8;</code>
+     * <code>.Ref default_flow_property = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder() {
@@ -77524,14 +77524,14 @@ public final class Proto {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + LASTCHANGE_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getLastChange().hashCode();
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
       if (hasDefaultFlowProperty()) {
-        hash = (37 * hash) + DEFAULTFLOWPROPERTY_FIELD_NUMBER;
+        hash = (37 * hash) + DEFAULT_FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultFlowProperty().hashCode();
       }
       if (getUnitsCount() > 0) {
@@ -78393,7 +78393,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The lastChange.
        */
       public java.lang.String getLastChange() {
@@ -78413,7 +78413,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return The bytes for lastChange.
        */
       public com.google.protobuf.ByteString
@@ -78434,7 +78434,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The lastChange to set.
        * @return This builder for chaining.
        */
@@ -78453,7 +78453,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChange() {
@@ -78467,7 +78467,7 @@ public final class Proto {
        * The timestamp when the entity was changed the last time.
        * </pre>
        *
-       * <code>string lastChange = 6;</code>
+       * <code>string last_change = 6;</code>
        * @param value The bytes for lastChange to set.
        * @return This builder for chaining.
        */
@@ -78648,7 +78648,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        * @return Whether the defaultFlowProperty field is set.
        */
       public boolean hasDefaultFlowProperty() {
@@ -78661,7 +78661,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        * @return The defaultFlowProperty.
        */
       public org.openlca.proto.Proto.Ref getDefaultFlowProperty() {
@@ -78678,7 +78678,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public Builder setDefaultFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78700,7 +78700,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public Builder setDefaultFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -78720,7 +78720,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public Builder mergeDefaultFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78744,7 +78744,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public Builder clearDefaultFlowProperty() {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78764,7 +78764,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDefaultFlowPropertyBuilder() {
         
@@ -78778,7 +78778,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder() {
         if (defaultFlowPropertyBuilder_ != null) {
@@ -78795,7 +78795,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.Ref defaultFlowProperty = 8;</code>
+       * <code>.Ref default_flow_property = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -79364,228 +79364,231 @@ public final class Proto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nolca.proto\"\222\002\n\005Actor\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "\n\nolca.proto\"\224\002\n\005Actor\022\023\n\004type\030\001 \001(\tR\005@t" +
       "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
-      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlast" +
-      "Change\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\017\n\007" +
-      "address\030\010 \001(\t\022\014\n\004city\030\t \001(\t\022\017\n\007country\030\n" +
-      " \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007telefax\030\014 \001(\t\022\021\n\t" +
-      "telephone\030\r \001(\t\022\017\n\007website\030\016 \001(\t\022\017\n\007zipC" +
-      "ode\030\017 \001(\t\"\251\001\n\020AllocationFactor\022\023\n\004type\030\001" +
-      " \001(\tR\005@type\022\"\n\017productExchange\030\002 \001(\0132\t.E" +
-      "xchange\022\'\n\016allocationType\030\003 \001(\0162\017.Alloca" +
-      "tionType\022\r\n\005value\030\004 \001(\001\022$\n\021allocatedExch" +
-      "ange\030\005 \001(\0132\t.Exchange\"\310\002\n\020CalculationSet" +
-      "up\022\023\n\004type\030\001 \001(\tR\005@type\022)\n\017calculationTy" +
-      "pe\030\002 \001(\0162\020.CalculationType\022\033\n\rproductSys" +
-      "tem\030\003 \001(\0132\004.Ref\022\032\n\014impactMethod\030\004 \001(\0132\004." +
-      "Ref\022\021\n\twithCosts\030\005 \001(\010\022\023\n\005nwSet\030\006 \001(\0132\004." +
-      "Ref\022)\n\020allocationMethod\030\007 \001(\0162\017.Allocati" +
-      "onType\022(\n\017parameterRedefs\030\010 \003(\0132\017.Parame" +
-      "terRedef\022\016\n\006amount\030\t \001(\001\022\022\n\004unit\030\n \001(\0132\004" +
-      ".Ref\022\032\n\014flowProperty\030\013 \001(\0132\004.Ref\"\257\001\n\010Cat" +
-      "egory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
-      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
-      "\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006 \001(\t\022\026\n\010c" +
-      "ategory\030\007 \001(\0132\004.Ref\022\035\n\tmodelType\030\010 \001(\0162\n" +
-      ".ModelType\"\\\n\013DqIndicator\022\023\n\004type\030\001 \001(\tR" +
-      "\005@type\022\014\n\004name\030\002 \001(\t\022\020\n\010position\030\003 \001(\005\022\030" +
-      "\n\006scores\030\004 \003(\0132\010.DqScore\"i\n\007DqScore\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\020\n\010position\030\002 \001(\005\022\r\n\005la" +
-      "bel\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\023\n\013uncert" +
-      "ainty\030\005 \001(\001\"\342\001\n\010DqSystem\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
-      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nla" +
-      "stChange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\030" +
-      "\n\020hasUncertainties\030\010 \001(\010\022\024\n\006source\030\t \001(\013" +
-      "2\004.Ref\022 \n\nindicators\030\n \003(\0132\014.DqIndicator" +
-      "\"\360\002\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005@type\022\022\n\nin" +
-      "ternalId\030\002 \001(\005\022\026\n\016avoidedProduct\030\003 \001(\010\022\026" +
-      "\n\004flow\030\004 \001(\0132\010.FlowRef\022\032\n\014flowProperty\030\005" +
-      " \001(\0132\004.Ref\022\r\n\005input\030\006 \001(\010\022\035\n\025quantitativ" +
-      "eReference\030\007 \001(\010\022\027\n\017baseUncertainty\030\010 \001(" +
-      "\001\022$\n\017defaultProvider\030\t \001(\0132\013.ProcessRef\022" +
-      "\016\n\006amount\030\n \001(\001\022\025\n\ramountFormula\030\013 \001(\t\022\022" +
-      "\n\004unit\030\014 \001(\0132\004.Ref\022\017\n\007dqEntry\030\r \001(\t\022!\n\013u" +
-      "ncertainty\030\016 \001(\0132\014.Uncertainty\022\023\n\013descri" +
-      "ption\030\017 \001(\t\"\214\002\n\004Flow\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
-      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastCh" +
-      "ange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\033\n\010fl" +
-      "owType\030\010 \001(\0162\t.FlowType\022\013\n\003cas\030\t \001(\t\022\017\n\007" +
-      "formula\030\n \001(\t\022+\n\016flowProperties\030\013 \003(\0132\023." +
-      "FlowPropertyFactor\022\026\n\010location\030\014 \001(\0132\004.R" +
-      "ef\"\304\001\n\007FlowMap\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
-      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006" +
-      " \001(\t\022\024\n\006source\030\007 \001(\0132\004.Ref\022\024\n\006target\030\010 \001" +
-      "(\0132\004.Ref\022\037\n\010mappings\030\t \003(\0132\r.FlowMapEntr" +
-      "y\"\312\001\n\014FlowMapEntry\022\023\n\004type\030\001 \001(\tR\005@type\022" +
+      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
+      "_change\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\017\n" +
+      "\007address\030\010 \001(\t\022\014\n\004city\030\t \001(\t\022\017\n\007country\030" +
+      "\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007telefax\030\014 \001(\t\022\021\n" +
+      "\ttelephone\030\r \001(\t\022\017\n\007website\030\016 \001(\t\022\020\n\010zip" +
+      "_code\030\017 \001(\t\"\254\001\n\020AllocationFactor\022\023\n\004type" +
+      "\030\001 \001(\tR\005@type\022#\n\020product_exchange\030\002 \001(\0132" +
+      "\t.Exchange\022(\n\017allocation_type\030\003 \001(\0162\017.Al" +
+      "locationType\022\r\n\005value\030\004 \001(\001\022%\n\022allocated" +
+      "_exchange\030\005 \001(\0132\t.Exchange\"\320\002\n\020Calculati" +
+      "onSetup\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\020calculat" +
+      "ion_type\030\002 \001(\0162\020.CalculationType\022\034\n\016prod" +
+      "uct_system\030\003 \001(\0132\004.Ref\022\033\n\rimpact_method\030" +
+      "\004 \001(\0132\004.Ref\022\022\n\nwith_costs\030\005 \001(\010\022\024\n\006nw_se" +
+      "t\030\006 \001(\0132\004.Ref\022*\n\021allocation_method\030\007 \001(\016" +
+      "2\017.AllocationType\022)\n\020parameter_redefs\030\010 " +
+      "\003(\0132\017.ParameterRedef\022\016\n\006amount\030\t \001(\001\022\022\n\004" +
+      "unit\030\n \001(\0132\004.Ref\022\033\n\rflow_property\030\013 \001(\0132" +
+      "\004.Ref\"\261\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005@type\022" +
       "\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descri" +
-      "ption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChan" +
-      "ge\030\006 \001(\t\022\031\n\004from\030\007 \001(\0132\013.FlowMapRef\022\027\n\002t" +
-      "o\030\010 \001(\0132\013.FlowMapRef\022\030\n\020conversionFactor" +
-      "\030\t \001(\001\"i\n\nFlowMapRef\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\026\n\004flow\030\002 \001(\0132\010.FlowRef\022\032\n\014flowPropert" +
-      "y\030\003 \001(\0132\004.Ref\022\022\n\004unit\030\004 \001(\0132\004.Ref\"\332\001\n\014Fl" +
-      "owProperty\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 " +
-      "\001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 " +
-      "\001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006 \001(\t" +
-      "\022\026\n\010category\030\007 \001(\0132\004.Ref\022+\n\020flowProperty" +
-      "Type\030\010 \001(\0162\021.FlowPropertyType\022\027\n\tunitGro" +
-      "up\030\t \001(\0132\004.Ref\"~\n\022FlowPropertyFactor\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\032\n\014flowProperty\030\002 \001(\0132" +
-      "\004.Ref\022\030\n\020conversionFactor\030\003 \001(\001\022\035\n\025refer" +
-      "enceFlowProperty\030\004 \001(\010\"I\n\007FlowRef\022\017\n\007ref" +
-      "Unit\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022\033\n\010flowType" +
-      "\030\003 \001(\0162\t.FlowType\"W\n\nFlowResult\022\023\n\004type\030" +
-      "\001 \001(\tR\005@type\022\026\n\004flow\030\002 \001(\0132\010.FlowRef\022\r\n\005" +
-      "input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\277\001\n\016ImpactCat" +
-      "egory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
+      "ption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_cha" +
+      "nge\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\036\n\nmod" +
+      "el_type\030\010 \001(\0162\n.ModelType\"\\\n\013DqIndicator" +
+      "\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\020\n\010p" +
+      "osition\030\003 \001(\005\022\030\n\006scores\030\004 \003(\0132\010.DqScore\"" +
+      "i\n\007DqScore\022\023\n\004type\030\001 \001(\tR\005@type\022\020\n\010posit" +
+      "ion\030\002 \001(\005\022\r\n\005label\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\023\n\013uncertainty\030\005 \001(\001\"\344\001\n\010DqSystem\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\026\n\010catego" +
+      "ry\030\007 \001(\0132\004.Ref\022\031\n\021has_uncertainties\030\010 \001(" +
+      "\010\022\024\n\006source\030\t \001(\0132\004.Ref\022 \n\nindicators\030\n " +
+      "\003(\0132\014.DqIndicator\"\370\002\n\010Exchange\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\023\n\013internal_id\030\002 \001(\005\022\027\n\017avoi" +
+      "ded_product\030\003 \001(\010\022\026\n\004flow\030\004 \001(\0132\010.FlowRe" +
+      "f\022\033\n\rflow_property\030\005 \001(\0132\004.Ref\022\r\n\005input\030" +
+      "\006 \001(\010\022\036\n\026quantitative_reference\030\007 \001(\010\022\030\n" +
+      "\020base_uncertainty\030\010 \001(\001\022%\n\020default_provi" +
+      "der\030\t \001(\0132\013.ProcessRef\022\016\n\006amount\030\n \001(\001\022\026" +
+      "\n\016amount_formula\030\013 \001(\t\022\022\n\004unit\030\014 \001(\0132\004.R" +
+      "ef\022\020\n\010dq_entry\030\r \001(\t\022!\n\013uncertainty\030\016 \001(" +
+      "\0132\014.Uncertainty\022\023\n\013description\030\017 \001(\t\"\217\002\n" +
+      "\004Flow\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
       "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
-      "\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006 \001(\t\022\031\n\021r" +
-      "eferenceUnitName\030\007 \001(\t\022$\n\rimpactFactors\030" +
-      "\010 \003(\0132\r.ImpactFactor\"$\n\021ImpactCategoryRe" +
-      "f\022\017\n\007refUnit\030\001 \001(\t\"\256\001\n\014ImpactFactor\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\026\n\004flow\030\002 \001(\0132\010.FlowRef" +
-      "\022\032\n\014flowProperty\030\003 \001(\0132\004.Ref\022\022\n\004unit\030\004 \001" +
-      "(\0132\004.Ref\022\r\n\005value\030\005 \001(\001\022\017\n\007formula\030\006 \001(\t" +
-      "\022!\n\013uncertainty\030\007 \001(\0132\014.Uncertainty\"\342\001\n\014" +
-      "ImpactMethod\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
-      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
-      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006 \001" +
-      "(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022,\n\020impactCate" +
-      "gories\030\010 \003(\0132\022.ImpactCategoryRef\022\036\n\npara" +
-      "meters\030\t \003(\0132\n.Parameter\"^\n\014ImpactResult" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\016impactCategory\030" +
-      "\002 \001(\0132\022.ImpactCategoryRef\022\r\n\005value\030\003 \001(\001" +
-      "\"\270\001\n\010Location\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChange\030\006 " +
-      "\001(\t\022\014\n\004code\030\007 \001(\t\022\020\n\010latitude\030\010 \001(\001\022\021\n\tl" +
-      "ongitude\030\t \001(\001\022\013\n\003kml\030\n \001(\t\"\363\001\n\tParamete" +
-      "r\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\023\n\013" +
-      "description\030\003 \001(\t\022\'\n\016parameterScope\030\004 \001(" +
-      "\0162\017.ParameterScope\022\026\n\016inputParameter\030\005 \001" +
-      "(\010\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007 \001(\t\022\026\n\016ex" +
-      "ternalSource\030\010 \001(\t\022\022\n\nsourceType\030\t \001(\t\022!" +
-      "\n\013uncertainty\030\n \001(\0132\014.Uncertainty\"Y\n\016Par" +
-      "ameterRedef\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name" +
-      "\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\025\n\007context\030\004 \001(\0132\004" +
-      ".Ref\"\211\004\n\007Process\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n" +
-      "\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
-      "ion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChange" +
-      "\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\0220\n\027defaul" +
-      "tAllocationMethod\030\010 \001(\0162\017.AllocationType" +
-      "\022,\n\021allocationFactors\030\t \003(\0132\021.Allocation" +
-      "Factor\022\034\n\texchanges\030\n \003(\0132\t.Exchange\022\033\n\010" +
-      "location\030\013 \001(\0132\t.Location\022\036\n\nparameters\030" +
-      "\014 \003(\0132\n.Parameter\0223\n\024processDocumentatio" +
-      "n\030\r \001(\0132\025.ProcessDocumentation\022!\n\013proces" +
-      "sType\030\016 \001(\0162\014.ProcessType\022\026\n\010dqSystem\030\017 " +
-      "\001(\0132\004.Ref\022\036\n\020exchangeDqSystem\030\020 \001(\0132\004.Re" +
-      "f\022\034\n\016socialDqSystem\030\021 \001(\0132\004.Ref\022\017\n\007dqEnt" +
-      "ry\030\022 \001(\t\"\322\005\n\024ProcessDocumentation\022\023\n\004typ" +
-      "e\030\001 \001(\tR\005@type\022\027\n\017timeDescription\030\002 \001(\t\022" +
-      "\022\n\nvalidUntil\030\003 \001(\t\022\021\n\tvalidFrom\030\004 \001(\t\022\035" +
-      "\n\025technologyDescription\030\005 \001(\t\022!\n\031dataCol" +
-      "lectionDescription\030\006 \001(\t\022\037\n\027completeness" +
-      "Description\030\007 \001(\t\022 \n\030dataSelectionDescri" +
-      "ption\030\010 \001(\t\022\025\n\rreviewDetails\030\t \001(\t\022 \n\030da" +
-      "taTreatmentDescription\030\n \001(\t\022\"\n\032inventor" +
-      "yMethodDescription\030\013 \001(\t\022$\n\034modelingCons" +
-      "tantsDescription\030\014 \001(\t\022\026\n\010reviewer\030\r \001(\013" +
-      "2\004.Ref\022\033\n\023samplingDescription\030\016 \001(\t\022\025\n\007s" +
-      "ources\030\017 \003(\0132\004.Ref\022\037\n\027restrictionsDescri" +
-      "ption\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\024\n\014creati" +
-      "onDate\030\022 \001(\t\022\034\n\016dataDocumentor\030\023 \001(\0132\004.R" +
-      "ef\022\033\n\rdataGenerator\030\024 \001(\0132\004.Ref\022\032\n\014dataS" +
-      "etOwner\030\025 \001(\0132\004.Ref\022\033\n\023intendedApplicati" +
-      "on\030\026 \001(\t\022\032\n\022projectDescription\030\027 \001(\t\022\031\n\013" +
-      "publication\030\030 \001(\0132\004.Ref\022\034\n\024geographyDesc" +
-      "ription\030\031 \001(\t\"\202\001\n\013ProcessLink\022\023\n\004type\030\001 " +
-      "\001(\tR\005@type\022\026\n\010provider\030\002 \001(\0132\004.Ref\022\022\n\004fl" +
-      "ow\030\003 \001(\0132\004.Ref\022\025\n\007process\030\004 \001(\0132\004.Ref\022\033\n" +
-      "\010exchange\030\005 \001(\0132\t.Exchange\"A\n\nProcessRef" +
-      "\022\020\n\010location\030\001 \001(\t\022!\n\013processType\030\002 \001(\0162" +
-      "\014.ProcessType\"\370\002\n\rProductSystem\022\023\n\004type\030" +
-      "\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 " +
-      "\001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(" +
-      "\t\022\022\n\nlastChange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132" +
-      "\004.Ref\022\036\n\tprocesses\030\010 \003(\0132\013.ProcessRef\022%\n" +
-      "\020referenceProcess\030\t \001(\0132\013.ProcessRef\022$\n\021" +
-      "referenceExchange\030\n \001(\0132\t.Exchange\022\024\n\014ta" +
-      "rgetAmount\030\013 \001(\001\022\030\n\ntargetUnit\030\014 \001(\0132\004.R" +
-      "ef\022 \n\022targetFlowProperty\030\r \001(\0132\004.Ref\022\"\n\014" +
-      "processLinks\030\016 \003(\0132\014.ProcessLink\"\211\001\n\003Ref" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014" +
-      "\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ver" +
-      "sion\030\005 \001(\t\022\022\n\nlastChange\030\006 \001(\t\022\024\n\014catego" +
-      "ryPath\030\007 \003(\t\"k\n\014SimpleResult\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022 \n\013flowResults\030\002 \003(\0132\013.FlowRes" +
-      "ult\022$\n\rimpactResults\030\003 \003(\0132\r.ImpactResul" +
-      "t\"\242\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\026\n\010" +
+      "category\030\007 \001(\0132\004.Ref\022\034\n\tflow_type\030\010 \001(\0162" +
+      "\t.FlowType\022\013\n\003cas\030\t \001(\t\022\017\n\007formula\030\n \001(\t" +
+      "\022,\n\017flow_properties\030\013 \003(\0132\023.FlowProperty" +
+      "Factor\022\026\n\010location\030\014 \001(\0132\004.Ref\"\305\001\n\007FlowM" +
+      "ap\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
+      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
+      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\024\n\006sou" +
+      "rce\030\007 \001(\0132\004.Ref\022\024\n\006target\030\010 \001(\0132\004.Ref\022\037\n" +
+      "\010mappings\030\t \003(\0132\r.FlowMapEntry\"\314\001\n\014FlowM" +
+      "apEntry\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031" +
+      "\n\004from\030\007 \001(\0132\013.FlowMapRef\022\027\n\002to\030\010 \001(\0132\013." +
+      "FlowMapRef\022\031\n\021conversion_factor\030\t \001(\001\"j\n" +
+      "\nFlowMapRef\022\023\n\004type\030\001 \001(\tR\005@type\022\026\n\004flow" +
+      "\030\002 \001(\0132\010.FlowRef\022\033\n\rflow_property\030\003 \001(\0132" +
+      "\004.Ref\022\022\n\004unit\030\004 \001(\0132\004.Ref\"\336\001\n\014FlowProper" +
+      "ty\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
+      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
+      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\026\n\010cat" +
+      "egory\030\007 \001(\0132\004.Ref\022-\n\022flow_property_type\030" +
+      "\010 \001(\0162\021.FlowPropertyType\022\030\n\nunit_group\030\t" +
+      " \001(\0132\004.Ref\"\202\001\n\022FlowPropertyFactor\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\033\n\rflow_property\030\002 \001(\0132\004." +
+      "Ref\022\031\n\021conversion_factor\030\003 \001(\001\022\037\n\027refere" +
+      "nce_flow_property\030\004 \001(\010\"K\n\007FlowRef\022\020\n\010re" +
+      "f_unit\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022\034\n\tflow_t" +
+      "ype\030\003 \001(\0162\t.FlowType\"W\n\nFlowResult\022\023\n\004ty" +
+      "pe\030\001 \001(\tR\005@type\022\026\n\004flow\030\002 \001(\0132\010.FlowRef\022" +
+      "\r\n\005input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\303\001\n\016Impact" +
+      "Category\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
+      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
+      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
+      "\033\n\023reference_unit_name\030\007 \001(\t\022%\n\016impact_f" +
+      "actors\030\010 \003(\0132\r.ImpactFactor\"%\n\021ImpactCat" +
+      "egoryRef\022\020\n\010ref_unit\030\001 \001(\t\"\257\001\n\014ImpactFac" +
+      "tor\022\023\n\004type\030\001 \001(\tR\005@type\022\026\n\004flow\030\002 \001(\0132\010" +
+      ".FlowRef\022\033\n\rflow_property\030\003 \001(\0132\004.Ref\022\022\n" +
+      "\004unit\030\004 \001(\0132\004.Ref\022\r\n\005value\030\005 \001(\001\022\017\n\007form" +
+      "ula\030\006 \001(\t\022!\n\013uncertainty\030\007 \001(\0132\014.Uncerta" +
+      "inty\"\344\001\n\014ImpactMethod\022\023\n\004type\030\001 \001(\tR\005@ty" +
       "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastC" +
-      "hange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\030\n\020a" +
-      "ctivityVariable\030\010 \001(\t\022\036\n\020activityQuantit" +
-      "y\030\t \001(\0132\004.Ref\022\032\n\014activityUnit\030\n \001(\0132\004.Re" +
-      "f\022\031\n\021unitOfMeasurement\030\013 \001(\t\022\030\n\020evaluati" +
-      "onScheme\030\014 \001(\t\"\326\001\n\006Source\022\023\n\004type\030\001 \001(\tR" +
+      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
+      "change\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022-\n\021" +
+      "impact_categories\030\010 \003(\0132\022.ImpactCategory" +
+      "Ref\022\036\n\nparameters\030\t \003(\0132\n.Parameter\"_\n\014I" +
+      "mpactResult\022\023\n\004type\030\001 \001(\tR\005@type\022+\n\017impa" +
+      "ct_category\030\002 \001(\0132\022.ImpactCategoryRef\022\r\n" +
+      "\005value\030\003 \001(\001\"\271\001\n\010Location\022\023\n\004type\030\001 \001(\tR" +
       "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nl" +
-      "astChange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022" +
-      "\013\n\003doi\030\010 \001(\t\022\025\n\rtextReference\030\t \001(\t\022\014\n\004y" +
-      "ear\030\n \001(\005\022\024\n\014externalFile\030\013 \001(\t\"\327\002\n\013Unce" +
-      "rtainty\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\020distribu" +
-      "tionType\030\002 \001(\0162\020.UncertaintyType\022\014\n\004mean" +
-      "\030\003 \001(\001\022\023\n\013meanFormula\030\004 \001(\t\022\020\n\010geomMean\030" +
-      "\005 \001(\001\022\027\n\017geomMeanFormula\030\006 \001(\t\022\017\n\007minimu" +
-      "m\030\007 \001(\001\022\026\n\016minimumFormula\030\010 \001(\t\022\n\n\002sd\030\t " +
-      "\001(\001\022\021\n\tsdFormula\030\n \001(\t\022\016\n\006geomSd\030\013 \001(\001\022\025" +
-      "\n\rgeomSdFormula\030\014 \001(\t\022\014\n\004mode\030\r \001(\001\022\023\n\013m" +
-      "odeFormula\030\016 \001(\t\022\017\n\007maximum\030\017 \001(\001\022\026\n\016max" +
-      "imumFormula\030\020 \001(\t\"\267\001\n\004Unit\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023" +
-      "\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\n" +
-      "lastChange\030\006 \001(\t\022\030\n\020conversionFactor\030\007 \001" +
-      "(\001\022\025\n\rreferenceUnit\030\010 \001(\010\022\020\n\010synonyms\030\t " +
-      "\003(\t\"\312\001\n\tUnitGroup\022\023\n\004type\030\001 \001(\tR\005@type\022\017" +
-      "\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descrip" +
-      "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChang" +
-      "e\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022!\n\023defau" +
-      "ltFlowProperty\030\010 \001(\0132\004.Ref\022\024\n\005units\030\t \003(" +
-      "\0132\005.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED" +
-      "_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATIO" +
-      "N\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_A" +
-      "LLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022" +
-      "\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036" +
-      "\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE" +
-      "_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020" +
-      "\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED" +
-      "_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION" +
-      "\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW" +
-      "_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022" +
-      "\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UN" +
-      "DEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001" +
-      "\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tM" +
-      "odelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PR" +
-      "OJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CAT" +
-      "EGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005" +
-      "\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GR" +
-      "OUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014" +
-      "\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024" +
-      "\n\020SOCIAL_INDICATOR\020\017*k\n\016ParameterScope\022\035" +
-      "\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS" +
-      "_SCOPE\020\001\022\025\n\021LCIA_METHOD_SCOPE\020\002\022\020\n\014GLOBA" +
-      "L_SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PR" +
-      "OCESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PRO" +
-      "CESS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_" +
-      "UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIB" +
-      "UTION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIA" +
-      "NGLE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUT" +
-      "ION\020\004B\032\n\021org.openlca.protoB\005Protob\006proto" +
-      "3"
+      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
+      "ast_change\030\006 \001(\t\022\014\n\004code\030\007 \001(\t\022\020\n\010latitu" +
+      "de\030\010 \001(\001\022\021\n\tlongitude\030\t \001(\001\022\013\n\003kml\030\n \001(\t" +
+      "\"\367\001\n\tParameter\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004n" +
+      "ame\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022(\n\017parame" +
+      "ter_scope\030\004 \001(\0162\017.ParameterScope\022\027\n\017inpu" +
+      "t_parameter\030\005 \001(\010\022\r\n\005value\030\006 \001(\001\022\017\n\007form" +
+      "ula\030\007 \001(\t\022\027\n\017external_source\030\010 \001(\t\022\023\n\013so" +
+      "urce_type\030\t \001(\t\022!\n\013uncertainty\030\n \001(\0132\014.U" +
+      "ncertainty\"Y\n\016ParameterRedef\022\023\n\004type\030\001 \001" +
+      "(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\025" +
+      "\n\007context\030\004 \001(\0132\004.Ref\"\225\004\n\007Process\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
+      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\026\n\010category\030\007 \001" +
+      "(\0132\004.Ref\0222\n\031default_allocation_method\030\010 " +
+      "\001(\0162\017.AllocationType\022-\n\022allocation_facto" +
+      "rs\030\t \003(\0132\021.AllocationFactor\022\034\n\texchanges" +
+      "\030\n \003(\0132\t.Exchange\022\033\n\010location\030\013 \001(\0132\t.Lo" +
+      "cation\022\036\n\nparameters\030\014 \003(\0132\n.Parameter\0224" +
+      "\n\025process_documentation\030\r \001(\0132\025.ProcessD" +
+      "ocumentation\022\"\n\014process_type\030\016 \001(\0162\014.Pro" +
+      "cessType\022\027\n\tdq_system\030\017 \001(\0132\004.Ref\022 \n\022exc" +
+      "hange_dq_system\030\020 \001(\0132\004.Ref\022\036\n\020social_dq" +
+      "_system\030\021 \001(\0132\004.Ref\022\020\n\010dq_entry\030\022 \001(\t\"\354\005" +
+      "\n\024ProcessDocumentation\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "ype\022\030\n\020time_description\030\002 \001(\t\022\023\n\013valid_u" +
+      "ntil\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(\t\022\036\n\026techno" +
+      "logy_description\030\005 \001(\t\022#\n\033data_collectio" +
+      "n_description\030\006 \001(\t\022 \n\030completeness_desc" +
+      "ription\030\007 \001(\t\022\"\n\032data_selection_descript" +
+      "ion\030\010 \001(\t\022\026\n\016review_details\030\t \001(\t\022\"\n\032dat" +
+      "a_treatment_description\030\n \001(\t\022$\n\034invento" +
+      "ry_method_description\030\013 \001(\t\022&\n\036modeling_" +
+      "constants_description\030\014 \001(\t\022\026\n\010reviewer\030" +
+      "\r \001(\0132\004.Ref\022\034\n\024sampling_description\030\016 \001(" +
+      "\t\022\025\n\007sources\030\017 \003(\0132\004.Ref\022 \n\030restrictions" +
+      "_description\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n" +
+      "\rcreation_date\030\022 \001(\t\022\035\n\017data_documentor\030" +
+      "\023 \001(\0132\004.Ref\022\034\n\016data_generator\030\024 \001(\0132\004.Re" +
+      "f\022\034\n\016data_set_owner\030\025 \001(\0132\004.Ref\022\034\n\024inten" +
+      "ded_application\030\026 \001(\t\022\033\n\023project_descrip" +
+      "tion\030\027 \001(\t\022\031\n\013publication\030\030 \001(\0132\004.Ref\022\035\n" +
+      "\025geography_description\030\031 \001(\t\"\202\001\n\013Process" +
+      "Link\022\023\n\004type\030\001 \001(\tR\005@type\022\026\n\010provider\030\002 " +
+      "\001(\0132\004.Ref\022\022\n\004flow\030\003 \001(\0132\004.Ref\022\025\n\007process" +
+      "\030\004 \001(\0132\004.Ref\022\033\n\010exchange\030\005 \001(\0132\t.Exchang" +
+      "e\"B\n\nProcessRef\022\020\n\010location\030\001 \001(\t\022\"\n\014pro" +
+      "cess_type\030\002 \001(\0162\014.ProcessType\"\200\003\n\rProduc" +
+      "tSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\026" +
+      "\n\010category\030\007 \001(\0132\004.Ref\022\036\n\tprocesses\030\010 \003(" +
+      "\0132\013.ProcessRef\022&\n\021reference_process\030\t \001(" +
+      "\0132\013.ProcessRef\022%\n\022reference_exchange\030\n \001" +
+      "(\0132\t.Exchange\022\025\n\rtarget_amount\030\013 \001(\001\022\031\n\013" +
+      "target_unit\030\014 \001(\0132\004.Ref\022\"\n\024target_flow_p" +
+      "roperty\030\r \001(\0132\004.Ref\022#\n\rprocess_links\030\016 \003" +
+      "(\0132\014.ProcessLink\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005" +
+      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
+      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
+      "st_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"m" +
+      "\n\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@type\022!\n\014f" +
+      "low_results\030\002 \003(\0132\013.FlowResult\022%\n\016impact" +
+      "_results\030\003 \003(\0132\r.ImpactResult\"\251\002\n\017Social" +
+      "Indicator\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
+      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
+      "\022\026\n\010category\030\007 \001(\0132\004.Ref\022\031\n\021activity_var" +
+      "iable\030\010 \001(\t\022\037\n\021activity_quantity\030\t \001(\0132\004" +
+      ".Ref\022\033\n\ractivity_unit\030\n \001(\0132\004.Ref\022\033\n\023uni" +
+      "t_of_measurement\030\013 \001(\t\022\031\n\021evaluation_sch" +
+      "eme\030\014 \001(\t\"\331\001\n\006Source\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
+      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
+      "hange\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022\013\n\003d" +
+      "oi\030\010 \001(\t\022\026\n\016text_reference\030\t \001(\t\022\014\n\004year" +
+      "\030\n \001(\005\022\025\n\rexternal_file\030\013 \001(\t\"\343\002\n\013Uncert" +
+      "ainty\022\023\n\004type\030\001 \001(\tR\005@type\022+\n\021distributi" +
+      "on_type\030\002 \001(\0162\020.UncertaintyType\022\014\n\004mean\030" +
+      "\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_mean" +
+      "\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n\007min" +
+      "imum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022\n\n\002s" +
+      "d\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_sd\030\013" +
+      " \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mode\030\r " +
+      "\001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum\030\017 \001" +
+      "(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021conversio" +
+      "n_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001(\010\022\020" +
+      "\n\010synonyms\030\t \003(\t\"\315\001\n\tUnitGroup\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
+      "\022\023\n\013last_change\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132" +
+      "\004.Ref\022#\n\025default_flow_property\030\010 \001(\0132\004.R" +
+      "ef\022\024\n\005units\030\t \003(\0132\005.Unit*\247\001\n\016AllocationT" +
+      "ype\022\035\n\031UNDEFINED_ALLOCATION_TYPE\020\000\022\027\n\023PH" +
+      "YSICAL_ALLOCATION\020\001\022\027\n\023ECONOMIC_ALLOCATI" +
+      "ON\020\002\022\025\n\021CAUSAL_ALLOCATION\020\003\022\032\n\026USE_DEFAU" +
+      "LT_ALLOCATION\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017C" +
+      "alculationType\022\036\n\032UNDEFINED_CALCULATION_" +
+      "TYPE\020\000\022\026\n\022SIMPLE_CALCULATION\020\001\022\031\n\025CONTRI" +
+      "BUTION_ANALYSIS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003" +
+      "\022\034\n\030REGIONALIZED_CALCULATION\020\004\022\032\n\026MONTE_" +
+      "CARLO_SIMULATION\020\005*b\n\020FlowPropertyType\022 " +
+      "\n\034UNDEFINED_FLOW_PROPERTY_TYPE\020\000\022\025\n\021ECON" +
+      "OMIC_QUANTITY\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z" +
+      "\n\010FlowType\022\027\n\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017E" +
+      "LEMENTARY_FLOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWA" +
+      "STE_FLOW\020\003*\207\002\n\tModelType\022\030\n\024UNDEFINED_MO" +
+      "DEL_TYPE\020\000\022\013\n\007PROJECT\020\001\022\021\n\rIMPACT_METHOD" +
+      "\020\002\022\023\n\017IMPACT_CATEGORY\020\003\022\022\n\016PRODUCT_SYSTE" +
+      "M\020\004\022\013\n\007PROCESS\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPE" +
+      "RTY\020\007\022\016\n\nUNIT_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR" +
+      "\020\n\022\n\n\006SOURCE\020\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION" +
+      "\020\r\022\n\n\006NW_SET\020\016\022\024\n\020SOCIAL_INDICATOR\020\017*k\n\016" +
+      "ParameterScope\022\035\n\031UNDEFINED_PARAMETER_SC" +
+      "OPE\020\000\022\021\n\rPROCESS_SCOPE\020\001\022\025\n\021LCIA_METHOD_" +
+      "SCOPE\020\002\022\020\n\014GLOBAL_SCOPE\020\003*K\n\013ProcessType" +
+      "\022\032\n\026UNDEFINED_PROCESS_TYPE\020\000\022\016\n\nLCI_RESU" +
+      "LT\020\001\022\020\n\014UNIT_PROCESS\020\002*\234\001\n\017UncertaintyTy" +
+      "pe\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LO" +
+      "G_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRI" +
+      "BUTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024U" +
+      "NIFORM_DISTRIBUTION\020\004B\032\n\021org.openlca.pro" +
+      "toB\005Protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
