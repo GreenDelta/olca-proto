@@ -1,27 +1,1356 @@
 syntax = "proto3";
-
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 
-// A Ref is a reference to a RootEntity. When serializing an entity (e.g. a
-// Process) that references another standalone entity (e.g. a Flow in an
-// Exchange) we do not want to write the complete referenced entity into the
-// serialized object but just a reference. However, the reference contains some
-// meta-data like name, category path etc. that are useful to display.
-message Ref {
+// An actor is a person or organisation.
+message Actor {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
   string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
   string name = 3;
+
+  // The description of the entity.
   string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
   string version = 5;
+
+  // The timestamp when the entity was changed the last time.
   string lastChange = 6;
-  repeated string categoryPath = 7;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  string address = 8;
+
+  string city = 9;
+
+  string country = 10;
+
+  string email = 11;
+
+  string telefax = 12;
+
+  string telephone = 13;
+
+  string website = 14;
+
+  string zipCode = 15;
+
+}
+
+// A single allocation factor in a process.
+message AllocationFactor {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The output product.
+  Exchange productExchange = 2;
+
+  // The type of allocation.
+  AllocationType allocationType = 3;
+
+  // The value of the allocation factor.
+  double value = 4;
+
+  // An input product or elementary flow exchange which is allocated by this
+  // factor. This is only valid for causal allocation where allocation factors
+  // can be assigned to single exchanges.
+  Exchange allocatedExchange = 5;
+
+}
+
+// An enumeration type for allocation methods. This type is used to define the
+// type of an [AllocationFactor], the default allocation method of a
+// multi-functional [Process], or the allocation method in a
+// [CalculationSetup].
+enum AllocationType {
+
+  PHYSICAL_ALLOCATION = 0;
+
+  ECONOMIC_ALLOCATION = 1;
+
+  CAUSAL_ALLOCATION = 2;
+
+  USE_DEFAULT_ALLOCATION = 3;
+
+  NO_ALLOCATION = 4;
+
+}
+
+// A setup for a product system calculation.
+message CalculationSetup {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The type of calculation that should be performed.
+  CalculationType calculationType = 2;
+
+  // The product system that should be calculated (required).
+  Ref productSystem = 3;
+
+  // The LCIA method for the calculation (optional).
+  Ref impactMethod = 4;
+
+  // Indicates whether life cycle costs should be also calculated (optional).
+  bool withCosts = 5;
+
+  // The normalisation and weighting set for the calculation (optional).
+  Ref nwSet = 6;
+
+  // The calculation type to be used in the calculation (optional).
+  AllocationType allocationMethod = 7;
+
+  // A list of parameter redefinitions to be used in the calculation
+  // (optional).
+  repeated ParameterRedef parameterRedefs = 8;
+
+  // (optional)
+  double amount = 9;
+
+  // (optional)
+  Ref unit = 10;
+
+  // (optional)
+  Ref flowProperty = 11;
+
+}
+
+// An enumeration of the different calculation methods supported by openLCA.
+enum CalculationType {
+
+  // Calculates the total results for elementary flows, LCIA indicators, costs,
+  // etc. of a product system.
+  SIMPLE_CALCULATION = 0;
+
+  // Includes the total result vectors of a simple calculation but calculates
+  // also the direct contributions of each process (or better process product
+  // in case of multi-output processes) to these total results.
+  CONTRIBUTION_ANALYSIS = 1;
+
+  // Extends the contribution analysis by providing also the upstream results
+  // of each process (process product) in the product system. The upstream
+  // result contains the direct contributions of the respective process but
+  // also the result of the supply chain up to this process scaled to the
+  // demand of the process in the product system.
+  UPSTREAM_ANALYSIS = 2;
+
+  // A regionalized calculation is a contribution analysis but with an LCIA
+  // method that supports regionalized characterization factors (via region
+  // specific parameters in formulas) and a product system with processes that
+  // have geographic information assigned (point, line, or polygon shapes).
+  REGIONALIZED_CALCULATION = 3;
+
+  // A Monte Carlo simulation generates for each run, of a given number of a
+  // given number of iterations, random values according to the uncertainty
+  // distributions of process inputs/outputs, parameters, characterization
+  // factors, etc. of a product system and then performs a simple calculation
+  // for that specific run.
+  MONTE_CARLO_SIMULATION = 4;
+
+}
+
+// A category is used for the categorisation of types like processes, flows,
+// etc. The tricky thing is that the `Category` class inherits also from the
+// [CategorizedEntity] type so that a category can have a category attribute
+// which is then the parent category of this category (uff).
+message Category {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The type of models that can be linked to the category.
+  ModelType modelType = 8;
+
+}
+
+// An indicator of a data quality system ([DqSystem]).
+message DqIndicator {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  string name = 2;
+
+  int32 position = 3;
+
+  repeated DqScore scores = 4;
+
+}
+
+// An score value of an indicator ([DqIndicator]) in a data quality system
+// ([DqSystem]).
+message DqScore {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  int32 position = 2;
+
+  string label = 3;
+
+  string description = 4;
+
+  double uncertainty = 5;
+
+}
+
+// A data quality system.
+message DqSystem {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  bool hasUncertainties = 8;
+
+  Ref source = 9;
+
+  repeated DqIndicator indicators = 10;
+
+}
+
+// An Exchange is an input or output of a [Flow] in a [Process]. The amount of
+// an exchange is given in a specific unit of a quantity ([FlowProperty]) of
+// the flow. The allowed units and flow properties that can be used for a flow
+// in an exchange are defined by the flow property information in that flow
+// (see also the [FlowPropertyFactor] type).
+message Exchange {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The process internal ID of the exchange. This is used to identify
+  // exchanges unambiguously within a process (e.g. when linking exchanges in a
+  // product system where multiple exchanges with the same flow are allowed).
+  // The value should be >= 1.
+  int32 internalId = 2;
+
+  // Indicates whether this exchange is an avoided product.
+  bool avoidedProduct = 3;
+
+  // The reference to the flow of the exchange.
+  FlowRef flow = 4;
+
+  // The quantity in which the amount is given.
+  Ref flowProperty = 5;
+
+  bool input = 6;
+
+  // Indicates whether the exchange is the quantitative reference of the
+  // process.
+  bool quantitativeReference = 7;
+
+  double baseUncertainty = 8;
+
+  // A default provider is a [Process] that is linked as the provider of a
+  // product input or the waste treatment provider of a waste output. It is
+  // just an optional default setting which can be also ignored when building
+  // product systems in openLCA. The user is always free to link processes in
+  // product systems ignoring these defaults (but the flows and flow directions
+  // have to match of course).
+  ProcessRef defaultProvider = 9;
+
+  double amount = 10;
+
+  string amountFormula = 11;
+
+  Ref unit = 12;
+
+  // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
+  // quality values that need to match the data quality scheme for flow inputs
+  // and outputs that is assigned to the [Process]. In such a scheme the data
+  // quality indicators have fixed positions and the respective values in the
+  // `dqEntry` vector map to these positions.
+  string dqEntry = 13;
+
+  Uncertainty uncertainty = 14;
+
+  // A general comment about the input or output.
+  string description = 15;
+
+}
+
+// Everything that can be an input or output of a process (e.g. a substance, a
+// product, a waste, a service etc.)
+message Flow {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The type of the flow. Note that this type is more a descriptor of how the
+  // flow is handled in calculations.
+  FlowType flowType = 8;
+
+  // A CAS number of the flow.
+  string cas = 9;
+
+  // A chemical formula of the flow.
+  string formula = 10;
+
+  // The flow properties (quantities) in which amounts of the flow can be
+  // expressed together with conversion factors between these flow flow
+  // properties.
+  repeated FlowPropertyFactor flowProperties = 11;
+
+  // The location of the flow. Normally the location of a flow is defined by
+  // the process location where the flow is an input or output. However, some
+  // data formats define a location as a property of a flow.
+  Ref location = 12;
+
+}
+
+// A crosswalk of flows from a source flow list to a target flow list.
+message FlowMap {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The reference (id, name, description) of the source flow list.
+  Ref source = 7;
+
+  // The reference (id, name, description) of the target flow list.
+  Ref target = 8;
+
+  // A list of flow mappings from flows in a source flow list to flows in a
+  // target flow list.
+  repeated FlowMapEntry mappings = 9;
+
+}
+
+// A mapping from one flow to another.
+message FlowMapEntry {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The flow, flow property, and unit of the source flow.
+  FlowMapRef from = 7;
+
+  // The flow, flow property, and unit of the target flow.
+  FlowMapRef to = 8;
+
+  // The factor to convert the original source flow to the target flow.
+  double conversionFactor = 9;
+
+}
+
+// Describes a the source or target flow of a flow mapping in a `FlowMap`. Such
+// a flow reference can also optionally specify the unit and flow property
+// (quantity) for which the mapping is valid. If the unit and quantity are not
+// given, the mapping is based on the reference unit of the reference flow
+// property of the respective flow.
+message FlowMapRef {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference to the flow data set.
+  FlowRef flow = 2;
+
+  // An optional reference to a flow property of the flow for which the mapping
+  // is valid.
+  Ref flowProperty = 3;
+
+  // An optional reference to a unit of the flow for which the mapping is valid
+  Ref unit = 4;
+
+}
+
+// A flow property is a quantity that can be used to express amounts of a flow.
+message FlowProperty {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The type of the flow property
+  FlowPropertyType flowPropertyType = 8;
+
+  // The units of measure that can be used to express quantities of the flow
+  // property.
+  Ref unitGroup = 9;
+
+}
+
+// A FlowPropertyFactor is a conversion factor between <a
+// href="./FlowProperty.html">flow properties (quantities)</a> of a <a
+// href="./Flow.html">flow</a>. As an example the amount of the flow 'water' in
+// a process could be expressed in 'kg' mass or 'm3' volume. In this case the
+// flow water would have two flow property factors: one for the flow property
+// 'mass' and one for 'volume'. Each of these flow properties has a reference
+// to a <a href="./UnitGroup.html">unit group</a> which again has a reference
+// unit. In the example the flow property 'mass' could reference the unit group
+// 'units of mass' with 'kg' as reference unit and volume could reference the
+// unit group 'units of volume' with 'm3' as reference unit. The flow property
+// factor is now the conversion factor between these two reference units where
+// the factor of the reference flow property of the flow is 1. If the reference
+// flow property of 'water' in the example would be 'mass' the respective flow
+// property factor would be 1 and the factor for 'volume' would be 0.001 (as 1
+// kg water is 0.001 m3). The amount of water in a process can now be also
+// given in liter, tons, grams etc. For this, the unit conversion factor of the
+// respective unit group can be used to convert into the reference unit (which
+// then can be used to convert to the reference unit of another flow property).
+// Another thing to note is that different flow properties can refer to the
+// same unit group (e.g. MJ upper calorific value and MJ lower calorific
+// value.)
+message FlowPropertyFactor {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The flow property (quantity) of the factor.
+  Ref flowProperty = 2;
+
+  // The value of the conversion factor.
+  double conversionFactor = 3;
+
+  // Indicates whether the flow property of the factor is the reference flow
+  // property of the flow. The reference flow property must have a conversion
+  // factor of 1.0 and there should be only one reference flow property.
+  bool referenceFlowProperty = 4;
+
+}
+
+// An enumeration of flow property types.
+enum FlowPropertyType {
+
+  ECONOMIC_QUANTITY = 0;
+
+  PHYSICAL_QUANTITY = 1;
+
+}
+
+// A reference to a [Flow] data set.
+message FlowRef {
+
+  // The name (symbol) of the reference unit of the flow.
+  string refUnit = 1;
+
+  // The location name or code of the flow. Typically, this is only used for
+  // product flows in databases like ecoinvent.
+  string location = 2;
+
+  // The type of the flow.
+  FlowType flowType = 3;
+
+}
+
+// A result value for a flow; given in the reference unit of the flow.
+message FlowResult {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The flow reference.
+  FlowRef flow = 2;
+
+  // Indicates whether the flow is an input or not.
+  bool input = 3;
+
+  // The value of the flow amount.
+  double value = 4;
+
+}
+
+// The basic flow types.
+enum FlowType {
+
+  ELEMENTARY_FLOW = 0;
+
+  PRODUCT_FLOW = 1;
+
+  WASTE_FLOW = 2;
+
+}
+
+// A LCIA category of a LCIA method (see ImpactMethod) which groups a set of
+// characterisation factors
+message ImpactCategory {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
+  string referenceUnitName = 7;
+
+  // The characterisation factors of the LCIA category.
+  repeated ImpactFactor impactFactors = 8;
+
+}
+
+// A reference to a [ImpactCategory] data set.
+message ImpactCategoryRef {
+
+  // The name (symbol) of the reference unit of the impact category.
+  string refUnit = 1;
+
+}
+
+// A single characterisation factor of a LCIA category for a flow.
+message ImpactFactor {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The [Flow] of the impact assessment factor.
+  FlowRef flow = 2;
+
+  // The quantity of the flow to which the LCIA factor is related (e.g. Mass).
+  Ref flowProperty = 3;
+
+  // The flow unit to which the LCIA factor is related (e.g. kg).
+  Ref unit = 4;
+
+  // The value of the impact assessment factor.
+  double value = 5;
+
+  // A mathematical formula for calculating the value of the LCIA factor.
+  string formula = 6;
+
+  // The uncertainty distribution of the factors' value.
+  Uncertainty uncertainty = 7;
+
+}
+
+// A impact assessment method.
+message ImpactMethod {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The LCIA categories of the method.
+  repeated ImpactCategoryRef impactCategories = 8;
+
+  // A set of method specific parameters which can be used in formulas of the
+  // characterisation factors in this method.
+  repeated Parameter parameters = 9;
+
+}
+
+// A result value for an impact assessment category.
+message ImpactResult {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference to the impact assessment category.
+  ImpactCategoryRef impactCategory = 2;
+
+  // The value of the flow amount.
+  double value = 3;
+
+}
+
+// A location like a country, state, city, etc.
+message Location {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The code of the location (e.g. an ISO 2-letter country code).
+  string code = 7;
+
+  // The average latitude of the location.
+  double latitude = 8;
+
+  // The average longitude of the location.
+  double longitude = 9;
+
+  // KML data of the location.
+  string kml = 10;
+
+}
+
+// An enumeration of the root entity types.
+enum ModelType {
+
+  PROJECT = 0;
+
+  IMPACT_METHOD = 1;
+
+  IMPACT_CATEGORY = 2;
+
+  PRODUCT_SYSTEM = 3;
+
+  PROCESS = 4;
+
+  FLOW = 5;
+
+  FLOW_PROPERTY = 6;
+
+  UNIT_GROUP = 7;
+
+  UNIT = 8;
+
+  ACTOR = 9;
+
+  SOURCE = 10;
+
+  CATEGORY = 11;
+
+  LOCATION = 12;
+
+  NW_SET = 13;
+
+  SOCIAL_INDICATOR = 14;
+
+}
+
+message Parameter {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The name of the parameter.
+  string name = 2;
+
+  // A description of the parameter.
+  string description = 3;
+
+  // The scope where the parameter is valid.
+  ParameterScope parameterScope = 4;
+
+  // Indicates whether the parameter is an input parameter (true) or a
+  // dependent/calculated parameter (false). A parameter can have a formula if
+  // it is not an input parameter.
+  bool inputParameter = 5;
+
+  // The parameter value.
+  double value = 6;
+
+  // A mathematical expression to calculate the parameter value.
+  string formula = 7;
+
+  // A reference to an external source where the parameter is defined (e.g. an
+  // Excel table, shapefile, etc.).
+  string externalSource = 8;
+
+  // Indicates the type of the source if an external source is defined for the
+  // parameter.
+  string sourceType = 9;
+
+  // An uncertainty distribution of the parameter value. This is only valid for
+  // input parameters.
+  Uncertainty uncertainty = 10;
+
+}
+
+// A redefinition of a parameter in a product system.
+message ParameterRedef {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The parameter name.
+  string name = 2;
+
+  // The (new) value of the parameter.
+  double value = 3;
+
+  // The context of the paramater (a process or LCIA method). If no context is
+  // provided it is assumed that this is a redefinition of a global parameter.
+  Ref context = 4;
+
+}
+
+// The possible scopes of parameters.
+enum ParameterScope {
+
+  PROCESS_SCOPE = 0;
+
+  LCIA_METHOD_SCOPE = 1;
+
+  GLOBAL_SCOPE = 2;
+
 }
 
 message Process {
-  string id = 1 [json_name = "@id"];
-  string name = 2;
-  string description = 3;
-  string version = 4;
-  string lastChange = 5;
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  AllocationType defaultAllocationMethod = 8;
+
+  repeated AllocationFactor allocationFactors = 9;
+
+  // The inputs and outputs of the process.
+  repeated Exchange exchanges = 10;
+
+  Location location = 11;
+
+  repeated Parameter parameters = 12;
+
+  ProcessDocumentation processDocumentation = 13;
+
+  ProcessType processType = 14;
+
+  // A reference to a data quality system ([DqSystem]) with which the overall
+  // quality of the process can be assessed.
+  Ref dqSystem = 15;
+
+  // A reference to a data quality system ([DqSystem]) with which the quality
+  // of individual inputs and outputs ([Exchange]s) of the process can be
+  // assessed.
+  Ref exchangeDqSystem = 16;
+
+  // A reference to a data quality system ([DqSystem]) with which the quality
+  // of individual social aspects of the process can be assessed.
+  Ref socialDqSystem = 17;
+
+  // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
+  // quality values that need to match the overall data quality system of the
+  // process (the system that is stored in the `dqSystem` property). In such a
+  // system the data quality indicators have fixed positions and the respective
+  // values in the `dqEntry` vector map to these positions.
+  string dqEntry = 18;
+
+}
+
+message ProcessDocumentation {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  string timeDescription = 2;
+
+  string validUntil = 3;
+
+  string validFrom = 4;
+
+  string technologyDescription = 5;
+
+  string dataCollectionDescription = 6;
+
+  string completenessDescription = 7;
+
+  string dataSelectionDescription = 8;
+
+  string reviewDetails = 9;
+
+  string dataTreatmentDescription = 10;
+
+  string inventoryMethodDescription = 11;
+
+  string modelingConstantsDescription = 12;
+
+  Ref reviewer = 13;
+
+  string samplingDescription = 14;
+
+  repeated Ref sources = 15;
+
+  string restrictionsDescription = 16;
+
+  bool copyright = 17;
+
+  string creationDate = 18;
+
+  Ref dataDocumentor = 19;
+
+  Ref dataGenerator = 20;
+
+  Ref dataSetOwner = 21;
+
+  string intendedApplication = 22;
+
+  string projectDescription = 23;
+
+  Ref publication = 24;
+
+  string geographyDescription = 25;
+
+}
+
+// A process link is a connection between two processes in a product system.
+message ProcessLink {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The descriptor of the process that provides a product or a waste
+  // treatment.
+  Ref provider = 2;
+
+  // The descriptor of the flow that is exchanged between the two processes.
+  Ref flow = 3;
+
+  // The descriptor of the process that is linked to the provider.
+  Ref process = 4;
+
+  // The exchange of the linked process (this is useful if the linked process
+  // has multiple exchanges with the same flow that are linked to different
+  // provides, e.g. in an electricity mix).
+  Exchange exchange = 5;
+
+}
+
+// A reference to a [Process] data set.
+message ProcessRef {
+
+  // The location name or code of the process.
+  string location = 1;
+
+  // The type of the process.
+  ProcessType processType = 2;
+
+}
+
+enum ProcessType {
+
+  LCI_RESULT = 0;
+
+  UNIT_PROCESS = 1;
+
+}
+
+// A product system describes the supply chain of a product (the functional
+// unit) ...
+message ProductSystem {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The descriptors of all processes that are contained in the product system.
+  repeated ProcessRef processes = 8;
+
+  // The descriptor of the process that provides the flow of the functional
+  // unit of the product system.
+  ProcessRef referenceProcess = 9;
+
+  // The exchange of the reference processes (typically the product output)
+  // that provides the flow of the functional unit of the product system.
+  Exchange referenceExchange = 10;
+
+  // The flow amount of the functional unit of the product system.
+  double targetAmount = 11;
+
+  // The unit in which the flow amount of the functional unit is given.
+  Ref targetUnit = 12;
+
+  // The flow property in which the flow amount of the functional unit is
+  // given.
+  Ref targetFlowProperty = 13;
+
+  // The process links of the product system.
+  repeated ProcessLink processLinks = 14;
+
+}
+
+// A Ref is a reference to a [RootEntity]. When serializing an entity (e.g. a
+// [Process]) that references another standalone entity (e.g. a [Flow] in an
+// [Exchange]) we do not want to write the complete referenced entity into the
+// serialized JSON object but just a reference. However, the reference contains
+// some meta-data like name, category path etc. that are useful to display.
+message Ref {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The full path of the category of the referenced entity from top to bottom,
+  // e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+  repeated string categoryPath = 7;
+
+}
+
+message SimpleResult {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  repeated FlowResult flowResults = 2;
+
+  repeated ImpactResult impactResults = 3;
+
+}
+
+message SocialIndicator {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The name of the activity variable of the indicator.
+  string activityVariable = 8;
+
+  // The quantity of the activity variable.
+  Ref activityQuantity = 9;
+
+  // The unit of the activity variable.
+  Ref activityUnit = 10;
+
+  // The unit in which the indicator is measured.
+  string unitOfMeasurement = 11;
+
+  // Documentation of the evaluation scheme of the indicator.
+  string evaluationScheme = 12;
+
+}
+
+// A source is a literature reference.
+message Source {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // The digital object identifier of the source (see
+  // http://en.wikipedia.org/wiki/Digital_object_identifier).
+  string doi = 8;
+
+  // The full text reference of the source.
+  string textReference = 9;
+
+  // The publication year of the source.
+  int32 year = 10;
+
+  // A direct link (relative or absolute URL) to the source file.
+  string externalFile = 11;
+
+}
+
+// Defines the parameter values of an uncertainty distribution. Depending on
+// the uncertainty distribution type different parameters could be used.
+message Uncertainty {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The uncertainty distribution type
+  UncertaintyType distributionType = 2;
+
+  // The arithmetic mean (used for normal distributions).
+  double mean = 3;
+
+  // A mathematical formula for the arithmetic mean.
+  string meanFormula = 4;
+
+  // The geometric mean value (used for log-normal distributions).
+  double geomMean = 5;
+
+  // A mathematical formula for the geometric mean.
+  string geomMeanFormula = 6;
+
+  // The minimum value (used for uniform and triangle distributions).
+  double minimum = 7;
+
+  // A mathematical formula for the minimum value.
+  string minimumFormula = 8;
+
+  // The arithmetic standard deviation (used for normal distributions).
+  double sd = 9;
+
+  // A mathematical formula for the arithmetic standard deviation.
+  string sdFormula = 10;
+
+  // The geometric standard deviation (used for log-normal distributions).
+  double geomSd = 11;
+
+  // A mathematical formula for the geometric standard deviation.
+  string geomSdFormula = 12;
+
+  // The most likely value (used for triangle distributions).
+  double mode = 13;
+
+  // A mathematical formula for the most likely value.
+  string modeFormula = 14;
+
+  // The maximum value (used for uniform and triangle distributions).
+  double maximum = 15;
+
+  // A mathematical formula for the maximum value.
+  string maximumFormula = 16;
+
+}
+
+// Enumeration of uncertainty distribution types that can be used in exchanges,
+// parameters, LCIA factors, etc.
+enum UncertaintyType {
+
+  LOG_NORMAL_DISTRIBUTION = 0;
+
+  NORMAL_DISTRIBUTION = 1;
+
+  TRIANGLE_DISTRIBUTION = 2;
+
+  UNIFORM_DISTRIBUTION = 3;
+
+}
+
+// An unit of measure
+message Unit {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The conversion factor to the reference unit of the unit group to which
+  // this unit belongs.
+  double conversionFactor = 7;
+
+  // Indicates whether the unit is the reference unit of the unit group to
+  // which this unit belongs. If it is the reference unit the conversion factor
+  // must be 1.0. There should be always only one reference unit in a unit
+  // group. The reference unit is used to convert amounts given in one unit to
+  // amounts given in another unit of the respective unit group.
+  bool referenceUnit = 8;
+
+  // A list of synonyms for the unit.
+  repeated string synonyms = 9;
+
+}
+
+// A group of units that can be converted into each other.
+message UnitGroup {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string lastChange = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // Some LCA data formats do not have the concept of flow properties or
+  // quantities. This field provides a default link to a flow property for
+  // units that are contained in this group.
+  Ref defaultFlowProperty = 8;
+
+  // The units of the unit group.
+  repeated Unit units = 9;
+
 }

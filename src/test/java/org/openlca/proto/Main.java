@@ -20,5 +20,10 @@ public class Main {
     JsonFormat.parser().merge(json, clone);
     json = JsonFormat.printer().print(clone.build());
     System.out.println(json);
+
+    var flow = Proto.Flow.newBuilder();
+    flow.setName("Steel");
+    flow.setFlowType(Proto.FlowType.PRODUCT_FLOW);
+		System.out.println(JsonFormat.printer().print(flow));
   }
 }
