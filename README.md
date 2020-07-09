@@ -47,9 +47,21 @@ This will generate the following output:
 }
 ```
 
+__Python__
+For the Python version we use the
+[mypy-protobuf](https://github.com/dropbox/mypy-protobuf) plugin to generate
+type hints. Everything is written into a `protolca` module:
 
+```python
+import protolca as proto
+import google.protobuf.json_format as json
 
+flow = proto.Flow()
+flow.type = 'Flow'
+flow.id = str(uuid.uuid4())
+flow.name = 'Steel'
+flow.flowType = proto.FlowType.PRODUCT_FLOW
+print(json.MessageToJson(flow))
+```
 
-https://github.com/danielgtaylor/python-betterproto
-
-https://github.com/dropbox/mypy-protobuf
+This will generate the same output as for the Java version above.
