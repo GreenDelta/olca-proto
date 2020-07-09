@@ -18,6 +18,8 @@ script:
 $ gen
 ```
 
+This requires that the protocol buffers compiler is in your path.
+
 __Java__
 
 For Java, a single class `Proto` is generated:
@@ -48,6 +50,7 @@ This will generate the following output:
 ```
 
 __Python__
+
 For the Python version we use the
 [mypy-protobuf](https://github.com/dropbox/mypy-protobuf) plugin to generate
 type hints. Everything is written into a `protolca` module:
@@ -66,7 +69,14 @@ print(json.MessageToJson(flow))
 
 This will generate the same output as for the Java version above.
 
+
+__Go__
+
+To generate the `Go` package, you need put the current
+[Go plugin](https://github.com/protocolbuffers/protobuf-go) of the protocol
+buffers compiler in your path.
+
+
 __TODO__
 * move Java version to sub-folder
 * test / generate Go version
-* test / generate C# version

@@ -71,8 +71,10 @@ type EnumItem struct {
 // generated proto3 file. This is the place where you want
 // to define global options
 const ProtoHeader = `syntax = "proto3";
+package protolca;
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
+option go_package = ".;protolca";
 
 `
 

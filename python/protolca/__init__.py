@@ -16,16 +16,16 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='olca.proto',
-  package='',
+  package='protolca',
   syntax='proto3',
-  serialized_options=b'\n\021org.openlca.protoB\005Proto',
+  serialized_options=b'\n\021org.openlca.protoB\005ProtoZ\n.;protolca',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nolca.proto\"\x94\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0f\n\x07\x61\x64\x64ress\x18\x08 \x01(\t\x12\x0c\n\x04\x63ity\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07telefax\x18\x0c \x01(\t\x12\x11\n\ttelephone\x18\r \x01(\t\x12\x0f\n\x07website\x18\x0e \x01(\t\x12\x10\n\x08zip_code\x18\x0f \x01(\t\"\xac\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12#\n\x10product_exchange\x18\x02 \x01(\x0b\x32\t.Exchange\x12(\n\x0f\x61llocation_type\x18\x03 \x01(\x0e\x32\x0f.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12%\n\x12\x61llocated_exchange\x18\x05 \x01(\x0b\x32\t.Exchange\"\xd0\x02\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x10\x63\x61lculation_type\x18\x02 \x01(\x0e\x32\x10.CalculationType\x12\x1c\n\x0eproduct_system\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x1b\n\rimpact_method\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x12\n\nwith_costs\x18\x05 \x01(\x08\x12\x14\n\x06nw_set\x18\x06 \x01(\x0b\x32\x04.Ref\x12*\n\x11\x61llocation_method\x18\x07 \x01(\x0e\x32\x0f.AllocationType\x12)\n\x10parameter_redefs\x18\x08 \x03(\x0b\x32\x0f.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x12\n\x04unit\x18\n \x01(\x0b\x32\x04.Ref\x12\x1b\n\rflow_property\x18\x0b \x01(\x0b\x32\x04.Ref\"\xb1\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1e\n\nmodel_type\x18\x08 \x01(\x0e\x32\n.ModelType\"\\\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12\x18\n\x06scores\x18\x04 \x03(\x0b\x32\x08.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\xe4\x01\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11has_uncertainties\x18\x08 \x01(\x08\x12\x14\n\x06source\x18\t \x01(\x0b\x32\x04.Ref\x12 \n\nindicators\x18\n \x03(\x0b\x32\x0c.DqIndicator\"\xf8\x02\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x13\n\x0binternal_id\x18\x02 \x01(\x05\x12\x17\n\x0f\x61voided_product\x18\x03 \x01(\x08\x12\x16\n\x04\x66low\x18\x04 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x05 \x01(\x0b\x32\x04.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1e\n\x16quantitative_reference\x18\x07 \x01(\x08\x12\x18\n\x10\x62\x61se_uncertainty\x18\x08 \x01(\x01\x12%\n\x10\x64\x65\x66\x61ult_provider\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x16\n\x0e\x61mount_formula\x18\x0b \x01(\t\x12\x12\n\x04unit\x18\x0c \x01(\x0b\x32\x04.Ref\x12\x10\n\x08\x64q_entry\x18\r \x01(\t\x12!\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x0c.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\x8f\x02\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1c\n\tflow_type\x18\x08 \x01(\x0e\x32\t.FlowType\x12\x0b\n\x03\x63\x61s\x18\t \x01(\t\x12\x0f\n\x07\x66ormula\x18\n \x01(\t\x12,\n\x0f\x66low_properties\x18\x0b \x03(\x0b\x32\x13.FlowPropertyFactor\x12\x16\n\x08location\x18\x0c \x01(\x0b\x32\x04.Ref\"\xc5\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x14\n\x06source\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x14\n\x06target\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x1f\n\x08mappings\x18\t \x03(\x0b\x32\r.FlowMapEntry\"\xcc\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x0b.FlowMapRef\x12\x17\n\x02to\x18\x08 \x01(\x0b\x32\x0b.FlowMapRef\x12\x19\n\x11\x63onversion_factor\x18\t \x01(\x01\"j\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\"\xde\x01\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12-\n\x12\x66low_property_type\x18\x08 \x01(\x0e\x32\x11.FlowPropertyType\x12\x18\n\nunit_group\x18\t \x01(\x0b\x32\x04.Ref\"\x82\x01\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1b\n\rflow_property\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11\x63onversion_factor\x18\x03 \x01(\x01\x12\x1f\n\x17reference_flow_property\x18\x04 \x01(\x08\"K\n\x07\x46lowRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x1c\n\tflow_type\x18\x03 \x01(\x0e\x32\t.FlowType\"W\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\xc3\x01\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1b\n\x13reference_unit_name\x18\x07 \x01(\t\x12%\n\x0eimpact_factors\x18\x08 \x03(\x0b\x32\r.ImpactFactor\"%\n\x11ImpactCategoryRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\"\xaf\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x04\x66low\x18\x02 \x01(\x0b\x32\x08.FlowRef\x12\x1b\n\rflow_property\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04unit\x18\x04 \x01(\x0b\x32\x04.Ref\x12\r\n\x05value\x18\x05 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x06 \x01(\t\x12!\n\x0buncertainty\x18\x07 \x01(\x0b\x32\x0c.Uncertainty\"\xe4\x01\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12-\n\x11impact_categories\x18\x08 \x03(\x0b\x32\x12.ImpactCategoryRef\x12\x1e\n\nparameters\x18\t \x03(\x0b\x32\n.Parameter\"_\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12+\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\x12.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\xb9\x01\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\x12\x10\n\x08latitude\x18\x08 \x01(\x01\x12\x11\n\tlongitude\x18\t \x01(\x01\x12\x0b\n\x03kml\x18\n \x01(\t\"\xf7\x01\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12(\n\x0fparameter_scope\x18\x04 \x01(\x0e\x32\x0f.ParameterScope\x12\x17\n\x0finput_parameter\x18\x05 \x01(\x08\x12\r\n\x05value\x18\x06 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x07 \x01(\t\x12\x17\n\x0f\x65xternal_source\x18\x08 \x01(\t\x12\x13\n\x0bsource_type\x18\t \x01(\t\x12!\n\x0buncertainty\x18\n \x01(\x0b\x32\x0c.Uncertainty\"Y\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x15\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x04.Ref\"\x95\x04\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x32\n\x19\x64\x65\x66\x61ult_allocation_method\x18\x08 \x01(\x0e\x32\x0f.AllocationType\x12-\n\x12\x61llocation_factors\x18\t \x03(\x0b\x32\x11.AllocationFactor\x12\x1c\n\texchanges\x18\n \x03(\x0b\x32\t.Exchange\x12\x1b\n\x08location\x18\x0b \x01(\x0b\x32\t.Location\x12\x1e\n\nparameters\x18\x0c \x03(\x0b\x32\n.Parameter\x12\x34\n\x15process_documentation\x18\r \x01(\x0b\x32\x15.ProcessDocumentation\x12\"\n\x0cprocess_type\x18\x0e \x01(\x0e\x32\x0c.ProcessType\x12\x17\n\tdq_system\x18\x0f \x01(\x0b\x32\x04.Ref\x12 \n\x12\x65xchange_dq_system\x18\x10 \x01(\x0b\x32\x04.Ref\x12\x1e\n\x10social_dq_system\x18\x11 \x01(\x0b\x32\x04.Ref\x12\x10\n\x08\x64q_entry\x18\x12 \x01(\t\"\xec\x05\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x18\n\x10time_description\x18\x02 \x01(\t\x12\x13\n\x0bvalid_until\x18\x03 \x01(\t\x12\x12\n\nvalid_from\x18\x04 \x01(\t\x12\x1e\n\x16technology_description\x18\x05 \x01(\t\x12#\n\x1b\x64\x61ta_collection_description\x18\x06 \x01(\t\x12 \n\x18\x63ompleteness_description\x18\x07 \x01(\t\x12\"\n\x1a\x64\x61ta_selection_description\x18\x08 \x01(\t\x12\x16\n\x0ereview_details\x18\t \x01(\t\x12\"\n\x1a\x64\x61ta_treatment_description\x18\n \x01(\t\x12$\n\x1cinventory_method_description\x18\x0b \x01(\t\x12&\n\x1emodeling_constants_description\x18\x0c \x01(\t\x12\x16\n\x08reviewer\x18\r \x01(\x0b\x32\x04.Ref\x12\x1c\n\x14sampling_description\x18\x0e \x01(\t\x12\x15\n\x07sources\x18\x0f \x03(\x0b\x32\x04.Ref\x12 \n\x18restrictions_description\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x15\n\rcreation_date\x18\x12 \x01(\t\x12\x1d\n\x0f\x64\x61ta_documentor\x18\x13 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x0e\x64\x61ta_generator\x18\x14 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x0e\x64\x61ta_set_owner\x18\x15 \x01(\x0b\x32\x04.Ref\x12\x1c\n\x14intended_application\x18\x16 \x01(\t\x12\x1b\n\x13project_description\x18\x17 \x01(\t\x12\x19\n\x0bpublication\x18\x18 \x01(\x0b\x32\x04.Ref\x12\x1d\n\x15geography_description\x18\x19 \x01(\t\"\x82\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x16\n\x08provider\x18\x02 \x01(\x0b\x32\x04.Ref\x12\x12\n\x04\x66low\x18\x03 \x01(\x0b\x32\x04.Ref\x12\x15\n\x07process\x18\x04 \x01(\x0b\x32\x04.Ref\x12\x1b\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\t.Exchange\"B\n\nProcessRef\x12\x10\n\x08location\x18\x01 \x01(\t\x12\"\n\x0cprocess_type\x18\x02 \x01(\x0e\x32\x0c.ProcessType\"\x80\x03\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x1e\n\tprocesses\x18\x08 \x03(\x0b\x32\x0b.ProcessRef\x12&\n\x11reference_process\x18\t \x01(\x0b\x32\x0b.ProcessRef\x12%\n\x12reference_exchange\x18\n \x01(\x0b\x32\t.Exchange\x12\x15\n\rtarget_amount\x18\x0b \x01(\x01\x12\x19\n\x0btarget_unit\x18\x0c \x01(\x0b\x32\x04.Ref\x12\"\n\x14target_flow_property\x18\r \x01(\x0b\x32\x04.Ref\x12#\n\rprocess_links\x18\x0e \x03(\x0b\x32\x0c.ProcessLink\"\x8b\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\"m\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12!\n\x0c\x66low_results\x18\x02 \x03(\x0b\x32\x0b.FlowResult\x12%\n\x0eimpact_results\x18\x03 \x03(\x0b\x32\r.ImpactResult\"\xa9\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x19\n\x11\x61\x63tivity_variable\x18\x08 \x01(\t\x12\x1f\n\x11\x61\x63tivity_quantity\x18\t \x01(\x0b\x32\x04.Ref\x12\x1b\n\ractivity_unit\x18\n \x01(\x0b\x32\x04.Ref\x12\x1b\n\x13unit_of_measurement\x18\x0b \x01(\t\x12\x19\n\x11\x65valuation_scheme\x18\x0c \x01(\t\"\xd9\x01\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12\x0b\n\x03\x64oi\x18\x08 \x01(\t\x12\x16\n\x0etext_reference\x18\t \x01(\t\x12\x0c\n\x04year\x18\n \x01(\x05\x12\x15\n\rexternal_file\x18\x0b \x01(\t\"\xe3\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12+\n\x11\x64istribution_type\x18\x02 \x01(\x0e\x32\x10.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x14\n\x0cmean_formula\x18\x04 \x01(\t\x12\x11\n\tgeom_mean\x18\x05 \x01(\x01\x12\x19\n\x11geom_mean_formula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x17\n\x0fminimum_formula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x12\n\nsd_formula\x18\n \x01(\t\x12\x0f\n\x07geom_sd\x18\x0b \x01(\x01\x12\x17\n\x0fgeom_sd_formula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x14\n\x0cmode_formula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x17\n\x0fmaximum_formula\x18\x10 \x01(\t\"\xba\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x07 \x01(\x01\x12\x16\n\x0ereference_unit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\xcd\x01\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x16\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\x04.Ref\x12#\n\x15\x64\x65\x66\x61ult_flow_property\x18\x08 \x01(\x0b\x32\x04.Ref\x12\x14\n\x05units\x18\t \x03(\x0b\x32\x05.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*k\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x15\n\x11LCIA_METHOD_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42\x1a\n\x11org.openlca.protoB\x05Protob\x06proto3'
+  serialized_pb=b'\n\nolca.proto\x12\x08protolca\"\x9d\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0f\n\x07\x61\x64\x64ress\x18\x08 \x01(\t\x12\x0c\n\x04\x63ity\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07telefax\x18\x0c \x01(\t\x12\x11\n\ttelephone\x18\r \x01(\t\x12\x0f\n\x07website\x18\x0e \x01(\t\x12\x10\n\x08zip_code\x18\x0f \x01(\t\"\xc7\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12,\n\x10product_exchange\x18\x02 \x01(\x0b\x32\x12.protolca.Exchange\x12\x31\n\x0f\x61llocation_type\x18\x03 \x01(\x0e\x32\x18.protolca.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12.\n\x12\x61llocated_exchange\x18\x05 \x01(\x0b\x32\x12.protolca.Exchange\"\x98\x03\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x33\n\x10\x63\x61lculation_type\x18\x02 \x01(\x0e\x32\x19.protolca.CalculationType\x12%\n\x0eproduct_system\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12$\n\rimpact_method\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\x12\n\nwith_costs\x18\x05 \x01(\x08\x12\x1d\n\x06nw_set\x18\x06 \x01(\x0b\x32\r.protolca.Ref\x12\x33\n\x11\x61llocation_method\x18\x07 \x01(\x0e\x32\x18.protolca.AllocationType\x12\x32\n\x10parameter_redefs\x18\x08 \x03(\x0b\x32\x18.protolca.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x1b\n\x04unit\x18\n \x01(\x0b\x32\r.protolca.Ref\x12$\n\rflow_property\x18\x0b \x01(\x0b\x32\r.protolca.Ref\"\xc3\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\'\n\nmodel_type\x18\x08 \x01(\x0e\x32\x13.protolca.ModelType\"e\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12!\n\x06scores\x18\x04 \x03(\x0b\x32\x11.protolca.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\xff\x01\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x19\n\x11has_uncertainties\x18\x08 \x01(\x08\x12\x1d\n\x06source\x18\t \x01(\x0b\x32\r.protolca.Ref\x12)\n\nindicators\x18\n \x03(\x0b\x32\x15.protolca.DqIndicator\"\xa5\x03\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x13\n\x0binternal_id\x18\x02 \x01(\x05\x12\x17\n\x0f\x61voided_product\x18\x03 \x01(\x08\x12\x1f\n\x04\x66low\x18\x04 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x05 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1e\n\x16quantitative_reference\x18\x07 \x01(\x08\x12\x18\n\x10\x62\x61se_uncertainty\x18\x08 \x01(\x01\x12.\n\x10\x64\x65\x66\x61ult_provider\x18\t \x01(\x0b\x32\x14.protolca.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x16\n\x0e\x61mount_formula\x18\x0b \x01(\t\x12\x1b\n\x04unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\r \x01(\t\x12*\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x15.protolca.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\xb3\x02\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12%\n\tflow_type\x18\x08 \x01(\x0e\x32\x12.protolca.FlowType\x12\x0b\n\x03\x63\x61s\x18\t \x01(\t\x12\x0f\n\x07\x66ormula\x18\n \x01(\t\x12\x35\n\x0f\x66low_properties\x18\x0b \x03(\x0b\x32\x1c.protolca.FlowPropertyFactor\x12\x1f\n\x08location\x18\x0c \x01(\x0b\x32\r.protolca.Ref\"\xe0\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1d\n\x06source\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x06target\x18\x08 \x01(\x0b\x32\r.protolca.Ref\x12(\n\x08mappings\x18\t \x03(\x0b\x32\x16.protolca.FlowMapEntry\"\xde\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\"\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12 \n\x02to\x18\x08 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12\x19\n\x11\x63onversion_factor\x18\t \x01(\x01\"\x85\x01\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\xf9\x01\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x36\n\x12\x66low_property_type\x18\x08 \x01(\x0e\x32\x1a.protolca.FlowPropertyType\x12!\n\nunit_group\x18\t \x01(\x0b\x32\r.protolca.Ref\"\x8b\x01\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12$\n\rflow_property\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x19\n\x11\x63onversion_factor\x18\x03 \x01(\x01\x12\x1f\n\x17reference_flow_property\x18\x04 \x01(\x08\"T\n\x07\x46lowRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12%\n\tflow_type\x18\x03 \x01(\x0e\x32\x12.protolca.FlowType\"`\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\xcc\x01\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1b\n\x13reference_unit_name\x18\x07 \x01(\t\x12.\n\x0eimpact_factors\x18\x08 \x03(\x0b\x32\x16.protolca.ImpactFactor\"%\n\x11ImpactCategoryRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\"\xd3\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05value\x18\x05 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x06 \x01(\t\x12*\n\x0buncertainty\x18\x07 \x01(\x0b\x32\x15.protolca.Uncertainty\"\xff\x01\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x36\n\x11impact_categories\x18\x08 \x03(\x0b\x32\x1b.protolca.ImpactCategoryRef\x12\'\n\nparameters\x18\t \x03(\x0b\x32\x13.protolca.Parameter\"h\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\x1b.protolca.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\xb9\x01\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\x12\x10\n\x08latitude\x18\x08 \x01(\x01\x12\x11\n\tlongitude\x18\t \x01(\x01\x12\x0b\n\x03kml\x18\n \x01(\t\"\x89\x02\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x31\n\x0fparameter_scope\x18\x04 \x01(\x0e\x32\x18.protolca.ParameterScope\x12\x17\n\x0finput_parameter\x18\x05 \x01(\x08\x12\r\n\x05value\x18\x06 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x07 \x01(\t\x12\x17\n\x0f\x65xternal_source\x18\x08 \x01(\t\x12\x13\n\x0bsource_type\x18\t \x01(\t\x12*\n\x0buncertainty\x18\n \x01(\x0b\x32\x15.protolca.Uncertainty\"b\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x1e\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\xf8\x04\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12;\n\x19\x64\x65\x66\x61ult_allocation_method\x18\x08 \x01(\x0e\x32\x18.protolca.AllocationType\x12\x36\n\x12\x61llocation_factors\x18\t \x03(\x0b\x32\x1a.protolca.AllocationFactor\x12%\n\texchanges\x18\n \x03(\x0b\x32\x12.protolca.Exchange\x12$\n\x08location\x18\x0b \x01(\x0b\x32\x12.protolca.Location\x12\'\n\nparameters\x18\x0c \x03(\x0b\x32\x13.protolca.Parameter\x12=\n\x15process_documentation\x18\r \x01(\x0b\x32\x1e.protolca.ProcessDocumentation\x12+\n\x0cprocess_type\x18\x0e \x01(\x0e\x32\x15.protolca.ProcessType\x12 \n\tdq_system\x18\x0f \x01(\x0b\x32\r.protolca.Ref\x12)\n\x12\x65xchange_dq_system\x18\x10 \x01(\x0b\x32\r.protolca.Ref\x12\'\n\x10social_dq_system\x18\x11 \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\x12 \x01(\t\"\xa2\x06\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x18\n\x10time_description\x18\x02 \x01(\t\x12\x13\n\x0bvalid_until\x18\x03 \x01(\t\x12\x12\n\nvalid_from\x18\x04 \x01(\t\x12\x1e\n\x16technology_description\x18\x05 \x01(\t\x12#\n\x1b\x64\x61ta_collection_description\x18\x06 \x01(\t\x12 \n\x18\x63ompleteness_description\x18\x07 \x01(\t\x12\"\n\x1a\x64\x61ta_selection_description\x18\x08 \x01(\t\x12\x16\n\x0ereview_details\x18\t \x01(\t\x12\"\n\x1a\x64\x61ta_treatment_description\x18\n \x01(\t\x12$\n\x1cinventory_method_description\x18\x0b \x01(\t\x12&\n\x1emodeling_constants_description\x18\x0c \x01(\t\x12\x1f\n\x08reviewer\x18\r \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14sampling_description\x18\x0e \x01(\t\x12\x1e\n\x07sources\x18\x0f \x03(\x0b\x32\r.protolca.Ref\x12 \n\x18restrictions_description\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x15\n\rcreation_date\x18\x12 \x01(\t\x12&\n\x0f\x64\x61ta_documentor\x18\x13 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_generator\x18\x14 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_set_owner\x18\x15 \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14intended_application\x18\x16 \x01(\t\x12\x1b\n\x13project_description\x18\x17 \x01(\t\x12\"\n\x0bpublication\x18\x18 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x15geography_description\x18\x19 \x01(\t\"\xa6\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x08provider\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04\x66low\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1e\n\x07process\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12$\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\x12.protolca.Exchange\"K\n\nProcessRef\x12\x10\n\x08location\x18\x01 \x01(\t\x12+\n\x0cprocess_type\x18\x02 \x01(\x0e\x32\x15.protolca.ProcessType\"\xbf\x03\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\'\n\tprocesses\x18\x08 \x03(\x0b\x32\x14.protolca.ProcessRef\x12/\n\x11reference_process\x18\t \x01(\x0b\x32\x14.protolca.ProcessRef\x12.\n\x12reference_exchange\x18\n \x01(\x0b\x32\x12.protolca.Exchange\x12\x15\n\rtarget_amount\x18\x0b \x01(\x01\x12\"\n\x0btarget_unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12+\n\x14target_flow_property\x18\r \x01(\x0b\x32\r.protolca.Ref\x12,\n\rprocess_links\x18\x0e \x03(\x0b\x32\x15.protolca.ProcessLink\"\x8b\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\"\x7f\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x0c\x66low_results\x18\x02 \x03(\x0b\x32\x14.protolca.FlowResult\x12.\n\x0eimpact_results\x18\x03 \x03(\x0b\x32\x16.protolca.ImpactResult\"\xc4\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x19\n\x11\x61\x63tivity_variable\x18\x08 \x01(\t\x12(\n\x11\x61\x63tivity_quantity\x18\t \x01(\x0b\x32\r.protolca.Ref\x12$\n\ractivity_unit\x18\n \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x13unit_of_measurement\x18\x0b \x01(\t\x12\x19\n\x11\x65valuation_scheme\x18\x0c \x01(\t\"\xe2\x01\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0b\n\x03\x64oi\x18\x08 \x01(\t\x12\x16\n\x0etext_reference\x18\t \x01(\t\x12\x0c\n\x04year\x18\n \x01(\x05\x12\x15\n\rexternal_file\x18\x0b \x01(\t\"\xec\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x11\x64istribution_type\x18\x02 \x01(\x0e\x32\x19.protolca.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x14\n\x0cmean_formula\x18\x04 \x01(\t\x12\x11\n\tgeom_mean\x18\x05 \x01(\x01\x12\x19\n\x11geom_mean_formula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x17\n\x0fminimum_formula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x12\n\nsd_formula\x18\n \x01(\t\x12\x0f\n\x07geom_sd\x18\x0b \x01(\x01\x12\x17\n\x0fgeom_sd_formula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x14\n\x0cmode_formula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x17\n\x0fmaximum_formula\x18\x10 \x01(\t\"\xba\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x07 \x01(\x01\x12\x16\n\x0ereference_unit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\xe8\x01\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12,\n\x15\x64\x65\x66\x61ult_flow_property\x18\x08 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x05units\x18\t \x03(\x0b\x32\x0e.protolca.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*k\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x15\n\x11LCIA_METHOD_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42&\n\x11org.openlca.protoB\x05ProtoZ\n.;protolcab\x06proto3'
 )
 
 _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
   name='AllocationType',
-  full_name='AllocationType',
+  full_name='protolca.AllocationType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -63,15 +63,15 @@ _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7787,
-  serialized_end=7954,
+  serialized_start=8626,
+  serialized_end=8793,
 )
 _sym_db.RegisterEnumDescriptor(_ALLOCATIONTYPE)
 
 AllocationType = enum_type_wrapper.EnumTypeWrapper(_ALLOCATIONTYPE)
 _CALCULATIONTYPE = _descriptor.EnumDescriptor(
   name='CalculationType',
-  full_name='CalculationType',
+  full_name='protolca.CalculationType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -109,15 +109,15 @@ _CALCULATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7957,
-  serialized_end=8138,
+  serialized_start=8796,
+  serialized_end=8977,
 )
 _sym_db.RegisterEnumDescriptor(_CALCULATIONTYPE)
 
 CalculationType = enum_type_wrapper.EnumTypeWrapper(_CALCULATIONTYPE)
 _FLOWPROPERTYTYPE = _descriptor.EnumDescriptor(
   name='FlowPropertyType',
-  full_name='FlowPropertyType',
+  full_name='protolca.FlowPropertyType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -140,15 +140,15 @@ _FLOWPROPERTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8140,
-  serialized_end=8238,
+  serialized_start=8979,
+  serialized_end=9077,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWPROPERTYTYPE)
 
 FlowPropertyType = enum_type_wrapper.EnumTypeWrapper(_FLOWPROPERTYTYPE)
 _FLOWTYPE = _descriptor.EnumDescriptor(
   name='FlowType',
-  full_name='FlowType',
+  full_name='protolca.FlowType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -176,15 +176,15 @@ _FLOWTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8240,
-  serialized_end=8330,
+  serialized_start=9079,
+  serialized_end=9169,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWTYPE)
 
 FlowType = enum_type_wrapper.EnumTypeWrapper(_FLOWTYPE)
 _MODELTYPE = _descriptor.EnumDescriptor(
   name='ModelType',
-  full_name='ModelType',
+  full_name='protolca.ModelType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -272,15 +272,15 @@ _MODELTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8333,
-  serialized_end=8596,
+  serialized_start=9172,
+  serialized_end=9435,
 )
 _sym_db.RegisterEnumDescriptor(_MODELTYPE)
 
 ModelType = enum_type_wrapper.EnumTypeWrapper(_MODELTYPE)
 _PARAMETERSCOPE = _descriptor.EnumDescriptor(
   name='ParameterScope',
-  full_name='ParameterScope',
+  full_name='protolca.ParameterScope',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -308,15 +308,15 @@ _PARAMETERSCOPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8598,
-  serialized_end=8705,
+  serialized_start=9437,
+  serialized_end=9544,
 )
 _sym_db.RegisterEnumDescriptor(_PARAMETERSCOPE)
 
 ParameterScope = enum_type_wrapper.EnumTypeWrapper(_PARAMETERSCOPE)
 _PROCESSTYPE = _descriptor.EnumDescriptor(
   name='ProcessType',
-  full_name='ProcessType',
+  full_name='protolca.ProcessType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -339,15 +339,15 @@ _PROCESSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8707,
-  serialized_end=8782,
+  serialized_start=9546,
+  serialized_end=9621,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSTYPE)
 
 ProcessType = enum_type_wrapper.EnumTypeWrapper(_PROCESSTYPE)
 _UNCERTAINTYTYPE = _descriptor.EnumDescriptor(
   name='UncertaintyType',
-  full_name='UncertaintyType',
+  full_name='protolca.UncertaintyType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -380,8 +380,8 @@ _UNCERTAINTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8785,
-  serialized_end=8941,
+  serialized_start=9624,
+  serialized_end=9780,
 )
 _sym_db.RegisterEnumDescriptor(_UNCERTAINTYTYPE)
 
@@ -438,112 +438,112 @@ UNIFORM_DISTRIBUTION = 4
 
 _ACTOR = _descriptor.Descriptor(
   name='Actor',
-  full_name='Actor',
+  full_name='protolca.Actor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Actor.type', index=0,
+      name='type', full_name='protolca.Actor.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Actor.id', index=1,
+      name='id', full_name='protolca.Actor.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Actor.name', index=2,
+      name='name', full_name='protolca.Actor.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Actor.description', index=3,
+      name='description', full_name='protolca.Actor.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Actor.version', index=4,
+      name='version', full_name='protolca.Actor.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Actor.last_change', index=5,
+      name='last_change', full_name='protolca.Actor.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='Actor.category', index=6,
+      name='category', full_name='protolca.Actor.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='address', full_name='Actor.address', index=7,
+      name='address', full_name='protolca.Actor.address', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='city', full_name='Actor.city', index=8,
+      name='city', full_name='protolca.Actor.city', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='country', full_name='Actor.country', index=9,
+      name='country', full_name='protolca.Actor.country', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email', full_name='Actor.email', index=10,
+      name='email', full_name='protolca.Actor.email', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='telefax', full_name='Actor.telefax', index=11,
+      name='telefax', full_name='protolca.Actor.telefax', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='telephone', full_name='Actor.telephone', index=12,
+      name='telephone', full_name='protolca.Actor.telephone', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='website', full_name='Actor.website', index=13,
+      name='website', full_name='protolca.Actor.website', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='zip_code', full_name='Actor.zip_code', index=14,
+      name='zip_code', full_name='protolca.Actor.zip_code', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -561,49 +561,49 @@ _ACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=291,
+  serialized_start=25,
+  serialized_end=310,
 )
 
 
 _ALLOCATIONFACTOR = _descriptor.Descriptor(
   name='AllocationFactor',
-  full_name='AllocationFactor',
+  full_name='protolca.AllocationFactor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='AllocationFactor.type', index=0,
+      name='type', full_name='protolca.AllocationFactor.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product_exchange', full_name='AllocationFactor.product_exchange', index=1,
+      name='product_exchange', full_name='protolca.AllocationFactor.product_exchange', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocation_type', full_name='AllocationFactor.allocation_type', index=2,
+      name='allocation_type', full_name='protolca.AllocationFactor.allocation_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='AllocationFactor.value', index=3,
+      name='value', full_name='protolca.AllocationFactor.value', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocated_exchange', full_name='AllocationFactor.allocated_exchange', index=4,
+      name='allocated_exchange', full_name='protolca.AllocationFactor.allocated_exchange', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -621,91 +621,91 @@ _ALLOCATIONFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=294,
-  serialized_end=466,
+  serialized_start=313,
+  serialized_end=512,
 )
 
 
 _CALCULATIONSETUP = _descriptor.Descriptor(
   name='CalculationSetup',
-  full_name='CalculationSetup',
+  full_name='protolca.CalculationSetup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='CalculationSetup.type', index=0,
+      name='type', full_name='protolca.CalculationSetup.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='calculation_type', full_name='CalculationSetup.calculation_type', index=1,
+      name='calculation_type', full_name='protolca.CalculationSetup.calculation_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product_system', full_name='CalculationSetup.product_system', index=2,
+      name='product_system', full_name='protolca.CalculationSetup.product_system', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_method', full_name='CalculationSetup.impact_method', index=3,
+      name='impact_method', full_name='protolca.CalculationSetup.impact_method', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_costs', full_name='CalculationSetup.with_costs', index=4,
+      name='with_costs', full_name='protolca.CalculationSetup.with_costs', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nw_set', full_name='CalculationSetup.nw_set', index=5,
+      name='nw_set', full_name='protolca.CalculationSetup.nw_set', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocation_method', full_name='CalculationSetup.allocation_method', index=6,
+      name='allocation_method', full_name='protolca.CalculationSetup.allocation_method', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameter_redefs', full_name='CalculationSetup.parameter_redefs', index=7,
+      name='parameter_redefs', full_name='protolca.CalculationSetup.parameter_redefs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='amount', full_name='CalculationSetup.amount', index=8,
+      name='amount', full_name='protolca.CalculationSetup.amount', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='CalculationSetup.unit', index=9,
+      name='unit', full_name='protolca.CalculationSetup.unit', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='CalculationSetup.flow_property', index=10,
+      name='flow_property', full_name='protolca.CalculationSetup.flow_property', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -723,70 +723,70 @@ _CALCULATIONSETUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=805,
+  serialized_start=515,
+  serialized_end=923,
 )
 
 
 _CATEGORY = _descriptor.Descriptor(
   name='Category',
-  full_name='Category',
+  full_name='protolca.Category',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Category.type', index=0,
+      name='type', full_name='protolca.Category.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Category.id', index=1,
+      name='id', full_name='protolca.Category.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Category.name', index=2,
+      name='name', full_name='protolca.Category.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Category.description', index=3,
+      name='description', full_name='protolca.Category.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Category.version', index=4,
+      name='version', full_name='protolca.Category.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Category.last_change', index=5,
+      name='last_change', full_name='protolca.Category.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='Category.category', index=6,
+      name='category', full_name='protolca.Category.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model_type', full_name='Category.model_type', index=7,
+      name='model_type', full_name='protolca.Category.model_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -804,42 +804,42 @@ _CATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=808,
-  serialized_end=985,
+  serialized_start=926,
+  serialized_end=1121,
 )
 
 
 _DQINDICATOR = _descriptor.Descriptor(
   name='DqIndicator',
-  full_name='DqIndicator',
+  full_name='protolca.DqIndicator',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='DqIndicator.type', index=0,
+      name='type', full_name='protolca.DqIndicator.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='DqIndicator.name', index=1,
+      name='name', full_name='protolca.DqIndicator.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='position', full_name='DqIndicator.position', index=2,
+      name='position', full_name='protolca.DqIndicator.position', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scores', full_name='DqIndicator.scores', index=3,
+      name='scores', full_name='protolca.DqIndicator.scores', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -857,49 +857,49 @@ _DQINDICATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=987,
-  serialized_end=1079,
+  serialized_start=1123,
+  serialized_end=1224,
 )
 
 
 _DQSCORE = _descriptor.Descriptor(
   name='DqScore',
-  full_name='DqScore',
+  full_name='protolca.DqScore',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='DqScore.type', index=0,
+      name='type', full_name='protolca.DqScore.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='position', full_name='DqScore.position', index=1,
+      name='position', full_name='protolca.DqScore.position', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='label', full_name='DqScore.label', index=2,
+      name='label', full_name='protolca.DqScore.label', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='DqScore.description', index=3,
+      name='description', full_name='protolca.DqScore.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uncertainty', full_name='DqScore.uncertainty', index=4,
+      name='uncertainty', full_name='protolca.DqScore.uncertainty', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -917,84 +917,84 @@ _DQSCORE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1081,
-  serialized_end=1186,
+  serialized_start=1226,
+  serialized_end=1331,
 )
 
 
 _DQSYSTEM = _descriptor.Descriptor(
   name='DqSystem',
-  full_name='DqSystem',
+  full_name='protolca.DqSystem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='DqSystem.type', index=0,
+      name='type', full_name='protolca.DqSystem.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='DqSystem.id', index=1,
+      name='id', full_name='protolca.DqSystem.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='DqSystem.name', index=2,
+      name='name', full_name='protolca.DqSystem.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='DqSystem.description', index=3,
+      name='description', full_name='protolca.DqSystem.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='DqSystem.version', index=4,
+      name='version', full_name='protolca.DqSystem.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='DqSystem.last_change', index=5,
+      name='last_change', full_name='protolca.DqSystem.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='DqSystem.category', index=6,
+      name='category', full_name='protolca.DqSystem.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='has_uncertainties', full_name='DqSystem.has_uncertainties', index=7,
+      name='has_uncertainties', full_name='protolca.DqSystem.has_uncertainties', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='source', full_name='DqSystem.source', index=8,
+      name='source', full_name='protolca.DqSystem.source', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='indicators', full_name='DqSystem.indicators', index=9,
+      name='indicators', full_name='protolca.DqSystem.indicators', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1012,119 +1012,119 @@ _DQSYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1189,
-  serialized_end=1417,
+  serialized_start=1334,
+  serialized_end=1589,
 )
 
 
 _EXCHANGE = _descriptor.Descriptor(
   name='Exchange',
-  full_name='Exchange',
+  full_name='protolca.Exchange',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Exchange.type', index=0,
+      name='type', full_name='protolca.Exchange.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='internal_id', full_name='Exchange.internal_id', index=1,
+      name='internal_id', full_name='protolca.Exchange.internal_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='avoided_product', full_name='Exchange.avoided_product', index=2,
+      name='avoided_product', full_name='protolca.Exchange.avoided_product', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow', full_name='Exchange.flow', index=3,
+      name='flow', full_name='protolca.Exchange.flow', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='Exchange.flow_property', index=4,
+      name='flow_property', full_name='protolca.Exchange.flow_property', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='input', full_name='Exchange.input', index=5,
+      name='input', full_name='protolca.Exchange.input', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantitative_reference', full_name='Exchange.quantitative_reference', index=6,
+      name='quantitative_reference', full_name='protolca.Exchange.quantitative_reference', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='base_uncertainty', full_name='Exchange.base_uncertainty', index=7,
+      name='base_uncertainty', full_name='protolca.Exchange.base_uncertainty', index=7,
       number=8, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='default_provider', full_name='Exchange.default_provider', index=8,
+      name='default_provider', full_name='protolca.Exchange.default_provider', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='amount', full_name='Exchange.amount', index=9,
+      name='amount', full_name='protolca.Exchange.amount', index=9,
       number=10, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='amount_formula', full_name='Exchange.amount_formula', index=10,
+      name='amount_formula', full_name='protolca.Exchange.amount_formula', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='Exchange.unit', index=11,
+      name='unit', full_name='protolca.Exchange.unit', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dq_entry', full_name='Exchange.dq_entry', index=12,
+      name='dq_entry', full_name='protolca.Exchange.dq_entry', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uncertainty', full_name='Exchange.uncertainty', index=13,
+      name='uncertainty', full_name='protolca.Exchange.uncertainty', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Exchange.description', index=14,
+      name='description', full_name='protolca.Exchange.description', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1142,98 +1142,98 @@ _EXCHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1420,
-  serialized_end=1796,
+  serialized_start=1592,
+  serialized_end=2013,
 )
 
 
 _FLOW = _descriptor.Descriptor(
   name='Flow',
-  full_name='Flow',
+  full_name='protolca.Flow',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Flow.type', index=0,
+      name='type', full_name='protolca.Flow.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Flow.id', index=1,
+      name='id', full_name='protolca.Flow.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Flow.name', index=2,
+      name='name', full_name='protolca.Flow.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Flow.description', index=3,
+      name='description', full_name='protolca.Flow.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Flow.version', index=4,
+      name='version', full_name='protolca.Flow.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Flow.last_change', index=5,
+      name='last_change', full_name='protolca.Flow.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='Flow.category', index=6,
+      name='category', full_name='protolca.Flow.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_type', full_name='Flow.flow_type', index=7,
+      name='flow_type', full_name='protolca.Flow.flow_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cas', full_name='Flow.cas', index=8,
+      name='cas', full_name='protolca.Flow.cas', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='formula', full_name='Flow.formula', index=9,
+      name='formula', full_name='protolca.Flow.formula', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_properties', full_name='Flow.flow_properties', index=10,
+      name='flow_properties', full_name='protolca.Flow.flow_properties', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='Flow.location', index=11,
+      name='location', full_name='protolca.Flow.location', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1251,77 +1251,77 @@ _FLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1799,
-  serialized_end=2070,
+  serialized_start=2016,
+  serialized_end=2323,
 )
 
 
 _FLOWMAP = _descriptor.Descriptor(
   name='FlowMap',
-  full_name='FlowMap',
+  full_name='protolca.FlowMap',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowMap.type', index=0,
+      name='type', full_name='protolca.FlowMap.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='FlowMap.id', index=1,
+      name='id', full_name='protolca.FlowMap.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='FlowMap.name', index=2,
+      name='name', full_name='protolca.FlowMap.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='FlowMap.description', index=3,
+      name='description', full_name='protolca.FlowMap.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='FlowMap.version', index=4,
+      name='version', full_name='protolca.FlowMap.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='FlowMap.last_change', index=5,
+      name='last_change', full_name='protolca.FlowMap.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='source', full_name='FlowMap.source', index=6,
+      name='source', full_name='protolca.FlowMap.source', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='target', full_name='FlowMap.target', index=7,
+      name='target', full_name='protolca.FlowMap.target', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mappings', full_name='FlowMap.mappings', index=8,
+      name='mappings', full_name='protolca.FlowMap.mappings', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1339,77 +1339,77 @@ _FLOWMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2073,
-  serialized_end=2270,
+  serialized_start=2326,
+  serialized_end=2550,
 )
 
 
 _FLOWMAPENTRY = _descriptor.Descriptor(
   name='FlowMapEntry',
-  full_name='FlowMapEntry',
+  full_name='protolca.FlowMapEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowMapEntry.type', index=0,
+      name='type', full_name='protolca.FlowMapEntry.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='FlowMapEntry.id', index=1,
+      name='id', full_name='protolca.FlowMapEntry.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='FlowMapEntry.name', index=2,
+      name='name', full_name='protolca.FlowMapEntry.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='FlowMapEntry.description', index=3,
+      name='description', full_name='protolca.FlowMapEntry.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='FlowMapEntry.version', index=4,
+      name='version', full_name='protolca.FlowMapEntry.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='FlowMapEntry.last_change', index=5,
+      name='last_change', full_name='protolca.FlowMapEntry.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='from', full_name='FlowMapEntry.from', index=6,
+      name='from', full_name='protolca.FlowMapEntry.from', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='to', full_name='FlowMapEntry.to', index=7,
+      name='to', full_name='protolca.FlowMapEntry.to', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversion_factor', full_name='FlowMapEntry.conversion_factor', index=8,
+      name='conversion_factor', full_name='protolca.FlowMapEntry.conversion_factor', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -1427,42 +1427,42 @@ _FLOWMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2273,
-  serialized_end=2477,
+  serialized_start=2553,
+  serialized_end=2775,
 )
 
 
 _FLOWMAPREF = _descriptor.Descriptor(
   name='FlowMapRef',
-  full_name='FlowMapRef',
+  full_name='protolca.FlowMapRef',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowMapRef.type', index=0,
+      name='type', full_name='protolca.FlowMapRef.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow', full_name='FlowMapRef.flow', index=1,
+      name='flow', full_name='protolca.FlowMapRef.flow', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='FlowMapRef.flow_property', index=2,
+      name='flow_property', full_name='protolca.FlowMapRef.flow_property', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='FlowMapRef.unit', index=3,
+      name='unit', full_name='protolca.FlowMapRef.unit', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1480,77 +1480,77 @@ _FLOWMAPREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2479,
-  serialized_end=2585,
+  serialized_start=2778,
+  serialized_end=2911,
 )
 
 
 _FLOWPROPERTY = _descriptor.Descriptor(
   name='FlowProperty',
-  full_name='FlowProperty',
+  full_name='protolca.FlowProperty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowProperty.type', index=0,
+      name='type', full_name='protolca.FlowProperty.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='FlowProperty.id', index=1,
+      name='id', full_name='protolca.FlowProperty.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='FlowProperty.name', index=2,
+      name='name', full_name='protolca.FlowProperty.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='FlowProperty.description', index=3,
+      name='description', full_name='protolca.FlowProperty.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='FlowProperty.version', index=4,
+      name='version', full_name='protolca.FlowProperty.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='FlowProperty.last_change', index=5,
+      name='last_change', full_name='protolca.FlowProperty.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='FlowProperty.category', index=6,
+      name='category', full_name='protolca.FlowProperty.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property_type', full_name='FlowProperty.flow_property_type', index=7,
+      name='flow_property_type', full_name='protolca.FlowProperty.flow_property_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit_group', full_name='FlowProperty.unit_group', index=8,
+      name='unit_group', full_name='protolca.FlowProperty.unit_group', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1568,42 +1568,42 @@ _FLOWPROPERTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2588,
-  serialized_end=2810,
+  serialized_start=2914,
+  serialized_end=3163,
 )
 
 
 _FLOWPROPERTYFACTOR = _descriptor.Descriptor(
   name='FlowPropertyFactor',
-  full_name='FlowPropertyFactor',
+  full_name='protolca.FlowPropertyFactor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowPropertyFactor.type', index=0,
+      name='type', full_name='protolca.FlowPropertyFactor.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='FlowPropertyFactor.flow_property', index=1,
+      name='flow_property', full_name='protolca.FlowPropertyFactor.flow_property', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversion_factor', full_name='FlowPropertyFactor.conversion_factor', index=2,
+      name='conversion_factor', full_name='protolca.FlowPropertyFactor.conversion_factor', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_flow_property', full_name='FlowPropertyFactor.reference_flow_property', index=3,
+      name='reference_flow_property', full_name='protolca.FlowPropertyFactor.reference_flow_property', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1621,35 +1621,35 @@ _FLOWPROPERTYFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2813,
-  serialized_end=2943,
+  serialized_start=3166,
+  serialized_end=3305,
 )
 
 
 _FLOWREF = _descriptor.Descriptor(
   name='FlowRef',
-  full_name='FlowRef',
+  full_name='protolca.FlowRef',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ref_unit', full_name='FlowRef.ref_unit', index=0,
+      name='ref_unit', full_name='protolca.FlowRef.ref_unit', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='FlowRef.location', index=1,
+      name='location', full_name='protolca.FlowRef.location', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_type', full_name='FlowRef.flow_type', index=2,
+      name='flow_type', full_name='protolca.FlowRef.flow_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1667,42 +1667,42 @@ _FLOWREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2945,
-  serialized_end=3020,
+  serialized_start=3307,
+  serialized_end=3391,
 )
 
 
 _FLOWRESULT = _descriptor.Descriptor(
   name='FlowResult',
-  full_name='FlowResult',
+  full_name='protolca.FlowResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='FlowResult.type', index=0,
+      name='type', full_name='protolca.FlowResult.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow', full_name='FlowResult.flow', index=1,
+      name='flow', full_name='protolca.FlowResult.flow', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='input', full_name='FlowResult.input', index=2,
+      name='input', full_name='protolca.FlowResult.input', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='FlowResult.value', index=3,
+      name='value', full_name='protolca.FlowResult.value', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -1720,70 +1720,70 @@ _FLOWRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3022,
-  serialized_end=3109,
+  serialized_start=3393,
+  serialized_end=3489,
 )
 
 
 _IMPACTCATEGORY = _descriptor.Descriptor(
   name='ImpactCategory',
-  full_name='ImpactCategory',
+  full_name='protolca.ImpactCategory',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ImpactCategory.type', index=0,
+      name='type', full_name='protolca.ImpactCategory.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='ImpactCategory.id', index=1,
+      name='id', full_name='protolca.ImpactCategory.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ImpactCategory.name', index=2,
+      name='name', full_name='protolca.ImpactCategory.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='ImpactCategory.description', index=3,
+      name='description', full_name='protolca.ImpactCategory.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='ImpactCategory.version', index=4,
+      name='version', full_name='protolca.ImpactCategory.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='ImpactCategory.last_change', index=5,
+      name='last_change', full_name='protolca.ImpactCategory.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_unit_name', full_name='ImpactCategory.reference_unit_name', index=6,
+      name='reference_unit_name', full_name='protolca.ImpactCategory.reference_unit_name', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_factors', full_name='ImpactCategory.impact_factors', index=7,
+      name='impact_factors', full_name='protolca.ImpactCategory.impact_factors', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1801,21 +1801,21 @@ _IMPACTCATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3112,
-  serialized_end=3307,
+  serialized_start=3492,
+  serialized_end=3696,
 )
 
 
 _IMPACTCATEGORYREF = _descriptor.Descriptor(
   name='ImpactCategoryRef',
-  full_name='ImpactCategoryRef',
+  full_name='protolca.ImpactCategoryRef',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ref_unit', full_name='ImpactCategoryRef.ref_unit', index=0,
+      name='ref_unit', full_name='protolca.ImpactCategoryRef.ref_unit', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1833,63 +1833,63 @@ _IMPACTCATEGORYREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3309,
-  serialized_end=3346,
+  serialized_start=3698,
+  serialized_end=3735,
 )
 
 
 _IMPACTFACTOR = _descriptor.Descriptor(
   name='ImpactFactor',
-  full_name='ImpactFactor',
+  full_name='protolca.ImpactFactor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ImpactFactor.type', index=0,
+      name='type', full_name='protolca.ImpactFactor.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow', full_name='ImpactFactor.flow', index=1,
+      name='flow', full_name='protolca.ImpactFactor.flow', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='ImpactFactor.flow_property', index=2,
+      name='flow_property', full_name='protolca.ImpactFactor.flow_property', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='ImpactFactor.unit', index=3,
+      name='unit', full_name='protolca.ImpactFactor.unit', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='ImpactFactor.value', index=4,
+      name='value', full_name='protolca.ImpactFactor.value', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='formula', full_name='ImpactFactor.formula', index=5,
+      name='formula', full_name='protolca.ImpactFactor.formula', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uncertainty', full_name='ImpactFactor.uncertainty', index=6,
+      name='uncertainty', full_name='protolca.ImpactFactor.uncertainty', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1907,77 +1907,77 @@ _IMPACTFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3349,
-  serialized_end=3524,
+  serialized_start=3738,
+  serialized_end=3949,
 )
 
 
 _IMPACTMETHOD = _descriptor.Descriptor(
   name='ImpactMethod',
-  full_name='ImpactMethod',
+  full_name='protolca.ImpactMethod',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ImpactMethod.type', index=0,
+      name='type', full_name='protolca.ImpactMethod.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='ImpactMethod.id', index=1,
+      name='id', full_name='protolca.ImpactMethod.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ImpactMethod.name', index=2,
+      name='name', full_name='protolca.ImpactMethod.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='ImpactMethod.description', index=3,
+      name='description', full_name='protolca.ImpactMethod.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='ImpactMethod.version', index=4,
+      name='version', full_name='protolca.ImpactMethod.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='ImpactMethod.last_change', index=5,
+      name='last_change', full_name='protolca.ImpactMethod.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='ImpactMethod.category', index=6,
+      name='category', full_name='protolca.ImpactMethod.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_categories', full_name='ImpactMethod.impact_categories', index=7,
+      name='impact_categories', full_name='protolca.ImpactMethod.impact_categories', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameters', full_name='ImpactMethod.parameters', index=8,
+      name='parameters', full_name='protolca.ImpactMethod.parameters', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1995,35 +1995,35 @@ _IMPACTMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3527,
-  serialized_end=3755,
+  serialized_start=3952,
+  serialized_end=4207,
 )
 
 
 _IMPACTRESULT = _descriptor.Descriptor(
   name='ImpactResult',
-  full_name='ImpactResult',
+  full_name='protolca.ImpactResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ImpactResult.type', index=0,
+      name='type', full_name='protolca.ImpactResult.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_category', full_name='ImpactResult.impact_category', index=1,
+      name='impact_category', full_name='protolca.ImpactResult.impact_category', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='ImpactResult.value', index=2,
+      name='value', full_name='protolca.ImpactResult.value', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -2041,84 +2041,84 @@ _IMPACTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3757,
-  serialized_end=3852,
+  serialized_start=4209,
+  serialized_end=4313,
 )
 
 
 _LOCATION = _descriptor.Descriptor(
   name='Location',
-  full_name='Location',
+  full_name='protolca.Location',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Location.type', index=0,
+      name='type', full_name='protolca.Location.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Location.id', index=1,
+      name='id', full_name='protolca.Location.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Location.name', index=2,
+      name='name', full_name='protolca.Location.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Location.description', index=3,
+      name='description', full_name='protolca.Location.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Location.version', index=4,
+      name='version', full_name='protolca.Location.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Location.last_change', index=5,
+      name='last_change', full_name='protolca.Location.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='code', full_name='Location.code', index=6,
+      name='code', full_name='protolca.Location.code', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='latitude', full_name='Location.latitude', index=7,
+      name='latitude', full_name='protolca.Location.latitude', index=7,
       number=8, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='longitude', full_name='Location.longitude', index=8,
+      name='longitude', full_name='protolca.Location.longitude', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kml', full_name='Location.kml', index=9,
+      name='kml', full_name='protolca.Location.kml', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2136,84 +2136,84 @@ _LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3855,
-  serialized_end=4040,
+  serialized_start=4316,
+  serialized_end=4501,
 )
 
 
 _PARAMETER = _descriptor.Descriptor(
   name='Parameter',
-  full_name='Parameter',
+  full_name='protolca.Parameter',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Parameter.type', index=0,
+      name='type', full_name='protolca.Parameter.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Parameter.name', index=1,
+      name='name', full_name='protolca.Parameter.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Parameter.description', index=2,
+      name='description', full_name='protolca.Parameter.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameter_scope', full_name='Parameter.parameter_scope', index=3,
+      name='parameter_scope', full_name='protolca.Parameter.parameter_scope', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='input_parameter', full_name='Parameter.input_parameter', index=4,
+      name='input_parameter', full_name='protolca.Parameter.input_parameter', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Parameter.value', index=5,
+      name='value', full_name='protolca.Parameter.value', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='formula', full_name='Parameter.formula', index=6,
+      name='formula', full_name='protolca.Parameter.formula', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='external_source', full_name='Parameter.external_source', index=7,
+      name='external_source', full_name='protolca.Parameter.external_source', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='source_type', full_name='Parameter.source_type', index=8,
+      name='source_type', full_name='protolca.Parameter.source_type', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uncertainty', full_name='Parameter.uncertainty', index=9,
+      name='uncertainty', full_name='protolca.Parameter.uncertainty', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2231,42 +2231,42 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4043,
-  serialized_end=4290,
+  serialized_start=4504,
+  serialized_end=4769,
 )
 
 
 _PARAMETERREDEF = _descriptor.Descriptor(
   name='ParameterRedef',
-  full_name='ParameterRedef',
+  full_name='protolca.ParameterRedef',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ParameterRedef.type', index=0,
+      name='type', full_name='protolca.ParameterRedef.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ParameterRedef.name', index=1,
+      name='name', full_name='protolca.ParameterRedef.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='ParameterRedef.value', index=2,
+      name='value', full_name='protolca.ParameterRedef.value', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='context', full_name='ParameterRedef.context', index=3,
+      name='context', full_name='protolca.ParameterRedef.context', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2284,140 +2284,140 @@ _PARAMETERREDEF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4292,
-  serialized_end=4381,
+  serialized_start=4771,
+  serialized_end=4869,
 )
 
 
 _PROCESS = _descriptor.Descriptor(
   name='Process',
-  full_name='Process',
+  full_name='protolca.Process',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Process.type', index=0,
+      name='type', full_name='protolca.Process.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Process.id', index=1,
+      name='id', full_name='protolca.Process.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Process.name', index=2,
+      name='name', full_name='protolca.Process.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Process.description', index=3,
+      name='description', full_name='protolca.Process.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Process.version', index=4,
+      name='version', full_name='protolca.Process.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Process.last_change', index=5,
+      name='last_change', full_name='protolca.Process.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='Process.category', index=6,
+      name='category', full_name='protolca.Process.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='default_allocation_method', full_name='Process.default_allocation_method', index=7,
+      name='default_allocation_method', full_name='protolca.Process.default_allocation_method', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='allocation_factors', full_name='Process.allocation_factors', index=8,
+      name='allocation_factors', full_name='protolca.Process.allocation_factors', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchanges', full_name='Process.exchanges', index=9,
+      name='exchanges', full_name='protolca.Process.exchanges', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='Process.location', index=10,
+      name='location', full_name='protolca.Process.location', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parameters', full_name='Process.parameters', index=11,
+      name='parameters', full_name='protolca.Process.parameters', index=11,
       number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process_documentation', full_name='Process.process_documentation', index=12,
+      name='process_documentation', full_name='protolca.Process.process_documentation', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process_type', full_name='Process.process_type', index=13,
+      name='process_type', full_name='protolca.Process.process_type', index=13,
       number=14, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dq_system', full_name='Process.dq_system', index=14,
+      name='dq_system', full_name='protolca.Process.dq_system', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchange_dq_system', full_name='Process.exchange_dq_system', index=15,
+      name='exchange_dq_system', full_name='protolca.Process.exchange_dq_system', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='social_dq_system', full_name='Process.social_dq_system', index=16,
+      name='social_dq_system', full_name='protolca.Process.social_dq_system', index=16,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dq_entry', full_name='Process.dq_entry', index=17,
+      name='dq_entry', full_name='protolca.Process.dq_entry', index=17,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2435,189 +2435,189 @@ _PROCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4384,
-  serialized_end=4917,
+  serialized_start=4872,
+  serialized_end=5504,
 )
 
 
 _PROCESSDOCUMENTATION = _descriptor.Descriptor(
   name='ProcessDocumentation',
-  full_name='ProcessDocumentation',
+  full_name='protolca.ProcessDocumentation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ProcessDocumentation.type', index=0,
+      name='type', full_name='protolca.ProcessDocumentation.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='time_description', full_name='ProcessDocumentation.time_description', index=1,
+      name='time_description', full_name='protolca.ProcessDocumentation.time_description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='valid_until', full_name='ProcessDocumentation.valid_until', index=2,
+      name='valid_until', full_name='protolca.ProcessDocumentation.valid_until', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='valid_from', full_name='ProcessDocumentation.valid_from', index=3,
+      name='valid_from', full_name='protolca.ProcessDocumentation.valid_from', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='technology_description', full_name='ProcessDocumentation.technology_description', index=4,
+      name='technology_description', full_name='protolca.ProcessDocumentation.technology_description', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_collection_description', full_name='ProcessDocumentation.data_collection_description', index=5,
+      name='data_collection_description', full_name='protolca.ProcessDocumentation.data_collection_description', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='completeness_description', full_name='ProcessDocumentation.completeness_description', index=6,
+      name='completeness_description', full_name='protolca.ProcessDocumentation.completeness_description', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_selection_description', full_name='ProcessDocumentation.data_selection_description', index=7,
+      name='data_selection_description', full_name='protolca.ProcessDocumentation.data_selection_description', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='review_details', full_name='ProcessDocumentation.review_details', index=8,
+      name='review_details', full_name='protolca.ProcessDocumentation.review_details', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_treatment_description', full_name='ProcessDocumentation.data_treatment_description', index=9,
+      name='data_treatment_description', full_name='protolca.ProcessDocumentation.data_treatment_description', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='inventory_method_description', full_name='ProcessDocumentation.inventory_method_description', index=10,
+      name='inventory_method_description', full_name='protolca.ProcessDocumentation.inventory_method_description', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modeling_constants_description', full_name='ProcessDocumentation.modeling_constants_description', index=11,
+      name='modeling_constants_description', full_name='protolca.ProcessDocumentation.modeling_constants_description', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reviewer', full_name='ProcessDocumentation.reviewer', index=12,
+      name='reviewer', full_name='protolca.ProcessDocumentation.reviewer', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sampling_description', full_name='ProcessDocumentation.sampling_description', index=13,
+      name='sampling_description', full_name='protolca.ProcessDocumentation.sampling_description', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sources', full_name='ProcessDocumentation.sources', index=14,
+      name='sources', full_name='protolca.ProcessDocumentation.sources', index=14,
       number=15, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='restrictions_description', full_name='ProcessDocumentation.restrictions_description', index=15,
+      name='restrictions_description', full_name='protolca.ProcessDocumentation.restrictions_description', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='copyright', full_name='ProcessDocumentation.copyright', index=16,
+      name='copyright', full_name='protolca.ProcessDocumentation.copyright', index=16,
       number=17, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='creation_date', full_name='ProcessDocumentation.creation_date', index=17,
+      name='creation_date', full_name='protolca.ProcessDocumentation.creation_date', index=17,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_documentor', full_name='ProcessDocumentation.data_documentor', index=18,
+      name='data_documentor', full_name='protolca.ProcessDocumentation.data_documentor', index=18,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_generator', full_name='ProcessDocumentation.data_generator', index=19,
+      name='data_generator', full_name='protolca.ProcessDocumentation.data_generator', index=19,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data_set_owner', full_name='ProcessDocumentation.data_set_owner', index=20,
+      name='data_set_owner', full_name='protolca.ProcessDocumentation.data_set_owner', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='intended_application', full_name='ProcessDocumentation.intended_application', index=21,
+      name='intended_application', full_name='protolca.ProcessDocumentation.intended_application', index=21,
       number=22, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_description', full_name='ProcessDocumentation.project_description', index=22,
+      name='project_description', full_name='protolca.ProcessDocumentation.project_description', index=22,
       number=23, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='publication', full_name='ProcessDocumentation.publication', index=23,
+      name='publication', full_name='protolca.ProcessDocumentation.publication', index=23,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geography_description', full_name='ProcessDocumentation.geography_description', index=24,
+      name='geography_description', full_name='protolca.ProcessDocumentation.geography_description', index=24,
       number=25, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2635,49 +2635,49 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4920,
-  serialized_end=5668,
+  serialized_start=5507,
+  serialized_end=6309,
 )
 
 
 _PROCESSLINK = _descriptor.Descriptor(
   name='ProcessLink',
-  full_name='ProcessLink',
+  full_name='protolca.ProcessLink',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ProcessLink.type', index=0,
+      name='type', full_name='protolca.ProcessLink.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='provider', full_name='ProcessLink.provider', index=1,
+      name='provider', full_name='protolca.ProcessLink.provider', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow', full_name='ProcessLink.flow', index=2,
+      name='flow', full_name='protolca.ProcessLink.flow', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process', full_name='ProcessLink.process', index=3,
+      name='process', full_name='protolca.ProcessLink.process', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchange', full_name='ProcessLink.exchange', index=4,
+      name='exchange', full_name='protolca.ProcessLink.exchange', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2695,28 +2695,28 @@ _PROCESSLINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5671,
-  serialized_end=5801,
+  serialized_start=6312,
+  serialized_end=6478,
 )
 
 
 _PROCESSREF = _descriptor.Descriptor(
   name='ProcessRef',
-  full_name='ProcessRef',
+  full_name='protolca.ProcessRef',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='location', full_name='ProcessRef.location', index=0,
+      name='location', full_name='protolca.ProcessRef.location', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process_type', full_name='ProcessRef.process_type', index=1,
+      name='process_type', full_name='protolca.ProcessRef.process_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2734,112 +2734,112 @@ _PROCESSREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5803,
-  serialized_end=5869,
+  serialized_start=6480,
+  serialized_end=6555,
 )
 
 
 _PRODUCTSYSTEM = _descriptor.Descriptor(
   name='ProductSystem',
-  full_name='ProductSystem',
+  full_name='protolca.ProductSystem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='ProductSystem.type', index=0,
+      name='type', full_name='protolca.ProductSystem.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='ProductSystem.id', index=1,
+      name='id', full_name='protolca.ProductSystem.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ProductSystem.name', index=2,
+      name='name', full_name='protolca.ProductSystem.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='ProductSystem.description', index=3,
+      name='description', full_name='protolca.ProductSystem.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='ProductSystem.version', index=4,
+      name='version', full_name='protolca.ProductSystem.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='ProductSystem.last_change', index=5,
+      name='last_change', full_name='protolca.ProductSystem.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='ProductSystem.category', index=6,
+      name='category', full_name='protolca.ProductSystem.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='processes', full_name='ProductSystem.processes', index=7,
+      name='processes', full_name='protolca.ProductSystem.processes', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_process', full_name='ProductSystem.reference_process', index=8,
+      name='reference_process', full_name='protolca.ProductSystem.reference_process', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_exchange', full_name='ProductSystem.reference_exchange', index=9,
+      name='reference_exchange', full_name='protolca.ProductSystem.reference_exchange', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='target_amount', full_name='ProductSystem.target_amount', index=10,
+      name='target_amount', full_name='protolca.ProductSystem.target_amount', index=10,
       number=11, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='target_unit', full_name='ProductSystem.target_unit', index=11,
+      name='target_unit', full_name='protolca.ProductSystem.target_unit', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='target_flow_property', full_name='ProductSystem.target_flow_property', index=12,
+      name='target_flow_property', full_name='protolca.ProductSystem.target_flow_property', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process_links', full_name='ProductSystem.process_links', index=13,
+      name='process_links', full_name='protolca.ProductSystem.process_links', index=13,
       number=14, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2857,63 +2857,63 @@ _PRODUCTSYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5872,
-  serialized_end=6256,
+  serialized_start=6558,
+  serialized_end=7005,
 )
 
 
 _REF = _descriptor.Descriptor(
   name='Ref',
-  full_name='Ref',
+  full_name='protolca.Ref',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Ref.type', index=0,
+      name='type', full_name='protolca.Ref.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Ref.id', index=1,
+      name='id', full_name='protolca.Ref.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Ref.name', index=2,
+      name='name', full_name='protolca.Ref.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Ref.description', index=3,
+      name='description', full_name='protolca.Ref.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Ref.version', index=4,
+      name='version', full_name='protolca.Ref.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Ref.last_change', index=5,
+      name='last_change', full_name='protolca.Ref.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category_path', full_name='Ref.category_path', index=6,
+      name='category_path', full_name='protolca.Ref.category_path', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2931,35 +2931,35 @@ _REF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6259,
-  serialized_end=6398,
+  serialized_start=7008,
+  serialized_end=7147,
 )
 
 
 _SIMPLERESULT = _descriptor.Descriptor(
   name='SimpleResult',
-  full_name='SimpleResult',
+  full_name='protolca.SimpleResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='SimpleResult.type', index=0,
+      name='type', full_name='protolca.SimpleResult.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_results', full_name='SimpleResult.flow_results', index=1,
+      name='flow_results', full_name='protolca.SimpleResult.flow_results', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_results', full_name='SimpleResult.impact_results', index=2,
+      name='impact_results', full_name='protolca.SimpleResult.impact_results', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2977,98 +2977,98 @@ _SIMPLERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6400,
-  serialized_end=6509,
+  serialized_start=7149,
+  serialized_end=7276,
 )
 
 
 _SOCIALINDICATOR = _descriptor.Descriptor(
   name='SocialIndicator',
-  full_name='SocialIndicator',
+  full_name='protolca.SocialIndicator',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='SocialIndicator.type', index=0,
+      name='type', full_name='protolca.SocialIndicator.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='SocialIndicator.id', index=1,
+      name='id', full_name='protolca.SocialIndicator.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='SocialIndicator.name', index=2,
+      name='name', full_name='protolca.SocialIndicator.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='SocialIndicator.description', index=3,
+      name='description', full_name='protolca.SocialIndicator.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='SocialIndicator.version', index=4,
+      name='version', full_name='protolca.SocialIndicator.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='SocialIndicator.last_change', index=5,
+      name='last_change', full_name='protolca.SocialIndicator.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='SocialIndicator.category', index=6,
+      name='category', full_name='protolca.SocialIndicator.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activity_variable', full_name='SocialIndicator.activity_variable', index=7,
+      name='activity_variable', full_name='protolca.SocialIndicator.activity_variable', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activity_quantity', full_name='SocialIndicator.activity_quantity', index=8,
+      name='activity_quantity', full_name='protolca.SocialIndicator.activity_quantity', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activity_unit', full_name='SocialIndicator.activity_unit', index=9,
+      name='activity_unit', full_name='protolca.SocialIndicator.activity_unit', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit_of_measurement', full_name='SocialIndicator.unit_of_measurement', index=10,
+      name='unit_of_measurement', full_name='protolca.SocialIndicator.unit_of_measurement', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='evaluation_scheme', full_name='SocialIndicator.evaluation_scheme', index=11,
+      name='evaluation_scheme', full_name='protolca.SocialIndicator.evaluation_scheme', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3086,91 +3086,91 @@ _SOCIALINDICATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6512,
-  serialized_end=6809,
+  serialized_start=7279,
+  serialized_end=7603,
 )
 
 
 _SOURCE = _descriptor.Descriptor(
   name='Source',
-  full_name='Source',
+  full_name='protolca.Source',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Source.type', index=0,
+      name='type', full_name='protolca.Source.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Source.id', index=1,
+      name='id', full_name='protolca.Source.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Source.name', index=2,
+      name='name', full_name='protolca.Source.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Source.description', index=3,
+      name='description', full_name='protolca.Source.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Source.version', index=4,
+      name='version', full_name='protolca.Source.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Source.last_change', index=5,
+      name='last_change', full_name='protolca.Source.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='Source.category', index=6,
+      name='category', full_name='protolca.Source.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='doi', full_name='Source.doi', index=7,
+      name='doi', full_name='protolca.Source.doi', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='text_reference', full_name='Source.text_reference', index=8,
+      name='text_reference', full_name='protolca.Source.text_reference', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='year', full_name='Source.year', index=9,
+      name='year', full_name='protolca.Source.year', index=9,
       number=10, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='external_file', full_name='Source.external_file', index=10,
+      name='external_file', full_name='protolca.Source.external_file', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3188,126 +3188,126 @@ _SOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6812,
-  serialized_end=7029,
+  serialized_start=7606,
+  serialized_end=7832,
 )
 
 
 _UNCERTAINTY = _descriptor.Descriptor(
   name='Uncertainty',
-  full_name='Uncertainty',
+  full_name='protolca.Uncertainty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Uncertainty.type', index=0,
+      name='type', full_name='protolca.Uncertainty.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='distribution_type', full_name='Uncertainty.distribution_type', index=1,
+      name='distribution_type', full_name='protolca.Uncertainty.distribution_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mean', full_name='Uncertainty.mean', index=2,
+      name='mean', full_name='protolca.Uncertainty.mean', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mean_formula', full_name='Uncertainty.mean_formula', index=3,
+      name='mean_formula', full_name='protolca.Uncertainty.mean_formula', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geom_mean', full_name='Uncertainty.geom_mean', index=4,
+      name='geom_mean', full_name='protolca.Uncertainty.geom_mean', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geom_mean_formula', full_name='Uncertainty.geom_mean_formula', index=5,
+      name='geom_mean_formula', full_name='protolca.Uncertainty.geom_mean_formula', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='minimum', full_name='Uncertainty.minimum', index=6,
+      name='minimum', full_name='protolca.Uncertainty.minimum', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='minimum_formula', full_name='Uncertainty.minimum_formula', index=7,
+      name='minimum_formula', full_name='protolca.Uncertainty.minimum_formula', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sd', full_name='Uncertainty.sd', index=8,
+      name='sd', full_name='protolca.Uncertainty.sd', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sd_formula', full_name='Uncertainty.sd_formula', index=9,
+      name='sd_formula', full_name='protolca.Uncertainty.sd_formula', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geom_sd', full_name='Uncertainty.geom_sd', index=10,
+      name='geom_sd', full_name='protolca.Uncertainty.geom_sd', index=10,
       number=11, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='geom_sd_formula', full_name='Uncertainty.geom_sd_formula', index=11,
+      name='geom_sd_formula', full_name='protolca.Uncertainty.geom_sd_formula', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mode', full_name='Uncertainty.mode', index=12,
+      name='mode', full_name='protolca.Uncertainty.mode', index=12,
       number=13, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mode_formula', full_name='Uncertainty.mode_formula', index=13,
+      name='mode_formula', full_name='protolca.Uncertainty.mode_formula', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maximum', full_name='Uncertainty.maximum', index=14,
+      name='maximum', full_name='protolca.Uncertainty.maximum', index=14,
       number=15, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maximum_formula', full_name='Uncertainty.maximum_formula', index=15,
+      name='maximum_formula', full_name='protolca.Uncertainty.maximum_formula', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3325,77 +3325,77 @@ _UNCERTAINTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7032,
-  serialized_end=7387,
+  serialized_start=7835,
+  serialized_end=8199,
 )
 
 
 _UNIT = _descriptor.Descriptor(
   name='Unit',
-  full_name='Unit',
+  full_name='protolca.Unit',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='Unit.type', index=0,
+      name='type', full_name='protolca.Unit.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Unit.id', index=1,
+      name='id', full_name='protolca.Unit.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Unit.name', index=2,
+      name='name', full_name='protolca.Unit.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='Unit.description', index=3,
+      name='description', full_name='protolca.Unit.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='Unit.version', index=4,
+      name='version', full_name='protolca.Unit.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='Unit.last_change', index=5,
+      name='last_change', full_name='protolca.Unit.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conversion_factor', full_name='Unit.conversion_factor', index=6,
+      name='conversion_factor', full_name='protolca.Unit.conversion_factor', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_unit', full_name='Unit.reference_unit', index=7,
+      name='reference_unit', full_name='protolca.Unit.reference_unit', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='synonyms', full_name='Unit.synonyms', index=8,
+      name='synonyms', full_name='protolca.Unit.synonyms', index=8,
       number=9, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3413,77 +3413,77 @@ _UNIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7390,
-  serialized_end=7576,
+  serialized_start=8202,
+  serialized_end=8388,
 )
 
 
 _UNITGROUP = _descriptor.Descriptor(
   name='UnitGroup',
-  full_name='UnitGroup',
+  full_name='protolca.UnitGroup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='UnitGroup.type', index=0,
+      name='type', full_name='protolca.UnitGroup.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='UnitGroup.id', index=1,
+      name='id', full_name='protolca.UnitGroup.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='UnitGroup.name', index=2,
+      name='name', full_name='protolca.UnitGroup.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='UnitGroup.description', index=3,
+      name='description', full_name='protolca.UnitGroup.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='UnitGroup.version', index=4,
+      name='version', full_name='protolca.UnitGroup.version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_change', full_name='UnitGroup.last_change', index=5,
+      name='last_change', full_name='protolca.UnitGroup.last_change', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category', full_name='UnitGroup.category', index=6,
+      name='category', full_name='protolca.UnitGroup.category', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='default_flow_property', full_name='UnitGroup.default_flow_property', index=7,
+      name='default_flow_property', full_name='protolca.UnitGroup.default_flow_property', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='units', full_name='UnitGroup.units', index=8,
+      name='units', full_name='protolca.UnitGroup.units', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3501,8 +3501,8 @@ _UNITGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7579,
-  serialized_end=7784,
+  serialized_start=8391,
+  serialized_end=8623,
 )
 
 _ACTOR.fields_by_name['category'].message_type = _REF
@@ -3646,252 +3646,252 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Actor = _reflection.GeneratedProtocolMessageType('Actor', (_message.Message,), {
   'DESCRIPTOR' : _ACTOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Actor)
+  # @@protoc_insertion_point(class_scope:protolca.Actor)
   })
 _sym_db.RegisterMessage(Actor)
 
 AllocationFactor = _reflection.GeneratedProtocolMessageType('AllocationFactor', (_message.Message,), {
   'DESCRIPTOR' : _ALLOCATIONFACTOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:AllocationFactor)
+  # @@protoc_insertion_point(class_scope:protolca.AllocationFactor)
   })
 _sym_db.RegisterMessage(AllocationFactor)
 
 CalculationSetup = _reflection.GeneratedProtocolMessageType('CalculationSetup', (_message.Message,), {
   'DESCRIPTOR' : _CALCULATIONSETUP,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:CalculationSetup)
+  # @@protoc_insertion_point(class_scope:protolca.CalculationSetup)
   })
 _sym_db.RegisterMessage(CalculationSetup)
 
 Category = _reflection.GeneratedProtocolMessageType('Category', (_message.Message,), {
   'DESCRIPTOR' : _CATEGORY,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Category)
+  # @@protoc_insertion_point(class_scope:protolca.Category)
   })
 _sym_db.RegisterMessage(Category)
 
 DqIndicator = _reflection.GeneratedProtocolMessageType('DqIndicator', (_message.Message,), {
   'DESCRIPTOR' : _DQINDICATOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:DqIndicator)
+  # @@protoc_insertion_point(class_scope:protolca.DqIndicator)
   })
 _sym_db.RegisterMessage(DqIndicator)
 
 DqScore = _reflection.GeneratedProtocolMessageType('DqScore', (_message.Message,), {
   'DESCRIPTOR' : _DQSCORE,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:DqScore)
+  # @@protoc_insertion_point(class_scope:protolca.DqScore)
   })
 _sym_db.RegisterMessage(DqScore)
 
 DqSystem = _reflection.GeneratedProtocolMessageType('DqSystem', (_message.Message,), {
   'DESCRIPTOR' : _DQSYSTEM,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:DqSystem)
+  # @@protoc_insertion_point(class_scope:protolca.DqSystem)
   })
 _sym_db.RegisterMessage(DqSystem)
 
 Exchange = _reflection.GeneratedProtocolMessageType('Exchange', (_message.Message,), {
   'DESCRIPTOR' : _EXCHANGE,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Exchange)
+  # @@protoc_insertion_point(class_scope:protolca.Exchange)
   })
 _sym_db.RegisterMessage(Exchange)
 
 Flow = _reflection.GeneratedProtocolMessageType('Flow', (_message.Message,), {
   'DESCRIPTOR' : _FLOW,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Flow)
+  # @@protoc_insertion_point(class_scope:protolca.Flow)
   })
 _sym_db.RegisterMessage(Flow)
 
 FlowMap = _reflection.GeneratedProtocolMessageType('FlowMap', (_message.Message,), {
   'DESCRIPTOR' : _FLOWMAP,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowMap)
+  # @@protoc_insertion_point(class_scope:protolca.FlowMap)
   })
 _sym_db.RegisterMessage(FlowMap)
 
 FlowMapEntry = _reflection.GeneratedProtocolMessageType('FlowMapEntry', (_message.Message,), {
   'DESCRIPTOR' : _FLOWMAPENTRY,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowMapEntry)
+  # @@protoc_insertion_point(class_scope:protolca.FlowMapEntry)
   })
 _sym_db.RegisterMessage(FlowMapEntry)
 
 FlowMapRef = _reflection.GeneratedProtocolMessageType('FlowMapRef', (_message.Message,), {
   'DESCRIPTOR' : _FLOWMAPREF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowMapRef)
+  # @@protoc_insertion_point(class_scope:protolca.FlowMapRef)
   })
 _sym_db.RegisterMessage(FlowMapRef)
 
 FlowProperty = _reflection.GeneratedProtocolMessageType('FlowProperty', (_message.Message,), {
   'DESCRIPTOR' : _FLOWPROPERTY,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowProperty)
+  # @@protoc_insertion_point(class_scope:protolca.FlowProperty)
   })
 _sym_db.RegisterMessage(FlowProperty)
 
 FlowPropertyFactor = _reflection.GeneratedProtocolMessageType('FlowPropertyFactor', (_message.Message,), {
   'DESCRIPTOR' : _FLOWPROPERTYFACTOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowPropertyFactor)
+  # @@protoc_insertion_point(class_scope:protolca.FlowPropertyFactor)
   })
 _sym_db.RegisterMessage(FlowPropertyFactor)
 
 FlowRef = _reflection.GeneratedProtocolMessageType('FlowRef', (_message.Message,), {
   'DESCRIPTOR' : _FLOWREF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowRef)
+  # @@protoc_insertion_point(class_scope:protolca.FlowRef)
   })
 _sym_db.RegisterMessage(FlowRef)
 
 FlowResult = _reflection.GeneratedProtocolMessageType('FlowResult', (_message.Message,), {
   'DESCRIPTOR' : _FLOWRESULT,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:FlowResult)
+  # @@protoc_insertion_point(class_scope:protolca.FlowResult)
   })
 _sym_db.RegisterMessage(FlowResult)
 
 ImpactCategory = _reflection.GeneratedProtocolMessageType('ImpactCategory', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTCATEGORY,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ImpactCategory)
+  # @@protoc_insertion_point(class_scope:protolca.ImpactCategory)
   })
 _sym_db.RegisterMessage(ImpactCategory)
 
 ImpactCategoryRef = _reflection.GeneratedProtocolMessageType('ImpactCategoryRef', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTCATEGORYREF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ImpactCategoryRef)
+  # @@protoc_insertion_point(class_scope:protolca.ImpactCategoryRef)
   })
 _sym_db.RegisterMessage(ImpactCategoryRef)
 
 ImpactFactor = _reflection.GeneratedProtocolMessageType('ImpactFactor', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTFACTOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ImpactFactor)
+  # @@protoc_insertion_point(class_scope:protolca.ImpactFactor)
   })
 _sym_db.RegisterMessage(ImpactFactor)
 
 ImpactMethod = _reflection.GeneratedProtocolMessageType('ImpactMethod', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTMETHOD,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ImpactMethod)
+  # @@protoc_insertion_point(class_scope:protolca.ImpactMethod)
   })
 _sym_db.RegisterMessage(ImpactMethod)
 
 ImpactResult = _reflection.GeneratedProtocolMessageType('ImpactResult', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTRESULT,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ImpactResult)
+  # @@protoc_insertion_point(class_scope:protolca.ImpactResult)
   })
 _sym_db.RegisterMessage(ImpactResult)
 
 Location = _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), {
   'DESCRIPTOR' : _LOCATION,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Location)
+  # @@protoc_insertion_point(class_scope:protolca.Location)
   })
 _sym_db.RegisterMessage(Location)
 
 Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), {
   'DESCRIPTOR' : _PARAMETER,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Parameter)
+  # @@protoc_insertion_point(class_scope:protolca.Parameter)
   })
 _sym_db.RegisterMessage(Parameter)
 
 ParameterRedef = _reflection.GeneratedProtocolMessageType('ParameterRedef', (_message.Message,), {
   'DESCRIPTOR' : _PARAMETERREDEF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ParameterRedef)
+  # @@protoc_insertion_point(class_scope:protolca.ParameterRedef)
   })
 _sym_db.RegisterMessage(ParameterRedef)
 
 Process = _reflection.GeneratedProtocolMessageType('Process', (_message.Message,), {
   'DESCRIPTOR' : _PROCESS,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Process)
+  # @@protoc_insertion_point(class_scope:protolca.Process)
   })
 _sym_db.RegisterMessage(Process)
 
 ProcessDocumentation = _reflection.GeneratedProtocolMessageType('ProcessDocumentation', (_message.Message,), {
   'DESCRIPTOR' : _PROCESSDOCUMENTATION,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ProcessDocumentation)
+  # @@protoc_insertion_point(class_scope:protolca.ProcessDocumentation)
   })
 _sym_db.RegisterMessage(ProcessDocumentation)
 
 ProcessLink = _reflection.GeneratedProtocolMessageType('ProcessLink', (_message.Message,), {
   'DESCRIPTOR' : _PROCESSLINK,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ProcessLink)
+  # @@protoc_insertion_point(class_scope:protolca.ProcessLink)
   })
 _sym_db.RegisterMessage(ProcessLink)
 
 ProcessRef = _reflection.GeneratedProtocolMessageType('ProcessRef', (_message.Message,), {
   'DESCRIPTOR' : _PROCESSREF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ProcessRef)
+  # @@protoc_insertion_point(class_scope:protolca.ProcessRef)
   })
 _sym_db.RegisterMessage(ProcessRef)
 
 ProductSystem = _reflection.GeneratedProtocolMessageType('ProductSystem', (_message.Message,), {
   'DESCRIPTOR' : _PRODUCTSYSTEM,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:ProductSystem)
+  # @@protoc_insertion_point(class_scope:protolca.ProductSystem)
   })
 _sym_db.RegisterMessage(ProductSystem)
 
 Ref = _reflection.GeneratedProtocolMessageType('Ref', (_message.Message,), {
   'DESCRIPTOR' : _REF,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Ref)
+  # @@protoc_insertion_point(class_scope:protolca.Ref)
   })
 _sym_db.RegisterMessage(Ref)
 
 SimpleResult = _reflection.GeneratedProtocolMessageType('SimpleResult', (_message.Message,), {
   'DESCRIPTOR' : _SIMPLERESULT,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:SimpleResult)
+  # @@protoc_insertion_point(class_scope:protolca.SimpleResult)
   })
 _sym_db.RegisterMessage(SimpleResult)
 
 SocialIndicator = _reflection.GeneratedProtocolMessageType('SocialIndicator', (_message.Message,), {
   'DESCRIPTOR' : _SOCIALINDICATOR,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:SocialIndicator)
+  # @@protoc_insertion_point(class_scope:protolca.SocialIndicator)
   })
 _sym_db.RegisterMessage(SocialIndicator)
 
 Source = _reflection.GeneratedProtocolMessageType('Source', (_message.Message,), {
   'DESCRIPTOR' : _SOURCE,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Source)
+  # @@protoc_insertion_point(class_scope:protolca.Source)
   })
 _sym_db.RegisterMessage(Source)
 
 Uncertainty = _reflection.GeneratedProtocolMessageType('Uncertainty', (_message.Message,), {
   'DESCRIPTOR' : _UNCERTAINTY,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Uncertainty)
+  # @@protoc_insertion_point(class_scope:protolca.Uncertainty)
   })
 _sym_db.RegisterMessage(Uncertainty)
 
 Unit = _reflection.GeneratedProtocolMessageType('Unit', (_message.Message,), {
   'DESCRIPTOR' : _UNIT,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:Unit)
+  # @@protoc_insertion_point(class_scope:protolca.Unit)
   })
 _sym_db.RegisterMessage(Unit)
 
 UnitGroup = _reflection.GeneratedProtocolMessageType('UnitGroup', (_message.Message,), {
   'DESCRIPTOR' : _UNITGROUP,
   '__module__' : 'olca_pb2'
-  # @@protoc_insertion_point(class_scope:UnitGroup)
+  # @@protoc_insertion_point(class_scope:protolca.UnitGroup)
   })
 _sym_db.RegisterMessage(UnitGroup)
 
