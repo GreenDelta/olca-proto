@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"unicode"
 
 	yaml "gopkg.in/yaml.v2"
 )
@@ -110,9 +111,15 @@ option java_outer_classname = "Proto";
 			continue
 		}
 
-		if typeDef.Class != nil {
+		class := typeDef.Class
+		if class != nil {
+
+			comment := formatComment(class.Doc, "")
+			if comment != "" {
+				buff.WriteString(comment)
+			}
 			buff.WriteString("message " + typeDef.name() + " {\n\n")
-			fields(typeDef.Class, &buff, types, 1)
+			fields(class, &buff, types, 1)
 			buff.WriteString("}\n\n")
 		}
 	}
@@ -152,7 +159,11 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	}
 
 	for _, field := range class.Fields {
-		buff.WriteString("  " + protoType(field.Type) + " " + field.Name +
+		comment := formatComment(field.Doc, "  ")
+		if comment != "" {
+			buff.WriteString(comment)
+		}
+		buff.WriteString("  " + mapType(field.Type) + " " + field.Name +
 			" = " + strconv.Itoa(count) + ";\n\n")
 		count++
 	}
@@ -160,7 +171,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	return count
 }
 
-func protoType(schemaType string) string {
+func mapType(schemaType string) string {
 	switch schemaType {
 	case "string", "double", "float":
 		return schemaType
@@ -179,10 +190,53 @@ func protoType(schemaType string) string {
 	if strings.HasPrefix(schemaType, "List[") {
 		t := strings.TrimSuffix(
 			strings.TrimPrefix(schemaType, "List["), "]")
-		return "repeated " + protoType(t)
+		return "repeated " + mapType(t)
 	}
 
 	return schemaType
+}
+
+func formatComment(comment string, indent string) string {
+	if strings.TrimSpace(comment) == "" {
+		return ""
+	}
+
+	// split words by whitespaces
+	var words []string
+	var word bytes.Buffer
+	for _, char := range comment {
+		if unicode.IsSpace(char) {
+			if word.Len() > 0 {
+				words = append(words, word.String())
+			}
+			word.Reset()
+			continue
+		}
+		word.WriteRune(char)
+	}
+	if word.Len() > 0 {
+		words = append(words, word.String())
+	}
+	if len(words) == 0 {
+		return ""
+	}
+
+	// format the comment
+	text := ""
+	line := indent + "//"
+	for _, word := range words {
+		nextLine := line + " " + word
+		if len(nextLine) < 80 {
+			line = nextLine
+		} else {
+			text += line + "\n"
+			line = indent + "// " + word
+		}
+	}
+	if line != indent+"// " {
+		text += line + "\n"
+	}
+	return text
 }
 
 func check(err error, msg ...interface{}) {
