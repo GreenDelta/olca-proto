@@ -113,13 +113,31 @@ option java_outer_classname = "Proto";
 
 		class := typeDef.Class
 		if class != nil {
-
 			comment := formatComment(class.Doc, "")
 			if comment != "" {
 				buff.WriteString(comment)
 			}
-			buff.WriteString("message " + typeDef.name() + " {\n\n")
+			buff.WriteString("message " + class.Name + " {\n\n")
 			fields(class, &buff, types, 1)
+			buff.WriteString("}\n\n")
+			continue
+		}
+
+		enum := typeDef.Enum
+		if enum != nil {
+			comment := formatComment(enum.Doc, "")
+			if comment != "" {
+				buff.WriteString(comment)
+			}
+			buff.WriteString("enum " + enum.Name + " {\n\n")
+			for i, item := range enum.Items {
+				comment := formatComment(item.Doc, "  ")
+				if comment != "" {
+					buff.WriteString(comment)
+				}
+				buff.WriteString("  " + item.Name + " = " +
+					strconv.Itoa(i) + ";\n\n")
+			}
 			buff.WriteString("}\n\n")
 		}
 	}
