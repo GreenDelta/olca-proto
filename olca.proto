@@ -76,15 +76,19 @@ message AllocationFactor {
 // [CalculationSetup].
 enum AllocationType {
 
-  PHYSICAL_ALLOCATION = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  ECONOMIC_ALLOCATION = 1;
+  PHYSICAL_ALLOCATION = 1;
 
-  CAUSAL_ALLOCATION = 2;
+  ECONOMIC_ALLOCATION = 2;
 
-  USE_DEFAULT_ALLOCATION = 3;
+  CAUSAL_ALLOCATION = 3;
 
-  NO_ALLOCATION = 4;
+  USE_DEFAULT_ALLOCATION = 4;
+
+  NO_ALLOCATION = 5;
 
 }
 
@@ -131,34 +135,38 @@ message CalculationSetup {
 // An enumeration of the different calculation methods supported by openLCA.
 enum CalculationType {
 
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
+
   // Calculates the total results for elementary flows, LCIA indicators, costs,
   // etc. of a product system.
-  SIMPLE_CALCULATION = 0;
+  SIMPLE_CALCULATION = 1;
 
   // Includes the total result vectors of a simple calculation but calculates
   // also the direct contributions of each process (or better process product
   // in case of multi-output processes) to these total results.
-  CONTRIBUTION_ANALYSIS = 1;
+  CONTRIBUTION_ANALYSIS = 2;
 
   // Extends the contribution analysis by providing also the upstream results
   // of each process (process product) in the product system. The upstream
   // result contains the direct contributions of the respective process but
   // also the result of the supply chain up to this process scaled to the
   // demand of the process in the product system.
-  UPSTREAM_ANALYSIS = 2;
+  UPSTREAM_ANALYSIS = 3;
 
   // A regionalized calculation is a contribution analysis but with an LCIA
   // method that supports regionalized characterization factors (via region
   // specific parameters in formulas) and a product system with processes that
   // have geographic information assigned (point, line, or polygon shapes).
-  REGIONALIZED_CALCULATION = 3;
+  REGIONALIZED_CALCULATION = 4;
 
   // A Monte Carlo simulation generates for each run, of a given number of a
   // given number of iterations, random values according to the uncertainty
   // distributions of process inputs/outputs, parameters, characterization
   // factors, etc. of a product system and then performs a simple calculation
   // for that specific run.
-  MONTE_CARLO_SIMULATION = 4;
+  MONTE_CARLO_SIMULATION = 5;
 
 }
 
@@ -550,9 +558,13 @@ message FlowPropertyFactor {
 // An enumeration of flow property types.
 enum FlowPropertyType {
 
-  ECONOMIC_QUANTITY = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  PHYSICAL_QUANTITY = 1;
+  ECONOMIC_QUANTITY = 1;
+
+  PHYSICAL_QUANTITY = 2;
 
 }
 
@@ -592,11 +604,15 @@ message FlowResult {
 // The basic flow types.
 enum FlowType {
 
-  ELEMENTARY_FLOW = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  PRODUCT_FLOW = 1;
+  ELEMENTARY_FLOW = 1;
 
-  WASTE_FLOW = 2;
+  PRODUCT_FLOW = 2;
+
+  WASTE_FLOW = 3;
 
 }
 
@@ -760,35 +776,39 @@ message Location {
 // An enumeration of the root entity types.
 enum ModelType {
 
-  PROJECT = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  IMPACT_METHOD = 1;
+  PROJECT = 1;
 
-  IMPACT_CATEGORY = 2;
+  IMPACT_METHOD = 2;
 
-  PRODUCT_SYSTEM = 3;
+  IMPACT_CATEGORY = 3;
 
-  PROCESS = 4;
+  PRODUCT_SYSTEM = 4;
 
-  FLOW = 5;
+  PROCESS = 5;
 
-  FLOW_PROPERTY = 6;
+  FLOW = 6;
 
-  UNIT_GROUP = 7;
+  FLOW_PROPERTY = 7;
 
-  UNIT = 8;
+  UNIT_GROUP = 8;
 
-  ACTOR = 9;
+  UNIT = 9;
 
-  SOURCE = 10;
+  ACTOR = 10;
 
-  CATEGORY = 11;
+  SOURCE = 11;
 
-  LOCATION = 12;
+  CATEGORY = 12;
 
-  NW_SET = 13;
+  LOCATION = 13;
 
-  SOCIAL_INDICATOR = 14;
+  NW_SET = 14;
+
+  SOCIAL_INDICATOR = 15;
 
 }
 
@@ -854,11 +874,15 @@ message ParameterRedef {
 // The possible scopes of parameters.
 enum ParameterScope {
 
-  PROCESS_SCOPE = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  LCIA_METHOD_SCOPE = 1;
+  PROCESS_SCOPE = 1;
 
-  GLOBAL_SCOPE = 2;
+  LCIA_METHOD_SCOPE = 2;
+
+  GLOBAL_SCOPE = 3;
 
 }
 
@@ -1018,9 +1042,13 @@ message ProcessRef {
 
 enum ProcessType {
 
-  LCI_RESULT = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  UNIT_PROCESS = 1;
+  LCI_RESULT = 1;
+
+  UNIT_PROCESS = 2;
 
 }
 
@@ -1268,13 +1296,17 @@ message Uncertainty {
 // parameters, LCIA factors, etc.
 enum UncertaintyType {
 
-  LOG_NORMAL_DISTRIBUTION = 0;
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED = 0;
 
-  NORMAL_DISTRIBUTION = 1;
+  LOG_NORMAL_DISTRIBUTION = 1;
 
-  TRIANGLE_DISTRIBUTION = 2;
+  NORMAL_DISTRIBUTION = 2;
 
-  UNIFORM_DISTRIBUTION = 3;
+  TRIANGLE_DISTRIBUTION = 3;
+
+  UNIFORM_DISTRIBUTION = 4;
 
 }
 
@@ -1354,3 +1386,4 @@ message UnitGroup {
   repeated Unit units = 9;
 
 }
+

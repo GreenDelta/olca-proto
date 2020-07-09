@@ -130,13 +130,16 @@ option java_outer_classname = "Proto";
 				buff.WriteString(comment)
 			}
 			buff.WriteString("enum " + enum.Name + " {\n\n")
+			buff.WriteString("  // This default option was added automatically\n")
+			buff.WriteString("  // and means that no values was set.\n")
+			buff.WriteString("  UNDEFINED = 0;\n\n")
 			for i, item := range enum.Items {
 				comment := formatComment(item.Doc, "  ")
 				if comment != "" {
 					buff.WriteString(comment)
 				}
 				buff.WriteString("  " + item.Name + " = " +
-					strconv.Itoa(i) + ";\n\n")
+					strconv.Itoa(i+1) + ";\n\n")
 			}
 			buff.WriteString("}\n\n")
 		}
