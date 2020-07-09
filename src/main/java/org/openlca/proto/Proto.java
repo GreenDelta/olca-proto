@@ -27,48 +27,66 @@ public final class Proto {
   public enum AllocationType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>PHYSICAL_ALLOCATION = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ALLOCATION_TYPE = 0;</code>
      */
-    PHYSICAL_ALLOCATION(0),
+    UNDEFINED_ALLOCATION_TYPE(0),
     /**
-     * <code>ECONOMIC_ALLOCATION = 1;</code>
+     * <code>PHYSICAL_ALLOCATION = 1;</code>
      */
-    ECONOMIC_ALLOCATION(1),
+    PHYSICAL_ALLOCATION(1),
     /**
-     * <code>CAUSAL_ALLOCATION = 2;</code>
+     * <code>ECONOMIC_ALLOCATION = 2;</code>
      */
-    CAUSAL_ALLOCATION(2),
+    ECONOMIC_ALLOCATION(2),
     /**
-     * <code>USE_DEFAULT_ALLOCATION = 3;</code>
+     * <code>CAUSAL_ALLOCATION = 3;</code>
      */
-    USE_DEFAULT_ALLOCATION(3),
+    CAUSAL_ALLOCATION(3),
     /**
-     * <code>NO_ALLOCATION = 4;</code>
+     * <code>USE_DEFAULT_ALLOCATION = 4;</code>
      */
-    NO_ALLOCATION(4),
+    USE_DEFAULT_ALLOCATION(4),
+    /**
+     * <code>NO_ALLOCATION = 5;</code>
+     */
+    NO_ALLOCATION(5),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>PHYSICAL_ALLOCATION = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ALLOCATION_TYPE = 0;</code>
      */
-    public static final int PHYSICAL_ALLOCATION_VALUE = 0;
+    public static final int UNDEFINED_ALLOCATION_TYPE_VALUE = 0;
     /**
-     * <code>ECONOMIC_ALLOCATION = 1;</code>
+     * <code>PHYSICAL_ALLOCATION = 1;</code>
      */
-    public static final int ECONOMIC_ALLOCATION_VALUE = 1;
+    public static final int PHYSICAL_ALLOCATION_VALUE = 1;
     /**
-     * <code>CAUSAL_ALLOCATION = 2;</code>
+     * <code>ECONOMIC_ALLOCATION = 2;</code>
      */
-    public static final int CAUSAL_ALLOCATION_VALUE = 2;
+    public static final int ECONOMIC_ALLOCATION_VALUE = 2;
     /**
-     * <code>USE_DEFAULT_ALLOCATION = 3;</code>
+     * <code>CAUSAL_ALLOCATION = 3;</code>
      */
-    public static final int USE_DEFAULT_ALLOCATION_VALUE = 3;
+    public static final int CAUSAL_ALLOCATION_VALUE = 3;
     /**
-     * <code>NO_ALLOCATION = 4;</code>
+     * <code>USE_DEFAULT_ALLOCATION = 4;</code>
      */
-    public static final int NO_ALLOCATION_VALUE = 4;
+    public static final int USE_DEFAULT_ALLOCATION_VALUE = 4;
+    /**
+     * <code>NO_ALLOCATION = 5;</code>
+     */
+    public static final int NO_ALLOCATION_VALUE = 5;
 
 
     public final int getNumber() {
@@ -95,11 +113,12 @@ public final class Proto {
      */
     public static AllocationType forNumber(int value) {
       switch (value) {
-        case 0: return PHYSICAL_ALLOCATION;
-        case 1: return ECONOMIC_ALLOCATION;
-        case 2: return CAUSAL_ALLOCATION;
-        case 3: return USE_DEFAULT_ALLOCATION;
-        case 4: return NO_ALLOCATION;
+        case 0: return UNDEFINED_ALLOCATION_TYPE;
+        case 1: return PHYSICAL_ALLOCATION;
+        case 2: return ECONOMIC_ALLOCATION;
+        case 3: return CAUSAL_ALLOCATION;
+        case 4: return USE_DEFAULT_ALLOCATION;
+        case 5: return NO_ALLOCATION;
         default: return null;
       }
     }
@@ -167,13 +186,22 @@ public final class Proto {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_CALCULATION_TYPE = 0;</code>
+     */
+    UNDEFINED_CALCULATION_TYPE(0),
+    /**
+     * <pre>
      * Calculates the total results for elementary flows, LCIA indicators, costs,
      * etc. of a product system.
      * </pre>
      *
-     * <code>SIMPLE_CALCULATION = 0;</code>
+     * <code>SIMPLE_CALCULATION = 1;</code>
      */
-    SIMPLE_CALCULATION(0),
+    SIMPLE_CALCULATION(1),
     /**
      * <pre>
      * Includes the total result vectors of a simple calculation but calculates
@@ -181,9 +209,9 @@ public final class Proto {
      * in case of multi-output processes) to these total results.
      * </pre>
      *
-     * <code>CONTRIBUTION_ANALYSIS = 1;</code>
+     * <code>CONTRIBUTION_ANALYSIS = 2;</code>
      */
-    CONTRIBUTION_ANALYSIS(1),
+    CONTRIBUTION_ANALYSIS(2),
     /**
      * <pre>
      * Extends the contribution analysis by providing also the upstream results
@@ -193,9 +221,9 @@ public final class Proto {
      * demand of the process in the product system.
      * </pre>
      *
-     * <code>UPSTREAM_ANALYSIS = 2;</code>
+     * <code>UPSTREAM_ANALYSIS = 3;</code>
      */
-    UPSTREAM_ANALYSIS(2),
+    UPSTREAM_ANALYSIS(3),
     /**
      * <pre>
      * A regionalized calculation is a contribution analysis but with an LCIA
@@ -204,9 +232,9 @@ public final class Proto {
      * have geographic information assigned (point, line, or polygon shapes).
      * </pre>
      *
-     * <code>REGIONALIZED_CALCULATION = 3;</code>
+     * <code>REGIONALIZED_CALCULATION = 4;</code>
      */
-    REGIONALIZED_CALCULATION(3),
+    REGIONALIZED_CALCULATION(4),
     /**
      * <pre>
      * A Monte Carlo simulation generates for each run, of a given number of a
@@ -216,21 +244,30 @@ public final class Proto {
      * for that specific run.
      * </pre>
      *
-     * <code>MONTE_CARLO_SIMULATION = 4;</code>
+     * <code>MONTE_CARLO_SIMULATION = 5;</code>
      */
-    MONTE_CARLO_SIMULATION(4),
+    MONTE_CARLO_SIMULATION(5),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_CALCULATION_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_CALCULATION_TYPE_VALUE = 0;
+    /**
+     * <pre>
      * Calculates the total results for elementary flows, LCIA indicators, costs,
      * etc. of a product system.
      * </pre>
      *
-     * <code>SIMPLE_CALCULATION = 0;</code>
+     * <code>SIMPLE_CALCULATION = 1;</code>
      */
-    public static final int SIMPLE_CALCULATION_VALUE = 0;
+    public static final int SIMPLE_CALCULATION_VALUE = 1;
     /**
      * <pre>
      * Includes the total result vectors of a simple calculation but calculates
@@ -238,9 +275,9 @@ public final class Proto {
      * in case of multi-output processes) to these total results.
      * </pre>
      *
-     * <code>CONTRIBUTION_ANALYSIS = 1;</code>
+     * <code>CONTRIBUTION_ANALYSIS = 2;</code>
      */
-    public static final int CONTRIBUTION_ANALYSIS_VALUE = 1;
+    public static final int CONTRIBUTION_ANALYSIS_VALUE = 2;
     /**
      * <pre>
      * Extends the contribution analysis by providing also the upstream results
@@ -250,9 +287,9 @@ public final class Proto {
      * demand of the process in the product system.
      * </pre>
      *
-     * <code>UPSTREAM_ANALYSIS = 2;</code>
+     * <code>UPSTREAM_ANALYSIS = 3;</code>
      */
-    public static final int UPSTREAM_ANALYSIS_VALUE = 2;
+    public static final int UPSTREAM_ANALYSIS_VALUE = 3;
     /**
      * <pre>
      * A regionalized calculation is a contribution analysis but with an LCIA
@@ -261,9 +298,9 @@ public final class Proto {
      * have geographic information assigned (point, line, or polygon shapes).
      * </pre>
      *
-     * <code>REGIONALIZED_CALCULATION = 3;</code>
+     * <code>REGIONALIZED_CALCULATION = 4;</code>
      */
-    public static final int REGIONALIZED_CALCULATION_VALUE = 3;
+    public static final int REGIONALIZED_CALCULATION_VALUE = 4;
     /**
      * <pre>
      * A Monte Carlo simulation generates for each run, of a given number of a
@@ -273,9 +310,9 @@ public final class Proto {
      * for that specific run.
      * </pre>
      *
-     * <code>MONTE_CARLO_SIMULATION = 4;</code>
+     * <code>MONTE_CARLO_SIMULATION = 5;</code>
      */
-    public static final int MONTE_CARLO_SIMULATION_VALUE = 4;
+    public static final int MONTE_CARLO_SIMULATION_VALUE = 5;
 
 
     public final int getNumber() {
@@ -302,11 +339,12 @@ public final class Proto {
      */
     public static CalculationType forNumber(int value) {
       switch (value) {
-        case 0: return SIMPLE_CALCULATION;
-        case 1: return CONTRIBUTION_ANALYSIS;
-        case 2: return UPSTREAM_ANALYSIS;
-        case 3: return REGIONALIZED_CALCULATION;
-        case 4: return MONTE_CARLO_SIMULATION;
+        case 0: return UNDEFINED_CALCULATION_TYPE;
+        case 1: return SIMPLE_CALCULATION;
+        case 2: return CONTRIBUTION_ANALYSIS;
+        case 3: return UPSTREAM_ANALYSIS;
+        case 4: return REGIONALIZED_CALCULATION;
+        case 5: return MONTE_CARLO_SIMULATION;
         default: return null;
       }
     }
@@ -373,24 +411,42 @@ public final class Proto {
   public enum FlowPropertyType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ECONOMIC_QUANTITY = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_PROPERTY_TYPE = 0;</code>
      */
-    ECONOMIC_QUANTITY(0),
+    UNDEFINED_FLOW_PROPERTY_TYPE(0),
     /**
-     * <code>PHYSICAL_QUANTITY = 1;</code>
+     * <code>ECONOMIC_QUANTITY = 1;</code>
      */
-    PHYSICAL_QUANTITY(1),
+    ECONOMIC_QUANTITY(1),
+    /**
+     * <code>PHYSICAL_QUANTITY = 2;</code>
+     */
+    PHYSICAL_QUANTITY(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>ECONOMIC_QUANTITY = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_PROPERTY_TYPE = 0;</code>
      */
-    public static final int ECONOMIC_QUANTITY_VALUE = 0;
+    public static final int UNDEFINED_FLOW_PROPERTY_TYPE_VALUE = 0;
     /**
-     * <code>PHYSICAL_QUANTITY = 1;</code>
+     * <code>ECONOMIC_QUANTITY = 1;</code>
      */
-    public static final int PHYSICAL_QUANTITY_VALUE = 1;
+    public static final int ECONOMIC_QUANTITY_VALUE = 1;
+    /**
+     * <code>PHYSICAL_QUANTITY = 2;</code>
+     */
+    public static final int PHYSICAL_QUANTITY_VALUE = 2;
 
 
     public final int getNumber() {
@@ -417,8 +473,9 @@ public final class Proto {
      */
     public static FlowPropertyType forNumber(int value) {
       switch (value) {
-        case 0: return ECONOMIC_QUANTITY;
-        case 1: return PHYSICAL_QUANTITY;
+        case 0: return UNDEFINED_FLOW_PROPERTY_TYPE;
+        case 1: return ECONOMIC_QUANTITY;
+        case 2: return PHYSICAL_QUANTITY;
         default: return null;
       }
     }
@@ -485,32 +542,50 @@ public final class Proto {
   public enum FlowType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ELEMENTARY_FLOW = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_TYPE = 0;</code>
      */
-    ELEMENTARY_FLOW(0),
+    UNDEFINED_FLOW_TYPE(0),
     /**
-     * <code>PRODUCT_FLOW = 1;</code>
+     * <code>ELEMENTARY_FLOW = 1;</code>
      */
-    PRODUCT_FLOW(1),
+    ELEMENTARY_FLOW(1),
     /**
-     * <code>WASTE_FLOW = 2;</code>
+     * <code>PRODUCT_FLOW = 2;</code>
      */
-    WASTE_FLOW(2),
+    PRODUCT_FLOW(2),
+    /**
+     * <code>WASTE_FLOW = 3;</code>
+     */
+    WASTE_FLOW(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>ELEMENTARY_FLOW = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_TYPE = 0;</code>
      */
-    public static final int ELEMENTARY_FLOW_VALUE = 0;
+    public static final int UNDEFINED_FLOW_TYPE_VALUE = 0;
     /**
-     * <code>PRODUCT_FLOW = 1;</code>
+     * <code>ELEMENTARY_FLOW = 1;</code>
      */
-    public static final int PRODUCT_FLOW_VALUE = 1;
+    public static final int ELEMENTARY_FLOW_VALUE = 1;
     /**
-     * <code>WASTE_FLOW = 2;</code>
+     * <code>PRODUCT_FLOW = 2;</code>
      */
-    public static final int WASTE_FLOW_VALUE = 2;
+    public static final int PRODUCT_FLOW_VALUE = 2;
+    /**
+     * <code>WASTE_FLOW = 3;</code>
+     */
+    public static final int WASTE_FLOW_VALUE = 3;
 
 
     public final int getNumber() {
@@ -537,9 +612,10 @@ public final class Proto {
      */
     public static FlowType forNumber(int value) {
       switch (value) {
-        case 0: return ELEMENTARY_FLOW;
-        case 1: return PRODUCT_FLOW;
-        case 2: return WASTE_FLOW;
+        case 0: return UNDEFINED_FLOW_TYPE;
+        case 1: return ELEMENTARY_FLOW;
+        case 2: return PRODUCT_FLOW;
+        case 3: return WASTE_FLOW;
         default: return null;
       }
     }
@@ -606,128 +682,146 @@ public final class Proto {
   public enum ModelType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>PROJECT = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MODEL_TYPE = 0;</code>
      */
-    PROJECT(0),
+    UNDEFINED_MODEL_TYPE(0),
     /**
-     * <code>IMPACT_METHOD = 1;</code>
+     * <code>PROJECT = 1;</code>
      */
-    IMPACT_METHOD(1),
+    PROJECT(1),
     /**
-     * <code>IMPACT_CATEGORY = 2;</code>
+     * <code>IMPACT_METHOD = 2;</code>
      */
-    IMPACT_CATEGORY(2),
+    IMPACT_METHOD(2),
     /**
-     * <code>PRODUCT_SYSTEM = 3;</code>
+     * <code>IMPACT_CATEGORY = 3;</code>
      */
-    PRODUCT_SYSTEM(3),
+    IMPACT_CATEGORY(3),
     /**
-     * <code>PROCESS = 4;</code>
+     * <code>PRODUCT_SYSTEM = 4;</code>
      */
-    PROCESS(4),
+    PRODUCT_SYSTEM(4),
     /**
-     * <code>FLOW = 5;</code>
+     * <code>PROCESS = 5;</code>
      */
-    FLOW(5),
+    PROCESS(5),
     /**
-     * <code>FLOW_PROPERTY = 6;</code>
+     * <code>FLOW = 6;</code>
      */
-    FLOW_PROPERTY(6),
+    FLOW(6),
     /**
-     * <code>UNIT_GROUP = 7;</code>
+     * <code>FLOW_PROPERTY = 7;</code>
      */
-    UNIT_GROUP(7),
+    FLOW_PROPERTY(7),
     /**
-     * <code>UNIT = 8;</code>
+     * <code>UNIT_GROUP = 8;</code>
      */
-    UNIT(8),
+    UNIT_GROUP(8),
     /**
-     * <code>ACTOR = 9;</code>
+     * <code>UNIT = 9;</code>
      */
-    ACTOR(9),
+    UNIT(9),
     /**
-     * <code>SOURCE = 10;</code>
+     * <code>ACTOR = 10;</code>
      */
-    SOURCE(10),
+    ACTOR(10),
     /**
-     * <code>CATEGORY = 11;</code>
+     * <code>SOURCE = 11;</code>
      */
-    CATEGORY(11),
+    SOURCE(11),
     /**
-     * <code>LOCATION = 12;</code>
+     * <code>CATEGORY = 12;</code>
      */
-    LOCATION(12),
+    CATEGORY(12),
     /**
-     * <code>NW_SET = 13;</code>
+     * <code>LOCATION = 13;</code>
      */
-    NW_SET(13),
+    LOCATION(13),
     /**
-     * <code>SOCIAL_INDICATOR = 14;</code>
+     * <code>NW_SET = 14;</code>
      */
-    SOCIAL_INDICATOR(14),
+    NW_SET(14),
+    /**
+     * <code>SOCIAL_INDICATOR = 15;</code>
+     */
+    SOCIAL_INDICATOR(15),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>PROJECT = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MODEL_TYPE = 0;</code>
      */
-    public static final int PROJECT_VALUE = 0;
+    public static final int UNDEFINED_MODEL_TYPE_VALUE = 0;
     /**
-     * <code>IMPACT_METHOD = 1;</code>
+     * <code>PROJECT = 1;</code>
      */
-    public static final int IMPACT_METHOD_VALUE = 1;
+    public static final int PROJECT_VALUE = 1;
     /**
-     * <code>IMPACT_CATEGORY = 2;</code>
+     * <code>IMPACT_METHOD = 2;</code>
      */
-    public static final int IMPACT_CATEGORY_VALUE = 2;
+    public static final int IMPACT_METHOD_VALUE = 2;
     /**
-     * <code>PRODUCT_SYSTEM = 3;</code>
+     * <code>IMPACT_CATEGORY = 3;</code>
      */
-    public static final int PRODUCT_SYSTEM_VALUE = 3;
+    public static final int IMPACT_CATEGORY_VALUE = 3;
     /**
-     * <code>PROCESS = 4;</code>
+     * <code>PRODUCT_SYSTEM = 4;</code>
      */
-    public static final int PROCESS_VALUE = 4;
+    public static final int PRODUCT_SYSTEM_VALUE = 4;
     /**
-     * <code>FLOW = 5;</code>
+     * <code>PROCESS = 5;</code>
      */
-    public static final int FLOW_VALUE = 5;
+    public static final int PROCESS_VALUE = 5;
     /**
-     * <code>FLOW_PROPERTY = 6;</code>
+     * <code>FLOW = 6;</code>
      */
-    public static final int FLOW_PROPERTY_VALUE = 6;
+    public static final int FLOW_VALUE = 6;
     /**
-     * <code>UNIT_GROUP = 7;</code>
+     * <code>FLOW_PROPERTY = 7;</code>
      */
-    public static final int UNIT_GROUP_VALUE = 7;
+    public static final int FLOW_PROPERTY_VALUE = 7;
     /**
-     * <code>UNIT = 8;</code>
+     * <code>UNIT_GROUP = 8;</code>
      */
-    public static final int UNIT_VALUE = 8;
+    public static final int UNIT_GROUP_VALUE = 8;
     /**
-     * <code>ACTOR = 9;</code>
+     * <code>UNIT = 9;</code>
      */
-    public static final int ACTOR_VALUE = 9;
+    public static final int UNIT_VALUE = 9;
     /**
-     * <code>SOURCE = 10;</code>
+     * <code>ACTOR = 10;</code>
      */
-    public static final int SOURCE_VALUE = 10;
+    public static final int ACTOR_VALUE = 10;
     /**
-     * <code>CATEGORY = 11;</code>
+     * <code>SOURCE = 11;</code>
      */
-    public static final int CATEGORY_VALUE = 11;
+    public static final int SOURCE_VALUE = 11;
     /**
-     * <code>LOCATION = 12;</code>
+     * <code>CATEGORY = 12;</code>
      */
-    public static final int LOCATION_VALUE = 12;
+    public static final int CATEGORY_VALUE = 12;
     /**
-     * <code>NW_SET = 13;</code>
+     * <code>LOCATION = 13;</code>
      */
-    public static final int NW_SET_VALUE = 13;
+    public static final int LOCATION_VALUE = 13;
     /**
-     * <code>SOCIAL_INDICATOR = 14;</code>
+     * <code>NW_SET = 14;</code>
      */
-    public static final int SOCIAL_INDICATOR_VALUE = 14;
+    public static final int NW_SET_VALUE = 14;
+    /**
+     * <code>SOCIAL_INDICATOR = 15;</code>
+     */
+    public static final int SOCIAL_INDICATOR_VALUE = 15;
 
 
     public final int getNumber() {
@@ -754,21 +848,22 @@ public final class Proto {
      */
     public static ModelType forNumber(int value) {
       switch (value) {
-        case 0: return PROJECT;
-        case 1: return IMPACT_METHOD;
-        case 2: return IMPACT_CATEGORY;
-        case 3: return PRODUCT_SYSTEM;
-        case 4: return PROCESS;
-        case 5: return FLOW;
-        case 6: return FLOW_PROPERTY;
-        case 7: return UNIT_GROUP;
-        case 8: return UNIT;
-        case 9: return ACTOR;
-        case 10: return SOURCE;
-        case 11: return CATEGORY;
-        case 12: return LOCATION;
-        case 13: return NW_SET;
-        case 14: return SOCIAL_INDICATOR;
+        case 0: return UNDEFINED_MODEL_TYPE;
+        case 1: return PROJECT;
+        case 2: return IMPACT_METHOD;
+        case 3: return IMPACT_CATEGORY;
+        case 4: return PRODUCT_SYSTEM;
+        case 5: return PROCESS;
+        case 6: return FLOW;
+        case 7: return FLOW_PROPERTY;
+        case 8: return UNIT_GROUP;
+        case 9: return UNIT;
+        case 10: return ACTOR;
+        case 11: return SOURCE;
+        case 12: return CATEGORY;
+        case 13: return LOCATION;
+        case 14: return NW_SET;
+        case 15: return SOCIAL_INDICATOR;
         default: return null;
       }
     }
@@ -835,32 +930,50 @@ public final class Proto {
   public enum ParameterScope
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>PROCESS_SCOPE = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PARAMETER_SCOPE = 0;</code>
      */
-    PROCESS_SCOPE(0),
+    UNDEFINED_PARAMETER_SCOPE(0),
     /**
-     * <code>LCIA_METHOD_SCOPE = 1;</code>
+     * <code>PROCESS_SCOPE = 1;</code>
      */
-    LCIA_METHOD_SCOPE(1),
+    PROCESS_SCOPE(1),
     /**
-     * <code>GLOBAL_SCOPE = 2;</code>
+     * <code>LCIA_METHOD_SCOPE = 2;</code>
      */
-    GLOBAL_SCOPE(2),
+    LCIA_METHOD_SCOPE(2),
+    /**
+     * <code>GLOBAL_SCOPE = 3;</code>
+     */
+    GLOBAL_SCOPE(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>PROCESS_SCOPE = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PARAMETER_SCOPE = 0;</code>
      */
-    public static final int PROCESS_SCOPE_VALUE = 0;
+    public static final int UNDEFINED_PARAMETER_SCOPE_VALUE = 0;
     /**
-     * <code>LCIA_METHOD_SCOPE = 1;</code>
+     * <code>PROCESS_SCOPE = 1;</code>
      */
-    public static final int LCIA_METHOD_SCOPE_VALUE = 1;
+    public static final int PROCESS_SCOPE_VALUE = 1;
     /**
-     * <code>GLOBAL_SCOPE = 2;</code>
+     * <code>LCIA_METHOD_SCOPE = 2;</code>
      */
-    public static final int GLOBAL_SCOPE_VALUE = 2;
+    public static final int LCIA_METHOD_SCOPE_VALUE = 2;
+    /**
+     * <code>GLOBAL_SCOPE = 3;</code>
+     */
+    public static final int GLOBAL_SCOPE_VALUE = 3;
 
 
     public final int getNumber() {
@@ -887,9 +1000,10 @@ public final class Proto {
      */
     public static ParameterScope forNumber(int value) {
       switch (value) {
-        case 0: return PROCESS_SCOPE;
-        case 1: return LCIA_METHOD_SCOPE;
-        case 2: return GLOBAL_SCOPE;
+        case 0: return UNDEFINED_PARAMETER_SCOPE;
+        case 1: return PROCESS_SCOPE;
+        case 2: return LCIA_METHOD_SCOPE;
+        case 3: return GLOBAL_SCOPE;
         default: return null;
       }
     }
@@ -952,24 +1066,42 @@ public final class Proto {
   public enum ProcessType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>LCI_RESULT = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROCESS_TYPE = 0;</code>
      */
-    LCI_RESULT(0),
+    UNDEFINED_PROCESS_TYPE(0),
     /**
-     * <code>UNIT_PROCESS = 1;</code>
+     * <code>LCI_RESULT = 1;</code>
      */
-    UNIT_PROCESS(1),
+    LCI_RESULT(1),
+    /**
+     * <code>UNIT_PROCESS = 2;</code>
+     */
+    UNIT_PROCESS(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>LCI_RESULT = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROCESS_TYPE = 0;</code>
      */
-    public static final int LCI_RESULT_VALUE = 0;
+    public static final int UNDEFINED_PROCESS_TYPE_VALUE = 0;
     /**
-     * <code>UNIT_PROCESS = 1;</code>
+     * <code>LCI_RESULT = 1;</code>
      */
-    public static final int UNIT_PROCESS_VALUE = 1;
+    public static final int LCI_RESULT_VALUE = 1;
+    /**
+     * <code>UNIT_PROCESS = 2;</code>
+     */
+    public static final int UNIT_PROCESS_VALUE = 2;
 
 
     public final int getNumber() {
@@ -996,8 +1128,9 @@ public final class Proto {
      */
     public static ProcessType forNumber(int value) {
       switch (value) {
-        case 0: return LCI_RESULT;
-        case 1: return UNIT_PROCESS;
+        case 0: return UNDEFINED_PROCESS_TYPE;
+        case 1: return LCI_RESULT;
+        case 2: return UNIT_PROCESS;
         default: return null;
       }
     }
@@ -1065,40 +1198,58 @@ public final class Proto {
   public enum UncertaintyType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>LOG_NORMAL_DISTRIBUTION = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_UNCERTAINTY_TYPE = 0;</code>
      */
-    LOG_NORMAL_DISTRIBUTION(0),
+    UNDEFINED_UNCERTAINTY_TYPE(0),
     /**
-     * <code>NORMAL_DISTRIBUTION = 1;</code>
+     * <code>LOG_NORMAL_DISTRIBUTION = 1;</code>
      */
-    NORMAL_DISTRIBUTION(1),
+    LOG_NORMAL_DISTRIBUTION(1),
     /**
-     * <code>TRIANGLE_DISTRIBUTION = 2;</code>
+     * <code>NORMAL_DISTRIBUTION = 2;</code>
      */
-    TRIANGLE_DISTRIBUTION(2),
+    NORMAL_DISTRIBUTION(2),
     /**
-     * <code>UNIFORM_DISTRIBUTION = 3;</code>
+     * <code>TRIANGLE_DISTRIBUTION = 3;</code>
      */
-    UNIFORM_DISTRIBUTION(3),
+    TRIANGLE_DISTRIBUTION(3),
+    /**
+     * <code>UNIFORM_DISTRIBUTION = 4;</code>
+     */
+    UNIFORM_DISTRIBUTION(4),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>LOG_NORMAL_DISTRIBUTION = 0;</code>
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_UNCERTAINTY_TYPE = 0;</code>
      */
-    public static final int LOG_NORMAL_DISTRIBUTION_VALUE = 0;
+    public static final int UNDEFINED_UNCERTAINTY_TYPE_VALUE = 0;
     /**
-     * <code>NORMAL_DISTRIBUTION = 1;</code>
+     * <code>LOG_NORMAL_DISTRIBUTION = 1;</code>
      */
-    public static final int NORMAL_DISTRIBUTION_VALUE = 1;
+    public static final int LOG_NORMAL_DISTRIBUTION_VALUE = 1;
     /**
-     * <code>TRIANGLE_DISTRIBUTION = 2;</code>
+     * <code>NORMAL_DISTRIBUTION = 2;</code>
      */
-    public static final int TRIANGLE_DISTRIBUTION_VALUE = 2;
+    public static final int NORMAL_DISTRIBUTION_VALUE = 2;
     /**
-     * <code>UNIFORM_DISTRIBUTION = 3;</code>
+     * <code>TRIANGLE_DISTRIBUTION = 3;</code>
      */
-    public static final int UNIFORM_DISTRIBUTION_VALUE = 3;
+    public static final int TRIANGLE_DISTRIBUTION_VALUE = 3;
+    /**
+     * <code>UNIFORM_DISTRIBUTION = 4;</code>
+     */
+    public static final int UNIFORM_DISTRIBUTION_VALUE = 4;
 
 
     public final int getNumber() {
@@ -1125,10 +1276,11 @@ public final class Proto {
      */
     public static UncertaintyType forNumber(int value) {
       switch (value) {
-        case 0: return LOG_NORMAL_DISTRIBUTION;
-        case 1: return NORMAL_DISTRIBUTION;
-        case 2: return TRIANGLE_DISTRIBUTION;
-        case 3: return UNIFORM_DISTRIBUTION;
+        case 0: return UNDEFINED_UNCERTAINTY_TYPE;
+        case 1: return LOG_NORMAL_DISTRIBUTION;
+        case 2: return NORMAL_DISTRIBUTION;
+        case 3: return TRIANGLE_DISTRIBUTION;
+        case 4: return UNIFORM_DISTRIBUTION;
         default: return null;
       }
     }
@@ -4650,7 +4802,7 @@ public final class Proto {
       if (productExchange_ != null) {
         output.writeMessage(2, getProductExchange());
       }
-      if (allocationType_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (allocationType_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         output.writeEnum(3, allocationType_);
       }
       if (value_ != 0D) {
@@ -4675,7 +4827,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getProductExchange());
       }
-      if (allocationType_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (allocationType_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, allocationType_);
       }
@@ -6492,7 +6644,7 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
-      if (calculationType_ != org.openlca.proto.Proto.CalculationType.SIMPLE_CALCULATION.getNumber()) {
+      if (calculationType_ != org.openlca.proto.Proto.CalculationType.UNDEFINED_CALCULATION_TYPE.getNumber()) {
         output.writeEnum(2, calculationType_);
       }
       if (productSystem_ != null) {
@@ -6507,7 +6659,7 @@ public final class Proto {
       if (nwSet_ != null) {
         output.writeMessage(6, getNwSet());
       }
-      if (allocationMethod_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (allocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         output.writeEnum(7, allocationMethod_);
       }
       for (int i = 0; i < parameterRedefs_.size(); i++) {
@@ -6534,7 +6686,7 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
-      if (calculationType_ != org.openlca.proto.Proto.CalculationType.SIMPLE_CALCULATION.getNumber()) {
+      if (calculationType_ != org.openlca.proto.Proto.CalculationType.UNDEFINED_CALCULATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, calculationType_);
       }
@@ -6554,7 +6706,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getNwSet());
       }
-      if (allocationMethod_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (allocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, allocationMethod_);
       }
@@ -9253,7 +9405,7 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
-      if (modelType_ != org.openlca.proto.Proto.ModelType.PROJECT.getNumber()) {
+      if (modelType_ != org.openlca.proto.Proto.ModelType.UNDEFINED_MODEL_TYPE.getNumber()) {
         output.writeEnum(8, modelType_);
       }
       unknownFields.writeTo(output);
@@ -9287,7 +9439,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
-      if (modelType_ != org.openlca.proto.Proto.ModelType.PROJECT.getNumber()) {
+      if (modelType_ != org.openlca.proto.Proto.ModelType.UNDEFINED_MODEL_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, modelType_);
       }
@@ -19336,7 +19488,7 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
-      if (flowType_ != org.openlca.proto.Proto.FlowType.ELEMENTARY_FLOW.getNumber()) {
+      if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         output.writeEnum(8, flowType_);
       }
       if (!getCasBytes().isEmpty()) {
@@ -19382,7 +19534,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
-      if (flowType_ != org.openlca.proto.Proto.FlowType.ELEMENTARY_FLOW.getNumber()) {
+      if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, flowType_);
       }
@@ -28465,7 +28617,7 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
-      if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.ECONOMIC_QUANTITY.getNumber()) {
+      if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.UNDEFINED_FLOW_PROPERTY_TYPE.getNumber()) {
         output.writeEnum(8, flowPropertyType_);
       }
       if (unitGroup_ != null) {
@@ -28502,7 +28654,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
-      if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.ECONOMIC_QUANTITY.getNumber()) {
+      if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.UNDEFINED_FLOW_PROPERTY_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, flowPropertyType_);
       }
@@ -31358,7 +31510,7 @@ public final class Proto {
       if (!getLocationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
       }
-      if (flowType_ != org.openlca.proto.Proto.FlowType.ELEMENTARY_FLOW.getNumber()) {
+      if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         output.writeEnum(3, flowType_);
       }
       unknownFields.writeTo(output);
@@ -31376,7 +31528,7 @@ public final class Proto {
       if (!getLocationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
       }
-      if (flowType_ != org.openlca.proto.Proto.FlowType.ELEMENTARY_FLOW.getNumber()) {
+      if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, flowType_);
       }
@@ -44561,7 +44713,7 @@ public final class Proto {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
       }
-      if (parameterScope_ != org.openlca.proto.Proto.ParameterScope.PROCESS_SCOPE.getNumber()) {
+      if (parameterScope_ != org.openlca.proto.Proto.ParameterScope.UNDEFINED_PARAMETER_SCOPE.getNumber()) {
         output.writeEnum(4, parameterScope_);
       }
       if (inputParameter_ != false) {
@@ -44600,7 +44752,7 @@ public final class Proto {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
       }
-      if (parameterScope_ != org.openlca.proto.Proto.ParameterScope.PROCESS_SCOPE.getNumber()) {
+      if (parameterScope_ != org.openlca.proto.Proto.ParameterScope.UNDEFINED_PARAMETER_SCOPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, parameterScope_);
       }
@@ -48603,7 +48755,7 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
-      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         output.writeEnum(8, defaultAllocationMethod_);
       }
       for (int i = 0; i < allocationFactors_.size(); i++) {
@@ -48621,7 +48773,7 @@ public final class Proto {
       if (processDocumentation_ != null) {
         output.writeMessage(13, getProcessDocumentation());
       }
-      if (processType_ != org.openlca.proto.Proto.ProcessType.LCI_RESULT.getNumber()) {
+      if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         output.writeEnum(14, processType_);
       }
       if (dqSystem_ != null) {
@@ -48667,7 +48819,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
-      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.PHYSICAL_ALLOCATION.getNumber()) {
+      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, defaultAllocationMethod_);
       }
@@ -48691,7 +48843,7 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getProcessDocumentation());
       }
-      if (processType_ != org.openlca.proto.Proto.ProcessType.LCI_RESULT.getNumber()) {
+      if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, processType_);
       }
@@ -58474,7 +58626,7 @@ public final class Proto {
       if (!getLocationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, location_);
       }
-      if (processType_ != org.openlca.proto.Proto.ProcessType.LCI_RESULT.getNumber()) {
+      if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         output.writeEnum(2, processType_);
       }
       unknownFields.writeTo(output);
@@ -58489,7 +58641,7 @@ public final class Proto {
       if (!getLocationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, location_);
       }
-      if (processType_ != org.openlca.proto.Proto.ProcessType.LCI_RESULT.getNumber()) {
+      if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, processType_);
       }
@@ -72588,7 +72740,7 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
-      if (distributionType_ != org.openlca.proto.Proto.UncertaintyType.LOG_NORMAL_DISTRIBUTION.getNumber()) {
+      if (distributionType_ != org.openlca.proto.Proto.UncertaintyType.UNDEFINED_UNCERTAINTY_TYPE.getNumber()) {
         output.writeEnum(2, distributionType_);
       }
       if (mean_ != 0D) {
@@ -72645,7 +72797,7 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
-      if (distributionType_ != org.openlca.proto.Proto.UncertaintyType.LOG_NORMAL_DISTRIBUTION.getNumber()) {
+      if (distributionType_ != org.openlca.proto.Proto.UncertaintyType.UNDEFINED_UNCERTAINTY_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, distributionType_);
       }
@@ -79403,30 +79555,36 @@ public final class Proto {
       "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\022\n\nlastChang" +
       "e\030\006 \001(\t\022\026\n\010category\030\007 \001(\0132\004.Ref\022!\n\023defau" +
       "ltFlowProperty\030\010 \001(\0132\004.Ref\022\024\n\005units\030\t \003(" +
-      "\0132\005.Unit*\210\001\n\016AllocationType\022\027\n\023PHYSICAL_" +
-      "ALLOCATION\020\000\022\027\n\023ECONOMIC_ALLOCATION\020\001\022\025\n" +
-      "\021CAUSAL_ALLOCATION\020\002\022\032\n\026USE_DEFAULT_ALLO" +
-      "CATION\020\003\022\021\n\rNO_ALLOCATION\020\004*\225\001\n\017Calculat" +
-      "ionType\022\026\n\022SIMPLE_CALCULATION\020\000\022\031\n\025CONTR" +
-      "IBUTION_ANALYSIS\020\001\022\025\n\021UPSTREAM_ANALYSIS\020" +
-      "\002\022\034\n\030REGIONALIZED_CALCULATION\020\003\022\032\n\026MONTE" +
-      "_CARLO_SIMULATION\020\004*@\n\020FlowPropertyType\022" +
-      "\025\n\021ECONOMIC_QUANTITY\020\000\022\025\n\021PHYSICAL_QUANT" +
-      "ITY\020\001*A\n\010FlowType\022\023\n\017ELEMENTARY_FLOW\020\000\022\020" +
-      "\n\014PRODUCT_FLOW\020\001\022\016\n\nWASTE_FLOW\020\002*\355\001\n\tMod" +
-      "elType\022\013\n\007PROJECT\020\000\022\021\n\rIMPACT_METHOD\020\001\022\023" +
-      "\n\017IMPACT_CATEGORY\020\002\022\022\n\016PRODUCT_SYSTEM\020\003\022" +
-      "\013\n\007PROCESS\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_PROPERTY\020" +
-      "\006\022\016\n\nUNIT_GROUP\020\007\022\010\n\004UNIT\020\010\022\t\n\005ACTOR\020\t\022\n" +
-      "\n\006SOURCE\020\n\022\014\n\010CATEGORY\020\013\022\014\n\010LOCATION\020\014\022\n" +
-      "\n\006NW_SET\020\r\022\024\n\020SOCIAL_INDICATOR\020\016*L\n\016Para" +
-      "meterScope\022\021\n\rPROCESS_SCOPE\020\000\022\025\n\021LCIA_ME" +
-      "THOD_SCOPE\020\001\022\020\n\014GLOBAL_SCOPE\020\002*/\n\013Proces" +
-      "sType\022\016\n\nLCI_RESULT\020\000\022\020\n\014UNIT_PROCESS\020\001*" +
-      "|\n\017UncertaintyType\022\033\n\027LOG_NORMAL_DISTRIB" +
-      "UTION\020\000\022\027\n\023NORMAL_DISTRIBUTION\020\001\022\031\n\025TRIA" +
-      "NGLE_DISTRIBUTION\020\002\022\030\n\024UNIFORM_DISTRIBUT" +
-      "ION\020\003B\032\n\021org.openlca.protoB\005Protob\006proto" +
+      "\0132\005.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED" +
+      "_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATIO" +
+      "N\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_A" +
+      "LLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022" +
+      "\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036" +
+      "\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE" +
+      "_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020" +
+      "\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED" +
+      "_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION" +
+      "\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW" +
+      "_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022" +
+      "\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UN" +
+      "DEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001" +
+      "\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tM" +
+      "odelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PR" +
+      "OJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CAT" +
+      "EGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005" +
+      "\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GR" +
+      "OUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014" +
+      "\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024" +
+      "\n\020SOCIAL_INDICATOR\020\017*k\n\016ParameterScope\022\035" +
+      "\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS" +
+      "_SCOPE\020\001\022\025\n\021LCIA_METHOD_SCOPE\020\002\022\020\n\014GLOBA" +
+      "L_SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PR" +
+      "OCESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PRO" +
+      "CESS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_" +
+      "UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIB" +
+      "UTION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIA" +
+      "NGLE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUT" +
+      "ION\020\004B\032\n\021org.openlca.protoB\005Protob\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

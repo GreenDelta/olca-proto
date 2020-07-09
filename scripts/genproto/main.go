@@ -76,41 +76,28 @@ func main() {
 
 	// parse the YAML files
 	yamlDir := filepath.Join(os.Args[1], "yaml")
-	files, err := ioutil.ReadDir(yamlDir)
-	check(err, "failed to read YAML files from", yamlDir)
-	types := make(map[string]*TypeDef)
-	list := make([]*TypeDef, 0)
-	for _, file := range files {
-		name := file.Name()
-		if !strings.HasSuffix(name, ".yaml") {
-			continue
-		}
-		fmt.Println("Parse YAML file", name)
-		path := filepath.Join(yamlDir, name)
-		data, err := ioutil.ReadFile(path)
-		check(err, "failed to read file", name)
-		typeDef := &TypeDef{}
-		err = yaml.Unmarshal(data, typeDef)
-		check(err, "failed to parse file", name)
-		fmt.Println("Parsed", typeDef)
-		types[typeDef.name()] = typeDef
-		list = append(list, typeDef)
+	types := collectTypes(yamlDir)
+	typeMap := make(map[string]*TypeDef)
+	for i := range types {
+		typeDef := types[i]
+		typeMap[typeDef.name()] = typeDef
 	}
-	fmt.Println("Collected", len(types), "types")
 
-	// create the message types
 	var buff bytes.Buffer
 	buff.WriteString(`syntax = "proto3";
-option java_package = "org.openlca.proto";
-option java_outer_classname = "Proto";
+	option java_package = "org.openlca.proto";
+	option java_outer_classname = "Proto";
 
-`)
-	for _, typeDef := range list {
+	`)
+
+	// write the message and enumeration types
+	for _, typeDef := range types {
 		switch typeDef.name() {
 		case "Entity", "RootEntity", "CategorizedEntity":
 			continue
 		}
 
+		// write a class definition
 		class := typeDef.Class
 		if class != nil {
 			comment := formatComment(class.Doc, "")
@@ -118,11 +105,12 @@ option java_outer_classname = "Proto";
 				buff.WriteString(comment)
 			}
 			buff.WriteString("message " + class.Name + " {\n\n")
-			fields(class, &buff, types, 1)
+			fields(class, &buff, typeMap, 1)
 			buff.WriteString("}\n\n")
 			continue
 		}
 
+		// write an enumeration
 		enum := typeDef.Enum
 		if enum != nil {
 			comment := formatComment(enum.Doc, "")
@@ -132,7 +120,7 @@ option java_outer_classname = "Proto";
 			buff.WriteString("enum " + enum.Name + " {\n\n")
 			buff.WriteString("  // This default option was added automatically\n")
 			buff.WriteString("  // and means that no values was set.\n")
-			buff.WriteString("  UNDEFINED = 0;\n\n")
+			buff.WriteString("  " + undefinedOf(enum) + " = 0;\n\n")
 			for i, item := range enum.Items {
 				comment := formatComment(item.Doc, "  ")
 				if comment != "" {
@@ -150,11 +138,38 @@ option java_outer_classname = "Proto";
 		fmt.Println(buff.String())
 	} else {
 		outFile := os.Args[2]
-		err = ioutil.WriteFile(outFile, buff.Bytes(), os.ModePerm)
+		err := ioutil.WriteFile(outFile, buff.Bytes(), os.ModePerm)
 		check(err, "failed to write to file", outFile)
 	}
 }
 
+// Collects the type definitions from the YAML files in the given folder.
+func collectTypes(yamlDir string) []*TypeDef {
+	files, err := ioutil.ReadDir(yamlDir)
+	check(err, "failed to read YAML files from", yamlDir)
+	types := make([]*TypeDef, 0)
+	for _, file := range files {
+		name := file.Name()
+		if !strings.HasSuffix(name, ".yaml") {
+			continue
+		}
+		fmt.Println("Parse YAML file", name)
+		path := filepath.Join(yamlDir, name)
+		data, err := ioutil.ReadFile(path)
+		check(err, "failed to read file", name)
+		typeDef := &TypeDef{}
+		err = yaml.Unmarshal(data, typeDef)
+		check(err, "failed to parse file", name)
+		fmt.Println("Parsed", typeDef)
+		types = append(types, typeDef)
+	}
+	fmt.Println("Collected", len(types), "types")
+	return types
+}
+
+// Writes the fields of the given class to the given buffer. This function
+// climbs up the class hierarchy and inlines the fields of the correponding
+// super classes (as there is no extension mechanism in proto3).
 func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offset int) int {
 	count := offset
 	if class.SuperClass != "" {
@@ -192,6 +207,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	return count
 }
 
+// Maps the given olca-schema type to a corresponding proto3 type.
 func mapType(schemaType string) string {
 	switch schemaType {
 	case "string", "double", "float":
@@ -207,7 +223,6 @@ func mapType(schemaType string) string {
 	if strings.HasPrefix(schemaType, "Ref[") {
 		return "Ref"
 	}
-
 	if strings.HasPrefix(schemaType, "List[") {
 		t := strings.TrimSuffix(
 			strings.TrimPrefix(schemaType, "List["), "]")
@@ -217,6 +232,7 @@ func mapType(schemaType string) string {
 	return schemaType
 }
 
+// Formats the given comment to have a line lenght of max. 80 characters.
 func formatComment(comment string, indent string) string {
 	if strings.TrimSpace(comment) == "" {
 		return ""
@@ -258,6 +274,20 @@ func formatComment(comment string, indent string) string {
 		text += line + "\n"
 	}
 	return text
+}
+
+// Generates the name of the `UNDEFINED` option for the given
+// enumeration type. As this option has to have a unique name
+// we include the name of the enumration into that name.
+func undefinedOf(enum *EnumDef) string {
+	var buff bytes.Buffer
+	for _, char := range enum.Name {
+		if unicode.IsUpper(char) {
+			buff.WriteRune('_')
+		}
+		buff.WriteRune(char)
+	}
+	return "UNDEFINED" + strings.ToUpper(buff.String())
 }
 
 func check(err error, msg ...interface{}) {

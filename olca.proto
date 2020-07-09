@@ -1,8 +1,8 @@
 syntax = "proto3";
-option java_package = "org.openlca.proto";
-option java_outer_classname = "Proto";
+	option java_package = "org.openlca.proto";
+	option java_outer_classname = "Proto";
 
-// An actor is a person or organisation.
+	// An actor is a person or organisation.
 message Actor {
 
   // The type name of the respectiven entity.
@@ -78,7 +78,7 @@ enum AllocationType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_ALLOCATION_TYPE = 0;
 
   PHYSICAL_ALLOCATION = 1;
 
@@ -137,7 +137,7 @@ enum CalculationType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_CALCULATION_TYPE = 0;
 
   // Calculates the total results for elementary flows, LCIA indicators, costs,
   // etc. of a product system.
@@ -560,7 +560,7 @@ enum FlowPropertyType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_FLOW_PROPERTY_TYPE = 0;
 
   ECONOMIC_QUANTITY = 1;
 
@@ -606,7 +606,7 @@ enum FlowType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_FLOW_TYPE = 0;
 
   ELEMENTARY_FLOW = 1;
 
@@ -778,7 +778,7 @@ enum ModelType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_MODEL_TYPE = 0;
 
   PROJECT = 1;
 
@@ -876,7 +876,7 @@ enum ParameterScope {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_PARAMETER_SCOPE = 0;
 
   PROCESS_SCOPE = 1;
 
@@ -1044,7 +1044,7 @@ enum ProcessType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_PROCESS_TYPE = 0;
 
   LCI_RESULT = 1;
 
@@ -1298,7 +1298,7 @@ enum UncertaintyType {
 
   // This default option was added automatically
   // and means that no values was set.
-  UNDEFINED = 0;
+  UNDEFINED_UNCERTAINTY_TYPE = 0;
 
   LOG_NORMAL_DISTRIBUTION = 1;
 
