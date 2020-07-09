@@ -67,6 +67,15 @@ type EnumItem struct {
 	Doc  string `yaml:"doc"`
 }
 
+// ProtoHeader is the file header that is written to the
+// generated proto3 file. This is the place where you want
+// to define global options
+const ProtoHeader = `syntax = "proto3";
+option java_package = "org.openlca.proto";
+option java_outer_classname = "Proto";
+
+`
+
 func main() {
 
 	if len(os.Args) < 2 {
@@ -84,11 +93,7 @@ func main() {
 	}
 
 	var buff bytes.Buffer
-	buff.WriteString(`syntax = "proto3";
-	option java_package = "org.openlca.proto";
-	option java_outer_classname = "Proto";
-
-	`)
+	buff.WriteString(ProtoHeader)
 
 	// write the message and enumeration types
 	for _, typeDef := range types {
