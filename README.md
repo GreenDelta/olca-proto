@@ -72,11 +72,24 @@ This will generate the same output as for the Java version above.
 
 __Go__
 
-To generate the `Go` package, you need put the current
-[Go plugin](https://github.com/protocolbuffers/protobuf-go) of the protocol
-buffers compiler in your path.
+To generate the `Go` package, you need put the
+[Go plugin protoc-gen-go](https://github.com/protocolbuffers/protobuf-go) of the
+protocol buffers compiler in your path.
+
+```go
+func main() {
+  id, _ := uuid.NewRandom()
+  flow := &proto.Flow{
+    Type:     "Flow",
+    Id:       id.String(),
+    Name:     "Steel",
+    FlowType: proto.FlowType_PRODUCT_FLOW,
+  }
+  json := protojson.Format(flow)
+  fmt.Println(string(json))
+}
+```
 
 
 __TODO__
 * move Java version to sub-folder
-* test / generate Go version
