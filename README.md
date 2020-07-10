@@ -89,7 +89,3 @@ func main() {
   fmt.Println(string(json))
 }
 ```
-
-
-__TODO__
-* move Java version to sub-folder

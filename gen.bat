@@ -1,7 +1,7 @@
 @echo off
 
 rem Java
-protoc olca.proto --java_out=src\main\java
+protoc olca.proto --java_out=java\src\main\java
 
 rem Python
 protoc olca.proto --python_out=python/protolca --mypy_out=python/protolca
