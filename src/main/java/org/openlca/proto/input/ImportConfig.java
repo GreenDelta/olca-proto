@@ -11,6 +11,7 @@ import org.openlca.core.model.Version;
 import org.openlca.jsonld.Json;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.ProtoStore;
+import org.openlca.util.Strings;
 
 public class ImportConfig {
 
@@ -49,7 +50,7 @@ public class ImportConfig {
       || updateMode == UpdateMode.NEVER;
   }
 
-  boolean shouldUpdate(RootEntity e, String version, String lastChange) {
+  boolean shouldUpdate(RootEntity e, ProtoWrap wrap) {
     if (e == null)
       return false;
     if (noUpdates())
@@ -58,13 +59,13 @@ public class ImportConfig {
       return true;
 
     // check if
-    long v = version != null
-      ? Version.fromString(version).getValue()
+    long v = Strings.notEmpty(wrap.version())
+      ? Version.fromString(wrap.version()).getValue()
       : 0;
     if (v < e.version)
       return false;
-    var date = lastChange != null
-      ? Json.parseDate(lastChange)
+    var date = Strings.notEmpty(wrap.lastChange())
+      ? Json.parseDate(wrap.lastChange())
       : null;
     var time = date != null
       ? date.getTime()

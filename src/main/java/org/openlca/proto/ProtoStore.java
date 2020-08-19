@@ -6,4 +6,6 @@ public interface ProtoStore {
 
   Proto.Actor getActor(String id);
 
+  Proto.Source getSource(String id);
+
 }

@@ -2,10 +2,7 @@ package org.openlca.proto.input;
 
 import org.openlca.core.database.ActorDao;
 import org.openlca.core.model.Actor;
-import org.openlca.core.model.Version;
-import org.openlca.jsonld.Json;
 import org.openlca.proto.Proto;
-import org.openlca.util.Strings;
 
 public class ActorImport {
 
@@ -33,9 +30,9 @@ public class ActorImport {
     var proto = config.store.getActor(id);
     if (proto == null)
       return null;
+    var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(
-        actor, proto.getVersion(), proto.getLastChange()))
+      if (!config.shouldUpdate(actor, wrap))
         return actor;
     }
 
@@ -44,6 +41,7 @@ public class ActorImport {
       actor = new Actor();
       actor.refId = id;
     }
+    wrap.mapTo(actor, config);
     map(proto, actor);
 
     // insert it
@@ -56,35 +54,5 @@ public class ActorImport {
   }
 
   private void map(Proto.Actor proto, Actor actor) {
-
-    // root entity fields
-    actor.name = proto.getName();
-    actor.description = proto.getDescription();
-    var version = proto.getVersion();
-    if (Strings.notEmpty(version)) {
-      actor.version = Version.fromString(version).getValue();
-    }
-    var lastChange = proto.getLastChange();
-    if (Strings.notEmpty(lastChange)) {
-      var date = Json.parseDate(lastChange);
-      actor.lastChange = date != null
-        ? date.getTime()
-        : 0;
-    }
-
-    // categorized entity fields
-    var catID = proto.getCategory().getId();
-    if (Strings.notEmpty(catID)) {
-      actor.category = new CategoryImport(config).of(catID);
-    }
-    actor.tags = proto.getTagsList()
-      .stream()
-      .reduce((tag, tags) -> tags + "," + tag)
-      .orElse(null);
-    actor.library = Strings.notEmpty(proto.getLibrary())
-      ? proto.getLibrary()
-      : null;
-
-    // specific fields
   }
 }
