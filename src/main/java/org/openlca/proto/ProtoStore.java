@@ -8,4 +8,6 @@ public interface ProtoStore {
 
   Proto.Source getSource(String id);
 
+  Proto.Currency getCurrency(String id);
+
 }

@@ -30,6 +30,7 @@ abstract class ProtoWrap {
       return;
 
     // root entity fields
+    e.refId = id();
     e.name = name();
     e.description = description();
     var version = version();
@@ -147,6 +148,50 @@ abstract class ProtoWrap {
   }
 
   static ProtoWrap of(Proto.Source proto) {
+    return new ProtoWrap() {
+      @Override
+      String id() {
+        return proto.getId();
+      }
+
+      @Override
+      String name() {
+        return proto.getName();
+      }
+
+      @Override
+      String description() {
+        return proto.getDescription();
+      }
+
+      @Override
+      String version() {
+        return proto.getVersion();
+      }
+
+      @Override
+      String lastChange() {
+        return proto.getLastChange();
+      }
+
+      @Override
+      Proto.Ref category() {
+        return proto.getCategory();
+      }
+
+      @Override
+      ProtocolStringList tags() {
+        return proto.getTagsList();
+      }
+
+      @Override
+      String library() {
+        return proto.getLibrary();
+      }
+    };
+  }
+
+  static ProtoWrap of(Proto.Currency proto) {
     return new ProtoWrap() {
       @Override
       String id() {

@@ -43,7 +43,6 @@ public class CategoryImport {
 
     if (category == null) {
       category = new Category();
-      category.refId = id;
     }
     wrap.mapTo(category, config);
     map(proto, category);

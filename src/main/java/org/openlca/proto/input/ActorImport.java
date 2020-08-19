@@ -39,7 +39,6 @@ public class ActorImport {
     // map the data
     if (actor == null) {
       actor = new Actor();
-      actor.refId = id;
     }
     wrap.mapTo(actor, config);
     map(proto, actor);
@@ -54,5 +53,13 @@ public class ActorImport {
   }
 
   private void map(Proto.Actor proto, Actor actor) {
+    actor.address = proto.getAddress();
+    actor.city = proto.getCity();
+    actor.country = proto.getCountry();
+    actor.email = proto.getEmail();
+    actor.telefax = proto.getTelefax();
+    actor.telephone = proto.getTelephone();
+    actor.website = proto.getWebsite();
+    actor.zipCode = proto.getZipCode();
   }
 }

@@ -39,7 +39,6 @@ public class SourceImport {
     // map the data
     if (source == null) {
       source = new Source();
-      source.refId = id;
     }
     wrap.mapTo(source, config);
     map(proto, source);
@@ -54,6 +53,10 @@ public class SourceImport {
   }
 
   private void map(Proto.Source proto, Source source) {
+    source.url = proto.getUrl();
+    source.externalFile = proto.getExternalFile();
+    source.textReference = proto.getTextReference();
+    source.year = (short) proto.getYear();
   }
 }
 
