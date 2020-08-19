@@ -10,4 +10,8 @@ public interface ProtoStore {
 
   Proto.Currency getCurrency(String id);
 
+  Proto.UnitGroup getUnitGroup(String id);
+
+  Proto.FlowProperty getFlowProperty(String id);
+
 }
