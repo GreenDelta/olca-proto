@@ -31,21 +31,30 @@ message Actor {
   // The category of the entity.
   Ref category = 7;
 
-  string address = 8;
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
 
-  string city = 9;
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
 
-  string country = 10;
+  string address = 10;
 
-  string email = 11;
+  string city = 11;
 
-  string telefax = 12;
+  string country = 12;
 
-  string telephone = 13;
+  string email = 13;
 
-  string website = 14;
+  string telefax = 14;
 
-  string zip_code = 15;
+  string telephone = 15;
+
+  string website = 16;
+
+  string zip_code = 17;
 
 }
 
@@ -65,10 +74,14 @@ message AllocationFactor {
   // The value of the allocation factor.
   double value = 4;
 
+  // An optional formula from which the value of the allocation factor is
+  // calculated.
+  string formula = 5;
+
   // An input product or elementary flow exchange which is allocated by this
   // factor. This is only valid for causal allocation where allocation factors
   // can be assigned to single exchanges.
-  Exchange allocated_exchange = 5;
+  Exchange allocated_exchange = 6;
 
 }
 
@@ -202,8 +215,60 @@ message Category {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The type of models that can be linked to the category.
-  ModelType model_type = 8;
+  ModelType model_type = 10;
+
+}
+
+message Currency {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string last_change = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
+  string code = 10;
+
+  double conversion_factor = 11;
+
+  Ref reference_currency = 12;
 
 }
 
@@ -240,7 +305,28 @@ message DqScore {
 
 }
 
-// A data quality system.
+// A data quality system (DQS) in openLCA describes a pedigree matrix of $m$
+// data quality indicators (DQIs) and $n$ data quality scores (DQ scores). Such
+// a system can then be used to assess the data quality of processes and
+// exchanges by tagging them with an instance of the system $D$ where $D$ is a
+// $m * n$ matrix with an entry $d_{ij}$ containing the value of the data
+// quality score $j$ for indicator $i$. As each indicator in $D$ can only have
+// a single score value, $D$ can be stored in a vector $d$ where $d_i$ contains
+// the data quality score for indicator $i$. The possible values of the data
+// quality scores are defined as a linear order $1 \dots n$. In openLCA, the
+// data quality entry $d$ of a process or exchange is stored as a string like
+// `(3;2;4;n.a.;2)` which means the data quality score for the first indicator
+// is `3`, for the second `2` etc. A specific value is `n.a.` which stands for
+// _not applicable_. In calculations, these data quality entries can be
+// aggregated in different ways. For example, the data quality entry of a flow
+// $f$ with a contribution of `0.5 kg` and a data quality entry of
+// `(3;2;4;n.a.;2)` in a process $p$ and a contribution of `1.5 kg` and a data
+// quality entry of `(2;3;1;n.a.;5)` in a process $q$ could be aggregated to
+// `(2;3;2;n.a.;4)` by applying an weighted average and rounding. Finally,
+// custom labels like `A, B, C, ...` or `Very good, Good, Fair, ...` for the DQ
+// scores can be assigned by the user. These labels are then displayed instead
+// of `1, 2, 3 ...` in the user interface or result exports. However,
+// internally the numeric values are used in the data model and calculations.
 message DqSystem {
 
   // The type name of the respectiven entity.
@@ -267,11 +353,20 @@ message DqSystem {
   // The category of the entity.
   Ref category = 7;
 
-  bool has_uncertainties = 8;
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
 
-  Ref source = 9;
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
 
-  repeated DqIndicator indicators = 10;
+  bool has_uncertainties = 10;
+
+  Ref source = 11;
+
+  repeated DqIndicator indicators = 12;
 
 }
 
@@ -365,25 +460,34 @@ message Flow {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The type of the flow. Note that this type is more a descriptor of how the
   // flow is handled in calculations.
-  FlowType flow_type = 8;
+  FlowType flow_type = 10;
 
   // A CAS number of the flow.
-  string cas = 9;
+  string cas = 11;
 
   // A chemical formula of the flow.
-  string formula = 10;
+  string formula = 12;
 
   // The flow properties (quantities) in which amounts of the flow can be
   // expressed together with conversion factors between these flow flow
   // properties.
-  repeated FlowPropertyFactor flow_properties = 11;
+  repeated FlowPropertyFactor flow_properties = 13;
 
   // The location of the flow. Normally the location of a flow is defined by
   // the process location where the flow is an input or output. However, some
   // data formats define a location as a property of a flow.
-  Ref location = 12;
+  Ref location = 14;
 
 }
 
@@ -508,12 +612,21 @@ message FlowProperty {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The type of the flow property
-  FlowPropertyType flow_property_type = 8;
+  FlowPropertyType flow_property_type = 10;
 
   // The units of measure that can be used to express quantities of the flow
   // property.
-  Ref unit_group = 9;
+  Ref unit_group = 11;
 
 }
 
@@ -713,12 +826,21 @@ message ImpactMethod {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The LCIA categories of the method.
-  repeated ImpactCategoryRef impact_categories = 8;
+  repeated ImpactCategoryRef impact_categories = 10;
 
   // A set of method specific parameters which can be used in formulas of the
   // characterisation factors in this method.
-  repeated Parameter parameters = 9;
+  repeated Parameter parameters = 11;
 
 }
 
@@ -914,40 +1036,49 @@ message Process {
   // The category of the entity.
   Ref category = 7;
 
-  AllocationType default_allocation_method = 8;
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
 
-  repeated AllocationFactor allocation_factors = 9;
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
+  AllocationType default_allocation_method = 10;
+
+  repeated AllocationFactor allocation_factors = 11;
 
   // The inputs and outputs of the process.
-  repeated Exchange exchanges = 10;
+  repeated Exchange exchanges = 12;
 
-  Location location = 11;
+  Location location = 13;
 
-  repeated Parameter parameters = 12;
+  repeated Parameter parameters = 14;
 
-  ProcessDocumentation process_documentation = 13;
+  ProcessDocumentation process_documentation = 15;
 
-  ProcessType process_type = 14;
+  ProcessType process_type = 16;
 
   // A reference to a data quality system ([DqSystem]) with which the overall
   // quality of the process can be assessed.
-  Ref dq_system = 15;
+  Ref dq_system = 17;
 
   // A reference to a data quality system ([DqSystem]) with which the quality
   // of individual inputs and outputs ([Exchange]s) of the process can be
   // assessed.
-  Ref exchange_dq_system = 16;
+  Ref exchange_dq_system = 18;
 
   // A reference to a data quality system ([DqSystem]) with which the quality
   // of individual social aspects of the process can be assessed.
-  Ref social_dq_system = 17;
+  Ref social_dq_system = 19;
 
   // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
   // quality values that need to match the overall data quality system of the
   // process (the system that is stored in the `dqSystem` property). In such a
   // system the data quality indicators have fixed positions and the respective
   // values in the `dqEntry` vector map to these positions.
-  string dq_entry = 18;
+  string dq_entry = 20;
 
 }
 
@@ -1082,29 +1213,38 @@ message ProductSystem {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The descriptors of all processes that are contained in the product system.
-  repeated ProcessRef processes = 8;
+  repeated ProcessRef processes = 10;
 
   // The descriptor of the process that provides the flow of the functional
   // unit of the product system.
-  ProcessRef reference_process = 9;
+  ProcessRef reference_process = 11;
 
   // The exchange of the reference processes (typically the product output)
   // that provides the flow of the functional unit of the product system.
-  Exchange reference_exchange = 10;
+  Exchange reference_exchange = 12;
 
   // The flow amount of the functional unit of the product system.
-  double target_amount = 11;
+  double target_amount = 13;
 
   // The unit in which the flow amount of the functional unit is given.
-  Ref target_unit = 12;
+  Ref target_unit = 14;
 
   // The flow property in which the flow amount of the functional unit is
   // given.
-  Ref target_flow_property = 13;
+  Ref target_flow_property = 15;
 
   // The process links of the product system.
-  repeated ProcessLink process_links = 14;
+  repeated ProcessLink process_links = 16;
 
 }
 
@@ -1180,20 +1320,29 @@ message SocialIndicator {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The name of the activity variable of the indicator.
-  string activity_variable = 8;
+  string activity_variable = 10;
 
   // The quantity of the activity variable.
-  Ref activity_quantity = 9;
+  Ref activity_quantity = 11;
 
   // The unit of the activity variable.
-  Ref activity_unit = 10;
+  Ref activity_unit = 12;
 
   // The unit in which the indicator is measured.
-  string unit_of_measurement = 11;
+  string unit_of_measurement = 13;
 
   // Documentation of the evaluation scheme of the indicator.
-  string evaluation_scheme = 12;
+  string evaluation_scheme = 14;
 
 }
 
@@ -1224,18 +1373,26 @@ message Source {
   // The category of the entity.
   Ref category = 7;
 
-  // The digital object identifier of the source (see
-  // http://en.wikipedia.org/wiki/Digital_object_identifier).
-  string doi = 8;
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
+  // A URL that points to the source.
+  string url = 10;
 
   // The full text reference of the source.
-  string text_reference = 9;
+  string text_reference = 11;
 
   // The publication year of the source.
-  int32 year = 10;
+  int32 year = 12;
 
   // A direct link (relative or absolute URL) to the source file.
-  string external_file = 11;
+  string external_file = 13;
 
 }
 
@@ -1379,13 +1536,22 @@ message UnitGroup {
   // The category of the entity.
   Ref category = 7;
 
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // Some LCA data formats do not have the concept of flow properties or
   // quantities. This field provides a default link to a flow property for
   // units that are contained in this group.
-  Ref default_flow_property = 8;
+  Ref default_flow_property = 10;
 
   // The units of the unit group.
-  repeated Unit units = 9;
+  repeated Unit units = 11;
 
 }
 

@@ -1495,96 +1495,165 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>string address = 8;</code>
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <code>string address = 10;</code>
      * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 8;</code>
+     * <code>string address = 10;</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>string city = 9;</code>
+     * <code>string city = 11;</code>
      * @return The city.
      */
     java.lang.String getCity();
     /**
-     * <code>string city = 9;</code>
+     * <code>string city = 11;</code>
      * @return The bytes for city.
      */
     com.google.protobuf.ByteString
         getCityBytes();
 
     /**
-     * <code>string country = 10;</code>
+     * <code>string country = 12;</code>
      * @return The country.
      */
     java.lang.String getCountry();
     /**
-     * <code>string country = 10;</code>
+     * <code>string country = 12;</code>
      * @return The bytes for country.
      */
     com.google.protobuf.ByteString
         getCountryBytes();
 
     /**
-     * <code>string email = 11;</code>
+     * <code>string email = 13;</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 11;</code>
+     * <code>string email = 13;</code>
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>string telefax = 12;</code>
+     * <code>string telefax = 14;</code>
      * @return The telefax.
      */
     java.lang.String getTelefax();
     /**
-     * <code>string telefax = 12;</code>
+     * <code>string telefax = 14;</code>
      * @return The bytes for telefax.
      */
     com.google.protobuf.ByteString
         getTelefaxBytes();
 
     /**
-     * <code>string telephone = 13;</code>
+     * <code>string telephone = 15;</code>
      * @return The telephone.
      */
     java.lang.String getTelephone();
     /**
-     * <code>string telephone = 13;</code>
+     * <code>string telephone = 15;</code>
      * @return The bytes for telephone.
      */
     com.google.protobuf.ByteString
         getTelephoneBytes();
 
     /**
-     * <code>string website = 14;</code>
+     * <code>string website = 16;</code>
      * @return The website.
      */
     java.lang.String getWebsite();
     /**
-     * <code>string website = 14;</code>
+     * <code>string website = 16;</code>
      * @return The bytes for website.
      */
     com.google.protobuf.ByteString
         getWebsiteBytes();
 
     /**
-     * <code>string zip_code = 15;</code>
+     * <code>string zip_code = 17;</code>
      * @return The zipCode.
      */
     java.lang.String getZipCode();
     /**
-     * <code>string zip_code = 15;</code>
+     * <code>string zip_code = 17;</code>
      * @return The bytes for zipCode.
      */
     com.google.protobuf.ByteString
@@ -1613,6 +1682,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       address_ = "";
       city_ = "";
       country_ = "";
@@ -1643,6 +1714,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1704,47 +1776,62 @@ public final class Proto {
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              city_ = s;
+              library_ = s;
               break;
             }
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              country_ = s;
+              address_ = s;
               break;
             }
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              email_ = s;
+              city_ = s;
               break;
             }
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              telefax_ = s;
+              country_ = s;
               break;
             }
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              telephone_ = s;
+              email_ = s;
               break;
             }
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              website_ = s;
+              telefax_ = s;
               break;
             }
             case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              telephone_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              website_ = s;
+              break;
+            }
+            case 138: {
               java.lang.String s = input.readStringRequireUtf8();
 
               zipCode_ = s;
@@ -1765,6 +1852,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2102,10 +2192,115 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int ADDRESS_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 10;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 8;</code>
+     * <code>string address = 10;</code>
      * @return The address.
      */
     @java.lang.Override
@@ -2122,7 +2317,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string address = 8;</code>
+     * <code>string address = 10;</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -2140,10 +2335,10 @@ public final class Proto {
       }
     }
 
-    public static final int CITY_FIELD_NUMBER = 9;
+    public static final int CITY_FIELD_NUMBER = 11;
     private volatile java.lang.Object city_;
     /**
-     * <code>string city = 9;</code>
+     * <code>string city = 11;</code>
      * @return The city.
      */
     @java.lang.Override
@@ -2160,7 +2355,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string city = 9;</code>
+     * <code>string city = 11;</code>
      * @return The bytes for city.
      */
     @java.lang.Override
@@ -2178,10 +2373,10 @@ public final class Proto {
       }
     }
 
-    public static final int COUNTRY_FIELD_NUMBER = 10;
+    public static final int COUNTRY_FIELD_NUMBER = 12;
     private volatile java.lang.Object country_;
     /**
-     * <code>string country = 10;</code>
+     * <code>string country = 12;</code>
      * @return The country.
      */
     @java.lang.Override
@@ -2198,7 +2393,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string country = 10;</code>
+     * <code>string country = 12;</code>
      * @return The bytes for country.
      */
     @java.lang.Override
@@ -2216,10 +2411,10 @@ public final class Proto {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 11;
+    public static final int EMAIL_FIELD_NUMBER = 13;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 11;</code>
+     * <code>string email = 13;</code>
      * @return The email.
      */
     @java.lang.Override
@@ -2236,7 +2431,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string email = 11;</code>
+     * <code>string email = 13;</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -2254,10 +2449,10 @@ public final class Proto {
       }
     }
 
-    public static final int TELEFAX_FIELD_NUMBER = 12;
+    public static final int TELEFAX_FIELD_NUMBER = 14;
     private volatile java.lang.Object telefax_;
     /**
-     * <code>string telefax = 12;</code>
+     * <code>string telefax = 14;</code>
      * @return The telefax.
      */
     @java.lang.Override
@@ -2274,7 +2469,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string telefax = 12;</code>
+     * <code>string telefax = 14;</code>
      * @return The bytes for telefax.
      */
     @java.lang.Override
@@ -2292,10 +2487,10 @@ public final class Proto {
       }
     }
 
-    public static final int TELEPHONE_FIELD_NUMBER = 13;
+    public static final int TELEPHONE_FIELD_NUMBER = 15;
     private volatile java.lang.Object telephone_;
     /**
-     * <code>string telephone = 13;</code>
+     * <code>string telephone = 15;</code>
      * @return The telephone.
      */
     @java.lang.Override
@@ -2312,7 +2507,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string telephone = 13;</code>
+     * <code>string telephone = 15;</code>
      * @return The bytes for telephone.
      */
     @java.lang.Override
@@ -2330,10 +2525,10 @@ public final class Proto {
       }
     }
 
-    public static final int WEBSITE_FIELD_NUMBER = 14;
+    public static final int WEBSITE_FIELD_NUMBER = 16;
     private volatile java.lang.Object website_;
     /**
-     * <code>string website = 14;</code>
+     * <code>string website = 16;</code>
      * @return The website.
      */
     @java.lang.Override
@@ -2350,7 +2545,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string website = 14;</code>
+     * <code>string website = 16;</code>
      * @return The bytes for website.
      */
     @java.lang.Override
@@ -2368,10 +2563,10 @@ public final class Proto {
       }
     }
 
-    public static final int ZIP_CODE_FIELD_NUMBER = 15;
+    public static final int ZIP_CODE_FIELD_NUMBER = 17;
     private volatile java.lang.Object zipCode_;
     /**
-     * <code>string zip_code = 15;</code>
+     * <code>string zip_code = 17;</code>
      * @return The zipCode.
      */
     @java.lang.Override
@@ -2388,7 +2583,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string zip_code = 15;</code>
+     * <code>string zip_code = 17;</code>
      * @return The bytes for zipCode.
      */
     @java.lang.Override
@@ -2441,29 +2636,35 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (!getAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, address_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, address_);
       }
       if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, city_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, city_);
       }
       if (!getCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, country_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, country_);
       }
       if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, email_);
       }
       if (!getTelefaxBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, telefax_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, telefax_);
       }
       if (!getTelephoneBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, telephone_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, telephone_);
       }
       if (!getWebsiteBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, website_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, website_);
       }
       if (!getZipCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, zipCode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, zipCode_);
       }
       unknownFields.writeTo(output);
     }
@@ -2496,29 +2697,40 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (!getAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, address_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, address_);
       }
       if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, city_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, city_);
       }
       if (!getCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, country_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, country_);
       }
       if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, email_);
       }
       if (!getTelefaxBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, telefax_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, telefax_);
       }
       if (!getTelephoneBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, telephone_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, telephone_);
       }
       if (!getWebsiteBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, website_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, website_);
       }
       if (!getZipCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, zipCode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, zipCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2552,6 +2764,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (!getAddress()
           .equals(other.getAddress())) return false;
       if (!getCity()
@@ -2595,6 +2811,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + CITY_FIELD_NUMBER;
@@ -2766,6 +2988,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         address_ = "";
 
         city_ = "";
@@ -2808,6 +3034,7 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.Actor buildPartial() {
         org.openlca.proto.Proto.Actor result = new org.openlca.proto.Proto.Actor(this);
+        int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
         result.name_ = name_;
@@ -2819,6 +3046,12 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.address_ = address_;
         result.city_ = city_;
         result.country_ = country_;
@@ -2902,6 +3135,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (!other.getAddress().isEmpty()) {
           address_ = other.address_;
           onChanged();
@@ -2962,6 +3209,7 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -3709,9 +3957,270 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 8;</code>
+       * <code>string address = 10;</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -3727,7 +4236,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string address = 8;</code>
+       * <code>string address = 10;</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -3744,7 +4253,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string address = 8;</code>
+       * <code>string address = 10;</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -3759,7 +4268,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string address = 8;</code>
+       * <code>string address = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -3769,7 +4278,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string address = 8;</code>
+       * <code>string address = 10;</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -3787,7 +4296,7 @@ public final class Proto {
 
       private java.lang.Object city_ = "";
       /**
-       * <code>string city = 9;</code>
+       * <code>string city = 11;</code>
        * @return The city.
        */
       public java.lang.String getCity() {
@@ -3803,7 +4312,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string city = 9;</code>
+       * <code>string city = 11;</code>
        * @return The bytes for city.
        */
       public com.google.protobuf.ByteString
@@ -3820,7 +4329,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string city = 9;</code>
+       * <code>string city = 11;</code>
        * @param value The city to set.
        * @return This builder for chaining.
        */
@@ -3835,7 +4344,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string city = 9;</code>
+       * <code>string city = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCity() {
@@ -3845,7 +4354,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string city = 9;</code>
+       * <code>string city = 11;</code>
        * @param value The bytes for city to set.
        * @return This builder for chaining.
        */
@@ -3863,7 +4372,7 @@ public final class Proto {
 
       private java.lang.Object country_ = "";
       /**
-       * <code>string country = 10;</code>
+       * <code>string country = 12;</code>
        * @return The country.
        */
       public java.lang.String getCountry() {
@@ -3879,7 +4388,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string country = 10;</code>
+       * <code>string country = 12;</code>
        * @return The bytes for country.
        */
       public com.google.protobuf.ByteString
@@ -3896,7 +4405,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string country = 10;</code>
+       * <code>string country = 12;</code>
        * @param value The country to set.
        * @return This builder for chaining.
        */
@@ -3911,7 +4420,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string country = 10;</code>
+       * <code>string country = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCountry() {
@@ -3921,7 +4430,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string country = 10;</code>
+       * <code>string country = 12;</code>
        * @param value The bytes for country to set.
        * @return This builder for chaining.
        */
@@ -3939,7 +4448,7 @@ public final class Proto {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 11;</code>
+       * <code>string email = 13;</code>
        * @return The email.
        */
       public java.lang.String getEmail() {
@@ -3955,7 +4464,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string email = 11;</code>
+       * <code>string email = 13;</code>
        * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
@@ -3972,7 +4481,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string email = 11;</code>
+       * <code>string email = 13;</code>
        * @param value The email to set.
        * @return This builder for chaining.
        */
@@ -3987,7 +4496,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string email = 11;</code>
+       * <code>string email = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
@@ -3997,7 +4506,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string email = 11;</code>
+       * <code>string email = 13;</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
@@ -4015,7 +4524,7 @@ public final class Proto {
 
       private java.lang.Object telefax_ = "";
       /**
-       * <code>string telefax = 12;</code>
+       * <code>string telefax = 14;</code>
        * @return The telefax.
        */
       public java.lang.String getTelefax() {
@@ -4031,7 +4540,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string telefax = 12;</code>
+       * <code>string telefax = 14;</code>
        * @return The bytes for telefax.
        */
       public com.google.protobuf.ByteString
@@ -4048,7 +4557,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string telefax = 12;</code>
+       * <code>string telefax = 14;</code>
        * @param value The telefax to set.
        * @return This builder for chaining.
        */
@@ -4063,7 +4572,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string telefax = 12;</code>
+       * <code>string telefax = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTelefax() {
@@ -4073,7 +4582,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string telefax = 12;</code>
+       * <code>string telefax = 14;</code>
        * @param value The bytes for telefax to set.
        * @return This builder for chaining.
        */
@@ -4091,7 +4600,7 @@ public final class Proto {
 
       private java.lang.Object telephone_ = "";
       /**
-       * <code>string telephone = 13;</code>
+       * <code>string telephone = 15;</code>
        * @return The telephone.
        */
       public java.lang.String getTelephone() {
@@ -4107,7 +4616,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string telephone = 13;</code>
+       * <code>string telephone = 15;</code>
        * @return The bytes for telephone.
        */
       public com.google.protobuf.ByteString
@@ -4124,7 +4633,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string telephone = 13;</code>
+       * <code>string telephone = 15;</code>
        * @param value The telephone to set.
        * @return This builder for chaining.
        */
@@ -4139,7 +4648,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string telephone = 13;</code>
+       * <code>string telephone = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearTelephone() {
@@ -4149,7 +4658,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string telephone = 13;</code>
+       * <code>string telephone = 15;</code>
        * @param value The bytes for telephone to set.
        * @return This builder for chaining.
        */
@@ -4167,7 +4676,7 @@ public final class Proto {
 
       private java.lang.Object website_ = "";
       /**
-       * <code>string website = 14;</code>
+       * <code>string website = 16;</code>
        * @return The website.
        */
       public java.lang.String getWebsite() {
@@ -4183,7 +4692,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string website = 14;</code>
+       * <code>string website = 16;</code>
        * @return The bytes for website.
        */
       public com.google.protobuf.ByteString
@@ -4200,7 +4709,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string website = 14;</code>
+       * <code>string website = 16;</code>
        * @param value The website to set.
        * @return This builder for chaining.
        */
@@ -4215,7 +4724,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string website = 14;</code>
+       * <code>string website = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearWebsite() {
@@ -4225,7 +4734,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string website = 14;</code>
+       * <code>string website = 16;</code>
        * @param value The bytes for website to set.
        * @return This builder for chaining.
        */
@@ -4243,7 +4752,7 @@ public final class Proto {
 
       private java.lang.Object zipCode_ = "";
       /**
-       * <code>string zip_code = 15;</code>
+       * <code>string zip_code = 17;</code>
        * @return The zipCode.
        */
       public java.lang.String getZipCode() {
@@ -4259,7 +4768,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string zip_code = 15;</code>
+       * <code>string zip_code = 17;</code>
        * @return The bytes for zipCode.
        */
       public com.google.protobuf.ByteString
@@ -4276,7 +4785,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string zip_code = 15;</code>
+       * <code>string zip_code = 17;</code>
        * @param value The zipCode to set.
        * @return This builder for chaining.
        */
@@ -4291,7 +4800,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string zip_code = 15;</code>
+       * <code>string zip_code = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearZipCode() {
@@ -4301,7 +4810,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string zip_code = 15;</code>
+       * <code>string zip_code = 17;</code>
        * @param value The bytes for zipCode to set.
        * @return This builder for chaining.
        */
@@ -4453,12 +4962,34 @@ public final class Proto {
 
     /**
      * <pre>
+     * An optional formula from which the value of the allocation factor is
+     * calculated.
+     * </pre>
+     *
+     * <code>string formula = 5;</code>
+     * @return The formula.
+     */
+    java.lang.String getFormula();
+    /**
+     * <pre>
+     * An optional formula from which the value of the allocation factor is
+     * calculated.
+     * </pre>
+     *
+     * <code>string formula = 5;</code>
+     * @return The bytes for formula.
+     */
+    com.google.protobuf.ByteString
+        getFormulaBytes();
+
+    /**
+     * <pre>
      * An input product or elementary flow exchange which is allocated by this
      * factor. This is only valid for causal allocation where allocation factors
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      * @return Whether the allocatedExchange field is set.
      */
     boolean hasAllocatedExchange();
@@ -4469,7 +5000,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      * @return The allocatedExchange.
      */
     org.openlca.proto.Proto.Exchange getAllocatedExchange();
@@ -4480,7 +5011,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder();
   }
@@ -4503,6 +5034,7 @@ public final class Proto {
     private AllocationFactor() {
       type_ = "";
       allocationType_ = 0;
+      formula_ = "";
     }
 
     @java.lang.Override
@@ -4566,6 +5098,12 @@ public final class Proto {
               break;
             }
             case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              formula_ = s;
+              break;
+            }
+            case 50: {
               org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
               if (allocatedExchange_ != null) {
                 subBuilder = allocatedExchange_.toBuilder();
@@ -4738,7 +5276,55 @@ public final class Proto {
       return value_;
     }
 
-    public static final int ALLOCATED_EXCHANGE_FIELD_NUMBER = 5;
+    public static final int FORMULA_FIELD_NUMBER = 5;
+    private volatile java.lang.Object formula_;
+    /**
+     * <pre>
+     * An optional formula from which the value of the allocation factor is
+     * calculated.
+     * </pre>
+     *
+     * <code>string formula = 5;</code>
+     * @return The formula.
+     */
+    @java.lang.Override
+    public java.lang.String getFormula() {
+      java.lang.Object ref = formula_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        formula_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * An optional formula from which the value of the allocation factor is
+     * calculated.
+     * </pre>
+     *
+     * <code>string formula = 5;</code>
+     * @return The bytes for formula.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFormulaBytes() {
+      java.lang.Object ref = formula_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        formula_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOCATED_EXCHANGE_FIELD_NUMBER = 6;
     private org.openlca.proto.Proto.Exchange allocatedExchange_;
     /**
      * <pre>
@@ -4747,7 +5333,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      * @return Whether the allocatedExchange field is set.
      */
     @java.lang.Override
@@ -4761,7 +5347,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      * @return The allocatedExchange.
      */
     @java.lang.Override
@@ -4775,7 +5361,7 @@ public final class Proto {
      * can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 5;</code>
+     * <code>.protolca.Exchange allocated_exchange = 6;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
@@ -4808,8 +5394,11 @@ public final class Proto {
       if (value_ != 0D) {
         output.writeDouble(4, value_);
       }
+      if (!getFormulaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, formula_);
+      }
       if (allocatedExchange_ != null) {
-        output.writeMessage(5, getAllocatedExchange());
+        output.writeMessage(6, getAllocatedExchange());
       }
       unknownFields.writeTo(output);
     }
@@ -4835,9 +5424,12 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, value_);
       }
+      if (!getFormulaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, formula_);
+      }
       if (allocatedExchange_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getAllocatedExchange());
+          .computeMessageSize(6, getAllocatedExchange());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4865,6 +5457,8 @@ public final class Proto {
       if (java.lang.Double.doubleToLongBits(getValue())
           != java.lang.Double.doubleToLongBits(
               other.getValue())) return false;
+      if (!getFormula()
+          .equals(other.getFormula())) return false;
       if (hasAllocatedExchange() != other.hasAllocatedExchange()) return false;
       if (hasAllocatedExchange()) {
         if (!getAllocatedExchange()
@@ -4892,6 +5486,8 @@ public final class Proto {
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getValue()));
+      hash = (37 * hash) + FORMULA_FIELD_NUMBER;
+      hash = (53 * hash) + getFormula().hashCode();
       if (hasAllocatedExchange()) {
         hash = (37 * hash) + ALLOCATED_EXCHANGE_FIELD_NUMBER;
         hash = (53 * hash) + getAllocatedExchange().hashCode();
@@ -5045,6 +5641,8 @@ public final class Proto {
 
         value_ = 0D;
 
+        formula_ = "";
+
         if (allocatedExchangeBuilder_ == null) {
           allocatedExchange_ = null;
         } else {
@@ -5085,6 +5683,7 @@ public final class Proto {
         }
         result.allocationType_ = allocationType_;
         result.value_ = value_;
+        result.formula_ = formula_;
         if (allocatedExchangeBuilder_ == null) {
           result.allocatedExchange_ = allocatedExchange_;
         } else {
@@ -5150,6 +5749,10 @@ public final class Proto {
         }
         if (other.getValue() != 0D) {
           setValue(other.getValue());
+        }
+        if (!other.getFormula().isEmpty()) {
+          formula_ = other.formula_;
+          onChanged();
         }
         if (other.hasAllocatedExchange()) {
           mergeAllocatedExchange(other.getAllocatedExchange());
@@ -5556,6 +6159,107 @@ public final class Proto {
         return this;
       }
 
+      private java.lang.Object formula_ = "";
+      /**
+       * <pre>
+       * An optional formula from which the value of the allocation factor is
+       * calculated.
+       * </pre>
+       *
+       * <code>string formula = 5;</code>
+       * @return The formula.
+       */
+      public java.lang.String getFormula() {
+        java.lang.Object ref = formula_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          formula_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * An optional formula from which the value of the allocation factor is
+       * calculated.
+       * </pre>
+       *
+       * <code>string formula = 5;</code>
+       * @return The bytes for formula.
+       */
+      public com.google.protobuf.ByteString
+          getFormulaBytes() {
+        java.lang.Object ref = formula_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          formula_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * An optional formula from which the value of the allocation factor is
+       * calculated.
+       * </pre>
+       *
+       * <code>string formula = 5;</code>
+       * @param value The formula to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormula(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        formula_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * An optional formula from which the value of the allocation factor is
+       * calculated.
+       * </pre>
+       *
+       * <code>string formula = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFormula() {
+        
+        formula_ = getDefaultInstance().getFormula();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * An optional formula from which the value of the allocation factor is
+       * calculated.
+       * </pre>
+       *
+       * <code>string formula = 5;</code>
+       * @param value The bytes for formula to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormulaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        formula_ = value;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Exchange allocatedExchange_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> allocatedExchangeBuilder_;
@@ -5566,7 +6270,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        * @return Whether the allocatedExchange field is set.
        */
       public boolean hasAllocatedExchange() {
@@ -5579,7 +6283,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        * @return The allocatedExchange.
        */
       public org.openlca.proto.Proto.Exchange getAllocatedExchange() {
@@ -5596,7 +6300,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public Builder setAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
         if (allocatedExchangeBuilder_ == null) {
@@ -5618,7 +6322,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public Builder setAllocatedExchange(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -5638,7 +6342,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public Builder mergeAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
         if (allocatedExchangeBuilder_ == null) {
@@ -5662,7 +6366,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public Builder clearAllocatedExchange() {
         if (allocatedExchangeBuilder_ == null) {
@@ -5682,7 +6386,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getAllocatedExchangeBuilder() {
         
@@ -5696,7 +6400,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
         if (allocatedExchangeBuilder_ != null) {
@@ -5713,7 +6417,7 @@ public final class Proto {
        * can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 5;</code>
+       * <code>.protolca.Exchange allocated_exchange = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -8860,10 +9564,79 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.protolca.ModelType model_type = 8;</code>
+     * <code>.protolca.ModelType model_type = 10;</code>
      * @return The enum numeric value on the wire for modelType.
      */
     int getModelTypeValue();
@@ -8872,7 +9645,7 @@ public final class Proto {
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.protolca.ModelType model_type = 8;</code>
+     * <code>.protolca.ModelType model_type = 10;</code>
      * @return The modelType.
      */
     org.openlca.proto.Proto.ModelType getModelType();
@@ -8903,6 +9676,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       modelType_ = 0;
     }
 
@@ -8926,6 +9701,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8985,7 +9761,22 @@ public final class Proto {
 
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 80: {
               int rawValue = input.readEnum();
 
               modelType_ = rawValue;
@@ -9006,6 +9797,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -9343,14 +10137,119 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int MODEL_TYPE_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODEL_TYPE_FIELD_NUMBER = 10;
     private int modelType_;
     /**
      * <pre>
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.protolca.ModelType model_type = 8;</code>
+     * <code>.protolca.ModelType model_type = 10;</code>
      * @return The enum numeric value on the wire for modelType.
      */
     @java.lang.Override public int getModelTypeValue() {
@@ -9361,7 +10260,7 @@ public final class Proto {
      * The type of models that can be linked to the category.
      * </pre>
      *
-     * <code>.protolca.ModelType model_type = 8;</code>
+     * <code>.protolca.ModelType model_type = 10;</code>
      * @return The modelType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ModelType getModelType() {
@@ -9405,8 +10304,14 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (modelType_ != org.openlca.proto.Proto.ModelType.UNDEFINED_MODEL_TYPE.getNumber()) {
-        output.writeEnum(8, modelType_);
+        output.writeEnum(10, modelType_);
       }
       unknownFields.writeTo(output);
     }
@@ -9439,9 +10344,20 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (modelType_ != org.openlca.proto.Proto.ModelType.UNDEFINED_MODEL_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, modelType_);
+          .computeEnumSize(10, modelType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9475,6 +10391,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (modelType_ != other.modelType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -9503,6 +10423,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + modelType_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9663,6 +10589,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         modelType_ = 0;
 
         return this;
@@ -9691,6 +10621,7 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.Category buildPartial() {
         org.openlca.proto.Proto.Category result = new org.openlca.proto.Proto.Category(this);
+        int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
         result.name_ = name_;
@@ -9702,6 +10633,12 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.modelType_ = modelType_;
         onBuilt();
         return result;
@@ -9778,6 +10715,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.modelType_ != 0) {
           setModelTypeValue(other.getModelTypeValue());
         }
@@ -9809,6 +10760,7 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -10556,13 +11508,274 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private int modelType_ = 0;
       /**
        * <pre>
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.protolca.ModelType model_type = 8;</code>
+       * <code>.protolca.ModelType model_type = 10;</code>
        * @return The enum numeric value on the wire for modelType.
        */
       @java.lang.Override public int getModelTypeValue() {
@@ -10573,7 +11786,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.protolca.ModelType model_type = 8;</code>
+       * <code>.protolca.ModelType model_type = 10;</code>
        * @param value The enum numeric value on the wire for modelType to set.
        * @return This builder for chaining.
        */
@@ -10588,7 +11801,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.protolca.ModelType model_type = 8;</code>
+       * <code>.protolca.ModelType model_type = 10;</code>
        * @return The modelType.
        */
       @java.lang.Override
@@ -10602,7 +11815,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.protolca.ModelType model_type = 8;</code>
+       * <code>.protolca.ModelType model_type = 10;</code>
        * @param value The modelType to set.
        * @return This builder for chaining.
        */
@@ -10620,7 +11833,7 @@ public final class Proto {
        * The type of models that can be linked to the category.
        * </pre>
        *
-       * <code>.protolca.ModelType model_type = 8;</code>
+       * <code>.protolca.ModelType model_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearModelType() {
@@ -10677,6 +11890,2764 @@ public final class Proto {
 
     @java.lang.Override
     public org.openlca.proto.Proto.Category getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CurrencyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.Currency)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    java.lang.String getLastChange();
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    com.google.protobuf.ByteString
+        getLastChangeBytes();
+
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     * @return Whether the category field is set.
+     */
+    boolean hasCategory();
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     * @return The category.
+     */
+    org.openlca.proto.Proto.Ref getCategory();
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
+
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <code>string code = 10;</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <code>string code = 10;</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <code>double conversion_factor = 11;</code>
+     * @return The conversionFactor.
+     */
+    double getConversionFactor();
+
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     * @return Whether the referenceCurrency field is set.
+     */
+    boolean hasReferenceCurrency();
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     * @return The referenceCurrency.
+     */
+    org.openlca.proto.Proto.Ref getReferenceCurrency();
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getReferenceCurrencyOrBuilder();
+  }
+  /**
+   * Protobuf type {@code protolca.Currency}
+   */
+  public static final class Currency extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.Currency)
+      CurrencyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Currency.newBuilder() to construct.
+    private Currency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Currency() {
+      type_ = "";
+      id_ = "";
+      name_ = "";
+      description_ = "";
+      version_ = "";
+      lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
+      code_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Currency();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Currency(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastChange_ = s;
+              break;
+            }
+            case 58: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (category_ != null) {
+                subBuilder = category_.toBuilder();
+              }
+              category_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(category_);
+                category_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              code_ = s;
+              break;
+            }
+            case 89: {
+
+              conversionFactor_ = input.readDouble();
+              break;
+            }
+            case 98: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (referenceCurrency_ != null) {
+                subBuilder = referenceCurrency_.toBuilder();
+              }
+              referenceCurrency_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(referenceCurrency_);
+                referenceCurrency_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.Proto.internal_static_protolca_Currency_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.Proto.internal_static_protolca_Currency_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.Proto.Currency.class, org.openlca.proto.Proto.Currency.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object lastChange_;
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    @java.lang.Override
+    public java.lang.String getLastChange() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastChange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLastChangeBytes() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastChange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 7;
+    private org.openlca.proto.Proto.Ref category_;
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     * @return Whether the category field is set.
+     */
+    @java.lang.Override
+    public boolean hasCategory() {
+      return category_ != null;
+    }
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     * @return The category.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getCategory() {
+      return category_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : category_;
+    }
+    /**
+     * <pre>
+     * The category of the entity.
+     * </pre>
+     *
+     * <code>.protolca.Ref category = 7;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder() {
+      return getCategory();
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CODE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object code_;
+    /**
+     * <code>string code = 10;</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string code = 10;</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONVERSION_FACTOR_FIELD_NUMBER = 11;
+    private double conversionFactor_;
+    /**
+     * <code>double conversion_factor = 11;</code>
+     * @return The conversionFactor.
+     */
+    @java.lang.Override
+    public double getConversionFactor() {
+      return conversionFactor_;
+    }
+
+    public static final int REFERENCE_CURRENCY_FIELD_NUMBER = 12;
+    private org.openlca.proto.Proto.Ref referenceCurrency_;
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     * @return Whether the referenceCurrency field is set.
+     */
+    @java.lang.Override
+    public boolean hasReferenceCurrency() {
+      return referenceCurrency_ != null;
+    }
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     * @return The referenceCurrency.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getReferenceCurrency() {
+      return referenceCurrency_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : referenceCurrency_;
+    }
+    /**
+     * <code>.protolca.Ref reference_currency = 12;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getReferenceCurrencyOrBuilder() {
+      return getReferenceCurrency();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastChange_);
+      }
+      if (category_ != null) {
+        output.writeMessage(7, getCategory());
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
+      if (!getCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, code_);
+      }
+      if (conversionFactor_ != 0D) {
+        output.writeDouble(11, conversionFactor_);
+      }
+      if (referenceCurrency_ != null) {
+        output.writeMessage(12, getReferenceCurrency());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastChange_);
+      }
+      if (category_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getCategory());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
+      if (!getCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, code_);
+      }
+      if (conversionFactor_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(11, conversionFactor_);
+      }
+      if (referenceCurrency_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getReferenceCurrency());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.Proto.Currency)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.Proto.Currency other = (org.openlca.proto.Proto.Currency) obj;
+
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getLastChange()
+          .equals(other.getLastChange())) return false;
+      if (hasCategory() != other.hasCategory()) return false;
+      if (hasCategory()) {
+        if (!getCategory()
+            .equals(other.getCategory())) return false;
+      }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
+      if (!getCode()
+          .equals(other.getCode())) return false;
+      if (java.lang.Double.doubleToLongBits(getConversionFactor())
+          != java.lang.Double.doubleToLongBits(
+              other.getConversionFactor())) return false;
+      if (hasReferenceCurrency() != other.hasReferenceCurrency()) return false;
+      if (hasReferenceCurrency()) {
+        if (!getReferenceCurrency()
+            .equals(other.getReferenceCurrency())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastChange().hashCode();
+      if (hasCategory()) {
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + getCategory().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (37 * hash) + CONVERSION_FACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getConversionFactor()));
+      if (hasReferenceCurrency()) {
+        hash = (37 * hash) + REFERENCE_CURRENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getReferenceCurrency().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.Currency parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.Currency parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.Currency parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.Proto.Currency prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protolca.Currency}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.Currency)
+        org.openlca.proto.Proto.CurrencyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.Proto.internal_static_protolca_Currency_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.Proto.internal_static_protolca_Currency_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.Proto.Currency.class, org.openlca.proto.Proto.Currency.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.Proto.Currency.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        id_ = "";
+
+        name_ = "";
+
+        description_ = "";
+
+        version_ = "";
+
+        lastChange_ = "";
+
+        if (categoryBuilder_ == null) {
+          category_ = null;
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
+        code_ = "";
+
+        conversionFactor_ = 0D;
+
+        if (referenceCurrencyBuilder_ == null) {
+          referenceCurrency_ = null;
+        } else {
+          referenceCurrency_ = null;
+          referenceCurrencyBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.Proto.internal_static_protolca_Currency_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.Currency getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.Currency.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.Currency build() {
+        org.openlca.proto.Proto.Currency result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.Currency buildPartial() {
+        org.openlca.proto.Proto.Currency result = new org.openlca.proto.Proto.Currency(this);
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.id_ = id_;
+        result.name_ = name_;
+        result.description_ = description_;
+        result.version_ = version_;
+        result.lastChange_ = lastChange_;
+        if (categoryBuilder_ == null) {
+          result.category_ = category_;
+        } else {
+          result.category_ = categoryBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
+        result.code_ = code_;
+        result.conversionFactor_ = conversionFactor_;
+        if (referenceCurrencyBuilder_ == null) {
+          result.referenceCurrency_ = referenceCurrency_;
+        } else {
+          result.referenceCurrency_ = referenceCurrencyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.Proto.Currency) {
+          return mergeFrom((org.openlca.proto.Proto.Currency)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.Proto.Currency other) {
+        if (other == org.openlca.proto.Proto.Currency.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getLastChange().isEmpty()) {
+          lastChange_ = other.lastChange_;
+          onChanged();
+        }
+        if (other.hasCategory()) {
+          mergeCategory(other.getCategory());
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          onChanged();
+        }
+        if (other.getConversionFactor() != 0D) {
+          setConversionFactor(other.getConversionFactor());
+        }
+        if (other.hasReferenceCurrency()) {
+          mergeReferenceCurrency(other.getReferenceCurrency());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.Proto.Currency parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.Proto.Currency) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastChange_ = "";
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The lastChange.
+       */
+      public java.lang.String getLastChange() {
+        java.lang.Object ref = lastChange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastChange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The bytes for lastChange.
+       */
+      public com.google.protobuf.ByteString
+          getLastChangeBytes() {
+        java.lang.Object ref = lastChange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastChange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastChange() {
+        
+        lastChange_ = getDefaultInstance().getLastChange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The bytes for lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.Ref category_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> categoryBuilder_;
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       * @return Whether the category field is set.
+       */
+      public boolean hasCategory() {
+        return categoryBuilder_ != null || category_ != null;
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       * @return The category.
+       */
+      public org.openlca.proto.Proto.Ref getCategory() {
+        if (categoryBuilder_ == null) {
+          return category_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : category_;
+        } else {
+          return categoryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public Builder setCategory(org.openlca.proto.Proto.Ref value) {
+        if (categoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          category_ = value;
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public Builder setCategory(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (categoryBuilder_ == null) {
+          category_ = builderForValue.build();
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public Builder mergeCategory(org.openlca.proto.Proto.Ref value) {
+        if (categoryBuilder_ == null) {
+          if (category_ != null) {
+            category_ =
+              org.openlca.proto.Proto.Ref.newBuilder(category_).mergeFrom(value).buildPartial();
+          } else {
+            category_ = value;
+          }
+          onChanged();
+        } else {
+          categoryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public Builder clearCategory() {
+        if (categoryBuilder_ == null) {
+          category_ = null;
+          onChanged();
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getCategoryBuilder() {
+        
+        onChanged();
+        return getCategoryFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder() {
+        if (categoryBuilder_ != null) {
+          return categoryBuilder_.getMessageOrBuilder();
+        } else {
+          return category_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : category_;
+        }
+      }
+      /**
+       * <pre>
+       * The category of the entity.
+       * </pre>
+       *
+       * <code>.protolca.Ref category = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getCategoryFieldBuilder() {
+        if (categoryBuilder_ == null) {
+          categoryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getCategory(),
+                  getParentForChildren(),
+                  isClean());
+          category_ = null;
+        }
+        return categoryBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>string code = 10;</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string code = 10;</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string code = 10;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 10;</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double conversionFactor_ ;
+      /**
+       * <code>double conversion_factor = 11;</code>
+       * @return The conversionFactor.
+       */
+      @java.lang.Override
+      public double getConversionFactor() {
+        return conversionFactor_;
+      }
+      /**
+       * <code>double conversion_factor = 11;</code>
+       * @param value The conversionFactor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConversionFactor(double value) {
+        
+        conversionFactor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double conversion_factor = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConversionFactor() {
+        
+        conversionFactor_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.Ref referenceCurrency_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> referenceCurrencyBuilder_;
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       * @return Whether the referenceCurrency field is set.
+       */
+      public boolean hasReferenceCurrency() {
+        return referenceCurrencyBuilder_ != null || referenceCurrency_ != null;
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       * @return The referenceCurrency.
+       */
+      public org.openlca.proto.Proto.Ref getReferenceCurrency() {
+        if (referenceCurrencyBuilder_ == null) {
+          return referenceCurrency_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : referenceCurrency_;
+        } else {
+          return referenceCurrencyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public Builder setReferenceCurrency(org.openlca.proto.Proto.Ref value) {
+        if (referenceCurrencyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          referenceCurrency_ = value;
+          onChanged();
+        } else {
+          referenceCurrencyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public Builder setReferenceCurrency(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (referenceCurrencyBuilder_ == null) {
+          referenceCurrency_ = builderForValue.build();
+          onChanged();
+        } else {
+          referenceCurrencyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public Builder mergeReferenceCurrency(org.openlca.proto.Proto.Ref value) {
+        if (referenceCurrencyBuilder_ == null) {
+          if (referenceCurrency_ != null) {
+            referenceCurrency_ =
+              org.openlca.proto.Proto.Ref.newBuilder(referenceCurrency_).mergeFrom(value).buildPartial();
+          } else {
+            referenceCurrency_ = value;
+          }
+          onChanged();
+        } else {
+          referenceCurrencyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public Builder clearReferenceCurrency() {
+        if (referenceCurrencyBuilder_ == null) {
+          referenceCurrency_ = null;
+          onChanged();
+        } else {
+          referenceCurrency_ = null;
+          referenceCurrencyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getReferenceCurrencyBuilder() {
+        
+        onChanged();
+        return getReferenceCurrencyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getReferenceCurrencyOrBuilder() {
+        if (referenceCurrencyBuilder_ != null) {
+          return referenceCurrencyBuilder_.getMessageOrBuilder();
+        } else {
+          return referenceCurrency_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : referenceCurrency_;
+        }
+      }
+      /**
+       * <code>.protolca.Ref reference_currency = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getReferenceCurrencyFieldBuilder() {
+        if (referenceCurrencyBuilder_ == null) {
+          referenceCurrencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getReferenceCurrency(),
+                  getParentForChildren(),
+                  isClean());
+          referenceCurrency_ = null;
+        }
+        return referenceCurrencyBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.Currency)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.Currency)
+    private static final org.openlca.proto.Proto.Currency DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.Currency();
+    }
+
+    public static org.openlca.proto.Proto.Currency getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Currency>
+        PARSER = new com.google.protobuf.AbstractParser<Currency>() {
+      @java.lang.Override
+      public Currency parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Currency(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Currency> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Currency> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.Proto.Currency getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13121,53 +17092,143 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>bool has_uncertainties = 8;</code>
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <code>bool has_uncertainties = 10;</code>
      * @return The hasUncertainties.
      */
     boolean getHasUncertainties();
 
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      * @return The source.
      */
     org.openlca.proto.Proto.Ref getSource();
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder();
 
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     java.util.List<org.openlca.proto.Proto.DqIndicator> 
         getIndicatorsList();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     org.openlca.proto.Proto.DqIndicator getIndicators(int index);
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     int getIndicatorsCount();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
         getIndicatorsOrBuilderList();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * A data quality system.
+   * A data quality system (DQS) in openLCA describes a pedigree matrix of $m$
+   * data quality indicators (DQIs) and $n$ data quality scores (DQ scores). Such
+   * a system can then be used to assess the data quality of processes and
+   * exchanges by tagging them with an instance of the system $D$ where $D$ is a
+   * $m * n$ matrix with an entry $d_{ij}$ containing the value of the data
+   * quality score $j$ for indicator $i$. As each indicator in $D$ can only have
+   * a single score value, $D$ can be stored in a vector $d$ where $d_i$ contains
+   * the data quality score for indicator $i$. The possible values of the data
+   * quality scores are defined as a linear order $1 &#92;dots n$. In openLCA, the
+   * data quality entry $d$ of a process or exchange is stored as a string like
+   * `(3;2;4;n.a.;2)` which means the data quality score for the first indicator
+   * is `3`, for the second `2` etc. A specific value is `n.a.` which stands for
+   * _not applicable_. In calculations, these data quality entries can be
+   * aggregated in different ways. For example, the data quality entry of a flow
+   * $f$ with a contribution of `0.5 kg` and a data quality entry of
+   * `(3;2;4;n.a.;2)` in a process $p$ and a contribution of `1.5 kg` and a data
+   * quality entry of `(2;3;1;n.a.;5)` in a process $q$ could be aggregated to
+   * `(2;3;2;n.a.;4)` by applying an weighted average and rounding. Finally,
+   * custom labels like `A, B, C, ...` or `Very good, Good, Fair, ...` for the DQ
+   * scores can be assigned by the user. These labels are then displayed instead
+   * of `1, 2, 3 ...` in the user interface or result exports. However,
+   * internally the numeric values are used in the data model and calculations.
    * </pre>
    *
    * Protobuf type {@code protolca.DqSystem}
@@ -13188,6 +17249,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       indicators_ = java.util.Collections.emptyList();
     }
 
@@ -13271,12 +17334,27 @@ public final class Proto {
 
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 80: {
 
               hasUncertainties_ = input.readBool();
               break;
             }
-            case 74: {
+            case 90: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (source_ != null) {
                 subBuilder = source_.toBuilder();
@@ -13289,10 +17367,10 @@ public final class Proto {
 
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DqIndicator>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               indicators_.add(
                   input.readMessage(org.openlca.proto.Proto.DqIndicator.parser(), extensionRegistry));
@@ -13314,6 +17392,9 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           indicators_ = java.util.Collections.unmodifiableList(indicators_);
         }
         this.unknownFields = unknownFields.build();
@@ -13653,10 +17734,115 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int HAS_UNCERTAINTIES_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_UNCERTAINTIES_FIELD_NUMBER = 10;
     private boolean hasUncertainties_;
     /**
-     * <code>bool has_uncertainties = 8;</code>
+     * <code>bool has_uncertainties = 10;</code>
      * @return The hasUncertainties.
      */
     @java.lang.Override
@@ -13664,10 +17850,10 @@ public final class Proto {
       return hasUncertainties_;
     }
 
-    public static final int SOURCE_FIELD_NUMBER = 9;
+    public static final int SOURCE_FIELD_NUMBER = 11;
     private org.openlca.proto.Proto.Ref source_;
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      * @return Whether the source field is set.
      */
     @java.lang.Override
@@ -13675,7 +17861,7 @@ public final class Proto {
       return source_ != null;
     }
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      * @return The source.
      */
     @java.lang.Override
@@ -13683,24 +17869,24 @@ public final class Proto {
       return source_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : source_;
     }
     /**
-     * <code>.protolca.Ref source = 9;</code>
+     * <code>.protolca.Ref source = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder() {
       return getSource();
     }
 
-    public static final int INDICATORS_FIELD_NUMBER = 10;
+    public static final int INDICATORS_FIELD_NUMBER = 12;
     private java.util.List<org.openlca.proto.Proto.DqIndicator> indicators_;
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.DqIndicator> getIndicatorsList() {
       return indicators_;
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
@@ -13708,21 +17894,21 @@ public final class Proto {
       return indicators_;
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public int getIndicatorsCount() {
       return indicators_.size();
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.DqIndicator getIndicators(int index) {
       return indicators_.get(index);
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
@@ -13765,14 +17951,20 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (hasUncertainties_ != false) {
-        output.writeBool(8, hasUncertainties_);
+        output.writeBool(10, hasUncertainties_);
       }
       if (source_ != null) {
-        output.writeMessage(9, getSource());
+        output.writeMessage(11, getSource());
       }
       for (int i = 0; i < indicators_.size(); i++) {
-        output.writeMessage(10, indicators_.get(i));
+        output.writeMessage(12, indicators_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -13805,17 +17997,28 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (hasUncertainties_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, hasUncertainties_);
+          .computeBoolSize(10, hasUncertainties_);
       }
       if (source_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getSource());
+          .computeMessageSize(11, getSource());
       }
       for (int i = 0; i < indicators_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, indicators_.get(i));
+          .computeMessageSize(12, indicators_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13849,6 +18052,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (getHasUncertainties()
           != other.getHasUncertainties()) return false;
       if (hasSource() != other.hasSource()) return false;
@@ -13885,6 +18092,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + HAS_UNCERTAINTIES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasUncertainties());
@@ -13993,7 +18206,28 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A data quality system.
+     * A data quality system (DQS) in openLCA describes a pedigree matrix of $m$
+     * data quality indicators (DQIs) and $n$ data quality scores (DQ scores). Such
+     * a system can then be used to assess the data quality of processes and
+     * exchanges by tagging them with an instance of the system $D$ where $D$ is a
+     * $m * n$ matrix with an entry $d_{ij}$ containing the value of the data
+     * quality score $j$ for indicator $i$. As each indicator in $D$ can only have
+     * a single score value, $D$ can be stored in a vector $d$ where $d_i$ contains
+     * the data quality score for indicator $i$. The possible values of the data
+     * quality scores are defined as a linear order $1 &#92;dots n$. In openLCA, the
+     * data quality entry $d$ of a process or exchange is stored as a string like
+     * `(3;2;4;n.a.;2)` which means the data quality score for the first indicator
+     * is `3`, for the second `2` etc. A specific value is `n.a.` which stands for
+     * _not applicable_. In calculations, these data quality entries can be
+     * aggregated in different ways. For example, the data quality entry of a flow
+     * $f$ with a contribution of `0.5 kg` and a data quality entry of
+     * `(3;2;4;n.a.;2)` in a process $p$ and a contribution of `1.5 kg` and a data
+     * quality entry of `(2;3;1;n.a.;5)` in a process $q$ could be aggregated to
+     * `(2;3;2;n.a.;4)` by applying an weighted average and rounding. Finally,
+     * custom labels like `A, B, C, ...` or `Very good, Good, Fair, ...` for the DQ
+     * scores can be assigned by the user. These labels are then displayed instead
+     * of `1, 2, 3 ...` in the user interface or result exports. However,
+     * internally the numeric values are used in the data model and calculations.
      * </pre>
      *
      * Protobuf type {@code protolca.DqSystem}
@@ -14052,6 +18286,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         hasUncertainties_ = false;
 
         if (sourceBuilder_ == null) {
@@ -14062,7 +18300,7 @@ public final class Proto {
         }
         if (indicatorsBuilder_ == null) {
           indicators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           indicatorsBuilder_.clear();
         }
@@ -14104,6 +18342,12 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.hasUncertainties_ = hasUncertainties_;
         if (sourceBuilder_ == null) {
           result.source_ = source_;
@@ -14111,9 +18355,9 @@ public final class Proto {
           result.source_ = sourceBuilder_.build();
         }
         if (indicatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             indicators_ = java.util.Collections.unmodifiableList(indicators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.indicators_ = indicators_;
         } else {
@@ -14194,6 +18438,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.getHasUncertainties() != false) {
           setHasUncertainties(other.getHasUncertainties());
         }
@@ -14204,7 +18462,7 @@ public final class Proto {
           if (!other.indicators_.isEmpty()) {
             if (indicators_.isEmpty()) {
               indicators_ = other.indicators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureIndicatorsIsMutable();
               indicators_.addAll(other.indicators_);
@@ -14217,7 +18475,7 @@ public final class Proto {
               indicatorsBuilder_.dispose();
               indicatorsBuilder_ = null;
               indicators_ = other.indicators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               indicatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIndicatorsFieldBuilder() : null;
@@ -15002,9 +19260,270 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private boolean hasUncertainties_ ;
       /**
-       * <code>bool has_uncertainties = 8;</code>
+       * <code>bool has_uncertainties = 10;</code>
        * @return The hasUncertainties.
        */
       @java.lang.Override
@@ -15012,7 +19531,7 @@ public final class Proto {
         return hasUncertainties_;
       }
       /**
-       * <code>bool has_uncertainties = 8;</code>
+       * <code>bool has_uncertainties = 10;</code>
        * @param value The hasUncertainties to set.
        * @return This builder for chaining.
        */
@@ -15023,7 +19542,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>bool has_uncertainties = 8;</code>
+       * <code>bool has_uncertainties = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasUncertainties() {
@@ -15037,14 +19556,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> sourceBuilder_;
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        * @return Whether the source field is set.
        */
       public boolean hasSource() {
         return sourceBuilder_ != null || source_ != null;
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        * @return The source.
        */
       public org.openlca.proto.Proto.Ref getSource() {
@@ -15055,7 +19574,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public Builder setSource(org.openlca.proto.Proto.Ref value) {
         if (sourceBuilder_ == null) {
@@ -15071,7 +19590,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public Builder setSource(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -15085,7 +19604,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public Builder mergeSource(org.openlca.proto.Proto.Ref value) {
         if (sourceBuilder_ == null) {
@@ -15103,7 +19622,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public Builder clearSource() {
         if (sourceBuilder_ == null) {
@@ -15117,7 +19636,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getSourceBuilder() {
         
@@ -15125,7 +19644,7 @@ public final class Proto {
         return getSourceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder() {
         if (sourceBuilder_ != null) {
@@ -15136,7 +19655,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Ref source = 9;</code>
+       * <code>.protolca.Ref source = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -15155,9 +19674,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.DqIndicator> indicators_ =
         java.util.Collections.emptyList();
       private void ensureIndicatorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DqIndicator>(indicators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -15165,7 +19684,7 @@ public final class Proto {
           org.openlca.proto.Proto.DqIndicator, org.openlca.proto.Proto.DqIndicator.Builder, org.openlca.proto.Proto.DqIndicatorOrBuilder> indicatorsBuilder_;
 
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.DqIndicator> getIndicatorsList() {
         if (indicatorsBuilder_ == null) {
@@ -15175,7 +19694,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public int getIndicatorsCount() {
         if (indicatorsBuilder_ == null) {
@@ -15185,7 +19704,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public org.openlca.proto.Proto.DqIndicator getIndicators(int index) {
         if (indicatorsBuilder_ == null) {
@@ -15195,7 +19714,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder setIndicators(
           int index, org.openlca.proto.Proto.DqIndicator value) {
@@ -15212,7 +19731,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder setIndicators(
           int index, org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
@@ -15226,7 +19745,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder addIndicators(org.openlca.proto.Proto.DqIndicator value) {
         if (indicatorsBuilder_ == null) {
@@ -15242,7 +19761,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
           int index, org.openlca.proto.Proto.DqIndicator value) {
@@ -15259,7 +19778,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
           org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
@@ -15273,7 +19792,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
           int index, org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
@@ -15287,7 +19806,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder addAllIndicators(
           java.lang.Iterable<? extends org.openlca.proto.Proto.DqIndicator> values) {
@@ -15302,12 +19821,12 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder clearIndicators() {
         if (indicatorsBuilder_ == null) {
           indicators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           indicatorsBuilder_.clear();
@@ -15315,7 +19834,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public Builder removeIndicators(int index) {
         if (indicatorsBuilder_ == null) {
@@ -15328,14 +19847,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public org.openlca.proto.Proto.DqIndicator.Builder getIndicatorsBuilder(
           int index) {
         return getIndicatorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
           int index) {
@@ -15345,7 +19864,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
            getIndicatorsOrBuilderList() {
@@ -15356,14 +19875,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public org.openlca.proto.Proto.DqIndicator.Builder addIndicatorsBuilder() {
         return getIndicatorsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.DqIndicator.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public org.openlca.proto.Proto.DqIndicator.Builder addIndicatorsBuilder(
           int index) {
@@ -15371,7 +19890,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.DqIndicator.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 10;</code>
+       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.DqIndicator.Builder> 
            getIndicatorsBuilderList() {
@@ -15384,7 +19903,7 @@ public final class Proto {
           indicatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.DqIndicator, org.openlca.proto.Proto.DqIndicator.Builder, org.openlca.proto.Proto.DqIndicatorOrBuilder>(
                   indicators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           indicators_ = null;
@@ -18567,11 +23086,80 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The type of the flow. Note that this type is more a descriptor of how the
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 8;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     int getFlowTypeValue();
@@ -18581,7 +23169,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 8;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The flowType.
      */
     org.openlca.proto.Proto.FlowType getFlowType();
@@ -18591,7 +23179,7 @@ public final class Proto {
      * A CAS number of the flow.
      * </pre>
      *
-     * <code>string cas = 9;</code>
+     * <code>string cas = 11;</code>
      * @return The cas.
      */
     java.lang.String getCas();
@@ -18600,7 +23188,7 @@ public final class Proto {
      * A CAS number of the flow.
      * </pre>
      *
-     * <code>string cas = 9;</code>
+     * <code>string cas = 11;</code>
      * @return The bytes for cas.
      */
     com.google.protobuf.ByteString
@@ -18611,7 +23199,7 @@ public final class Proto {
      * A chemical formula of the flow.
      * </pre>
      *
-     * <code>string formula = 10;</code>
+     * <code>string formula = 12;</code>
      * @return The formula.
      */
     java.lang.String getFormula();
@@ -18620,7 +23208,7 @@ public final class Proto {
      * A chemical formula of the flow.
      * </pre>
      *
-     * <code>string formula = 10;</code>
+     * <code>string formula = 12;</code>
      * @return The bytes for formula.
      */
     com.google.protobuf.ByteString
@@ -18633,7 +23221,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> 
         getFlowPropertiesList();
@@ -18644,7 +23232,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index);
     /**
@@ -18654,7 +23242,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     int getFlowPropertiesCount();
     /**
@@ -18664,7 +23252,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
         getFlowPropertiesOrBuilderList();
@@ -18675,7 +23263,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
         int index);
@@ -18687,7 +23275,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      * @return Whether the location field is set.
      */
     boolean hasLocation();
@@ -18698,7 +23286,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      * @return The location.
      */
     org.openlca.proto.Proto.Ref getLocation();
@@ -18709,7 +23297,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder();
   }
@@ -18737,6 +23325,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       flowType_ = 0;
       cas_ = "";
       formula_ = "";
@@ -18823,34 +23413,49 @@ public final class Proto {
 
               break;
             }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              flowType_ = rawValue;
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              library_ = s;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              flowType_ = rawValue;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               cas_ = s;
               break;
             }
-            case 82: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               formula_ = s;
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 flowProperties_ = new java.util.ArrayList<org.openlca.proto.Proto.FlowPropertyFactor>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               flowProperties_.add(
                   input.readMessage(org.openlca.proto.Proto.FlowPropertyFactor.parser(), extensionRegistry));
               break;
             }
-            case 98: {
+            case 114: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
@@ -18879,6 +23484,9 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           flowProperties_ = java.util.Collections.unmodifiableList(flowProperties_);
         }
         this.unknownFields = unknownFields.build();
@@ -19218,7 +23826,112 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int FLOW_TYPE_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLOW_TYPE_FIELD_NUMBER = 10;
     private int flowType_;
     /**
      * <pre>
@@ -19226,7 +23939,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 8;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     @java.lang.Override public int getFlowTypeValue() {
@@ -19238,7 +23951,7 @@ public final class Proto {
      * flow is handled in calculations.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 8;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The flowType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowType getFlowType() {
@@ -19247,14 +23960,14 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.FlowType.UNRECOGNIZED : result;
     }
 
-    public static final int CAS_FIELD_NUMBER = 9;
+    public static final int CAS_FIELD_NUMBER = 11;
     private volatile java.lang.Object cas_;
     /**
      * <pre>
      * A CAS number of the flow.
      * </pre>
      *
-     * <code>string cas = 9;</code>
+     * <code>string cas = 11;</code>
      * @return The cas.
      */
     @java.lang.Override
@@ -19275,7 +23988,7 @@ public final class Proto {
      * A CAS number of the flow.
      * </pre>
      *
-     * <code>string cas = 9;</code>
+     * <code>string cas = 11;</code>
      * @return The bytes for cas.
      */
     @java.lang.Override
@@ -19293,14 +24006,14 @@ public final class Proto {
       }
     }
 
-    public static final int FORMULA_FIELD_NUMBER = 10;
+    public static final int FORMULA_FIELD_NUMBER = 12;
     private volatile java.lang.Object formula_;
     /**
      * <pre>
      * A chemical formula of the flow.
      * </pre>
      *
-     * <code>string formula = 10;</code>
+     * <code>string formula = 12;</code>
      * @return The formula.
      */
     @java.lang.Override
@@ -19321,7 +24034,7 @@ public final class Proto {
      * A chemical formula of the flow.
      * </pre>
      *
-     * <code>string formula = 10;</code>
+     * <code>string formula = 12;</code>
      * @return The bytes for formula.
      */
     @java.lang.Override
@@ -19339,7 +24052,7 @@ public final class Proto {
       }
     }
 
-    public static final int FLOW_PROPERTIES_FIELD_NUMBER = 11;
+    public static final int FLOW_PROPERTIES_FIELD_NUMBER = 13;
     private java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> flowProperties_;
     /**
      * <pre>
@@ -19348,7 +24061,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> getFlowPropertiesList() {
@@ -19361,7 +24074,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
@@ -19375,7 +24088,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     @java.lang.Override
     public int getFlowPropertiesCount() {
@@ -19388,7 +24101,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index) {
@@ -19401,7 +24114,7 @@ public final class Proto {
      * properties.
      * </pre>
      *
-     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+     * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
@@ -19409,7 +24122,7 @@ public final class Proto {
       return flowProperties_.get(index);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 12;
+    public static final int LOCATION_FIELD_NUMBER = 14;
     private org.openlca.proto.Proto.Ref location_;
     /**
      * <pre>
@@ -19418,7 +24131,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      * @return Whether the location field is set.
      */
     @java.lang.Override
@@ -19432,7 +24145,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -19446,7 +24159,7 @@ public final class Proto {
      * data formats define a location as a property of a flow.
      * </pre>
      *
-     * <code>.protolca.Ref location = 12;</code>
+     * <code>.protolca.Ref location = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
@@ -19488,20 +24201,26 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
-        output.writeEnum(8, flowType_);
+        output.writeEnum(10, flowType_);
       }
       if (!getCasBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cas_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cas_);
       }
       if (!getFormulaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, formula_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, formula_);
       }
       for (int i = 0; i < flowProperties_.size(); i++) {
-        output.writeMessage(11, flowProperties_.get(i));
+        output.writeMessage(13, flowProperties_.get(i));
       }
       if (location_ != null) {
-        output.writeMessage(12, getLocation());
+        output.writeMessage(14, getLocation());
       }
       unknownFields.writeTo(output);
     }
@@ -19534,23 +24253,34 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, flowType_);
+          .computeEnumSize(10, flowType_);
       }
       if (!getCasBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cas_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cas_);
       }
       if (!getFormulaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, formula_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, formula_);
       }
       for (int i = 0; i < flowProperties_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, flowProperties_.get(i));
+          .computeMessageSize(13, flowProperties_.get(i));
       }
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getLocation());
+          .computeMessageSize(14, getLocation());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19584,6 +24314,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (flowType_ != other.flowType_) return false;
       if (!getCas()
           .equals(other.getCas())) return false;
@@ -19623,6 +24357,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + FLOW_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + flowType_;
       hash = (37 * hash) + CAS_FIELD_NUMBER;
@@ -19794,6 +24534,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         flowType_ = 0;
 
         cas_ = "";
@@ -19802,7 +24546,7 @@ public final class Proto {
 
         if (flowPropertiesBuilder_ == null) {
           flowProperties_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           flowPropertiesBuilder_.clear();
         }
@@ -19850,13 +24594,19 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.flowType_ = flowType_;
         result.cas_ = cas_;
         result.formula_ = formula_;
         if (flowPropertiesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             flowProperties_ = java.util.Collections.unmodifiableList(flowProperties_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.flowProperties_ = flowProperties_;
         } else {
@@ -19942,6 +24692,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.flowType_ != 0) {
           setFlowTypeValue(other.getFlowTypeValue());
         }
@@ -19957,7 +24721,7 @@ public final class Proto {
           if (!other.flowProperties_.isEmpty()) {
             if (flowProperties_.isEmpty()) {
               flowProperties_ = other.flowProperties_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureFlowPropertiesIsMutable();
               flowProperties_.addAll(other.flowProperties_);
@@ -19970,7 +24734,7 @@ public final class Proto {
               flowPropertiesBuilder_.dispose();
               flowPropertiesBuilder_ = null;
               flowProperties_ = other.flowProperties_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               flowPropertiesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFlowPropertiesFieldBuilder() : null;
@@ -20758,6 +25522,267 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private int flowType_ = 0;
       /**
        * <pre>
@@ -20765,7 +25790,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 8;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return The enum numeric value on the wire for flowType.
        */
       @java.lang.Override public int getFlowTypeValue() {
@@ -20777,7 +25802,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 8;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @param value The enum numeric value on the wire for flowType to set.
        * @return This builder for chaining.
        */
@@ -20793,7 +25818,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 8;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return The flowType.
        */
       @java.lang.Override
@@ -20808,7 +25833,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 8;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @param value The flowType to set.
        * @return This builder for chaining.
        */
@@ -20827,7 +25852,7 @@ public final class Proto {
        * flow is handled in calculations.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 8;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowType() {
@@ -20843,7 +25868,7 @@ public final class Proto {
        * A CAS number of the flow.
        * </pre>
        *
-       * <code>string cas = 9;</code>
+       * <code>string cas = 11;</code>
        * @return The cas.
        */
       public java.lang.String getCas() {
@@ -20863,7 +25888,7 @@ public final class Proto {
        * A CAS number of the flow.
        * </pre>
        *
-       * <code>string cas = 9;</code>
+       * <code>string cas = 11;</code>
        * @return The bytes for cas.
        */
       public com.google.protobuf.ByteString
@@ -20884,7 +25909,7 @@ public final class Proto {
        * A CAS number of the flow.
        * </pre>
        *
-       * <code>string cas = 9;</code>
+       * <code>string cas = 11;</code>
        * @param value The cas to set.
        * @return This builder for chaining.
        */
@@ -20903,7 +25928,7 @@ public final class Proto {
        * A CAS number of the flow.
        * </pre>
        *
-       * <code>string cas = 9;</code>
+       * <code>string cas = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCas() {
@@ -20917,7 +25942,7 @@ public final class Proto {
        * A CAS number of the flow.
        * </pre>
        *
-       * <code>string cas = 9;</code>
+       * <code>string cas = 11;</code>
        * @param value The bytes for cas to set.
        * @return This builder for chaining.
        */
@@ -20939,7 +25964,7 @@ public final class Proto {
        * A chemical formula of the flow.
        * </pre>
        *
-       * <code>string formula = 10;</code>
+       * <code>string formula = 12;</code>
        * @return The formula.
        */
       public java.lang.String getFormula() {
@@ -20959,7 +25984,7 @@ public final class Proto {
        * A chemical formula of the flow.
        * </pre>
        *
-       * <code>string formula = 10;</code>
+       * <code>string formula = 12;</code>
        * @return The bytes for formula.
        */
       public com.google.protobuf.ByteString
@@ -20980,7 +26005,7 @@ public final class Proto {
        * A chemical formula of the flow.
        * </pre>
        *
-       * <code>string formula = 10;</code>
+       * <code>string formula = 12;</code>
        * @param value The formula to set.
        * @return This builder for chaining.
        */
@@ -20999,7 +26024,7 @@ public final class Proto {
        * A chemical formula of the flow.
        * </pre>
        *
-       * <code>string formula = 10;</code>
+       * <code>string formula = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearFormula() {
@@ -21013,7 +26038,7 @@ public final class Proto {
        * A chemical formula of the flow.
        * </pre>
        *
-       * <code>string formula = 10;</code>
+       * <code>string formula = 12;</code>
        * @param value The bytes for formula to set.
        * @return This builder for chaining.
        */
@@ -21032,9 +26057,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> flowProperties_ =
         java.util.Collections.emptyList();
       private void ensureFlowPropertiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           flowProperties_ = new java.util.ArrayList<org.openlca.proto.Proto.FlowPropertyFactor>(flowProperties_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -21048,7 +26073,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor> getFlowPropertiesList() {
         if (flowPropertiesBuilder_ == null) {
@@ -21064,7 +26089,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public int getFlowPropertiesCount() {
         if (flowPropertiesBuilder_ == null) {
@@ -21080,7 +26105,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor getFlowProperties(int index) {
         if (flowPropertiesBuilder_ == null) {
@@ -21096,7 +26121,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder setFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor value) {
@@ -21119,7 +26144,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder setFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21139,7 +26164,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder addFlowProperties(org.openlca.proto.Proto.FlowPropertyFactor value) {
         if (flowPropertiesBuilder_ == null) {
@@ -21161,7 +26186,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder addFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor value) {
@@ -21184,7 +26209,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder addFlowProperties(
           org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21204,7 +26229,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder addFlowProperties(
           int index, org.openlca.proto.Proto.FlowPropertyFactor.Builder builderForValue) {
@@ -21224,7 +26249,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder addAllFlowProperties(
           java.lang.Iterable<? extends org.openlca.proto.Proto.FlowPropertyFactor> values) {
@@ -21245,12 +26270,12 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder clearFlowProperties() {
         if (flowPropertiesBuilder_ == null) {
           flowProperties_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           flowPropertiesBuilder_.clear();
@@ -21264,7 +26289,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public Builder removeFlowProperties(int index) {
         if (flowPropertiesBuilder_ == null) {
@@ -21283,7 +26308,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder getFlowPropertiesBuilder(
           int index) {
@@ -21296,7 +26321,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactorOrBuilder getFlowPropertiesOrBuilder(
           int index) {
@@ -21312,7 +26337,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.FlowPropertyFactorOrBuilder> 
            getFlowPropertiesOrBuilderList() {
@@ -21329,7 +26354,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder addFlowPropertiesBuilder() {
         return getFlowPropertiesFieldBuilder().addBuilder(
@@ -21342,7 +26367,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyFactor.Builder addFlowPropertiesBuilder(
           int index) {
@@ -21356,7 +26381,7 @@ public final class Proto {
        * properties.
        * </pre>
        *
-       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 11;</code>
+       * <code>repeated .protolca.FlowPropertyFactor flow_properties = 13;</code>
        */
       public java.util.List<org.openlca.proto.Proto.FlowPropertyFactor.Builder> 
            getFlowPropertiesBuilderList() {
@@ -21369,7 +26394,7 @@ public final class Proto {
           flowPropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.FlowPropertyFactor, org.openlca.proto.Proto.FlowPropertyFactor.Builder, org.openlca.proto.Proto.FlowPropertyFactorOrBuilder>(
                   flowProperties_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           flowProperties_ = null;
@@ -21387,7 +26412,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        * @return Whether the location field is set.
        */
       public boolean hasLocation() {
@@ -21400,7 +26425,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        * @return The location.
        */
       public org.openlca.proto.Proto.Ref getLocation() {
@@ -21417,7 +26442,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder setLocation(org.openlca.proto.Proto.Ref value) {
         if (locationBuilder_ == null) {
@@ -21439,7 +26464,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder setLocation(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -21459,7 +26484,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder mergeLocation(org.openlca.proto.Proto.Ref value) {
         if (locationBuilder_ == null) {
@@ -21483,7 +26508,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -21503,7 +26528,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getLocationBuilder() {
         
@@ -21517,7 +26542,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
@@ -21534,7 +26559,7 @@ public final class Proto {
        * data formats define a location as a property of a flow.
        * </pre>
        *
-       * <code>.protolca.Ref location = 12;</code>
+       * <code>.protolca.Ref location = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -27991,10 +33016,79 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The type of the flow property
      * </pre>
      *
-     * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+     * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
      * @return The enum numeric value on the wire for flowPropertyType.
      */
     int getFlowPropertyTypeValue();
@@ -28003,7 +33097,7 @@ public final class Proto {
      * The type of the flow property
      * </pre>
      *
-     * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+     * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
      * @return The flowPropertyType.
      */
     org.openlca.proto.Proto.FlowPropertyType getFlowPropertyType();
@@ -28014,7 +33108,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      * @return Whether the unitGroup field is set.
      */
     boolean hasUnitGroup();
@@ -28024,7 +33118,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      * @return The unitGroup.
      */
     org.openlca.proto.Proto.Ref getUnitGroup();
@@ -28034,7 +33128,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder();
   }
@@ -28061,6 +33155,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       flowPropertyType_ = 0;
     }
 
@@ -28084,6 +33180,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -28143,13 +33240,28 @@ public final class Proto {
 
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 80: {
               int rawValue = input.readEnum();
 
               flowPropertyType_ = rawValue;
               break;
             }
-            case 74: {
+            case 90: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (unitGroup_ != null) {
                 subBuilder = unitGroup_.toBuilder();
@@ -28177,6 +33289,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -28514,14 +33629,119 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int FLOW_PROPERTY_TYPE_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLOW_PROPERTY_TYPE_FIELD_NUMBER = 10;
     private int flowPropertyType_;
     /**
      * <pre>
      * The type of the flow property
      * </pre>
      *
-     * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+     * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
      * @return The enum numeric value on the wire for flowPropertyType.
      */
     @java.lang.Override public int getFlowPropertyTypeValue() {
@@ -28532,7 +33752,7 @@ public final class Proto {
      * The type of the flow property
      * </pre>
      *
-     * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+     * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
      * @return The flowPropertyType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowPropertyType getFlowPropertyType() {
@@ -28541,7 +33761,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.FlowPropertyType.UNRECOGNIZED : result;
     }
 
-    public static final int UNIT_GROUP_FIELD_NUMBER = 9;
+    public static final int UNIT_GROUP_FIELD_NUMBER = 11;
     private org.openlca.proto.Proto.Ref unitGroup_;
     /**
      * <pre>
@@ -28549,7 +33769,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      * @return Whether the unitGroup field is set.
      */
     @java.lang.Override
@@ -28562,7 +33782,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      * @return The unitGroup.
      */
     @java.lang.Override
@@ -28575,7 +33795,7 @@ public final class Proto {
      * property.
      * </pre>
      *
-     * <code>.protolca.Ref unit_group = 9;</code>
+     * <code>.protolca.Ref unit_group = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder() {
@@ -28617,11 +33837,17 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.UNDEFINED_FLOW_PROPERTY_TYPE.getNumber()) {
-        output.writeEnum(8, flowPropertyType_);
+        output.writeEnum(10, flowPropertyType_);
       }
       if (unitGroup_ != null) {
-        output.writeMessage(9, getUnitGroup());
+        output.writeMessage(11, getUnitGroup());
       }
       unknownFields.writeTo(output);
     }
@@ -28654,13 +33880,24 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (flowPropertyType_ != org.openlca.proto.Proto.FlowPropertyType.UNDEFINED_FLOW_PROPERTY_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, flowPropertyType_);
+          .computeEnumSize(10, flowPropertyType_);
       }
       if (unitGroup_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getUnitGroup());
+          .computeMessageSize(11, getUnitGroup());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -28694,6 +33931,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (flowPropertyType_ != other.flowPropertyType_) return false;
       if (hasUnitGroup() != other.hasUnitGroup()) return false;
       if (hasUnitGroup()) {
@@ -28727,6 +33968,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + FLOW_PROPERTY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + flowPropertyType_;
       if (hasUnitGroup()) {
@@ -28888,6 +34135,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         flowPropertyType_ = 0;
 
         if (unitGroupBuilder_ == null) {
@@ -28922,6 +34173,7 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.FlowProperty buildPartial() {
         org.openlca.proto.Proto.FlowProperty result = new org.openlca.proto.Proto.FlowProperty(this);
+        int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
         result.name_ = name_;
@@ -28933,6 +34185,12 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.flowPropertyType_ = flowPropertyType_;
         if (unitGroupBuilder_ == null) {
           result.unitGroup_ = unitGroup_;
@@ -29014,6 +34272,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.flowPropertyType_ != 0) {
           setFlowPropertyTypeValue(other.getFlowPropertyTypeValue());
         }
@@ -29048,6 +34320,7 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -29795,13 +35068,274 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private int flowPropertyType_ = 0;
       /**
        * <pre>
        * The type of the flow property
        * </pre>
        *
-       * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+       * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
        * @return The enum numeric value on the wire for flowPropertyType.
        */
       @java.lang.Override public int getFlowPropertyTypeValue() {
@@ -29812,7 +35346,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+       * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
        * @param value The enum numeric value on the wire for flowPropertyType to set.
        * @return This builder for chaining.
        */
@@ -29827,7 +35361,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+       * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
        * @return The flowPropertyType.
        */
       @java.lang.Override
@@ -29841,7 +35375,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+       * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
        * @param value The flowPropertyType to set.
        * @return This builder for chaining.
        */
@@ -29859,7 +35393,7 @@ public final class Proto {
        * The type of the flow property
        * </pre>
        *
-       * <code>.protolca.FlowPropertyType flow_property_type = 8;</code>
+       * <code>.protolca.FlowPropertyType flow_property_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowPropertyType() {
@@ -29878,7 +35412,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        * @return Whether the unitGroup field is set.
        */
       public boolean hasUnitGroup() {
@@ -29890,7 +35424,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        * @return The unitGroup.
        */
       public org.openlca.proto.Proto.Ref getUnitGroup() {
@@ -29906,7 +35440,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public Builder setUnitGroup(org.openlca.proto.Proto.Ref value) {
         if (unitGroupBuilder_ == null) {
@@ -29927,7 +35461,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public Builder setUnitGroup(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -29946,7 +35480,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public Builder mergeUnitGroup(org.openlca.proto.Proto.Ref value) {
         if (unitGroupBuilder_ == null) {
@@ -29969,7 +35503,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public Builder clearUnitGroup() {
         if (unitGroupBuilder_ == null) {
@@ -29988,7 +35522,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getUnitGroupBuilder() {
         
@@ -30001,7 +35535,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getUnitGroupOrBuilder() {
         if (unitGroupBuilder_ != null) {
@@ -30017,7 +35551,7 @@ public final class Proto {
        * property.
        * </pre>
        *
-       * <code>.protolca.Ref unit_group = 9;</code>
+       * <code>.protolca.Ref unit_group = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -38185,10 +43719,79 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> 
         getImpactCategoriesList();
@@ -38197,7 +43800,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index);
     /**
@@ -38205,7 +43808,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     int getImpactCategoriesCount();
     /**
@@ -38213,7 +43816,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
         getImpactCategoriesOrBuilderList();
@@ -38222,7 +43825,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
         int index);
@@ -38233,7 +43836,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     java.util.List<org.openlca.proto.Proto.Parameter> 
         getParametersList();
@@ -38243,7 +43846,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     org.openlca.proto.Proto.Parameter getParameters(int index);
     /**
@@ -38252,7 +43855,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     int getParametersCount();
     /**
@@ -38261,7 +43864,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
         getParametersOrBuilderList();
@@ -38271,7 +43874,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
         int index);
@@ -38299,6 +43902,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       impactCategories_ = java.util.Collections.emptyList();
       parameters_ = java.util.Collections.emptyList();
     }
@@ -38384,18 +43989,33 @@ public final class Proto {
               break;
             }
             case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                impactCategories_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactCategoryRef>();
+                tags_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                impactCategories_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactCategoryRef>();
+                mutable_bitField0_ |= 0x00000002;
               }
               impactCategories_.add(
                   input.readMessage(org.openlca.proto.Proto.ImpactCategoryRef.parser(), extensionRegistry));
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               parameters_.add(
                   input.readMessage(org.openlca.proto.Proto.Parameter.parser(), extensionRegistry));
@@ -38417,9 +44037,12 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          impactCategories_ = java.util.Collections.unmodifiableList(impactCategories_);
+          tags_ = tags_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          impactCategories_ = java.util.Collections.unmodifiableList(impactCategories_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
         }
         this.unknownFields = unknownFields.build();
@@ -38759,14 +44382,119 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int IMPACT_CATEGORIES_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMPACT_CATEGORIES_FIELD_NUMBER = 10;
     private java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> impactCategories_;
     /**
      * <pre>
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> getImpactCategoriesList() {
@@ -38777,7 +44505,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
@@ -38789,7 +44517,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     @java.lang.Override
     public int getImpactCategoriesCount() {
@@ -38800,7 +44528,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index) {
@@ -38811,7 +44539,7 @@ public final class Proto {
      * The LCIA categories of the method.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+     * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
@@ -38819,7 +44547,7 @@ public final class Proto {
       return impactCategories_.get(index);
     }
 
-    public static final int PARAMETERS_FIELD_NUMBER = 9;
+    public static final int PARAMETERS_FIELD_NUMBER = 11;
     private java.util.List<org.openlca.proto.Proto.Parameter> parameters_;
     /**
      * <pre>
@@ -38827,7 +44555,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
@@ -38839,7 +44567,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
@@ -38852,7 +44580,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     @java.lang.Override
     public int getParametersCount() {
@@ -38864,7 +44592,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.Parameter getParameters(int index) {
@@ -38876,7 +44604,7 @@ public final class Proto {
      * characterisation factors in this method.
      * </pre>
      *
-     * <code>repeated .protolca.Parameter parameters = 9;</code>
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
@@ -38919,11 +44647,17 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       for (int i = 0; i < impactCategories_.size(); i++) {
-        output.writeMessage(8, impactCategories_.get(i));
+        output.writeMessage(10, impactCategories_.get(i));
       }
       for (int i = 0; i < parameters_.size(); i++) {
-        output.writeMessage(9, parameters_.get(i));
+        output.writeMessage(11, parameters_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -38956,13 +44690,24 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       for (int i = 0; i < impactCategories_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, impactCategories_.get(i));
+          .computeMessageSize(10, impactCategories_.get(i));
       }
       for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, parameters_.get(i));
+          .computeMessageSize(11, parameters_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -38996,6 +44741,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (!getImpactCategoriesList()
           .equals(other.getImpactCategoriesList())) return false;
       if (!getParametersList()
@@ -39027,6 +44776,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       if (getImpactCategoriesCount() > 0) {
         hash = (37 * hash) + IMPACT_CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategoriesList().hashCode();
@@ -39192,15 +44947,19 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         if (impactCategoriesBuilder_ == null) {
           impactCategories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           impactCategoriesBuilder_.clear();
         }
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           parametersBuilder_.clear();
         }
@@ -39242,19 +45001,25 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         if (impactCategoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             impactCategories_ = java.util.Collections.unmodifiableList(impactCategories_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.impactCategories_ = impactCategories_;
         } else {
           result.impactCategories_ = impactCategoriesBuilder_.build();
         }
         if (parametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             parameters_ = java.util.Collections.unmodifiableList(parameters_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.parameters_ = parameters_;
         } else {
@@ -39335,11 +45100,25 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (impactCategoriesBuilder_ == null) {
           if (!other.impactCategories_.isEmpty()) {
             if (impactCategories_.isEmpty()) {
               impactCategories_ = other.impactCategories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureImpactCategoriesIsMutable();
               impactCategories_.addAll(other.impactCategories_);
@@ -39352,7 +45131,7 @@ public final class Proto {
               impactCategoriesBuilder_.dispose();
               impactCategoriesBuilder_ = null;
               impactCategories_ = other.impactCategories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               impactCategoriesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getImpactCategoriesFieldBuilder() : null;
@@ -39365,7 +45144,7 @@ public final class Proto {
           if (!other.parameters_.isEmpty()) {
             if (parameters_.isEmpty()) {
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureParametersIsMutable();
               parameters_.addAll(other.parameters_);
@@ -39378,7 +45157,7 @@ public final class Proto {
               parametersBuilder_.dispose();
               parametersBuilder_ = null;
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               parametersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getParametersFieldBuilder() : null;
@@ -40163,12 +45942,273 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> impactCategories_ =
         java.util.Collections.emptyList();
       private void ensureImpactCategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           impactCategories_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactCategoryRef>(impactCategories_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -40180,7 +46220,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> getImpactCategoriesList() {
         if (impactCategoriesBuilder_ == null) {
@@ -40194,7 +46234,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public int getImpactCategoriesCount() {
         if (impactCategoriesBuilder_ == null) {
@@ -40208,7 +46248,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index) {
         if (impactCategoriesBuilder_ == null) {
@@ -40222,7 +46262,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder setImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef value) {
@@ -40243,7 +46283,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder setImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40261,7 +46301,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder addImpactCategories(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoriesBuilder_ == null) {
@@ -40281,7 +46321,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder addImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef value) {
@@ -40302,7 +46342,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder addImpactCategories(
           org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40320,7 +46360,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder addImpactCategories(
           int index, org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
@@ -40338,7 +46378,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder addAllImpactCategories(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ImpactCategoryRef> values) {
@@ -40357,12 +46397,12 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder clearImpactCategories() {
         if (impactCategoriesBuilder_ == null) {
           impactCategories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           impactCategoriesBuilder_.clear();
@@ -40374,7 +46414,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public Builder removeImpactCategories(int index) {
         if (impactCategoriesBuilder_ == null) {
@@ -40391,7 +46431,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder getImpactCategoriesBuilder(
           int index) {
@@ -40402,7 +46442,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
           int index) {
@@ -40416,7 +46456,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
            getImpactCategoriesOrBuilderList() {
@@ -40431,7 +46471,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder addImpactCategoriesBuilder() {
         return getImpactCategoriesFieldBuilder().addBuilder(
@@ -40442,7 +46482,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryRef.Builder addImpactCategoriesBuilder(
           int index) {
@@ -40454,7 +46494,7 @@ public final class Proto {
        * The LCIA categories of the method.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 8;</code>
+       * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactCategoryRef.Builder> 
            getImpactCategoriesBuilderList() {
@@ -40467,7 +46507,7 @@ public final class Proto {
           impactCategoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.ImpactCategoryRef, org.openlca.proto.Proto.ImpactCategoryRef.Builder, org.openlca.proto.Proto.ImpactCategoryRefOrBuilder>(
                   impactCategories_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           impactCategories_ = null;
@@ -40478,9 +46518,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.Parameter> parameters_ =
         java.util.Collections.emptyList();
       private void ensureParametersIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>(parameters_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -40493,7 +46533,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
         if (parametersBuilder_ == null) {
@@ -40508,7 +46548,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public int getParametersCount() {
         if (parametersBuilder_ == null) {
@@ -40523,7 +46563,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public org.openlca.proto.Proto.Parameter getParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -40538,7 +46578,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -40560,7 +46600,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -40579,7 +46619,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder addParameters(org.openlca.proto.Proto.Parameter value) {
         if (parametersBuilder_ == null) {
@@ -40600,7 +46640,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -40622,7 +46662,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder addParameters(
           org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -40641,7 +46681,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -40660,7 +46700,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder addAllParameters(
           java.lang.Iterable<? extends org.openlca.proto.Proto.Parameter> values) {
@@ -40680,12 +46720,12 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder clearParameters() {
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           parametersBuilder_.clear();
@@ -40698,7 +46738,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public Builder removeParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -40716,7 +46756,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder getParametersBuilder(
           int index) {
@@ -40728,7 +46768,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
           int index) {
@@ -40743,7 +46783,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
            getParametersOrBuilderList() {
@@ -40759,7 +46799,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder() {
         return getParametersFieldBuilder().addBuilder(
@@ -40771,7 +46811,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder(
           int index) {
@@ -40784,7 +46824,7 @@ public final class Proto {
        * characterisation factors in this method.
        * </pre>
        *
-       * <code>repeated .protolca.Parameter parameters = 9;</code>
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter.Builder> 
            getParametersBuilderList() {
@@ -40797,7 +46837,7 @@ public final class Proto {
           parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder>(
                   parameters_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           parameters_ = null;
@@ -47468,36 +53508,105 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
      * @return The enum numeric value on the wire for defaultAllocationMethod.
      */
     int getDefaultAllocationMethodValue();
     /**
-     * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
      * @return The defaultAllocationMethod.
      */
     org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod();
 
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     java.util.List<org.openlca.proto.Proto.AllocationFactor> 
         getAllocationFactorsList();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index);
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     int getAllocationFactorsCount();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
         getAllocationFactorsOrBuilderList();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
         int index);
@@ -47507,7 +53616,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     java.util.List<org.openlca.proto.Proto.Exchange> 
         getExchangesList();
@@ -47516,7 +53625,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     org.openlca.proto.Proto.Exchange getExchanges(int index);
     /**
@@ -47524,7 +53633,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     int getExchangesCount();
     /**
@@ -47532,7 +53641,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ExchangeOrBuilder> 
         getExchangesOrBuilderList();
@@ -47541,72 +53650,72 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getExchangesOrBuilder(
         int index);
 
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      * @return Whether the location field is set.
      */
     boolean hasLocation();
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      * @return The location.
      */
     org.openlca.proto.Proto.Location getLocation();
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      */
     org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder();
 
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     java.util.List<org.openlca.proto.Proto.Parameter> 
         getParametersList();
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     org.openlca.proto.Proto.Parameter getParameters(int index);
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     int getParametersCount();
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
         getParametersOrBuilderList();
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
         int index);
 
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      * @return Whether the processDocumentation field is set.
      */
     boolean hasProcessDocumentation();
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      * @return The processDocumentation.
      */
     org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation();
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      */
     org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder();
 
     /**
-     * <code>.protolca.ProcessType process_type = 14;</code>
+     * <code>.protolca.ProcessType process_type = 16;</code>
      * @return The enum numeric value on the wire for processType.
      */
     int getProcessTypeValue();
     /**
-     * <code>.protolca.ProcessType process_type = 14;</code>
+     * <code>.protolca.ProcessType process_type = 16;</code>
      * @return The processType.
      */
     org.openlca.proto.Proto.ProcessType getProcessType();
@@ -47617,7 +53726,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      * @return Whether the dqSystem field is set.
      */
     boolean hasDqSystem();
@@ -47627,7 +53736,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      * @return The dqSystem.
      */
     org.openlca.proto.Proto.Ref getDqSystem();
@@ -47637,7 +53746,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder();
 
@@ -47648,7 +53757,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     boolean hasExchangeDqSystem();
@@ -47659,7 +53768,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      * @return The exchangeDqSystem.
      */
     org.openlca.proto.Proto.Ref getExchangeDqSystem();
@@ -47670,7 +53779,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder();
 
@@ -47680,7 +53789,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      * @return Whether the socialDqSystem field is set.
      */
     boolean hasSocialDqSystem();
@@ -47690,7 +53799,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      * @return The socialDqSystem.
      */
     org.openlca.proto.Proto.Ref getSocialDqSystem();
@@ -47700,7 +53809,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder();
 
@@ -47713,7 +53822,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 18;</code>
+     * <code>string dq_entry = 20;</code>
      * @return The dqEntry.
      */
     java.lang.String getDqEntry();
@@ -47726,7 +53835,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 18;</code>
+     * <code>string dq_entry = 20;</code>
      * @return The bytes for dqEntry.
      */
     com.google.protobuf.ByteString
@@ -47751,6 +53860,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       defaultAllocationMethod_ = 0;
       allocationFactors_ = java.util.Collections.emptyList();
       exchanges_ = java.util.Collections.emptyList();
@@ -47839,31 +53950,46 @@ public final class Proto {
 
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 80: {
               int rawValue = input.readEnum();
 
               defaultAllocationMethod_ = rawValue;
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 allocationFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.AllocationFactor>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               allocationFactors_.add(
                   input.readMessage(org.openlca.proto.Proto.AllocationFactor.parser(), extensionRegistry));
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 exchanges_ = new java.util.ArrayList<org.openlca.proto.Proto.Exchange>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               exchanges_.add(
                   input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry));
               break;
             }
-            case 90: {
+            case 106: {
               org.openlca.proto.Proto.Location.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
@@ -47876,16 +54002,16 @@ public final class Proto {
 
               break;
             }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               parameters_.add(
                   input.readMessage(org.openlca.proto.Proto.Parameter.parser(), extensionRegistry));
               break;
             }
-            case 106: {
+            case 122: {
               org.openlca.proto.Proto.ProcessDocumentation.Builder subBuilder = null;
               if (processDocumentation_ != null) {
                 subBuilder = processDocumentation_.toBuilder();
@@ -47898,13 +54024,13 @@ public final class Proto {
 
               break;
             }
-            case 112: {
+            case 128: {
               int rawValue = input.readEnum();
 
               processType_ = rawValue;
               break;
             }
-            case 122: {
+            case 138: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (dqSystem_ != null) {
                 subBuilder = dqSystem_.toBuilder();
@@ -47917,7 +54043,7 @@ public final class Proto {
 
               break;
             }
-            case 130: {
+            case 146: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (exchangeDqSystem_ != null) {
                 subBuilder = exchangeDqSystem_.toBuilder();
@@ -47930,7 +54056,7 @@ public final class Proto {
 
               break;
             }
-            case 138: {
+            case 154: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (socialDqSystem_ != null) {
                 subBuilder = socialDqSystem_.toBuilder();
@@ -47943,7 +54069,7 @@ public final class Proto {
 
               break;
             }
-            case 146: {
+            case 162: {
               java.lang.String s = input.readStringRequireUtf8();
 
               dqEntry_ = s;
@@ -47965,12 +54091,15 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          allocationFactors_ = java.util.Collections.unmodifiableList(allocationFactors_);
+          tags_ = tags_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          exchanges_ = java.util.Collections.unmodifiableList(exchanges_);
+          allocationFactors_ = java.util.Collections.unmodifiableList(allocationFactors_);
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          exchanges_ = java.util.Collections.unmodifiableList(exchanges_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
         }
         this.unknownFields = unknownFields.build();
@@ -48310,17 +54439,122 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER = 10;
     private int defaultAllocationMethod_;
     /**
-     * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
      * @return The enum numeric value on the wire for defaultAllocationMethod.
      */
     @java.lang.Override public int getDefaultAllocationMethodValue() {
       return defaultAllocationMethod_;
     }
     /**
-     * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
      * @return The defaultAllocationMethod.
      */
     @java.lang.Override public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
@@ -48329,17 +54563,17 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
     }
 
-    public static final int ALLOCATION_FACTORS_FIELD_NUMBER = 9;
+    public static final int ALLOCATION_FACTORS_FIELD_NUMBER = 11;
     private java.util.List<org.openlca.proto.Proto.AllocationFactor> allocationFactors_;
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
@@ -48347,21 +54581,21 @@ public final class Proto {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     @java.lang.Override
     public int getAllocationFactorsCount() {
       return allocationFactors_.size();
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
       return allocationFactors_.get(index);
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
@@ -48369,14 +54603,14 @@ public final class Proto {
       return allocationFactors_.get(index);
     }
 
-    public static final int EXCHANGES_FIELD_NUMBER = 10;
+    public static final int EXCHANGES_FIELD_NUMBER = 12;
     private java.util.List<org.openlca.proto.Proto.Exchange> exchanges_;
     /**
      * <pre>
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.Exchange> getExchangesList() {
@@ -48387,7 +54621,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -48399,7 +54633,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     @java.lang.Override
     public int getExchangesCount() {
@@ -48410,7 +54644,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.Exchange getExchanges(int index) {
@@ -48421,7 +54655,7 @@ public final class Proto {
      * The inputs and outputs of the process.
      * </pre>
      *
-     * <code>repeated .protolca.Exchange exchanges = 10;</code>
+     * <code>repeated .protolca.Exchange exchanges = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getExchangesOrBuilder(
@@ -48429,10 +54663,10 @@ public final class Proto {
       return exchanges_.get(index);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 11;
+    public static final int LOCATION_FIELD_NUMBER = 13;
     private org.openlca.proto.Proto.Location location_;
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      * @return Whether the location field is set.
      */
     @java.lang.Override
@@ -48440,7 +54674,7 @@ public final class Proto {
       return location_ != null;
     }
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -48448,24 +54682,24 @@ public final class Proto {
       return location_ == null ? org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
     }
     /**
-     * <code>.protolca.Location location = 11;</code>
+     * <code>.protolca.Location location = 13;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
       return getLocation();
     }
 
-    public static final int PARAMETERS_FIELD_NUMBER = 12;
+    public static final int PARAMETERS_FIELD_NUMBER = 14;
     private java.util.List<org.openlca.proto.Proto.Parameter> parameters_;
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
       return parameters_;
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
@@ -48473,21 +54707,21 @@ public final class Proto {
       return parameters_;
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     @java.lang.Override
     public int getParametersCount() {
       return parameters_.size();
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.Parameter getParameters(int index) {
       return parameters_.get(index);
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 12;</code>
+     * <code>repeated .protolca.Parameter parameters = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
@@ -48495,10 +54729,10 @@ public final class Proto {
       return parameters_.get(index);
     }
 
-    public static final int PROCESS_DOCUMENTATION_FIELD_NUMBER = 13;
+    public static final int PROCESS_DOCUMENTATION_FIELD_NUMBER = 15;
     private org.openlca.proto.Proto.ProcessDocumentation processDocumentation_;
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      * @return Whether the processDocumentation field is set.
      */
     @java.lang.Override
@@ -48506,7 +54740,7 @@ public final class Proto {
       return processDocumentation_ != null;
     }
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      * @return The processDocumentation.
      */
     @java.lang.Override
@@ -48514,24 +54748,24 @@ public final class Proto {
       return processDocumentation_ == null ? org.openlca.proto.Proto.ProcessDocumentation.getDefaultInstance() : processDocumentation_;
     }
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
       return getProcessDocumentation();
     }
 
-    public static final int PROCESS_TYPE_FIELD_NUMBER = 14;
+    public static final int PROCESS_TYPE_FIELD_NUMBER = 16;
     private int processType_;
     /**
-     * <code>.protolca.ProcessType process_type = 14;</code>
+     * <code>.protolca.ProcessType process_type = 16;</code>
      * @return The enum numeric value on the wire for processType.
      */
     @java.lang.Override public int getProcessTypeValue() {
       return processType_;
     }
     /**
-     * <code>.protolca.ProcessType process_type = 14;</code>
+     * <code>.protolca.ProcessType process_type = 16;</code>
      * @return The processType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ProcessType getProcessType() {
@@ -48540,7 +54774,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
     }
 
-    public static final int DQ_SYSTEM_FIELD_NUMBER = 15;
+    public static final int DQ_SYSTEM_FIELD_NUMBER = 17;
     private org.openlca.proto.Proto.Ref dqSystem_;
     /**
      * <pre>
@@ -48548,7 +54782,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      * @return Whether the dqSystem field is set.
      */
     @java.lang.Override
@@ -48561,7 +54795,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      * @return The dqSystem.
      */
     @java.lang.Override
@@ -48574,14 +54808,14 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 15;</code>
+     * <code>.protolca.Ref dq_system = 17;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
       return getDqSystem();
     }
 
-    public static final int EXCHANGE_DQ_SYSTEM_FIELD_NUMBER = 16;
+    public static final int EXCHANGE_DQ_SYSTEM_FIELD_NUMBER = 18;
     private org.openlca.proto.Proto.Ref exchangeDqSystem_;
     /**
      * <pre>
@@ -48590,7 +54824,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     @java.lang.Override
@@ -48604,7 +54838,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      * @return The exchangeDqSystem.
      */
     @java.lang.Override
@@ -48618,14 +54852,14 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 16;</code>
+     * <code>.protolca.Ref exchange_dq_system = 18;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
       return getExchangeDqSystem();
     }
 
-    public static final int SOCIAL_DQ_SYSTEM_FIELD_NUMBER = 17;
+    public static final int SOCIAL_DQ_SYSTEM_FIELD_NUMBER = 19;
     private org.openlca.proto.Proto.Ref socialDqSystem_;
     /**
      * <pre>
@@ -48633,7 +54867,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      * @return Whether the socialDqSystem field is set.
      */
     @java.lang.Override
@@ -48646,7 +54880,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      * @return The socialDqSystem.
      */
     @java.lang.Override
@@ -48659,14 +54893,14 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 17;</code>
+     * <code>.protolca.Ref social_dq_system = 19;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
       return getSocialDqSystem();
     }
 
-    public static final int DQ_ENTRY_FIELD_NUMBER = 18;
+    public static final int DQ_ENTRY_FIELD_NUMBER = 20;
     private volatile java.lang.Object dqEntry_;
     /**
      * <pre>
@@ -48677,7 +54911,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 18;</code>
+     * <code>string dq_entry = 20;</code>
      * @return The dqEntry.
      */
     @java.lang.Override
@@ -48702,7 +54936,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 18;</code>
+     * <code>string dq_entry = 20;</code>
      * @return The bytes for dqEntry.
      */
     @java.lang.Override
@@ -48755,38 +54989,44 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
-        output.writeEnum(8, defaultAllocationMethod_);
+        output.writeEnum(10, defaultAllocationMethod_);
       }
       for (int i = 0; i < allocationFactors_.size(); i++) {
-        output.writeMessage(9, allocationFactors_.get(i));
+        output.writeMessage(11, allocationFactors_.get(i));
       }
       for (int i = 0; i < exchanges_.size(); i++) {
-        output.writeMessage(10, exchanges_.get(i));
+        output.writeMessage(12, exchanges_.get(i));
       }
       if (location_ != null) {
-        output.writeMessage(11, getLocation());
+        output.writeMessage(13, getLocation());
       }
       for (int i = 0; i < parameters_.size(); i++) {
-        output.writeMessage(12, parameters_.get(i));
+        output.writeMessage(14, parameters_.get(i));
       }
       if (processDocumentation_ != null) {
-        output.writeMessage(13, getProcessDocumentation());
+        output.writeMessage(15, getProcessDocumentation());
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
-        output.writeEnum(14, processType_);
+        output.writeEnum(16, processType_);
       }
       if (dqSystem_ != null) {
-        output.writeMessage(15, getDqSystem());
+        output.writeMessage(17, getDqSystem());
       }
       if (exchangeDqSystem_ != null) {
-        output.writeMessage(16, getExchangeDqSystem());
+        output.writeMessage(18, getExchangeDqSystem());
       }
       if (socialDqSystem_ != null) {
-        output.writeMessage(17, getSocialDqSystem());
+        output.writeMessage(19, getSocialDqSystem());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, dqEntry_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, dqEntry_);
       }
       unknownFields.writeTo(output);
     }
@@ -48819,48 +55059,59 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, defaultAllocationMethod_);
+          .computeEnumSize(10, defaultAllocationMethod_);
       }
       for (int i = 0; i < allocationFactors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, allocationFactors_.get(i));
+          .computeMessageSize(11, allocationFactors_.get(i));
       }
       for (int i = 0; i < exchanges_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, exchanges_.get(i));
+          .computeMessageSize(12, exchanges_.get(i));
       }
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getLocation());
+          .computeMessageSize(13, getLocation());
       }
       for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, parameters_.get(i));
+          .computeMessageSize(14, parameters_.get(i));
       }
       if (processDocumentation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getProcessDocumentation());
+          .computeMessageSize(15, getProcessDocumentation());
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, processType_);
+          .computeEnumSize(16, processType_);
       }
       if (dqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getDqSystem());
+          .computeMessageSize(17, getDqSystem());
       }
       if (exchangeDqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, getExchangeDqSystem());
+          .computeMessageSize(18, getExchangeDqSystem());
       }
       if (socialDqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getSocialDqSystem());
+          .computeMessageSize(19, getSocialDqSystem());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, dqEntry_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, dqEntry_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -48894,6 +55145,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (defaultAllocationMethod_ != other.defaultAllocationMethod_) return false;
       if (!getAllocationFactorsList()
           .equals(other.getAllocationFactorsList())) return false;
@@ -48956,6 +55211,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + defaultAllocationMethod_;
       if (getAllocationFactorsCount() > 0) {
@@ -49148,17 +55409,21 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         defaultAllocationMethod_ = 0;
 
         if (allocationFactorsBuilder_ == null) {
           allocationFactors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           allocationFactorsBuilder_.clear();
         }
         if (exchangesBuilder_ == null) {
           exchanges_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           exchangesBuilder_.clear();
         }
@@ -49170,7 +55435,7 @@ public final class Proto {
         }
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           parametersBuilder_.clear();
         }
@@ -49240,20 +55505,26 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.defaultAllocationMethod_ = defaultAllocationMethod_;
         if (allocationFactorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             allocationFactors_ = java.util.Collections.unmodifiableList(allocationFactors_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.allocationFactors_ = allocationFactors_;
         } else {
           result.allocationFactors_ = allocationFactorsBuilder_.build();
         }
         if (exchangesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             exchanges_ = java.util.Collections.unmodifiableList(exchanges_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.exchanges_ = exchanges_;
         } else {
@@ -49265,9 +55536,9 @@ public final class Proto {
           result.location_ = locationBuilder_.build();
         }
         if (parametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             parameters_ = java.util.Collections.unmodifiableList(parameters_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.parameters_ = parameters_;
         } else {
@@ -49370,6 +55641,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.defaultAllocationMethod_ != 0) {
           setDefaultAllocationMethodValue(other.getDefaultAllocationMethodValue());
         }
@@ -49377,7 +55662,7 @@ public final class Proto {
           if (!other.allocationFactors_.isEmpty()) {
             if (allocationFactors_.isEmpty()) {
               allocationFactors_ = other.allocationFactors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAllocationFactorsIsMutable();
               allocationFactors_.addAll(other.allocationFactors_);
@@ -49390,7 +55675,7 @@ public final class Proto {
               allocationFactorsBuilder_.dispose();
               allocationFactorsBuilder_ = null;
               allocationFactors_ = other.allocationFactors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               allocationFactorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAllocationFactorsFieldBuilder() : null;
@@ -49403,7 +55688,7 @@ public final class Proto {
           if (!other.exchanges_.isEmpty()) {
             if (exchanges_.isEmpty()) {
               exchanges_ = other.exchanges_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureExchangesIsMutable();
               exchanges_.addAll(other.exchanges_);
@@ -49416,7 +55701,7 @@ public final class Proto {
               exchangesBuilder_.dispose();
               exchangesBuilder_ = null;
               exchanges_ = other.exchanges_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               exchangesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getExchangesFieldBuilder() : null;
@@ -49432,7 +55717,7 @@ public final class Proto {
           if (!other.parameters_.isEmpty()) {
             if (parameters_.isEmpty()) {
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureParametersIsMutable();
               parameters_.addAll(other.parameters_);
@@ -49445,7 +55730,7 @@ public final class Proto {
               parametersBuilder_.dispose();
               parametersBuilder_ = null;
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               parametersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getParametersFieldBuilder() : null;
@@ -50249,16 +56534,277 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private int defaultAllocationMethod_ = 0;
       /**
-       * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
        * @return The enum numeric value on the wire for defaultAllocationMethod.
        */
       @java.lang.Override public int getDefaultAllocationMethodValue() {
         return defaultAllocationMethod_;
       }
       /**
-       * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
        * @param value The enum numeric value on the wire for defaultAllocationMethod to set.
        * @return This builder for chaining.
        */
@@ -50269,7 +56815,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
        * @return The defaultAllocationMethod.
        */
       @java.lang.Override
@@ -50279,7 +56825,7 @@ public final class Proto {
         return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
        * @param value The defaultAllocationMethod to set.
        * @return This builder for chaining.
        */
@@ -50293,7 +56839,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.AllocationType default_allocation_method = 8;</code>
+       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearDefaultAllocationMethod() {
@@ -50306,9 +56852,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.AllocationFactor> allocationFactors_ =
         java.util.Collections.emptyList();
       private void ensureAllocationFactorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           allocationFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.AllocationFactor>(allocationFactors_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -50316,7 +56862,7 @@ public final class Proto {
           org.openlca.proto.Proto.AllocationFactor, org.openlca.proto.Proto.AllocationFactor.Builder, org.openlca.proto.Proto.AllocationFactorOrBuilder> allocationFactorsBuilder_;
 
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
         if (allocationFactorsBuilder_ == null) {
@@ -50326,7 +56872,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public int getAllocationFactorsCount() {
         if (allocationFactorsBuilder_ == null) {
@@ -50336,7 +56882,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -50346,7 +56892,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -50363,7 +56909,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50377,7 +56923,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder addAllocationFactors(org.openlca.proto.Proto.AllocationFactor value) {
         if (allocationFactorsBuilder_ == null) {
@@ -50393,7 +56939,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -50410,7 +56956,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder addAllocationFactors(
           org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50424,7 +56970,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -50438,7 +56984,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder addAllAllocationFactors(
           java.lang.Iterable<? extends org.openlca.proto.Proto.AllocationFactor> values) {
@@ -50453,12 +56999,12 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder clearAllocationFactors() {
         if (allocationFactorsBuilder_ == null) {
           allocationFactors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           allocationFactorsBuilder_.clear();
@@ -50466,7 +57012,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public Builder removeAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -50479,14 +57025,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder getAllocationFactorsBuilder(
           int index) {
         return getAllocationFactorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
           int index) {
@@ -50496,7 +57042,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
            getAllocationFactorsOrBuilderList() {
@@ -50507,14 +57053,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder() {
         return getAllocationFactorsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder(
           int index) {
@@ -50522,7 +57068,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 9;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor.Builder> 
            getAllocationFactorsBuilderList() {
@@ -50535,7 +57081,7 @@ public final class Proto {
           allocationFactorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.AllocationFactor, org.openlca.proto.Proto.AllocationFactor.Builder, org.openlca.proto.Proto.AllocationFactorOrBuilder>(
                   allocationFactors_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           allocationFactors_ = null;
@@ -50546,9 +57092,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.Exchange> exchanges_ =
         java.util.Collections.emptyList();
       private void ensureExchangesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           exchanges_ = new java.util.ArrayList<org.openlca.proto.Proto.Exchange>(exchanges_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -50560,7 +57106,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Exchange> getExchangesList() {
         if (exchangesBuilder_ == null) {
@@ -50574,7 +57120,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public int getExchangesCount() {
         if (exchangesBuilder_ == null) {
@@ -50588,7 +57134,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public org.openlca.proto.Proto.Exchange getExchanges(int index) {
         if (exchangesBuilder_ == null) {
@@ -50602,7 +57148,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder setExchanges(
           int index, org.openlca.proto.Proto.Exchange value) {
@@ -50623,7 +57169,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder setExchanges(
           int index, org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -50641,7 +57187,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder addExchanges(org.openlca.proto.Proto.Exchange value) {
         if (exchangesBuilder_ == null) {
@@ -50661,7 +57207,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder addExchanges(
           int index, org.openlca.proto.Proto.Exchange value) {
@@ -50682,7 +57228,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder addExchanges(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -50700,7 +57246,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder addExchanges(
           int index, org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -50718,7 +57264,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder addAllExchanges(
           java.lang.Iterable<? extends org.openlca.proto.Proto.Exchange> values) {
@@ -50737,12 +57283,12 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder clearExchanges() {
         if (exchangesBuilder_ == null) {
           exchanges_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           exchangesBuilder_.clear();
@@ -50754,7 +57300,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public Builder removeExchanges(int index) {
         if (exchangesBuilder_ == null) {
@@ -50771,7 +57317,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getExchangesBuilder(
           int index) {
@@ -50782,7 +57328,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getExchangesOrBuilder(
           int index) {
@@ -50796,7 +57342,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ExchangeOrBuilder> 
            getExchangesOrBuilderList() {
@@ -50811,7 +57357,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder addExchangesBuilder() {
         return getExchangesFieldBuilder().addBuilder(
@@ -50822,7 +57368,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder addExchangesBuilder(
           int index) {
@@ -50834,7 +57380,7 @@ public final class Proto {
        * The inputs and outputs of the process.
        * </pre>
        *
-       * <code>repeated .protolca.Exchange exchanges = 10;</code>
+       * <code>repeated .protolca.Exchange exchanges = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Exchange.Builder> 
            getExchangesBuilderList() {
@@ -50847,7 +57393,7 @@ public final class Proto {
           exchangesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder>(
                   exchanges_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           exchanges_ = null;
@@ -50859,14 +57405,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> locationBuilder_;
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        * @return Whether the location field is set.
        */
       public boolean hasLocation() {
         return locationBuilder_ != null || location_ != null;
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        * @return The location.
        */
       public org.openlca.proto.Proto.Location getLocation() {
@@ -50877,7 +57423,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public Builder setLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -50893,7 +57439,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public Builder setLocation(
           org.openlca.proto.Proto.Location.Builder builderForValue) {
@@ -50907,7 +57453,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public Builder mergeLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -50925,7 +57471,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -50939,7 +57485,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public org.openlca.proto.Proto.Location.Builder getLocationBuilder() {
         
@@ -50947,7 +57493,7 @@ public final class Proto {
         return getLocationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
@@ -50958,7 +57504,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Location location = 11;</code>
+       * <code>.protolca.Location location = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> 
@@ -50977,9 +57523,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.Parameter> parameters_ =
         java.util.Collections.emptyList();
       private void ensureParametersIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>(parameters_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -50987,7 +57533,7 @@ public final class Proto {
           org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> parametersBuilder_;
 
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
         if (parametersBuilder_ == null) {
@@ -50997,7 +57543,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public int getParametersCount() {
         if (parametersBuilder_ == null) {
@@ -51007,7 +57553,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public org.openlca.proto.Proto.Parameter getParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -51017,7 +57563,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -51034,7 +57580,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -51048,7 +57594,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder addParameters(org.openlca.proto.Proto.Parameter value) {
         if (parametersBuilder_ == null) {
@@ -51064,7 +57610,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -51081,7 +57627,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder addParameters(
           org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -51095,7 +57641,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -51109,7 +57655,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder addAllParameters(
           java.lang.Iterable<? extends org.openlca.proto.Proto.Parameter> values) {
@@ -51124,12 +57670,12 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder clearParameters() {
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           parametersBuilder_.clear();
@@ -51137,7 +57683,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public Builder removeParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -51150,14 +57696,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder getParametersBuilder(
           int index) {
         return getParametersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
           int index) {
@@ -51167,7 +57713,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
            getParametersOrBuilderList() {
@@ -51178,14 +57724,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder() {
         return getParametersFieldBuilder().addBuilder(
             org.openlca.proto.Proto.Parameter.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder(
           int index) {
@@ -51193,7 +57739,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.Parameter.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 12;</code>
+       * <code>repeated .protolca.Parameter parameters = 14;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter.Builder> 
            getParametersBuilderList() {
@@ -51206,7 +57752,7 @@ public final class Proto {
           parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder>(
                   parameters_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           parameters_ = null;
@@ -51218,14 +57764,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> processDocumentationBuilder_;
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        * @return Whether the processDocumentation field is set.
        */
       public boolean hasProcessDocumentation() {
         return processDocumentationBuilder_ != null || processDocumentation_ != null;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        * @return The processDocumentation.
        */
       public org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation() {
@@ -51236,7 +57782,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public Builder setProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -51252,7 +57798,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public Builder setProcessDocumentation(
           org.openlca.proto.Proto.ProcessDocumentation.Builder builderForValue) {
@@ -51266,7 +57812,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public Builder mergeProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -51284,7 +57830,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public Builder clearProcessDocumentation() {
         if (processDocumentationBuilder_ == null) {
@@ -51298,7 +57844,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentation.Builder getProcessDocumentationBuilder() {
         
@@ -51306,7 +57852,7 @@ public final class Proto {
         return getProcessDocumentationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
         if (processDocumentationBuilder_ != null) {
@@ -51317,7 +57863,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 13;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> 
@@ -51335,14 +57881,14 @@ public final class Proto {
 
       private int processType_ = 0;
       /**
-       * <code>.protolca.ProcessType process_type = 14;</code>
+       * <code>.protolca.ProcessType process_type = 16;</code>
        * @return The enum numeric value on the wire for processType.
        */
       @java.lang.Override public int getProcessTypeValue() {
         return processType_;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 14;</code>
+       * <code>.protolca.ProcessType process_type = 16;</code>
        * @param value The enum numeric value on the wire for processType to set.
        * @return This builder for chaining.
        */
@@ -51353,7 +57899,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 14;</code>
+       * <code>.protolca.ProcessType process_type = 16;</code>
        * @return The processType.
        */
       @java.lang.Override
@@ -51363,7 +57909,7 @@ public final class Proto {
         return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 14;</code>
+       * <code>.protolca.ProcessType process_type = 16;</code>
        * @param value The processType to set.
        * @return This builder for chaining.
        */
@@ -51377,7 +57923,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 14;</code>
+       * <code>.protolca.ProcessType process_type = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearProcessType() {
@@ -51396,7 +57942,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        * @return Whether the dqSystem field is set.
        */
       public boolean hasDqSystem() {
@@ -51408,7 +57954,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        * @return The dqSystem.
        */
       public org.openlca.proto.Proto.Ref getDqSystem() {
@@ -51424,7 +57970,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public Builder setDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -51445,7 +57991,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public Builder setDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51464,7 +58010,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public Builder mergeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -51487,7 +58033,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public Builder clearDqSystem() {
         if (dqSystemBuilder_ == null) {
@@ -51506,7 +58052,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDqSystemBuilder() {
         
@@ -51519,7 +58065,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
         if (dqSystemBuilder_ != null) {
@@ -51535,7 +58081,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 15;</code>
+       * <code>.protolca.Ref dq_system = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51561,7 +58107,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        * @return Whether the exchangeDqSystem field is set.
        */
       public boolean hasExchangeDqSystem() {
@@ -51574,7 +58120,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        * @return The exchangeDqSystem.
        */
       public org.openlca.proto.Proto.Ref getExchangeDqSystem() {
@@ -51591,7 +58137,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public Builder setExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51613,7 +58159,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public Builder setExchangeDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51633,7 +58179,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public Builder mergeExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51657,7 +58203,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public Builder clearExchangeDqSystem() {
         if (exchangeDqSystemBuilder_ == null) {
@@ -51677,7 +58223,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getExchangeDqSystemBuilder() {
         
@@ -51691,7 +58237,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
         if (exchangeDqSystemBuilder_ != null) {
@@ -51708,7 +58254,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 16;</code>
+       * <code>.protolca.Ref exchange_dq_system = 18;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51733,7 +58279,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        * @return Whether the socialDqSystem field is set.
        */
       public boolean hasSocialDqSystem() {
@@ -51745,7 +58291,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        * @return The socialDqSystem.
        */
       public org.openlca.proto.Proto.Ref getSocialDqSystem() {
@@ -51761,7 +58307,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public Builder setSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -51782,7 +58328,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public Builder setSocialDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -51801,7 +58347,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public Builder mergeSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -51824,7 +58370,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public Builder clearSocialDqSystem() {
         if (socialDqSystemBuilder_ == null) {
@@ -51843,7 +58389,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getSocialDqSystemBuilder() {
         
@@ -51856,7 +58402,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
         if (socialDqSystemBuilder_ != null) {
@@ -51872,7 +58418,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 17;</code>
+       * <code>.protolca.Ref social_dq_system = 19;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -51898,7 +58444,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 18;</code>
+       * <code>string dq_entry = 20;</code>
        * @return The dqEntry.
        */
       public java.lang.String getDqEntry() {
@@ -51922,7 +58468,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 18;</code>
+       * <code>string dq_entry = 20;</code>
        * @return The bytes for dqEntry.
        */
       public com.google.protobuf.ByteString
@@ -51947,7 +58493,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 18;</code>
+       * <code>string dq_entry = 20;</code>
        * @param value The dqEntry to set.
        * @return This builder for chaining.
        */
@@ -51970,7 +58516,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 18;</code>
+       * <code>string dq_entry = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearDqEntry() {
@@ -51988,7 +58534,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 18;</code>
+       * <code>string dq_entry = 20;</code>
        * @param value The bytes for dqEntry to set.
        * @return This builder for chaining.
        */
@@ -59312,10 +65858,79 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     java.util.List<org.openlca.proto.Proto.ProcessRef> 
         getProcessesList();
@@ -59324,7 +65939,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     org.openlca.proto.Proto.ProcessRef getProcesses(int index);
     /**
@@ -59332,7 +65947,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     int getProcessesCount();
     /**
@@ -59340,7 +65955,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ProcessRefOrBuilder> 
         getProcessesOrBuilderList();
@@ -59349,7 +65964,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     org.openlca.proto.Proto.ProcessRefOrBuilder getProcessesOrBuilder(
         int index);
@@ -59360,7 +65975,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      * @return Whether the referenceProcess field is set.
      */
     boolean hasReferenceProcess();
@@ -59370,7 +65985,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      * @return The referenceProcess.
      */
     org.openlca.proto.Proto.ProcessRef getReferenceProcess();
@@ -59380,7 +65995,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      */
     org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder();
 
@@ -59390,7 +66005,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      * @return Whether the referenceExchange field is set.
      */
     boolean hasReferenceExchange();
@@ -59400,7 +66015,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      * @return The referenceExchange.
      */
     org.openlca.proto.Proto.Exchange getReferenceExchange();
@@ -59410,7 +66025,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      */
     org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder();
 
@@ -59419,7 +66034,7 @@ public final class Proto {
      * The flow amount of the functional unit of the product system.
      * </pre>
      *
-     * <code>double target_amount = 11;</code>
+     * <code>double target_amount = 13;</code>
      * @return The targetAmount.
      */
     double getTargetAmount();
@@ -59429,7 +66044,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      * @return Whether the targetUnit field is set.
      */
     boolean hasTargetUnit();
@@ -59438,7 +66053,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      * @return The targetUnit.
      */
     org.openlca.proto.Proto.Ref getTargetUnit();
@@ -59447,7 +66062,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder();
 
@@ -59457,7 +66072,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      * @return Whether the targetFlowProperty field is set.
      */
     boolean hasTargetFlowProperty();
@@ -59467,7 +66082,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      * @return The targetFlowProperty.
      */
     org.openlca.proto.Proto.Ref getTargetFlowProperty();
@@ -59477,7 +66092,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder();
 
@@ -59486,7 +66101,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     java.util.List<org.openlca.proto.Proto.ProcessLink> 
         getProcessLinksList();
@@ -59495,7 +66110,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     org.openlca.proto.Proto.ProcessLink getProcessLinks(int index);
     /**
@@ -59503,7 +66118,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     int getProcessLinksCount();
     /**
@@ -59511,7 +66126,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
         getProcessLinksOrBuilderList();
@@ -59520,7 +66135,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
         int index);
@@ -59549,6 +66164,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       processes_ = java.util.Collections.emptyList();
       processLinks_ = java.util.Collections.emptyList();
     }
@@ -59634,15 +66251,30 @@ public final class Proto {
               break;
             }
             case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                processes_ = new java.util.ArrayList<org.openlca.proto.Proto.ProcessRef>();
+                tags_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                processes_ = new java.util.ArrayList<org.openlca.proto.Proto.ProcessRef>();
+                mutable_bitField0_ |= 0x00000002;
               }
               processes_.add(
                   input.readMessage(org.openlca.proto.Proto.ProcessRef.parser(), extensionRegistry));
               break;
             }
-            case 74: {
+            case 90: {
               org.openlca.proto.Proto.ProcessRef.Builder subBuilder = null;
               if (referenceProcess_ != null) {
                 subBuilder = referenceProcess_.toBuilder();
@@ -59655,7 +66287,7 @@ public final class Proto {
 
               break;
             }
-            case 82: {
+            case 98: {
               org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
               if (referenceExchange_ != null) {
                 subBuilder = referenceExchange_.toBuilder();
@@ -59668,12 +66300,12 @@ public final class Proto {
 
               break;
             }
-            case 89: {
+            case 105: {
 
               targetAmount_ = input.readDouble();
               break;
             }
-            case 98: {
+            case 114: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (targetUnit_ != null) {
                 subBuilder = targetUnit_.toBuilder();
@@ -59686,7 +66318,7 @@ public final class Proto {
 
               break;
             }
-            case 106: {
+            case 122: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (targetFlowProperty_ != null) {
                 subBuilder = targetFlowProperty_.toBuilder();
@@ -59699,10 +66331,10 @@ public final class Proto {
 
               break;
             }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 processLinks_ = new java.util.ArrayList<org.openlca.proto.Proto.ProcessLink>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               processLinks_.add(
                   input.readMessage(org.openlca.proto.Proto.ProcessLink.parser(), extensionRegistry));
@@ -59724,9 +66356,12 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          processes_ = java.util.Collections.unmodifiableList(processes_);
+          tags_ = tags_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          processes_ = java.util.Collections.unmodifiableList(processes_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           processLinks_ = java.util.Collections.unmodifiableList(processLinks_);
         }
         this.unknownFields = unknownFields.build();
@@ -60066,14 +66701,119 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int PROCESSES_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROCESSES_FIELD_NUMBER = 10;
     private java.util.List<org.openlca.proto.Proto.ProcessRef> processes_;
     /**
      * <pre>
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ProcessRef> getProcessesList() {
@@ -60084,7 +66824,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ProcessRefOrBuilder> 
@@ -60096,7 +66836,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     @java.lang.Override
     public int getProcessesCount() {
@@ -60107,7 +66847,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRef getProcesses(int index) {
@@ -60118,7 +66858,7 @@ public final class Proto {
      * The descriptors of all processes that are contained in the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessRef processes = 8;</code>
+     * <code>repeated .protolca.ProcessRef processes = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRefOrBuilder getProcessesOrBuilder(
@@ -60126,7 +66866,7 @@ public final class Proto {
       return processes_.get(index);
     }
 
-    public static final int REFERENCE_PROCESS_FIELD_NUMBER = 9;
+    public static final int REFERENCE_PROCESS_FIELD_NUMBER = 11;
     private org.openlca.proto.Proto.ProcessRef referenceProcess_;
     /**
      * <pre>
@@ -60134,7 +66874,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      * @return Whether the referenceProcess field is set.
      */
     @java.lang.Override
@@ -60147,7 +66887,7 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      * @return The referenceProcess.
      */
     @java.lang.Override
@@ -60160,14 +66900,14 @@ public final class Proto {
      * unit of the product system.
      * </pre>
      *
-     * <code>.protolca.ProcessRef reference_process = 9;</code>
+     * <code>.protolca.ProcessRef reference_process = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder() {
       return getReferenceProcess();
     }
 
-    public static final int REFERENCE_EXCHANGE_FIELD_NUMBER = 10;
+    public static final int REFERENCE_EXCHANGE_FIELD_NUMBER = 12;
     private org.openlca.proto.Proto.Exchange referenceExchange_;
     /**
      * <pre>
@@ -60175,7 +66915,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      * @return Whether the referenceExchange field is set.
      */
     @java.lang.Override
@@ -60188,7 +66928,7 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      * @return The referenceExchange.
      */
     @java.lang.Override
@@ -60201,21 +66941,21 @@ public final class Proto {
      * that provides the flow of the functional unit of the product system.
      * </pre>
      *
-     * <code>.protolca.Exchange reference_exchange = 10;</code>
+     * <code>.protolca.Exchange reference_exchange = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder() {
       return getReferenceExchange();
     }
 
-    public static final int TARGET_AMOUNT_FIELD_NUMBER = 11;
+    public static final int TARGET_AMOUNT_FIELD_NUMBER = 13;
     private double targetAmount_;
     /**
      * <pre>
      * The flow amount of the functional unit of the product system.
      * </pre>
      *
-     * <code>double target_amount = 11;</code>
+     * <code>double target_amount = 13;</code>
      * @return The targetAmount.
      */
     @java.lang.Override
@@ -60223,14 +66963,14 @@ public final class Proto {
       return targetAmount_;
     }
 
-    public static final int TARGET_UNIT_FIELD_NUMBER = 12;
+    public static final int TARGET_UNIT_FIELD_NUMBER = 14;
     private org.openlca.proto.Proto.Ref targetUnit_;
     /**
      * <pre>
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      * @return Whether the targetUnit field is set.
      */
     @java.lang.Override
@@ -60242,7 +66982,7 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      * @return The targetUnit.
      */
     @java.lang.Override
@@ -60254,14 +66994,14 @@ public final class Proto {
      * The unit in which the flow amount of the functional unit is given.
      * </pre>
      *
-     * <code>.protolca.Ref target_unit = 12;</code>
+     * <code>.protolca.Ref target_unit = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder() {
       return getTargetUnit();
     }
 
-    public static final int TARGET_FLOW_PROPERTY_FIELD_NUMBER = 13;
+    public static final int TARGET_FLOW_PROPERTY_FIELD_NUMBER = 15;
     private org.openlca.proto.Proto.Ref targetFlowProperty_;
     /**
      * <pre>
@@ -60269,7 +67009,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      * @return Whether the targetFlowProperty field is set.
      */
     @java.lang.Override
@@ -60282,7 +67022,7 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      * @return The targetFlowProperty.
      */
     @java.lang.Override
@@ -60295,21 +67035,21 @@ public final class Proto {
      * given.
      * </pre>
      *
-     * <code>.protolca.Ref target_flow_property = 13;</code>
+     * <code>.protolca.Ref target_flow_property = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder() {
       return getTargetFlowProperty();
     }
 
-    public static final int PROCESS_LINKS_FIELD_NUMBER = 14;
+    public static final int PROCESS_LINKS_FIELD_NUMBER = 16;
     private java.util.List<org.openlca.proto.Proto.ProcessLink> processLinks_;
     /**
      * <pre>
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ProcessLink> getProcessLinksList() {
@@ -60320,7 +67060,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
@@ -60332,7 +67072,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     @java.lang.Override
     public int getProcessLinksCount() {
@@ -60343,7 +67083,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessLink getProcessLinks(int index) {
@@ -60354,7 +67094,7 @@ public final class Proto {
      * The process links of the product system.
      * </pre>
      *
-     * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+     * <code>repeated .protolca.ProcessLink process_links = 16;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
@@ -60397,26 +67137,32 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       for (int i = 0; i < processes_.size(); i++) {
-        output.writeMessage(8, processes_.get(i));
+        output.writeMessage(10, processes_.get(i));
       }
       if (referenceProcess_ != null) {
-        output.writeMessage(9, getReferenceProcess());
+        output.writeMessage(11, getReferenceProcess());
       }
       if (referenceExchange_ != null) {
-        output.writeMessage(10, getReferenceExchange());
+        output.writeMessage(12, getReferenceExchange());
       }
       if (targetAmount_ != 0D) {
-        output.writeDouble(11, targetAmount_);
+        output.writeDouble(13, targetAmount_);
       }
       if (targetUnit_ != null) {
-        output.writeMessage(12, getTargetUnit());
+        output.writeMessage(14, getTargetUnit());
       }
       if (targetFlowProperty_ != null) {
-        output.writeMessage(13, getTargetFlowProperty());
+        output.writeMessage(15, getTargetFlowProperty());
       }
       for (int i = 0; i < processLinks_.size(); i++) {
-        output.writeMessage(14, processLinks_.get(i));
+        output.writeMessage(16, processLinks_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -60449,33 +67195,44 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       for (int i = 0; i < processes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, processes_.get(i));
+          .computeMessageSize(10, processes_.get(i));
       }
       if (referenceProcess_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getReferenceProcess());
+          .computeMessageSize(11, getReferenceProcess());
       }
       if (referenceExchange_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getReferenceExchange());
+          .computeMessageSize(12, getReferenceExchange());
       }
       if (targetAmount_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, targetAmount_);
+          .computeDoubleSize(13, targetAmount_);
       }
       if (targetUnit_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getTargetUnit());
+          .computeMessageSize(14, getTargetUnit());
       }
       if (targetFlowProperty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getTargetFlowProperty());
+          .computeMessageSize(15, getTargetFlowProperty());
       }
       for (int i = 0; i < processLinks_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, processLinks_.get(i));
+          .computeMessageSize(16, processLinks_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -60509,6 +67266,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (!getProcessesList()
           .equals(other.getProcessesList())) return false;
       if (hasReferenceProcess() != other.hasReferenceProcess()) return false;
@@ -60563,6 +67324,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       if (getProcessesCount() > 0) {
         hash = (37 * hash) + PROCESSES_FIELD_NUMBER;
         hash = (53 * hash) + getProcessesList().hashCode();
@@ -60748,9 +67515,13 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         if (processesBuilder_ == null) {
           processes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           processesBuilder_.clear();
         }
@@ -60782,7 +67553,7 @@ public final class Proto {
         }
         if (processLinksBuilder_ == null) {
           processLinks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           processLinksBuilder_.clear();
         }
@@ -60824,10 +67595,16 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         if (processesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             processes_ = java.util.Collections.unmodifiableList(processes_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.processes_ = processes_;
         } else {
@@ -60855,9 +67632,9 @@ public final class Proto {
           result.targetFlowProperty_ = targetFlowPropertyBuilder_.build();
         }
         if (processLinksBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             processLinks_ = java.util.Collections.unmodifiableList(processLinks_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.processLinks_ = processLinks_;
         } else {
@@ -60938,11 +67715,25 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (processesBuilder_ == null) {
           if (!other.processes_.isEmpty()) {
             if (processes_.isEmpty()) {
               processes_ = other.processes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureProcessesIsMutable();
               processes_.addAll(other.processes_);
@@ -60955,7 +67746,7 @@ public final class Proto {
               processesBuilder_.dispose();
               processesBuilder_ = null;
               processes_ = other.processes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               processesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getProcessesFieldBuilder() : null;
@@ -60983,7 +67774,7 @@ public final class Proto {
           if (!other.processLinks_.isEmpty()) {
             if (processLinks_.isEmpty()) {
               processLinks_ = other.processLinks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureProcessLinksIsMutable();
               processLinks_.addAll(other.processLinks_);
@@ -60996,7 +67787,7 @@ public final class Proto {
               processLinksBuilder_.dispose();
               processLinksBuilder_ = null;
               processLinks_ = other.processLinks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               processLinksBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getProcessLinksFieldBuilder() : null;
@@ -61781,12 +68572,273 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<org.openlca.proto.Proto.ProcessRef> processes_ =
         java.util.Collections.emptyList();
       private void ensureProcessesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           processes_ = new java.util.ArrayList<org.openlca.proto.Proto.ProcessRef>(processes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -61798,7 +68850,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessRef> getProcessesList() {
         if (processesBuilder_ == null) {
@@ -61812,7 +68864,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public int getProcessesCount() {
         if (processesBuilder_ == null) {
@@ -61826,7 +68878,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public org.openlca.proto.Proto.ProcessRef getProcesses(int index) {
         if (processesBuilder_ == null) {
@@ -61840,7 +68892,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder setProcesses(
           int index, org.openlca.proto.Proto.ProcessRef value) {
@@ -61861,7 +68913,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder setProcesses(
           int index, org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -61879,7 +68931,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder addProcesses(org.openlca.proto.Proto.ProcessRef value) {
         if (processesBuilder_ == null) {
@@ -61899,7 +68951,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder addProcesses(
           int index, org.openlca.proto.Proto.ProcessRef value) {
@@ -61920,7 +68972,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder addProcesses(
           org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -61938,7 +68990,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder addProcesses(
           int index, org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -61956,7 +69008,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder addAllProcesses(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ProcessRef> values) {
@@ -61975,12 +69027,12 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder clearProcesses() {
         if (processesBuilder_ == null) {
           processes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           processesBuilder_.clear();
@@ -61992,7 +69044,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public Builder removeProcesses(int index) {
         if (processesBuilder_ == null) {
@@ -62009,7 +69061,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder getProcessesBuilder(
           int index) {
@@ -62020,7 +69072,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public org.openlca.proto.Proto.ProcessRefOrBuilder getProcessesOrBuilder(
           int index) {
@@ -62034,7 +69086,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ProcessRefOrBuilder> 
            getProcessesOrBuilderList() {
@@ -62049,7 +69101,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder addProcessesBuilder() {
         return getProcessesFieldBuilder().addBuilder(
@@ -62060,7 +69112,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder addProcessesBuilder(
           int index) {
@@ -62072,7 +69124,7 @@ public final class Proto {
        * The descriptors of all processes that are contained in the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessRef processes = 8;</code>
+       * <code>repeated .protolca.ProcessRef processes = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessRef.Builder> 
            getProcessesBuilderList() {
@@ -62085,7 +69137,7 @@ public final class Proto {
           processesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder>(
                   processes_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           processes_ = null;
@@ -62102,7 +69154,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        * @return Whether the referenceProcess field is set.
        */
       public boolean hasReferenceProcess() {
@@ -62114,7 +69166,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        * @return The referenceProcess.
        */
       public org.openlca.proto.Proto.ProcessRef getReferenceProcess() {
@@ -62130,7 +69182,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public Builder setReferenceProcess(org.openlca.proto.Proto.ProcessRef value) {
         if (referenceProcessBuilder_ == null) {
@@ -62151,7 +69203,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public Builder setReferenceProcess(
           org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -62170,7 +69222,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public Builder mergeReferenceProcess(org.openlca.proto.Proto.ProcessRef value) {
         if (referenceProcessBuilder_ == null) {
@@ -62193,7 +69245,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public Builder clearReferenceProcess() {
         if (referenceProcessBuilder_ == null) {
@@ -62212,7 +69264,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder getReferenceProcessBuilder() {
         
@@ -62225,7 +69277,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       public org.openlca.proto.Proto.ProcessRefOrBuilder getReferenceProcessOrBuilder() {
         if (referenceProcessBuilder_ != null) {
@@ -62241,7 +69293,7 @@ public final class Proto {
        * unit of the product system.
        * </pre>
        *
-       * <code>.protolca.ProcessRef reference_process = 9;</code>
+       * <code>.protolca.ProcessRef reference_process = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> 
@@ -62266,7 +69318,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        * @return Whether the referenceExchange field is set.
        */
       public boolean hasReferenceExchange() {
@@ -62278,7 +69330,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        * @return The referenceExchange.
        */
       public org.openlca.proto.Proto.Exchange getReferenceExchange() {
@@ -62294,7 +69346,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public Builder setReferenceExchange(org.openlca.proto.Proto.Exchange value) {
         if (referenceExchangeBuilder_ == null) {
@@ -62315,7 +69367,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public Builder setReferenceExchange(
           org.openlca.proto.Proto.Exchange.Builder builderForValue) {
@@ -62334,7 +69386,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public Builder mergeReferenceExchange(org.openlca.proto.Proto.Exchange value) {
         if (referenceExchangeBuilder_ == null) {
@@ -62357,7 +69409,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public Builder clearReferenceExchange() {
         if (referenceExchangeBuilder_ == null) {
@@ -62376,7 +69428,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public org.openlca.proto.Proto.Exchange.Builder getReferenceExchangeBuilder() {
         
@@ -62389,7 +69441,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       public org.openlca.proto.Proto.ExchangeOrBuilder getReferenceExchangeOrBuilder() {
         if (referenceExchangeBuilder_ != null) {
@@ -62405,7 +69457,7 @@ public final class Proto {
        * that provides the flow of the functional unit of the product system.
        * </pre>
        *
-       * <code>.protolca.Exchange reference_exchange = 10;</code>
+       * <code>.protolca.Exchange reference_exchange = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
@@ -62427,7 +69479,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double target_amount = 11;</code>
+       * <code>double target_amount = 13;</code>
        * @return The targetAmount.
        */
       @java.lang.Override
@@ -62439,7 +69491,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double target_amount = 11;</code>
+       * <code>double target_amount = 13;</code>
        * @param value The targetAmount to set.
        * @return This builder for chaining.
        */
@@ -62454,7 +69506,7 @@ public final class Proto {
        * The flow amount of the functional unit of the product system.
        * </pre>
        *
-       * <code>double target_amount = 11;</code>
+       * <code>double target_amount = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetAmount() {
@@ -62472,7 +69524,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        * @return Whether the targetUnit field is set.
        */
       public boolean hasTargetUnit() {
@@ -62483,7 +69535,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        * @return The targetUnit.
        */
       public org.openlca.proto.Proto.Ref getTargetUnit() {
@@ -62498,7 +69550,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public Builder setTargetUnit(org.openlca.proto.Proto.Ref value) {
         if (targetUnitBuilder_ == null) {
@@ -62518,7 +69570,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public Builder setTargetUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -62536,7 +69588,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public Builder mergeTargetUnit(org.openlca.proto.Proto.Ref value) {
         if (targetUnitBuilder_ == null) {
@@ -62558,7 +69610,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public Builder clearTargetUnit() {
         if (targetUnitBuilder_ == null) {
@@ -62576,7 +69628,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getTargetUnitBuilder() {
         
@@ -62588,7 +69640,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getTargetUnitOrBuilder() {
         if (targetUnitBuilder_ != null) {
@@ -62603,7 +69655,7 @@ public final class Proto {
        * The unit in which the flow amount of the functional unit is given.
        * </pre>
        *
-       * <code>.protolca.Ref target_unit = 12;</code>
+       * <code>.protolca.Ref target_unit = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -62628,7 +69680,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        * @return Whether the targetFlowProperty field is set.
        */
       public boolean hasTargetFlowProperty() {
@@ -62640,7 +69692,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        * @return The targetFlowProperty.
        */
       public org.openlca.proto.Proto.Ref getTargetFlowProperty() {
@@ -62656,7 +69708,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public Builder setTargetFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62677,7 +69729,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public Builder setTargetFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -62696,7 +69748,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public Builder mergeTargetFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62719,7 +69771,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public Builder clearTargetFlowProperty() {
         if (targetFlowPropertyBuilder_ == null) {
@@ -62738,7 +69790,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getTargetFlowPropertyBuilder() {
         
@@ -62751,7 +69803,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getTargetFlowPropertyOrBuilder() {
         if (targetFlowPropertyBuilder_ != null) {
@@ -62767,7 +69819,7 @@ public final class Proto {
        * given.
        * </pre>
        *
-       * <code>.protolca.Ref target_flow_property = 13;</code>
+       * <code>.protolca.Ref target_flow_property = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -62786,9 +69838,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.ProcessLink> processLinks_ =
         java.util.Collections.emptyList();
       private void ensureProcessLinksIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           processLinks_ = new java.util.ArrayList<org.openlca.proto.Proto.ProcessLink>(processLinks_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -62800,7 +69852,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessLink> getProcessLinksList() {
         if (processLinksBuilder_ == null) {
@@ -62814,7 +69866,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public int getProcessLinksCount() {
         if (processLinksBuilder_ == null) {
@@ -62828,7 +69880,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessLink getProcessLinks(int index) {
         if (processLinksBuilder_ == null) {
@@ -62842,7 +69894,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder setProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink value) {
@@ -62863,7 +69915,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder setProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62881,7 +69933,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder addProcessLinks(org.openlca.proto.Proto.ProcessLink value) {
         if (processLinksBuilder_ == null) {
@@ -62901,7 +69953,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder addProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink value) {
@@ -62922,7 +69974,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder addProcessLinks(
           org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62940,7 +69992,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder addProcessLinks(
           int index, org.openlca.proto.Proto.ProcessLink.Builder builderForValue) {
@@ -62958,7 +70010,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder addAllProcessLinks(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ProcessLink> values) {
@@ -62977,12 +70029,12 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder clearProcessLinks() {
         if (processLinksBuilder_ == null) {
           processLinks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           processLinksBuilder_.clear();
@@ -62994,7 +70046,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public Builder removeProcessLinks(int index) {
         if (processLinksBuilder_ == null) {
@@ -63011,7 +70063,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder getProcessLinksBuilder(
           int index) {
@@ -63022,7 +70074,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
           int index) {
@@ -63036,7 +70088,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ProcessLinkOrBuilder> 
            getProcessLinksOrBuilderList() {
@@ -63051,7 +70103,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder addProcessLinksBuilder() {
         return getProcessLinksFieldBuilder().addBuilder(
@@ -63062,7 +70114,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessLink.Builder addProcessLinksBuilder(
           int index) {
@@ -63074,7 +70126,7 @@ public final class Proto {
        * The process links of the product system.
        * </pre>
        *
-       * <code>repeated .protolca.ProcessLink process_links = 14;</code>
+       * <code>repeated .protolca.ProcessLink process_links = 16;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ProcessLink.Builder> 
            getProcessLinksBuilderList() {
@@ -63087,7 +70139,7 @@ public final class Proto {
           processLinksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.ProcessLink, org.openlca.proto.Proto.ProcessLink.Builder, org.openlca.proto.Proto.ProcessLinkOrBuilder>(
                   processLinks_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           processLinks_ = null;
@@ -66548,10 +73600,79 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activity_variable = 8;</code>
+     * <code>string activity_variable = 10;</code>
      * @return The activityVariable.
      */
     java.lang.String getActivityVariable();
@@ -66560,7 +73681,7 @@ public final class Proto {
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activity_variable = 8;</code>
+     * <code>string activity_variable = 10;</code>
      * @return The bytes for activityVariable.
      */
     com.google.protobuf.ByteString
@@ -66571,7 +73692,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      * @return Whether the activityQuantity field is set.
      */
     boolean hasActivityQuantity();
@@ -66580,7 +73701,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      * @return The activityQuantity.
      */
     org.openlca.proto.Proto.Ref getActivityQuantity();
@@ -66589,7 +73710,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder();
 
@@ -66598,7 +73719,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      * @return Whether the activityUnit field is set.
      */
     boolean hasActivityUnit();
@@ -66607,7 +73728,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      * @return The activityUnit.
      */
     org.openlca.proto.Proto.Ref getActivityUnit();
@@ -66616,7 +73737,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder();
 
@@ -66625,7 +73746,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unit_of_measurement = 11;</code>
+     * <code>string unit_of_measurement = 13;</code>
      * @return The unitOfMeasurement.
      */
     java.lang.String getUnitOfMeasurement();
@@ -66634,7 +73755,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unit_of_measurement = 11;</code>
+     * <code>string unit_of_measurement = 13;</code>
      * @return The bytes for unitOfMeasurement.
      */
     com.google.protobuf.ByteString
@@ -66645,7 +73766,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluation_scheme = 12;</code>
+     * <code>string evaluation_scheme = 14;</code>
      * @return The evaluationScheme.
      */
     java.lang.String getEvaluationScheme();
@@ -66654,7 +73775,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluation_scheme = 12;</code>
+     * <code>string evaluation_scheme = 14;</code>
      * @return The bytes for evaluationScheme.
      */
     com.google.protobuf.ByteString
@@ -66679,6 +73800,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       activityVariable_ = "";
       unitOfMeasurement_ = "";
       evaluationScheme_ = "";
@@ -66704,6 +73827,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -66765,11 +73889,26 @@ public final class Proto {
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
 
               activityVariable_ = s;
               break;
             }
-            case 74: {
+            case 90: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (activityQuantity_ != null) {
                 subBuilder = activityQuantity_.toBuilder();
@@ -66782,7 +73921,7 @@ public final class Proto {
 
               break;
             }
-            case 82: {
+            case 98: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (activityUnit_ != null) {
                 subBuilder = activityUnit_.toBuilder();
@@ -66795,13 +73934,13 @@ public final class Proto {
 
               break;
             }
-            case 90: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               unitOfMeasurement_ = s;
               break;
             }
-            case 98: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               evaluationScheme_ = s;
@@ -66822,6 +73961,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -67159,14 +74301,119 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int ACTIVITY_VARIABLE_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTIVITY_VARIABLE_FIELD_NUMBER = 10;
     private volatile java.lang.Object activityVariable_;
     /**
      * <pre>
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activity_variable = 8;</code>
+     * <code>string activity_variable = 10;</code>
      * @return The activityVariable.
      */
     @java.lang.Override
@@ -67187,7 +74434,7 @@ public final class Proto {
      * The name of the activity variable of the indicator.
      * </pre>
      *
-     * <code>string activity_variable = 8;</code>
+     * <code>string activity_variable = 10;</code>
      * @return The bytes for activityVariable.
      */
     @java.lang.Override
@@ -67205,14 +74452,14 @@ public final class Proto {
       }
     }
 
-    public static final int ACTIVITY_QUANTITY_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_QUANTITY_FIELD_NUMBER = 11;
     private org.openlca.proto.Proto.Ref activityQuantity_;
     /**
      * <pre>
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      * @return Whether the activityQuantity field is set.
      */
     @java.lang.Override
@@ -67224,7 +74471,7 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      * @return The activityQuantity.
      */
     @java.lang.Override
@@ -67236,21 +74483,21 @@ public final class Proto {
      * The quantity of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_quantity = 9;</code>
+     * <code>.protolca.Ref activity_quantity = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder() {
       return getActivityQuantity();
     }
 
-    public static final int ACTIVITY_UNIT_FIELD_NUMBER = 10;
+    public static final int ACTIVITY_UNIT_FIELD_NUMBER = 12;
     private org.openlca.proto.Proto.Ref activityUnit_;
     /**
      * <pre>
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      * @return Whether the activityUnit field is set.
      */
     @java.lang.Override
@@ -67262,7 +74509,7 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      * @return The activityUnit.
      */
     @java.lang.Override
@@ -67274,21 +74521,21 @@ public final class Proto {
      * The unit of the activity variable.
      * </pre>
      *
-     * <code>.protolca.Ref activity_unit = 10;</code>
+     * <code>.protolca.Ref activity_unit = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder() {
       return getActivityUnit();
     }
 
-    public static final int UNIT_OF_MEASUREMENT_FIELD_NUMBER = 11;
+    public static final int UNIT_OF_MEASUREMENT_FIELD_NUMBER = 13;
     private volatile java.lang.Object unitOfMeasurement_;
     /**
      * <pre>
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unit_of_measurement = 11;</code>
+     * <code>string unit_of_measurement = 13;</code>
      * @return The unitOfMeasurement.
      */
     @java.lang.Override
@@ -67309,7 +74556,7 @@ public final class Proto {
      * The unit in which the indicator is measured.
      * </pre>
      *
-     * <code>string unit_of_measurement = 11;</code>
+     * <code>string unit_of_measurement = 13;</code>
      * @return The bytes for unitOfMeasurement.
      */
     @java.lang.Override
@@ -67327,14 +74574,14 @@ public final class Proto {
       }
     }
 
-    public static final int EVALUATION_SCHEME_FIELD_NUMBER = 12;
+    public static final int EVALUATION_SCHEME_FIELD_NUMBER = 14;
     private volatile java.lang.Object evaluationScheme_;
     /**
      * <pre>
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluation_scheme = 12;</code>
+     * <code>string evaluation_scheme = 14;</code>
      * @return The evaluationScheme.
      */
     @java.lang.Override
@@ -67355,7 +74602,7 @@ public final class Proto {
      * Documentation of the evaluation scheme of the indicator.
      * </pre>
      *
-     * <code>string evaluation_scheme = 12;</code>
+     * <code>string evaluation_scheme = 14;</code>
      * @return The bytes for evaluationScheme.
      */
     @java.lang.Override
@@ -67408,20 +74655,26 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (!getActivityVariableBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, activityVariable_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, activityVariable_);
       }
       if (activityQuantity_ != null) {
-        output.writeMessage(9, getActivityQuantity());
+        output.writeMessage(11, getActivityQuantity());
       }
       if (activityUnit_ != null) {
-        output.writeMessage(10, getActivityUnit());
+        output.writeMessage(12, getActivityUnit());
       }
       if (!getUnitOfMeasurementBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, unitOfMeasurement_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, unitOfMeasurement_);
       }
       if (!getEvaluationSchemeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, evaluationScheme_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, evaluationScheme_);
       }
       unknownFields.writeTo(output);
     }
@@ -67454,22 +74707,33 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (!getActivityVariableBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, activityVariable_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, activityVariable_);
       }
       if (activityQuantity_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getActivityQuantity());
+          .computeMessageSize(11, getActivityQuantity());
       }
       if (activityUnit_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getActivityUnit());
+          .computeMessageSize(12, getActivityUnit());
       }
       if (!getUnitOfMeasurementBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, unitOfMeasurement_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, unitOfMeasurement_);
       }
       if (!getEvaluationSchemeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, evaluationScheme_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, evaluationScheme_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -67503,6 +74767,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (!getActivityVariable()
           .equals(other.getActivityVariable())) return false;
       if (hasActivityQuantity() != other.hasActivityQuantity()) return false;
@@ -67546,6 +74814,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + ACTIVITY_VARIABLE_FIELD_NUMBER;
       hash = (53 * hash) + getActivityVariable().hashCode();
       if (hasActivityQuantity()) {
@@ -67711,6 +74985,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         activityVariable_ = "";
 
         if (activityQuantityBuilder_ == null) {
@@ -67755,6 +75033,7 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.SocialIndicator buildPartial() {
         org.openlca.proto.Proto.SocialIndicator result = new org.openlca.proto.Proto.SocialIndicator(this);
+        int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
         result.name_ = name_;
@@ -67766,6 +75045,12 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         result.activityVariable_ = activityVariable_;
         if (activityQuantityBuilder_ == null) {
           result.activityQuantity_ = activityQuantity_;
@@ -67854,6 +75139,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (!other.getActivityVariable().isEmpty()) {
           activityVariable_ = other.activityVariable_;
           onChanged();
@@ -67900,6 +75199,7 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -68647,13 +75947,274 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object activityVariable_ = "";
       /**
        * <pre>
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activity_variable = 8;</code>
+       * <code>string activity_variable = 10;</code>
        * @return The activityVariable.
        */
       public java.lang.String getActivityVariable() {
@@ -68673,7 +76234,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activity_variable = 8;</code>
+       * <code>string activity_variable = 10;</code>
        * @return The bytes for activityVariable.
        */
       public com.google.protobuf.ByteString
@@ -68694,7 +76255,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activity_variable = 8;</code>
+       * <code>string activity_variable = 10;</code>
        * @param value The activityVariable to set.
        * @return This builder for chaining.
        */
@@ -68713,7 +76274,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activity_variable = 8;</code>
+       * <code>string activity_variable = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityVariable() {
@@ -68727,7 +76288,7 @@ public final class Proto {
        * The name of the activity variable of the indicator.
        * </pre>
        *
-       * <code>string activity_variable = 8;</code>
+       * <code>string activity_variable = 10;</code>
        * @param value The bytes for activityVariable to set.
        * @return This builder for chaining.
        */
@@ -68751,7 +76312,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        * @return Whether the activityQuantity field is set.
        */
       public boolean hasActivityQuantity() {
@@ -68762,7 +76323,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        * @return The activityQuantity.
        */
       public org.openlca.proto.Proto.Ref getActivityQuantity() {
@@ -68777,7 +76338,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public Builder setActivityQuantity(org.openlca.proto.Proto.Ref value) {
         if (activityQuantityBuilder_ == null) {
@@ -68797,7 +76358,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public Builder setActivityQuantity(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -68815,7 +76376,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public Builder mergeActivityQuantity(org.openlca.proto.Proto.Ref value) {
         if (activityQuantityBuilder_ == null) {
@@ -68837,7 +76398,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public Builder clearActivityQuantity() {
         if (activityQuantityBuilder_ == null) {
@@ -68855,7 +76416,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getActivityQuantityBuilder() {
         
@@ -68867,7 +76428,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getActivityQuantityOrBuilder() {
         if (activityQuantityBuilder_ != null) {
@@ -68882,7 +76443,7 @@ public final class Proto {
        * The quantity of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_quantity = 9;</code>
+       * <code>.protolca.Ref activity_quantity = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -68906,7 +76467,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        * @return Whether the activityUnit field is set.
        */
       public boolean hasActivityUnit() {
@@ -68917,7 +76478,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        * @return The activityUnit.
        */
       public org.openlca.proto.Proto.Ref getActivityUnit() {
@@ -68932,7 +76493,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public Builder setActivityUnit(org.openlca.proto.Proto.Ref value) {
         if (activityUnitBuilder_ == null) {
@@ -68952,7 +76513,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public Builder setActivityUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -68970,7 +76531,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public Builder mergeActivityUnit(org.openlca.proto.Proto.Ref value) {
         if (activityUnitBuilder_ == null) {
@@ -68992,7 +76553,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public Builder clearActivityUnit() {
         if (activityUnitBuilder_ == null) {
@@ -69010,7 +76571,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getActivityUnitBuilder() {
         
@@ -69022,7 +76583,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getActivityUnitOrBuilder() {
         if (activityUnitBuilder_ != null) {
@@ -69037,7 +76598,7 @@ public final class Proto {
        * The unit of the activity variable.
        * </pre>
        *
-       * <code>.protolca.Ref activity_unit = 10;</code>
+       * <code>.protolca.Ref activity_unit = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -69059,7 +76620,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unit_of_measurement = 11;</code>
+       * <code>string unit_of_measurement = 13;</code>
        * @return The unitOfMeasurement.
        */
       public java.lang.String getUnitOfMeasurement() {
@@ -69079,7 +76640,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unit_of_measurement = 11;</code>
+       * <code>string unit_of_measurement = 13;</code>
        * @return The bytes for unitOfMeasurement.
        */
       public com.google.protobuf.ByteString
@@ -69100,7 +76661,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unit_of_measurement = 11;</code>
+       * <code>string unit_of_measurement = 13;</code>
        * @param value The unitOfMeasurement to set.
        * @return This builder for chaining.
        */
@@ -69119,7 +76680,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unit_of_measurement = 11;</code>
+       * <code>string unit_of_measurement = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnitOfMeasurement() {
@@ -69133,7 +76694,7 @@ public final class Proto {
        * The unit in which the indicator is measured.
        * </pre>
        *
-       * <code>string unit_of_measurement = 11;</code>
+       * <code>string unit_of_measurement = 13;</code>
        * @param value The bytes for unitOfMeasurement to set.
        * @return This builder for chaining.
        */
@@ -69155,7 +76716,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluation_scheme = 12;</code>
+       * <code>string evaluation_scheme = 14;</code>
        * @return The evaluationScheme.
        */
       public java.lang.String getEvaluationScheme() {
@@ -69175,7 +76736,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluation_scheme = 12;</code>
+       * <code>string evaluation_scheme = 14;</code>
        * @return The bytes for evaluationScheme.
        */
       public com.google.protobuf.ByteString
@@ -69196,7 +76757,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluation_scheme = 12;</code>
+       * <code>string evaluation_scheme = 14;</code>
        * @param value The evaluationScheme to set.
        * @return This builder for chaining.
        */
@@ -69215,7 +76776,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluation_scheme = 12;</code>
+       * <code>string evaluation_scheme = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEvaluationScheme() {
@@ -69229,7 +76790,7 @@ public final class Proto {
        * Documentation of the evaluation scheme of the indicator.
        * </pre>
        *
-       * <code>string evaluation_scheme = 12;</code>
+       * <code>string evaluation_scheme = 14;</code>
        * @param value The bytes for evaluationScheme to set.
        * @return This builder for chaining.
        */
@@ -69456,32 +77017,99 @@ public final class Proto {
 
     /**
      * <pre>
-     * The digital object identifier of the source (see
-     * http://en.wikipedia.org/wiki/Digital_object_identifier).
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
      * </pre>
      *
-     * <code>string doi = 8;</code>
-     * @return The doi.
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
      */
-    java.lang.String getDoi();
+    java.util.List<java.lang.String>
+        getTagsList();
     /**
      * <pre>
-     * The digital object identifier of the source (see
-     * http://en.wikipedia.org/wiki/Digital_object_identifier).
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
      * </pre>
      *
-     * <code>string doi = 8;</code>
-     * @return The bytes for doi.
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
-        getDoiBytes();
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
+     * A URL that points to the source.
+     * </pre>
+     *
+     * <code>string url = 10;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * A URL that points to the source.
+     * </pre>
+     *
+     * <code>string url = 10;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
 
     /**
      * <pre>
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string text_reference = 9;</code>
+     * <code>string text_reference = 11;</code>
      * @return The textReference.
      */
     java.lang.String getTextReference();
@@ -69490,7 +77118,7 @@ public final class Proto {
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string text_reference = 9;</code>
+     * <code>string text_reference = 11;</code>
      * @return The bytes for textReference.
      */
     com.google.protobuf.ByteString
@@ -69501,7 +77129,7 @@ public final class Proto {
      * The publication year of the source.
      * </pre>
      *
-     * <code>int32 year = 10;</code>
+     * <code>int32 year = 12;</code>
      * @return The year.
      */
     int getYear();
@@ -69511,7 +77139,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string external_file = 11;</code>
+     * <code>string external_file = 13;</code>
      * @return The externalFile.
      */
     java.lang.String getExternalFile();
@@ -69520,7 +77148,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string external_file = 11;</code>
+     * <code>string external_file = 13;</code>
      * @return The bytes for externalFile.
      */
     com.google.protobuf.ByteString
@@ -69549,7 +77177,9 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
-      doi_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
+      url_ = "";
       textReference_ = "";
       externalFile_ = "";
     }
@@ -69574,6 +77204,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -69635,22 +77266,37 @@ public final class Proto {
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              doi_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              library_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               textReference_ = s;
               break;
             }
-            case 80: {
+            case 96: {
 
               year_ = input.readInt32();
               break;
             }
-            case 90: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               externalFile_ = s;
@@ -69671,6 +77317,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -70008,62 +77657,165 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int DOI_FIELD_NUMBER = 8;
-    private volatile java.lang.Object doi_;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
     /**
      * <pre>
-     * The digital object identifier of the source (see
-     * http://en.wikipedia.org/wiki/Digital_object_identifier).
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
      * </pre>
      *
-     * <code>string doi = 8;</code>
-     * @return The doi.
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
      */
     @java.lang.Override
-    public java.lang.String getDoi() {
-      java.lang.Object ref = doi_;
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        doi_ = s;
+        library_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The digital object identifier of the source (see
-     * http://en.wikipedia.org/wiki/Digital_object_identifier).
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
      * </pre>
      *
-     * <code>string doi = 8;</code>
-     * @return The bytes for doi.
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDoiBytes() {
-      java.lang.Object ref = doi_;
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        doi_ = b;
+        library_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TEXT_REFERENCE_FIELD_NUMBER = 9;
+    public static final int URL_FIELD_NUMBER = 10;
+    private volatile java.lang.Object url_;
+    /**
+     * <pre>
+     * A URL that points to the source.
+     * </pre>
+     *
+     * <code>string url = 10;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A URL that points to the source.
+     * </pre>
+     *
+     * <code>string url = 10;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_REFERENCE_FIELD_NUMBER = 11;
     private volatile java.lang.Object textReference_;
     /**
      * <pre>
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string text_reference = 9;</code>
+     * <code>string text_reference = 11;</code>
      * @return The textReference.
      */
     @java.lang.Override
@@ -70084,7 +77836,7 @@ public final class Proto {
      * The full text reference of the source.
      * </pre>
      *
-     * <code>string text_reference = 9;</code>
+     * <code>string text_reference = 11;</code>
      * @return The bytes for textReference.
      */
     @java.lang.Override
@@ -70102,14 +77854,14 @@ public final class Proto {
       }
     }
 
-    public static final int YEAR_FIELD_NUMBER = 10;
+    public static final int YEAR_FIELD_NUMBER = 12;
     private int year_;
     /**
      * <pre>
      * The publication year of the source.
      * </pre>
      *
-     * <code>int32 year = 10;</code>
+     * <code>int32 year = 12;</code>
      * @return The year.
      */
     @java.lang.Override
@@ -70117,14 +77869,14 @@ public final class Proto {
       return year_;
     }
 
-    public static final int EXTERNAL_FILE_FIELD_NUMBER = 11;
+    public static final int EXTERNAL_FILE_FIELD_NUMBER = 13;
     private volatile java.lang.Object externalFile_;
     /**
      * <pre>
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string external_file = 11;</code>
+     * <code>string external_file = 13;</code>
      * @return The externalFile.
      */
     @java.lang.Override
@@ -70145,7 +77897,7 @@ public final class Proto {
      * A direct link (relative or absolute URL) to the source file.
      * </pre>
      *
-     * <code>string external_file = 11;</code>
+     * <code>string external_file = 13;</code>
      * @return The bytes for externalFile.
      */
     @java.lang.Override
@@ -70198,17 +77950,23 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
-      if (!getDoiBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, doi_);
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, url_);
       }
       if (!getTextReferenceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, textReference_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, textReference_);
       }
       if (year_ != 0) {
-        output.writeInt32(10, year_);
+        output.writeInt32(12, year_);
       }
       if (!getExternalFileBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, externalFile_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, externalFile_);
       }
       unknownFields.writeTo(output);
     }
@@ -70241,18 +77999,29 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
-      if (!getDoiBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, doi_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, url_);
       }
       if (!getTextReferenceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, textReference_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, textReference_);
       }
       if (year_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, year_);
+          .computeInt32Size(12, year_);
       }
       if (!getExternalFileBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, externalFile_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, externalFile_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -70286,8 +78055,12 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
-      if (!getDoi()
-          .equals(other.getDoi())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
       if (!getTextReference()
           .equals(other.getTextReference())) return false;
       if (getYear()
@@ -70321,8 +78094,14 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
-      hash = (37 * hash) + DOI_FIELD_NUMBER;
-      hash = (53 * hash) + getDoi().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + TEXT_REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getTextReference().hashCode();
       hash = (37 * hash) + YEAR_FIELD_NUMBER;
@@ -70484,7 +78263,11 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
-        doi_ = "";
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
+        url_ = "";
 
         textReference_ = "";
 
@@ -70518,6 +78301,7 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.Source buildPartial() {
         org.openlca.proto.Proto.Source result = new org.openlca.proto.Proto.Source(this);
+        int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
         result.name_ = name_;
@@ -70529,7 +78313,13 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
-        result.doi_ = doi_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
+        result.url_ = url_;
         result.textReference_ = textReference_;
         result.year_ = year_;
         result.externalFile_ = externalFile_;
@@ -70608,8 +78398,22 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
-        if (!other.getDoi().isEmpty()) {
-          doi_ = other.doi_;
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
           onChanged();
         }
         if (!other.getTextReference().isEmpty()) {
@@ -70651,6 +78455,7 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -71398,23 +79203,179 @@ public final class Proto {
         return categoryBuilder_;
       }
 
-      private java.lang.Object doi_ = "";
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
        * <pre>
-       * The digital object identifier of the source (see
-       * http://en.wikipedia.org/wiki/Digital_object_identifier).
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
        * </pre>
        *
-       * <code>string doi = 8;</code>
-       * @return The doi.
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
        */
-      public java.lang.String getDoi() {
-        java.lang.Object ref = doi_;
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          doi_ = s;
+          library_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -71422,21 +79383,22 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The digital object identifier of the source (see
-       * http://en.wikipedia.org/wiki/Digital_object_identifier).
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
        * </pre>
        *
-       * <code>string doi = 8;</code>
-       * @return The bytes for doi.
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
        */
       public com.google.protobuf.ByteString
-          getDoiBytes() {
-        java.lang.Object ref = doi_;
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          doi_ = b;
+          library_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -71444,57 +79406,156 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The digital object identifier of the source (see
-       * http://en.wikipedia.org/wiki/Digital_object_identifier).
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
        * </pre>
        *
-       * <code>string doi = 8;</code>
-       * @param value The doi to set.
+       * <code>string library = 9;</code>
+       * @param value The library to set.
        * @return This builder for chaining.
        */
-      public Builder setDoi(
+      public Builder setLibrary(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        doi_ = value;
+        library_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The digital object identifier of the source (see
-       * http://en.wikipedia.org/wiki/Digital_object_identifier).
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
        * </pre>
        *
-       * <code>string doi = 8;</code>
+       * <code>string library = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDoi() {
+      public Builder clearLibrary() {
         
-        doi_ = getDefaultInstance().getDoi();
+        library_ = getDefaultInstance().getLibrary();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The digital object identifier of the source (see
-       * http://en.wikipedia.org/wiki/Digital_object_identifier).
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
        * </pre>
        *
-       * <code>string doi = 8;</code>
-       * @param value The bytes for doi to set.
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
        * @return This builder for chaining.
        */
-      public Builder setDoiBytes(
+      public Builder setLibraryBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        doi_ = value;
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * A URL that points to the source.
+       * </pre>
+       *
+       * <code>string url = 10;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A URL that points to the source.
+       * </pre>
+       *
+       * <code>string url = 10;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A URL that points to the source.
+       * </pre>
+       *
+       * <code>string url = 10;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A URL that points to the source.
+       * </pre>
+       *
+       * <code>string url = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A URL that points to the source.
+       * </pre>
+       *
+       * <code>string url = 10;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
         onChanged();
         return this;
       }
@@ -71505,7 +79566,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string text_reference = 9;</code>
+       * <code>string text_reference = 11;</code>
        * @return The textReference.
        */
       public java.lang.String getTextReference() {
@@ -71525,7 +79586,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string text_reference = 9;</code>
+       * <code>string text_reference = 11;</code>
        * @return The bytes for textReference.
        */
       public com.google.protobuf.ByteString
@@ -71546,7 +79607,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string text_reference = 9;</code>
+       * <code>string text_reference = 11;</code>
        * @param value The textReference to set.
        * @return This builder for chaining.
        */
@@ -71565,7 +79626,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string text_reference = 9;</code>
+       * <code>string text_reference = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTextReference() {
@@ -71579,7 +79640,7 @@ public final class Proto {
        * The full text reference of the source.
        * </pre>
        *
-       * <code>string text_reference = 9;</code>
+       * <code>string text_reference = 11;</code>
        * @param value The bytes for textReference to set.
        * @return This builder for chaining.
        */
@@ -71601,7 +79662,7 @@ public final class Proto {
        * The publication year of the source.
        * </pre>
        *
-       * <code>int32 year = 10;</code>
+       * <code>int32 year = 12;</code>
        * @return The year.
        */
       @java.lang.Override
@@ -71613,7 +79674,7 @@ public final class Proto {
        * The publication year of the source.
        * </pre>
        *
-       * <code>int32 year = 10;</code>
+       * <code>int32 year = 12;</code>
        * @param value The year to set.
        * @return This builder for chaining.
        */
@@ -71628,7 +79689,7 @@ public final class Proto {
        * The publication year of the source.
        * </pre>
        *
-       * <code>int32 year = 10;</code>
+       * <code>int32 year = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearYear() {
@@ -71644,7 +79705,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string external_file = 11;</code>
+       * <code>string external_file = 13;</code>
        * @return The externalFile.
        */
       public java.lang.String getExternalFile() {
@@ -71664,7 +79725,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string external_file = 11;</code>
+       * <code>string external_file = 13;</code>
        * @return The bytes for externalFile.
        */
       public com.google.protobuf.ByteString
@@ -71685,7 +79746,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string external_file = 11;</code>
+       * <code>string external_file = 13;</code>
        * @param value The externalFile to set.
        * @return This builder for chaining.
        */
@@ -71704,7 +79765,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string external_file = 11;</code>
+       * <code>string external_file = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearExternalFile() {
@@ -71718,7 +79779,7 @@ public final class Proto {
        * A direct link (relative or absolute URL) to the source file.
        * </pre>
        *
-       * <code>string external_file = 11;</code>
+       * <code>string external_file = 13;</code>
        * @param value The bytes for externalFile to set.
        * @return This builder for chaining.
        */
@@ -76722,12 +84783,81 @@ public final class Proto {
 
     /**
      * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
      * Some LCA data formats do not have the concept of flow properties or
      * quantities. This field provides a default link to a flow property for
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      * @return Whether the defaultFlowProperty field is set.
      */
     boolean hasDefaultFlowProperty();
@@ -76738,7 +84868,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      * @return The defaultFlowProperty.
      */
     org.openlca.proto.Proto.Ref getDefaultFlowProperty();
@@ -76749,7 +84879,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder();
 
@@ -76758,7 +84888,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     java.util.List<org.openlca.proto.Proto.Unit> 
         getUnitsList();
@@ -76767,7 +84897,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     org.openlca.proto.Proto.Unit getUnits(int index);
     /**
@@ -76775,7 +84905,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     int getUnitsCount();
     /**
@@ -76783,7 +84913,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.UnitOrBuilder> 
         getUnitsOrBuilderList();
@@ -76792,7 +84922,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     org.openlca.proto.Proto.UnitOrBuilder getUnitsOrBuilder(
         int index);
@@ -76820,6 +84950,8 @@ public final class Proto {
       description_ = "";
       version_ = "";
       lastChange_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      library_ = "";
       units_ = java.util.Collections.emptyList();
     }
 
@@ -76904,6 +85036,21 @@ public final class Proto {
               break;
             }
             case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              library_ = s;
+              break;
+            }
+            case 82: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (defaultFlowProperty_ != null) {
                 subBuilder = defaultFlowProperty_.toBuilder();
@@ -76916,10 +85063,10 @@ public final class Proto {
 
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 units_ = new java.util.ArrayList<org.openlca.proto.Proto.Unit>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               units_.add(
                   input.readMessage(org.openlca.proto.Proto.Unit.parser(), extensionRegistry));
@@ -76941,6 +85088,9 @@ public final class Proto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           units_ = java.util.Collections.unmodifiableList(units_);
         }
         this.unknownFields = unknownFields.build();
@@ -77280,7 +85430,112 @@ public final class Proto {
       return getCategory();
     }
 
-    public static final int DEFAULT_FLOW_PROPERTY_FIELD_NUMBER = 8;
+    public static final int TAGS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of optional tags. A tag is just a string which should not contain
+     * commas (and other special characters).
+     * </pre>
+     *
+     * <code>repeated string tags = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The library.
+     */
+    @java.lang.Override
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        library_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If this entity is part of a library, this field contains the identifier of
+     * that library. The identifier is typically just the comination of the
+     * library name and version.
+     * </pre>
+     *
+     * <code>string library = 9;</code>
+     * @return The bytes for library.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEFAULT_FLOW_PROPERTY_FIELD_NUMBER = 10;
     private org.openlca.proto.Proto.Ref defaultFlowProperty_;
     /**
      * <pre>
@@ -77289,7 +85544,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      * @return Whether the defaultFlowProperty field is set.
      */
     @java.lang.Override
@@ -77303,7 +85558,7 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      * @return The defaultFlowProperty.
      */
     @java.lang.Override
@@ -77317,21 +85572,21 @@ public final class Proto {
      * units that are contained in this group.
      * </pre>
      *
-     * <code>.protolca.Ref default_flow_property = 8;</code>
+     * <code>.protolca.Ref default_flow_property = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder() {
       return getDefaultFlowProperty();
     }
 
-    public static final int UNITS_FIELD_NUMBER = 9;
+    public static final int UNITS_FIELD_NUMBER = 11;
     private java.util.List<org.openlca.proto.Proto.Unit> units_;
     /**
      * <pre>
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.Unit> getUnitsList() {
@@ -77342,7 +85597,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.UnitOrBuilder> 
@@ -77354,7 +85609,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     @java.lang.Override
     public int getUnitsCount() {
@@ -77365,7 +85620,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.Unit getUnits(int index) {
@@ -77376,7 +85631,7 @@ public final class Proto {
      * The units of the unit group.
      * </pre>
      *
-     * <code>repeated .protolca.Unit units = 9;</code>
+     * <code>repeated .protolca.Unit units = 11;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.UnitOrBuilder getUnitsOrBuilder(
@@ -77419,11 +85674,17 @@ public final class Proto {
       if (category_ != null) {
         output.writeMessage(7, getCategory());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
+      }
       if (defaultFlowProperty_ != null) {
-        output.writeMessage(8, getDefaultFlowProperty());
+        output.writeMessage(10, getDefaultFlowProperty());
       }
       for (int i = 0; i < units_.size(); i++) {
-        output.writeMessage(9, units_.get(i));
+        output.writeMessage(11, units_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -77456,13 +85717,24 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCategory());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getLibraryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
+      }
       if (defaultFlowProperty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getDefaultFlowProperty());
+          .computeMessageSize(10, getDefaultFlowProperty());
       }
       for (int i = 0; i < units_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, units_.get(i));
+          .computeMessageSize(11, units_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -77496,6 +85768,10 @@ public final class Proto {
         if (!getCategory()
             .equals(other.getCategory())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getLibrary()
+          .equals(other.getLibrary())) return false;
       if (hasDefaultFlowProperty() != other.hasDefaultFlowProperty()) return false;
       if (hasDefaultFlowProperty()) {
         if (!getDefaultFlowProperty()
@@ -77530,6 +85806,12 @@ public final class Proto {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
       }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLibrary().hashCode();
       if (hasDefaultFlowProperty()) {
         hash = (37 * hash) + DEFAULT_FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultFlowProperty().hashCode();
@@ -77694,6 +85976,10 @@ public final class Proto {
           category_ = null;
           categoryBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        library_ = "";
+
         if (defaultFlowPropertyBuilder_ == null) {
           defaultFlowProperty_ = null;
         } else {
@@ -77702,7 +85988,7 @@ public final class Proto {
         }
         if (unitsBuilder_ == null) {
           units_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           unitsBuilder_.clear();
         }
@@ -77744,15 +86030,21 @@ public final class Proto {
         } else {
           result.category_ = categoryBuilder_.build();
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.library_ = library_;
         if (defaultFlowPropertyBuilder_ == null) {
           result.defaultFlowProperty_ = defaultFlowProperty_;
         } else {
           result.defaultFlowProperty_ = defaultFlowPropertyBuilder_.build();
         }
         if (unitsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             units_ = java.util.Collections.unmodifiableList(units_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.units_ = units_;
         } else {
@@ -77833,6 +86125,20 @@ public final class Proto {
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getLibrary().isEmpty()) {
+          library_ = other.library_;
+          onChanged();
+        }
         if (other.hasDefaultFlowProperty()) {
           mergeDefaultFlowProperty(other.getDefaultFlowProperty());
         }
@@ -77840,7 +86146,7 @@ public final class Proto {
           if (!other.units_.isEmpty()) {
             if (units_.isEmpty()) {
               units_ = other.units_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureUnitsIsMutable();
               units_.addAll(other.units_);
@@ -77853,7 +86159,7 @@ public final class Proto {
               unitsBuilder_.dispose();
               unitsBuilder_ = null;
               units_ = other.units_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               unitsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnitsFieldBuilder() : null;
@@ -78638,6 +86944,267 @@ public final class Proto {
         return categoryBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of optional tags. A tag is just a string which should not contain
+       * commas (and other special characters).
+       * </pre>
+       *
+       * <code>repeated string tags = 8;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The library.
+       */
+      public java.lang.String getLibrary() {
+        java.lang.Object ref = library_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          library_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return The bytes for library.
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        library_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLibrary() {
+        
+        library_ = getDefaultInstance().getLibrary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If this entity is part of a library, this field contains the identifier of
+       * that library. The identifier is typically just the comination of the
+       * library name and version.
+       * </pre>
+       *
+       * <code>string library = 9;</code>
+       * @param value The bytes for library to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        library_ = value;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Ref defaultFlowProperty_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> defaultFlowPropertyBuilder_;
@@ -78648,7 +87215,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        * @return Whether the defaultFlowProperty field is set.
        */
       public boolean hasDefaultFlowProperty() {
@@ -78661,7 +87228,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        * @return The defaultFlowProperty.
        */
       public org.openlca.proto.Proto.Ref getDefaultFlowProperty() {
@@ -78678,7 +87245,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public Builder setDefaultFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78700,7 +87267,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public Builder setDefaultFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -78720,7 +87287,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public Builder mergeDefaultFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78744,7 +87311,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public Builder clearDefaultFlowProperty() {
         if (defaultFlowPropertyBuilder_ == null) {
@@ -78764,7 +87331,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDefaultFlowPropertyBuilder() {
         
@@ -78778,7 +87345,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDefaultFlowPropertyOrBuilder() {
         if (defaultFlowPropertyBuilder_ != null) {
@@ -78795,7 +87362,7 @@ public final class Proto {
        * units that are contained in this group.
        * </pre>
        *
-       * <code>.protolca.Ref default_flow_property = 8;</code>
+       * <code>.protolca.Ref default_flow_property = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -78814,9 +87381,9 @@ public final class Proto {
       private java.util.List<org.openlca.proto.Proto.Unit> units_ =
         java.util.Collections.emptyList();
       private void ensureUnitsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           units_ = new java.util.ArrayList<org.openlca.proto.Proto.Unit>(units_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -78828,7 +87395,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Unit> getUnitsList() {
         if (unitsBuilder_ == null) {
@@ -78842,7 +87409,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public int getUnitsCount() {
         if (unitsBuilder_ == null) {
@@ -78856,7 +87423,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public org.openlca.proto.Proto.Unit getUnits(int index) {
         if (unitsBuilder_ == null) {
@@ -78870,7 +87437,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder setUnits(
           int index, org.openlca.proto.Proto.Unit value) {
@@ -78891,7 +87458,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder setUnits(
           int index, org.openlca.proto.Proto.Unit.Builder builderForValue) {
@@ -78909,7 +87476,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder addUnits(org.openlca.proto.Proto.Unit value) {
         if (unitsBuilder_ == null) {
@@ -78929,7 +87496,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder addUnits(
           int index, org.openlca.proto.Proto.Unit value) {
@@ -78950,7 +87517,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder addUnits(
           org.openlca.proto.Proto.Unit.Builder builderForValue) {
@@ -78968,7 +87535,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder addUnits(
           int index, org.openlca.proto.Proto.Unit.Builder builderForValue) {
@@ -78986,7 +87553,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder addAllUnits(
           java.lang.Iterable<? extends org.openlca.proto.Proto.Unit> values) {
@@ -79005,12 +87572,12 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder clearUnits() {
         if (unitsBuilder_ == null) {
           units_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           unitsBuilder_.clear();
@@ -79022,7 +87589,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public Builder removeUnits(int index) {
         if (unitsBuilder_ == null) {
@@ -79039,7 +87606,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public org.openlca.proto.Proto.Unit.Builder getUnitsBuilder(
           int index) {
@@ -79050,7 +87617,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public org.openlca.proto.Proto.UnitOrBuilder getUnitsOrBuilder(
           int index) {
@@ -79064,7 +87631,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.UnitOrBuilder> 
            getUnitsOrBuilderList() {
@@ -79079,7 +87646,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public org.openlca.proto.Proto.Unit.Builder addUnitsBuilder() {
         return getUnitsFieldBuilder().addBuilder(
@@ -79090,7 +87657,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public org.openlca.proto.Proto.Unit.Builder addUnitsBuilder(
           int index) {
@@ -79102,7 +87669,7 @@ public final class Proto {
        * The units of the unit group.
        * </pre>
        *
-       * <code>repeated .protolca.Unit units = 9;</code>
+       * <code>repeated .protolca.Unit units = 11;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Unit.Builder> 
            getUnitsBuilderList() {
@@ -79115,7 +87682,7 @@ public final class Proto {
           unitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.Unit, org.openlca.proto.Proto.Unit.Builder, org.openlca.proto.Proto.UnitOrBuilder>(
                   units_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           units_ = null;
@@ -79195,6 +87762,11 @@ public final class Proto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_Category_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_Currency_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_Currency_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_DqIndicator_descriptor;
   private static final 
@@ -79364,252 +87936,268 @@ public final class Proto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nolca.proto\022\010protolca\"\235\002\n\005Actor\022\023\n\004type" +
+      "\n\nolca.proto\022\010protolca\"\274\002\n\005Actor\022\023\n\004type" +
       "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
       " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
       "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
-      "\0132\r.protolca.Ref\022\017\n\007address\030\010 \001(\t\022\014\n\004cit" +
-      "y\030\t \001(\t\022\017\n\007country\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022" +
-      "\017\n\007telefax\030\014 \001(\t\022\021\n\ttelephone\030\r \001(\t\022\017\n\007w" +
-      "ebsite\030\016 \001(\t\022\020\n\010zip_code\030\017 \001(\t\"\307\001\n\020Alloc" +
-      "ationFactor\022\023\n\004type\030\001 \001(\tR\005@type\022,\n\020prod" +
-      "uct_exchange\030\002 \001(\0132\022.protolca.Exchange\0221" +
-      "\n\017allocation_type\030\003 \001(\0162\030.protolca.Alloc" +
-      "ationType\022\r\n\005value\030\004 \001(\001\022.\n\022allocated_ex" +
-      "change\030\005 \001(\0132\022.protolca.Exchange\"\230\003\n\020Cal" +
-      "culationSetup\022\023\n\004type\030\001 \001(\tR\005@type\0223\n\020ca" +
-      "lculation_type\030\002 \001(\0162\031.protolca.Calculat" +
-      "ionType\022%\n\016product_system\030\003 \001(\0132\r.protol" +
-      "ca.Ref\022$\n\rimpact_method\030\004 \001(\0132\r.protolca" +
-      ".Ref\022\022\n\nwith_costs\030\005 \001(\010\022\035\n\006nw_set\030\006 \001(\013" +
-      "2\r.protolca.Ref\0223\n\021allocation_method\030\007 \001" +
-      "(\0162\030.protolca.AllocationType\0222\n\020paramete" +
-      "r_redefs\030\010 \003(\0132\030.protolca.ParameterRedef" +
-      "\022\016\n\006amount\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r.protolc" +
-      "a.Ref\022$\n\rflow_property\030\013 \001(\0132\r.protolca." +
-      "Ref\"\303\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n" +
-      "\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
-      "ion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chang" +
-      "e\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref" +
-      "\022\'\n\nmodel_type\030\010 \001(\0162\023.protolca.ModelTyp" +
-      "e\"e\n\013DqIndicator\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n" +
-      "\004name\030\002 \001(\t\022\020\n\010position\030\003 \001(\005\022!\n\006scores\030" +
-      "\004 \003(\0132\021.protolca.DqScore\"i\n\007DqScore\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\020\n\010position\030\002 \001(\005\022\r\n\005la" +
-      "bel\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\023\n\013uncert" +
-      "ainty\030\005 \001(\001\"\377\001\n\010DqSystem\022\023\n\004type\030\001 \001(\tR\005" +
+      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
+      "y\030\t \001(\t\022\017\n\007address\030\n \001(\t\022\014\n\004city\030\013 \001(\t\022\017" +
+      "\n\007country\030\014 \001(\t\022\r\n\005email\030\r \001(\t\022\017\n\007telefa" +
+      "x\030\016 \001(\t\022\021\n\ttelephone\030\017 \001(\t\022\017\n\007website\030\020 " +
+      "\001(\t\022\020\n\010zip_code\030\021 \001(\t\"\330\001\n\020AllocationFact" +
+      "or\022\023\n\004type\030\001 \001(\tR\005@type\022,\n\020product_excha" +
+      "nge\030\002 \001(\0132\022.protolca.Exchange\0221\n\017allocat" +
+      "ion_type\030\003 \001(\0162\030.protolca.AllocationType" +
+      "\022\r\n\005value\030\004 \001(\001\022\017\n\007formula\030\005 \001(\t\022.\n\022allo" +
+      "cated_exchange\030\006 \001(\0132\022.protolca.Exchange" +
+      "\"\230\003\n\020CalculationSetup\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "pe\0223\n\020calculation_type\030\002 \001(\0162\031.protolca." +
+      "CalculationType\022%\n\016product_system\030\003 \001(\0132" +
+      "\r.protolca.Ref\022$\n\rimpact_method\030\004 \001(\0132\r." +
+      "protolca.Ref\022\022\n\nwith_costs\030\005 \001(\010\022\035\n\006nw_s" +
+      "et\030\006 \001(\0132\r.protolca.Ref\0223\n\021allocation_me" +
+      "thod\030\007 \001(\0162\030.protolca.AllocationType\0222\n\020" +
+      "parameter_redefs\030\010 \003(\0132\030.protolca.Parame" +
+      "terRedef\022\016\n\006amount\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r" +
+      ".protolca.Ref\022$\n\rflow_property\030\013 \001(\0132\r.p" +
+      "rotolca.Ref\"\342\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005" +
       "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
       "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
       "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
-      "olca.Ref\022\031\n\021has_uncertainties\030\010 \001(\010\022\035\n\006s" +
-      "ource\030\t \001(\0132\r.protolca.Ref\022)\n\nindicators" +
-      "\030\n \003(\0132\025.protolca.DqIndicator\"\245\003\n\010Exchan" +
-      "ge\022\023\n\004type\030\001 \001(\tR\005@type\022\023\n\013internal_id\030\002" +
-      " \001(\005\022\027\n\017avoided_product\030\003 \001(\010\022\037\n\004flow\030\004 " +
-      "\001(\0132\021.protolca.FlowRef\022$\n\rflow_property\030" +
-      "\005 \001(\0132\r.protolca.Ref\022\r\n\005input\030\006 \001(\010\022\036\n\026q" +
-      "uantitative_reference\030\007 \001(\010\022\030\n\020base_unce" +
-      "rtainty\030\010 \001(\001\022.\n\020default_provider\030\t \001(\0132" +
-      "\024.protolca.ProcessRef\022\016\n\006amount\030\n \001(\001\022\026\n" +
-      "\016amount_formula\030\013 \001(\t\022\033\n\004unit\030\014 \001(\0132\r.pr" +
-      "otolca.Ref\022\020\n\010dq_entry\030\r \001(\t\022*\n\013uncertai" +
-      "nty\030\016 \001(\0132\025.protolca.Uncertainty\022\023\n\013desc" +
-      "ription\030\017 \001(\t\"\263\002\n\004Flow\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
+      "\'\n\nmodel_type\030\n \001(\0162\023.protolca.ModelType" +
+      "\"\215\002\n\010Currency\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
+      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
+      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
+      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n" +
+      "\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001" +
+      "(\t\022\031\n\021conversion_factor\030\013 \001(\001\022)\n\022referen" +
+      "ce_currency\030\014 \001(\0132\r.protolca.Ref\"e\n\013DqIn" +
+      "dicator\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001" +
+      "(\t\022\020\n\010position\030\003 \001(\005\022!\n\006scores\030\004 \003(\0132\021.p" +
+      "rotolca.DqScore\"i\n\007DqScore\022\023\n\004type\030\001 \001(\t" +
+      "R\005@type\022\020\n\010position\030\002 \001(\005\022\r\n\005label\030\003 \001(\t" +
+      "\022\023\n\013description\030\004 \001(\t\022\023\n\013uncertainty\030\005 \001" +
+      "(\001\"\236\002\n\010DqSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
+      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
+      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
+      "\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022" +
+      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n\021has_un" +
+      "certainties\030\n \001(\010\022\035\n\006source\030\013 \001(\0132\r.prot" +
+      "olca.Ref\022)\n\nindicators\030\014 \003(\0132\025.protolca." +
+      "DqIndicator\"\245\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005" +
+      "@type\022\023\n\013internal_id\030\002 \001(\005\022\027\n\017avoided_pr" +
+      "oduct\030\003 \001(\010\022\037\n\004flow\030\004 \001(\0132\021.protolca.Flo" +
+      "wRef\022$\n\rflow_property\030\005 \001(\0132\r.protolca.R" +
+      "ef\022\r\n\005input\030\006 \001(\010\022\036\n\026quantitative_refere" +
+      "nce\030\007 \001(\010\022\030\n\020base_uncertainty\030\010 \001(\001\022.\n\020d" +
+      "efault_provider\030\t \001(\0132\024.protolca.Process" +
+      "Ref\022\016\n\006amount\030\n \001(\001\022\026\n\016amount_formula\030\013 " +
+      "\001(\t\022\033\n\004unit\030\014 \001(\0132\r.protolca.Ref\022\020\n\010dq_e" +
+      "ntry\030\r \001(\t\022*\n\013uncertainty\030\016 \001(\0132\025.protol" +
+      "ca.Uncertainty\022\023\n\013description\030\017 \001(\t\"\322\002\n\004" +
+      "Flow\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
+      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
+      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010c" +
+      "ategory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003" +
+      "(\t\022\017\n\007library\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022" +
+      ".protolca.FlowType\022\013\n\003cas\030\013 \001(\t\022\017\n\007formu" +
+      "la\030\014 \001(\t\0225\n\017flow_properties\030\r \003(\0132\034.prot" +
+      "olca.FlowPropertyFactor\022\037\n\010location\030\016 \001(" +
+      "\0132\r.protolca.Ref\"\340\001\n\007FlowMap\022\023\n\004type\030\001 \001" +
+      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
+      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
+      "\n\013last_change\030\006 \001(\t\022\035\n\006source\030\007 \001(\0132\r.pr" +
+      "otolca.Ref\022\035\n\006target\030\010 \001(\0132\r.protolca.Re" +
+      "f\022(\n\010mappings\030\t \003(\0132\026.protolca.FlowMapEn" +
+      "try\"\336\001\n\014FlowMapEntry\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
+      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
+      "hange\030\006 \001(\t\022\"\n\004from\030\007 \001(\0132\024.protolca.Flo" +
+      "wMapRef\022 \n\002to\030\010 \001(\0132\024.protolca.FlowMapRe" +
+      "f\022\031\n\021conversion_factor\030\t \001(\001\"\205\001\n\nFlowMap" +
+      "Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021" +
+      ".protolca.FlowRef\022$\n\rflow_property\030\003 \001(\013" +
+      "2\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.protolca" +
+      ".Ref\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
+      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
+      "change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolc" +
+      "a.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\022" +
+      "flow_property_type\030\n \001(\0162\032.protolca.Flow" +
+      "PropertyType\022!\n\nunit_group\030\013 \001(\0132\r.proto" +
+      "lca.Ref\"\213\001\n\022FlowPropertyFactor\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022$\n\rflow_property\030\002 \001(\0132\r.pro" +
+      "tolca.Ref\022\031\n\021conversion_factor\030\003 \001(\001\022\037\n\027" +
+      "reference_flow_property\030\004 \001(\010\"T\n\007FlowRef" +
+      "\022\020\n\010ref_unit\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022%\n\t" +
+      "flow_type\030\003 \001(\0162\022.protolca.FlowType\"`\n\nF" +
+      "lowResult\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002" +
+      " \001(\0132\021.protolca.FlowRef\022\r\n\005input\030\003 \001(\010\022\r" +
+      "\n\005value\030\004 \001(\001\"\314\001\n\016ImpactCategory\022\023\n\004type" +
+      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
+      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
+      "(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023reference_uni" +
+      "t_name\030\007 \001(\t\022.\n\016impact_factors\030\010 \003(\0132\026.p" +
+      "rotolca.ImpactFactor\"%\n\021ImpactCategoryRe" +
+      "f\022\020\n\010ref_unit\030\001 \001(\t\"\323\001\n\014ImpactFactor\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protol" +
+      "ca.FlowRef\022$\n\rflow_property\030\003 \001(\0132\r.prot" +
+      "olca.Ref\022\033\n\004unit\030\004 \001(\0132\r.protolca.Ref\022\r\n" +
+      "\005value\030\005 \001(\001\022\017\n\007formula\030\006 \001(\t\022*\n\013uncerta" +
+      "inty\030\007 \001(\0132\025.protolca.Uncertainty\"\236\002\n\014Im" +
+      "pactMethod\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 " +
+      "\001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 " +
+      "\001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(" +
+      "\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004ta" +
+      "gs\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\021impact_cate" +
+      "gories\030\n \003(\0132\033.protolca.ImpactCategoryRe" +
+      "f\022\'\n\nparameters\030\013 \003(\0132\023.protolca.Paramet" +
+      "er\"h\n\014ImpactResult\022\023\n\004type\030\001 \001(\tR\005@type\022" +
+      "4\n\017impact_category\030\002 \001(\0132\033.protolca.Impa" +
+      "ctCategoryRef\022\r\n\005value\030\003 \001(\001\"\271\001\n\010Locatio" +
+      "n\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
+      "\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ve" +
+      "rsion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\014\n\004code" +
+      "\030\007 \001(\t\022\020\n\010latitude\030\010 \001(\001\022\021\n\tlongitude\030\t " +
+      "\001(\001\022\013\n\003kml\030\n \001(\t\"\211\002\n\tParameter\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\023\n\013description" +
+      "\030\003 \001(\t\0221\n\017parameter_scope\030\004 \001(\0162\030.protol" +
+      "ca.ParameterScope\022\027\n\017input_parameter\030\005 \001" +
+      "(\010\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007 \001(\t\022\027\n\017ex" +
+      "ternal_source\030\010 \001(\t\022\023\n\013source_type\030\t \001(\t" +
+      "\022*\n\013uncertainty\030\n \001(\0132\025.protolca.Uncerta" +
+      "inty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "ype\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007cont" +
+      "ext\030\004 \001(\0132\r.protolca.Ref\"\227\005\n\007Process\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
+      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
+      "brary\030\t \001(\t\022;\n\031default_allocation_method" +
+      "\030\n \001(\0162\030.protolca.AllocationType\0226\n\022allo" +
+      "cation_factors\030\013 \003(\0132\032.protolca.Allocati" +
+      "onFactor\022%\n\texchanges\030\014 \003(\0132\022.protolca.E" +
+      "xchange\022$\n\010location\030\r \001(\0132\022.protolca.Loc" +
+      "ation\022\'\n\nparameters\030\016 \003(\0132\023.protolca.Par" +
+      "ameter\022=\n\025process_documentation\030\017 \001(\0132\036." +
+      "protolca.ProcessDocumentation\022+\n\014process" +
+      "_type\030\020 \001(\0162\025.protolca.ProcessType\022 \n\tdq" +
+      "_system\030\021 \001(\0132\r.protolca.Ref\022)\n\022exchange" +
+      "_dq_system\030\022 \001(\0132\r.protolca.Ref\022\'\n\020socia" +
+      "l_dq_system\030\023 \001(\0132\r.protolca.Ref\022\020\n\010dq_e" +
+      "ntry\030\024 \001(\t\"\242\006\n\024ProcessDocumentation\022\023\n\004t" +
+      "ype\030\001 \001(\tR\005@type\022\030\n\020time_description\030\002 \001" +
+      "(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_from\030\004 " +
+      "\001(\t\022\036\n\026technology_description\030\005 \001(\t\022#\n\033d" +
+      "ata_collection_description\030\006 \001(\t\022 \n\030comp" +
+      "leteness_description\030\007 \001(\t\022\"\n\032data_selec" +
+      "tion_description\030\010 \001(\t\022\026\n\016review_details" +
+      "\030\t \001(\t\022\"\n\032data_treatment_description\030\n \001" +
+      "(\t\022$\n\034inventory_method_description\030\013 \001(\t" +
+      "\022&\n\036modeling_constants_description\030\014 \001(\t" +
+      "\022\037\n\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034\n\024sam" +
+      "pling_description\030\016 \001(\t\022\036\n\007sources\030\017 \003(\013" +
+      "2\r.protolca.Ref\022 \n\030restrictions_descript" +
+      "ion\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcreation" +
+      "_date\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(\0132\r.p" +
+      "rotolca.Ref\022%\n\016data_generator\030\024 \001(\0132\r.pr" +
+      "otolca.Ref\022%\n\016data_set_owner\030\025 \001(\0132\r.pro" +
+      "tolca.Ref\022\034\n\024intended_application\030\026 \001(\t\022" +
+      "\033\n\023project_description\030\027 \001(\t\022\"\n\013publicat" +
+      "ion\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geography_de" +
+      "scription\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004type\030" +
+      "\001 \001(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.protolc" +
+      "a.Ref\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022\036\n\007pr" +
+      "ocess\030\004 \001(\0132\r.protolca.Ref\022$\n\010exchange\030\005" +
+      " \001(\0132\022.protolca.Exchange\"K\n\nProcessRef\022\020" +
+      "\n\010location\030\001 \001(\t\022+\n\014process_type\030\002 \001(\0162\025" +
+      ".protolca.ProcessType\"\336\003\n\rProductSystem\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
+      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
+      "\007library\030\t \001(\t\022\'\n\tprocesses\030\n \003(\0132\024.prot" +
+      "olca.ProcessRef\022/\n\021reference_process\030\013 \001" +
+      "(\0132\024.protolca.ProcessRef\022.\n\022reference_ex" +
+      "change\030\014 \001(\0132\022.protolca.Exchange\022\025\n\rtarg" +
+      "et_amount\030\r \001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.p" +
+      "rotolca.Ref\022+\n\024target_flow_property\030\017 \001(" +
+      "\0132\r.protolca.Ref\022,\n\rprocess_links\030\020 \003(\0132" +
+      "\025.protolca.ProcessLink\"\213\001\n\003Ref\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
+      "\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_path\030\007" +
+      " \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022*\n\014flow_results\030\002 \003(\0132\024.protolca.FlowR" +
+      "esult\022.\n\016impact_results\030\003 \003(\0132\026.protolca" +
+      ".ImpactResult\"\343\002\n\017SocialIndicator\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
+      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001" +
+      "(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libra" +
+      "ry\030\t \001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021a" +
+      "ctivity_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n" +
+      "\ractivity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023u" +
+      "nit_of_measurement\030\r \001(\t\022\031\n\021evaluation_s" +
+      "cheme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@t" +
       "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
       "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
       "_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protol" +
-      "ca.Ref\022%\n\tflow_type\030\010 \001(\0162\022.protolca.Flo" +
-      "wType\022\013\n\003cas\030\t \001(\t\022\017\n\007formula\030\n \001(\t\0225\n\017f" +
-      "low_properties\030\013 \003(\0132\034.protolca.FlowProp" +
-      "ertyFactor\022\037\n\010location\030\014 \001(\0132\r.protolca." +
-      "Ref\"\340\001\n\007FlowMap\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\035\n\006source\030\007 \001(\0132\r.protolca.Ref\022\035\n" +
-      "\006target\030\010 \001(\0132\r.protolca.Ref\022(\n\010mappings" +
-      "\030\t \003(\0132\026.protolca.FlowMapEntry\"\336\001\n\014FlowM" +
-      "apEntry\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "ca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n" +
+      "\003url\030\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004ye" +
+      "ar\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Unce" +
+      "rtainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribu" +
+      "tion_type\030\002 \001(\0162\031.protolca.UncertaintyTy" +
+      "pe\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021" +
+      "\n\tgeom_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006" +
+      " \001(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula" +
+      "\030\010 \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017" +
+      "\n\007geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t" +
+      "\022\014\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007" +
+      "maximum\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272" +
+      "\001\n\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
       "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
-      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\"" +
-      "\n\004from\030\007 \001(\0132\024.protolca.FlowMapRef\022 \n\002to" +
-      "\030\010 \001(\0132\024.protolca.FlowMapRef\022\031\n\021conversi" +
-      "on_factor\030\t \001(\001\"\205\001\n\nFlowMapRef\022\023\n\004type\030\001" +
-      " \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.Flo" +
-      "wRef\022$\n\rflow_property\030\003 \001(\0132\r.protolca.R" +
-      "ef\022\033\n\004unit\030\004 \001(\0132\r.protolca.Ref\"\371\001\n\014Flow" +
-      "Property\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
-      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
-      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
-      "\037\n\010category\030\007 \001(\0132\r.protolca.Ref\0226\n\022flow" +
-      "_property_type\030\010 \001(\0162\032.protolca.FlowProp" +
-      "ertyType\022!\n\nunit_group\030\t \001(\0132\r.protolca." +
-      "Ref\"\213\001\n\022FlowPropertyFactor\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022$\n\rflow_property\030\002 \001(\0132\r.protolc" +
-      "a.Ref\022\031\n\021conversion_factor\030\003 \001(\001\022\037\n\027refe" +
-      "rence_flow_property\030\004 \001(\010\"T\n\007FlowRef\022\020\n\010" +
-      "ref_unit\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022%\n\tflow" +
-      "_type\030\003 \001(\0162\022.protolca.FlowType\"`\n\nFlowR" +
-      "esult\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\013" +
-      "2\021.protolca.FlowRef\022\r\n\005input\030\003 \001(\010\022\r\n\005va" +
-      "lue\030\004 \001(\001\"\314\001\n\016ImpactCategory\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
-      "\n\013last_change\030\006 \001(\t\022\033\n\023reference_unit_na" +
-      "me\030\007 \001(\t\022.\n\016impact_factors\030\010 \003(\0132\026.proto" +
-      "lca.ImpactFactor\"%\n\021ImpactCategoryRef\022\020\n" +
-      "\010ref_unit\030\001 \001(\t\"\323\001\n\014ImpactFactor\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.F" +
-      "lowRef\022$\n\rflow_property\030\003 \001(\0132\r.protolca" +
-      ".Ref\022\033\n\004unit\030\004 \001(\0132\r.protolca.Ref\022\r\n\005val" +
-      "ue\030\005 \001(\001\022\017\n\007formula\030\006 \001(\t\022*\n\013uncertainty" +
-      "\030\007 \001(\0132\025.protolca.Uncertainty\"\377\001\n\014Impact" +
-      "Method\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR" +
-      "\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022" +
-      "\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n" +
-      "\010category\030\007 \001(\0132\r.protolca.Ref\0226\n\021impact" +
-      "_categories\030\010 \003(\0132\033.protolca.ImpactCateg" +
-      "oryRef\022\'\n\nparameters\030\t \003(\0132\023.protolca.Pa" +
-      "rameter\"h\n\014ImpactResult\022\023\n\004type\030\001 \001(\tR\005@" +
-      "type\0224\n\017impact_category\030\002 \001(\0132\033.protolca" +
-      ".ImpactCategoryRef\022\r\n\005value\030\003 \001(\001\"\271\001\n\010Lo" +
-      "cation\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR" +
-      "\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022" +
-      "\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\014\n" +
-      "\004code\030\007 \001(\t\022\020\n\010latitude\030\010 \001(\001\022\021\n\tlongitu" +
-      "de\030\t \001(\001\022\013\n\003kml\030\n \001(\t\"\211\002\n\tParameter\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\023\n\013descri" +
-      "ption\030\003 \001(\t\0221\n\017parameter_scope\030\004 \001(\0162\030.p" +
-      "rotolca.ParameterScope\022\027\n\017input_paramete" +
-      "r\030\005 \001(\010\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007 \001(\t\022" +
-      "\027\n\017external_source\030\010 \001(\t\022\023\n\013source_type\030" +
-      "\t \001(\t\022*\n\013uncertainty\030\n \001(\0132\025.protolca.Un" +
-      "certainty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(" +
-      "\tR\005@type\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n" +
-      "\007context\030\004 \001(\0132\r.protolca.Ref\"\370\004\n\007Proces" +
-      "s\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031" +
+      "\n\021conversion_factor\030\007 \001(\001\022\026\n\016reference_u" +
+      "nit\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGrou" +
+      "p\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
       "\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ve" +
       "rsion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cate" +
-      "gory\030\007 \001(\0132\r.protolca.Ref\022;\n\031default_all" +
-      "ocation_method\030\010 \001(\0162\030.protolca.Allocati" +
-      "onType\0226\n\022allocation_factors\030\t \003(\0132\032.pro" +
-      "tolca.AllocationFactor\022%\n\texchanges\030\n \003(" +
-      "\0132\022.protolca.Exchange\022$\n\010location\030\013 \001(\0132" +
-      "\022.protolca.Location\022\'\n\nparameters\030\014 \003(\0132" +
-      "\023.protolca.Parameter\022=\n\025process_document" +
-      "ation\030\r \001(\0132\036.protolca.ProcessDocumentat" +
-      "ion\022+\n\014process_type\030\016 \001(\0162\025.protolca.Pro" +
-      "cessType\022 \n\tdq_system\030\017 \001(\0132\r.protolca.R" +
-      "ef\022)\n\022exchange_dq_system\030\020 \001(\0132\r.protolc" +
-      "a.Ref\022\'\n\020social_dq_system\030\021 \001(\0132\r.protol" +
-      "ca.Ref\022\020\n\010dq_entry\030\022 \001(\t\"\242\006\n\024ProcessDocu" +
-      "mentation\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_d" +
-      "escription\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n" +
-      "\nvalid_from\030\004 \001(\t\022\036\n\026technology_descript" +
-      "ion\030\005 \001(\t\022#\n\033data_collection_description" +
-      "\030\006 \001(\t\022 \n\030completeness_description\030\007 \001(\t" +
-      "\022\"\n\032data_selection_description\030\010 \001(\t\022\026\n\016" +
-      "review_details\030\t \001(\t\022\"\n\032data_treatment_d" +
-      "escription\030\n \001(\t\022$\n\034inventory_method_des" +
-      "cription\030\013 \001(\t\022&\n\036modeling_constants_des" +
-      "cription\030\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.proto" +
-      "lca.Ref\022\034\n\024sampling_description\030\016 \001(\t\022\036\n" +
-      "\007sources\030\017 \003(\0132\r.protolca.Ref\022 \n\030restric" +
-      "tions_description\030\020 \001(\t\022\021\n\tcopyright\030\021 \001" +
-      "(\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017data_docume" +
-      "ntor\030\023 \001(\0132\r.protolca.Ref\022%\n\016data_genera" +
-      "tor\030\024 \001(\0132\r.protolca.Ref\022%\n\016data_set_own" +
-      "er\030\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_appl" +
-      "ication\030\026 \001(\t\022\033\n\023project_description\030\027 \001" +
-      "(\t\022\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022\035" +
-      "\n\025geography_description\030\031 \001(\t\"\246\001\n\013Proces" +
-      "sLink\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002" +
-      " \001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.prot" +
-      "olca.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Ref" +
-      "\022$\n\010exchange\030\005 \001(\0132\022.protolca.Exchange\"K" +
-      "\n\nProcessRef\022\020\n\010location\030\001 \001(\t\022+\n\014proces" +
-      "s_type\030\002 \001(\0162\025.protolca.ProcessType\"\277\003\n\r" +
-      "ProductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
-      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\'\n" +
-      "\tprocesses\030\010 \003(\0132\024.protolca.ProcessRef\022/" +
-      "\n\021reference_process\030\t \001(\0132\024.protolca.Pro" +
-      "cessRef\022.\n\022reference_exchange\030\n \001(\0132\022.pr" +
-      "otolca.Exchange\022\025\n\rtarget_amount\030\013 \001(\001\022\"" +
-      "\n\013target_unit\030\014 \001(\0132\r.protolca.Ref\022+\n\024ta" +
-      "rget_flow_property\030\r \001(\0132\r.protolca.Ref\022" +
-      ",\n\rprocess_links\030\016 \003(\0132\025.protolca.Proces" +
-      "sLink\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
-      " \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014SimpleRes" +
-      "ult\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow_results" +
-      "\030\002 \003(\0132\024.protolca.FlowResult\022.\n\016impact_r" +
-      "esults\030\003 \003(\0132\026.protolca.ImpactResult\"\304\002\n" +
-      "\017SocialIndicator\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n" +
-      "\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
-      "ion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chang" +
-      "e\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref" +
-      "\022\031\n\021activity_variable\030\010 \001(\t\022(\n\021activity_" +
-      "quantity\030\t \001(\0132\r.protolca.Ref\022$\n\ractivit" +
-      "y_unit\030\n \001(\0132\r.protolca.Ref\022\033\n\023unit_of_m" +
-      "easurement\030\013 \001(\t\022\031\n\021evaluation_scheme\030\014 " +
-      "\001(\t\"\342\001\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
-      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
-      "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\013" +
-      "\n\003doi\030\010 \001(\t\022\026\n\016text_reference\030\t \001(\t\022\014\n\004y" +
-      "ear\030\n \001(\005\022\025\n\rexternal_file\030\013 \001(\t\"\354\002\n\013Unc" +
-      "ertainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distrib" +
-      "ution_type\030\002 \001(\0162\031.protolca.UncertaintyT" +
-      "ype\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022" +
-      "\021\n\tgeom_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030" +
-      "\006 \001(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formul" +
-      "a\030\010 \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022" +
-      "\017\n\007geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(" +
-      "\t\022\014\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n" +
-      "\007maximum\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"" +
-      "\272\001\n\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
-      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
-      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
-      "\031\n\021conversion_factor\030\007 \001(\001\022\026\n\016reference_" +
-      "unit\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\350\001\n\tUnitGro" +
-      "up\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
-      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
-      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cat" +
-      "egory\030\007 \001(\0132\r.protolca.Ref\022,\n\025default_fl" +
-      "ow_property\030\010 \001(\0132\r.protolca.Ref\022\035\n\005unit" +
-      "s\030\t \003(\0132\016.protolca.Unit*\247\001\n\016AllocationTy" +
-      "pe\022\035\n\031UNDEFINED_ALLOCATION_TYPE\020\000\022\027\n\023PHY" +
-      "SICAL_ALLOCATION\020\001\022\027\n\023ECONOMIC_ALLOCATIO" +
-      "N\020\002\022\025\n\021CAUSAL_ALLOCATION\020\003\022\032\n\026USE_DEFAUL" +
-      "T_ALLOCATION\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017Ca" +
-      "lculationType\022\036\n\032UNDEFINED_CALCULATION_T" +
-      "YPE\020\000\022\026\n\022SIMPLE_CALCULATION\020\001\022\031\n\025CONTRIB" +
-      "UTION_ANALYSIS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022" +
-      "\034\n\030REGIONALIZED_CALCULATION\020\004\022\032\n\026MONTE_C" +
-      "ARLO_SIMULATION\020\005*b\n\020FlowPropertyType\022 \n" +
-      "\034UNDEFINED_FLOW_PROPERTY_TYPE\020\000\022\025\n\021ECONO" +
-      "MIC_QUANTITY\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n" +
-      "\010FlowType\022\027\n\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017EL" +
-      "EMENTARY_FLOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWAS" +
-      "TE_FLOW\020\003*\207\002\n\tModelType\022\030\n\024UNDEFINED_MOD" +
-      "EL_TYPE\020\000\022\013\n\007PROJECT\020\001\022\021\n\rIMPACT_METHOD\020" +
-      "\002\022\023\n\017IMPACT_CATEGORY\020\003\022\022\n\016PRODUCT_SYSTEM" +
-      "\020\004\022\013\n\007PROCESS\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPER" +
-      "TY\020\007\022\016\n\nUNIT_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020" +
-      "\n\022\n\n\006SOURCE\020\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION\020" +
-      "\r\022\n\n\006NW_SET\020\016\022\024\n\020SOCIAL_INDICATOR\020\017*k\n\016P" +
-      "arameterScope\022\035\n\031UNDEFINED_PARAMETER_SCO" +
-      "PE\020\000\022\021\n\rPROCESS_SCOPE\020\001\022\025\n\021LCIA_METHOD_S" +
-      "COPE\020\002\022\020\n\014GLOBAL_SCOPE\020\003*K\n\013ProcessType\022" +
-      "\032\n\026UNDEFINED_PROCESS_TYPE\020\000\022\016\n\nLCI_RESUL" +
-      "T\020\001\022\020\n\014UNIT_PROCESS\020\002*\234\001\n\017UncertaintyTyp" +
-      "e\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LOG" +
-      "_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRIB" +
-      "UTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024UN" +
-      "IFORM_DISTRIBUTION\020\004B&\n\021org.openlca.prot" +
-      "oB\005ProtoZ\n.;protolcab\006proto3"
+      "gory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022" +
+      "\017\n\007library\030\t \001(\t\022,\n\025default_flow_propert" +
+      "y\030\n \001(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016." +
+      "protolca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDE" +
+      "FINED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLO" +
+      "CATION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAU" +
+      "SAL_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATI" +
+      "ON\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationT" +
+      "ype\022\036\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022S" +
+      "IMPLE_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANAL" +
+      "YSIS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONA" +
+      "LIZED_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMUL" +
+      "ATION\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED" +
+      "_FLOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTI" +
+      "TY\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022" +
+      "\027\n\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_F" +
+      "LOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*" +
+      "\207\002\n\tModelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022" +
+      "\013\n\007PROJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPAC" +
+      "T_CATEGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROC" +
+      "ESS\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUN" +
+      "IT_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURC" +
+      "E\020\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SE" +
+      "T\020\016\022\024\n\020SOCIAL_INDICATOR\020\017*k\n\016ParameterSc" +
+      "ope\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPR" +
+      "OCESS_SCOPE\020\001\022\025\n\021LCIA_METHOD_SCOPE\020\002\022\020\n\014" +
+      "GLOBAL_SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFIN" +
+      "ED_PROCESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNI" +
+      "T_PROCESS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEF" +
+      "INED_UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DI" +
+      "STRIBUTION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n" +
+      "\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DIST" +
+      "RIBUTION\020\004B&\n\021org.openlca.protoB\005ProtoZ\n" +
+      ".;protolcab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -79620,13 +88208,13 @@ public final class Proto {
     internal_static_protolca_Actor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Actor_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Address", "City", "Country", "Email", "Telefax", "Telephone", "Website", "ZipCode", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Address", "City", "Country", "Email", "Telefax", "Telephone", "Website", "ZipCode", });
     internal_static_protolca_AllocationFactor_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protolca_AllocationFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_AllocationFactor_descriptor,
-        new java.lang.String[] { "Type", "ProductExchange", "AllocationType", "Value", "AllocatedExchange", });
+        new java.lang.String[] { "Type", "ProductExchange", "AllocationType", "Value", "Formula", "AllocatedExchange", });
     internal_static_protolca_CalculationSetup_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protolca_CalculationSetup_fieldAccessorTable = new
@@ -79638,199 +88226,205 @@ public final class Proto {
     internal_static_protolca_Category_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Category_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "ModelType", });
-    internal_static_protolca_DqIndicator_descriptor =
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ModelType", });
+    internal_static_protolca_Currency_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_protolca_Currency_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_Currency_descriptor,
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Code", "ConversionFactor", "ReferenceCurrency", });
+    internal_static_protolca_DqIndicator_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_protolca_DqIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_DqIndicator_descriptor,
         new java.lang.String[] { "Type", "Name", "Position", "Scores", });
     internal_static_protolca_DqScore_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_protolca_DqScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_DqScore_descriptor,
         new java.lang.String[] { "Type", "Position", "Label", "Description", "Uncertainty", });
     internal_static_protolca_DqSystem_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_protolca_DqSystem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_DqSystem_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "HasUncertainties", "Source", "Indicators", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "HasUncertainties", "Source", "Indicators", });
     internal_static_protolca_Exchange_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_protolca_Exchange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Exchange_descriptor,
         new java.lang.String[] { "Type", "InternalId", "AvoidedProduct", "Flow", "FlowProperty", "Input", "QuantitativeReference", "BaseUncertainty", "DefaultProvider", "Amount", "AmountFormula", "Unit", "DqEntry", "Uncertainty", "Description", });
     internal_static_protolca_Flow_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_protolca_Flow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Flow_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "FlowType", "Cas", "Formula", "FlowProperties", "Location", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "FlowType", "Cas", "Formula", "FlowProperties", "Location", });
     internal_static_protolca_FlowMap_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_protolca_FlowMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMap_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Source", "Target", "Mappings", });
     internal_static_protolca_FlowMapEntry_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_protolca_FlowMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMapEntry_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "From", "To", "ConversionFactor", });
     internal_static_protolca_FlowMapRef_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_protolca_FlowMapRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMapRef_descriptor,
         new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", });
     internal_static_protolca_FlowProperty_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_protolca_FlowProperty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowProperty_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "FlowPropertyType", "UnitGroup", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "FlowPropertyType", "UnitGroup", });
     internal_static_protolca_FlowPropertyFactor_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_protolca_FlowPropertyFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowPropertyFactor_descriptor,
         new java.lang.String[] { "Type", "FlowProperty", "ConversionFactor", "ReferenceFlowProperty", });
     internal_static_protolca_FlowRef_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_protolca_FlowRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowRef_descriptor,
         new java.lang.String[] { "RefUnit", "Location", "FlowType", });
     internal_static_protolca_FlowResult_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_protolca_FlowResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowResult_descriptor,
         new java.lang.String[] { "Type", "Flow", "Input", "Value", });
     internal_static_protolca_ImpactCategory_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_protolca_ImpactCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategory_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "ReferenceUnitName", "ImpactFactors", });
     internal_static_protolca_ImpactCategoryRef_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_protolca_ImpactCategoryRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategoryRef_descriptor,
         new java.lang.String[] { "RefUnit", });
     internal_static_protolca_ImpactFactor_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_protolca_ImpactFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactFactor_descriptor,
         new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", "Value", "Formula", "Uncertainty", });
     internal_static_protolca_ImpactMethod_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_protolca_ImpactMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactMethod_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "ImpactCategories", "Parameters", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", "Parameters", });
     internal_static_protolca_ImpactResult_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_protolca_ImpactResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactResult_descriptor,
         new java.lang.String[] { "Type", "ImpactCategory", "Value", });
     internal_static_protolca_Location_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_protolca_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Location_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Code", "Latitude", "Longitude", "Kml", });
     internal_static_protolca_Parameter_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_protolca_Parameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Parameter_descriptor,
         new java.lang.String[] { "Type", "Name", "Description", "ParameterScope", "InputParameter", "Value", "Formula", "ExternalSource", "SourceType", "Uncertainty", });
     internal_static_protolca_ParameterRedef_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_protolca_ParameterRedef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ParameterRedef_descriptor,
         new java.lang.String[] { "Type", "Name", "Value", "Context", });
     internal_static_protolca_Process_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_protolca_Process_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Process_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "DefaultAllocationMethod", "AllocationFactors", "Exchanges", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "DefaultAllocationMethod", "AllocationFactors", "Exchanges", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", });
     internal_static_protolca_ProcessDocumentation_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_protolca_ProcessDocumentation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessDocumentation_descriptor,
         new java.lang.String[] { "Type", "TimeDescription", "ValidUntil", "ValidFrom", "TechnologyDescription", "DataCollectionDescription", "CompletenessDescription", "DataSelectionDescription", "ReviewDetails", "DataTreatmentDescription", "InventoryMethodDescription", "ModelingConstantsDescription", "Reviewer", "SamplingDescription", "Sources", "RestrictionsDescription", "Copyright", "CreationDate", "DataDocumentor", "DataGenerator", "DataSetOwner", "IntendedApplication", "ProjectDescription", "Publication", "GeographyDescription", });
     internal_static_protolca_ProcessLink_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_protolca_ProcessLink_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessLink_descriptor,
         new java.lang.String[] { "Type", "Provider", "Flow", "Process", "Exchange", });
     internal_static_protolca_ProcessRef_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_protolca_ProcessRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessRef_descriptor,
         new java.lang.String[] { "Location", "ProcessType", });
     internal_static_protolca_ProductSystem_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_protolca_ProductSystem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProductSystem_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Processes", "ReferenceProcess", "ReferenceExchange", "TargetAmount", "TargetUnit", "TargetFlowProperty", "ProcessLinks", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Processes", "ReferenceProcess", "ReferenceExchange", "TargetAmount", "TargetUnit", "TargetFlowProperty", "ProcessLinks", });
     internal_static_protolca_Ref_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_protolca_Ref_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Ref_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", });
     internal_static_protolca_SimpleResult_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_protolca_SimpleResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SimpleResult_descriptor,
         new java.lang.String[] { "Type", "FlowResults", "ImpactResults", });
     internal_static_protolca_SocialIndicator_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_protolca_SocialIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialIndicator_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "ActivityVariable", "ActivityQuantity", "ActivityUnit", "UnitOfMeasurement", "EvaluationScheme", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ActivityVariable", "ActivityQuantity", "ActivityUnit", "UnitOfMeasurement", "EvaluationScheme", });
     internal_static_protolca_Source_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_protolca_Source_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Source_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Doi", "TextReference", "Year", "ExternalFile", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Url", "TextReference", "Year", "ExternalFile", });
     internal_static_protolca_Uncertainty_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_protolca_Uncertainty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Uncertainty_descriptor,
         new java.lang.String[] { "Type", "DistributionType", "Mean", "MeanFormula", "GeomMean", "GeomMeanFormula", "Minimum", "MinimumFormula", "Sd", "SdFormula", "GeomSd", "GeomSdFormula", "Mode", "ModeFormula", "Maximum", "MaximumFormula", });
     internal_static_protolca_Unit_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_protolca_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Unit_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "ConversionFactor", "ReferenceUnit", "Synonyms", });
     internal_static_protolca_UnitGroup_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_protolca_UnitGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_UnitGroup_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "DefaultFlowProperty", "Units", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "DefaultFlowProperty", "Units", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
