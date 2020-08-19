@@ -7,6 +7,8 @@ import org.openlca.core.database.Daos;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.model.ModelType;
 import org.openlca.core.model.RootEntity;
+import org.openlca.core.model.Version;
+import org.openlca.jsonld.Json;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.ProtoStore;
 
@@ -40,6 +42,34 @@ public class ImportConfig {
   public ImportConfig withUpdateMode(UpdateMode mode) {
     this.updateMode = mode;
     return this;
+  }
+
+  boolean noUpdates() {
+    return updateMode == null
+      || updateMode == UpdateMode.NEVER;
+  }
+
+  boolean shouldUpdate(RootEntity e, String version, String lastChange) {
+    if (e == null)
+      return false;
+    if (noUpdates())
+      return false;
+    if (updateMode == UpdateMode.ALWAYS)
+      return true;
+
+    // check if
+    long v = version != null
+      ? Version.fromString(version).getValue()
+      : 0;
+    if (v < e.version)
+      return false;
+    var date = lastChange != null
+      ? Json.parseDate(lastChange)
+      : null;
+    var time = date != null
+      ? date.getTime()
+      : 0;
+    return v != e.version || time > e.lastChange;
   }
 
   void putHandled(RootEntity e) {
