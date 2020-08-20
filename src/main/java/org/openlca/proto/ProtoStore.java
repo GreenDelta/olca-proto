@@ -34,4 +34,8 @@ public interface ProtoStore extends Closeable {
 
   Proto.SocialIndicator getSocialIndicator(String id);
 
+  Proto.ProductSystem getProductSystem(String id);
+
+  Proto.NwSet getNwSet(String id);
+
 }
