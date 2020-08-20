@@ -731,8 +731,6 @@ enum FlowType {
 
 }
 
-// A LCIA category of a LCIA method (see ImpactMethod) which groups a set of
-// characterisation factors
 message ImpactCategory {
 
   // The type name of the respectiven entity.
@@ -756,11 +754,23 @@ message ImpactCategory {
   // The timestamp when the entity was changed the last time.
   string last_change = 6;
 
+  // The category of the entity.
+  Ref category = 7;
+
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The name of the reference unit of the LCIA category (e.g. kg CO2-eq.).
-  string reference_unit_name = 7;
+  string reference_unit_name = 10;
 
   // The characterisation factors of the LCIA category.
-  repeated ImpactFactor impact_factors = 8;
+  repeated ImpactFactor impact_factors = 11;
 
 }
 
@@ -883,17 +893,29 @@ message Location {
   // The timestamp when the entity was changed the last time.
   string last_change = 6;
 
+  // The category of the entity.
+  Ref category = 7;
+
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
   // The code of the location (e.g. an ISO 2-letter country code).
-  string code = 7;
+  string code = 10;
 
   // The average latitude of the location.
-  double latitude = 8;
+  double latitude = 11;
 
   // The average longitude of the location.
-  double longitude = 9;
+  double longitude = 12;
 
   // KML data of the location.
-  string kml = 10;
+  string kml = 13;
 
 }
 
@@ -936,43 +958,116 @@ enum ModelType {
 
 }
 
+// A normalization and weighting factor of a [NwSet] related to an impact
+// category. Depending on the purpose of the [NwSet] (normalization, weighting,
+// or both) the normalization and weighting factor can be present or not.
+message NwFactor {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  Ref impact_category = 2;
+
+  double normalisation_factor = 3;
+
+  double weighting_factor = 4;
+
+}
+
+// A normalization and weighting set.
+message NwSet {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string last_change = 6;
+
+  // This is the optional unit of the (normalized and) weighted score when this
+  // normalization and weighting set was applied on a LCIA result.
+  string weighted_score_unit = 7;
+
+  // The list of normalization and weighting factors of this set.
+  repeated NwFactor factors = 8;
+
+}
+
+// In openLCA, parameters can be defined in different scopes: global, process,
+// or LCIA method. The parameter name can be used in formulas and, thus, need
+// to conform to a specific syntax. Within a scope the parameter name should be
+// unique (otherwise the evaluation is not deterministic). There are two types
+// of parameters in openLCA: input parameters and dependent parameters. An
+// input parameter can have an optional uncertainty distribution but not a
+// formula. A dependent parameter can (should) have a formula (where also other
+// parameters can be used) but no uncertainty distribution.
 message Parameter {
 
   // The type name of the respectiven entity.
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  // The name of the parameter.
-  string name = 2;
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
 
-  // A description of the parameter.
-  string description = 3;
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string last_change = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
 
   // The scope where the parameter is valid.
-  ParameterScope parameter_scope = 4;
+  ParameterScope parameter_scope = 10;
 
   // Indicates whether the parameter is an input parameter (true) or a
   // dependent/calculated parameter (false). A parameter can have a formula if
   // it is not an input parameter.
-  bool input_parameter = 5;
+  bool input_parameter = 11;
 
   // The parameter value.
-  double value = 6;
+  double value = 12;
 
   // A mathematical expression to calculate the parameter value.
-  string formula = 7;
-
-  // A reference to an external source where the parameter is defined (e.g. an
-  // Excel table, shapefile, etc.).
-  string external_source = 8;
-
-  // Indicates the type of the source if an external source is defined for the
-  // parameter.
-  string source_type = 9;
+  string formula = 13;
 
   // An uncertainty distribution of the parameter value. This is only valid for
   // input parameters.
-  Uncertainty uncertainty = 10;
+  Uncertainty uncertainty = 14;
 
 }
 
@@ -1245,6 +1340,47 @@ message ProductSystem {
 
   // The process links of the product system.
   repeated ProcessLink process_links = 16;
+
+}
+
+message Project {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The reference ID (typically an UUID) of the entity.
+  string id = 2 [json_name = "@id"];
+
+  // The name of the entity.
+  string name = 3;
+
+  // The description of the entity.
+  string description = 4;
+
+  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+  // fields are optional and the fields may have leading zeros (so 01.00.00 is
+  // the same as 1.0.0 or 1).
+  string version = 5;
+
+  // The timestamp when the entity was changed the last time.
+  string last_change = 6;
+
+  // The category of the entity.
+  Ref category = 7;
+
+  // A list of optional tags. A tag is just a string which should not contain
+  // commas (and other special characters).
+  repeated string tags = 8;
+
+  // If this entity is part of a library, this field contains the identifier of
+  // that library. The identifier is typically just the comination of the
+  // library name and version.
+  string library = 9;
+
+  Ref impact_method = 10;
+
+  NwSet nw_set = 11;
 
 }
 
