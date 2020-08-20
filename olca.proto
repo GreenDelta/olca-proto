@@ -1,9 +1,11 @@
 syntax = "proto3";
 package protolca;
+
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 option go_package = ".;protolca";
 
+import "google/protobuf/any.proto";
 // An actor is a person or organisation.
 message Actor {
 
@@ -914,8 +916,8 @@ message Location {
   // The average longitude of the location.
   double longitude = 12;
 
-  // KML data of the location.
-  string kml = 13;
+  // A GeoJSON object.
+  google.protobuf.Any geometry = 13;
 
 }
 

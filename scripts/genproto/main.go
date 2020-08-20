@@ -72,10 +72,12 @@ type EnumItem struct {
 // to define global options
 const ProtoHeader = `syntax = "proto3";
 package protolca;
+
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 option go_package = ".;protolca";
 
+import "google/protobuf/any.proto";
 `
 
 func main() {
@@ -227,6 +229,8 @@ func mapType(schemaType string) string {
 		return "int32"
 	case "boolean":
 		return "bool"
+	case "GeoJSON":
+		return "google.protobuf.Any"
 	}
 
 	if strings.HasPrefix(schemaType, "Ref[") {

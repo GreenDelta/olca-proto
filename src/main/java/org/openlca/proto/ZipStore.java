@@ -292,7 +292,9 @@ public class ZipStore implements ProtoStore {
       if (data == null)
         return false;
       var json = new String(data, StandardCharsets.UTF_8);
-      JsonFormat.parser().merge(json, builder);
+      JsonFormat.parser()
+        .ignoringUnknownFields()
+        .merge(json, builder);
       return true;
     } catch (Exception e) {
       var log = LoggerFactory.getLogger(getClass());

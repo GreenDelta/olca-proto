@@ -48900,23 +48900,30 @@ public final class Proto {
 
     /**
      * <pre>
-     * KML data of the location.
+     * A GeoJSON object.
      * </pre>
      *
-     * <code>string kml = 13;</code>
-     * @return The kml.
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     * @return Whether the geometry field is set.
      */
-    java.lang.String getKml();
+    boolean hasGeometry();
     /**
      * <pre>
-     * KML data of the location.
+     * A GeoJSON object.
      * </pre>
      *
-     * <code>string kml = 13;</code>
-     * @return The bytes for kml.
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     * @return The geometry.
      */
-    com.google.protobuf.ByteString
-        getKmlBytes();
+    com.google.protobuf.Any getGeometry();
+    /**
+     * <pre>
+     * A GeoJSON object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     */
+    com.google.protobuf.AnyOrBuilder getGeometryOrBuilder();
   }
   /**
    * <pre>
@@ -48944,7 +48951,6 @@ public final class Proto {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       library_ = "";
       code_ = "";
-      kml_ = "";
     }
 
     @java.lang.Override
@@ -49059,9 +49065,16 @@ public final class Proto {
               break;
             }
             case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.Any.Builder subBuilder = null;
+              if (geometry_ != null) {
+                subBuilder = geometry_.toBuilder();
+              }
+              geometry_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(geometry_);
+                geometry_ = subBuilder.buildPartial();
+              }
 
-              kml_ = s;
               break;
             }
             default: {
@@ -49600,50 +49613,42 @@ public final class Proto {
       return longitude_;
     }
 
-    public static final int KML_FIELD_NUMBER = 13;
-    private volatile java.lang.Object kml_;
+    public static final int GEOMETRY_FIELD_NUMBER = 13;
+    private com.google.protobuf.Any geometry_;
     /**
      * <pre>
-     * KML data of the location.
+     * A GeoJSON object.
      * </pre>
      *
-     * <code>string kml = 13;</code>
-     * @return The kml.
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     * @return Whether the geometry field is set.
      */
     @java.lang.Override
-    public java.lang.String getKml() {
-      java.lang.Object ref = kml_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        kml_ = s;
-        return s;
-      }
+    public boolean hasGeometry() {
+      return geometry_ != null;
     }
     /**
      * <pre>
-     * KML data of the location.
+     * A GeoJSON object.
      * </pre>
      *
-     * <code>string kml = 13;</code>
-     * @return The bytes for kml.
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     * @return The geometry.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKmlBytes() {
-      java.lang.Object ref = kml_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        kml_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.Any getGeometry() {
+      return geometry_ == null ? com.google.protobuf.Any.getDefaultInstance() : geometry_;
+    }
+    /**
+     * <pre>
+     * A GeoJSON object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any geometry = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.AnyOrBuilder getGeometryOrBuilder() {
+      return getGeometry();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -49696,8 +49701,8 @@ public final class Proto {
       if (longitude_ != 0D) {
         output.writeDouble(12, longitude_);
       }
-      if (!getKmlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, kml_);
+      if (geometry_ != null) {
+        output.writeMessage(13, getGeometry());
       }
       unknownFields.writeTo(output);
     }
@@ -49752,8 +49757,9 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(12, longitude_);
       }
-      if (!getKmlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, kml_);
+      if (geometry_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getGeometry());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -49799,8 +49805,11 @@ public final class Proto {
       if (java.lang.Double.doubleToLongBits(getLongitude())
           != java.lang.Double.doubleToLongBits(
               other.getLongitude())) return false;
-      if (!getKml()
-          .equals(other.getKml())) return false;
+      if (hasGeometry() != other.hasGeometry()) return false;
+      if (hasGeometry()) {
+        if (!getGeometry()
+            .equals(other.getGeometry())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -49842,8 +49851,10 @@ public final class Proto {
       hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (37 * hash) + KML_FIELD_NUMBER;
-      hash = (53 * hash) + getKml().hashCode();
+      if (hasGeometry()) {
+        hash = (37 * hash) + GEOMETRY_FIELD_NUMBER;
+        hash = (53 * hash) + getGeometry().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -50009,8 +50020,12 @@ public final class Proto {
 
         longitude_ = 0D;
 
-        kml_ = "";
-
+        if (geometryBuilder_ == null) {
+          geometry_ = null;
+        } else {
+          geometry_ = null;
+          geometryBuilder_ = null;
+        }
         return this;
       }
 
@@ -50058,7 +50073,11 @@ public final class Proto {
         result.code_ = code_;
         result.latitude_ = latitude_;
         result.longitude_ = longitude_;
-        result.kml_ = kml_;
+        if (geometryBuilder_ == null) {
+          result.geometry_ = geometry_;
+        } else {
+          result.geometry_ = geometryBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -50158,9 +50177,8 @@ public final class Proto {
         if (other.getLongitude() != 0D) {
           setLongitude(other.getLongitude());
         }
-        if (!other.getKml().isEmpty()) {
-          kml_ = other.kml_;
-          onChanged();
+        if (other.hasGeometry()) {
+          mergeGeometry(other.getGeometry());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -51381,100 +51399,159 @@ public final class Proto {
         return this;
       }
 
-      private java.lang.Object kml_ = "";
+      private com.google.protobuf.Any geometry_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> geometryBuilder_;
       /**
        * <pre>
-       * KML data of the location.
+       * A GeoJSON object.
        * </pre>
        *
-       * <code>string kml = 13;</code>
-       * @return The kml.
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       * @return Whether the geometry field is set.
        */
-      public java.lang.String getKml() {
-        java.lang.Object ref = kml_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          kml_ = s;
-          return s;
+      public boolean hasGeometry() {
+        return geometryBuilder_ != null || geometry_ != null;
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       * @return The geometry.
+       */
+      public com.google.protobuf.Any getGeometry() {
+        if (geometryBuilder_ == null) {
+          return geometry_ == null ? com.google.protobuf.Any.getDefaultInstance() : geometry_;
         } else {
-          return (java.lang.String) ref;
+          return geometryBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * KML data of the location.
+       * A GeoJSON object.
        * </pre>
        *
-       * <code>string kml = 13;</code>
-       * @return The bytes for kml.
+       * <code>.google.protobuf.Any geometry = 13;</code>
        */
-      public com.google.protobuf.ByteString
-          getKmlBytes() {
-        java.lang.Object ref = kml_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          kml_ = b;
-          return b;
+      public Builder setGeometry(com.google.protobuf.Any value) {
+        if (geometryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          geometry_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          geometryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       */
+      public Builder setGeometry(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (geometryBuilder_ == null) {
+          geometry_ = builderForValue.build();
+          onChanged();
+        } else {
+          geometryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       */
+      public Builder mergeGeometry(com.google.protobuf.Any value) {
+        if (geometryBuilder_ == null) {
+          if (geometry_ != null) {
+            geometry_ =
+              com.google.protobuf.Any.newBuilder(geometry_).mergeFrom(value).buildPartial();
+          } else {
+            geometry_ = value;
+          }
+          onChanged();
+        } else {
+          geometryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       */
+      public Builder clearGeometry() {
+        if (geometryBuilder_ == null) {
+          geometry_ = null;
+          onChanged();
+        } else {
+          geometry_ = null;
+          geometryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       */
+      public com.google.protobuf.Any.Builder getGeometryBuilder() {
+        
+        onChanged();
+        return getGeometryFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * A GeoJSON object.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any geometry = 13;</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getGeometryOrBuilder() {
+        if (geometryBuilder_ != null) {
+          return geometryBuilder_.getMessageOrBuilder();
+        } else {
+          return geometry_ == null ?
+              com.google.protobuf.Any.getDefaultInstance() : geometry_;
         }
       }
       /**
        * <pre>
-       * KML data of the location.
+       * A GeoJSON object.
        * </pre>
        *
-       * <code>string kml = 13;</code>
-       * @param value The kml to set.
-       * @return This builder for chaining.
+       * <code>.google.protobuf.Any geometry = 13;</code>
        */
-      public Builder setKml(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        kml_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * KML data of the location.
-       * </pre>
-       *
-       * <code>string kml = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKml() {
-        
-        kml_ = getDefaultInstance().getKml();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * KML data of the location.
-       * </pre>
-       *
-       * <code>string kml = 13;</code>
-       * @param value The bytes for kml to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKmlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        kml_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getGeometryFieldBuilder() {
+        if (geometryBuilder_ == null) {
+          geometryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  getGeometry(),
+                  getParentForChildren(),
+                  isClean());
+          geometry_ = null;
+        }
+        return geometryBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -96424,291 +96501,294 @@ public final class Proto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nolca.proto\022\010protolca\"\274\002\n\005Actor\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
-      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
-      "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
-      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
-      "y\030\t \001(\t\022\017\n\007address\030\n \001(\t\022\014\n\004city\030\013 \001(\t\022\017" +
-      "\n\007country\030\014 \001(\t\022\r\n\005email\030\r \001(\t\022\017\n\007telefa" +
-      "x\030\016 \001(\t\022\021\n\ttelephone\030\017 \001(\t\022\017\n\007website\030\020 " +
-      "\001(\t\022\020\n\010zip_code\030\021 \001(\t\"\330\001\n\020AllocationFact" +
-      "or\022\023\n\004type\030\001 \001(\tR\005@type\022,\n\020product_excha" +
-      "nge\030\002 \001(\0132\022.protolca.Exchange\0221\n\017allocat" +
-      "ion_type\030\003 \001(\0162\030.protolca.AllocationType" +
-      "\022\r\n\005value\030\004 \001(\001\022\017\n\007formula\030\005 \001(\t\022.\n\022allo" +
-      "cated_exchange\030\006 \001(\0132\022.protolca.Exchange" +
-      "\"\230\003\n\020CalculationSetup\022\023\n\004type\030\001 \001(\tR\005@ty" +
-      "pe\0223\n\020calculation_type\030\002 \001(\0162\031.protolca." +
-      "CalculationType\022%\n\016product_system\030\003 \001(\0132" +
-      "\r.protolca.Ref\022$\n\rimpact_method\030\004 \001(\0132\r." +
-      "protolca.Ref\022\022\n\nwith_costs\030\005 \001(\010\022\035\n\006nw_s" +
-      "et\030\006 \001(\0132\r.protolca.Ref\0223\n\021allocation_me" +
-      "thod\030\007 \001(\0162\030.protolca.AllocationType\0222\n\020" +
-      "parameter_redefs\030\010 \003(\0132\030.protolca.Parame" +
-      "terRedef\022\016\n\006amount\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r" +
-      ".protolca.Ref\022$\n\rflow_property\030\013 \001(\0132\r.p" +
-      "rotolca.Ref\"\342\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
-      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
-      "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
-      "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
-      "\'\n\nmodel_type\030\n \001(\0162\023.protolca.ModelType" +
-      "\"\215\002\n\010Currency\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
-      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n" +
-      "\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001" +
-      "(\t\022\031\n\021conversion_factor\030\013 \001(\001\022)\n\022referen" +
-      "ce_currency\030\014 \001(\0132\r.protolca.Ref\"e\n\013DqIn" +
-      "dicator\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001" +
-      "(\t\022\020\n\010position\030\003 \001(\005\022!\n\006scores\030\004 \003(\0132\021.p" +
-      "rotolca.DqScore\"i\n\007DqScore\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022\020\n\010position\030\002 \001(\005\022\r\n\005label\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\023\n\013uncertainty\030\005 \001" +
-      "(\001\"\236\002\n\010DqSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022" +
-      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n\021has_un" +
-      "certainties\030\n \001(\010\022\035\n\006source\030\013 \001(\0132\r.prot" +
-      "olca.Ref\022)\n\nindicators\030\014 \003(\0132\025.protolca." +
-      "DqIndicator\"\245\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\023\n\013internal_id\030\002 \001(\005\022\027\n\017avoided_pr" +
-      "oduct\030\003 \001(\010\022\037\n\004flow\030\004 \001(\0132\021.protolca.Flo" +
-      "wRef\022$\n\rflow_property\030\005 \001(\0132\r.protolca.R" +
-      "ef\022\r\n\005input\030\006 \001(\010\022\036\n\026quantitative_refere" +
-      "nce\030\007 \001(\010\022\030\n\020base_uncertainty\030\010 \001(\001\022.\n\020d" +
-      "efault_provider\030\t \001(\0132\024.protolca.Process" +
-      "Ref\022\016\n\006amount\030\n \001(\001\022\026\n\016amount_formula\030\013 " +
-      "\001(\t\022\033\n\004unit\030\014 \001(\0132\r.protolca.Ref\022\020\n\010dq_e" +
-      "ntry\030\r \001(\t\022*\n\013uncertainty\030\016 \001(\0132\025.protol" +
-      "ca.Uncertainty\022\023\n\013description\030\017 \001(\t\"\322\002\n\004" +
-      "Flow\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
-      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
-      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010c" +
-      "ategory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003" +
-      "(\t\022\017\n\007library\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022" +
-      ".protolca.FlowType\022\013\n\003cas\030\013 \001(\t\022\017\n\007formu" +
-      "la\030\014 \001(\t\0225\n\017flow_properties\030\r \003(\0132\034.prot" +
-      "olca.FlowPropertyFactor\022\037\n\010location\030\016 \001(" +
-      "\0132\r.protolca.Ref\"\340\001\n\007FlowMap\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
-      "\n\013last_change\030\006 \001(\t\022\035\n\006source\030\007 \001(\0132\r.pr" +
-      "otolca.Ref\022\035\n\006target\030\010 \001(\0132\r.protolca.Re" +
-      "f\022(\n\010mappings\030\t \003(\0132\026.protolca.FlowMapEn" +
-      "try\"\336\001\n\014FlowMapEntry\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
-      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
-      "hange\030\006 \001(\t\022\"\n\004from\030\007 \001(\0132\024.protolca.Flo" +
-      "wMapRef\022 \n\002to\030\010 \001(\0132\024.protolca.FlowMapRe" +
-      "f\022\031\n\021conversion_factor\030\t \001(\001\"\205\001\n\nFlowMap" +
-      "Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021" +
-      ".protolca.FlowRef\022$\n\rflow_property\030\003 \001(\013" +
-      "2\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.protolca" +
-      ".Ref\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001(\tR\005@ty" +
-      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
-      "change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolc" +
-      "a.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\022" +
-      "flow_property_type\030\n \001(\0162\032.protolca.Flow" +
-      "PropertyType\022!\n\nunit_group\030\013 \001(\0132\r.proto" +
-      "lca.Ref\"\213\001\n\022FlowPropertyFactor\022\023\n\004type\030\001" +
-      " \001(\tR\005@type\022$\n\rflow_property\030\002 \001(\0132\r.pro" +
-      "tolca.Ref\022\031\n\021conversion_factor\030\003 \001(\001\022\037\n\027" +
-      "reference_flow_property\030\004 \001(\010\"T\n\007FlowRef" +
-      "\022\020\n\010ref_unit\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022%\n\t" +
-      "flow_type\030\003 \001(\0162\022.protolca.FlowType\"`\n\nF" +
-      "lowResult\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002" +
-      " \001(\0132\021.protolca.FlowRef\022\r\n\005input\030\003 \001(\010\022\r" +
-      "\n\005value\030\004 \001(\001\"\214\002\n\016ImpactCategory\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
-      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
-      "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
-      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
-      "y\030\t \001(\t\022\033\n\023reference_unit_name\030\n \001(\t\022.\n\016" +
-      "impact_factors\030\013 \003(\0132\026.protolca.ImpactFa" +
-      "ctor\"%\n\021ImpactCategoryRef\022\020\n\010ref_unit\030\001 " +
-      "\001(\t\"\323\001\n\014ImpactFactor\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\037\n\004flow\030\002 \001(\0132\021.protolca.FlowRef\022$\n\rfl" +
-      "ow_property\030\003 \001(\0132\r.protolca.Ref\022\033\n\004unit" +
-      "\030\004 \001(\0132\r.protolca.Ref\022\r\n\005value\030\005 \001(\001\022\017\n\007" +
-      "formula\030\006 \001(\t\022*\n\013uncertainty\030\007 \001(\0132\025.pro" +
-      "tolca.Uncertainty\"\236\002\n\014ImpactMethod\022\023\n\004ty" +
-      "pe\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name" +
-      "\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005" +
-      " \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 " +
-      "\001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libr" +
-      "ary\030\t \001(\t\0226\n\021impact_categories\030\n \003(\0132\033.p" +
-      "rotolca.ImpactCategoryRef\022\'\n\nparameters\030" +
-      "\013 \003(\0132\023.protolca.Parameter\"h\n\014ImpactResu" +
-      "lt\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\017impact_catego" +
-      "ry\030\002 \001(\0132\033.protolca.ImpactCategoryRef\022\r\n" +
-      "\005value\030\003 \001(\001\"\371\001\n\010Location\022\023\n\004type\030\001 \001(\tR" +
-      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
-      "ast_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pro" +
-      "tolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t" +
-      "\022\014\n\004code\030\n \001(\t\022\020\n\010latitude\030\013 \001(\001\022\021\n\tlong" +
-      "itude\030\014 \001(\001\022\013\n\003kml\030\r \001(\t\"\177\n\010NwFactor\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022&\n\017impact_category\030\002 \001" +
-      "(\0132\r.protolca.Ref\022\034\n\024normalisation_facto" +
-      "r\030\003 \001(\001\022\030\n\020weighting_factor\030\004 \001(\001\"\270\001\n\005Nw" +
-      "Set\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@i" +
-      "d\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007" +
-      "version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023we" +
-      "ighted_score_unit\030\007 \001(\t\022#\n\007factors\030\010 \003(\013" +
-      "2\022.protolca.NwFactor\"\322\002\n\tParameter\022\023\n\004ty" +
-      "pe\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name" +
-      "\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005" +
-      " \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 " +
-      "\001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libr" +
-      "ary\030\t \001(\t\0221\n\017parameter_scope\030\n \001(\0162\030.pro" +
-      "tolca.ParameterScope\022\027\n\017input_parameter\030" +
-      "\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007formula\030\r \001(\t\022*\n" +
+      "\n\nolca.proto\022\010protolca\032\031google/protobuf/" +
+      "any.proto\"\274\002\n\005Actor\022\023\n\004type\030\001 \001(\tR\005@type" +
+      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
+      "ange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca." +
+      "Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\017\n\007ad" +
+      "dress\030\n \001(\t\022\014\n\004city\030\013 \001(\t\022\017\n\007country\030\014 \001" +
+      "(\t\022\r\n\005email\030\r \001(\t\022\017\n\007telefax\030\016 \001(\t\022\021\n\tte" +
+      "lephone\030\017 \001(\t\022\017\n\007website\030\020 \001(\t\022\020\n\010zip_co" +
+      "de\030\021 \001(\t\"\330\001\n\020AllocationFactor\022\023\n\004type\030\001 " +
+      "\001(\tR\005@type\022,\n\020product_exchange\030\002 \001(\0132\022.p" +
+      "rotolca.Exchange\0221\n\017allocation_type\030\003 \001(" +
+      "\0162\030.protolca.AllocationType\022\r\n\005value\030\004 \001" +
+      "(\001\022\017\n\007formula\030\005 \001(\t\022.\n\022allocated_exchang" +
+      "e\030\006 \001(\0132\022.protolca.Exchange\"\230\003\n\020Calculat" +
+      "ionSetup\022\023\n\004type\030\001 \001(\tR\005@type\0223\n\020calcula" +
+      "tion_type\030\002 \001(\0162\031.protolca.CalculationTy" +
+      "pe\022%\n\016product_system\030\003 \001(\0132\r.protolca.Re" +
+      "f\022$\n\rimpact_method\030\004 \001(\0132\r.protolca.Ref\022" +
+      "\022\n\nwith_costs\030\005 \001(\010\022\035\n\006nw_set\030\006 \001(\0132\r.pr" +
+      "otolca.Ref\0223\n\021allocation_method\030\007 \001(\0162\030." +
+      "protolca.AllocationType\0222\n\020parameter_red" +
+      "efs\030\010 \003(\0132\030.protolca.ParameterRedef\022\016\n\006a" +
+      "mount\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r.protolca.Ref" +
+      "\022$\n\rflow_property\030\013 \001(\0132\r.protolca.Ref\"\342" +
+      "\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002" +
+      " \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
+      " \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001" +
+      "(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004t" +
+      "ags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\nmodel_type" +
+      "\030\n \001(\0162\023.protolca.ModelType\"\215\002\n\010Currency" +
+      "\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014" +
+      "\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ver" +
+      "sion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categ" +
+      "ory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017" +
+      "\n\007library\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\031\n\021convers" +
+      "ion_factor\030\013 \001(\001\022)\n\022reference_currency\030\014" +
+      " \001(\0132\r.protolca.Ref\"e\n\013DqIndicator\022\023\n\004ty" +
+      "pe\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\020\n\010positio" +
+      "n\030\003 \001(\005\022!\n\006scores\030\004 \003(\0132\021.protolca.DqSco" +
+      "re\"i\n\007DqScore\022\023\n\004type\030\001 \001(\tR\005@type\022\020\n\010po" +
+      "sition\030\002 \001(\005\022\r\n\005label\030\003 \001(\t\022\023\n\013descripti" +
+      "on\030\004 \001(\t\022\023\n\013uncertainty\030\005 \001(\001\"\236\002\n\010DqSyst" +
+      "em\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
+      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
+      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cat" +
+      "egory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t" +
+      "\022\017\n\007library\030\t \001(\t\022\031\n\021has_uncertainties\030\n" +
+      " \001(\010\022\035\n\006source\030\013 \001(\0132\r.protolca.Ref\022)\n\ni" +
+      "ndicators\030\014 \003(\0132\025.protolca.DqIndicator\"\245" +
+      "\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005@type\022\023\n\013inte" +
+      "rnal_id\030\002 \001(\005\022\027\n\017avoided_product\030\003 \001(\010\022\037" +
+      "\n\004flow\030\004 \001(\0132\021.protolca.FlowRef\022$\n\rflow_" +
+      "property\030\005 \001(\0132\r.protolca.Ref\022\r\n\005input\030\006" +
+      " \001(\010\022\036\n\026quantitative_reference\030\007 \001(\010\022\030\n\020" +
+      "base_uncertainty\030\010 \001(\001\022.\n\020default_provid" +
+      "er\030\t \001(\0132\024.protolca.ProcessRef\022\016\n\006amount" +
+      "\030\n \001(\001\022\026\n\016amount_formula\030\013 \001(\t\022\033\n\004unit\030\014" +
+      " \001(\0132\r.protolca.Ref\022\020\n\010dq_entry\030\r \001(\t\022*\n" +
       "\013uncertainty\030\016 \001(\0132\025.protolca.Uncertaint" +
-      "y\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005@type" +
-      "\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007context" +
-      "\030\004 \001(\0132\r.protolca.Ref\"\227\005\n\007Process\022\023\n\004typ" +
-      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
-      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
-      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001" +
-      "(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libra" +
-      "ry\030\t \001(\t\022;\n\031default_allocation_method\030\n " +
-      "\001(\0162\030.protolca.AllocationType\0226\n\022allocat" +
-      "ion_factors\030\013 \003(\0132\032.protolca.AllocationF" +
-      "actor\022%\n\texchanges\030\014 \003(\0132\022.protolca.Exch" +
-      "ange\022$\n\010location\030\r \001(\0132\022.protolca.Locati" +
-      "on\022\'\n\nparameters\030\016 \003(\0132\023.protolca.Parame" +
-      "ter\022=\n\025process_documentation\030\017 \001(\0132\036.pro" +
-      "tolca.ProcessDocumentation\022+\n\014process_ty" +
-      "pe\030\020 \001(\0162\025.protolca.ProcessType\022 \n\tdq_sy" +
-      "stem\030\021 \001(\0132\r.protolca.Ref\022)\n\022exchange_dq" +
-      "_system\030\022 \001(\0132\r.protolca.Ref\022\'\n\020social_d" +
-      "q_system\030\023 \001(\0132\r.protolca.Ref\022\020\n\010dq_entr" +
-      "y\030\024 \001(\t\"\242\006\n\024ProcessDocumentation\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\030\n\020time_description\030\002 \001(\t\022" +
-      "\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(\t" +
-      "\022\036\n\026technology_description\030\005 \001(\t\022#\n\033data" +
-      "_collection_description\030\006 \001(\t\022 \n\030complet" +
-      "eness_description\030\007 \001(\t\022\"\n\032data_selectio" +
-      "n_description\030\010 \001(\t\022\026\n\016review_details\030\t " +
-      "\001(\t\022\"\n\032data_treatment_description\030\n \001(\t\022" +
-      "$\n\034inventory_method_description\030\013 \001(\t\022&\n" +
-      "\036modeling_constants_description\030\014 \001(\t\022\037\n" +
-      "\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034\n\024sampli" +
-      "ng_description\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r." +
-      "protolca.Ref\022 \n\030restrictions_description" +
-      "\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcreation_da" +
-      "te\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(\0132\r.prot" +
-      "olca.Ref\022%\n\016data_generator\030\024 \001(\0132\r.proto" +
-      "lca.Ref\022%\n\016data_set_owner\030\025 \001(\0132\r.protol" +
-      "ca.Ref\022\034\n\024intended_application\030\026 \001(\t\022\033\n\023" +
-      "project_description\030\027 \001(\t\022\"\n\013publication" +
-      "\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geography_descr" +
-      "iption\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.protolca.R" +
-      "ef\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022\036\n\007proce" +
-      "ss\030\004 \001(\0132\r.protolca.Ref\022$\n\010exchange\030\005 \001(" +
-      "\0132\022.protolca.Exchange\"K\n\nProcessRef\022\020\n\010l" +
-      "ocation\030\001 \001(\t\022+\n\014process_type\030\002 \001(\0162\025.pr" +
-      "otolca.ProcessType\"\336\003\n\rProductSystem\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
-      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
-      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
-      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
-      "brary\030\t \001(\t\022\'\n\tprocesses\030\n \003(\0132\024.protolc" +
-      "a.ProcessRef\022/\n\021reference_process\030\013 \001(\0132" +
-      "\024.protolca.ProcessRef\022.\n\022reference_excha" +
-      "nge\030\014 \001(\0132\022.protolca.Exchange\022\025\n\rtarget_" +
-      "amount\030\r \001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.prot" +
-      "olca.Ref\022+\n\024target_flow_property\030\017 \001(\0132\r" +
-      ".protolca.Ref\022,\n\rprocess_links\030\020 \003(\0132\025.p" +
-      "rotolca.ProcessLink\"\377\001\n\007Project\022\023\n\004type\030" +
+      "y\022\023\n\013description\030\017 \001(\t\"\322\002\n\004Flow\022\023\n\004type\030" +
       "\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 " +
       "\001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(" +
       "\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\013" +
       "2\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library" +
-      "\030\t \001(\t\022$\n\rimpact_method\030\n \001(\0132\r.protolca" +
-      ".Ref\022\037\n\006nw_set\030\013 \001(\0132\017.protolca.NwSet\"\213\001" +
-      "\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
-      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
-      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\r" +
-      "category_path\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022*\n\014flow_results\030\002 \003(\0132\024" +
-      ".protolca.FlowResult\022.\n\016impact_results\030\003" +
-      " \003(\0132\026.protolca.ImpactResult\"\343\002\n\017SocialI" +
-      "ndicator\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
+      "\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022.protolca.Flo" +
+      "wType\022\013\n\003cas\030\013 \001(\t\022\017\n\007formula\030\014 \001(\t\0225\n\017f" +
+      "low_properties\030\r \003(\0132\034.protolca.FlowProp" +
+      "ertyFactor\022\037\n\010location\030\016 \001(\0132\r.protolca." +
+      "Ref\"\340\001\n\007FlowMap\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
+      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
+      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
+      "\030\006 \001(\t\022\035\n\006source\030\007 \001(\0132\r.protolca.Ref\022\035\n" +
+      "\006target\030\010 \001(\0132\r.protolca.Ref\022(\n\010mappings" +
+      "\030\t \003(\0132\026.protolca.FlowMapEntry\"\336\001\n\014FlowM" +
+      "apEntry\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\"" +
+      "\n\004from\030\007 \001(\0132\024.protolca.FlowMapRef\022 \n\002to" +
+      "\030\010 \001(\0132\024.protolca.FlowMapRef\022\031\n\021conversi" +
+      "on_factor\030\t \001(\001\"\205\001\n\nFlowMapRef\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.Flo" +
+      "wRef\022$\n\rflow_property\030\003 \001(\0132\r.protolca.R" +
+      "ef\022\033\n\004unit\030\004 \001(\0132\r.protolca.Ref\"\230\002\n\014Flow" +
+      "Property\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
       "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
       "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
       "\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags" +
-      "\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n\021activity_vari" +
-      "able\030\n \001(\t\022(\n\021activity_quantity\030\013 \001(\0132\r." +
-      "protolca.Ref\022$\n\ractivity_unit\030\014 \001(\0132\r.pr" +
-      "otolca.Ref\022\033\n\023unit_of_measurement\030\r \001(\t\022" +
-      "\031\n\021evaluation_scheme\030\016 \001(\t\"\201\002\n\006Source\022\023\n" +
-      "\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004n" +
-      "ame\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versio" +
-      "n\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category" +
-      "\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007l" +
-      "ibrary\030\t \001(\t\022\013\n\003url\030\n \001(\t\022\026\n\016text_refere" +
-      "nce\030\013 \001(\t\022\014\n\004year\030\014 \001(\005\022\025\n\rexternal_file" +
-      "\030\r \001(\t\"\354\002\n\013Uncertainty\022\023\n\004type\030\001 \001(\tR\005@t" +
-      "ype\0224\n\021distribution_type\030\002 \001(\0162\031.protolc" +
-      "a.UncertaintyType\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_" +
-      "formula\030\004 \001(\t\022\021\n\tgeom_mean\030\005 \001(\001\022\031\n\021geom" +
-      "_mean_formula\030\006 \001(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017" +
-      "minimum_formula\030\010 \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_" +
-      "formula\030\n \001(\t\022\017\n\007geom_sd\030\013 \001(\001\022\027\n\017geom_s" +
-      "d_formula\030\014 \001(\t\022\014\n\004mode\030\r \001(\001\022\024\n\014mode_fo" +
-      "rmula\030\016 \001(\t\022\017\n\007maximum\030\017 \001(\001\022\027\n\017maximum_" +
-      "formula\030\020 \001(\t\"\272\001\n\004Unit\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\022flow_property" +
+      "_type\030\n \001(\0162\032.protolca.FlowPropertyType\022" +
+      "!\n\nunit_group\030\013 \001(\0132\r.protolca.Ref\"\213\001\n\022F" +
+      "lowPropertyFactor\022\023\n\004type\030\001 \001(\tR\005@type\022$" +
+      "\n\rflow_property\030\002 \001(\0132\r.protolca.Ref\022\031\n\021" +
+      "conversion_factor\030\003 \001(\001\022\037\n\027reference_flo" +
+      "w_property\030\004 \001(\010\"T\n\007FlowRef\022\020\n\010ref_unit\030" +
+      "\001 \001(\t\022\020\n\010location\030\002 \001(\t\022%\n\tflow_type\030\003 \001" +
+      "(\0162\022.protolca.FlowType\"`\n\nFlowResult\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protol" +
+      "ca.FlowRef\022\r\n\005input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001" +
+      "\"\214\002\n\016ImpactCategory\022\023\n\004type\030\001 \001(\tR\005@type" +
+      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
+      "ange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca." +
+      "Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\033\n\023re" +
+      "ference_unit_name\030\n \001(\t\022.\n\016impact_factor" +
+      "s\030\013 \003(\0132\026.protolca.ImpactFactor\"%\n\021Impac" +
+      "tCategoryRef\022\020\n\010ref_unit\030\001 \001(\t\"\323\001\n\014Impac" +
+      "tFactor\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001" +
+      "(\0132\021.protolca.FlowRef\022$\n\rflow_property\030\003" +
+      " \001(\0132\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.prot" +
+      "olca.Ref\022\r\n\005value\030\005 \001(\001\022\017\n\007formula\030\006 \001(\t" +
+      "\022*\n\013uncertainty\030\007 \001(\0132\025.protolca.Uncerta" +
+      "inty\"\236\002\n\014ImpactMethod\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
+      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
+      "change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolc" +
+      "a.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\021" +
+      "impact_categories\030\n \003(\0132\033.protolca.Impac" +
+      "tCategoryRef\022\'\n\nparameters\030\013 \003(\0132\023.proto" +
+      "lca.Parameter\"h\n\014ImpactResult\022\023\n\004type\030\001 " +
+      "\001(\tR\005@type\0224\n\017impact_category\030\002 \001(\0132\033.pr" +
+      "otolca.ImpactCategoryRef\022\r\n\005value\030\003 \001(\001\"" +
+      "\224\002\n\010Location\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
+      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
+      "\001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004" +
+      "tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001(" +
+      "\t\022\020\n\010latitude\030\013 \001(\001\022\021\n\tlongitude\030\014 \001(\001\022&" +
+      "\n\010geometry\030\r \001(\0132\024.google.protobuf.Any\"\177" +
+      "\n\010NwFactor\022\023\n\004type\030\001 \001(\tR\005@type\022&\n\017impac" +
+      "t_category\030\002 \001(\0132\r.protolca.Ref\022\034\n\024norma" +
+      "lisation_factor\030\003 \001(\001\022\030\n\020weighting_facto" +
+      "r\030\004 \001(\001\"\270\001\n\005NwSet\022\023\n\004type\030\001 \001(\tR\005@type\022\017" +
+      "\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descrip" +
+      "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chan" +
+      "ge\030\006 \001(\t\022\033\n\023weighted_score_unit\030\007 \001(\t\022#\n" +
+      "\007factors\030\010 \003(\0132\022.protolca.NwFactor\"\322\002\n\tP" +
+      "arameter\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
+      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
+      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
+      "\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags" +
+      "\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0221\n\017parameter_sco" +
+      "pe\030\n \001(\0162\030.protolca.ParameterScope\022\027\n\017in" +
+      "put_parameter\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007fo" +
+      "rmula\030\r \001(\t\022*\n\013uncertainty\030\016 \001(\0132\025.proto" +
+      "lca.Uncertainty\"b\n\016ParameterRedef\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 " +
+      "\001(\001\022\036\n\007context\030\004 \001(\0132\r.protolca.Ref\"\227\005\n\007" +
+      "Process\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037" +
+      "\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030" +
+      "\010 \003(\t\022\017\n\007library\030\t \001(\t\022;\n\031default_alloca" +
+      "tion_method\030\n \001(\0162\030.protolca.AllocationT" +
+      "ype\0226\n\022allocation_factors\030\013 \003(\0132\032.protol" +
+      "ca.AllocationFactor\022%\n\texchanges\030\014 \003(\0132\022" +
+      ".protolca.Exchange\022$\n\010location\030\r \001(\0132\022.p" +
+      "rotolca.Location\022\'\n\nparameters\030\016 \003(\0132\023.p" +
+      "rotolca.Parameter\022=\n\025process_documentati" +
+      "on\030\017 \001(\0132\036.protolca.ProcessDocumentation" +
+      "\022+\n\014process_type\030\020 \001(\0162\025.protolca.Proces" +
+      "sType\022 \n\tdq_system\030\021 \001(\0132\r.protolca.Ref\022" +
+      ")\n\022exchange_dq_system\030\022 \001(\0132\r.protolca.R" +
+      "ef\022\'\n\020social_dq_system\030\023 \001(\0132\r.protolca." +
+      "Ref\022\020\n\010dq_entry\030\024 \001(\t\"\242\006\n\024ProcessDocumen" +
+      "tation\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_desc" +
+      "ription\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nva" +
+      "lid_from\030\004 \001(\t\022\036\n\026technology_description" +
+      "\030\005 \001(\t\022#\n\033data_collection_description\030\006 " +
+      "\001(\t\022 \n\030completeness_description\030\007 \001(\t\022\"\n" +
+      "\032data_selection_description\030\010 \001(\t\022\026\n\016rev" +
+      "iew_details\030\t \001(\t\022\"\n\032data_treatment_desc" +
+      "ription\030\n \001(\t\022$\n\034inventory_method_descri" +
+      "ption\030\013 \001(\t\022&\n\036modeling_constants_descri" +
+      "ption\030\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.protolca" +
+      ".Ref\022\034\n\024sampling_description\030\016 \001(\t\022\036\n\007so" +
+      "urces\030\017 \003(\0132\r.protolca.Ref\022 \n\030restrictio" +
+      "ns_description\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022" +
+      "\025\n\rcreation_date\030\022 \001(\t\022&\n\017data_documento" +
+      "r\030\023 \001(\0132\r.protolca.Ref\022%\n\016data_generator" +
+      "\030\024 \001(\0132\r.protolca.Ref\022%\n\016data_set_owner\030" +
+      "\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_applica" +
+      "tion\030\026 \001(\t\022\033\n\023project_description\030\027 \001(\t\022" +
+      "\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022\035\n\025g" +
+      "eography_description\030\031 \001(\t\"\246\001\n\013ProcessLi" +
+      "nk\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 \001(" +
+      "\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.protolc" +
+      "a.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022$\n" +
+      "\010exchange\030\005 \001(\0132\022.protolca.Exchange\"K\n\nP" +
+      "rocessRef\022\020\n\010location\030\001 \001(\t\022+\n\014process_t" +
+      "ype\030\002 \001(\0162\025.protolca.ProcessType\"\336\003\n\rPro" +
+      "ductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 " +
+      "\001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 " +
+      "\001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(" +
+      "\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004ta" +
+      "gs\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tprocesses\030\n" +
+      " \003(\0132\024.protolca.ProcessRef\022/\n\021reference_" +
+      "process\030\013 \001(\0132\024.protolca.ProcessRef\022.\n\022r" +
+      "eference_exchange\030\014 \001(\0132\022.protolca.Excha" +
+      "nge\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013target_uni" +
+      "t\030\016 \001(\0132\r.protolca.Ref\022+\n\024target_flow_pr" +
+      "operty\030\017 \001(\0132\r.protolca.Ref\022,\n\rprocess_l" +
+      "inks\030\020 \003(\0132\025.protolca.ProcessLink\"\377\001\n\007Pr" +
+      "oject\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
+      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
+      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010" +
+      "category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 " +
+      "\003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_method\030\n " +
+      "\001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017.pro" +
+      "tolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@type" +
+      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
+      "ange\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014Sim" +
+      "pleResult\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow_r" +
+      "esults\030\002 \003(\0132\024.protolca.FlowResult\022.\n\016im" +
+      "pact_results\030\003 \003(\0132\026.protolca.ImpactResu" +
+      "lt\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\tR\005@t" +
       "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
       "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
-      "_change\030\006 \001(\t\022\031\n\021conversion_factor\030\007 \001(\001" +
-      "\022\026\n\016reference_unit\030\010 \001(\010\022\020\n\010synonyms\030\t \003" +
-      "(\t\"\207\002\n\tUnitGroup\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n" +
-      "\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
-      "ion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chang" +
-      "e\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref" +
-      "\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022,\n\025defau" +
-      "lt_flow_property\030\n \001(\0132\r.protolca.Ref\022\035\n" +
-      "\005units\030\013 \003(\0132\016.protolca.Unit*\247\001\n\016Allocat" +
-      "ionType\022\035\n\031UNDEFINED_ALLOCATION_TYPE\020\000\022\027" +
-      "\n\023PHYSICAL_ALLOCATION\020\001\022\027\n\023ECONOMIC_ALLO" +
-      "CATION\020\002\022\025\n\021CAUSAL_ALLOCATION\020\003\022\032\n\026USE_D" +
-      "EFAULT_ALLOCATION\020\004\022\021\n\rNO_ALLOCATION\020\005*\265" +
-      "\001\n\017CalculationType\022\036\n\032UNDEFINED_CALCULAT" +
-      "ION_TYPE\020\000\022\026\n\022SIMPLE_CALCULATION\020\001\022\031\n\025CO" +
-      "NTRIBUTION_ANALYSIS\020\002\022\025\n\021UPSTREAM_ANALYS" +
-      "IS\020\003\022\034\n\030REGIONALIZED_CALCULATION\020\004\022\032\n\026MO" +
-      "NTE_CARLO_SIMULATION\020\005*b\n\020FlowPropertyTy" +
-      "pe\022 \n\034UNDEFINED_FLOW_PROPERTY_TYPE\020\000\022\025\n\021" +
-      "ECONOMIC_QUANTITY\020\001\022\025\n\021PHYSICAL_QUANTITY" +
-      "\020\002*Z\n\010FlowType\022\027\n\023UNDEFINED_FLOW_TYPE\020\000\022" +
-      "\023\n\017ELEMENTARY_FLOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016" +
-      "\n\nWASTE_FLOW\020\003*\207\002\n\tModelType\022\030\n\024UNDEFINE" +
-      "D_MODEL_TYPE\020\000\022\013\n\007PROJECT\020\001\022\021\n\rIMPACT_ME" +
-      "THOD\020\002\022\023\n\017IMPACT_CATEGORY\020\003\022\022\n\016PRODUCT_S" +
-      "YSTEM\020\004\022\013\n\007PROCESS\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_P" +
-      "ROPERTY\020\007\022\016\n\nUNIT_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005A" +
-      "CTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCA" +
-      "TION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020SOCIAL_INDICATOR\020\017" +
-      "*k\n\016ParameterScope\022\035\n\031UNDEFINED_PARAMETE" +
-      "R_SCOPE\020\000\022\021\n\rPROCESS_SCOPE\020\001\022\025\n\021LCIA_MET" +
-      "HOD_SCOPE\020\002\022\020\n\014GLOBAL_SCOPE\020\003*K\n\013Process" +
-      "Type\022\032\n\026UNDEFINED_PROCESS_TYPE\020\000\022\016\n\nLCI_" +
-      "RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002*\234\001\n\017Uncertain" +
-      "tyType\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033" +
-      "\n\027LOG_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DI" +
-      "STRIBUTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022" +
-      "\030\n\024UNIFORM_DISTRIBUTION\020\004B&\n\021org.openlca" +
-      ".protoB\005ProtoZ\n.;protolcab\006proto3"
+      "_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protol" +
+      "ca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n" +
+      "\021activity_variable\030\n \001(\t\022(\n\021activity_qua" +
+      "ntity\030\013 \001(\0132\r.protolca.Ref\022$\n\ractivity_u" +
+      "nit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_of_meas" +
+      "urement\030\r \001(\t\022\031\n\021evaluation_scheme\030\016 \001(\t" +
+      "\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002" +
+      " \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
+      " \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001" +
+      "(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004t" +
+      "ags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030\n \001(\t\022" +
+      "\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 \001(\005\022\025\n" +
+      "\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertainty\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\0224\n\021distribution_type\030\002" +
+      " \001(\0162\031.protolca.UncertaintyType\022\014\n\004mean\030" +
+      "\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_mean" +
+      "\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n\007min" +
+      "imum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022\n\n\002s" +
+      "d\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_sd\030\013" +
+      " \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mode\030\r " +
+      "\001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum\030\017 \001" +
+      "(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021conversio" +
+      "n_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001(\010\022\020" +
+      "\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
+      "\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132" +
+      "\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030" +
+      "\t \001(\t\022,\n\025default_flow_property\030\n \001(\0132\r.p" +
+      "rotolca.Ref\022\035\n\005units\030\013 \003(\0132\016.protolca.Un" +
+      "it*\247\001\n\016AllocationType\022\035\n\031UNDEFINED_ALLOC" +
+      "ATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATION\020\001\022\027\n" +
+      "\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_ALLOCAT" +
+      "ION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022\021\n\rNO_" +
+      "ALLOCATION\020\005*\265\001\n\017CalculationType\022\036\n\032UNDE" +
+      "FINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE_CALCU" +
+      "LATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020\002\022\025\n\021U" +
+      "PSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED_CALCU" +
+      "LATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION\020\005*b\n\020" +
+      "FlowPropertyType\022 \n\034UNDEFINED_FLOW_PROPE" +
+      "RTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022\025\n\021PHY" +
+      "SICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UNDEFINE" +
+      "D_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001\022\020\n\014PR" +
+      "ODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tModelTy" +
+      "pe\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PROJECT\020" +
+      "\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CATEGORY\020" +
+      "\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005\022\010\n\004FL" +
+      "OW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GROUP\020\010\022" +
+      "\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010CATE" +
+      "GORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020SOCI" +
+      "AL_INDICATOR\020\017*k\n\016ParameterScope\022\035\n\031UNDE" +
+      "FINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS_SCOPE" +
+      "\020\001\022\025\n\021LCIA_METHOD_SCOPE\020\002\022\020\n\014GLOBAL_SCOP" +
+      "E\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS_" +
+      "TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002" +
+      "*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UNCERT" +
+      "AINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020" +
+      "\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_D" +
+      "ISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B" +
+      "&\n\021org.openlca.protoB\005ProtoZ\n.;protolcab" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_protolca_Actor_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -96847,7 +96927,7 @@ public final class Proto {
     internal_static_protolca_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Location_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Code", "Latitude", "Longitude", "Kml", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Code", "Latitude", "Longitude", "Geometry", });
     internal_static_protolca_NwFactor_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_protolca_NwFactor_fieldAccessorTable = new
@@ -96950,6 +97030,7 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_UnitGroup_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "DefaultFlowProperty", "Units", });
+    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
