@@ -8,9 +8,9 @@ import org.openlca.util.Strings;
 
 public class UnitGroupImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public UnitGroupImport(ImportConfig config) {
+  public UnitGroupImport(ProtoImport config) {
     this.config = config;
   }
 

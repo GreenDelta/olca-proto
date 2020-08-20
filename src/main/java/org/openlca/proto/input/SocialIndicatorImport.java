@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class SocialIndicatorImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public SocialIndicatorImport(ImportConfig config) {
+  public SocialIndicatorImport(ProtoImport config) {
     this.config = config;
   }
 

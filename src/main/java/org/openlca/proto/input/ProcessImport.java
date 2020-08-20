@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class ProcessImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public ProcessImport(ImportConfig config) {
+  public ProcessImport(ProtoImport config) {
     this.config = config;
   }
 

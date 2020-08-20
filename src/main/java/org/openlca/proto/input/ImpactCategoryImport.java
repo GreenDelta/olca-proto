@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class ImpactCategoryImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public ImpactCategoryImport(ImportConfig config) {
+  public ImpactCategoryImport(ProtoImport config) {
     this.config = config;
   }
 

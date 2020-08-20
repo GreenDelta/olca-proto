@@ -1,8 +1,11 @@
 package org.openlca.proto;
 
 import java.io.Closeable;
+import java.util.List;
 
 public interface ProtoStore extends Closeable {
+
+  List<String> getIDs(String folder);
 
   Proto.Category getCategory(String id);
 

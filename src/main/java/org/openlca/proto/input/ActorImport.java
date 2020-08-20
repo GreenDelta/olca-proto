@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class ActorImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public ActorImport(ImportConfig config) {
+  public ActorImport(ProtoImport config) {
     this.config = config;
   }
 

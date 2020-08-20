@@ -6,9 +6,15 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import com.google.protobuf.Message;
 import com.google.protobuf.Parser;
@@ -36,6 +42,29 @@ public class ZipStore implements ProtoStore {
   @Override
   public void close() throws IOException {
     zip.close();
+  }
+
+  @Override
+  public List<String> getIDs(String folder) {
+    var dir = zip.getPath(folder);
+    if (!Files.exists(dir))
+      return Collections.emptyList();
+    try {
+      var ids = new ArrayList<String>();
+      Files.walkFileTree(dir, new SimpleFileVisitor<>() {
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+          var name = file.getFileName().toString();
+          ids.add(name.split("\\.")[0]);
+          return FileVisitResult.CONTINUE;
+        }
+      });
+      return ids;
+    } catch (Exception e) {
+      var log = LoggerFactory.getLogger(getClass());
+      log.error("failed to collect IDs from folder in zip: " + folder, e);
+      return Collections.emptyList();
+    }
   }
 
   @Override

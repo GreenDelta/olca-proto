@@ -13,7 +13,7 @@ import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.ProtoStore;
 import org.openlca.util.Strings;
 
-public class ImportConfig {
+public class ProtoImport implements Runnable {
 
   final ProtoStore store;
   final IDatabase db;
@@ -35,12 +35,12 @@ public class ImportConfig {
    */
   private final Map<Class<?>, Map<String, Long>> handled = new HashMap<>();
 
-  public ImportConfig(ProtoStore store, IDatabase db) {
+  public ProtoImport(ProtoStore store, IDatabase db) {
     this.store = store;
     this.db = db;
   }
 
-  public ImportConfig withUpdateMode(UpdateMode mode) {
+  public ProtoImport withUpdateMode(UpdateMode mode) {
     this.updateMode = mode;
     return this;
   }
@@ -105,5 +105,57 @@ public class ImportConfig {
     // try to load it with the refID
     var dao = Daos.root(db, ModelType.forModelClass(type));
     return (T) dao.getForRefId(refID);
+  }
+
+  @Override
+  public void run() {
+    for (String id : store.getIDs("categories")) {
+      new CategoryImport(this).of(id);
+    }
+    for (String id : store.getIDs("actors")) {
+      new ActorImport(this).of(id);
+    }
+    for (String id : store.getIDs("sources")) {
+      new SourceImport(this).of(id);
+    }
+    for (String id : store.getIDs("locations")) {
+      new LocationImport(this).of(id);
+    }
+    for (String id : store.getIDs("unit_groups")) {
+      new UnitGroupImport(this).of(id);
+    }
+    for (String id : store.getIDs("flow_properties")) {
+      new FlowPropertyImport(this).of(id);
+    }
+    for (String id : store.getIDs("flows")) {
+      new FlowImport(this).of(id);
+    }
+    for (String id : store.getIDs("social_indicators")) {
+      new SocialIndicatorImport(this).of(id);
+    }
+    for (String id : store.getIDs("currencies")) {
+      new CurrencyImport(this).of(id);
+    }
+    for (String id : store.getIDs("parameters")) {
+      new ParameterImport(this).of(id);
+    }
+    for (String id : store.getIDs("dq_systems")) {
+      new DqSystemImport(this).of(id);
+    }
+    for (String id : store.getIDs("processes")) {
+      new ProcessImport(this).of(id);
+    }
+    for (String id : store.getIDs("lcia_categories")) {
+      new ImpactCategoryImport(this).of(id);
+    }
+    for (String id : store.getIDs("lcia_methods")) {
+      new ImpactMethodImport(this).of(id);
+    }
+    for (String id : store.getIDs("product_systems")) {
+      new ProductSystemImport(this).of(id);
+    }
+    for (String id : store.getIDs("projects")) {
+      new ProjectImport(this).of(id);
+    }
   }
 }

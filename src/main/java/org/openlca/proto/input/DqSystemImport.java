@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class DqSystemImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public DqSystemImport(ImportConfig config) {
+  public DqSystemImport(ProtoImport config) {
     this.config = config;
   }
 

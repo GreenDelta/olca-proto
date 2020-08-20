@@ -10,9 +10,9 @@ import org.openlca.util.Strings;
 
 public class CategoryImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public CategoryImport(ImportConfig config) {
+  public CategoryImport(ProtoImport config) {
     this.config = config;
   }
 

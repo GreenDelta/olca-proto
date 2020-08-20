@@ -8,9 +8,9 @@ import org.openlca.proto.Proto;
 
 public class CurrencyImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public CurrencyImport(ImportConfig config) {
+  public CurrencyImport(ProtoImport config) {
     this.config = config;
   }
 

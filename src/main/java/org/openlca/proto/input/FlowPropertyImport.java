@@ -9,9 +9,9 @@ import org.openlca.util.Strings;
 
 public class FlowPropertyImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public FlowPropertyImport(ImportConfig config) {
+  public FlowPropertyImport(ProtoImport config) {
     this.config = config;
   }
 

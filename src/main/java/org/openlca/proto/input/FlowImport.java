@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class FlowImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public FlowImport(ImportConfig config) {
+  public FlowImport(ProtoImport config) {
     this.config = config;
   }
 

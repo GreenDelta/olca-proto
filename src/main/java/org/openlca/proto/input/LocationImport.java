@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class LocationImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public LocationImport(ImportConfig config) {
+  public LocationImport(ProtoImport config) {
     this.config = config;
   }
 

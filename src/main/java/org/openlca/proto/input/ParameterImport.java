@@ -6,9 +6,9 @@ import org.openlca.proto.Proto;
 
 public class ParameterImport {
 
-  private final ImportConfig config;
+  private final ProtoImport config;
 
-  public ParameterImport(ImportConfig config) {
+  public ParameterImport(ProtoImport config) {
     this.config = config;
   }
 
