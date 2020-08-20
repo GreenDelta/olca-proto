@@ -1,7 +1,7 @@
 package org.openlca.proto.input;
 
-import org.openlca.core.database.DqSystemDao;
-import org.openlca.core.model.DqSystem;
+import org.openlca.core.database.DQSystemDao;
+import org.openlca.core.model.DQSystem;
 import org.openlca.proto.Proto;
 
 public class DqSystemImport {
@@ -12,10 +12,10 @@ public class DqSystemImport {
     this.config = config;
   }
 
-  public DqSystem of(String id) {
+  public DQSystem of(String id) {
     if (id == null)
       return null;
-    var dqSystem = config.get(DqSystem.class, id);
+    var dqSystem = config.get(DQSystem.class, id);
 
     // check if we are in update mode
     var update = false;
@@ -27,7 +27,7 @@ public class DqSystemImport {
     }
 
     // check the proto object
-    var proto = config.store.getDqSystem(id);
+    var proto = config.store.getDQSystem(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
@@ -38,14 +38,14 @@ public class DqSystemImport {
 
     // map the data
     if (dqSystem == null) {
-      dqSystem = new DqSystem();
+      dqSystem = new DQSystem();
       dqSystem.refId = id;
     }
     wrap.mapTo(dqSystem, config);
     map(proto, dqSystem);
 
     // insert it
-    var dao = new DqSystemDao(config.db);
+    var dao = new DQSystemDao(config.db);
     dqSystem = update
       ? dao.update(dqSystem)
       : dao.insert(dqSystem);
@@ -53,6 +53,6 @@ public class DqSystemImport {
     return dqSystem;
   }
 
-  private void map(Proto.DqSystem proto, DqSystem dqSystem) {
+  private void map(Proto.DqSystem proto, DQSystem dqSystem) {
   }
 }
