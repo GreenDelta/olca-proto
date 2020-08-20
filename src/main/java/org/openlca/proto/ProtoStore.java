@@ -1,6 +1,8 @@
 package org.openlca.proto;
 
-public interface ProtoStore {
+import java.io.Closeable;
+
+public interface ProtoStore extends Closeable {
 
   Proto.Category getCategory(String id);
 
