@@ -76,8 +76,15 @@ package protolca;
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 option go_package = ".;protolca";
+`
 
-import "google/protobuf/any.proto";
+// BytesHint is a comment we add to fields with `bytes` as data type.
+const BytesHint = `  // When we map to the bytes type it means that we have no matching message
+  // type and just put the raw bytes into the field. This is specifically true
+  // for our geometry data of locations which cannot be translated to valid
+  // GeoJSON using Protocol Buffers (as they do not support arrays of arrays).
+  // To indicate that this is a different field than the field in the
+  // olca-schema definition, we append the _bytes suffix to the field name
 `
 
 func main() {
@@ -181,6 +188,8 @@ func collectTypes(yamlDir string) []*TypeDef {
 // super classes (as there is no extension mechanism in proto3).
 func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offset int) int {
 	count := offset
+
+	// write fields of super classes recursively
 	if class.SuperClass != "" {
 		super := types[class.SuperClass]
 		if super != nil && super.Class != nil {
@@ -188,6 +197,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 		}
 	}
 
+	// @type field
 	if class.Name == "Entity" {
 		buff.WriteString("  // The type name of the respectiven entity.\n")
 		buff.WriteString("  // This field is used for JSON-LD compatibility.\n")
@@ -196,6 +206,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 		count++
 	}
 
+	// ID field
 	if class.Name == "RootEntity" {
 		buff.WriteString("  // The reference ID (typically an UUID) of the entity.\n")
 		buff.WriteString("  string id = " + strconv.Itoa(count))
@@ -203,15 +214,24 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 		count++
 	}
 
+	// write fields
 	for _, field := range class.Fields {
+
+		// field comment
 		comment := formatComment(field.Doc, "  ")
 		if comment != "" {
 			buff.WriteString(comment)
 		}
-		buff.WriteString(
-			"  " + mapType(field.Type) +
-				" " + toSnakeCase(field.Name) +
-				" = " + strconv.Itoa(count) + ";\n\n")
+
+		protoType := mapType(field.Type)
+		protoField := toSnakeCase(field.Name)
+		if protoType == "bytes" {
+			buff.WriteString(BytesHint)
+			protoField += "_bytes"
+		}
+
+		buff.WriteString("  " + protoType + " " + protoField +
+			" = " + strconv.Itoa(count) + ";\n\n")
 		count++
 	}
 
@@ -230,7 +250,7 @@ func mapType(schemaType string) string {
 	case "boolean":
 		return "bool"
 	case "GeoJSON":
-		return "google.protobuf.Any"
+		return "bytes"
 	}
 
 	if strings.HasPrefix(schemaType, "Ref[") {

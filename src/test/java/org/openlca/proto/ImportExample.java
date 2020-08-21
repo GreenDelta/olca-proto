@@ -8,8 +8,8 @@ import org.openlca.proto.input.ProtoImport;
 public class ImportExample {
 
   public static void main(String[] args) {
-    var zipPath = "C:/Users/Win10/Downloads/USLCI.zip";
-    var dbPath = "C:/Users/Win10/openLCA-data-1.4/databases/uslci_proto";
+    var zipPath = "C:/Users/Win10/Desktop/rems/test_json.zip";
+    var dbPath = "C:/Users/Win10/openLCA-data-1.4/databases/proto_test";
     try (var store = ZipStore.open(new File(zipPath));
         var db = new DerbyDatabase(new File(dbPath))) {
         var imp = new ProtoImport(store, db);

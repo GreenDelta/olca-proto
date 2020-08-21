@@ -54,5 +54,12 @@ public class LocationImport {
   }
 
   private void map(Proto.Location proto, Location location) {
+    location.code = proto.getCode();
+    location.latitude = proto.getLatitude();
+    location.longitude = proto.getLongitude();
+    var geom = proto.getGeometryBytes();
+    if (!geom.isEmpty()) {
+      location.geodata = geom.toByteArray();
+    }
   }
 }

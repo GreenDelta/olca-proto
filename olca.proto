@@ -4,8 +4,6 @@ package protolca;
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 option go_package = ".;protolca";
-
-import "google/protobuf/any.proto";
 // An actor is a person or organisation.
 message Actor {
 
@@ -917,7 +915,13 @@ message Location {
   double longitude = 12;
 
   // A GeoJSON object.
-  google.protobuf.Any geometry = 13;
+  // When we map to the bytes type it means that we have no matching message
+  // type and just put the raw bytes into the field. This is specifically true
+  // for our geometry data of locations which cannot be translated to valid
+  // GeoJSON using Protocol Buffers (as they do not support arrays of arrays).
+  // To indicate that this is a different field than the field in the
+  // olca-schema definition, we append the _bytes suffix to the field name
+  bytes geometry_bytes = 13;
 
 }
 

@@ -16,9 +16,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import com.google.protobuf.Parser;
 import com.google.protobuf.util.JsonFormat;
+import org.openlca.geo.geojson.GeoJSON;
+import org.openlca.geo.geojson.ProtoPack;
+import org.openlca.jsonld.Json;
 import org.slf4j.LoggerFactory;
 
 public class ZipStore implements ProtoStore {
@@ -204,11 +210,46 @@ public class ZipStore implements ProtoStore {
     var proto = readBin("locations", id, Proto.Location.parser());
     if (proto != null)
       return proto;
-    var builder = Proto.Location.newBuilder();
-    if (readJson("locations", id, builder)) {
+
+    // locations in the JSON format can contain GeoJSON objects
+    // that we have to handle a bit differently as they cannot
+    // be mapped to Proto messages
+    var path = "locations/" + id + ".json";
+    try {
+
+      // we do the same as in readJson here to avoid fetching
+      // the JSON data twice
+      var data = get(path);
+      if (data == null)
+        return null;
+      var json = new String(data, StandardCharsets.UTF_8);
+      var builder = Proto.Location.newBuilder();
+      JsonFormat.parser()
+        .ignoringUnknownFields()
+        .merge(json, builder);
+
+      if (!builder.getGeometryBytes().isEmpty())
+        return builder.build(); // `geometryBytes` was filled
+
+      // check if there is a GeoJSON object
+      var obj = new Gson().fromJson(json, JsonObject.class);
+      var geo = Json.getObject(obj, "geometry");
+      if (geo == null)
+        return builder.build();
+      var coll = GeoJSON.read(geo);
+      if (coll == null ||coll.features.isEmpty())
+        return builder.build();
+      var geoBytes = ProtoPack.packgz(coll);
+      if (geoBytes == null || geoBytes.length == 0)
+        return  builder.build();
+      builder.setGeometryBytes(
+        ByteString.copyFrom(geoBytes));
       return builder.build();
+    } catch (Exception e) {
+      var log = LoggerFactory.getLogger(getClass());
+      log.error("failed to parse " + path, e);
+      return null;
     }
-    return null;
   }
 
   @Override
