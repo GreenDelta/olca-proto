@@ -152,11 +152,11 @@ class _ParameterScope(google___protobuf___internal___enum_type_wrapper____EnumTy
     DESCRIPTOR: google___protobuf___descriptor___EnumDescriptor = ...
     UNDEFINED_PARAMETER_SCOPE = typing___cast(ParameterScopeValue, 0)
     PROCESS_SCOPE = typing___cast(ParameterScopeValue, 1)
-    LCIA_METHOD_SCOPE = typing___cast(ParameterScopeValue, 2)
+    IMPACT_SCOPE = typing___cast(ParameterScopeValue, 2)
     GLOBAL_SCOPE = typing___cast(ParameterScopeValue, 3)
 UNDEFINED_PARAMETER_SCOPE = typing___cast(ParameterScopeValue, 0)
 PROCESS_SCOPE = typing___cast(ParameterScopeValue, 1)
-LCIA_METHOD_SCOPE = typing___cast(ParameterScopeValue, 2)
+IMPACT_SCOPE = typing___cast(ParameterScopeValue, 2)
 GLOBAL_SCOPE = typing___cast(ParameterScopeValue, 3)
 type___ParameterScope = ParameterScope
 

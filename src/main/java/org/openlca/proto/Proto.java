@@ -922,7 +922,10 @@ public final class Proto {
 
   /**
    * <pre>
-   * The possible scopes of parameters.
+   * The possible scopes of parameters. Parameters can be defined globally, in
+   * processes, or impact categories. They can be redefined in calculation setups
+   * on the project and product system level, but the initial definition is
+   * always only global, in a process, or an LCIA category.
    * </pre>
    *
    * Protobuf enum {@code protolca.ParameterScope}
@@ -939,14 +942,28 @@ public final class Proto {
      */
     UNDEFINED_PARAMETER_SCOPE(0),
     /**
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the process where it
+     * is defined.
+     * </pre>
+     *
      * <code>PROCESS_SCOPE = 1;</code>
      */
     PROCESS_SCOPE(1),
     /**
-     * <code>LCIA_METHOD_SCOPE = 2;</code>
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the impact category
+     * where it is defined.
+     * </pre>
+     *
+     * <code>IMPACT_SCOPE = 2;</code>
      */
-    LCIA_METHOD_SCOPE(2),
+    IMPACT_SCOPE(2),
     /**
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the global scope.
+     * </pre>
+     *
      * <code>GLOBAL_SCOPE = 3;</code>
      */
     GLOBAL_SCOPE(3),
@@ -963,14 +980,28 @@ public final class Proto {
      */
     public static final int UNDEFINED_PARAMETER_SCOPE_VALUE = 0;
     /**
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the process where it
+     * is defined.
+     * </pre>
+     *
      * <code>PROCESS_SCOPE = 1;</code>
      */
     public static final int PROCESS_SCOPE_VALUE = 1;
     /**
-     * <code>LCIA_METHOD_SCOPE = 2;</code>
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the impact category
+     * where it is defined.
+     * </pre>
+     *
+     * <code>IMPACT_SCOPE = 2;</code>
      */
-    public static final int LCIA_METHOD_SCOPE_VALUE = 2;
+    public static final int IMPACT_SCOPE_VALUE = 2;
     /**
+     * <pre>
+     * Indicates that the evaluation scope of a parameter is the global scope.
+     * </pre>
+     *
      * <code>GLOBAL_SCOPE = 3;</code>
      */
     public static final int GLOBAL_SCOPE_VALUE = 3;
@@ -1002,7 +1033,7 @@ public final class Proto {
       switch (value) {
         case 0: return UNDEFINED_PARAMETER_SCOPE;
         case 1: return PROCESS_SCOPE;
-        case 2: return LCIA_METHOD_SCOPE;
+        case 2: return IMPACT_SCOPE;
         case 3: return GLOBAL_SCOPE;
         default: return null;
       }
@@ -96944,17 +96975,17 @@ public final class Proto {
       "\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GROU" +
       "P\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010" +
       "CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020" +
-      "SOCIAL_INDICATOR\020\017*k\n\016ParameterScope\022\035\n\031" +
+      "SOCIAL_INDICATOR\020\017*f\n\016ParameterScope\022\035\n\031" +
       "UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS_S" +
-      "COPE\020\001\022\025\n\021LCIA_METHOD_SCOPE\020\002\022\020\n\014GLOBAL_" +
-      "SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROC" +
-      "ESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCE" +
-      "SS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UN" +
-      "CERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUT" +
-      "ION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANG" +
-      "LE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTIO" +
-      "N\020\004B&\n\021org.openlca.protoB\005ProtoZ\n.;proto" +
-      "lcab\006proto3"
+      "COPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SCOPE" +
+      "\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS_T" +
+      "YPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002*" +
+      "\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTA" +
+      "INTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001" +
+      "\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DI" +
+      "STRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&" +
+      "\n\021org.openlca.protoB\005ProtoZ\n.;protolcab\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

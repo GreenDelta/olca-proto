@@ -2,57 +2,74 @@ package org.openlca.proto.input;
 
 import org.openlca.core.database.ParameterDao;
 import org.openlca.core.model.Parameter;
+import org.openlca.core.model.ParameterScope;
 import org.openlca.proto.Proto;
 
 public class ParameterImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public ParameterImport(ProtoImport config) {
-    this.config = config;
+  public ParameterImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Parameter of(String id) {
     if (id == null)
       return null;
-    var parameter = config.get(Parameter.class, id);
+    var param = imp.get(Parameter.class, id);
 
     // check if we are in update mode
     var update = false;
-    if (parameter != null) {
-      if (config.isHandled(parameter)
-        || config.noUpdates())
-        return parameter;
+    if (param != null) {
+      if (imp.isHandled(param)
+        || imp.noUpdates())
+        return param;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getParameter(id);
+    var proto = imp.store.getParameter(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(parameter, wrap))
-        return parameter;
+      if (!imp.shouldUpdate(param, wrap))
+        return param;
     }
 
     // map the data
-    if (parameter == null) {
-      parameter = new Parameter();
-      parameter.refId = id;
+    if (param == null) {
+      param = new Parameter();
+      param.refId = id;
     }
-    wrap.mapTo(parameter, config);
-    map(proto, parameter);
+    wrap.mapTo(param, imp);
+    map(proto, param);
 
     // insert it
-    var dao = new ParameterDao(config.db);
-    parameter = update
-      ? dao.update(parameter)
-      : dao.insert(parameter);
-    config.putHandled(parameter);
-    return parameter;
+    var dao = new ParameterDao(imp.db);
+    param = update
+      ? dao.update(param)
+      : dao.insert(param);
+    imp.putHandled(param);
+    return param;
   }
 
-  private void map(Proto.Parameter proto, Parameter parameter) {
+  private void map(Proto.Parameter proto, Parameter param) {
+    param.scope = scopeOf(proto);
+    param.isInputParameter = proto.getInputParameter();
+    param.value = proto.getValue();
+    param.formula = proto.getFormula();
+    param.uncertainty = Util.uncertainty(proto.getUncertainty());
+  }
+
+  private ParameterScope scopeOf(Proto.Parameter proto) {
+    switch (proto.getParameterScope()) {
+      case PROCESS_SCOPE:
+        return ParameterScope.PROCESS;
+      case IMPACT_SCOPE:
+        return ParameterScope.IMPACT;
+      default:
+        return ParameterScope.GLOBAL;
+    }
   }
 }
