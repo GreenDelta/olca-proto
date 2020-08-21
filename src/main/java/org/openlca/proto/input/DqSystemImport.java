@@ -1,38 +1,41 @@
 package org.openlca.proto.input;
 
 import org.openlca.core.database.DQSystemDao;
+import org.openlca.core.model.DQIndicator;
+import org.openlca.core.model.DQScore;
 import org.openlca.core.model.DQSystem;
 import org.openlca.proto.Proto;
+import org.openlca.util.Strings;
 
 public class DqSystemImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public DqSystemImport(ProtoImport config) {
-    this.config = config;
+  public DqSystemImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public DQSystem of(String id) {
     if (id == null)
       return null;
-    var dqSystem = config.get(DQSystem.class, id);
+    var dqSystem = imp.get(DQSystem.class, id);
 
     // check if we are in update mode
     var update = false;
     if (dqSystem != null) {
-      if (config.isHandled(dqSystem)
-        || config.noUpdates())
+      if (imp.isHandled(dqSystem)
+        || imp.noUpdates())
         return dqSystem;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getDQSystem(id);
+    var proto = imp.store.getDQSystem(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(dqSystem, wrap))
+      if (!imp.shouldUpdate(dqSystem, wrap))
         return dqSystem;
     }
 
@@ -41,18 +44,37 @@ public class DqSystemImport {
       dqSystem = new DQSystem();
       dqSystem.refId = id;
     }
-    wrap.mapTo(dqSystem, config);
+    wrap.mapTo(dqSystem, imp);
     map(proto, dqSystem);
 
     // insert it
-    var dao = new DQSystemDao(config.db);
+    var dao = new DQSystemDao(imp.db);
     dqSystem = update
       ? dao.update(dqSystem)
       : dao.insert(dqSystem);
-    config.putHandled(dqSystem);
+    imp.putHandled(dqSystem);
     return dqSystem;
   }
 
-  private void map(Proto.DqSystem proto, DQSystem dqSystem) {
+  private void map(Proto.DqSystem proto, DQSystem sys) {
+    sys.hasUncertainties = proto.getHasUncertainties();
+    var sourceID = proto.getSource().getId();
+    if (Strings.notEmpty(sourceID)) {
+      sys.source = new SourceImport(imp).of(sourceID);
+    }
+    for (var protoInd : proto.getIndicatorsList()) {
+      var ind = new DQIndicator();
+      sys.indicators.add(ind);
+      ind.name = protoInd.getName();
+      ind.position = protoInd.getPosition();
+      for (var protoScore : protoInd.getScoresList()) {
+        var score = new DQScore();
+        ind.scores.add(score);
+        score.position = protoScore.getPosition();
+        score.label = protoScore.getLabel();
+        score.description = protoScore.getDescription();
+        score.uncertainty = protoScore.getUncertainty();
+      }
+    }
   }
 }
