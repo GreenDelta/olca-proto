@@ -489,6 +489,17 @@ message Flow {
   // data formats define a location as a property of a flow.
   Ref location = 14;
 
+  // A list of synonyms but packed into a single field. Best is to use
+  // semicolons as separator as commas are sometimes used in names of
+  // chemicals.
+  string synonyms = 15;
+
+  // Indicates whether this flow describes an infrastructure product. This
+  // field is part of the openLCA schema because of backward compatibility with
+  // EcoSpold 1. It does not really have a meaning in openLCA and should not be
+  // used anymore.
+  bool infrastructure_flow = 16;
+
 }
 
 // A crosswalk of flows from a source flow list to a target flow list.

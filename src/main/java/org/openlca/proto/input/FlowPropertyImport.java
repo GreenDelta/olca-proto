@@ -3,7 +3,6 @@ package org.openlca.proto.input;
 import org.openlca.core.database.FlowPropertyDao;
 import org.openlca.core.model.FlowProperty;
 import org.openlca.core.model.FlowPropertyType;
-import org.openlca.jsonld.Enums;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
 
@@ -57,11 +56,10 @@ public class FlowPropertyImport {
   }
 
   private void map(Proto.FlowProperty proto, FlowProperty flowProperty) {
-    var type = proto.getFlowPropertyType().name();
-    if (Strings.notEmpty(type)) {
-      flowProperty.flowPropertyType = Enums.getValue(
-        type, FlowPropertyType.class);
-    }
+    var type = proto.getFlowPropertyType();
+    flowProperty.flowPropertyType = type == Proto.FlowPropertyType.ECONOMIC_QUANTITY
+      ? FlowPropertyType.ECONOMIC
+      : FlowPropertyType.PHYSICAL;
     var unitGroupID = proto.getUnitGroup().getId();
     if (Strings.notEmpty(unitGroupID)) {
       flowProperty.unitGroup = new UnitGroupImport(config)

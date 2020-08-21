@@ -56,7 +56,10 @@ public class SourceImport {
     source.url = proto.getUrl();
     source.externalFile = proto.getExternalFile();
     source.textReference = proto.getTextReference();
-    source.year = (short) proto.getYear();
+    var year = proto.getYear();
+    if (year != 0) {
+      source.year = (short) year;
+    }
   }
 }
 
