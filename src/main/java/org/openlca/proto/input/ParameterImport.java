@@ -54,7 +54,7 @@ public class ParameterImport {
     return param;
   }
 
-  private void map(Proto.Parameter proto, Parameter param) {
+  static void map(Proto.Parameter proto, Parameter param) {
     param.scope = scopeOf(proto);
     param.isInputParameter = proto.getInputParameter();
     param.value = proto.getValue();
@@ -62,7 +62,7 @@ public class ParameterImport {
     param.uncertainty = Util.uncertainty(proto.getUncertainty());
   }
 
-  private ParameterScope scopeOf(Proto.Parameter proto) {
+  static ParameterScope scopeOf(Proto.Parameter proto) {
     switch (proto.getParameterScope()) {
       case PROCESS_SCOPE:
         return ParameterScope.PROCESS;

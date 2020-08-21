@@ -1,58 +1,126 @@
 package org.openlca.proto.input;
 
+import java.util.Objects;
+
 import org.openlca.core.database.ImpactCategoryDao;
 import org.openlca.core.model.ImpactCategory;
+import org.openlca.core.model.ImpactFactor;
+import org.openlca.core.model.Parameter;
 import org.openlca.proto.Proto;
+import org.openlca.util.Strings;
 
 public class ImpactCategoryImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public ImpactCategoryImport(ProtoImport config) {
-    this.config = config;
+  public ImpactCategoryImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public ImpactCategory of(String id) {
     if (id == null)
       return null;
-    var impactCategory = config.get(ImpactCategory.class, id);
+    var impact = imp.get(ImpactCategory.class, id);
 
     // check if we are in update mode
     var update = false;
-    if (impactCategory != null) {
-      if (config.isHandled(impactCategory)
-        || config.noUpdates())
-        return impactCategory;
+    if (impact != null) {
+      if (imp.isHandled(impact)
+        || imp.noUpdates())
+        return impact;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getImpactCategory(id);
+    var proto = imp.store.getImpactCategory(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(impactCategory, wrap))
-        return impactCategory;
+      if (!imp.shouldUpdate(impact, wrap))
+        return impact;
     }
 
     // map the data
-    if (impactCategory == null) {
-      impactCategory = new ImpactCategory();
-      impactCategory.refId = id;
+    if (impact == null) {
+      impact = new ImpactCategory();
+      impact.refId = id;
     }
-    wrap.mapTo(impactCategory, config);
-    map(proto, impactCategory);
+    wrap.mapTo(impact, imp);
+    map(proto, impact);
 
     // insert it
-    var dao = new ImpactCategoryDao(config.db);
-    impactCategory = update
-      ? dao.update(impactCategory)
-      : dao.insert(impactCategory);
-    config.putHandled(impactCategory);
-    return impactCategory;
+    var dao = new ImpactCategoryDao(imp.db);
+    impact = update
+      ? dao.update(impact)
+      : dao.insert(impact);
+    imp.putHandled(impact);
+    return impact;
   }
 
-  private void map(Proto.ImpactCategory proto, ImpactCategory impactCategory) {
+  private void map(Proto.ImpactCategory proto, ImpactCategory impact) {
+    impact.referenceUnit = proto.getReferenceUnitName();
+
+    // parameters
+    for (var protoParam : proto.getParametersList()) {
+      var param = new Parameter();
+      ProtoWrap.of(protoParam).mapTo(param, imp);
+      ParameterImport.map(protoParam, param);
+      impact.parameters.add(param);
+    }
+
+    // impact factors
+    for (var protoFac : proto.getImpactFactorsList()) {
+      var factor = new ImpactFactor();
+      impact.impactFactors.add(factor);
+      factor.value = protoFac.getValue();
+      factor.formula = protoFac.getFormula();
+      factor.uncertainty = Util.uncertainty(protoFac.getUncertainty());
+
+      // flow
+      var flowID = protoFac.getFlow().getId();
+      factor.flow = new FlowImport(imp).of(flowID);
+      if (factor.flow == null)
+        continue;
+
+      // location
+      var locID = protoFac.getLocation().getId();
+      if (Strings.notEmpty(locID)) {
+        factor.location = new LocationImport(imp).of(locID);
+      }
+
+      // set the flow property and unit; if they are not defined
+      // we will choose the reference data from the flow
+
+      // flow property
+      var propID = protoFac.getFlowProperty().getId();
+      if (Strings.nullOrEmpty(propID)) {
+        factor.flowPropertyFactor = factor.flow.getReferenceFactor();
+      }
+      if (Strings.notEmpty(propID)) {
+        factor.flowPropertyFactor = factor.flow
+          .flowPropertyFactors.stream()
+          .filter(f -> f.flowProperty != null
+            && Objects.equals(f.flowProperty.refId, propID))
+          .findAny()
+          .orElse(null);
+      }
+
+      // unit
+      if (factor.flowPropertyFactor == null)
+        continue;
+      var prop = factor.flowPropertyFactor.flowProperty;
+      if (prop == null || prop.unitGroup == null)
+        return;
+      var unitID = protoFac.getUnit().getId();
+      if (Strings.nullOrEmpty(unitID)) {
+        factor.unit = prop.unitGroup.referenceUnit;
+      } else {
+        factor.unit = prop.unitGroup.units.stream()
+          .filter(u -> Objects.equals(u.refId, unitID))
+          .findAny()
+          .orElse(null);
+      }
+    }
   }
 }

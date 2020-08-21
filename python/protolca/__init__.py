@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\021org.openlca.protoB\005ProtoZ\n.;protolca',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nolca.proto\x12\x08protolca\"\xbc\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\n \x01(\t\x12\x0c\n\x04\x63ity\x18\x0b \x01(\t\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\t\x12\r\n\x05\x65mail\x18\r \x01(\t\x12\x0f\n\x07telefax\x18\x0e \x01(\t\x12\x11\n\ttelephone\x18\x0f \x01(\t\x12\x0f\n\x07website\x18\x10 \x01(\t\x12\x10\n\x08zip_code\x18\x11 \x01(\t\"\xd8\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12,\n\x10product_exchange\x18\x02 \x01(\x0b\x32\x12.protolca.Exchange\x12\x31\n\x0f\x61llocation_type\x18\x03 \x01(\x0e\x32\x18.protolca.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x05 \x01(\t\x12.\n\x12\x61llocated_exchange\x18\x06 \x01(\x0b\x32\x12.protolca.Exchange\"\x98\x03\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x33\n\x10\x63\x61lculation_type\x18\x02 \x01(\x0e\x32\x19.protolca.CalculationType\x12%\n\x0eproduct_system\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12$\n\rimpact_method\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\x12\n\nwith_costs\x18\x05 \x01(\x08\x12\x1d\n\x06nw_set\x18\x06 \x01(\x0b\x32\r.protolca.Ref\x12\x33\n\x11\x61llocation_method\x18\x07 \x01(\x0e\x32\x18.protolca.AllocationType\x12\x32\n\x10parameter_redefs\x18\x08 \x03(\x0b\x32\x18.protolca.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x1b\n\x04unit\x18\n \x01(\x0b\x32\r.protolca.Ref\x12$\n\rflow_property\x18\x0b \x01(\x0b\x32\r.protolca.Ref\"\xe2\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\'\n\nmodel_type\x18\n \x01(\x0e\x32\x13.protolca.ModelType\"\x8d\x02\n\x08\x43urrency\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0c\n\x04\x63ode\x18\n \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x0b \x01(\x01\x12)\n\x12reference_currency\x18\x0c \x01(\x0b\x32\r.protolca.Ref\"e\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12!\n\x06scores\x18\x04 \x03(\x0b\x32\x11.protolca.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\x9e\x02\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x19\n\x11has_uncertainties\x18\n \x01(\x08\x12\x1d\n\x06source\x18\x0b \x01(\x0b\x32\r.protolca.Ref\x12)\n\nindicators\x18\x0c \x03(\x0b\x32\x15.protolca.DqIndicator\"\xa5\x03\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x13\n\x0binternal_id\x18\x02 \x01(\x05\x12\x17\n\x0f\x61voided_product\x18\x03 \x01(\x08\x12\x1f\n\x04\x66low\x18\x04 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x05 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1e\n\x16quantitative_reference\x18\x07 \x01(\x08\x12\x18\n\x10\x62\x61se_uncertainty\x18\x08 \x01(\x01\x12.\n\x10\x64\x65\x66\x61ult_provider\x18\t \x01(\x0b\x32\x14.protolca.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x16\n\x0e\x61mount_formula\x18\x0b \x01(\t\x12\x1b\n\x04unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\r \x01(\t\x12*\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x15.protolca.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\x81\x03\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12%\n\tflow_type\x18\n \x01(\x0e\x32\x12.protolca.FlowType\x12\x0b\n\x03\x63\x61s\x18\x0b \x01(\t\x12\x0f\n\x07\x66ormula\x18\x0c \x01(\t\x12\x35\n\x0f\x66low_properties\x18\r \x03(\x0b\x32\x1c.protolca.FlowPropertyFactor\x12\x1f\n\x08location\x18\x0e \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08synonyms\x18\x0f \x01(\t\x12\x1b\n\x13infrastructure_flow\x18\x10 \x01(\x08\"\xe0\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1d\n\x06source\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x06target\x18\x08 \x01(\x0b\x32\r.protolca.Ref\x12(\n\x08mappings\x18\t \x03(\x0b\x32\x16.protolca.FlowMapEntry\"\xde\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\"\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12 \n\x02to\x18\x08 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12\x19\n\x11\x63onversion_factor\x18\t \x01(\x01\"\x85\x01\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\x98\x02\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x36\n\x12\x66low_property_type\x18\n \x01(\x0e\x32\x1a.protolca.FlowPropertyType\x12!\n\nunit_group\x18\x0b \x01(\x0b\x32\r.protolca.Ref\"\x8b\x01\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12$\n\rflow_property\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x19\n\x11\x63onversion_factor\x18\x03 \x01(\x01\x12\x1f\n\x17reference_flow_property\x18\x04 \x01(\x08\"T\n\x07\x46lowRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12%\n\tflow_type\x18\x03 \x01(\x0e\x32\x12.protolca.FlowType\"`\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\x8c\x02\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x1b\n\x13reference_unit_name\x18\n \x01(\t\x12.\n\x0eimpact_factors\x18\x0b \x03(\x0b\x32\x16.protolca.ImpactFactor\"%\n\x11ImpactCategoryRef\x12\x10\n\x08ref_unit\x18\x01 \x01(\t\"\xd3\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05value\x18\x05 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x06 \x01(\t\x12*\n\x0buncertainty\x18\x07 \x01(\x0b\x32\x15.protolca.Uncertainty\"\x9e\x02\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x36\n\x11impact_categories\x18\n \x03(\x0b\x32\x1b.protolca.ImpactCategoryRef\x12\'\n\nparameters\x18\x0b \x03(\x0b\x32\x13.protolca.Parameter\"h\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\x1b.protolca.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\x84\x02\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0c\n\x04\x63ode\x18\n \x01(\t\x12\x10\n\x08latitude\x18\x0b \x01(\x01\x12\x11\n\tlongitude\x18\x0c \x01(\x01\x12\x16\n\x0egeometry_bytes\x18\r \x01(\x0c\"\x7f\n\x08NwFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12&\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14normalisation_factor\x18\x03 \x01(\x01\x12\x18\n\x10weighting_factor\x18\x04 \x01(\x01\"\xb8\x01\n\x05NwSet\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1b\n\x13weighted_score_unit\x18\x07 \x01(\t\x12#\n\x07\x66\x61\x63tors\x18\x08 \x03(\x0b\x32\x12.protolca.NwFactor\"\xd2\x02\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x31\n\x0fparameter_scope\x18\n \x01(\x0e\x32\x18.protolca.ParameterScope\x12\x17\n\x0finput_parameter\x18\x0b \x01(\x08\x12\r\n\x05value\x18\x0c \x01(\x01\x12\x0f\n\x07\x66ormula\x18\r \x01(\t\x12*\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x15.protolca.Uncertainty\"b\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x1e\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\x97\x05\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12;\n\x19\x64\x65\x66\x61ult_allocation_method\x18\n \x01(\x0e\x32\x18.protolca.AllocationType\x12\x36\n\x12\x61llocation_factors\x18\x0b \x03(\x0b\x32\x1a.protolca.AllocationFactor\x12%\n\texchanges\x18\x0c \x03(\x0b\x32\x12.protolca.Exchange\x12$\n\x08location\x18\r \x01(\x0b\x32\x12.protolca.Location\x12\'\n\nparameters\x18\x0e \x03(\x0b\x32\x13.protolca.Parameter\x12=\n\x15process_documentation\x18\x0f \x01(\x0b\x32\x1e.protolca.ProcessDocumentation\x12+\n\x0cprocess_type\x18\x10 \x01(\x0e\x32\x15.protolca.ProcessType\x12 \n\tdq_system\x18\x11 \x01(\x0b\x32\r.protolca.Ref\x12)\n\x12\x65xchange_dq_system\x18\x12 \x01(\x0b\x32\r.protolca.Ref\x12\'\n\x10social_dq_system\x18\x13 \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\x14 \x01(\t\"\xa2\x06\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x18\n\x10time_description\x18\x02 \x01(\t\x12\x13\n\x0bvalid_until\x18\x03 \x01(\t\x12\x12\n\nvalid_from\x18\x04 \x01(\t\x12\x1e\n\x16technology_description\x18\x05 \x01(\t\x12#\n\x1b\x64\x61ta_collection_description\x18\x06 \x01(\t\x12 \n\x18\x63ompleteness_description\x18\x07 \x01(\t\x12\"\n\x1a\x64\x61ta_selection_description\x18\x08 \x01(\t\x12\x16\n\x0ereview_details\x18\t \x01(\t\x12\"\n\x1a\x64\x61ta_treatment_description\x18\n \x01(\t\x12$\n\x1cinventory_method_description\x18\x0b \x01(\t\x12&\n\x1emodeling_constants_description\x18\x0c \x01(\t\x12\x1f\n\x08reviewer\x18\r \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14sampling_description\x18\x0e \x01(\t\x12\x1e\n\x07sources\x18\x0f \x03(\x0b\x32\r.protolca.Ref\x12 \n\x18restrictions_description\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x15\n\rcreation_date\x18\x12 \x01(\t\x12&\n\x0f\x64\x61ta_documentor\x18\x13 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_generator\x18\x14 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_set_owner\x18\x15 \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14intended_application\x18\x16 \x01(\t\x12\x1b\n\x13project_description\x18\x17 \x01(\t\x12\"\n\x0bpublication\x18\x18 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x15geography_description\x18\x19 \x01(\t\"\xa6\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x08provider\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04\x66low\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1e\n\x07process\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12$\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\x12.protolca.Exchange\"K\n\nProcessRef\x12\x10\n\x08location\x18\x01 \x01(\t\x12+\n\x0cprocess_type\x18\x02 \x01(\x0e\x32\x15.protolca.ProcessType\"\xde\x03\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\'\n\tprocesses\x18\n \x03(\x0b\x32\x14.protolca.ProcessRef\x12/\n\x11reference_process\x18\x0b \x01(\x0b\x32\x14.protolca.ProcessRef\x12.\n\x12reference_exchange\x18\x0c \x01(\x0b\x32\x12.protolca.Exchange\x12\x15\n\rtarget_amount\x18\r \x01(\x01\x12\"\n\x0btarget_unit\x18\x0e \x01(\x0b\x32\r.protolca.Ref\x12+\n\x14target_flow_property\x18\x0f \x01(\x0b\x32\r.protolca.Ref\x12,\n\rprocess_links\x18\x10 \x03(\x0b\x32\x15.protolca.ProcessLink\"\xff\x01\n\x07Project\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12$\n\rimpact_method\x18\n \x01(\x0b\x32\r.protolca.Ref\x12\x1f\n\x06nw_set\x18\x0b \x01(\x0b\x32\x0f.protolca.NwSet\"\x8b\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\"\x7f\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x0c\x66low_results\x18\x02 \x03(\x0b\x32\x14.protolca.FlowResult\x12.\n\x0eimpact_results\x18\x03 \x03(\x0b\x32\x16.protolca.ImpactResult\"\xe3\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x19\n\x11\x61\x63tivity_variable\x18\n \x01(\t\x12(\n\x11\x61\x63tivity_quantity\x18\x0b \x01(\x0b\x32\r.protolca.Ref\x12$\n\ractivity_unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x13unit_of_measurement\x18\r \x01(\t\x12\x19\n\x11\x65valuation_scheme\x18\x0e \x01(\t\"\x81\x02\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0b\n\x03url\x18\n \x01(\t\x12\x16\n\x0etext_reference\x18\x0b \x01(\t\x12\x0c\n\x04year\x18\x0c \x01(\x05\x12\x15\n\rexternal_file\x18\r \x01(\t\"\xec\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x11\x64istribution_type\x18\x02 \x01(\x0e\x32\x19.protolca.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x14\n\x0cmean_formula\x18\x04 \x01(\t\x12\x11\n\tgeom_mean\x18\x05 \x01(\x01\x12\x19\n\x11geom_mean_formula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x17\n\x0fminimum_formula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x12\n\nsd_formula\x18\n \x01(\t\x12\x0f\n\x07geom_sd\x18\x0b \x01(\x01\x12\x17\n\x0fgeom_sd_formula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x14\n\x0cmode_formula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x17\n\x0fmaximum_formula\x18\x10 \x01(\t\"\xba\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x07 \x01(\x01\x12\x16\n\x0ereference_unit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\x87\x02\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12,\n\x15\x64\x65\x66\x61ult_flow_property\x18\n \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x05units\x18\x0b \x03(\x0b\x32\x0e.protolca.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*f\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x10\n\x0cIMPACT_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42&\n\x11org.openlca.protoB\x05ProtoZ\n.;protolcab\x06proto3'
+  serialized_pb=b'\n\nolca.proto\x12\x08protolca\"\xbc\x02\n\x05\x41\x63tor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\n \x01(\t\x12\x0c\n\x04\x63ity\x18\x0b \x01(\t\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\t\x12\r\n\x05\x65mail\x18\r \x01(\t\x12\x0f\n\x07telefax\x18\x0e \x01(\t\x12\x11\n\ttelephone\x18\x0f \x01(\t\x12\x0f\n\x07website\x18\x10 \x01(\t\x12\x10\n\x08zip_code\x18\x11 \x01(\t\"\xd8\x01\n\x10\x41llocationFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12,\n\x10product_exchange\x18\x02 \x01(\x0b\x32\x12.protolca.Exchange\x12\x31\n\x0f\x61llocation_type\x18\x03 \x01(\x0e\x32\x18.protolca.AllocationType\x12\r\n\x05value\x18\x04 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x05 \x01(\t\x12.\n\x12\x61llocated_exchange\x18\x06 \x01(\x0b\x32\x12.protolca.Exchange\"\x98\x03\n\x10\x43\x61lculationSetup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x33\n\x10\x63\x61lculation_type\x18\x02 \x01(\x0e\x32\x19.protolca.CalculationType\x12%\n\x0eproduct_system\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12$\n\rimpact_method\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\x12\n\nwith_costs\x18\x05 \x01(\x08\x12\x1d\n\x06nw_set\x18\x06 \x01(\x0b\x32\r.protolca.Ref\x12\x33\n\x11\x61llocation_method\x18\x07 \x01(\x0e\x32\x18.protolca.AllocationType\x12\x32\n\x10parameter_redefs\x18\x08 \x03(\x0b\x32\x18.protolca.ParameterRedef\x12\x0e\n\x06\x61mount\x18\t \x01(\x01\x12\x1b\n\x04unit\x18\n \x01(\x0b\x32\r.protolca.Ref\x12$\n\rflow_property\x18\x0b \x01(\x0b\x32\r.protolca.Ref\"\xe2\x01\n\x08\x43\x61tegory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\'\n\nmodel_type\x18\n \x01(\x0e\x32\x13.protolca.ModelType\"\x8d\x02\n\x08\x43urrency\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0c\n\x04\x63ode\x18\n \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x0b \x01(\x01\x12)\n\x12reference_currency\x18\x0c \x01(\x0b\x32\r.protolca.Ref\"e\n\x0b\x44qIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x05\x12!\n\x06scores\x18\x04 \x03(\x0b\x32\x11.protolca.DqScore\"i\n\x07\x44qScore\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x10\n\x08position\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x13\n\x0buncertainty\x18\x05 \x01(\x01\"\x9e\x02\n\x08\x44qSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x19\n\x11has_uncertainties\x18\n \x01(\x08\x12\x1d\n\x06source\x18\x0b \x01(\x0b\x32\r.protolca.Ref\x12)\n\nindicators\x18\x0c \x03(\x0b\x32\x15.protolca.DqIndicator\"\xa5\x03\n\x08\x45xchange\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x13\n\x0binternal_id\x18\x02 \x01(\x05\x12\x17\n\x0f\x61voided_product\x18\x03 \x01(\x08\x12\x1f\n\x04\x66low\x18\x04 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x05 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05input\x18\x06 \x01(\x08\x12\x1e\n\x16quantitative_reference\x18\x07 \x01(\x08\x12\x18\n\x10\x62\x61se_uncertainty\x18\x08 \x01(\x01\x12.\n\x10\x64\x65\x66\x61ult_provider\x18\t \x01(\x0b\x32\x14.protolca.ProcessRef\x12\x0e\n\x06\x61mount\x18\n \x01(\x01\x12\x16\n\x0e\x61mount_formula\x18\x0b \x01(\t\x12\x1b\n\x04unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\r \x01(\t\x12*\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x15.protolca.Uncertainty\x12\x13\n\x0b\x64\x65scription\x18\x0f \x01(\t\"\x81\x03\n\x04\x46low\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12%\n\tflow_type\x18\n \x01(\x0e\x32\x12.protolca.FlowType\x12\x0b\n\x03\x63\x61s\x18\x0b \x01(\t\x12\x0f\n\x07\x66ormula\x18\x0c \x01(\t\x12\x35\n\x0f\x66low_properties\x18\r \x03(\x0b\x32\x1c.protolca.FlowPropertyFactor\x12\x1f\n\x08location\x18\x0e \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08synonyms\x18\x0f \x01(\t\x12\x1b\n\x13infrastructure_flow\x18\x10 \x01(\x08\"\xe0\x01\n\x07\x46lowMap\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1d\n\x06source\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x06target\x18\x08 \x01(\x0b\x32\r.protolca.Ref\x12(\n\x08mappings\x18\t \x03(\x0b\x32\x16.protolca.FlowMapEntry\"\xde\x01\n\x0c\x46lowMapEntry\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\"\n\x04\x66rom\x18\x07 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12 \n\x02to\x18\x08 \x01(\x0b\x32\x14.protolca.FlowMapRef\x12\x19\n\x11\x63onversion_factor\x18\t \x01(\x01\"\x85\x01\n\nFlowMapRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12$\n\rflow_property\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\x98\x02\n\x0c\x46lowProperty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x36\n\x12\x66low_property_type\x18\n \x01(\x0e\x32\x1a.protolca.FlowPropertyType\x12!\n\nunit_group\x18\x0b \x01(\x0b\x32\r.protolca.Ref\"\x8b\x01\n\x12\x46lowPropertyFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12$\n\rflow_property\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x19\n\x11\x63onversion_factor\x18\x03 \x01(\x01\x12\x1f\n\x17reference_flow_property\x18\x04 \x01(\x08\"\xda\x01\n\x07\x46lowRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\x12\x10\n\x08ref_unit\x18\x08 \x01(\t\x12\x10\n\x08location\x18\t \x01(\t\x12%\n\tflow_type\x18\n \x01(\x0e\x32\x12.protolca.FlowType\"`\n\nFlowResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12\r\n\x05input\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x04 \x01(\x01\"\xb5\x02\n\x0eImpactCategory\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x1b\n\x13reference_unit_name\x18\n \x01(\t\x12\'\n\nparameters\x18\x0b \x03(\x0b\x32\x13.protolca.Parameter\x12.\n\x0eimpact_factors\x18\x0c \x03(\x0b\x32\x16.protolca.ImpactFactor\"\xab\x01\n\x11ImpactCategoryRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\x12\x10\n\x08ref_unit\x18\x08 \x01(\t\"\xf4\x01\n\x0cImpactFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x04\x66low\x18\x02 \x01(\x0b\x32\x11.protolca.FlowRef\x12\x1f\n\x08location\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12$\n\rflow_property\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04unit\x18\x05 \x01(\x0b\x32\r.protolca.Ref\x12\r\n\x05value\x18\x06 \x01(\x01\x12\x0f\n\x07\x66ormula\x18\x07 \x01(\t\x12*\n\x0buncertainty\x18\x08 \x01(\x0b\x32\x15.protolca.Uncertainty\"\xf5\x01\n\x0cImpactMethod\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x36\n\x11impact_categories\x18\n \x03(\x0b\x32\x1b.protolca.ImpactCategoryRef\"h\n\x0cImpactResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\x1b.protolca.ImpactCategoryRef\x12\r\n\x05value\x18\x03 \x01(\x01\"\x84\x02\n\x08Location\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0c\n\x04\x63ode\x18\n \x01(\t\x12\x10\n\x08latitude\x18\x0b \x01(\x01\x12\x11\n\tlongitude\x18\x0c \x01(\x01\x12\x16\n\x0egeometry_bytes\x18\r \x01(\x0c\"\x7f\n\x08NwFactor\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12&\n\x0fimpact_category\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14normalisation_factor\x18\x03 \x01(\x01\x12\x18\n\x10weighting_factor\x18\x04 \x01(\x01\"\xb8\x01\n\x05NwSet\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1b\n\x13weighted_score_unit\x18\x07 \x01(\t\x12#\n\x07\x66\x61\x63tors\x18\x08 \x03(\x0b\x32\x12.protolca.NwFactor\"\xd2\x02\n\tParameter\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x31\n\x0fparameter_scope\x18\n \x01(\x0e\x32\x18.protolca.ParameterScope\x12\x17\n\x0finput_parameter\x18\x0b \x01(\x08\x12\r\n\x05value\x18\x0c \x01(\x01\x12\x0f\n\x07\x66ormula\x18\r \x01(\t\x12*\n\x0buncertainty\x18\x0e \x01(\x0b\x32\x15.protolca.Uncertainty\"b\n\x0eParameterRedef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x1e\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\r.protolca.Ref\"\x97\x05\n\x07Process\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12;\n\x19\x64\x65\x66\x61ult_allocation_method\x18\n \x01(\x0e\x32\x18.protolca.AllocationType\x12\x36\n\x12\x61llocation_factors\x18\x0b \x03(\x0b\x32\x1a.protolca.AllocationFactor\x12%\n\texchanges\x18\x0c \x03(\x0b\x32\x12.protolca.Exchange\x12$\n\x08location\x18\r \x01(\x0b\x32\x12.protolca.Location\x12\'\n\nparameters\x18\x0e \x03(\x0b\x32\x13.protolca.Parameter\x12=\n\x15process_documentation\x18\x0f \x01(\x0b\x32\x1e.protolca.ProcessDocumentation\x12+\n\x0cprocess_type\x18\x10 \x01(\x0e\x32\x15.protolca.ProcessType\x12 \n\tdq_system\x18\x11 \x01(\x0b\x32\r.protolca.Ref\x12)\n\x12\x65xchange_dq_system\x18\x12 \x01(\x0b\x32\r.protolca.Ref\x12\'\n\x10social_dq_system\x18\x13 \x01(\x0b\x32\r.protolca.Ref\x12\x10\n\x08\x64q_entry\x18\x14 \x01(\t\"\xa2\x06\n\x14ProcessDocumentation\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x18\n\x10time_description\x18\x02 \x01(\t\x12\x13\n\x0bvalid_until\x18\x03 \x01(\t\x12\x12\n\nvalid_from\x18\x04 \x01(\t\x12\x1e\n\x16technology_description\x18\x05 \x01(\t\x12#\n\x1b\x64\x61ta_collection_description\x18\x06 \x01(\t\x12 \n\x18\x63ompleteness_description\x18\x07 \x01(\t\x12\"\n\x1a\x64\x61ta_selection_description\x18\x08 \x01(\t\x12\x16\n\x0ereview_details\x18\t \x01(\t\x12\"\n\x1a\x64\x61ta_treatment_description\x18\n \x01(\t\x12$\n\x1cinventory_method_description\x18\x0b \x01(\t\x12&\n\x1emodeling_constants_description\x18\x0c \x01(\t\x12\x1f\n\x08reviewer\x18\r \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14sampling_description\x18\x0e \x01(\t\x12\x1e\n\x07sources\x18\x0f \x03(\x0b\x32\r.protolca.Ref\x12 \n\x18restrictions_description\x18\x10 \x01(\t\x12\x11\n\tcopyright\x18\x11 \x01(\x08\x12\x15\n\rcreation_date\x18\x12 \x01(\t\x12&\n\x0f\x64\x61ta_documentor\x18\x13 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_generator\x18\x14 \x01(\x0b\x32\r.protolca.Ref\x12%\n\x0e\x64\x61ta_set_owner\x18\x15 \x01(\x0b\x32\r.protolca.Ref\x12\x1c\n\x14intended_application\x18\x16 \x01(\t\x12\x1b\n\x13project_description\x18\x17 \x01(\t\x12\"\n\x0bpublication\x18\x18 \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x15geography_description\x18\x19 \x01(\t\"\xa6\x01\n\x0bProcessLink\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x1f\n\x08provider\x18\x02 \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x04\x66low\x18\x03 \x01(\x0b\x32\r.protolca.Ref\x12\x1e\n\x07process\x18\x04 \x01(\x0b\x32\r.protolca.Ref\x12$\n\x08\x65xchange\x18\x05 \x01(\x0b\x32\x12.protolca.Exchange\"\xd1\x01\n\nProcessRef\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\x12\x10\n\x08location\x18\x08 \x01(\t\x12+\n\x0cprocess_type\x18\t \x01(\x0e\x32\x15.protolca.ProcessType\"\xde\x03\n\rProductSystem\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\'\n\tprocesses\x18\n \x03(\x0b\x32\x14.protolca.ProcessRef\x12/\n\x11reference_process\x18\x0b \x01(\x0b\x32\x14.protolca.ProcessRef\x12.\n\x12reference_exchange\x18\x0c \x01(\x0b\x32\x12.protolca.Exchange\x12\x15\n\rtarget_amount\x18\r \x01(\x01\x12\"\n\x0btarget_unit\x18\x0e \x01(\x0b\x32\r.protolca.Ref\x12+\n\x14target_flow_property\x18\x0f \x01(\x0b\x32\r.protolca.Ref\x12,\n\rprocess_links\x18\x10 \x03(\x0b\x32\x15.protolca.ProcessLink\"\xff\x01\n\x07Project\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12$\n\rimpact_method\x18\n \x01(\x0b\x32\r.protolca.Ref\x12\x1f\n\x06nw_set\x18\x0b \x01(\x0b\x32\x0f.protolca.NwSet\"\x8b\x01\n\x03Ref\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x15\n\rcategory_path\x18\x07 \x03(\t\"\x7f\n\x0cSimpleResult\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12*\n\x0c\x66low_results\x18\x02 \x03(\x0b\x32\x14.protolca.FlowResult\x12.\n\x0eimpact_results\x18\x03 \x03(\x0b\x32\x16.protolca.ImpactResult\"\xe3\x02\n\x0fSocialIndicator\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x19\n\x11\x61\x63tivity_variable\x18\n \x01(\t\x12(\n\x11\x61\x63tivity_quantity\x18\x0b \x01(\x0b\x32\r.protolca.Ref\x12$\n\ractivity_unit\x18\x0c \x01(\x0b\x32\r.protolca.Ref\x12\x1b\n\x13unit_of_measurement\x18\r \x01(\t\x12\x19\n\x11\x65valuation_scheme\x18\x0e \x01(\t\"\x81\x02\n\x06Source\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12\x0b\n\x03url\x18\n \x01(\t\x12\x16\n\x0etext_reference\x18\x0b \x01(\t\x12\x0c\n\x04year\x18\x0c \x01(\x05\x12\x15\n\rexternal_file\x18\r \x01(\t\"\xec\x02\n\x0bUncertainty\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x34\n\x11\x64istribution_type\x18\x02 \x01(\x0e\x32\x19.protolca.UncertaintyType\x12\x0c\n\x04mean\x18\x03 \x01(\x01\x12\x14\n\x0cmean_formula\x18\x04 \x01(\t\x12\x11\n\tgeom_mean\x18\x05 \x01(\x01\x12\x19\n\x11geom_mean_formula\x18\x06 \x01(\t\x12\x0f\n\x07minimum\x18\x07 \x01(\x01\x12\x17\n\x0fminimum_formula\x18\x08 \x01(\t\x12\n\n\x02sd\x18\t \x01(\x01\x12\x12\n\nsd_formula\x18\n \x01(\t\x12\x0f\n\x07geom_sd\x18\x0b \x01(\x01\x12\x17\n\x0fgeom_sd_formula\x18\x0c \x01(\t\x12\x0c\n\x04mode\x18\r \x01(\x01\x12\x14\n\x0cmode_formula\x18\x0e \x01(\t\x12\x0f\n\x07maximum\x18\x0f \x01(\x01\x12\x17\n\x0fmaximum_formula\x18\x10 \x01(\t\"\xba\x01\n\x04Unit\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x19\n\x11\x63onversion_factor\x18\x07 \x01(\x01\x12\x16\n\x0ereference_unit\x18\x08 \x01(\x08\x12\x10\n\x08synonyms\x18\t \x03(\t\"\x87\x02\n\tUnitGroup\x12\x13\n\x04type\x18\x01 \x01(\tR\x05@type\x12\x0f\n\x02id\x18\x02 \x01(\tR\x03@id\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x13\n\x0blast_change\x18\x06 \x01(\t\x12\x1f\n\x08\x63\x61tegory\x18\x07 \x01(\x0b\x32\r.protolca.Ref\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12\x0f\n\x07library\x18\t \x01(\t\x12,\n\x15\x64\x65\x66\x61ult_flow_property\x18\n \x01(\x0b\x32\r.protolca.Ref\x12\x1d\n\x05units\x18\x0b \x03(\x0b\x32\x0e.protolca.Unit*\xa7\x01\n\x0e\x41llocationType\x12\x1d\n\x19UNDEFINED_ALLOCATION_TYPE\x10\x00\x12\x17\n\x13PHYSICAL_ALLOCATION\x10\x01\x12\x17\n\x13\x45\x43ONOMIC_ALLOCATION\x10\x02\x12\x15\n\x11\x43\x41USAL_ALLOCATION\x10\x03\x12\x1a\n\x16USE_DEFAULT_ALLOCATION\x10\x04\x12\x11\n\rNO_ALLOCATION\x10\x05*\xb5\x01\n\x0f\x43\x61lculationType\x12\x1e\n\x1aUNDEFINED_CALCULATION_TYPE\x10\x00\x12\x16\n\x12SIMPLE_CALCULATION\x10\x01\x12\x19\n\x15\x43ONTRIBUTION_ANALYSIS\x10\x02\x12\x15\n\x11UPSTREAM_ANALYSIS\x10\x03\x12\x1c\n\x18REGIONALIZED_CALCULATION\x10\x04\x12\x1a\n\x16MONTE_CARLO_SIMULATION\x10\x05*b\n\x10\x46lowPropertyType\x12 \n\x1cUNDEFINED_FLOW_PROPERTY_TYPE\x10\x00\x12\x15\n\x11\x45\x43ONOMIC_QUANTITY\x10\x01\x12\x15\n\x11PHYSICAL_QUANTITY\x10\x02*Z\n\x08\x46lowType\x12\x17\n\x13UNDEFINED_FLOW_TYPE\x10\x00\x12\x13\n\x0f\x45LEMENTARY_FLOW\x10\x01\x12\x10\n\x0cPRODUCT_FLOW\x10\x02\x12\x0e\n\nWASTE_FLOW\x10\x03*\x87\x02\n\tModelType\x12\x18\n\x14UNDEFINED_MODEL_TYPE\x10\x00\x12\x0b\n\x07PROJECT\x10\x01\x12\x11\n\rIMPACT_METHOD\x10\x02\x12\x13\n\x0fIMPACT_CATEGORY\x10\x03\x12\x12\n\x0ePRODUCT_SYSTEM\x10\x04\x12\x0b\n\x07PROCESS\x10\x05\x12\x08\n\x04\x46LOW\x10\x06\x12\x11\n\rFLOW_PROPERTY\x10\x07\x12\x0e\n\nUNIT_GROUP\x10\x08\x12\x08\n\x04UNIT\x10\t\x12\t\n\x05\x41\x43TOR\x10\n\x12\n\n\x06SOURCE\x10\x0b\x12\x0c\n\x08\x43\x41TEGORY\x10\x0c\x12\x0c\n\x08LOCATION\x10\r\x12\n\n\x06NW_SET\x10\x0e\x12\x14\n\x10SOCIAL_INDICATOR\x10\x0f*f\n\x0eParameterScope\x12\x1d\n\x19UNDEFINED_PARAMETER_SCOPE\x10\x00\x12\x11\n\rPROCESS_SCOPE\x10\x01\x12\x10\n\x0cIMPACT_SCOPE\x10\x02\x12\x10\n\x0cGLOBAL_SCOPE\x10\x03*K\n\x0bProcessType\x12\x1a\n\x16UNDEFINED_PROCESS_TYPE\x10\x00\x12\x0e\n\nLCI_RESULT\x10\x01\x12\x10\n\x0cUNIT_PROCESS\x10\x02*\x9c\x01\n\x0fUncertaintyType\x12\x1e\n\x1aUNDEFINED_UNCERTAINTY_TYPE\x10\x00\x12\x1b\n\x17LOG_NORMAL_DISTRIBUTION\x10\x01\x12\x17\n\x13NORMAL_DISTRIBUTION\x10\x02\x12\x19\n\x15TRIANGLE_DISTRIBUTION\x10\x03\x12\x18\n\x14UNIFORM_DISTRIBUTION\x10\x04\x42&\n\x11org.openlca.protoB\x05ProtoZ\n.;protolcab\x06proto3'
 )
 
 _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
@@ -63,8 +63,8 @@ _ALLOCATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10089,
-  serialized_end=10256,
+  serialized_start=10527,
+  serialized_end=10694,
 )
 _sym_db.RegisterEnumDescriptor(_ALLOCATIONTYPE)
 
@@ -109,8 +109,8 @@ _CALCULATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10259,
-  serialized_end=10440,
+  serialized_start=10697,
+  serialized_end=10878,
 )
 _sym_db.RegisterEnumDescriptor(_CALCULATIONTYPE)
 
@@ -140,8 +140,8 @@ _FLOWPROPERTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10442,
-  serialized_end=10540,
+  serialized_start=10880,
+  serialized_end=10978,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWPROPERTYTYPE)
 
@@ -176,8 +176,8 @@ _FLOWTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10542,
-  serialized_end=10632,
+  serialized_start=10980,
+  serialized_end=11070,
 )
 _sym_db.RegisterEnumDescriptor(_FLOWTYPE)
 
@@ -272,8 +272,8 @@ _MODELTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10635,
-  serialized_end=10898,
+  serialized_start=11073,
+  serialized_end=11336,
 )
 _sym_db.RegisterEnumDescriptor(_MODELTYPE)
 
@@ -308,8 +308,8 @@ _PARAMETERSCOPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10900,
-  serialized_end=11002,
+  serialized_start=11338,
+  serialized_end=11440,
 )
 _sym_db.RegisterEnumDescriptor(_PARAMETERSCOPE)
 
@@ -339,8 +339,8 @@ _PROCESSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11004,
-  serialized_end=11079,
+  serialized_start=11442,
+  serialized_end=11517,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSTYPE)
 
@@ -380,8 +380,8 @@ _UNCERTAINTYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11082,
-  serialized_end=11238,
+  serialized_start=11520,
+  serialized_end=11676,
 )
 _sym_db.RegisterEnumDescriptor(_UNCERTAINTYTYPE)
 
@@ -1835,22 +1835,71 @@ _FLOWREF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ref_unit', full_name='protolca.FlowRef.ref_unit', index=0,
+      name='type', full_name='protolca.FlowRef.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='protolca.FlowRef.location', index=1,
+      name='id', full_name='protolca.FlowRef.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='protolca.FlowRef.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_type', full_name='protolca.FlowRef.flow_type', index=2,
-      number=3, type=14, cpp_type=8, label=1,
+      name='description', full_name='protolca.FlowRef.description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='protolca.FlowRef.version', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='last_change', full_name='protolca.FlowRef.last_change', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='category_path', full_name='protolca.FlowRef.category_path', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ref_unit', full_name='protolca.FlowRef.ref_unit', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='location', full_name='protolca.FlowRef.location', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flow_type', full_name='protolca.FlowRef.flow_type', index=9,
+      number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1867,8 +1916,8 @@ _FLOWREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3798,
-  serialized_end=3882,
+  serialized_start=3799,
+  serialized_end=4017,
 )
 
 
@@ -1920,8 +1969,8 @@ _FLOWRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3884,
-  serialized_end=3980,
+  serialized_start=4019,
+  serialized_end=4115,
 )
 
 
@@ -2004,8 +2053,15 @@ _IMPACTCATEGORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='impact_factors', full_name='protolca.ImpactCategory.impact_factors', index=10,
+      name='parameters', full_name='protolca.ImpactCategory.parameters', index=10,
       number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='impact_factors', full_name='protolca.ImpactCategory.impact_factors', index=11,
+      number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2022,8 +2078,8 @@ _IMPACTCATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3983,
-  serialized_end=4251,
+  serialized_start=4118,
+  serialized_end=4427,
 )
 
 
@@ -2036,8 +2092,57 @@ _IMPACTCATEGORYREF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ref_unit', full_name='protolca.ImpactCategoryRef.ref_unit', index=0,
+      name='type', full_name='protolca.ImpactCategoryRef.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='protolca.ImpactCategoryRef.id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='protolca.ImpactCategoryRef.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='protolca.ImpactCategoryRef.description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='protolca.ImpactCategoryRef.version', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='last_change', full_name='protolca.ImpactCategoryRef.last_change', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='category_path', full_name='protolca.ImpactCategoryRef.category_path', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ref_unit', full_name='protolca.ImpactCategoryRef.ref_unit', index=7,
+      number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2054,8 +2159,8 @@ _IMPACTCATEGORYREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4253,
-  serialized_end=4290,
+  serialized_start=4430,
+  serialized_end=4601,
 )
 
 
@@ -2082,36 +2187,43 @@ _IMPACTFACTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='flow_property', full_name='protolca.ImpactFactor.flow_property', index=2,
+      name='location', full_name='protolca.ImpactFactor.location', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='protolca.ImpactFactor.unit', index=3,
+      name='flow_property', full_name='protolca.ImpactFactor.flow_property', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='protolca.ImpactFactor.value', index=4,
-      number=5, type=1, cpp_type=5, label=1,
+      name='unit', full_name='protolca.ImpactFactor.unit', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='protolca.ImpactFactor.value', index=5,
+      number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='formula', full_name='protolca.ImpactFactor.formula', index=5,
-      number=6, type=9, cpp_type=9, label=1,
+      name='formula', full_name='protolca.ImpactFactor.formula', index=6,
+      number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uncertainty', full_name='protolca.ImpactFactor.uncertainty', index=6,
-      number=7, type=11, cpp_type=10, label=1,
+      name='uncertainty', full_name='protolca.ImpactFactor.uncertainty', index=7,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2128,8 +2240,8 @@ _IMPACTFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4293,
-  serialized_end=4504,
+  serialized_start=4604,
+  serialized_end=4848,
 )
 
 
@@ -2211,13 +2323,6 @@ _IMPACTMETHOD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='parameters', full_name='protolca.ImpactMethod.parameters', index=10,
-      number=11, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2230,8 +2335,8 @@ _IMPACTMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4507,
-  serialized_end=4793,
+  serialized_start=4851,
+  serialized_end=5096,
 )
 
 
@@ -2276,8 +2381,8 @@ _IMPACTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4795,
-  serialized_end=4899,
+  serialized_start=5098,
+  serialized_end=5202,
 )
 
 
@@ -2392,8 +2497,8 @@ _LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4902,
-  serialized_end=5162,
+  serialized_start=5205,
+  serialized_end=5465,
 )
 
 
@@ -2445,8 +2550,8 @@ _NWFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5164,
-  serialized_end=5291,
+  serialized_start=5467,
+  serialized_end=5594,
 )
 
 
@@ -2526,8 +2631,8 @@ _NWSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5294,
-  serialized_end=5478,
+  serialized_start=5597,
+  serialized_end=5781,
 )
 
 
@@ -2649,8 +2754,8 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5481,
-  serialized_end=5819,
+  serialized_start=5784,
+  serialized_end=6122,
 )
 
 
@@ -2702,8 +2807,8 @@ _PARAMETERREDEF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5821,
-  serialized_end=5919,
+  serialized_start=6124,
+  serialized_end=6222,
 )
 
 
@@ -2867,8 +2972,8 @@ _PROCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5922,
-  serialized_end=6585,
+  serialized_start=6225,
+  serialized_end=6888,
 )
 
 
@@ -3067,8 +3172,8 @@ _PROCESSDOCUMENTATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6588,
-  serialized_end=7390,
+  serialized_start=6891,
+  serialized_end=7693,
 )
 
 
@@ -3127,8 +3232,8 @@ _PROCESSLINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7393,
-  serialized_end=7559,
+  serialized_start=7696,
+  serialized_end=7862,
 )
 
 
@@ -3141,15 +3246,64 @@ _PROCESSREF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='location', full_name='protolca.ProcessRef.location', index=0,
+      name='type', full_name='protolca.ProcessRef.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='@type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='protolca.ProcessRef.id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='@id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='protolca.ProcessRef.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='process_type', full_name='protolca.ProcessRef.process_type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
+      name='description', full_name='protolca.ProcessRef.description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='protolca.ProcessRef.version', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='last_change', full_name='protolca.ProcessRef.last_change', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='category_path', full_name='protolca.ProcessRef.category_path', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='location', full_name='protolca.ProcessRef.location', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='process_type', full_name='protolca.ProcessRef.process_type', index=8,
+      number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -3166,8 +3320,8 @@ _PROCESSREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7561,
-  serialized_end=7636,
+  serialized_start=7865,
+  serialized_end=8074,
 )
 
 
@@ -3303,8 +3457,8 @@ _PRODUCTSYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7639,
-  serialized_end=8117,
+  serialized_start=8077,
+  serialized_end=8555,
 )
 
 
@@ -3405,8 +3559,8 @@ _PROJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8120,
-  serialized_end=8375,
+  serialized_start=8558,
+  serialized_end=8813,
 )
 
 
@@ -3479,8 +3633,8 @@ _REF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8378,
-  serialized_end=8517,
+  serialized_start=8816,
+  serialized_end=8955,
 )
 
 
@@ -3525,8 +3679,8 @@ _SIMPLERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8519,
-  serialized_end=8646,
+  serialized_start=8957,
+  serialized_end=9084,
 )
 
 
@@ -3648,8 +3802,8 @@ _SOCIALINDICATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8649,
-  serialized_end=9004,
+  serialized_start=9087,
+  serialized_end=9442,
 )
 
 
@@ -3764,8 +3918,8 @@ _SOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9007,
-  serialized_end=9264,
+  serialized_start=9445,
+  serialized_end=9702,
 )
 
 
@@ -3901,8 +4055,8 @@ _UNCERTAINTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9267,
-  serialized_end=9631,
+  serialized_start=9705,
+  serialized_end=10069,
 )
 
 
@@ -3989,8 +4143,8 @@ _UNIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9634,
-  serialized_end=9820,
+  serialized_start=10072,
+  serialized_end=10258,
 )
 
 
@@ -4091,8 +4245,8 @@ _UNITGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9823,
-  serialized_end=10086,
+  serialized_start=10261,
+  serialized_end=10524,
 )
 
 _ACTOR.fields_by_name['category'].message_type = _REF
@@ -4139,14 +4293,15 @@ _FLOWPROPERTYFACTOR.fields_by_name['flow_property'].message_type = _REF
 _FLOWREF.fields_by_name['flow_type'].enum_type = _FLOWTYPE
 _FLOWRESULT.fields_by_name['flow'].message_type = _FLOWREF
 _IMPACTCATEGORY.fields_by_name['category'].message_type = _REF
+_IMPACTCATEGORY.fields_by_name['parameters'].message_type = _PARAMETER
 _IMPACTCATEGORY.fields_by_name['impact_factors'].message_type = _IMPACTFACTOR
 _IMPACTFACTOR.fields_by_name['flow'].message_type = _FLOWREF
+_IMPACTFACTOR.fields_by_name['location'].message_type = _REF
 _IMPACTFACTOR.fields_by_name['flow_property'].message_type = _REF
 _IMPACTFACTOR.fields_by_name['unit'].message_type = _REF
 _IMPACTFACTOR.fields_by_name['uncertainty'].message_type = _UNCERTAINTY
 _IMPACTMETHOD.fields_by_name['category'].message_type = _REF
 _IMPACTMETHOD.fields_by_name['impact_categories'].message_type = _IMPACTCATEGORYREF
-_IMPACTMETHOD.fields_by_name['parameters'].message_type = _PARAMETER
 _IMPACTRESULT.fields_by_name['impact_category'].message_type = _IMPACTCATEGORYREF
 _LOCATION.fields_by_name['category'].message_type = _REF
 _NWFACTOR.fields_by_name['impact_category'].message_type = _REF

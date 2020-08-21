@@ -91,6 +91,13 @@ public class ProtoImport implements Runnable {
     return id != null;
   }
 
+  /**
+   * Get the entity with the given type and ID from the database
+   * if it exists. It first checks the cache of imported (handled)
+   * data sets if we have a fast ID for that entity. If not, it
+   * does not update this cache and searches the database for
+   * a matching ref. ID.
+   */
   @SuppressWarnings("unchecked")
   <T extends RootEntity> T get(Class<T> type, String refID) {
 

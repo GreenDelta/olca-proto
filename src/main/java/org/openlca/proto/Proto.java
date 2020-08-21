@@ -37083,10 +37083,181 @@ public final class Proto {
 
     /**
      * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    java.lang.String getLastChange();
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    com.google.protobuf.ByteString
+        getLastChangeBytes();
+
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    java.util.List<java.lang.String>
+        getCategoryPathList();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    int getCategoryPathCount();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    java.lang.String getCategoryPath(int index);
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    com.google.protobuf.ByteString
+        getCategoryPathBytes(int index);
+
+    /**
+     * <pre>
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The refUnit.
      */
     java.lang.String getRefUnit();
@@ -37095,7 +37266,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The bytes for refUnit.
      */
     com.google.protobuf.ByteString
@@ -37107,7 +37278,7 @@ public final class Proto {
      * product flows in databases like ecoinvent.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 9;</code>
      * @return The location.
      */
     java.lang.String getLocation();
@@ -37117,7 +37288,7 @@ public final class Proto {
      * product flows in databases like ecoinvent.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 9;</code>
      * @return The bytes for location.
      */
     com.google.protobuf.ByteString
@@ -37128,7 +37299,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 3;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     int getFlowTypeValue();
@@ -37137,7 +37308,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 3;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The flowType.
      */
     org.openlca.proto.Proto.FlowType getFlowType();
@@ -37159,6 +37330,13 @@ public final class Proto {
       super(builder);
     }
     private FlowRef() {
+      type_ = "";
+      id_ = "";
+      name_ = "";
+      description_ = "";
+      version_ = "";
+      lastChange_ = "";
+      categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       refUnit_ = "";
       location_ = "";
       flowType_ = 0;
@@ -37184,6 +37362,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -37197,16 +37376,61 @@ public final class Proto {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              refUnit_ = s;
+              type_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastChange_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                categoryPath_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              categoryPath_.add(s);
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              refUnit_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               location_ = s;
               break;
             }
-            case 24: {
+            case 80: {
               int rawValue = input.readEnum();
 
               flowType_ = rawValue;
@@ -37227,6 +37451,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -37244,14 +37471,351 @@ public final class Proto {
               org.openlca.proto.Proto.FlowRef.class, org.openlca.proto.Proto.FlowRef.Builder.class);
     }
 
-    public static final int REF_UNIT_FIELD_NUMBER = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object lastChange_;
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    @java.lang.Override
+    public java.lang.String getLastChange() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastChange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLastChangeBytes() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastChange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_PATH_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList categoryPath_;
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCategoryPathList() {
+      return categoryPath_;
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    public int getCategoryPathCount() {
+      return categoryPath_.size();
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    public java.lang.String getCategoryPath(int index) {
+      return categoryPath_.get(index);
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryPathBytes(int index) {
+      return categoryPath_.getByteString(index);
+    }
+
+    public static final int REF_UNIT_FIELD_NUMBER = 8;
     private volatile java.lang.Object refUnit_;
     /**
      * <pre>
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The refUnit.
      */
     @java.lang.Override
@@ -37272,7 +37836,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the flow.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The bytes for refUnit.
      */
     @java.lang.Override
@@ -37290,7 +37854,7 @@ public final class Proto {
       }
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 2;
+    public static final int LOCATION_FIELD_NUMBER = 9;
     private volatile java.lang.Object location_;
     /**
      * <pre>
@@ -37298,7 +37862,7 @@ public final class Proto {
      * product flows in databases like ecoinvent.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 9;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -37320,7 +37884,7 @@ public final class Proto {
      * product flows in databases like ecoinvent.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 9;</code>
      * @return The bytes for location.
      */
     @java.lang.Override
@@ -37338,14 +37902,14 @@ public final class Proto {
       }
     }
 
-    public static final int FLOW_TYPE_FIELD_NUMBER = 3;
+    public static final int FLOW_TYPE_FIELD_NUMBER = 10;
     private int flowType_;
     /**
      * <pre>
      * The type of the flow.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 3;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The enum numeric value on the wire for flowType.
      */
     @java.lang.Override public int getFlowTypeValue() {
@@ -37356,7 +37920,7 @@ public final class Proto {
      * The type of the flow.
      * </pre>
      *
-     * <code>.protolca.FlowType flow_type = 3;</code>
+     * <code>.protolca.FlowType flow_type = 10;</code>
      * @return The flowType.
      */
     @java.lang.Override public org.openlca.proto.Proto.FlowType getFlowType() {
@@ -37379,14 +37943,35 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastChange_);
+      }
+      for (int i = 0; i < categoryPath_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, categoryPath_.getRaw(i));
+      }
       if (!getRefUnitBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, refUnit_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, refUnit_);
       }
       if (!getLocationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, location_);
       }
       if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
-        output.writeEnum(3, flowType_);
+        output.writeEnum(10, flowType_);
       }
       unknownFields.writeTo(output);
     }
@@ -37397,15 +37982,41 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastChange_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < categoryPath_.size(); i++) {
+          dataSize += computeStringSizeNoTag(categoryPath_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCategoryPathList().size();
+      }
       if (!getRefUnitBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, refUnit_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, refUnit_);
       }
       if (!getLocationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, location_);
       }
       if (flowType_ != org.openlca.proto.Proto.FlowType.UNDEFINED_FLOW_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, flowType_);
+          .computeEnumSize(10, flowType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -37422,6 +38033,20 @@ public final class Proto {
       }
       org.openlca.proto.Proto.FlowRef other = (org.openlca.proto.Proto.FlowRef) obj;
 
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getLastChange()
+          .equals(other.getLastChange())) return false;
+      if (!getCategoryPathList()
+          .equals(other.getCategoryPathList())) return false;
       if (!getRefUnit()
           .equals(other.getRefUnit())) return false;
       if (!getLocation()
@@ -37438,6 +38063,22 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastChange().hashCode();
+      if (getCategoryPathCount() > 0) {
+        hash = (37 * hash) + CATEGORY_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryPathList().hashCode();
+      }
       hash = (37 * hash) + REF_UNIT_FIELD_NUMBER;
       hash = (53 * hash) + getRefUnit().hashCode();
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
@@ -37581,6 +38222,20 @@ public final class Proto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        type_ = "";
+
+        id_ = "";
+
+        name_ = "";
+
+        description_ = "";
+
+        version_ = "";
+
+        lastChange_ = "";
+
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         refUnit_ = "";
 
         location_ = "";
@@ -37613,6 +38268,18 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.FlowRef buildPartial() {
         org.openlca.proto.Proto.FlowRef result = new org.openlca.proto.Proto.FlowRef(this);
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.id_ = id_;
+        result.name_ = name_;
+        result.description_ = description_;
+        result.version_ = version_;
+        result.lastChange_ = lastChange_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.categoryPath_ = categoryPath_;
         result.refUnit_ = refUnit_;
         result.location_ = location_;
         result.flowType_ = flowType_;
@@ -37664,6 +38331,40 @@ public final class Proto {
 
       public Builder mergeFrom(org.openlca.proto.Proto.FlowRef other) {
         if (other == org.openlca.proto.Proto.FlowRef.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getLastChange().isEmpty()) {
+          lastChange_ = other.lastChange_;
+          onChanged();
+        }
+        if (!other.categoryPath_.isEmpty()) {
+          if (categoryPath_.isEmpty()) {
+            categoryPath_ = other.categoryPath_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCategoryPathIsMutable();
+            categoryPath_.addAll(other.categoryPath_);
+          }
+          onChanged();
+        }
         if (!other.getRefUnit().isEmpty()) {
           refUnit_ = other.refUnit_;
           onChanged();
@@ -37703,6 +38404,753 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastChange_ = "";
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The lastChange.
+       */
+      public java.lang.String getLastChange() {
+        java.lang.Object ref = lastChange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastChange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The bytes for lastChange.
+       */
+      public com.google.protobuf.ByteString
+          getLastChangeBytes() {
+        java.lang.Object ref = lastChange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastChange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastChange() {
+        
+        lastChange_ = getDefaultInstance().getLastChange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The bytes for lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCategoryPathIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = new com.google.protobuf.LazyStringArrayList(categoryPath_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return A list containing the categoryPath.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCategoryPathList() {
+        return categoryPath_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return The count of categoryPath.
+       */
+      public int getCategoryPathCount() {
+        return categoryPath_.size();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the element to return.
+       * @return The categoryPath at the given index.
+       */
+      public java.lang.String getCategoryPath(int index) {
+        return categoryPath_.get(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the categoryPath at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCategoryPathBytes(int index) {
+        return categoryPath_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The categoryPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryPath(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param values The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCategoryPath(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCategoryPathIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categoryPath_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategoryPath() {
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The bytes of the categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object refUnit_ = "";
       /**
@@ -37710,7 +39158,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return The refUnit.
        */
       public java.lang.String getRefUnit() {
@@ -37730,7 +39178,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return The bytes for refUnit.
        */
       public com.google.protobuf.ByteString
@@ -37751,7 +39199,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @param value The refUnit to set.
        * @return This builder for chaining.
        */
@@ -37770,7 +39218,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefUnit() {
@@ -37784,7 +39232,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the flow.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @param value The bytes for refUnit to set.
        * @return This builder for chaining.
        */
@@ -37807,7 +39255,7 @@ public final class Proto {
        * product flows in databases like ecoinvent.
        * </pre>
        *
-       * <code>string location = 2;</code>
+       * <code>string location = 9;</code>
        * @return The location.
        */
       public java.lang.String getLocation() {
@@ -37828,7 +39276,7 @@ public final class Proto {
        * product flows in databases like ecoinvent.
        * </pre>
        *
-       * <code>string location = 2;</code>
+       * <code>string location = 9;</code>
        * @return The bytes for location.
        */
       public com.google.protobuf.ByteString
@@ -37850,7 +39298,7 @@ public final class Proto {
        * product flows in databases like ecoinvent.
        * </pre>
        *
-       * <code>string location = 2;</code>
+       * <code>string location = 9;</code>
        * @param value The location to set.
        * @return This builder for chaining.
        */
@@ -37870,7 +39318,7 @@ public final class Proto {
        * product flows in databases like ecoinvent.
        * </pre>
        *
-       * <code>string location = 2;</code>
+       * <code>string location = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLocation() {
@@ -37885,7 +39333,7 @@ public final class Proto {
        * product flows in databases like ecoinvent.
        * </pre>
        *
-       * <code>string location = 2;</code>
+       * <code>string location = 9;</code>
        * @param value The bytes for location to set.
        * @return This builder for chaining.
        */
@@ -37907,7 +39355,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 3;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return The enum numeric value on the wire for flowType.
        */
       @java.lang.Override public int getFlowTypeValue() {
@@ -37918,7 +39366,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 3;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @param value The enum numeric value on the wire for flowType to set.
        * @return This builder for chaining.
        */
@@ -37933,7 +39381,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 3;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return The flowType.
        */
       @java.lang.Override
@@ -37947,7 +39395,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 3;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @param value The flowType to set.
        * @return This builder for chaining.
        */
@@ -37965,7 +39413,7 @@ public final class Proto {
        * The type of the flow.
        * </pre>
        *
-       * <code>.protolca.FlowType flow_type = 3;</code>
+       * <code>.protolca.FlowType flow_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlowType() {
@@ -39342,10 +40790,59 @@ public final class Proto {
 
     /**
      * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    java.util.List<org.openlca.proto.Proto.Parameter> 
+        getParametersList();
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    org.openlca.proto.Proto.Parameter getParameters(int index);
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    int getParametersCount();
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
+        getParametersOrBuilderList();
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
+        int index);
+
+    /**
+     * <pre>
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     java.util.List<org.openlca.proto.Proto.ImpactFactor> 
         getImpactFactorsList();
@@ -39354,7 +40851,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index);
     /**
@@ -39362,7 +40859,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     int getImpactFactorsCount();
     /**
@@ -39370,7 +40867,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
         getImpactFactorsOrBuilderList();
@@ -39379,7 +40876,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
         int index);
@@ -39406,6 +40903,7 @@ public final class Proto {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       library_ = "";
       referenceUnitName_ = "";
+      parameters_ = java.util.Collections.emptyList();
       impactFactors_ = java.util.Collections.emptyList();
     }
 
@@ -39512,8 +41010,17 @@ public final class Proto {
             }
             case 90: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                impactFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactFactor>();
+                parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>();
                 mutable_bitField0_ |= 0x00000002;
+              }
+              parameters_.add(
+                  input.readMessage(org.openlca.proto.Proto.Parameter.parser(), extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                impactFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactFactor>();
+                mutable_bitField0_ |= 0x00000004;
               }
               impactFactors_.add(
                   input.readMessage(org.openlca.proto.Proto.ImpactFactor.parser(), extensionRegistry));
@@ -39538,6 +41045,9 @@ public final class Proto {
           tags_ = tags_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           impactFactors_ = java.util.Collections.unmodifiableList(impactFactors_);
         }
         this.unknownFields = unknownFields.build();
@@ -40028,14 +41538,79 @@ public final class Proto {
       }
     }
 
-    public static final int IMPACT_FACTORS_FIELD_NUMBER = 11;
+    public static final int PARAMETERS_FIELD_NUMBER = 11;
+    private java.util.List<org.openlca.proto.Proto.Parameter> parameters_;
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    @java.lang.Override
+    public int getParametersCount() {
+      return parameters_.size();
+    }
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Parameter getParameters(int index) {
+      return parameters_.get(index);
+    }
+    /**
+     * <pre>
+     * A set of parameters which can be used in formulas of the characterisation
+     * factors in this impact category.
+     * </pre>
+     *
+     * <code>repeated .protolca.Parameter parameters = 11;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
+    }
+
+    public static final int IMPACT_FACTORS_FIELD_NUMBER = 12;
     private java.util.List<org.openlca.proto.Proto.ImpactFactor> impactFactors_;
     /**
      * <pre>
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.ImpactFactor> getImpactFactorsList() {
@@ -40046,7 +41621,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
@@ -40058,7 +41633,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     @java.lang.Override
     public int getImpactFactorsCount() {
@@ -40069,7 +41644,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index) {
@@ -40080,7 +41655,7 @@ public final class Proto {
      * The characterisation factors of the LCIA category.
      * </pre>
      *
-     * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+     * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
@@ -40132,8 +41707,11 @@ public final class Proto {
       if (!getReferenceUnitNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, referenceUnitName_);
       }
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(11, parameters_.get(i));
+      }
       for (int i = 0; i < impactFactors_.size(); i++) {
-        output.writeMessage(11, impactFactors_.get(i));
+        output.writeMessage(12, impactFactors_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -40180,9 +41758,13 @@ public final class Proto {
       if (!getReferenceUnitNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, referenceUnitName_);
       }
+      for (int i = 0; i < parameters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, parameters_.get(i));
+      }
       for (int i = 0; i < impactFactors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, impactFactors_.get(i));
+          .computeMessageSize(12, impactFactors_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -40222,6 +41804,8 @@ public final class Proto {
           .equals(other.getLibrary())) return false;
       if (!getReferenceUnitName()
           .equals(other.getReferenceUnitName())) return false;
+      if (!getParametersList()
+          .equals(other.getParametersList())) return false;
       if (!getImpactFactorsList()
           .equals(other.getImpactFactorsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -40259,6 +41843,10 @@ public final class Proto {
       hash = (53 * hash) + getLibrary().hashCode();
       hash = (37 * hash) + REFERENCE_UNIT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceUnitName().hashCode();
+      if (getParametersCount() > 0) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParametersList().hashCode();
+      }
       if (getImpactFactorsCount() > 0) {
         hash = (37 * hash) + IMPACT_FACTORS_FIELD_NUMBER;
         hash = (53 * hash) + getImpactFactorsList().hashCode();
@@ -40391,6 +41979,7 @@ public final class Proto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getParametersFieldBuilder();
           getImpactFactorsFieldBuilder();
         }
       }
@@ -40421,9 +42010,15 @@ public final class Proto {
 
         referenceUnitName_ = "";
 
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          parametersBuilder_.clear();
+        }
         if (impactFactorsBuilder_ == null) {
           impactFactors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           impactFactorsBuilder_.clear();
         }
@@ -40472,10 +42067,19 @@ public final class Proto {
         result.tags_ = tags_;
         result.library_ = library_;
         result.referenceUnitName_ = referenceUnitName_;
-        if (impactFactorsBuilder_ == null) {
+        if (parametersBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            impactFactors_ = java.util.Collections.unmodifiableList(impactFactors_);
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
             bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
+        if (impactFactorsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            impactFactors_ = java.util.Collections.unmodifiableList(impactFactors_);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.impactFactors_ = impactFactors_;
         } else {
@@ -40574,11 +42178,37 @@ public final class Proto {
           referenceUnitName_ = other.referenceUnitName_;
           onChanged();
         }
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
+        }
         if (impactFactorsBuilder_ == null) {
           if (!other.impactFactors_.isEmpty()) {
             if (impactFactors_.isEmpty()) {
               impactFactors_ = other.impactFactors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureImpactFactorsIsMutable();
               impactFactors_.addAll(other.impactFactors_);
@@ -40591,7 +42221,7 @@ public final class Proto {
               impactFactorsBuilder_.dispose();
               impactFactorsBuilder_ = null;
               impactFactors_ = other.impactFactors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               impactFactorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getImpactFactorsFieldBuilder() : null;
@@ -41733,12 +43363,342 @@ public final class Proto {
         return this;
       }
 
+      private java.util.List<org.openlca.proto.Proto.Parameter> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>(parameters_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> parametersBuilder_;
+
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public int getParametersCount() {
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public org.openlca.proto.Proto.Parameter getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder setParameters(
+          int index, org.openlca.proto.Proto.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder setParameters(
+          int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder addParameters(org.openlca.proto.Proto.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder addParameters(
+          int index, org.openlca.proto.Proto.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder addParameters(
+          org.openlca.proto.Proto.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder addParameters(
+          int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends org.openlca.proto.Proto.Parameter> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public org.openlca.proto.Proto.Parameter.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            org.openlca.proto.Proto.Parameter.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, org.openlca.proto.Proto.Parameter.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A set of parameters which can be used in formulas of the characterisation
+       * factors in this impact category.
+       * </pre>
+       *
+       * <code>repeated .protolca.Parameter parameters = 11;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.Parameter.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
+      }
+
       private java.util.List<org.openlca.proto.Proto.ImpactFactor> impactFactors_ =
         java.util.Collections.emptyList();
       private void ensureImpactFactorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           impactFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.ImpactFactor>(impactFactors_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -41750,7 +43710,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactFactor> getImpactFactorsList() {
         if (impactFactorsBuilder_ == null) {
@@ -41764,7 +43724,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public int getImpactFactorsCount() {
         if (impactFactorsBuilder_ == null) {
@@ -41778,7 +43738,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor getImpactFactors(int index) {
         if (impactFactorsBuilder_ == null) {
@@ -41792,7 +43752,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder setImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor value) {
@@ -41813,7 +43773,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder setImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -41831,7 +43791,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder addImpactFactors(org.openlca.proto.Proto.ImpactFactor value) {
         if (impactFactorsBuilder_ == null) {
@@ -41851,7 +43811,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder addImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor value) {
@@ -41872,7 +43832,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder addImpactFactors(
           org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -41890,7 +43850,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder addImpactFactors(
           int index, org.openlca.proto.Proto.ImpactFactor.Builder builderForValue) {
@@ -41908,7 +43868,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder addAllImpactFactors(
           java.lang.Iterable<? extends org.openlca.proto.Proto.ImpactFactor> values) {
@@ -41927,12 +43887,12 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder clearImpactFactors() {
         if (impactFactorsBuilder_ == null) {
           impactFactors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           impactFactorsBuilder_.clear();
@@ -41944,7 +43904,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public Builder removeImpactFactors(int index) {
         if (impactFactorsBuilder_ == null) {
@@ -41961,7 +43921,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder getImpactFactorsBuilder(
           int index) {
@@ -41972,7 +43932,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public org.openlca.proto.Proto.ImpactFactorOrBuilder getImpactFactorsOrBuilder(
           int index) {
@@ -41986,7 +43946,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ImpactFactorOrBuilder> 
            getImpactFactorsOrBuilderList() {
@@ -42001,7 +43961,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder addImpactFactorsBuilder() {
         return getImpactFactorsFieldBuilder().addBuilder(
@@ -42012,7 +43972,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public org.openlca.proto.Proto.ImpactFactor.Builder addImpactFactorsBuilder(
           int index) {
@@ -42024,7 +43984,7 @@ public final class Proto {
        * The characterisation factors of the LCIA category.
        * </pre>
        *
-       * <code>repeated .protolca.ImpactFactor impact_factors = 11;</code>
+       * <code>repeated .protolca.ImpactFactor impact_factors = 12;</code>
        */
       public java.util.List<org.openlca.proto.Proto.ImpactFactor.Builder> 
            getImpactFactorsBuilderList() {
@@ -42037,7 +43997,7 @@ public final class Proto {
           impactFactorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openlca.proto.Proto.ImpactFactor, org.openlca.proto.Proto.ImpactFactor.Builder, org.openlca.proto.Proto.ImpactFactorOrBuilder>(
                   impactFactors_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           impactFactors_ = null;
@@ -42103,10 +44063,181 @@ public final class Proto {
 
     /**
      * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    java.lang.String getLastChange();
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    com.google.protobuf.ByteString
+        getLastChangeBytes();
+
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    java.util.List<java.lang.String>
+        getCategoryPathList();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    int getCategoryPathCount();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    java.lang.String getCategoryPath(int index);
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    com.google.protobuf.ByteString
+        getCategoryPathBytes(int index);
+
+    /**
+     * <pre>
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The refUnit.
      */
     java.lang.String getRefUnit();
@@ -42115,7 +44246,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The bytes for refUnit.
      */
     com.google.protobuf.ByteString
@@ -42138,6 +44269,13 @@ public final class Proto {
       super(builder);
     }
     private ImpactCategoryRef() {
+      type_ = "";
+      id_ = "";
+      name_ = "";
+      description_ = "";
+      version_ = "";
+      lastChange_ = "";
+      categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       refUnit_ = "";
     }
 
@@ -42161,6 +44299,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -42172,6 +44311,51 @@ public final class Proto {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastChange_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                categoryPath_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              categoryPath_.add(s);
+              break;
+            }
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               refUnit_ = s;
@@ -42192,6 +44376,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -42209,14 +44396,351 @@ public final class Proto {
               org.openlca.proto.Proto.ImpactCategoryRef.class, org.openlca.proto.Proto.ImpactCategoryRef.Builder.class);
     }
 
-    public static final int REF_UNIT_FIELD_NUMBER = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object lastChange_;
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    @java.lang.Override
+    public java.lang.String getLastChange() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastChange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLastChangeBytes() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastChange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_PATH_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList categoryPath_;
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCategoryPathList() {
+      return categoryPath_;
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    public int getCategoryPathCount() {
+      return categoryPath_.size();
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    public java.lang.String getCategoryPath(int index) {
+      return categoryPath_.get(index);
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryPathBytes(int index) {
+      return categoryPath_.getByteString(index);
+    }
+
+    public static final int REF_UNIT_FIELD_NUMBER = 8;
     private volatile java.lang.Object refUnit_;
     /**
      * <pre>
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The refUnit.
      */
     @java.lang.Override
@@ -42237,7 +44761,7 @@ public final class Proto {
      * The name (symbol) of the reference unit of the impact category.
      * </pre>
      *
-     * <code>string ref_unit = 1;</code>
+     * <code>string ref_unit = 8;</code>
      * @return The bytes for refUnit.
      */
     @java.lang.Override
@@ -42269,8 +44793,29 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastChange_);
+      }
+      for (int i = 0; i < categoryPath_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, categoryPath_.getRaw(i));
+      }
       if (!getRefUnitBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, refUnit_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, refUnit_);
       }
       unknownFields.writeTo(output);
     }
@@ -42281,8 +44826,34 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastChange_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < categoryPath_.size(); i++) {
+          dataSize += computeStringSizeNoTag(categoryPath_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCategoryPathList().size();
+      }
       if (!getRefUnitBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, refUnit_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, refUnit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -42299,6 +44870,20 @@ public final class Proto {
       }
       org.openlca.proto.Proto.ImpactCategoryRef other = (org.openlca.proto.Proto.ImpactCategoryRef) obj;
 
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getLastChange()
+          .equals(other.getLastChange())) return false;
+      if (!getCategoryPathList()
+          .equals(other.getCategoryPathList())) return false;
       if (!getRefUnit()
           .equals(other.getRefUnit())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -42312,6 +44897,22 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastChange().hashCode();
+      if (getCategoryPathCount() > 0) {
+        hash = (37 * hash) + CATEGORY_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryPathList().hashCode();
+      }
       hash = (37 * hash) + REF_UNIT_FIELD_NUMBER;
       hash = (53 * hash) + getRefUnit().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -42451,6 +45052,20 @@ public final class Proto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        type_ = "";
+
+        id_ = "";
+
+        name_ = "";
+
+        description_ = "";
+
+        version_ = "";
+
+        lastChange_ = "";
+
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         refUnit_ = "";
 
         return this;
@@ -42479,6 +45094,18 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.ImpactCategoryRef buildPartial() {
         org.openlca.proto.Proto.ImpactCategoryRef result = new org.openlca.proto.Proto.ImpactCategoryRef(this);
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.id_ = id_;
+        result.name_ = name_;
+        result.description_ = description_;
+        result.version_ = version_;
+        result.lastChange_ = lastChange_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.categoryPath_ = categoryPath_;
         result.refUnit_ = refUnit_;
         onBuilt();
         return result;
@@ -42528,6 +45155,40 @@ public final class Proto {
 
       public Builder mergeFrom(org.openlca.proto.Proto.ImpactCategoryRef other) {
         if (other == org.openlca.proto.Proto.ImpactCategoryRef.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getLastChange().isEmpty()) {
+          lastChange_ = other.lastChange_;
+          onChanged();
+        }
+        if (!other.categoryPath_.isEmpty()) {
+          if (categoryPath_.isEmpty()) {
+            categoryPath_ = other.categoryPath_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCategoryPathIsMutable();
+            categoryPath_.addAll(other.categoryPath_);
+          }
+          onChanged();
+        }
         if (!other.getRefUnit().isEmpty()) {
           refUnit_ = other.refUnit_;
           onChanged();
@@ -42560,6 +45221,753 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastChange_ = "";
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The lastChange.
+       */
+      public java.lang.String getLastChange() {
+        java.lang.Object ref = lastChange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastChange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The bytes for lastChange.
+       */
+      public com.google.protobuf.ByteString
+          getLastChangeBytes() {
+        java.lang.Object ref = lastChange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastChange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastChange() {
+        
+        lastChange_ = getDefaultInstance().getLastChange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The bytes for lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCategoryPathIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = new com.google.protobuf.LazyStringArrayList(categoryPath_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return A list containing the categoryPath.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCategoryPathList() {
+        return categoryPath_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return The count of categoryPath.
+       */
+      public int getCategoryPathCount() {
+        return categoryPath_.size();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the element to return.
+       * @return The categoryPath at the given index.
+       */
+      public java.lang.String getCategoryPath(int index) {
+        return categoryPath_.get(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the categoryPath at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCategoryPathBytes(int index) {
+        return categoryPath_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The categoryPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryPath(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param values The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCategoryPath(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCategoryPathIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categoryPath_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategoryPath() {
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The bytes of the categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object refUnit_ = "";
       /**
@@ -42567,7 +45975,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return The refUnit.
        */
       public java.lang.String getRefUnit() {
@@ -42587,7 +45995,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return The bytes for refUnit.
        */
       public com.google.protobuf.ByteString
@@ -42608,7 +46016,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @param value The refUnit to set.
        * @return This builder for chaining.
        */
@@ -42627,7 +46035,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefUnit() {
@@ -42641,7 +46049,7 @@ public final class Proto {
        * The name (symbol) of the reference unit of the impact category.
        * </pre>
        *
-       * <code>string ref_unit = 1;</code>
+       * <code>string ref_unit = 8;</code>
        * @param value The bytes for refUnit to set.
        * @return This builder for chaining.
        */
@@ -42764,10 +46172,40 @@ public final class Proto {
 
     /**
      * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     * @return Whether the location field is set.
+     */
+    boolean hasLocation();
+    /**
+     * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     * @return The location.
+     */
+    org.openlca.proto.Proto.Ref getLocation();
+    /**
+     * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder();
+
+    /**
+     * <pre>
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -42776,7 +46214,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -42785,7 +46223,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
@@ -42794,7 +46232,7 @@ public final class Proto {
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      * @return Whether the unit field is set.
      */
     boolean hasUnit();
@@ -42803,7 +46241,7 @@ public final class Proto {
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      * @return The unit.
      */
     org.openlca.proto.Proto.Ref getUnit();
@@ -42812,7 +46250,7 @@ public final class Proto {
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder();
 
@@ -42821,7 +46259,7 @@ public final class Proto {
      * The value of the impact assessment factor.
      * </pre>
      *
-     * <code>double value = 5;</code>
+     * <code>double value = 6;</code>
      * @return The value.
      */
     double getValue();
@@ -42831,7 +46269,7 @@ public final class Proto {
      * A mathematical formula for calculating the value of the LCIA factor.
      * </pre>
      *
-     * <code>string formula = 6;</code>
+     * <code>string formula = 7;</code>
      * @return The formula.
      */
     java.lang.String getFormula();
@@ -42840,7 +46278,7 @@ public final class Proto {
      * A mathematical formula for calculating the value of the LCIA factor.
      * </pre>
      *
-     * <code>string formula = 6;</code>
+     * <code>string formula = 7;</code>
      * @return The bytes for formula.
      */
     com.google.protobuf.ByteString
@@ -42851,7 +46289,7 @@ public final class Proto {
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      * @return Whether the uncertainty field is set.
      */
     boolean hasUncertainty();
@@ -42860,7 +46298,7 @@ public final class Proto {
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      * @return The uncertainty.
      */
     org.openlca.proto.Proto.Uncertainty getUncertainty();
@@ -42869,7 +46307,7 @@ public final class Proto {
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      */
     org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder();
   }
@@ -42945,6 +46383,19 @@ public final class Proto {
             }
             case 26: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (location_ != null) {
+                subBuilder = location_.toBuilder();
+              }
+              location_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(location_);
+                location_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (flowProperty_ != null) {
                 subBuilder = flowProperty_.toBuilder();
               }
@@ -42956,7 +46407,7 @@ public final class Proto {
 
               break;
             }
-            case 34: {
+            case 42: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (unit_ != null) {
                 subBuilder = unit_.toBuilder();
@@ -42969,18 +46420,18 @@ public final class Proto {
 
               break;
             }
-            case 41: {
+            case 49: {
 
               value_ = input.readDouble();
               break;
             }
-            case 50: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               formula_ = s;
               break;
             }
-            case 58: {
+            case 66: {
               org.openlca.proto.Proto.Uncertainty.Builder subBuilder = null;
               if (uncertainty_ != null) {
                 subBuilder = uncertainty_.toBuilder();
@@ -43111,14 +46562,55 @@ public final class Proto {
       return getFlow();
     }
 
-    public static final int FLOW_PROPERTY_FIELD_NUMBER = 3;
+    public static final int LOCATION_FIELD_NUMBER = 3;
+    private org.openlca.proto.Proto.Ref location_;
+    /**
+     * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     * @return Whether the location field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocation() {
+      return location_ != null;
+    }
+    /**
+     * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     * @return The location.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getLocation() {
+      return location_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
+    }
+    /**
+     * <pre>
+     * In case of a regionalized impact category, this field can contain the
+     * location for which this factor is valid.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 3;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
+      return getLocation();
+    }
+
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 4;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -43130,7 +46622,7 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -43142,21 +46634,21 @@ public final class Proto {
      * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 3;</code>
+     * <code>.protolca.Ref flow_property = 4;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
       return getFlowProperty();
     }
 
-    public static final int UNIT_FIELD_NUMBER = 4;
+    public static final int UNIT_FIELD_NUMBER = 5;
     private org.openlca.proto.Proto.Ref unit_;
     /**
      * <pre>
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      * @return Whether the unit field is set.
      */
     @java.lang.Override
@@ -43168,7 +46660,7 @@ public final class Proto {
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      * @return The unit.
      */
     @java.lang.Override
@@ -43180,21 +46672,21 @@ public final class Proto {
      * The flow unit to which the LCIA factor is related (e.g. kg).
      * </pre>
      *
-     * <code>.protolca.Ref unit = 4;</code>
+     * <code>.protolca.Ref unit = 5;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder() {
       return getUnit();
     }
 
-    public static final int VALUE_FIELD_NUMBER = 5;
+    public static final int VALUE_FIELD_NUMBER = 6;
     private double value_;
     /**
      * <pre>
      * The value of the impact assessment factor.
      * </pre>
      *
-     * <code>double value = 5;</code>
+     * <code>double value = 6;</code>
      * @return The value.
      */
     @java.lang.Override
@@ -43202,14 +46694,14 @@ public final class Proto {
       return value_;
     }
 
-    public static final int FORMULA_FIELD_NUMBER = 6;
+    public static final int FORMULA_FIELD_NUMBER = 7;
     private volatile java.lang.Object formula_;
     /**
      * <pre>
      * A mathematical formula for calculating the value of the LCIA factor.
      * </pre>
      *
-     * <code>string formula = 6;</code>
+     * <code>string formula = 7;</code>
      * @return The formula.
      */
     @java.lang.Override
@@ -43230,7 +46722,7 @@ public final class Proto {
      * A mathematical formula for calculating the value of the LCIA factor.
      * </pre>
      *
-     * <code>string formula = 6;</code>
+     * <code>string formula = 7;</code>
      * @return The bytes for formula.
      */
     @java.lang.Override
@@ -43248,14 +46740,14 @@ public final class Proto {
       }
     }
 
-    public static final int UNCERTAINTY_FIELD_NUMBER = 7;
+    public static final int UNCERTAINTY_FIELD_NUMBER = 8;
     private org.openlca.proto.Proto.Uncertainty uncertainty_;
     /**
      * <pre>
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      * @return Whether the uncertainty field is set.
      */
     @java.lang.Override
@@ -43267,7 +46759,7 @@ public final class Proto {
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      * @return The uncertainty.
      */
     @java.lang.Override
@@ -43279,7 +46771,7 @@ public final class Proto {
      * The uncertainty distribution of the factors' value.
      * </pre>
      *
-     * <code>.protolca.Uncertainty uncertainty = 7;</code>
+     * <code>.protolca.Uncertainty uncertainty = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
@@ -43306,20 +46798,23 @@ public final class Proto {
       if (flow_ != null) {
         output.writeMessage(2, getFlow());
       }
+      if (location_ != null) {
+        output.writeMessage(3, getLocation());
+      }
       if (flowProperty_ != null) {
-        output.writeMessage(3, getFlowProperty());
+        output.writeMessage(4, getFlowProperty());
       }
       if (unit_ != null) {
-        output.writeMessage(4, getUnit());
+        output.writeMessage(5, getUnit());
       }
       if (value_ != 0D) {
-        output.writeDouble(5, value_);
+        output.writeDouble(6, value_);
       }
       if (!getFormulaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, formula_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, formula_);
       }
       if (uncertainty_ != null) {
-        output.writeMessage(7, getUncertainty());
+        output.writeMessage(8, getUncertainty());
       }
       unknownFields.writeTo(output);
     }
@@ -43337,24 +46832,28 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getFlow());
       }
+      if (location_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getLocation());
+      }
       if (flowProperty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getFlowProperty());
+          .computeMessageSize(4, getFlowProperty());
       }
       if (unit_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getUnit());
+          .computeMessageSize(5, getUnit());
       }
       if (value_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, value_);
+          .computeDoubleSize(6, value_);
       }
       if (!getFormulaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, formula_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, formula_);
       }
       if (uncertainty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getUncertainty());
+          .computeMessageSize(8, getUncertainty());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -43377,6 +46876,11 @@ public final class Proto {
       if (hasFlow()) {
         if (!getFlow()
             .equals(other.getFlow())) return false;
+      }
+      if (hasLocation() != other.hasLocation()) return false;
+      if (hasLocation()) {
+        if (!getLocation()
+            .equals(other.getLocation())) return false;
       }
       if (hasFlowProperty() != other.hasFlowProperty()) return false;
       if (hasFlowProperty()) {
@@ -43414,6 +46918,10 @@ public final class Proto {
       if (hasFlow()) {
         hash = (37 * hash) + FLOW_FIELD_NUMBER;
         hash = (53 * hash) + getFlow().hashCode();
+      }
+      if (hasLocation()) {
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
       }
       if (hasFlowProperty()) {
         hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
@@ -43577,6 +47085,12 @@ public final class Proto {
           flow_ = null;
           flowBuilder_ = null;
         }
+        if (locationBuilder_ == null) {
+          location_ = null;
+        } else {
+          location_ = null;
+          locationBuilder_ = null;
+        }
         if (flowPropertyBuilder_ == null) {
           flowProperty_ = null;
         } else {
@@ -43630,6 +47144,11 @@ public final class Proto {
           result.flow_ = flow_;
         } else {
           result.flow_ = flowBuilder_.build();
+        }
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
         }
         if (flowPropertyBuilder_ == null) {
           result.flowProperty_ = flowProperty_;
@@ -43702,6 +47221,9 @@ public final class Proto {
         }
         if (other.hasFlow()) {
           mergeFlow(other.getFlow());
+        }
+        if (other.hasLocation()) {
+          mergeLocation(other.getLocation());
         }
         if (other.hasFlowProperty()) {
           mergeFlowProperty(other.getFlowProperty());
@@ -44004,6 +47526,170 @@ public final class Proto {
         return flowBuilder_;
       }
 
+      private org.openlca.proto.Proto.Ref location_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> locationBuilder_;
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       * @return Whether the location field is set.
+       */
+      public boolean hasLocation() {
+        return locationBuilder_ != null || location_ != null;
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       * @return The location.
+       */
+      public org.openlca.proto.Proto.Ref getLocation() {
+        if (locationBuilder_ == null) {
+          return location_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
+        } else {
+          return locationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public Builder setLocation(org.openlca.proto.Proto.Ref value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public Builder setLocation(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public Builder mergeLocation(org.openlca.proto.Proto.Ref value) {
+        if (locationBuilder_ == null) {
+          if (location_ != null) {
+            location_ =
+              org.openlca.proto.Proto.Ref.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public Builder clearLocation() {
+        if (locationBuilder_ == null) {
+          location_ = null;
+          onChanged();
+        } else {
+          location_ = null;
+          locationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getLocationBuilder() {
+        
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
+        }
+      }
+      /**
+       * <pre>
+       * In case of a regionalized impact category, this field can contain the
+       * location for which this factor is valid.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getLocation(),
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+
       private org.openlca.proto.Proto.Ref flowProperty_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> flowPropertyBuilder_;
@@ -44012,7 +47698,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -44023,7 +47709,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -44038,7 +47724,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -44058,7 +47744,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -44076,7 +47762,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -44098,7 +47784,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -44116,7 +47802,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -44128,7 +47814,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -44143,7 +47829,7 @@ public final class Proto {
        * The quantity of the flow to which the LCIA factor is related (e.g. Mass).
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 3;</code>
+       * <code>.protolca.Ref flow_property = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -44167,7 +47853,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        * @return Whether the unit field is set.
        */
       public boolean hasUnit() {
@@ -44178,7 +47864,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        * @return The unit.
        */
       public org.openlca.proto.Proto.Ref getUnit() {
@@ -44193,7 +47879,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public Builder setUnit(org.openlca.proto.Proto.Ref value) {
         if (unitBuilder_ == null) {
@@ -44213,7 +47899,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public Builder setUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -44231,7 +47917,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public Builder mergeUnit(org.openlca.proto.Proto.Ref value) {
         if (unitBuilder_ == null) {
@@ -44253,7 +47939,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public Builder clearUnit() {
         if (unitBuilder_ == null) {
@@ -44271,7 +47957,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getUnitBuilder() {
         
@@ -44283,7 +47969,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder() {
         if (unitBuilder_ != null) {
@@ -44298,7 +47984,7 @@ public final class Proto {
        * The flow unit to which the LCIA factor is related (e.g. kg).
        * </pre>
        *
-       * <code>.protolca.Ref unit = 4;</code>
+       * <code>.protolca.Ref unit = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -44320,7 +48006,7 @@ public final class Proto {
        * The value of the impact assessment factor.
        * </pre>
        *
-       * <code>double value = 5;</code>
+       * <code>double value = 6;</code>
        * @return The value.
        */
       @java.lang.Override
@@ -44332,7 +48018,7 @@ public final class Proto {
        * The value of the impact assessment factor.
        * </pre>
        *
-       * <code>double value = 5;</code>
+       * <code>double value = 6;</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
@@ -44347,7 +48033,7 @@ public final class Proto {
        * The value of the impact assessment factor.
        * </pre>
        *
-       * <code>double value = 5;</code>
+       * <code>double value = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
@@ -44363,7 +48049,7 @@ public final class Proto {
        * A mathematical formula for calculating the value of the LCIA factor.
        * </pre>
        *
-       * <code>string formula = 6;</code>
+       * <code>string formula = 7;</code>
        * @return The formula.
        */
       public java.lang.String getFormula() {
@@ -44383,7 +48069,7 @@ public final class Proto {
        * A mathematical formula for calculating the value of the LCIA factor.
        * </pre>
        *
-       * <code>string formula = 6;</code>
+       * <code>string formula = 7;</code>
        * @return The bytes for formula.
        */
       public com.google.protobuf.ByteString
@@ -44404,7 +48090,7 @@ public final class Proto {
        * A mathematical formula for calculating the value of the LCIA factor.
        * </pre>
        *
-       * <code>string formula = 6;</code>
+       * <code>string formula = 7;</code>
        * @param value The formula to set.
        * @return This builder for chaining.
        */
@@ -44423,7 +48109,7 @@ public final class Proto {
        * A mathematical formula for calculating the value of the LCIA factor.
        * </pre>
        *
-       * <code>string formula = 6;</code>
+       * <code>string formula = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearFormula() {
@@ -44437,7 +48123,7 @@ public final class Proto {
        * A mathematical formula for calculating the value of the LCIA factor.
        * </pre>
        *
-       * <code>string formula = 6;</code>
+       * <code>string formula = 7;</code>
        * @param value The bytes for formula to set.
        * @return This builder for chaining.
        */
@@ -44461,7 +48147,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        * @return Whether the uncertainty field is set.
        */
       public boolean hasUncertainty() {
@@ -44472,7 +48158,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        * @return The uncertainty.
        */
       public org.openlca.proto.Proto.Uncertainty getUncertainty() {
@@ -44487,7 +48173,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public Builder setUncertainty(org.openlca.proto.Proto.Uncertainty value) {
         if (uncertaintyBuilder_ == null) {
@@ -44507,7 +48193,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public Builder setUncertainty(
           org.openlca.proto.Proto.Uncertainty.Builder builderForValue) {
@@ -44525,7 +48211,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public Builder mergeUncertainty(org.openlca.proto.Proto.Uncertainty value) {
         if (uncertaintyBuilder_ == null) {
@@ -44547,7 +48233,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public Builder clearUncertainty() {
         if (uncertaintyBuilder_ == null) {
@@ -44565,7 +48251,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public org.openlca.proto.Proto.Uncertainty.Builder getUncertaintyBuilder() {
         
@@ -44577,7 +48263,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
         if (uncertaintyBuilder_ != null) {
@@ -44592,7 +48278,7 @@ public final class Proto {
        * The uncertainty distribution of the factors' value.
        * </pre>
        *
-       * <code>.protolca.Uncertainty uncertainty = 7;</code>
+       * <code>.protolca.Uncertainty uncertainty = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder> 
@@ -44929,55 +48615,6 @@ public final class Proto {
      */
     org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
         int index);
-
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    java.util.List<org.openlca.proto.Proto.Parameter> 
-        getParametersList();
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    org.openlca.proto.Proto.Parameter getParameters(int index);
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    int getParametersCount();
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
-        getParametersOrBuilderList();
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
-        int index);
   }
   /**
    * <pre>
@@ -45005,7 +48642,6 @@ public final class Proto {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       library_ = "";
       impactCategories_ = java.util.Collections.emptyList();
-      parameters_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -45112,15 +48748,6 @@ public final class Proto {
                   input.readMessage(org.openlca.proto.Proto.ImpactCategoryRef.parser(), extensionRegistry));
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              parameters_.add(
-                  input.readMessage(org.openlca.proto.Proto.Parameter.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -45141,9 +48768,6 @@ public final class Proto {
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           impactCategories_ = java.util.Collections.unmodifiableList(impactCategories_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          parameters_ = java.util.Collections.unmodifiableList(parameters_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -45647,71 +49271,6 @@ public final class Proto {
       return impactCategories_.get(index);
     }
 
-    public static final int PARAMETERS_FIELD_NUMBER = 11;
-    private java.util.List<org.openlca.proto.Proto.Parameter> parameters_;
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
-      return parameters_;
-    }
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
-        getParametersOrBuilderList() {
-      return parameters_;
-    }
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    @java.lang.Override
-    public int getParametersCount() {
-      return parameters_.size();
-    }
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.Parameter getParameters(int index) {
-      return parameters_.get(index);
-    }
-    /**
-     * <pre>
-     * A set of method specific parameters which can be used in formulas of the
-     * characterisation factors in this method.
-     * </pre>
-     *
-     * <code>repeated .protolca.Parameter parameters = 11;</code>
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
-        int index) {
-      return parameters_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -45755,9 +49314,6 @@ public final class Proto {
       }
       for (int i = 0; i < impactCategories_.size(); i++) {
         output.writeMessage(10, impactCategories_.get(i));
-      }
-      for (int i = 0; i < parameters_.size(); i++) {
-        output.writeMessage(11, parameters_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -45805,10 +49361,6 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, impactCategories_.get(i));
       }
-      for (int i = 0; i < parameters_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, parameters_.get(i));
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -45847,8 +49399,6 @@ public final class Proto {
           .equals(other.getLibrary())) return false;
       if (!getImpactCategoriesList()
           .equals(other.getImpactCategoriesList())) return false;
-      if (!getParametersList()
-          .equals(other.getParametersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -45885,10 +49435,6 @@ public final class Proto {
       if (getImpactCategoriesCount() > 0) {
         hash = (37 * hash) + IMPACT_CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategoriesList().hashCode();
-      }
-      if (getParametersCount() > 0) {
-        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-        hash = (53 * hash) + getParametersList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -46023,7 +49569,6 @@ public final class Proto {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getImpactCategoriesFieldBuilder();
-          getParametersFieldBuilder();
         }
       }
       @java.lang.Override
@@ -46056,12 +49601,6 @@ public final class Proto {
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           impactCategoriesBuilder_.clear();
-        }
-        if (parametersBuilder_ == null) {
-          parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          parametersBuilder_.clear();
         }
         return this;
       }
@@ -46115,15 +49654,6 @@ public final class Proto {
           result.impactCategories_ = impactCategories_;
         } else {
           result.impactCategories_ = impactCategoriesBuilder_.build();
-        }
-        if (parametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            parameters_ = java.util.Collections.unmodifiableList(parameters_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.parameters_ = parameters_;
-        } else {
-          result.parameters_ = parametersBuilder_.build();
         }
         onBuilt();
         return result;
@@ -46237,32 +49767,6 @@ public final class Proto {
                    getImpactCategoriesFieldBuilder() : null;
             } else {
               impactCategoriesBuilder_.addAllMessages(other.impactCategories_);
-            }
-          }
-        }
-        if (parametersBuilder_ == null) {
-          if (!other.parameters_.isEmpty()) {
-            if (parameters_.isEmpty()) {
-              parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureParametersIsMutable();
-              parameters_.addAll(other.parameters_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.parameters_.isEmpty()) {
-            if (parametersBuilder_.isEmpty()) {
-              parametersBuilder_.dispose();
-              parametersBuilder_ = null;
-              parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              parametersBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getParametersFieldBuilder() : null;
-            } else {
-              parametersBuilder_.addAllMessages(other.parameters_);
             }
           }
         }
@@ -47613,336 +51117,6 @@ public final class Proto {
           impactCategories_ = null;
         }
         return impactCategoriesBuilder_;
-      }
-
-      private java.util.List<org.openlca.proto.Proto.Parameter> parameters_ =
-        java.util.Collections.emptyList();
-      private void ensureParametersIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>(parameters_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> parametersBuilder_;
-
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
-        if (parametersBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(parameters_);
-        } else {
-          return parametersBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public int getParametersCount() {
-        if (parametersBuilder_ == null) {
-          return parameters_.size();
-        } else {
-          return parametersBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public org.openlca.proto.Proto.Parameter getParameters(int index) {
-        if (parametersBuilder_ == null) {
-          return parameters_.get(index);
-        } else {
-          return parametersBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder setParameters(
-          int index, org.openlca.proto.Proto.Parameter value) {
-        if (parametersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureParametersIsMutable();
-          parameters_.set(index, value);
-          onChanged();
-        } else {
-          parametersBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder setParameters(
-          int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
-        if (parametersBuilder_ == null) {
-          ensureParametersIsMutable();
-          parameters_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          parametersBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder addParameters(org.openlca.proto.Proto.Parameter value) {
-        if (parametersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureParametersIsMutable();
-          parameters_.add(value);
-          onChanged();
-        } else {
-          parametersBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder addParameters(
-          int index, org.openlca.proto.Proto.Parameter value) {
-        if (parametersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureParametersIsMutable();
-          parameters_.add(index, value);
-          onChanged();
-        } else {
-          parametersBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder addParameters(
-          org.openlca.proto.Proto.Parameter.Builder builderForValue) {
-        if (parametersBuilder_ == null) {
-          ensureParametersIsMutable();
-          parameters_.add(builderForValue.build());
-          onChanged();
-        } else {
-          parametersBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder addParameters(
-          int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
-        if (parametersBuilder_ == null) {
-          ensureParametersIsMutable();
-          parameters_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          parametersBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder addAllParameters(
-          java.lang.Iterable<? extends org.openlca.proto.Proto.Parameter> values) {
-        if (parametersBuilder_ == null) {
-          ensureParametersIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, parameters_);
-          onChanged();
-        } else {
-          parametersBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder clearParameters() {
-        if (parametersBuilder_ == null) {
-          parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          parametersBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public Builder removeParameters(int index) {
-        if (parametersBuilder_ == null) {
-          ensureParametersIsMutable();
-          parameters_.remove(index);
-          onChanged();
-        } else {
-          parametersBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public org.openlca.proto.Proto.Parameter.Builder getParametersBuilder(
-          int index) {
-        return getParametersFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
-          int index) {
-        if (parametersBuilder_ == null) {
-          return parameters_.get(index);  } else {
-          return parametersBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
-           getParametersOrBuilderList() {
-        if (parametersBuilder_ != null) {
-          return parametersBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(parameters_);
-        }
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder() {
-        return getParametersFieldBuilder().addBuilder(
-            org.openlca.proto.Proto.Parameter.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder(
-          int index) {
-        return getParametersFieldBuilder().addBuilder(
-            index, org.openlca.proto.Proto.Parameter.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * A set of method specific parameters which can be used in formulas of the
-       * characterisation factors in this method.
-       * </pre>
-       *
-       * <code>repeated .protolca.Parameter parameters = 11;</code>
-       */
-      public java.util.List<org.openlca.proto.Proto.Parameter.Builder> 
-           getParametersBuilderList() {
-        return getParametersFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> 
-          getParametersFieldBuilder() {
-        if (parametersBuilder_ == null) {
-          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder>(
-                  parameters_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          parameters_ = null;
-        }
-        return parametersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -70963,10 +74137,181 @@ public final class Proto {
 
     /**
      * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    java.lang.String getLastChange();
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    com.google.protobuf.ByteString
+        getLastChangeBytes();
+
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    java.util.List<java.lang.String>
+        getCategoryPathList();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    int getCategoryPathCount();
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    java.lang.String getCategoryPath(int index);
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    com.google.protobuf.ByteString
+        getCategoryPathBytes(int index);
+
+    /**
+     * <pre>
      * The location name or code of the process.
      * </pre>
      *
-     * <code>string location = 1;</code>
+     * <code>string location = 8;</code>
      * @return The location.
      */
     java.lang.String getLocation();
@@ -70975,7 +74320,7 @@ public final class Proto {
      * The location name or code of the process.
      * </pre>
      *
-     * <code>string location = 1;</code>
+     * <code>string location = 8;</code>
      * @return The bytes for location.
      */
     com.google.protobuf.ByteString
@@ -70986,7 +74331,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.protolca.ProcessType process_type = 2;</code>
+     * <code>.protolca.ProcessType process_type = 9;</code>
      * @return The enum numeric value on the wire for processType.
      */
     int getProcessTypeValue();
@@ -70995,7 +74340,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.protolca.ProcessType process_type = 2;</code>
+     * <code>.protolca.ProcessType process_type = 9;</code>
      * @return The processType.
      */
     org.openlca.proto.Proto.ProcessType getProcessType();
@@ -71017,6 +74362,13 @@ public final class Proto {
       super(builder);
     }
     private ProcessRef() {
+      type_ = "";
+      id_ = "";
+      name_ = "";
+      description_ = "";
+      version_ = "";
+      lastChange_ = "";
+      categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       location_ = "";
       processType_ = 0;
     }
@@ -71041,6 +74393,7 @@ public final class Proto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -71054,10 +74407,55 @@ public final class Proto {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              type_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastChange_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                categoryPath_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              categoryPath_.add(s);
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               location_ = s;
               break;
             }
-            case 16: {
+            case 72: {
               int rawValue = input.readEnum();
 
               processType_ = rawValue;
@@ -71078,6 +74476,9 @@ public final class Proto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -71095,14 +74496,351 @@ public final class Proto {
               org.openlca.proto.Proto.ProcessRef.class, org.openlca.proto.Proto.ProcessRef.Builder.class);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The reference ID (typically an UUID) of the entity.
+     * </pre>
+     *
+     * <code>string id = 2[json_name = "&#64;id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the entity.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The description of the entity.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+     * fields are optional and the fields may have leading zeros (so 01.00.00 is
+     * the same as 1.0.0 or 1).
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAST_CHANGE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object lastChange_;
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The lastChange.
+     */
+    @java.lang.Override
+    public java.lang.String getLastChange() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastChange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The timestamp when the entity was changed the last time.
+     * </pre>
+     *
+     * <code>string last_change = 6;</code>
+     * @return The bytes for lastChange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLastChangeBytes() {
+      java.lang.Object ref = lastChange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastChange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_PATH_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList categoryPath_;
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return A list containing the categoryPath.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCategoryPathList() {
+      return categoryPath_;
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @return The count of categoryPath.
+     */
+    public int getCategoryPathCount() {
+      return categoryPath_.size();
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the element to return.
+     * @return The categoryPath at the given index.
+     */
+    public java.lang.String getCategoryPath(int index) {
+      return categoryPath_.get(index);
+    }
+    /**
+     * <pre>
+     * The full path of the category of the referenced entity from top to bottom,
+     * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+     * </pre>
+     *
+     * <code>repeated string category_path = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categoryPath at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryPathBytes(int index) {
+      return categoryPath_.getByteString(index);
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 8;
     private volatile java.lang.Object location_;
     /**
      * <pre>
      * The location name or code of the process.
      * </pre>
      *
-     * <code>string location = 1;</code>
+     * <code>string location = 8;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -71123,7 +74861,7 @@ public final class Proto {
      * The location name or code of the process.
      * </pre>
      *
-     * <code>string location = 1;</code>
+     * <code>string location = 8;</code>
      * @return The bytes for location.
      */
     @java.lang.Override
@@ -71141,14 +74879,14 @@ public final class Proto {
       }
     }
 
-    public static final int PROCESS_TYPE_FIELD_NUMBER = 2;
+    public static final int PROCESS_TYPE_FIELD_NUMBER = 9;
     private int processType_;
     /**
      * <pre>
      * The type of the process.
      * </pre>
      *
-     * <code>.protolca.ProcessType process_type = 2;</code>
+     * <code>.protolca.ProcessType process_type = 9;</code>
      * @return The enum numeric value on the wire for processType.
      */
     @java.lang.Override public int getProcessTypeValue() {
@@ -71159,7 +74897,7 @@ public final class Proto {
      * The type of the process.
      * </pre>
      *
-     * <code>.protolca.ProcessType process_type = 2;</code>
+     * <code>.protolca.ProcessType process_type = 9;</code>
      * @return The processType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ProcessType getProcessType() {
@@ -71182,11 +74920,32 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastChange_);
+      }
+      for (int i = 0; i < categoryPath_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, categoryPath_.getRaw(i));
+      }
       if (!getLocationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, location_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, location_);
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
-        output.writeEnum(2, processType_);
+        output.writeEnum(9, processType_);
       }
       unknownFields.writeTo(output);
     }
@@ -71197,12 +74956,38 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+      }
+      if (!getLastChangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastChange_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < categoryPath_.size(); i++) {
+          dataSize += computeStringSizeNoTag(categoryPath_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCategoryPathList().size();
+      }
       if (!getLocationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, location_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, location_);
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, processType_);
+          .computeEnumSize(9, processType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -71219,6 +75004,20 @@ public final class Proto {
       }
       org.openlca.proto.Proto.ProcessRef other = (org.openlca.proto.Proto.ProcessRef) obj;
 
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getLastChange()
+          .equals(other.getLastChange())) return false;
+      if (!getCategoryPathList()
+          .equals(other.getCategoryPathList())) return false;
       if (!getLocation()
           .equals(other.getLocation())) return false;
       if (processType_ != other.processType_) return false;
@@ -71233,6 +75032,22 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + LAST_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastChange().hashCode();
+      if (getCategoryPathCount() > 0) {
+        hash = (37 * hash) + CATEGORY_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryPathList().hashCode();
+      }
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
       hash = (37 * hash) + PROCESS_TYPE_FIELD_NUMBER;
@@ -71374,6 +75189,20 @@ public final class Proto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        type_ = "";
+
+        id_ = "";
+
+        name_ = "";
+
+        description_ = "";
+
+        version_ = "";
+
+        lastChange_ = "";
+
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         location_ = "";
 
         processType_ = 0;
@@ -71404,6 +75233,18 @@ public final class Proto {
       @java.lang.Override
       public org.openlca.proto.Proto.ProcessRef buildPartial() {
         org.openlca.proto.Proto.ProcessRef result = new org.openlca.proto.Proto.ProcessRef(this);
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.id_ = id_;
+        result.name_ = name_;
+        result.description_ = description_;
+        result.version_ = version_;
+        result.lastChange_ = lastChange_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = categoryPath_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.categoryPath_ = categoryPath_;
         result.location_ = location_;
         result.processType_ = processType_;
         onBuilt();
@@ -71454,6 +75295,40 @@ public final class Proto {
 
       public Builder mergeFrom(org.openlca.proto.Proto.ProcessRef other) {
         if (other == org.openlca.proto.Proto.ProcessRef.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getLastChange().isEmpty()) {
+          lastChange_ = other.lastChange_;
+          onChanged();
+        }
+        if (!other.categoryPath_.isEmpty()) {
+          if (categoryPath_.isEmpty()) {
+            categoryPath_ = other.categoryPath_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCategoryPathIsMutable();
+            categoryPath_.addAll(other.categoryPath_);
+          }
+          onChanged();
+        }
         if (!other.getLocation().isEmpty()) {
           location_ = other.location_;
           onChanged();
@@ -71489,6 +75364,753 @@ public final class Proto {
         }
         return this;
       }
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The reference ID (typically an UUID) of the entity.
+       * </pre>
+       *
+       * <code>string id = 2[json_name = "&#64;id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the entity.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The description of the entity.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
+       * fields are optional and the fields may have leading zeros (so 01.00.00 is
+       * the same as 1.0.0 or 1).
+       * </pre>
+       *
+       * <code>string version = 5;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastChange_ = "";
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The lastChange.
+       */
+      public java.lang.String getLastChange() {
+        java.lang.Object ref = lastChange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastChange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return The bytes for lastChange.
+       */
+      public com.google.protobuf.ByteString
+          getLastChangeBytes() {
+        java.lang.Object ref = lastChange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastChange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastChange() {
+        
+        lastChange_ = getDefaultInstance().getLastChange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamp when the entity was changed the last time.
+       * </pre>
+       *
+       * <code>string last_change = 6;</code>
+       * @param value The bytes for lastChange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastChange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCategoryPathIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          categoryPath_ = new com.google.protobuf.LazyStringArrayList(categoryPath_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return A list containing the categoryPath.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCategoryPathList() {
+        return categoryPath_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return The count of categoryPath.
+       */
+      public int getCategoryPathCount() {
+        return categoryPath_.size();
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the element to return.
+       * @return The categoryPath at the given index.
+       */
+      public java.lang.String getCategoryPath(int index) {
+        return categoryPath_.get(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the categoryPath at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCategoryPathBytes(int index) {
+        return categoryPath_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The categoryPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryPath(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param values The categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCategoryPath(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCategoryPathIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categoryPath_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategoryPath() {
+        categoryPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The full path of the category of the referenced entity from top to bottom,
+       * e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
+       * </pre>
+       *
+       * <code>repeated string category_path = 7;</code>
+       * @param value The bytes of the categoryPath to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCategoryPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCategoryPathIsMutable();
+        categoryPath_.add(value);
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object location_ = "";
       /**
@@ -71496,7 +76118,7 @@ public final class Proto {
        * The location name or code of the process.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 8;</code>
        * @return The location.
        */
       public java.lang.String getLocation() {
@@ -71516,7 +76138,7 @@ public final class Proto {
        * The location name or code of the process.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 8;</code>
        * @return The bytes for location.
        */
       public com.google.protobuf.ByteString
@@ -71537,7 +76159,7 @@ public final class Proto {
        * The location name or code of the process.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 8;</code>
        * @param value The location to set.
        * @return This builder for chaining.
        */
@@ -71556,7 +76178,7 @@ public final class Proto {
        * The location name or code of the process.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearLocation() {
@@ -71570,7 +76192,7 @@ public final class Proto {
        * The location name or code of the process.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 8;</code>
        * @param value The bytes for location to set.
        * @return This builder for chaining.
        */
@@ -71592,7 +76214,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.protolca.ProcessType process_type = 2;</code>
+       * <code>.protolca.ProcessType process_type = 9;</code>
        * @return The enum numeric value on the wire for processType.
        */
       @java.lang.Override public int getProcessTypeValue() {
@@ -71603,7 +76225,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.protolca.ProcessType process_type = 2;</code>
+       * <code>.protolca.ProcessType process_type = 9;</code>
        * @param value The enum numeric value on the wire for processType to set.
        * @return This builder for chaining.
        */
@@ -71618,7 +76240,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.protolca.ProcessType process_type = 2;</code>
+       * <code>.protolca.ProcessType process_type = 9;</code>
        * @return The processType.
        */
       @java.lang.Override
@@ -71632,7 +76254,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.protolca.ProcessType process_type = 2;</code>
+       * <code>.protolca.ProcessType process_type = 9;</code>
        * @param value The processType to set.
        * @return This builder for chaining.
        */
@@ -71650,7 +76272,7 @@ public final class Proto {
        * The type of the process.
        * </pre>
        *
-       * <code>.protolca.ProcessType process_type = 2;</code>
+       * <code>.protolca.ProcessType process_type = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearProcessType() {
@@ -96797,195 +101419,206 @@ public final class Proto {
       "\r.protolca.Ref\"\213\001\n\022FlowPropertyFactor\022\023\n" +
       "\004type\030\001 \001(\tR\005@type\022$\n\rflow_property\030\002 \001(" +
       "\0132\r.protolca.Ref\022\031\n\021conversion_factor\030\003 " +
-      "\001(\001\022\037\n\027reference_flow_property\030\004 \001(\010\"T\n\007" +
-      "FlowRef\022\020\n\010ref_unit\030\001 \001(\t\022\020\n\010location\030\002 " +
-      "\001(\t\022%\n\tflow_type\030\003 \001(\0162\022.protolca.FlowTy" +
-      "pe\"`\n\nFlowResult\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n" +
-      "\004flow\030\002 \001(\0132\021.protolca.FlowRef\022\r\n\005input\030" +
-      "\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\214\002\n\016ImpactCategory\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
-      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
-      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
-      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
-      "\007library\030\t \001(\t\022\033\n\023reference_unit_name\030\n " +
-      "\001(\t\022.\n\016impact_factors\030\013 \003(\0132\026.protolca.I" +
-      "mpactFactor\"%\n\021ImpactCategoryRef\022\020\n\010ref_" +
-      "unit\030\001 \001(\t\"\323\001\n\014ImpactFactor\022\023\n\004type\030\001 \001(" +
-      "\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.FlowRe" +
-      "f\022$\n\rflow_property\030\003 \001(\0132\r.protolca.Ref\022" +
-      "\033\n\004unit\030\004 \001(\0132\r.protolca.Ref\022\r\n\005value\030\005 " +
-      "\001(\001\022\017\n\007formula\030\006 \001(\t\022*\n\013uncertainty\030\007 \001(" +
-      "\0132\025.protolca.Uncertainty\"\236\002\n\014ImpactMetho" +
-      "d\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
-      "\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ve" +
-      "rsion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cate" +
-      "gory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022" +
-      "\017\n\007library\030\t \001(\t\0226\n\021impact_categories\030\n " +
-      "\003(\0132\033.protolca.ImpactCategoryRef\022\'\n\npara" +
-      "meters\030\013 \003(\0132\023.protolca.Parameter\"h\n\014Imp" +
-      "actResult\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\017impact" +
-      "_category\030\002 \001(\0132\033.protolca.ImpactCategor" +
-      "yRef\022\r\n\005value\030\003 \001(\001\"\204\002\n\010Location\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
-      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
-      "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
-      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
-      "y\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\020\n\010latitude\030\013 \001(\001\022" +
-      "\021\n\tlongitude\030\014 \001(\001\022\026\n\016geometry_bytes\030\r \001" +
-      "(\014\"\177\n\010NwFactor\022\023\n\004type\030\001 \001(\tR\005@type\022&\n\017i" +
-      "mpact_category\030\002 \001(\0132\r.protolca.Ref\022\034\n\024n" +
-      "ormalisation_factor\030\003 \001(\001\022\030\n\020weighting_f" +
-      "actor\030\004 \001(\001\"\270\001\n\005NwSet\022\023\n\004type\030\001 \001(\tR\005@ty" +
-      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
-      "change\030\006 \001(\t\022\033\n\023weighted_score_unit\030\007 \001(" +
-      "\t\022#\n\007factors\030\010 \003(\0132\022.protolca.NwFactor\"\322" +
-      "\002\n\tParameter\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
-      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
-      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
-      "\001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004" +
-      "tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0221\n\017parameter" +
-      "_scope\030\n \001(\0162\030.protolca.ParameterScope\022\027" +
-      "\n\017input_parameter\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017" +
-      "\n\007formula\030\r \001(\t\022*\n\013uncertainty\030\016 \001(\0132\025.p" +
-      "rotolca.Uncertainty\"b\n\016ParameterRedef\022\023\n" +
-      "\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\r\n\005valu" +
-      "e\030\003 \001(\001\022\036\n\007context\030\004 \001(\0132\r.protolca.Ref\"" +
-      "\227\005\n\007Process\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002" +
-      " \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
-      " \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001" +
-      "(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004t" +
-      "ags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022;\n\031default_al" +
-      "location_method\030\n \001(\0162\030.protolca.Allocat" +
-      "ionType\0226\n\022allocation_factors\030\013 \003(\0132\032.pr" +
-      "otolca.AllocationFactor\022%\n\texchanges\030\014 \003" +
-      "(\0132\022.protolca.Exchange\022$\n\010location\030\r \001(\013" +
-      "2\022.protolca.Location\022\'\n\nparameters\030\016 \003(\013" +
-      "2\023.protolca.Parameter\022=\n\025process_documen" +
-      "tation\030\017 \001(\0132\036.protolca.ProcessDocumenta" +
-      "tion\022+\n\014process_type\030\020 \001(\0162\025.protolca.Pr" +
-      "ocessType\022 \n\tdq_system\030\021 \001(\0132\r.protolca." +
-      "Ref\022)\n\022exchange_dq_system\030\022 \001(\0132\r.protol" +
-      "ca.Ref\022\'\n\020social_dq_system\030\023 \001(\0132\r.proto" +
-      "lca.Ref\022\020\n\010dq_entry\030\024 \001(\t\"\242\006\n\024ProcessDoc" +
-      "umentation\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_" +
-      "description\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022" +
-      "\n\nvalid_from\030\004 \001(\t\022\036\n\026technology_descrip" +
-      "tion\030\005 \001(\t\022#\n\033data_collection_descriptio" +
-      "n\030\006 \001(\t\022 \n\030completeness_description\030\007 \001(" +
-      "\t\022\"\n\032data_selection_description\030\010 \001(\t\022\026\n" +
-      "\016review_details\030\t \001(\t\022\"\n\032data_treatment_" +
-      "description\030\n \001(\t\022$\n\034inventory_method_de" +
-      "scription\030\013 \001(\t\022&\n\036modeling_constants_de" +
-      "scription\030\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.prot" +
-      "olca.Ref\022\034\n\024sampling_description\030\016 \001(\t\022\036" +
-      "\n\007sources\030\017 \003(\0132\r.protolca.Ref\022 \n\030restri" +
-      "ctions_description\030\020 \001(\t\022\021\n\tcopyright\030\021 " +
-      "\001(\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017data_docum" +
-      "entor\030\023 \001(\0132\r.protolca.Ref\022%\n\016data_gener" +
-      "ator\030\024 \001(\0132\r.protolca.Ref\022%\n\016data_set_ow" +
-      "ner\030\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_app" +
-      "lication\030\026 \001(\t\022\033\n\023project_description\030\027 " +
-      "\001(\t\022\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022" +
-      "\035\n\025geography_description\030\031 \001(\t\"\246\001\n\013Proce" +
-      "ssLink\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030" +
-      "\002 \001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.pro" +
-      "tolca.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Re" +
-      "f\022$\n\010exchange\030\005 \001(\0132\022.protolca.Exchange\"" +
-      "K\n\nProcessRef\022\020\n\010location\030\001 \001(\t\022+\n\014proce" +
-      "ss_type\030\002 \001(\0162\025.protolca.ProcessType\"\336\003\n" +
-      "\rProductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
+      "\001(\001\022\037\n\027reference_flow_property\030\004 \001(\010\"\332\001\n" +
+      "\007FlowRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
+      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
+      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
+      "\025\n\rcategory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(\t" +
+      "\022\020\n\010location\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022." +
+      "protolca.FlowType\"`\n\nFlowResult\022\023\n\004type\030" +
+      "\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.Fl" +
+      "owRef\022\r\n\005input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\265\002\n\016" +
+      "ImpactCategory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
       "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
       "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
       "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014" +
-      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tprocess" +
-      "es\030\n \003(\0132\024.protolca.ProcessRef\022/\n\021refere" +
-      "nce_process\030\013 \001(\0132\024.protolca.ProcessRef\022" +
-      ".\n\022reference_exchange\030\014 \001(\0132\022.protolca.E" +
-      "xchange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013target" +
-      "_unit\030\016 \001(\0132\r.protolca.Ref\022+\n\024target_flo" +
-      "w_property\030\017 \001(\0132\r.protolca.Ref\022,\n\rproce" +
-      "ss_links\030\020 \003(\0132\025.protolca.ProcessLink\"\377\001" +
-      "\n\007Project\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\033\n\023referen" +
+      "ce_unit_name\030\n \001(\t\022\'\n\nparameters\030\013 \003(\0132\023" +
+      ".protolca.Parameter\022.\n\016impact_factors\030\014 " +
+      "\003(\0132\026.protolca.ImpactFactor\"\253\001\n\021ImpactCa" +
+      "tegoryRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
       "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
       "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
-      "\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tag" +
-      "s\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_metho" +
-      "d\030\n \001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017" +
-      ".protolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@" +
-      "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
-      "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
-      "t_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"\177\n" +
-      "\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\014fl" +
-      "ow_results\030\002 \003(\0132\024.protolca.FlowResult\022." +
-      "\n\016impact_results\030\003 \003(\0132\026.protolca.Impact" +
-      "Result\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023" +
-      "\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013" +
-      "last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pr" +
-      "otolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(" +
-      "\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021activity" +
-      "_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ractivi" +
-      "ty_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_of_" +
-      "measurement\030\r \001(\t\022\031\n\021evaluation_scheme\030\016" +
-      " \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
+      "\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(" +
+      "\t\"\364\001\n\014ImpactFactor\022\023\n\004type\030\001 \001(\tR\005@type\022" +
+      "\037\n\004flow\030\002 \001(\0132\021.protolca.FlowRef\022\037\n\010loca" +
+      "tion\030\003 \001(\0132\r.protolca.Ref\022$\n\rflow_proper" +
+      "ty\030\004 \001(\0132\r.protolca.Ref\022\033\n\004unit\030\005 \001(\0132\r." +
+      "protolca.Ref\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007" +
+      " \001(\t\022*\n\013uncertainty\030\010 \001(\0132\025.protolca.Unc" +
+      "ertainty\"\365\001\n\014ImpactMethod\022\023\n\004type\030\001 \001(\tR" +
+      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
+      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
+      "ast_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pro" +
+      "tolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t" +
+      "\0226\n\021impact_categories\030\n \003(\0132\033.protolca.I" +
+      "mpactCategoryRef\"h\n\014ImpactResult\022\023\n\004type" +
+      "\030\001 \001(\tR\005@type\0224\n\017impact_category\030\002 \001(\0132\033" +
+      ".protolca.ImpactCategoryRef\022\r\n\005value\030\003 \001" +
+      "(\001\"\204\002\n\010Location\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
       "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
       "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
       "\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022" +
-      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030\n " +
-      "\001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 \001(" +
-      "\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertainty" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_ty" +
-      "pe\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n\004m" +
-      "ean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_" +
-      "mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n" +
-      "\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022" +
-      "\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_" +
-      "sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mod" +
-      "e\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum" +
-      "\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014" +
-      "\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ver" +
-      "sion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021conve" +
-      "rsion_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001" +
-      "(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004ty" +
+      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n" +
+      " \001(\t\022\020\n\010latitude\030\013 \001(\001\022\021\n\tlongitude\030\014 \001(" +
+      "\001\022\026\n\016geometry_bytes\030\r \001(\014\"\177\n\010NwFactor\022\023\n" +
+      "\004type\030\001 \001(\tR\005@type\022&\n\017impact_category\030\002 " +
+      "\001(\0132\r.protolca.Ref\022\034\n\024normalisation_fact" +
+      "or\030\003 \001(\001\022\030\n\020weighting_factor\030\004 \001(\001\"\270\001\n\005N" +
+      "wSet\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
+      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
+      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023w" +
+      "eighted_score_unit\030\007 \001(\t\022#\n\007factors\030\010 \003(" +
+      "\0132\022.protolca.NwFactor\"\322\002\n\tParameter\022\023\n\004t" +
+      "ype\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004nam" +
+      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030" +
+      "\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007" +
+      " \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007lib" +
+      "rary\030\t \001(\t\0221\n\017parameter_scope\030\n \001(\0162\030.pr" +
+      "otolca.ParameterScope\022\027\n\017input_parameter" +
+      "\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007formula\030\r \001(\t\022*" +
+      "\n\013uncertainty\030\016 \001(\0132\025.protolca.Uncertain" +
+      "ty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007contex" +
+      "t\030\004 \001(\0132\r.protolca.Ref\"\227\005\n\007Process\022\023\n\004ty" +
       "pe\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name" +
       "\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005" +
       " \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 " +
       "\001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libr" +
-      "ary\030\t \001(\t\022,\n\025default_flow_property\030\n \001(\013" +
-      "2\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.protolc" +
-      "a.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED_A" +
-      "LLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATION\020" +
-      "\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_ALL" +
-      "OCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022\021\n" +
-      "\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036\n\032" +
-      "UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE_C" +
-      "ALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020\002\022" +
-      "\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED_C" +
-      "ALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION\020\005" +
-      "*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW_P" +
-      "ROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022\025\n" +
-      "\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UNDE" +
-      "FINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001\022\020" +
-      "\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tMod" +
-      "elType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PROJ" +
-      "ECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CATEG" +
-      "ORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005\022\010" +
-      "\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GROU" +
-      "P\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010" +
-      "CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020" +
-      "SOCIAL_INDICATOR\020\017*f\n\016ParameterScope\022\035\n\031" +
-      "UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS_S" +
-      "COPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SCOPE" +
-      "\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS_T" +
-      "YPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002*" +
-      "\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTA" +
-      "INTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001" +
-      "\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DI" +
-      "STRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&" +
-      "\n\021org.openlca.protoB\005ProtoZ\n.;protolcab\006" +
-      "proto3"
+      "ary\030\t \001(\t\022;\n\031default_allocation_method\030\n" +
+      " \001(\0162\030.protolca.AllocationType\0226\n\022alloca" +
+      "tion_factors\030\013 \003(\0132\032.protolca.Allocation" +
+      "Factor\022%\n\texchanges\030\014 \003(\0132\022.protolca.Exc" +
+      "hange\022$\n\010location\030\r \001(\0132\022.protolca.Locat" +
+      "ion\022\'\n\nparameters\030\016 \003(\0132\023.protolca.Param" +
+      "eter\022=\n\025process_documentation\030\017 \001(\0132\036.pr" +
+      "otolca.ProcessDocumentation\022+\n\014process_t" +
+      "ype\030\020 \001(\0162\025.protolca.ProcessType\022 \n\tdq_s" +
+      "ystem\030\021 \001(\0132\r.protolca.Ref\022)\n\022exchange_d" +
+      "q_system\030\022 \001(\0132\r.protolca.Ref\022\'\n\020social_" +
+      "dq_system\030\023 \001(\0132\r.protolca.Ref\022\020\n\010dq_ent" +
+      "ry\030\024 \001(\t\"\242\006\n\024ProcessDocumentation\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\030\n\020time_description\030\002 \001(\t" +
+      "\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(" +
+      "\t\022\036\n\026technology_description\030\005 \001(\t\022#\n\033dat" +
+      "a_collection_description\030\006 \001(\t\022 \n\030comple" +
+      "teness_description\030\007 \001(\t\022\"\n\032data_selecti" +
+      "on_description\030\010 \001(\t\022\026\n\016review_details\030\t" +
+      " \001(\t\022\"\n\032data_treatment_description\030\n \001(\t" +
+      "\022$\n\034inventory_method_description\030\013 \001(\t\022&" +
+      "\n\036modeling_constants_description\030\014 \001(\t\022\037" +
+      "\n\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034\n\024sampl" +
+      "ing_description\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r" +
+      ".protolca.Ref\022 \n\030restrictions_descriptio" +
+      "n\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcreation_d" +
+      "ate\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(\0132\r.pro" +
+      "tolca.Ref\022%\n\016data_generator\030\024 \001(\0132\r.prot" +
+      "olca.Ref\022%\n\016data_set_owner\030\025 \001(\0132\r.proto" +
+      "lca.Ref\022\034\n\024intended_application\030\026 \001(\t\022\033\n" +
+      "\023project_description\030\027 \001(\t\022\"\n\013publicatio" +
+      "n\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geography_desc" +
+      "ription\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004type\030\001 " +
+      "\001(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.protolca." +
+      "Ref\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022\036\n\007proc" +
+      "ess\030\004 \001(\0132\r.protolca.Ref\022$\n\010exchange\030\005 \001" +
+      "(\0132\022.protolca.Exchange\"\321\001\n\nProcessRef\022\023\n" +
+      "\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004n" +
+      "ame\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versio" +
+      "n\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory" +
+      "_path\030\007 \003(\t\022\020\n\010location\030\010 \001(\t\022+\n\014process" +
+      "_type\030\t \001(\0162\025.protolca.ProcessType\"\336\003\n\rP" +
+      "roductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
+      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
+      "\001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004" +
+      "tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tprocesses" +
+      "\030\n \003(\0132\024.protolca.ProcessRef\022/\n\021referenc" +
+      "e_process\030\013 \001(\0132\024.protolca.ProcessRef\022.\n" +
+      "\022reference_exchange\030\014 \001(\0132\022.protolca.Exc" +
+      "hange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013target_u" +
+      "nit\030\016 \001(\0132\r.protolca.Ref\022+\n\024target_flow_" +
+      "property\030\017 \001(\0132\r.protolca.Ref\022,\n\rprocess" +
+      "_links\030\020 \003(\0132\025.protolca.ProcessLink\"\377\001\n\007" +
+      "Project\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037" +
+      "\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030" +
+      "\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_method\030" +
+      "\n \001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017.p" +
+      "rotolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
+      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
+      "change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014S" +
+      "impleResult\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow" +
+      "_results\030\002 \003(\0132\024.protolca.FlowResult\022.\n\016" +
+      "impact_results\030\003 \003(\0132\026.protolca.ImpactRe" +
+      "sult\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\tR\005" +
+      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
+      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
+      "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
+      "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
+      "\031\n\021activity_variable\030\n \001(\t\022(\n\021activity_q" +
+      "uantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ractivity" +
+      "_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_of_me" +
+      "asurement\030\r \001(\t\022\031\n\021evaluation_scheme\030\016 \001" +
+      "(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
+      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
+      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
+      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n" +
+      "\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030\n \001(" +
+      "\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 \001(\005\022" +
+      "\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertainty\022\023" +
+      "\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_type" +
+      "\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n\004mea" +
+      "n\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_me" +
+      "an\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n\007m" +
+      "inimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022\n\n" +
+      "\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_sd" +
+      "\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mode\030" +
+      "\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum\030\017" +
+      " \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit\022\023" +
+      "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
+      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
+      "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021convers" +
+      "ion_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001(\010" +
+      "\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004type" +
+      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
+      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
+      "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
+      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
+      "y\030\t \001(\t\022,\n\025default_flow_property\030\n \001(\0132\r" +
+      ".protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.protolca." +
+      "Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED_ALL" +
+      "OCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATION\020\001\022" +
+      "\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_ALLOC" +
+      "ATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022\021\n\rN" +
+      "O_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036\n\032UN" +
+      "DEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE_CAL" +
+      "CULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020\002\022\025\n" +
+      "\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED_CAL" +
+      "CULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION\020\005*b" +
+      "\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW_PRO" +
+      "PERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022\025\n\021P" +
+      "HYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UNDEFI" +
+      "NED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001\022\020\n\014" +
+      "PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tModel" +
+      "Type\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PROJEC" +
+      "T\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CATEGOR" +
+      "Y\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005\022\010\n\004" +
+      "FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GROUP\020" +
+      "\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010CA" +
+      "TEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020SO" +
+      "CIAL_INDICATOR\020\017*f\n\016ParameterScope\022\035\n\031UN" +
+      "DEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS_SCO" +
+      "PE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SCOPE\020\003" +
+      "*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS_TYP" +
+      "E\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002*\234\001" +
+      "\n\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTAIN" +
+      "TY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001\022\027" +
+      "\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DIST" +
+      "RIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&\n\021" +
+      "org.openlca.protoB\005ProtoZ\n.;protolcab\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -97086,7 +101719,7 @@ public final class Proto {
     internal_static_protolca_FlowRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowRef_descriptor,
-        new java.lang.String[] { "RefUnit", "Location", "FlowType", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "RefUnit", "Location", "FlowType", });
     internal_static_protolca_FlowResult_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_protolca_FlowResult_fieldAccessorTable = new
@@ -97098,25 +101731,25 @@ public final class Proto {
     internal_static_protolca_ImpactCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategory_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ReferenceUnitName", "ImpactFactors", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ReferenceUnitName", "Parameters", "ImpactFactors", });
     internal_static_protolca_ImpactCategoryRef_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_protolca_ImpactCategoryRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategoryRef_descriptor,
-        new java.lang.String[] { "RefUnit", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "RefUnit", });
     internal_static_protolca_ImpactFactor_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_protolca_ImpactFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactFactor_descriptor,
-        new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", "Value", "Formula", "Uncertainty", });
+        new java.lang.String[] { "Type", "Flow", "Location", "FlowProperty", "Unit", "Value", "Formula", "Uncertainty", });
     internal_static_protolca_ImpactMethod_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_protolca_ImpactMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactMethod_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", "Parameters", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", });
     internal_static_protolca_ImpactResult_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_protolca_ImpactResult_fieldAccessorTable = new
@@ -97176,7 +101809,7 @@ public final class Proto {
     internal_static_protolca_ProcessRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessRef_descriptor,
-        new java.lang.String[] { "Location", "ProcessType", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "Location", "ProcessType", });
     internal_static_protolca_ProductSystem_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_protolca_ProductSystem_fieldAccessorTable = new
