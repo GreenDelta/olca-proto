@@ -1,5 +1,6 @@
 package org.openlca.proto.input;
 
+import org.openlca.core.model.AllocationMethod;
 import org.openlca.core.model.Uncertainty;
 import org.openlca.proto.Proto;
 
@@ -26,6 +27,23 @@ class Util {
           proto.getMinimum(), proto.getMaximum());
       default:
         return null;
+    }
+  }
+
+  static AllocationMethod allocationMethod(Proto.AllocationType proto) {
+    if (proto == null)
+      return null;
+    switch (proto) {
+      case CAUSAL_ALLOCATION:
+        return AllocationMethod.CAUSAL;
+      case ECONOMIC_ALLOCATION:
+        return AllocationMethod.ECONOMIC;
+      case PHYSICAL_ALLOCATION:
+        return AllocationMethod.PHYSICAL;
+      case USE_DEFAULT_ALLOCATION:
+        return AllocationMethod.USE_DEFAULT;
+      default:
+        return AllocationMethod.NONE;
     }
   }
 }
