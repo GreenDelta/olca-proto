@@ -1,58 +1,85 @@
 package org.openlca.proto.input;
 
+import java.util.Objects;
+
 import org.openlca.core.database.SocialIndicatorDao;
 import org.openlca.core.model.SocialIndicator;
 import org.openlca.proto.Proto;
+import org.openlca.util.Strings;
 
 public class SocialIndicatorImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public SocialIndicatorImport(ProtoImport config) {
-    this.config = config;
+  public SocialIndicatorImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public SocialIndicator of(String id) {
     if (id == null)
       return null;
-    var socialIndicator = config.get(SocialIndicator.class, id);
+    var indicator = imp.get(SocialIndicator.class, id);
 
     // check if we are in update mode
     var update = false;
-    if (socialIndicator != null) {
-      if (config.isHandled(socialIndicator)
-        || config.noUpdates())
-        return socialIndicator;
+    if (indicator != null) {
+      if (imp.isHandled(indicator)
+        || imp.noUpdates())
+        return indicator;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getSocialIndicator(id);
+    var proto = imp.store.getSocialIndicator(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(socialIndicator, wrap))
-        return socialIndicator;
+      if (!imp.shouldUpdate(indicator, wrap))
+        return indicator;
     }
 
     // map the data
-    if (socialIndicator == null) {
-      socialIndicator = new SocialIndicator();
-      socialIndicator.refId = id;
+    if (indicator == null) {
+      indicator = new SocialIndicator();
+      indicator.refId = id;
     }
-    wrap.mapTo(socialIndicator, config);
-    map(proto, socialIndicator);
+    wrap.mapTo(indicator, imp);
+    map(proto, indicator);
 
     // insert it
-    var dao = new SocialIndicatorDao(config.db);
-    socialIndicator = update
-      ? dao.update(socialIndicator)
-      : dao.insert(socialIndicator);
-    config.putHandled(socialIndicator);
-    return socialIndicator;
+    var dao = new SocialIndicatorDao(imp.db);
+    indicator = update
+      ? dao.update(indicator)
+      : dao.insert(indicator);
+    imp.putHandled(indicator);
+    return indicator;
   }
 
-  private void map(Proto.SocialIndicator proto, SocialIndicator socialIndicator) {
+  private void map(Proto.SocialIndicator proto, SocialIndicator indicator) {
+    indicator.evaluationScheme = proto.getEvaluationScheme();
+    indicator.unitOfMeasurement = proto.getUnitOfMeasurement();
+    indicator.activityVariable = proto.getActivityVariable();
+
+    // quantity (flow property)
+    var quantityID = proto.getActivityQuantity().getId();
+    if (Strings.notEmpty(quantityID)) {
+      indicator.activityQuantity = new FlowPropertyImport(imp)
+        .of(quantityID);
+    }
+    if (indicator.activityQuantity == null)
+      return;
+
+    // unit
+    var unitID = proto.getActivityUnit().getId();
+    if (Strings.nullOrEmpty(unitID))
+      return;
+    var group = indicator.activityQuantity.unitGroup;
+    if (group == null)
+      return;
+    indicator.activityUnit = group.units.stream()
+      .filter(u -> Objects.equals(u.refId, unitID))
+      .findAny()
+      .orElse(null);
   }
 }
