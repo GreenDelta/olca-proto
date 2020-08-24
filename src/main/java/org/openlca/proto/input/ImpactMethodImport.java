@@ -1,7 +1,11 @@
 package org.openlca.proto.input;
 
+import java.util.Objects;
+
 import org.openlca.core.database.ImpactMethodDao;
 import org.openlca.core.model.ImpactMethod;
+import org.openlca.core.model.NwFactor;
+import org.openlca.core.model.NwSet;
 import org.openlca.proto.Proto;
 
 public class ImpactMethodImport {
@@ -15,14 +19,14 @@ public class ImpactMethodImport {
   public ImpactMethod of(String id) {
     if (id == null)
       return null;
-    var impactMethod = config.get(ImpactMethod.class, id);
+    var method = config.get(ImpactMethod.class, id);
 
     // check if we are in update mode
     var update = false;
-    if (impactMethod != null) {
-      if (config.isHandled(impactMethod)
+    if (method != null) {
+      if (config.isHandled(method)
         || config.noUpdates())
-        return impactMethod;
+        return method;
       update = true;
     }
 
@@ -32,27 +36,64 @@ public class ImpactMethodImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(impactMethod, wrap))
-        return impactMethod;
+      if (!config.shouldUpdate(method, wrap))
+        return method;
     }
 
     // map the data
-    if (impactMethod == null) {
-      impactMethod = new ImpactMethod();
-      impactMethod.refId = id;
+    if (method == null) {
+      method = new ImpactMethod();
+      method.refId = id;
     }
-    wrap.mapTo(impactMethod, config);
-    map(proto, impactMethod);
+    wrap.mapTo(method, config);
+    map(proto, method);
 
     // insert it
     var dao = new ImpactMethodDao(config.db);
-    impactMethod = update
-      ? dao.update(impactMethod)
-      : dao.insert(impactMethod);
-    config.putHandled(impactMethod);
-    return impactMethod;
+    method = update
+      ? dao.update(method)
+      : dao.insert(method);
+    config.putHandled(method);
+    return method;
   }
 
-  private void map(Proto.ImpactMethod proto, ImpactMethod impactMethod) {
+  private void map(Proto.ImpactMethod proto, ImpactMethod method) {
+
+    for (var protoImp : proto.getImpactCategoriesList()) {
+      var impactID = protoImp.getId();
+      var impact = new ImpactCategoryImport(config).of(impactID);
+      if (impact != null) {
+        method.impactCategories.add(impact);
+      }
+    }
+
+    for (var protoNw : proto.getNwSetsList()) {
+      var nw = new NwSet();
+      method.nwSets.add(nw);
+      nw.refId = protoNw.getId();
+      nw.name = protoNw.getName();
+      nw.description = protoNw.getDescription();
+      nw.weightedScoreUnit = protoNw.getWeightedScoreUnit();
+      protoNw.getFactorsList()
+        .stream()
+        .map(protoFactor -> nwFactor(protoFactor, method))
+        .forEach(nw.factors::add);
+    }
+  }
+
+  private NwFactor nwFactor(Proto.NwFactor proto, ImpactMethod method) {
+    var f = new NwFactor();
+    var impactID = proto.getImpactCategory().getId();
+    f.impactCategory = method.impactCategories.stream()
+      .filter(i -> Objects.equals(i.refId, impactID))
+      .findAny()
+      .orElse(null);
+    f.normalisationFactor = proto.getNormalisationFactor() == 0
+      ? null
+      : proto.getNormalisationFactor();
+    f.weightingFactor = proto.getWeightingFactor() == 0
+      ? null
+      : proto.getWeightingFactor();
+    return f;
   }
 }
