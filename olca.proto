@@ -381,28 +381,37 @@ message Exchange {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
+  // Indicates whether this exchange is an avoided product.
+  bool avoided_product = 2;
+
+  // A formula for calculating the costs of this exchange.
+  string cost_formula = 3;
+
+  // The costs of this exchange.
+  double cost_value = 4;
+
+  // The currency in which the costs of this exchange are given.
+  Ref currency = 5;
+
   // The process internal ID of the exchange. This is used to identify
   // exchanges unambiguously within a process (e.g. when linking exchanges in a
   // product system where multiple exchanges with the same flow are allowed).
   // The value should be >= 1.
-  int32 internal_id = 2;
-
-  // Indicates whether this exchange is an avoided product.
-  bool avoided_product = 3;
+  int32 internal_id = 6;
 
   // The reference to the flow of the exchange.
-  FlowRef flow = 4;
+  FlowRef flow = 7;
 
   // The quantity in which the amount is given.
-  Ref flow_property = 5;
+  Ref flow_property = 8;
 
-  bool input = 6;
+  bool input = 9;
 
   // Indicates whether the exchange is the quantitative reference of the
   // process.
-  bool quantitative_reference = 7;
+  bool quantitative_reference = 10;
 
-  double base_uncertainty = 8;
+  double base_uncertainty = 11;
 
   // A default provider is a [Process] that is linked as the provider of a
   // product input or the waste treatment provider of a waste output. It is
@@ -410,25 +419,25 @@ message Exchange {
   // product systems in openLCA. The user is always free to link processes in
   // product systems ignoring these defaults (but the flows and flow directions
   // have to match of course).
-  ProcessRef default_provider = 9;
+  ProcessRef default_provider = 12;
 
-  double amount = 10;
+  double amount = 13;
 
-  string amount_formula = 11;
+  string amount_formula = 14;
 
-  Ref unit = 12;
+  Ref unit = 15;
 
   // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
   // quality values that need to match the data quality scheme for flow inputs
   // and outputs that is assigned to the [Process]. In such a scheme the data
   // quality indicators have fixed positions and the respective values in the
   // `dqEntry` vector map to these positions.
-  string dq_entry = 13;
+  string dq_entry = 16;
 
-  Uncertainty uncertainty = 14;
+  Uncertainty uncertainty = 17;
 
   // A general comment about the input or output.
-  string description = 15;
+  string description = 18;
 
 }
 
@@ -878,7 +887,7 @@ message ImpactFactor {
 
 }
 
-// A impact assessment method.
+// An impact assessment method.
 message ImpactMethod {
 
   // The type name of the respectiven entity.
@@ -914,8 +923,11 @@ message ImpactMethod {
   // library name and version.
   string library = 9;
 
-  // The LCIA categories of the method.
+  // The impact categories of the method.
   repeated ImpactCategoryRef impact_categories = 10;
+
+  // The normalization and weighting sets of the method.
+  repeated NwSet nw_sets = 11;
 
 }
 
@@ -1219,40 +1231,56 @@ message Process {
   // library name and version.
   string library = 9;
 
-  AllocationType default_allocation_method = 10;
+  repeated AllocationFactor allocation_factors = 10;
 
-  repeated AllocationFactor allocation_factors = 11;
+  AllocationType default_allocation_method = 11;
 
   // The inputs and outputs of the process.
   repeated Exchange exchanges = 12;
 
-  Location location = 13;
+  // This field holds the last internal ID that was used in an exchange (which
+  // may have been deleted, so it can be larger than the largest internal ID of
+  // the exchanges of the process.) The internal ID of an exchange is used to
+  // identify exchanges within a process (for updates, data exchanges (see
+  // process links), etc.). When you add an exchange to a process, you should
+  // increment this field in the process and set the resulting value as the
+  // internal ID of that exchange. The sequence of internal IDs should start
+  // with `1`.
+  int32 last_internal_id = 13;
 
-  repeated Parameter parameters = 14;
+  Location location = 14;
 
-  ProcessDocumentation process_documentation = 15;
+  repeated Parameter parameters = 15;
 
-  ProcessType process_type = 16;
+  ProcessDocumentation process_documentation = 16;
+
+  ProcessType process_type = 17;
 
   // A reference to a data quality system ([DqSystem]) with which the overall
   // quality of the process can be assessed.
-  Ref dq_system = 17;
+  Ref dq_system = 18;
 
   // A reference to a data quality system ([DqSystem]) with which the quality
   // of individual inputs and outputs ([Exchange]s) of the process can be
   // assessed.
-  Ref exchange_dq_system = 18;
+  Ref exchange_dq_system = 19;
 
   // A reference to a data quality system ([DqSystem]) with which the quality
   // of individual social aspects of the process can be assessed.
-  Ref social_dq_system = 19;
+  Ref social_dq_system = 20;
 
   // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
   // quality values that need to match the overall data quality system of the
   // process (the system that is stored in the `dqSystem` property). In such a
   // system the data quality indicators have fixed positions and the respective
   // values in the `dqEntry` vector map to these positions.
-  string dq_entry = 20;
+  string dq_entry = 21;
+
+  // Indicates whether this process describes an infrastructure process. This
+  // field is part of the openLCA schema because of backward compatibility with
+  // EcoSpold 1. It does not really have a meaning in openLCA and should not be
+  // used anymore.
+  bool infrastructure_process = 22;
 
 }
 

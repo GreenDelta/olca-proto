@@ -1,7 +1,14 @@
 package org.openlca.proto.input;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 import org.openlca.core.database.ProcessDao;
 import org.openlca.core.model.Actor;
+import org.openlca.core.model.DQSystem;
+import org.openlca.core.model.Exchange;
+import org.openlca.core.model.Parameter;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessDocumentation;
 import org.openlca.core.model.ProcessType;
@@ -13,6 +20,7 @@ import org.openlca.util.Strings;
 public class ProcessImport {
 
   private final ProtoImport imp;
+  private boolean inUpdateMode;
 
   public ProcessImport(ProtoImport imp) {
     this.imp = imp;
@@ -24,12 +32,12 @@ public class ProcessImport {
     var process = imp.get(Process.class, id);
 
     // check if we are in update mode
-    var update = false;
+    inUpdateMode = false;
     if (process != null) {
       if (imp.isHandled(process)
         || imp.noUpdates())
         return process;
-      update = true;
+      inUpdateMode = true;
     }
 
     // check the proto object
@@ -37,7 +45,7 @@ public class ProcessImport {
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
-    if (update) {
+    if (inUpdateMode) {
       if (!imp.shouldUpdate(process, wrap))
         return process;
     }
@@ -52,7 +60,7 @@ public class ProcessImport {
 
     // insert it
     var dao = new ProcessDao(imp.db);
-    process = update
+    process = inUpdateMode
       ? dao.update(process)
       : dao.insert(process);
     imp.putHandled(process);
@@ -69,7 +77,56 @@ public class ProcessImport {
       proto.getDefaultAllocationMethod());
     p.documentation = doc(proto.getProcessDocumentation());
 
+    // DQ systems
+    p.dqEntry = proto.getDqEntry();
+    p.dqSystem = dqSystem(proto.getDqSystem());
+    p.exchangeDqSystem = dqSystem(proto.getExchangeDqSystem());
+    p.socialDqSystem = dqSystem(proto.getSocialDqSystem());
 
+    // parameters
+    p.parameters.clear();
+    for (var protoParam : proto.getParametersList()) {
+      var param = new Parameter();
+      ProtoWrap.of(protoParam).mapTo(param, imp);
+      ParameterImport.map(protoParam, param);
+      p.parameters.add(param);
+    }
+
+    // when we are in update mode, we want to keep the
+    // IDs of existing exchanges because they are may
+    // linked in product systems
+    Map<Integer, Exchange> oldExchanges = null;
+    if (inUpdateMode) {
+      var m = new HashMap<Integer, Exchange>();
+      p.exchanges.forEach(e -> {
+        if (e.internalId != 0) {
+          m.put(e.internalId, e);
+        }
+      });
+      oldExchanges = m;
+    }
+
+    p.exchanges.clear();
+    p.lastInternalId = proto.getLastInternalId();
+    for (var protoEx : proto.getExchangesList()) {
+      Exchange e = null;
+      if (oldExchanges != null) {
+        e = oldExchanges.get(protoEx.getInternalId());
+      }
+      if (e == null) {
+        e = new Exchange();
+        e.internalId = protoEx.getInternalId();
+        if (e.internalId == 0) {
+          p.lastInternalId++;
+          e.internalId = p.lastInternalId;
+        }
+      }
+
+      mapExchange(protoEx, e);
+      if (protoEx.getQuantitativeReference()) {
+        p.quantitativeReference = e;
+      }
+    }
   }
 
   private ProcessDocumentation doc(Proto.ProcessDocumentation proto) {
@@ -121,5 +178,66 @@ public class ProcessImport {
     if (ref == null || Strings.nullOrEmpty(ref.getId()))
       return null;
     return new SourceImport(imp).of(ref.getId());
+  }
+
+  private DQSystem dqSystem(Proto.Ref ref) {
+    if (ref == null || Strings.nullOrEmpty(ref.getId()))
+      return null;
+    return new DqSystemImport(imp).of(ref.getId());
+  }
+
+  private void mapExchange(Proto.Exchange proto, Exchange e) {
+    e.isAvoided = proto.getAvoidedProduct();
+    e.isInput = proto.getInput();
+    e.baseUncertainty = proto.getBaseUncertainty() == 0
+      ? null
+      : proto.getBaseUncertainty();
+    e.amount = proto.getAmount();
+    e.formula = Strings.nullIfEmpty(proto.getAmountFormula());
+    e.dqEntry = Strings.nullIfEmpty(proto.getDqEntry());
+    e.description = Strings.nullIfEmpty(proto.getDescription());
+    e.uncertainty = Util.uncertainty(proto.getUncertainty());
+
+    // costs
+    e.costFormula = Strings.nullIfEmpty(proto.getCostFormula());
+    e.costs = proto.getCostValue() == 0
+      ? null
+      : proto.getCostValue();
+    var currencyID = proto.getCurrency().getId();
+    if (Strings.notEmpty(currencyID)) {
+      e.currency = new CurrencyImport(imp).of(currencyID);
+    }
+
+    // flow references
+    var flowID = proto.getFlow().getId();
+    e.flow = new FlowImport(imp).of(flowID);
+    if (e.flow == null)
+      return;
+
+    var propID = proto.getFlowProperty().getId();
+    if (Strings.nullOrEmpty(propID)) {
+      e.flowPropertyFactor = e.flow.getReferenceFactor();
+    } else {
+      e.flowPropertyFactor = e.flow.flowPropertyFactors.stream()
+        .filter(f -> f.flowProperty != null
+          && Objects.equals(f.flowProperty.refId, propID))
+        .findAny()
+        .orElse(null);
+    }
+
+    if (e.flowPropertyFactor == null)
+      return;
+    var prop = e.flowPropertyFactor.flowProperty;
+    if (prop == null || prop.unitGroup == null)
+      return;
+    var unitID = proto.getUnit().getId();
+    if (Strings.nullOrEmpty(unitID)) {
+      e.unit = prop.unitGroup.referenceUnit;
+    } else {
+      e.unit = prop.unitGroup.units.stream()
+        .filter(u -> Objects.equals(u.refId, unitID))
+        .findAny()
+        .orElse(null);
+    }
   }
 }

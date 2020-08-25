@@ -20022,33 +20022,90 @@ public final class Proto {
 
     /**
      * <pre>
-     * The process internal ID of the exchange. This is used to identify
-     * exchanges unambiguously within a process (e.g. when linking exchanges in a
-     * product system where multiple exchanges with the same flow are allowed).
-     * The value should be &gt;= 1.
-     * </pre>
-     *
-     * <code>int32 internal_id = 2;</code>
-     * @return The internalId.
-     */
-    int getInternalId();
-
-    /**
-     * <pre>
      * Indicates whether this exchange is an avoided product.
      * </pre>
      *
-     * <code>bool avoided_product = 3;</code>
+     * <code>bool avoided_product = 2;</code>
      * @return The avoidedProduct.
      */
     boolean getAvoidedProduct();
 
     /**
      * <pre>
+     * A formula for calculating the costs of this exchange.
+     * </pre>
+     *
+     * <code>string cost_formula = 3;</code>
+     * @return The costFormula.
+     */
+    java.lang.String getCostFormula();
+    /**
+     * <pre>
+     * A formula for calculating the costs of this exchange.
+     * </pre>
+     *
+     * <code>string cost_formula = 3;</code>
+     * @return The bytes for costFormula.
+     */
+    com.google.protobuf.ByteString
+        getCostFormulaBytes();
+
+    /**
+     * <pre>
+     * The costs of this exchange.
+     * </pre>
+     *
+     * <code>double cost_value = 4;</code>
+     * @return The costValue.
+     */
+    double getCostValue();
+
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     * @return Whether the currency field is set.
+     */
+    boolean hasCurrency();
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     * @return The currency.
+     */
+    org.openlca.proto.Proto.Ref getCurrency();
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getCurrencyOrBuilder();
+
+    /**
+     * <pre>
+     * The process internal ID of the exchange. This is used to identify
+     * exchanges unambiguously within a process (e.g. when linking exchanges in a
+     * product system where multiple exchanges with the same flow are allowed).
+     * The value should be &gt;= 1.
+     * </pre>
+     *
+     * <code>int32 internal_id = 6;</code>
+     * @return The internalId.
+     */
+    int getInternalId();
+
+    /**
+     * <pre>
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      * @return Whether the flow field is set.
      */
     boolean hasFlow();
@@ -20057,7 +20114,7 @@ public final class Proto {
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      * @return The flow.
      */
     org.openlca.proto.Proto.FlowRef getFlow();
@@ -20066,7 +20123,7 @@ public final class Proto {
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      */
     org.openlca.proto.Proto.FlowRefOrBuilder getFlowOrBuilder();
 
@@ -20075,7 +20132,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
@@ -20084,7 +20141,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.Ref getFlowProperty();
@@ -20093,12 +20150,12 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder();
 
     /**
-     * <code>bool input = 6;</code>
+     * <code>bool input = 9;</code>
      * @return The input.
      */
     boolean getInput();
@@ -20109,13 +20166,13 @@ public final class Proto {
      * process.
      * </pre>
      *
-     * <code>bool quantitative_reference = 7;</code>
+     * <code>bool quantitative_reference = 10;</code>
      * @return The quantitativeReference.
      */
     boolean getQuantitativeReference();
 
     /**
-     * <code>double base_uncertainty = 8;</code>
+     * <code>double base_uncertainty = 11;</code>
      * @return The baseUncertainty.
      */
     double getBaseUncertainty();
@@ -20130,7 +20187,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      * @return Whether the defaultProvider field is set.
      */
     boolean hasDefaultProvider();
@@ -20144,7 +20201,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      * @return The defaultProvider.
      */
     org.openlca.proto.Proto.ProcessRef getDefaultProvider();
@@ -20158,40 +20215,40 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      */
     org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder();
 
     /**
-     * <code>double amount = 10;</code>
+     * <code>double amount = 13;</code>
      * @return The amount.
      */
     double getAmount();
 
     /**
-     * <code>string amount_formula = 11;</code>
+     * <code>string amount_formula = 14;</code>
      * @return The amountFormula.
      */
     java.lang.String getAmountFormula();
     /**
-     * <code>string amount_formula = 11;</code>
+     * <code>string amount_formula = 14;</code>
      * @return The bytes for amountFormula.
      */
     com.google.protobuf.ByteString
         getAmountFormulaBytes();
 
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      * @return Whether the unit field is set.
      */
     boolean hasUnit();
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      * @return The unit.
      */
     org.openlca.proto.Proto.Ref getUnit();
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder();
 
@@ -20204,7 +20261,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 13;</code>
+     * <code>string dq_entry = 16;</code>
      * @return The dqEntry.
      */
     java.lang.String getDqEntry();
@@ -20217,24 +20274,24 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 13;</code>
+     * <code>string dq_entry = 16;</code>
      * @return The bytes for dqEntry.
      */
     com.google.protobuf.ByteString
         getDqEntryBytes();
 
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      * @return Whether the uncertainty field is set.
      */
     boolean hasUncertainty();
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      * @return The uncertainty.
      */
     org.openlca.proto.Proto.Uncertainty getUncertainty();
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      */
     org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder();
 
@@ -20243,7 +20300,7 @@ public final class Proto {
      * A general comment about the input or output.
      * </pre>
      *
-     * <code>string description = 15;</code>
+     * <code>string description = 18;</code>
      * @return The description.
      */
     java.lang.String getDescription();
@@ -20252,7 +20309,7 @@ public final class Proto {
      * A general comment about the input or output.
      * </pre>
      *
-     * <code>string description = 15;</code>
+     * <code>string description = 18;</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
@@ -20280,6 +20337,7 @@ public final class Proto {
     }
     private Exchange() {
       type_ = "";
+      costFormula_ = "";
       amountFormula_ = "";
       dqEntry_ = "";
       description_ = "";
@@ -20323,15 +20381,39 @@ public final class Proto {
             }
             case 16: {
 
-              internalId_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
               avoidedProduct_ = input.readBool();
               break;
             }
-            case 34: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              costFormula_ = s;
+              break;
+            }
+            case 33: {
+
+              costValue_ = input.readDouble();
+              break;
+            }
+            case 42: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (currency_ != null) {
+                subBuilder = currency_.toBuilder();
+              }
+              currency_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(currency_);
+                currency_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              internalId_ = input.readInt32();
+              break;
+            }
+            case 58: {
               org.openlca.proto.Proto.FlowRef.Builder subBuilder = null;
               if (flow_ != null) {
                 subBuilder = flow_.toBuilder();
@@ -20344,7 +20426,7 @@ public final class Proto {
 
               break;
             }
-            case 42: {
+            case 66: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (flowProperty_ != null) {
                 subBuilder = flowProperty_.toBuilder();
@@ -20357,22 +20439,22 @@ public final class Proto {
 
               break;
             }
-            case 48: {
+            case 72: {
 
               input_ = input.readBool();
               break;
             }
-            case 56: {
+            case 80: {
 
               quantitativeReference_ = input.readBool();
               break;
             }
-            case 65: {
+            case 89: {
 
               baseUncertainty_ = input.readDouble();
               break;
             }
-            case 74: {
+            case 98: {
               org.openlca.proto.Proto.ProcessRef.Builder subBuilder = null;
               if (defaultProvider_ != null) {
                 subBuilder = defaultProvider_.toBuilder();
@@ -20385,18 +20467,18 @@ public final class Proto {
 
               break;
             }
-            case 81: {
+            case 105: {
 
               amount_ = input.readDouble();
               break;
             }
-            case 90: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               amountFormula_ = s;
               break;
             }
-            case 98: {
+            case 122: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (unit_ != null) {
                 subBuilder = unit_.toBuilder();
@@ -20409,13 +20491,13 @@ public final class Proto {
 
               break;
             }
-            case 106: {
+            case 130: {
               java.lang.String s = input.readStringRequireUtf8();
 
               dqEntry_ = s;
               break;
             }
-            case 114: {
+            case 138: {
               org.openlca.proto.Proto.Uncertainty.Builder subBuilder = null;
               if (uncertainty_ != null) {
                 subBuilder = uncertainty_.toBuilder();
@@ -20428,7 +20510,7 @@ public final class Proto {
 
               break;
             }
-            case 122: {
+            case 146: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
@@ -20514,7 +20596,121 @@ public final class Proto {
       }
     }
 
-    public static final int INTERNAL_ID_FIELD_NUMBER = 2;
+    public static final int AVOIDED_PRODUCT_FIELD_NUMBER = 2;
+    private boolean avoidedProduct_;
+    /**
+     * <pre>
+     * Indicates whether this exchange is an avoided product.
+     * </pre>
+     *
+     * <code>bool avoided_product = 2;</code>
+     * @return The avoidedProduct.
+     */
+    @java.lang.Override
+    public boolean getAvoidedProduct() {
+      return avoidedProduct_;
+    }
+
+    public static final int COST_FORMULA_FIELD_NUMBER = 3;
+    private volatile java.lang.Object costFormula_;
+    /**
+     * <pre>
+     * A formula for calculating the costs of this exchange.
+     * </pre>
+     *
+     * <code>string cost_formula = 3;</code>
+     * @return The costFormula.
+     */
+    @java.lang.Override
+    public java.lang.String getCostFormula() {
+      java.lang.Object ref = costFormula_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        costFormula_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A formula for calculating the costs of this exchange.
+     * </pre>
+     *
+     * <code>string cost_formula = 3;</code>
+     * @return The bytes for costFormula.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCostFormulaBytes() {
+      java.lang.Object ref = costFormula_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        costFormula_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COST_VALUE_FIELD_NUMBER = 4;
+    private double costValue_;
+    /**
+     * <pre>
+     * The costs of this exchange.
+     * </pre>
+     *
+     * <code>double cost_value = 4;</code>
+     * @return The costValue.
+     */
+    @java.lang.Override
+    public double getCostValue() {
+      return costValue_;
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 5;
+    private org.openlca.proto.Proto.Ref currency_;
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     * @return Whether the currency field is set.
+     */
+    @java.lang.Override
+    public boolean hasCurrency() {
+      return currency_ != null;
+    }
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     * @return The currency.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getCurrency() {
+      return currency_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : currency_;
+    }
+    /**
+     * <pre>
+     * The currency in which the costs of this exchange are given.
+     * </pre>
+     *
+     * <code>.protolca.Ref currency = 5;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getCurrencyOrBuilder() {
+      return getCurrency();
+    }
+
+    public static final int INTERNAL_ID_FIELD_NUMBER = 6;
     private int internalId_;
     /**
      * <pre>
@@ -20524,7 +20720,7 @@ public final class Proto {
      * The value should be &gt;= 1.
      * </pre>
      *
-     * <code>int32 internal_id = 2;</code>
+     * <code>int32 internal_id = 6;</code>
      * @return The internalId.
      */
     @java.lang.Override
@@ -20532,29 +20728,14 @@ public final class Proto {
       return internalId_;
     }
 
-    public static final int AVOIDED_PRODUCT_FIELD_NUMBER = 3;
-    private boolean avoidedProduct_;
-    /**
-     * <pre>
-     * Indicates whether this exchange is an avoided product.
-     * </pre>
-     *
-     * <code>bool avoided_product = 3;</code>
-     * @return The avoidedProduct.
-     */
-    @java.lang.Override
-    public boolean getAvoidedProduct() {
-      return avoidedProduct_;
-    }
-
-    public static final int FLOW_FIELD_NUMBER = 4;
+    public static final int FLOW_FIELD_NUMBER = 7;
     private org.openlca.proto.Proto.FlowRef flow_;
     /**
      * <pre>
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      * @return Whether the flow field is set.
      */
     @java.lang.Override
@@ -20566,7 +20747,7 @@ public final class Proto {
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      * @return The flow.
      */
     @java.lang.Override
@@ -20578,21 +20759,21 @@ public final class Proto {
      * The reference to the flow of the exchange.
      * </pre>
      *
-     * <code>.protolca.FlowRef flow = 4;</code>
+     * <code>.protolca.FlowRef flow = 7;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowRefOrBuilder getFlowOrBuilder() {
       return getFlow();
     }
 
-    public static final int FLOW_PROPERTY_FIELD_NUMBER = 5;
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 8;
     private org.openlca.proto.Proto.Ref flowProperty_;
     /**
      * <pre>
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -20604,7 +20785,7 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -20616,17 +20797,17 @@ public final class Proto {
      * The quantity in which the amount is given.
      * </pre>
      *
-     * <code>.protolca.Ref flow_property = 5;</code>
+     * <code>.protolca.Ref flow_property = 8;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
       return getFlowProperty();
     }
 
-    public static final int INPUT_FIELD_NUMBER = 6;
+    public static final int INPUT_FIELD_NUMBER = 9;
     private boolean input_;
     /**
-     * <code>bool input = 6;</code>
+     * <code>bool input = 9;</code>
      * @return The input.
      */
     @java.lang.Override
@@ -20634,7 +20815,7 @@ public final class Proto {
       return input_;
     }
 
-    public static final int QUANTITATIVE_REFERENCE_FIELD_NUMBER = 7;
+    public static final int QUANTITATIVE_REFERENCE_FIELD_NUMBER = 10;
     private boolean quantitativeReference_;
     /**
      * <pre>
@@ -20642,7 +20823,7 @@ public final class Proto {
      * process.
      * </pre>
      *
-     * <code>bool quantitative_reference = 7;</code>
+     * <code>bool quantitative_reference = 10;</code>
      * @return The quantitativeReference.
      */
     @java.lang.Override
@@ -20650,10 +20831,10 @@ public final class Proto {
       return quantitativeReference_;
     }
 
-    public static final int BASE_UNCERTAINTY_FIELD_NUMBER = 8;
+    public static final int BASE_UNCERTAINTY_FIELD_NUMBER = 11;
     private double baseUncertainty_;
     /**
-     * <code>double base_uncertainty = 8;</code>
+     * <code>double base_uncertainty = 11;</code>
      * @return The baseUncertainty.
      */
     @java.lang.Override
@@ -20661,7 +20842,7 @@ public final class Proto {
       return baseUncertainty_;
     }
 
-    public static final int DEFAULT_PROVIDER_FIELD_NUMBER = 9;
+    public static final int DEFAULT_PROVIDER_FIELD_NUMBER = 12;
     private org.openlca.proto.Proto.ProcessRef defaultProvider_;
     /**
      * <pre>
@@ -20673,7 +20854,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      * @return Whether the defaultProvider field is set.
      */
     @java.lang.Override
@@ -20690,7 +20871,7 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      * @return The defaultProvider.
      */
     @java.lang.Override
@@ -20707,17 +20888,17 @@ public final class Proto {
      * have to match of course).
      * </pre>
      *
-     * <code>.protolca.ProcessRef default_provider = 9;</code>
+     * <code>.protolca.ProcessRef default_provider = 12;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder() {
       return getDefaultProvider();
     }
 
-    public static final int AMOUNT_FIELD_NUMBER = 10;
+    public static final int AMOUNT_FIELD_NUMBER = 13;
     private double amount_;
     /**
-     * <code>double amount = 10;</code>
+     * <code>double amount = 13;</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -20725,10 +20906,10 @@ public final class Proto {
       return amount_;
     }
 
-    public static final int AMOUNT_FORMULA_FIELD_NUMBER = 11;
+    public static final int AMOUNT_FORMULA_FIELD_NUMBER = 14;
     private volatile java.lang.Object amountFormula_;
     /**
-     * <code>string amount_formula = 11;</code>
+     * <code>string amount_formula = 14;</code>
      * @return The amountFormula.
      */
     @java.lang.Override
@@ -20745,7 +20926,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string amount_formula = 11;</code>
+     * <code>string amount_formula = 14;</code>
      * @return The bytes for amountFormula.
      */
     @java.lang.Override
@@ -20763,10 +20944,10 @@ public final class Proto {
       }
     }
 
-    public static final int UNIT_FIELD_NUMBER = 12;
+    public static final int UNIT_FIELD_NUMBER = 15;
     private org.openlca.proto.Proto.Ref unit_;
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      * @return Whether the unit field is set.
      */
     @java.lang.Override
@@ -20774,7 +20955,7 @@ public final class Proto {
       return unit_ != null;
     }
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      * @return The unit.
      */
     @java.lang.Override
@@ -20782,14 +20963,14 @@ public final class Proto {
       return unit_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : unit_;
     }
     /**
-     * <code>.protolca.Ref unit = 12;</code>
+     * <code>.protolca.Ref unit = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder() {
       return getUnit();
     }
 
-    public static final int DQ_ENTRY_FIELD_NUMBER = 13;
+    public static final int DQ_ENTRY_FIELD_NUMBER = 16;
     private volatile java.lang.Object dqEntry_;
     /**
      * <pre>
@@ -20800,7 +20981,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 13;</code>
+     * <code>string dq_entry = 16;</code>
      * @return The dqEntry.
      */
     @java.lang.Override
@@ -20825,7 +21006,7 @@ public final class Proto {
      * `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 13;</code>
+     * <code>string dq_entry = 16;</code>
      * @return The bytes for dqEntry.
      */
     @java.lang.Override
@@ -20843,10 +21024,10 @@ public final class Proto {
       }
     }
 
-    public static final int UNCERTAINTY_FIELD_NUMBER = 14;
+    public static final int UNCERTAINTY_FIELD_NUMBER = 17;
     private org.openlca.proto.Proto.Uncertainty uncertainty_;
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      * @return Whether the uncertainty field is set.
      */
     @java.lang.Override
@@ -20854,7 +21035,7 @@ public final class Proto {
       return uncertainty_ != null;
     }
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      * @return The uncertainty.
      */
     @java.lang.Override
@@ -20862,21 +21043,21 @@ public final class Proto {
       return uncertainty_ == null ? org.openlca.proto.Proto.Uncertainty.getDefaultInstance() : uncertainty_;
     }
     /**
-     * <code>.protolca.Uncertainty uncertainty = 14;</code>
+     * <code>.protolca.Uncertainty uncertainty = 17;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
       return getUncertainty();
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 15;
+    public static final int DESCRIPTION_FIELD_NUMBER = 18;
     private volatile java.lang.Object description_;
     /**
      * <pre>
      * A general comment about the input or output.
      * </pre>
      *
-     * <code>string description = 15;</code>
+     * <code>string description = 18;</code>
      * @return The description.
      */
     @java.lang.Override
@@ -20897,7 +21078,7 @@ public final class Proto {
      * A general comment about the input or output.
      * </pre>
      *
-     * <code>string description = 15;</code>
+     * <code>string description = 18;</code>
      * @return The bytes for description.
      */
     @java.lang.Override
@@ -20932,47 +21113,56 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
-      if (internalId_ != 0) {
-        output.writeInt32(2, internalId_);
-      }
       if (avoidedProduct_ != false) {
-        output.writeBool(3, avoidedProduct_);
+        output.writeBool(2, avoidedProduct_);
+      }
+      if (!getCostFormulaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, costFormula_);
+      }
+      if (costValue_ != 0D) {
+        output.writeDouble(4, costValue_);
+      }
+      if (currency_ != null) {
+        output.writeMessage(5, getCurrency());
+      }
+      if (internalId_ != 0) {
+        output.writeInt32(6, internalId_);
       }
       if (flow_ != null) {
-        output.writeMessage(4, getFlow());
+        output.writeMessage(7, getFlow());
       }
       if (flowProperty_ != null) {
-        output.writeMessage(5, getFlowProperty());
+        output.writeMessage(8, getFlowProperty());
       }
       if (input_ != false) {
-        output.writeBool(6, input_);
+        output.writeBool(9, input_);
       }
       if (quantitativeReference_ != false) {
-        output.writeBool(7, quantitativeReference_);
+        output.writeBool(10, quantitativeReference_);
       }
       if (baseUncertainty_ != 0D) {
-        output.writeDouble(8, baseUncertainty_);
+        output.writeDouble(11, baseUncertainty_);
       }
       if (defaultProvider_ != null) {
-        output.writeMessage(9, getDefaultProvider());
+        output.writeMessage(12, getDefaultProvider());
       }
       if (amount_ != 0D) {
-        output.writeDouble(10, amount_);
+        output.writeDouble(13, amount_);
       }
       if (!getAmountFormulaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, amountFormula_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, amountFormula_);
       }
       if (unit_ != null) {
-        output.writeMessage(12, getUnit());
+        output.writeMessage(15, getUnit());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, dqEntry_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, dqEntry_);
       }
       if (uncertainty_ != null) {
-        output.writeMessage(14, getUncertainty());
+        output.writeMessage(17, getUncertainty());
       }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, description_);
       }
       unknownFields.writeTo(output);
     }
@@ -20986,58 +21176,69 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
-      if (internalId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, internalId_);
-      }
       if (avoidedProduct_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, avoidedProduct_);
+          .computeBoolSize(2, avoidedProduct_);
+      }
+      if (!getCostFormulaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, costFormula_);
+      }
+      if (costValue_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, costValue_);
+      }
+      if (currency_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getCurrency());
+      }
+      if (internalId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, internalId_);
       }
       if (flow_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getFlow());
+          .computeMessageSize(7, getFlow());
       }
       if (flowProperty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getFlowProperty());
+          .computeMessageSize(8, getFlowProperty());
       }
       if (input_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, input_);
+          .computeBoolSize(9, input_);
       }
       if (quantitativeReference_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, quantitativeReference_);
+          .computeBoolSize(10, quantitativeReference_);
       }
       if (baseUncertainty_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, baseUncertainty_);
+          .computeDoubleSize(11, baseUncertainty_);
       }
       if (defaultProvider_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getDefaultProvider());
+          .computeMessageSize(12, getDefaultProvider());
       }
       if (amount_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, amount_);
+          .computeDoubleSize(13, amount_);
       }
       if (!getAmountFormulaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, amountFormula_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, amountFormula_);
       }
       if (unit_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getUnit());
+          .computeMessageSize(15, getUnit());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, dqEntry_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, dqEntry_);
       }
       if (uncertainty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getUncertainty());
+          .computeMessageSize(17, getUncertainty());
       }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, description_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, description_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21056,10 +21257,20 @@ public final class Proto {
 
       if (!getType()
           .equals(other.getType())) return false;
-      if (getInternalId()
-          != other.getInternalId()) return false;
       if (getAvoidedProduct()
           != other.getAvoidedProduct()) return false;
+      if (!getCostFormula()
+          .equals(other.getCostFormula())) return false;
+      if (java.lang.Double.doubleToLongBits(getCostValue())
+          != java.lang.Double.doubleToLongBits(
+              other.getCostValue())) return false;
+      if (hasCurrency() != other.hasCurrency()) return false;
+      if (hasCurrency()) {
+        if (!getCurrency()
+            .equals(other.getCurrency())) return false;
+      }
+      if (getInternalId()
+          != other.getInternalId()) return false;
       if (hasFlow() != other.hasFlow()) return false;
       if (hasFlow()) {
         if (!getFlow()
@@ -21114,11 +21325,20 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + INTERNAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInternalId();
       hash = (37 * hash) + AVOIDED_PRODUCT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAvoidedProduct());
+      hash = (37 * hash) + COST_FORMULA_FIELD_NUMBER;
+      hash = (53 * hash) + getCostFormula().hashCode();
+      hash = (37 * hash) + COST_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getCostValue()));
+      if (hasCurrency()) {
+        hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getCurrency().hashCode();
+      }
+      hash = (37 * hash) + INTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalId();
       if (hasFlow()) {
         hash = (37 * hash) + FLOW_FIELD_NUMBER;
         hash = (53 * hash) + getFlow().hashCode();
@@ -21300,9 +21520,19 @@ public final class Proto {
         super.clear();
         type_ = "";
 
-        internalId_ = 0;
-
         avoidedProduct_ = false;
+
+        costFormula_ = "";
+
+        costValue_ = 0D;
+
+        if (currencyBuilder_ == null) {
+          currency_ = null;
+        } else {
+          currency_ = null;
+          currencyBuilder_ = null;
+        }
+        internalId_ = 0;
 
         if (flowBuilder_ == null) {
           flow_ = null;
@@ -21375,8 +21605,15 @@ public final class Proto {
       public org.openlca.proto.Proto.Exchange buildPartial() {
         org.openlca.proto.Proto.Exchange result = new org.openlca.proto.Proto.Exchange(this);
         result.type_ = type_;
-        result.internalId_ = internalId_;
         result.avoidedProduct_ = avoidedProduct_;
+        result.costFormula_ = costFormula_;
+        result.costValue_ = costValue_;
+        if (currencyBuilder_ == null) {
+          result.currency_ = currency_;
+        } else {
+          result.currency_ = currencyBuilder_.build();
+        }
+        result.internalId_ = internalId_;
         if (flowBuilder_ == null) {
           result.flow_ = flow_;
         } else {
@@ -21461,11 +21698,21 @@ public final class Proto {
           type_ = other.type_;
           onChanged();
         }
-        if (other.getInternalId() != 0) {
-          setInternalId(other.getInternalId());
-        }
         if (other.getAvoidedProduct() != false) {
           setAvoidedProduct(other.getAvoidedProduct());
+        }
+        if (!other.getCostFormula().isEmpty()) {
+          costFormula_ = other.costFormula_;
+          onChanged();
+        }
+        if (other.getCostValue() != 0D) {
+          setCostValue(other.getCostValue());
+        }
+        if (other.hasCurrency()) {
+          mergeCurrency(other.getCurrency());
+        }
+        if (other.getInternalId() != 0) {
+          setInternalId(other.getInternalId());
         }
         if (other.hasFlow()) {
           mergeFlow(other.getFlow());
@@ -21636,6 +21883,343 @@ public final class Proto {
         return this;
       }
 
+      private boolean avoidedProduct_ ;
+      /**
+       * <pre>
+       * Indicates whether this exchange is an avoided product.
+       * </pre>
+       *
+       * <code>bool avoided_product = 2;</code>
+       * @return The avoidedProduct.
+       */
+      @java.lang.Override
+      public boolean getAvoidedProduct() {
+        return avoidedProduct_;
+      }
+      /**
+       * <pre>
+       * Indicates whether this exchange is an avoided product.
+       * </pre>
+       *
+       * <code>bool avoided_product = 2;</code>
+       * @param value The avoidedProduct to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvoidedProduct(boolean value) {
+        
+        avoidedProduct_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates whether this exchange is an avoided product.
+       * </pre>
+       *
+       * <code>bool avoided_product = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvoidedProduct() {
+        
+        avoidedProduct_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object costFormula_ = "";
+      /**
+       * <pre>
+       * A formula for calculating the costs of this exchange.
+       * </pre>
+       *
+       * <code>string cost_formula = 3;</code>
+       * @return The costFormula.
+       */
+      public java.lang.String getCostFormula() {
+        java.lang.Object ref = costFormula_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          costFormula_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A formula for calculating the costs of this exchange.
+       * </pre>
+       *
+       * <code>string cost_formula = 3;</code>
+       * @return The bytes for costFormula.
+       */
+      public com.google.protobuf.ByteString
+          getCostFormulaBytes() {
+        java.lang.Object ref = costFormula_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          costFormula_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A formula for calculating the costs of this exchange.
+       * </pre>
+       *
+       * <code>string cost_formula = 3;</code>
+       * @param value The costFormula to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostFormula(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        costFormula_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A formula for calculating the costs of this exchange.
+       * </pre>
+       *
+       * <code>string cost_formula = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostFormula() {
+        
+        costFormula_ = getDefaultInstance().getCostFormula();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A formula for calculating the costs of this exchange.
+       * </pre>
+       *
+       * <code>string cost_formula = 3;</code>
+       * @param value The bytes for costFormula to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostFormulaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        costFormula_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double costValue_ ;
+      /**
+       * <pre>
+       * The costs of this exchange.
+       * </pre>
+       *
+       * <code>double cost_value = 4;</code>
+       * @return The costValue.
+       */
+      @java.lang.Override
+      public double getCostValue() {
+        return costValue_;
+      }
+      /**
+       * <pre>
+       * The costs of this exchange.
+       * </pre>
+       *
+       * <code>double cost_value = 4;</code>
+       * @param value The costValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostValue(double value) {
+        
+        costValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The costs of this exchange.
+       * </pre>
+       *
+       * <code>double cost_value = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostValue() {
+        
+        costValue_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.Ref currency_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> currencyBuilder_;
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       * @return Whether the currency field is set.
+       */
+      public boolean hasCurrency() {
+        return currencyBuilder_ != null || currency_ != null;
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       * @return The currency.
+       */
+      public org.openlca.proto.Proto.Ref getCurrency() {
+        if (currencyBuilder_ == null) {
+          return currency_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : currency_;
+        } else {
+          return currencyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public Builder setCurrency(org.openlca.proto.Proto.Ref value) {
+        if (currencyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          currency_ = value;
+          onChanged();
+        } else {
+          currencyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public Builder setCurrency(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (currencyBuilder_ == null) {
+          currency_ = builderForValue.build();
+          onChanged();
+        } else {
+          currencyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public Builder mergeCurrency(org.openlca.proto.Proto.Ref value) {
+        if (currencyBuilder_ == null) {
+          if (currency_ != null) {
+            currency_ =
+              org.openlca.proto.Proto.Ref.newBuilder(currency_).mergeFrom(value).buildPartial();
+          } else {
+            currency_ = value;
+          }
+          onChanged();
+        } else {
+          currencyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public Builder clearCurrency() {
+        if (currencyBuilder_ == null) {
+          currency_ = null;
+          onChanged();
+        } else {
+          currency_ = null;
+          currencyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getCurrencyBuilder() {
+        
+        onChanged();
+        return getCurrencyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getCurrencyOrBuilder() {
+        if (currencyBuilder_ != null) {
+          return currencyBuilder_.getMessageOrBuilder();
+        } else {
+          return currency_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : currency_;
+        }
+      }
+      /**
+       * <pre>
+       * The currency in which the costs of this exchange are given.
+       * </pre>
+       *
+       * <code>.protolca.Ref currency = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getCurrencyFieldBuilder() {
+        if (currencyBuilder_ == null) {
+          currencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getCurrency(),
+                  getParentForChildren(),
+                  isClean());
+          currency_ = null;
+        }
+        return currencyBuilder_;
+      }
+
       private int internalId_ ;
       /**
        * <pre>
@@ -21645,7 +22229,7 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internal_id = 2;</code>
+       * <code>int32 internal_id = 6;</code>
        * @return The internalId.
        */
       @java.lang.Override
@@ -21660,7 +22244,7 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internal_id = 2;</code>
+       * <code>int32 internal_id = 6;</code>
        * @param value The internalId to set.
        * @return This builder for chaining.
        */
@@ -21678,55 +22262,12 @@ public final class Proto {
        * The value should be &gt;= 1.
        * </pre>
        *
-       * <code>int32 internal_id = 2;</code>
+       * <code>int32 internal_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearInternalId() {
         
         internalId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean avoidedProduct_ ;
-      /**
-       * <pre>
-       * Indicates whether this exchange is an avoided product.
-       * </pre>
-       *
-       * <code>bool avoided_product = 3;</code>
-       * @return The avoidedProduct.
-       */
-      @java.lang.Override
-      public boolean getAvoidedProduct() {
-        return avoidedProduct_;
-      }
-      /**
-       * <pre>
-       * Indicates whether this exchange is an avoided product.
-       * </pre>
-       *
-       * <code>bool avoided_product = 3;</code>
-       * @param value The avoidedProduct to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvoidedProduct(boolean value) {
-        
-        avoidedProduct_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Indicates whether this exchange is an avoided product.
-       * </pre>
-       *
-       * <code>bool avoided_product = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvoidedProduct() {
-        
-        avoidedProduct_ = false;
         onChanged();
         return this;
       }
@@ -21739,7 +22280,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        * @return Whether the flow field is set.
        */
       public boolean hasFlow() {
@@ -21750,7 +22291,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        * @return The flow.
        */
       public org.openlca.proto.Proto.FlowRef getFlow() {
@@ -21765,7 +22306,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public Builder setFlow(org.openlca.proto.Proto.FlowRef value) {
         if (flowBuilder_ == null) {
@@ -21785,7 +22326,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public Builder setFlow(
           org.openlca.proto.Proto.FlowRef.Builder builderForValue) {
@@ -21803,7 +22344,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public Builder mergeFlow(org.openlca.proto.Proto.FlowRef value) {
         if (flowBuilder_ == null) {
@@ -21825,7 +22366,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public Builder clearFlow() {
         if (flowBuilder_ == null) {
@@ -21843,7 +22384,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public org.openlca.proto.Proto.FlowRef.Builder getFlowBuilder() {
         
@@ -21855,7 +22396,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       public org.openlca.proto.Proto.FlowRefOrBuilder getFlowOrBuilder() {
         if (flowBuilder_ != null) {
@@ -21870,7 +22411,7 @@ public final class Proto {
        * The reference to the flow of the exchange.
        * </pre>
        *
-       * <code>.protolca.FlowRef flow = 4;</code>
+       * <code>.protolca.FlowRef flow = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.FlowRef.Builder, org.openlca.proto.Proto.FlowRefOrBuilder> 
@@ -21894,7 +22435,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
@@ -21905,7 +22446,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.Ref getFlowProperty() {
@@ -21920,7 +22461,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -21940,7 +22481,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -21958,7 +22499,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.Ref value) {
         if (flowPropertyBuilder_ == null) {
@@ -21980,7 +22521,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -21998,7 +22539,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getFlowPropertyBuilder() {
         
@@ -22010,7 +22551,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -22025,7 +22566,7 @@ public final class Proto {
        * The quantity in which the amount is given.
        * </pre>
        *
-       * <code>.protolca.Ref flow_property = 5;</code>
+       * <code>.protolca.Ref flow_property = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -22043,7 +22584,7 @@ public final class Proto {
 
       private boolean input_ ;
       /**
-       * <code>bool input = 6;</code>
+       * <code>bool input = 9;</code>
        * @return The input.
        */
       @java.lang.Override
@@ -22051,7 +22592,7 @@ public final class Proto {
         return input_;
       }
       /**
-       * <code>bool input = 6;</code>
+       * <code>bool input = 9;</code>
        * @param value The input to set.
        * @return This builder for chaining.
        */
@@ -22062,7 +22603,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>bool input = 6;</code>
+       * <code>bool input = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearInput() {
@@ -22079,7 +22620,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitative_reference = 7;</code>
+       * <code>bool quantitative_reference = 10;</code>
        * @return The quantitativeReference.
        */
       @java.lang.Override
@@ -22092,7 +22633,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitative_reference = 7;</code>
+       * <code>bool quantitative_reference = 10;</code>
        * @param value The quantitativeReference to set.
        * @return This builder for chaining.
        */
@@ -22108,7 +22649,7 @@ public final class Proto {
        * process.
        * </pre>
        *
-       * <code>bool quantitative_reference = 7;</code>
+       * <code>bool quantitative_reference = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuantitativeReference() {
@@ -22120,7 +22661,7 @@ public final class Proto {
 
       private double baseUncertainty_ ;
       /**
-       * <code>double base_uncertainty = 8;</code>
+       * <code>double base_uncertainty = 11;</code>
        * @return The baseUncertainty.
        */
       @java.lang.Override
@@ -22128,7 +22669,7 @@ public final class Proto {
         return baseUncertainty_;
       }
       /**
-       * <code>double base_uncertainty = 8;</code>
+       * <code>double base_uncertainty = 11;</code>
        * @param value The baseUncertainty to set.
        * @return This builder for chaining.
        */
@@ -22139,7 +22680,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>double base_uncertainty = 8;</code>
+       * <code>double base_uncertainty = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearBaseUncertainty() {
@@ -22162,7 +22703,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        * @return Whether the defaultProvider field is set.
        */
       public boolean hasDefaultProvider() {
@@ -22178,7 +22719,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        * @return The defaultProvider.
        */
       public org.openlca.proto.Proto.ProcessRef getDefaultProvider() {
@@ -22198,7 +22739,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public Builder setDefaultProvider(org.openlca.proto.Proto.ProcessRef value) {
         if (defaultProviderBuilder_ == null) {
@@ -22223,7 +22764,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public Builder setDefaultProvider(
           org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
@@ -22246,7 +22787,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public Builder mergeDefaultProvider(org.openlca.proto.Proto.ProcessRef value) {
         if (defaultProviderBuilder_ == null) {
@@ -22273,7 +22814,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public Builder clearDefaultProvider() {
         if (defaultProviderBuilder_ == null) {
@@ -22296,7 +22837,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public org.openlca.proto.Proto.ProcessRef.Builder getDefaultProviderBuilder() {
         
@@ -22313,7 +22854,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       public org.openlca.proto.Proto.ProcessRefOrBuilder getDefaultProviderOrBuilder() {
         if (defaultProviderBuilder_ != null) {
@@ -22333,7 +22874,7 @@ public final class Proto {
        * have to match of course).
        * </pre>
        *
-       * <code>.protolca.ProcessRef default_provider = 9;</code>
+       * <code>.protolca.ProcessRef default_provider = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> 
@@ -22351,7 +22892,7 @@ public final class Proto {
 
       private double amount_ ;
       /**
-       * <code>double amount = 10;</code>
+       * <code>double amount = 13;</code>
        * @return The amount.
        */
       @java.lang.Override
@@ -22359,7 +22900,7 @@ public final class Proto {
         return amount_;
       }
       /**
-       * <code>double amount = 10;</code>
+       * <code>double amount = 13;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -22370,7 +22911,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>double amount = 10;</code>
+       * <code>double amount = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -22382,7 +22923,7 @@ public final class Proto {
 
       private java.lang.Object amountFormula_ = "";
       /**
-       * <code>string amount_formula = 11;</code>
+       * <code>string amount_formula = 14;</code>
        * @return The amountFormula.
        */
       public java.lang.String getAmountFormula() {
@@ -22398,7 +22939,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string amount_formula = 11;</code>
+       * <code>string amount_formula = 14;</code>
        * @return The bytes for amountFormula.
        */
       public com.google.protobuf.ByteString
@@ -22415,7 +22956,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string amount_formula = 11;</code>
+       * <code>string amount_formula = 14;</code>
        * @param value The amountFormula to set.
        * @return This builder for chaining.
        */
@@ -22430,7 +22971,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string amount_formula = 11;</code>
+       * <code>string amount_formula = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAmountFormula() {
@@ -22440,7 +22981,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>string amount_formula = 11;</code>
+       * <code>string amount_formula = 14;</code>
        * @param value The bytes for amountFormula to set.
        * @return This builder for chaining.
        */
@@ -22460,14 +23001,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> unitBuilder_;
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        * @return Whether the unit field is set.
        */
       public boolean hasUnit() {
         return unitBuilder_ != null || unit_ != null;
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        * @return The unit.
        */
       public org.openlca.proto.Proto.Ref getUnit() {
@@ -22478,7 +23019,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public Builder setUnit(org.openlca.proto.Proto.Ref value) {
         if (unitBuilder_ == null) {
@@ -22494,7 +23035,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public Builder setUnit(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -22508,7 +23049,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public Builder mergeUnit(org.openlca.proto.Proto.Ref value) {
         if (unitBuilder_ == null) {
@@ -22526,7 +23067,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public Builder clearUnit() {
         if (unitBuilder_ == null) {
@@ -22540,7 +23081,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getUnitBuilder() {
         
@@ -22548,7 +23089,7 @@ public final class Proto {
         return getUnitFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder() {
         if (unitBuilder_ != null) {
@@ -22559,7 +23100,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Ref unit = 12;</code>
+       * <code>.protolca.Ref unit = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -22585,7 +23126,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 13;</code>
+       * <code>string dq_entry = 16;</code>
        * @return The dqEntry.
        */
       public java.lang.String getDqEntry() {
@@ -22609,7 +23150,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 13;</code>
+       * <code>string dq_entry = 16;</code>
        * @return The bytes for dqEntry.
        */
       public com.google.protobuf.ByteString
@@ -22634,7 +23175,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 13;</code>
+       * <code>string dq_entry = 16;</code>
        * @param value The dqEntry to set.
        * @return This builder for chaining.
        */
@@ -22657,7 +23198,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 13;</code>
+       * <code>string dq_entry = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearDqEntry() {
@@ -22675,7 +23216,7 @@ public final class Proto {
        * `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 13;</code>
+       * <code>string dq_entry = 16;</code>
        * @param value The bytes for dqEntry to set.
        * @return This builder for chaining.
        */
@@ -22695,14 +23236,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder> uncertaintyBuilder_;
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        * @return Whether the uncertainty field is set.
        */
       public boolean hasUncertainty() {
         return uncertaintyBuilder_ != null || uncertainty_ != null;
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        * @return The uncertainty.
        */
       public org.openlca.proto.Proto.Uncertainty getUncertainty() {
@@ -22713,7 +23254,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public Builder setUncertainty(org.openlca.proto.Proto.Uncertainty value) {
         if (uncertaintyBuilder_ == null) {
@@ -22729,7 +23270,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public Builder setUncertainty(
           org.openlca.proto.Proto.Uncertainty.Builder builderForValue) {
@@ -22743,7 +23284,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public Builder mergeUncertainty(org.openlca.proto.Proto.Uncertainty value) {
         if (uncertaintyBuilder_ == null) {
@@ -22761,7 +23302,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public Builder clearUncertainty() {
         if (uncertaintyBuilder_ == null) {
@@ -22775,7 +23316,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public org.openlca.proto.Proto.Uncertainty.Builder getUncertaintyBuilder() {
         
@@ -22783,7 +23324,7 @@ public final class Proto {
         return getUncertaintyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
         if (uncertaintyBuilder_ != null) {
@@ -22794,7 +23335,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Uncertainty uncertainty = 14;</code>
+       * <code>.protolca.Uncertainty uncertainty = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder> 
@@ -22816,7 +23357,7 @@ public final class Proto {
        * A general comment about the input or output.
        * </pre>
        *
-       * <code>string description = 15;</code>
+       * <code>string description = 18;</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -22836,7 +23377,7 @@ public final class Proto {
        * A general comment about the input or output.
        * </pre>
        *
-       * <code>string description = 15;</code>
+       * <code>string description = 18;</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -22857,7 +23398,7 @@ public final class Proto {
        * A general comment about the input or output.
        * </pre>
        *
-       * <code>string description = 15;</code>
+       * <code>string description = 18;</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -22876,7 +23417,7 @@ public final class Proto {
        * A general comment about the input or output.
        * </pre>
        *
-       * <code>string description = 15;</code>
+       * <code>string description = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -22890,7 +23431,7 @@ public final class Proto {
        * A general comment about the input or output.
        * </pre>
        *
-       * <code>string description = 15;</code>
+       * <code>string description = 18;</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -48574,7 +49115,7 @@ public final class Proto {
 
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -48583,7 +49124,7 @@ public final class Proto {
         getImpactCategoriesList();
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -48591,7 +49132,7 @@ public final class Proto {
     org.openlca.proto.Proto.ImpactCategoryRef getImpactCategories(int index);
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -48599,7 +49140,7 @@ public final class Proto {
     int getImpactCategoriesCount();
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -48608,17 +49149,61 @@ public final class Proto {
         getImpactCategoriesOrBuilderList();
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    java.util.List<org.openlca.proto.Proto.NwSet> 
+        getNwSetsList();
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    org.openlca.proto.Proto.NwSet getNwSets(int index);
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    int getNwSetsCount();
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    java.util.List<? extends org.openlca.proto.Proto.NwSetOrBuilder> 
+        getNwSetsOrBuilderList();
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    org.openlca.proto.Proto.NwSetOrBuilder getNwSetsOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * A impact assessment method.
+   * An impact assessment method.
    * </pre>
    *
    * Protobuf type {@code protolca.ImpactMethod}
@@ -48642,6 +49227,7 @@ public final class Proto {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       library_ = "";
       impactCategories_ = java.util.Collections.emptyList();
+      nwSets_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -48748,6 +49334,15 @@ public final class Proto {
                   input.readMessage(org.openlca.proto.Proto.ImpactCategoryRef.parser(), extensionRegistry));
               break;
             }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                nwSets_ = new java.util.ArrayList<org.openlca.proto.Proto.NwSet>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              nwSets_.add(
+                  input.readMessage(org.openlca.proto.Proto.NwSet.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -48768,6 +49363,9 @@ public final class Proto {
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           impactCategories_ = java.util.Collections.unmodifiableList(impactCategories_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          nwSets_ = java.util.Collections.unmodifiableList(nwSets_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -49215,7 +49813,7 @@ public final class Proto {
     private java.util.List<org.openlca.proto.Proto.ImpactCategoryRef> impactCategories_;
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -49226,7 +49824,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -49238,7 +49836,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -49249,7 +49847,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -49260,7 +49858,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The LCIA categories of the method.
+     * The impact categories of the method.
      * </pre>
      *
      * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -49269,6 +49867,66 @@ public final class Proto {
     public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoriesOrBuilder(
         int index) {
       return impactCategories_.get(index);
+    }
+
+    public static final int NW_SETS_FIELD_NUMBER = 11;
+    private java.util.List<org.openlca.proto.Proto.NwSet> nwSets_;
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.openlca.proto.Proto.NwSet> getNwSetsList() {
+      return nwSets_;
+    }
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.openlca.proto.Proto.NwSetOrBuilder> 
+        getNwSetsOrBuilderList() {
+      return nwSets_;
+    }
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    @java.lang.Override
+    public int getNwSetsCount() {
+      return nwSets_.size();
+    }
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.NwSet getNwSets(int index) {
+      return nwSets_.get(index);
+    }
+    /**
+     * <pre>
+     * The normalization and weighting sets of the method.
+     * </pre>
+     *
+     * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.NwSetOrBuilder getNwSetsOrBuilder(
+        int index) {
+      return nwSets_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -49314,6 +49972,9 @@ public final class Proto {
       }
       for (int i = 0; i < impactCategories_.size(); i++) {
         output.writeMessage(10, impactCategories_.get(i));
+      }
+      for (int i = 0; i < nwSets_.size(); i++) {
+        output.writeMessage(11, nwSets_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -49361,6 +50022,10 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, impactCategories_.get(i));
       }
+      for (int i = 0; i < nwSets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, nwSets_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -49399,6 +50064,8 @@ public final class Proto {
           .equals(other.getLibrary())) return false;
       if (!getImpactCategoriesList()
           .equals(other.getImpactCategoriesList())) return false;
+      if (!getNwSetsList()
+          .equals(other.getNwSetsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -49435,6 +50102,10 @@ public final class Proto {
       if (getImpactCategoriesCount() > 0) {
         hash = (37 * hash) + IMPACT_CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategoriesList().hashCode();
+      }
+      if (getNwSetsCount() > 0) {
+        hash = (37 * hash) + NW_SETS_FIELD_NUMBER;
+        hash = (53 * hash) + getNwSetsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -49533,7 +50204,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A impact assessment method.
+     * An impact assessment method.
      * </pre>
      *
      * Protobuf type {@code protolca.ImpactMethod}
@@ -49569,6 +50240,7 @@ public final class Proto {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getImpactCategoriesFieldBuilder();
+          getNwSetsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -49601,6 +50273,12 @@ public final class Proto {
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           impactCategoriesBuilder_.clear();
+        }
+        if (nwSetsBuilder_ == null) {
+          nwSets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          nwSetsBuilder_.clear();
         }
         return this;
       }
@@ -49654,6 +50332,15 @@ public final class Proto {
           result.impactCategories_ = impactCategories_;
         } else {
           result.impactCategories_ = impactCategoriesBuilder_.build();
+        }
+        if (nwSetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            nwSets_ = java.util.Collections.unmodifiableList(nwSets_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.nwSets_ = nwSets_;
+        } else {
+          result.nwSets_ = nwSetsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -49767,6 +50454,32 @@ public final class Proto {
                    getImpactCategoriesFieldBuilder() : null;
             } else {
               impactCategoriesBuilder_.addAllMessages(other.impactCategories_);
+            }
+          }
+        }
+        if (nwSetsBuilder_ == null) {
+          if (!other.nwSets_.isEmpty()) {
+            if (nwSets_.isEmpty()) {
+              nwSets_ = other.nwSets_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureNwSetsIsMutable();
+              nwSets_.addAll(other.nwSets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nwSets_.isEmpty()) {
+            if (nwSetsBuilder_.isEmpty()) {
+              nwSetsBuilder_.dispose();
+              nwSetsBuilder_ = null;
+              nwSets_ = other.nwSets_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              nwSetsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNwSetsFieldBuilder() : null;
+            } else {
+              nwSetsBuilder_.addAllMessages(other.nwSets_);
             }
           }
         }
@@ -50821,7 +51534,7 @@ public final class Proto {
 
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50835,7 +51548,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50849,7 +51562,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50863,7 +51576,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50884,7 +51597,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50902,7 +51615,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50922,7 +51635,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50943,7 +51656,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50961,7 +51674,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50979,7 +51692,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -50998,7 +51711,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51015,7 +51728,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51032,7 +51745,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51043,7 +51756,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51057,7 +51770,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51072,7 +51785,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51083,7 +51796,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51095,7 +51808,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The LCIA categories of the method.
+       * The impact categories of the method.
        * </pre>
        *
        * <code>repeated .protolca.ImpactCategoryRef impact_categories = 10;</code>
@@ -51117,6 +51830,318 @@ public final class Proto {
           impactCategories_ = null;
         }
         return impactCategoriesBuilder_;
+      }
+
+      private java.util.List<org.openlca.proto.Proto.NwSet> nwSets_ =
+        java.util.Collections.emptyList();
+      private void ensureNwSetsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          nwSets_ = new java.util.ArrayList<org.openlca.proto.Proto.NwSet>(nwSets_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.NwSet, org.openlca.proto.Proto.NwSet.Builder, org.openlca.proto.Proto.NwSetOrBuilder> nwSetsBuilder_;
+
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.NwSet> getNwSetsList() {
+        if (nwSetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nwSets_);
+        } else {
+          return nwSetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public int getNwSetsCount() {
+        if (nwSetsBuilder_ == null) {
+          return nwSets_.size();
+        } else {
+          return nwSetsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public org.openlca.proto.Proto.NwSet getNwSets(int index) {
+        if (nwSetsBuilder_ == null) {
+          return nwSets_.get(index);
+        } else {
+          return nwSetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder setNwSets(
+          int index, org.openlca.proto.Proto.NwSet value) {
+        if (nwSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNwSetsIsMutable();
+          nwSets_.set(index, value);
+          onChanged();
+        } else {
+          nwSetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder setNwSets(
+          int index, org.openlca.proto.Proto.NwSet.Builder builderForValue) {
+        if (nwSetsBuilder_ == null) {
+          ensureNwSetsIsMutable();
+          nwSets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nwSetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder addNwSets(org.openlca.proto.Proto.NwSet value) {
+        if (nwSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNwSetsIsMutable();
+          nwSets_.add(value);
+          onChanged();
+        } else {
+          nwSetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder addNwSets(
+          int index, org.openlca.proto.Proto.NwSet value) {
+        if (nwSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNwSetsIsMutable();
+          nwSets_.add(index, value);
+          onChanged();
+        } else {
+          nwSetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder addNwSets(
+          org.openlca.proto.Proto.NwSet.Builder builderForValue) {
+        if (nwSetsBuilder_ == null) {
+          ensureNwSetsIsMutable();
+          nwSets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nwSetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder addNwSets(
+          int index, org.openlca.proto.Proto.NwSet.Builder builderForValue) {
+        if (nwSetsBuilder_ == null) {
+          ensureNwSetsIsMutable();
+          nwSets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nwSetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder addAllNwSets(
+          java.lang.Iterable<? extends org.openlca.proto.Proto.NwSet> values) {
+        if (nwSetsBuilder_ == null) {
+          ensureNwSetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nwSets_);
+          onChanged();
+        } else {
+          nwSetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder clearNwSets() {
+        if (nwSetsBuilder_ == null) {
+          nwSets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          nwSetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public Builder removeNwSets(int index) {
+        if (nwSetsBuilder_ == null) {
+          ensureNwSetsIsMutable();
+          nwSets_.remove(index);
+          onChanged();
+        } else {
+          nwSetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public org.openlca.proto.Proto.NwSet.Builder getNwSetsBuilder(
+          int index) {
+        return getNwSetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public org.openlca.proto.Proto.NwSetOrBuilder getNwSetsOrBuilder(
+          int index) {
+        if (nwSetsBuilder_ == null) {
+          return nwSets_.get(index);  } else {
+          return nwSetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public java.util.List<? extends org.openlca.proto.Proto.NwSetOrBuilder> 
+           getNwSetsOrBuilderList() {
+        if (nwSetsBuilder_ != null) {
+          return nwSetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nwSets_);
+        }
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public org.openlca.proto.Proto.NwSet.Builder addNwSetsBuilder() {
+        return getNwSetsFieldBuilder().addBuilder(
+            org.openlca.proto.Proto.NwSet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public org.openlca.proto.Proto.NwSet.Builder addNwSetsBuilder(
+          int index) {
+        return getNwSetsFieldBuilder().addBuilder(
+            index, org.openlca.proto.Proto.NwSet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The normalization and weighting sets of the method.
+       * </pre>
+       *
+       * <code>repeated .protolca.NwSet nw_sets = 11;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.NwSet.Builder> 
+           getNwSetsBuilderList() {
+        return getNwSetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.NwSet, org.openlca.proto.Proto.NwSet.Builder, org.openlca.proto.Proto.NwSetOrBuilder> 
+          getNwSetsFieldBuilder() {
+        if (nwSetsBuilder_ == null) {
+          nwSetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openlca.proto.Proto.NwSet, org.openlca.proto.Proto.NwSet.Builder, org.openlca.proto.Proto.NwSetOrBuilder>(
+                  nwSets_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          nwSets_ = null;
+        }
+        return nwSetsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -62764,39 +63789,39 @@ public final class Proto {
         getLibraryBytes();
 
     /**
-     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-     * @return The enum numeric value on the wire for defaultAllocationMethod.
-     */
-    int getDefaultAllocationMethodValue();
-    /**
-     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-     * @return The defaultAllocationMethod.
-     */
-    org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod();
-
-    /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     java.util.List<org.openlca.proto.Proto.AllocationFactor> 
         getAllocationFactorsList();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index);
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     int getAllocationFactorsCount();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
         getAllocationFactorsOrBuilderList();
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
         int index);
+
+    /**
+     * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+     * @return The enum numeric value on the wire for defaultAllocationMethod.
+     */
+    int getDefaultAllocationMethodValue();
+    /**
+     * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+     * @return The defaultAllocationMethod.
+     */
+    org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod();
 
     /**
      * <pre>
@@ -62843,66 +63868,83 @@ public final class Proto {
         int index);
 
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <pre>
+     * This field holds the last internal ID that was used in an exchange (which
+     * may have been deleted, so it can be larger than the largest internal ID of
+     * the exchanges of the process.) The internal ID of an exchange is used to
+     * identify exchanges within a process (for updates, data exchanges (see
+     * process links), etc.). When you add an exchange to a process, you should
+     * increment this field in the process and set the resulting value as the
+     * internal ID of that exchange. The sequence of internal IDs should start
+     * with `1`.
+     * </pre>
+     *
+     * <code>int32 last_internal_id = 13;</code>
+     * @return The lastInternalId.
+     */
+    int getLastInternalId();
+
+    /**
+     * <code>.protolca.Location location = 14;</code>
      * @return Whether the location field is set.
      */
     boolean hasLocation();
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <code>.protolca.Location location = 14;</code>
      * @return The location.
      */
     org.openlca.proto.Proto.Location getLocation();
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <code>.protolca.Location location = 14;</code>
      */
     org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder();
 
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     java.util.List<org.openlca.proto.Proto.Parameter> 
         getParametersList();
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     org.openlca.proto.Proto.Parameter getParameters(int index);
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     int getParametersCount();
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
         getParametersOrBuilderList();
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
         int index);
 
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      * @return Whether the processDocumentation field is set.
      */
     boolean hasProcessDocumentation();
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      * @return The processDocumentation.
      */
     org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation();
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      */
     org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder();
 
     /**
-     * <code>.protolca.ProcessType process_type = 16;</code>
+     * <code>.protolca.ProcessType process_type = 17;</code>
      * @return The enum numeric value on the wire for processType.
      */
     int getProcessTypeValue();
     /**
-     * <code>.protolca.ProcessType process_type = 16;</code>
+     * <code>.protolca.ProcessType process_type = 17;</code>
      * @return The processType.
      */
     org.openlca.proto.Proto.ProcessType getProcessType();
@@ -62913,7 +63955,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      * @return Whether the dqSystem field is set.
      */
     boolean hasDqSystem();
@@ -62923,7 +63965,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      * @return The dqSystem.
      */
     org.openlca.proto.Proto.Ref getDqSystem();
@@ -62933,7 +63975,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder();
 
@@ -62944,7 +63986,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     boolean hasExchangeDqSystem();
@@ -62955,7 +63997,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      * @return The exchangeDqSystem.
      */
     org.openlca.proto.Proto.Ref getExchangeDqSystem();
@@ -62966,7 +64008,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder();
 
@@ -62976,7 +64018,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      * @return Whether the socialDqSystem field is set.
      */
     boolean hasSocialDqSystem();
@@ -62986,7 +64028,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      * @return The socialDqSystem.
      */
     org.openlca.proto.Proto.Ref getSocialDqSystem();
@@ -62996,7 +64038,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder();
 
@@ -63009,7 +64051,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 20;</code>
+     * <code>string dq_entry = 21;</code>
      * @return The dqEntry.
      */
     java.lang.String getDqEntry();
@@ -63022,11 +64064,24 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 20;</code>
+     * <code>string dq_entry = 21;</code>
      * @return The bytes for dqEntry.
      */
     com.google.protobuf.ByteString
         getDqEntryBytes();
+
+    /**
+     * <pre>
+     * Indicates whether this process describes an infrastructure process. This
+     * field is part of the openLCA schema because of backward compatibility with
+     * EcoSpold 1. It does not really have a meaning in openLCA and should not be
+     * used anymore.
+     * </pre>
+     *
+     * <code>bool infrastructure_process = 22;</code>
+     * @return The infrastructureProcess.
+     */
+    boolean getInfrastructureProcess();
   }
   /**
    * Protobuf type {@code protolca.Process}
@@ -63049,8 +64104,8 @@ public final class Proto {
       lastChange_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       library_ = "";
-      defaultAllocationMethod_ = 0;
       allocationFactors_ = java.util.Collections.emptyList();
+      defaultAllocationMethod_ = 0;
       exchanges_ = java.util.Collections.emptyList();
       parameters_ = java.util.Collections.emptyList();
       processType_ = 0;
@@ -63152,19 +64207,19 @@ public final class Proto {
               library_ = s;
               break;
             }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              defaultAllocationMethod_ = rawValue;
-              break;
-            }
-            case 90: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 allocationFactors_ = new java.util.ArrayList<org.openlca.proto.Proto.AllocationFactor>();
                 mutable_bitField0_ |= 0x00000002;
               }
               allocationFactors_.add(
                   input.readMessage(org.openlca.proto.Proto.AllocationFactor.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              defaultAllocationMethod_ = rawValue;
               break;
             }
             case 98: {
@@ -63176,7 +64231,12 @@ public final class Proto {
                   input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry));
               break;
             }
-            case 106: {
+            case 104: {
+
+              lastInternalId_ = input.readInt32();
+              break;
+            }
+            case 114: {
               org.openlca.proto.Proto.Location.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
@@ -63189,7 +64249,7 @@ public final class Proto {
 
               break;
             }
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.Parameter>();
                 mutable_bitField0_ |= 0x00000008;
@@ -63198,7 +64258,7 @@ public final class Proto {
                   input.readMessage(org.openlca.proto.Proto.Parameter.parser(), extensionRegistry));
               break;
             }
-            case 122: {
+            case 130: {
               org.openlca.proto.Proto.ProcessDocumentation.Builder subBuilder = null;
               if (processDocumentation_ != null) {
                 subBuilder = processDocumentation_.toBuilder();
@@ -63211,13 +64271,13 @@ public final class Proto {
 
               break;
             }
-            case 128: {
+            case 136: {
               int rawValue = input.readEnum();
 
               processType_ = rawValue;
               break;
             }
-            case 138: {
+            case 146: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (dqSystem_ != null) {
                 subBuilder = dqSystem_.toBuilder();
@@ -63230,7 +64290,7 @@ public final class Proto {
 
               break;
             }
-            case 146: {
+            case 154: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (exchangeDqSystem_ != null) {
                 subBuilder = exchangeDqSystem_.toBuilder();
@@ -63243,7 +64303,7 @@ public final class Proto {
 
               break;
             }
-            case 154: {
+            case 162: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (socialDqSystem_ != null) {
                 subBuilder = socialDqSystem_.toBuilder();
@@ -63256,10 +64316,15 @@ public final class Proto {
 
               break;
             }
-            case 162: {
+            case 170: {
               java.lang.String s = input.readStringRequireUtf8();
 
               dqEntry_ = s;
+              break;
+            }
+            case 176: {
+
+              infrastructureProcess_ = input.readBool();
               break;
             }
             default: {
@@ -63731,36 +64796,17 @@ public final class Proto {
       }
     }
 
-    public static final int DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER = 10;
-    private int defaultAllocationMethod_;
-    /**
-     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-     * @return The enum numeric value on the wire for defaultAllocationMethod.
-     */
-    @java.lang.Override public int getDefaultAllocationMethodValue() {
-      return defaultAllocationMethod_;
-    }
-    /**
-     * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-     * @return The defaultAllocationMethod.
-     */
-    @java.lang.Override public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
-      @SuppressWarnings("deprecation")
-      org.openlca.proto.Proto.AllocationType result = org.openlca.proto.Proto.AllocationType.valueOf(defaultAllocationMethod_);
-      return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
-    }
-
-    public static final int ALLOCATION_FACTORS_FIELD_NUMBER = 11;
+    public static final int ALLOCATION_FACTORS_FIELD_NUMBER = 10;
     private java.util.List<org.openlca.proto.Proto.AllocationFactor> allocationFactors_;
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
@@ -63768,26 +64814,45 @@ public final class Proto {
       return allocationFactors_;
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     @java.lang.Override
     public int getAllocationFactorsCount() {
       return allocationFactors_.size();
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
       return allocationFactors_.get(index);
     }
     /**
-     * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+     * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
         int index) {
       return allocationFactors_.get(index);
+    }
+
+    public static final int DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER = 11;
+    private int defaultAllocationMethod_;
+    /**
+     * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+     * @return The enum numeric value on the wire for defaultAllocationMethod.
+     */
+    @java.lang.Override public int getDefaultAllocationMethodValue() {
+      return defaultAllocationMethod_;
+    }
+    /**
+     * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+     * @return The defaultAllocationMethod.
+     */
+    @java.lang.Override public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
+      @SuppressWarnings("deprecation")
+      org.openlca.proto.Proto.AllocationType result = org.openlca.proto.Proto.AllocationType.valueOf(defaultAllocationMethod_);
+      return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
     }
 
     public static final int EXCHANGES_FIELD_NUMBER = 12;
@@ -63850,10 +64915,32 @@ public final class Proto {
       return exchanges_.get(index);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 13;
+    public static final int LAST_INTERNAL_ID_FIELD_NUMBER = 13;
+    private int lastInternalId_;
+    /**
+     * <pre>
+     * This field holds the last internal ID that was used in an exchange (which
+     * may have been deleted, so it can be larger than the largest internal ID of
+     * the exchanges of the process.) The internal ID of an exchange is used to
+     * identify exchanges within a process (for updates, data exchanges (see
+     * process links), etc.). When you add an exchange to a process, you should
+     * increment this field in the process and set the resulting value as the
+     * internal ID of that exchange. The sequence of internal IDs should start
+     * with `1`.
+     * </pre>
+     *
+     * <code>int32 last_internal_id = 13;</code>
+     * @return The lastInternalId.
+     */
+    @java.lang.Override
+    public int getLastInternalId() {
+      return lastInternalId_;
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 14;
     private org.openlca.proto.Proto.Location location_;
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <code>.protolca.Location location = 14;</code>
      * @return Whether the location field is set.
      */
     @java.lang.Override
@@ -63861,7 +64948,7 @@ public final class Proto {
       return location_ != null;
     }
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <code>.protolca.Location location = 14;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -63869,24 +64956,24 @@ public final class Proto {
       return location_ == null ? org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
     }
     /**
-     * <code>.protolca.Location location = 13;</code>
+     * <code>.protolca.Location location = 14;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
       return getLocation();
     }
 
-    public static final int PARAMETERS_FIELD_NUMBER = 14;
+    public static final int PARAMETERS_FIELD_NUMBER = 15;
     private java.util.List<org.openlca.proto.Proto.Parameter> parameters_;
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     @java.lang.Override
     public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
       return parameters_;
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
@@ -63894,21 +64981,21 @@ public final class Proto {
       return parameters_;
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     @java.lang.Override
     public int getParametersCount() {
       return parameters_.size();
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.Parameter getParameters(int index) {
       return parameters_.get(index);
     }
     /**
-     * <code>repeated .protolca.Parameter parameters = 14;</code>
+     * <code>repeated .protolca.Parameter parameters = 15;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
@@ -63916,10 +65003,10 @@ public final class Proto {
       return parameters_.get(index);
     }
 
-    public static final int PROCESS_DOCUMENTATION_FIELD_NUMBER = 15;
+    public static final int PROCESS_DOCUMENTATION_FIELD_NUMBER = 16;
     private org.openlca.proto.Proto.ProcessDocumentation processDocumentation_;
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      * @return Whether the processDocumentation field is set.
      */
     @java.lang.Override
@@ -63927,7 +65014,7 @@ public final class Proto {
       return processDocumentation_ != null;
     }
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      * @return The processDocumentation.
      */
     @java.lang.Override
@@ -63935,24 +65022,24 @@ public final class Proto {
       return processDocumentation_ == null ? org.openlca.proto.Proto.ProcessDocumentation.getDefaultInstance() : processDocumentation_;
     }
     /**
-     * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+     * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
       return getProcessDocumentation();
     }
 
-    public static final int PROCESS_TYPE_FIELD_NUMBER = 16;
+    public static final int PROCESS_TYPE_FIELD_NUMBER = 17;
     private int processType_;
     /**
-     * <code>.protolca.ProcessType process_type = 16;</code>
+     * <code>.protolca.ProcessType process_type = 17;</code>
      * @return The enum numeric value on the wire for processType.
      */
     @java.lang.Override public int getProcessTypeValue() {
       return processType_;
     }
     /**
-     * <code>.protolca.ProcessType process_type = 16;</code>
+     * <code>.protolca.ProcessType process_type = 17;</code>
      * @return The processType.
      */
     @java.lang.Override public org.openlca.proto.Proto.ProcessType getProcessType() {
@@ -63961,7 +65048,7 @@ public final class Proto {
       return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
     }
 
-    public static final int DQ_SYSTEM_FIELD_NUMBER = 17;
+    public static final int DQ_SYSTEM_FIELD_NUMBER = 18;
     private org.openlca.proto.Proto.Ref dqSystem_;
     /**
      * <pre>
@@ -63969,7 +65056,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      * @return Whether the dqSystem field is set.
      */
     @java.lang.Override
@@ -63982,7 +65069,7 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      * @return The dqSystem.
      */
     @java.lang.Override
@@ -63995,14 +65082,14 @@ public final class Proto {
      * quality of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref dq_system = 17;</code>
+     * <code>.protolca.Ref dq_system = 18;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
       return getDqSystem();
     }
 
-    public static final int EXCHANGE_DQ_SYSTEM_FIELD_NUMBER = 18;
+    public static final int EXCHANGE_DQ_SYSTEM_FIELD_NUMBER = 19;
     private org.openlca.proto.Proto.Ref exchangeDqSystem_;
     /**
      * <pre>
@@ -64011,7 +65098,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      * @return Whether the exchangeDqSystem field is set.
      */
     @java.lang.Override
@@ -64025,7 +65112,7 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      * @return The exchangeDqSystem.
      */
     @java.lang.Override
@@ -64039,14 +65126,14 @@ public final class Proto {
      * assessed.
      * </pre>
      *
-     * <code>.protolca.Ref exchange_dq_system = 18;</code>
+     * <code>.protolca.Ref exchange_dq_system = 19;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
       return getExchangeDqSystem();
     }
 
-    public static final int SOCIAL_DQ_SYSTEM_FIELD_NUMBER = 19;
+    public static final int SOCIAL_DQ_SYSTEM_FIELD_NUMBER = 20;
     private org.openlca.proto.Proto.Ref socialDqSystem_;
     /**
      * <pre>
@@ -64054,7 +65141,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      * @return Whether the socialDqSystem field is set.
      */
     @java.lang.Override
@@ -64067,7 +65154,7 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      * @return The socialDqSystem.
      */
     @java.lang.Override
@@ -64080,14 +65167,14 @@ public final class Proto {
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
-     * <code>.protolca.Ref social_dq_system = 19;</code>
+     * <code>.protolca.Ref social_dq_system = 20;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
       return getSocialDqSystem();
     }
 
-    public static final int DQ_ENTRY_FIELD_NUMBER = 20;
+    public static final int DQ_ENTRY_FIELD_NUMBER = 21;
     private volatile java.lang.Object dqEntry_;
     /**
      * <pre>
@@ -64098,7 +65185,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 20;</code>
+     * <code>string dq_entry = 21;</code>
      * @return The dqEntry.
      */
     @java.lang.Override
@@ -64123,7 +65210,7 @@ public final class Proto {
      * values in the `dqEntry` vector map to these positions.
      * </pre>
      *
-     * <code>string dq_entry = 20;</code>
+     * <code>string dq_entry = 21;</code>
      * @return The bytes for dqEntry.
      */
     @java.lang.Override
@@ -64139,6 +65226,24 @@ public final class Proto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int INFRASTRUCTURE_PROCESS_FIELD_NUMBER = 22;
+    private boolean infrastructureProcess_;
+    /**
+     * <pre>
+     * Indicates whether this process describes an infrastructure process. This
+     * field is part of the openLCA schema because of backward compatibility with
+     * EcoSpold 1. It does not really have a meaning in openLCA and should not be
+     * used anymore.
+     * </pre>
+     *
+     * <code>bool infrastructure_process = 22;</code>
+     * @return The infrastructureProcess.
+     */
+    @java.lang.Override
+    public boolean getInfrastructureProcess() {
+      return infrastructureProcess_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -64182,38 +65287,44 @@ public final class Proto {
       if (!getLibraryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, library_);
       }
-      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
-        output.writeEnum(10, defaultAllocationMethod_);
-      }
       for (int i = 0; i < allocationFactors_.size(); i++) {
-        output.writeMessage(11, allocationFactors_.get(i));
+        output.writeMessage(10, allocationFactors_.get(i));
+      }
+      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
+        output.writeEnum(11, defaultAllocationMethod_);
       }
       for (int i = 0; i < exchanges_.size(); i++) {
         output.writeMessage(12, exchanges_.get(i));
       }
+      if (lastInternalId_ != 0) {
+        output.writeInt32(13, lastInternalId_);
+      }
       if (location_ != null) {
-        output.writeMessage(13, getLocation());
+        output.writeMessage(14, getLocation());
       }
       for (int i = 0; i < parameters_.size(); i++) {
-        output.writeMessage(14, parameters_.get(i));
+        output.writeMessage(15, parameters_.get(i));
       }
       if (processDocumentation_ != null) {
-        output.writeMessage(15, getProcessDocumentation());
+        output.writeMessage(16, getProcessDocumentation());
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
-        output.writeEnum(16, processType_);
+        output.writeEnum(17, processType_);
       }
       if (dqSystem_ != null) {
-        output.writeMessage(17, getDqSystem());
+        output.writeMessage(18, getDqSystem());
       }
       if (exchangeDqSystem_ != null) {
-        output.writeMessage(18, getExchangeDqSystem());
+        output.writeMessage(19, getExchangeDqSystem());
       }
       if (socialDqSystem_ != null) {
-        output.writeMessage(19, getSocialDqSystem());
+        output.writeMessage(20, getSocialDqSystem());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, dqEntry_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, dqEntry_);
+      }
+      if (infrastructureProcess_ != false) {
+        output.writeBool(22, infrastructureProcess_);
       }
       unknownFields.writeTo(output);
     }
@@ -64257,48 +65368,56 @@ public final class Proto {
       if (!getLibraryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, library_);
       }
-      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, defaultAllocationMethod_);
-      }
       for (int i = 0; i < allocationFactors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, allocationFactors_.get(i));
+          .computeMessageSize(10, allocationFactors_.get(i));
+      }
+      if (defaultAllocationMethod_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, defaultAllocationMethod_);
       }
       for (int i = 0; i < exchanges_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, exchanges_.get(i));
       }
+      if (lastInternalId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, lastInternalId_);
+      }
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getLocation());
+          .computeMessageSize(14, getLocation());
       }
       for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, parameters_.get(i));
+          .computeMessageSize(15, parameters_.get(i));
       }
       if (processDocumentation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getProcessDocumentation());
+          .computeMessageSize(16, getProcessDocumentation());
       }
       if (processType_ != org.openlca.proto.Proto.ProcessType.UNDEFINED_PROCESS_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(16, processType_);
+          .computeEnumSize(17, processType_);
       }
       if (dqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getDqSystem());
+          .computeMessageSize(18, getDqSystem());
       }
       if (exchangeDqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, getExchangeDqSystem());
+          .computeMessageSize(19, getExchangeDqSystem());
       }
       if (socialDqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getSocialDqSystem());
+          .computeMessageSize(20, getSocialDqSystem());
       }
       if (!getDqEntryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, dqEntry_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, dqEntry_);
+      }
+      if (infrastructureProcess_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(22, infrastructureProcess_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -64336,11 +65455,13 @@ public final class Proto {
           .equals(other.getTagsList())) return false;
       if (!getLibrary()
           .equals(other.getLibrary())) return false;
-      if (defaultAllocationMethod_ != other.defaultAllocationMethod_) return false;
       if (!getAllocationFactorsList()
           .equals(other.getAllocationFactorsList())) return false;
+      if (defaultAllocationMethod_ != other.defaultAllocationMethod_) return false;
       if (!getExchangesList()
           .equals(other.getExchangesList())) return false;
+      if (getLastInternalId()
+          != other.getLastInternalId()) return false;
       if (hasLocation() != other.hasLocation()) return false;
       if (hasLocation()) {
         if (!getLocation()
@@ -64371,6 +65492,8 @@ public final class Proto {
       }
       if (!getDqEntry()
           .equals(other.getDqEntry())) return false;
+      if (getInfrastructureProcess()
+          != other.getInfrastructureProcess()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -64404,16 +65527,18 @@ public final class Proto {
       }
       hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
       hash = (53 * hash) + getLibrary().hashCode();
-      hash = (37 * hash) + DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER;
-      hash = (53 * hash) + defaultAllocationMethod_;
       if (getAllocationFactorsCount() > 0) {
         hash = (37 * hash) + ALLOCATION_FACTORS_FIELD_NUMBER;
         hash = (53 * hash) + getAllocationFactorsList().hashCode();
       }
+      hash = (37 * hash) + DEFAULT_ALLOCATION_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + defaultAllocationMethod_;
       if (getExchangesCount() > 0) {
         hash = (37 * hash) + EXCHANGES_FIELD_NUMBER;
         hash = (53 * hash) + getExchangesList().hashCode();
       }
+      hash = (37 * hash) + LAST_INTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLastInternalId();
       if (hasLocation()) {
         hash = (37 * hash) + LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getLocation().hashCode();
@@ -64442,6 +65567,9 @@ public final class Proto {
       }
       hash = (37 * hash) + DQ_ENTRY_FIELD_NUMBER;
       hash = (53 * hash) + getDqEntry().hashCode();
+      hash = (37 * hash) + INFRASTRUCTURE_PROCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInfrastructureProcess());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -64600,20 +65728,22 @@ public final class Proto {
         bitField0_ = (bitField0_ & ~0x00000001);
         library_ = "";
 
-        defaultAllocationMethod_ = 0;
-
         if (allocationFactorsBuilder_ == null) {
           allocationFactors_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           allocationFactorsBuilder_.clear();
         }
+        defaultAllocationMethod_ = 0;
+
         if (exchangesBuilder_ == null) {
           exchanges_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           exchangesBuilder_.clear();
         }
+        lastInternalId_ = 0;
+
         if (locationBuilder_ == null) {
           location_ = null;
         } else {
@@ -64653,6 +65783,8 @@ public final class Proto {
           socialDqSystemBuilder_ = null;
         }
         dqEntry_ = "";
+
+        infrastructureProcess_ = false;
 
         return this;
       }
@@ -64698,7 +65830,6 @@ public final class Proto {
         }
         result.tags_ = tags_;
         result.library_ = library_;
-        result.defaultAllocationMethod_ = defaultAllocationMethod_;
         if (allocationFactorsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             allocationFactors_ = java.util.Collections.unmodifiableList(allocationFactors_);
@@ -64708,6 +65839,7 @@ public final class Proto {
         } else {
           result.allocationFactors_ = allocationFactorsBuilder_.build();
         }
+        result.defaultAllocationMethod_ = defaultAllocationMethod_;
         if (exchangesBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             exchanges_ = java.util.Collections.unmodifiableList(exchanges_);
@@ -64717,6 +65849,7 @@ public final class Proto {
         } else {
           result.exchanges_ = exchangesBuilder_.build();
         }
+        result.lastInternalId_ = lastInternalId_;
         if (locationBuilder_ == null) {
           result.location_ = location_;
         } else {
@@ -64753,6 +65886,7 @@ public final class Proto {
           result.socialDqSystem_ = socialDqSystemBuilder_.build();
         }
         result.dqEntry_ = dqEntry_;
+        result.infrastructureProcess_ = infrastructureProcess_;
         onBuilt();
         return result;
       }
@@ -64842,9 +65976,6 @@ public final class Proto {
           library_ = other.library_;
           onChanged();
         }
-        if (other.defaultAllocationMethod_ != 0) {
-          setDefaultAllocationMethodValue(other.getDefaultAllocationMethodValue());
-        }
         if (allocationFactorsBuilder_ == null) {
           if (!other.allocationFactors_.isEmpty()) {
             if (allocationFactors_.isEmpty()) {
@@ -64871,6 +66002,9 @@ public final class Proto {
             }
           }
         }
+        if (other.defaultAllocationMethod_ != 0) {
+          setDefaultAllocationMethodValue(other.getDefaultAllocationMethodValue());
+        }
         if (exchangesBuilder_ == null) {
           if (!other.exchanges_.isEmpty()) {
             if (exchanges_.isEmpty()) {
@@ -64896,6 +66030,9 @@ public final class Proto {
               exchangesBuilder_.addAllMessages(other.exchanges_);
             }
           }
+        }
+        if (other.getLastInternalId() != 0) {
+          setLastInternalId(other.getLastInternalId());
         }
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
@@ -64944,6 +66081,9 @@ public final class Proto {
         if (!other.getDqEntry().isEmpty()) {
           dqEntry_ = other.dqEntry_;
           onChanged();
+        }
+        if (other.getInfrastructureProcess() != false) {
+          setInfrastructureProcess(other.getInfrastructureProcess());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -65982,60 +67122,6 @@ public final class Proto {
         return this;
       }
 
-      private int defaultAllocationMethod_ = 0;
-      /**
-       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-       * @return The enum numeric value on the wire for defaultAllocationMethod.
-       */
-      @java.lang.Override public int getDefaultAllocationMethodValue() {
-        return defaultAllocationMethod_;
-      }
-      /**
-       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-       * @param value The enum numeric value on the wire for defaultAllocationMethod to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultAllocationMethodValue(int value) {
-        
-        defaultAllocationMethod_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-       * @return The defaultAllocationMethod.
-       */
-      @java.lang.Override
-      public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
-        @SuppressWarnings("deprecation")
-        org.openlca.proto.Proto.AllocationType result = org.openlca.proto.Proto.AllocationType.valueOf(defaultAllocationMethod_);
-        return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-       * @param value The defaultAllocationMethod to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultAllocationMethod(org.openlca.proto.Proto.AllocationType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        defaultAllocationMethod_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.protolca.AllocationType default_allocation_method = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultAllocationMethod() {
-        
-        defaultAllocationMethod_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<org.openlca.proto.Proto.AllocationFactor> allocationFactors_ =
         java.util.Collections.emptyList();
       private void ensureAllocationFactorsIsMutable() {
@@ -66049,7 +67135,7 @@ public final class Proto {
           org.openlca.proto.Proto.AllocationFactor, org.openlca.proto.Proto.AllocationFactor.Builder, org.openlca.proto.Proto.AllocationFactorOrBuilder> allocationFactorsBuilder_;
 
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor> getAllocationFactorsList() {
         if (allocationFactorsBuilder_ == null) {
@@ -66059,7 +67145,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public int getAllocationFactorsCount() {
         if (allocationFactorsBuilder_ == null) {
@@ -66069,7 +67155,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor getAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -66079,7 +67165,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -66096,7 +67182,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder setAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -66110,7 +67196,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder addAllocationFactors(org.openlca.proto.Proto.AllocationFactor value) {
         if (allocationFactorsBuilder_ == null) {
@@ -66126,7 +67212,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor value) {
@@ -66143,7 +67229,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder addAllocationFactors(
           org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -66157,7 +67243,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder addAllocationFactors(
           int index, org.openlca.proto.Proto.AllocationFactor.Builder builderForValue) {
@@ -66171,7 +67257,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder addAllAllocationFactors(
           java.lang.Iterable<? extends org.openlca.proto.Proto.AllocationFactor> values) {
@@ -66186,7 +67272,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder clearAllocationFactors() {
         if (allocationFactorsBuilder_ == null) {
@@ -66199,7 +67285,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public Builder removeAllocationFactors(int index) {
         if (allocationFactorsBuilder_ == null) {
@@ -66212,14 +67298,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder getAllocationFactorsBuilder(
           int index) {
         return getAllocationFactorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public org.openlca.proto.Proto.AllocationFactorOrBuilder getAllocationFactorsOrBuilder(
           int index) {
@@ -66229,7 +67315,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.AllocationFactorOrBuilder> 
            getAllocationFactorsOrBuilderList() {
@@ -66240,14 +67326,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder() {
         return getAllocationFactorsFieldBuilder().addBuilder(
             org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public org.openlca.proto.Proto.AllocationFactor.Builder addAllocationFactorsBuilder(
           int index) {
@@ -66255,7 +67341,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.AllocationFactor.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.AllocationFactor allocation_factors = 11;</code>
+       * <code>repeated .protolca.AllocationFactor allocation_factors = 10;</code>
        */
       public java.util.List<org.openlca.proto.Proto.AllocationFactor.Builder> 
            getAllocationFactorsBuilderList() {
@@ -66274,6 +67360,60 @@ public final class Proto {
           allocationFactors_ = null;
         }
         return allocationFactorsBuilder_;
+      }
+
+      private int defaultAllocationMethod_ = 0;
+      /**
+       * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+       * @return The enum numeric value on the wire for defaultAllocationMethod.
+       */
+      @java.lang.Override public int getDefaultAllocationMethodValue() {
+        return defaultAllocationMethod_;
+      }
+      /**
+       * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+       * @param value The enum numeric value on the wire for defaultAllocationMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultAllocationMethodValue(int value) {
+        
+        defaultAllocationMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+       * @return The defaultAllocationMethod.
+       */
+      @java.lang.Override
+      public org.openlca.proto.Proto.AllocationType getDefaultAllocationMethod() {
+        @SuppressWarnings("deprecation")
+        org.openlca.proto.Proto.AllocationType result = org.openlca.proto.Proto.AllocationType.valueOf(defaultAllocationMethod_);
+        return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+       * @param value The defaultAllocationMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultAllocationMethod(org.openlca.proto.Proto.AllocationType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        defaultAllocationMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.protolca.AllocationType default_allocation_method = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultAllocationMethod() {
+        
+        defaultAllocationMethod_ = 0;
+        onChanged();
+        return this;
       }
 
       private java.util.List<org.openlca.proto.Proto.Exchange> exchanges_ =
@@ -66588,18 +67728,82 @@ public final class Proto {
         return exchangesBuilder_;
       }
 
+      private int lastInternalId_ ;
+      /**
+       * <pre>
+       * This field holds the last internal ID that was used in an exchange (which
+       * may have been deleted, so it can be larger than the largest internal ID of
+       * the exchanges of the process.) The internal ID of an exchange is used to
+       * identify exchanges within a process (for updates, data exchanges (see
+       * process links), etc.). When you add an exchange to a process, you should
+       * increment this field in the process and set the resulting value as the
+       * internal ID of that exchange. The sequence of internal IDs should start
+       * with `1`.
+       * </pre>
+       *
+       * <code>int32 last_internal_id = 13;</code>
+       * @return The lastInternalId.
+       */
+      @java.lang.Override
+      public int getLastInternalId() {
+        return lastInternalId_;
+      }
+      /**
+       * <pre>
+       * This field holds the last internal ID that was used in an exchange (which
+       * may have been deleted, so it can be larger than the largest internal ID of
+       * the exchanges of the process.) The internal ID of an exchange is used to
+       * identify exchanges within a process (for updates, data exchanges (see
+       * process links), etc.). When you add an exchange to a process, you should
+       * increment this field in the process and set the resulting value as the
+       * internal ID of that exchange. The sequence of internal IDs should start
+       * with `1`.
+       * </pre>
+       *
+       * <code>int32 last_internal_id = 13;</code>
+       * @param value The lastInternalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastInternalId(int value) {
+        
+        lastInternalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This field holds the last internal ID that was used in an exchange (which
+       * may have been deleted, so it can be larger than the largest internal ID of
+       * the exchanges of the process.) The internal ID of an exchange is used to
+       * identify exchanges within a process (for updates, data exchanges (see
+       * process links), etc.). When you add an exchange to a process, you should
+       * increment this field in the process and set the resulting value as the
+       * internal ID of that exchange. The sequence of internal IDs should start
+       * with `1`.
+       * </pre>
+       *
+       * <code>int32 last_internal_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastInternalId() {
+        
+        lastInternalId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Location location_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> locationBuilder_;
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        * @return Whether the location field is set.
        */
       public boolean hasLocation() {
         return locationBuilder_ != null || location_ != null;
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        * @return The location.
        */
       public org.openlca.proto.Proto.Location getLocation() {
@@ -66610,7 +67814,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public Builder setLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -66626,7 +67830,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public Builder setLocation(
           org.openlca.proto.Proto.Location.Builder builderForValue) {
@@ -66640,7 +67844,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public Builder mergeLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -66658,7 +67862,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -66672,7 +67876,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public org.openlca.proto.Proto.Location.Builder getLocationBuilder() {
         
@@ -66680,7 +67884,7 @@ public final class Proto {
         return getLocationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
@@ -66691,7 +67895,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.Location location = 13;</code>
+       * <code>.protolca.Location location = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> 
@@ -66720,7 +67924,7 @@ public final class Proto {
           org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> parametersBuilder_;
 
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter> getParametersList() {
         if (parametersBuilder_ == null) {
@@ -66730,7 +67934,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public int getParametersCount() {
         if (parametersBuilder_ == null) {
@@ -66740,7 +67944,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public org.openlca.proto.Proto.Parameter getParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -66750,7 +67954,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -66767,7 +67971,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder setParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -66781,7 +67985,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder addParameters(org.openlca.proto.Proto.Parameter value) {
         if (parametersBuilder_ == null) {
@@ -66797,7 +68001,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter value) {
@@ -66814,7 +68018,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder addParameters(
           org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -66828,7 +68032,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder addParameters(
           int index, org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -66842,7 +68046,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder addAllParameters(
           java.lang.Iterable<? extends org.openlca.proto.Proto.Parameter> values) {
@@ -66857,7 +68061,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder clearParameters() {
         if (parametersBuilder_ == null) {
@@ -66870,7 +68074,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public Builder removeParameters(int index) {
         if (parametersBuilder_ == null) {
@@ -66883,14 +68087,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder getParametersBuilder(
           int index) {
         return getParametersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public org.openlca.proto.Proto.ParameterOrBuilder getParametersOrBuilder(
           int index) {
@@ -66900,7 +68104,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public java.util.List<? extends org.openlca.proto.Proto.ParameterOrBuilder> 
            getParametersOrBuilderList() {
@@ -66911,14 +68115,14 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder() {
         return getParametersFieldBuilder().addBuilder(
             org.openlca.proto.Proto.Parameter.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder addParametersBuilder(
           int index) {
@@ -66926,7 +68130,7 @@ public final class Proto {
             index, org.openlca.proto.Proto.Parameter.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.Parameter parameters = 14;</code>
+       * <code>repeated .protolca.Parameter parameters = 15;</code>
        */
       public java.util.List<org.openlca.proto.Proto.Parameter.Builder> 
            getParametersBuilderList() {
@@ -66951,14 +68155,14 @@ public final class Proto {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> processDocumentationBuilder_;
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        * @return Whether the processDocumentation field is set.
        */
       public boolean hasProcessDocumentation() {
         return processDocumentationBuilder_ != null || processDocumentation_ != null;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        * @return The processDocumentation.
        */
       public org.openlca.proto.Proto.ProcessDocumentation getProcessDocumentation() {
@@ -66969,7 +68173,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public Builder setProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -66985,7 +68189,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public Builder setProcessDocumentation(
           org.openlca.proto.Proto.ProcessDocumentation.Builder builderForValue) {
@@ -66999,7 +68203,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public Builder mergeProcessDocumentation(org.openlca.proto.Proto.ProcessDocumentation value) {
         if (processDocumentationBuilder_ == null) {
@@ -67017,7 +68221,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public Builder clearProcessDocumentation() {
         if (processDocumentationBuilder_ == null) {
@@ -67031,7 +68235,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentation.Builder getProcessDocumentationBuilder() {
         
@@ -67039,7 +68243,7 @@ public final class Proto {
         return getProcessDocumentationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       public org.openlca.proto.Proto.ProcessDocumentationOrBuilder getProcessDocumentationOrBuilder() {
         if (processDocumentationBuilder_ != null) {
@@ -67050,7 +68254,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>.protolca.ProcessDocumentation process_documentation = 15;</code>
+       * <code>.protolca.ProcessDocumentation process_documentation = 16;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProcessDocumentation, org.openlca.proto.Proto.ProcessDocumentation.Builder, org.openlca.proto.Proto.ProcessDocumentationOrBuilder> 
@@ -67068,14 +68272,14 @@ public final class Proto {
 
       private int processType_ = 0;
       /**
-       * <code>.protolca.ProcessType process_type = 16;</code>
+       * <code>.protolca.ProcessType process_type = 17;</code>
        * @return The enum numeric value on the wire for processType.
        */
       @java.lang.Override public int getProcessTypeValue() {
         return processType_;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 16;</code>
+       * <code>.protolca.ProcessType process_type = 17;</code>
        * @param value The enum numeric value on the wire for processType to set.
        * @return This builder for chaining.
        */
@@ -67086,7 +68290,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 16;</code>
+       * <code>.protolca.ProcessType process_type = 17;</code>
        * @return The processType.
        */
       @java.lang.Override
@@ -67096,7 +68300,7 @@ public final class Proto {
         return result == null ? org.openlca.proto.Proto.ProcessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 16;</code>
+       * <code>.protolca.ProcessType process_type = 17;</code>
        * @param value The processType to set.
        * @return This builder for chaining.
        */
@@ -67110,7 +68314,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.ProcessType process_type = 16;</code>
+       * <code>.protolca.ProcessType process_type = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearProcessType() {
@@ -67129,7 +68333,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        * @return Whether the dqSystem field is set.
        */
       public boolean hasDqSystem() {
@@ -67141,7 +68345,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        * @return The dqSystem.
        */
       public org.openlca.proto.Proto.Ref getDqSystem() {
@@ -67157,7 +68361,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public Builder setDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -67178,7 +68382,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public Builder setDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -67197,7 +68401,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public Builder mergeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (dqSystemBuilder_ == null) {
@@ -67220,7 +68424,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public Builder clearDqSystem() {
         if (dqSystemBuilder_ == null) {
@@ -67239,7 +68443,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getDqSystemBuilder() {
         
@@ -67252,7 +68456,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getDqSystemOrBuilder() {
         if (dqSystemBuilder_ != null) {
@@ -67268,7 +68472,7 @@ public final class Proto {
        * quality of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref dq_system = 17;</code>
+       * <code>.protolca.Ref dq_system = 18;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -67294,7 +68498,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        * @return Whether the exchangeDqSystem field is set.
        */
       public boolean hasExchangeDqSystem() {
@@ -67307,7 +68511,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        * @return The exchangeDqSystem.
        */
       public org.openlca.proto.Proto.Ref getExchangeDqSystem() {
@@ -67324,7 +68528,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public Builder setExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -67346,7 +68550,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public Builder setExchangeDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -67366,7 +68570,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public Builder mergeExchangeDqSystem(org.openlca.proto.Proto.Ref value) {
         if (exchangeDqSystemBuilder_ == null) {
@@ -67390,7 +68594,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public Builder clearExchangeDqSystem() {
         if (exchangeDqSystemBuilder_ == null) {
@@ -67410,7 +68614,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getExchangeDqSystemBuilder() {
         
@@ -67424,7 +68628,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getExchangeDqSystemOrBuilder() {
         if (exchangeDqSystemBuilder_ != null) {
@@ -67441,7 +68645,7 @@ public final class Proto {
        * assessed.
        * </pre>
        *
-       * <code>.protolca.Ref exchange_dq_system = 18;</code>
+       * <code>.protolca.Ref exchange_dq_system = 19;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -67466,7 +68670,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        * @return Whether the socialDqSystem field is set.
        */
       public boolean hasSocialDqSystem() {
@@ -67478,7 +68682,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        * @return The socialDqSystem.
        */
       public org.openlca.proto.Proto.Ref getSocialDqSystem() {
@@ -67494,7 +68698,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public Builder setSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -67515,7 +68719,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public Builder setSocialDqSystem(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -67534,7 +68738,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public Builder mergeSocialDqSystem(org.openlca.proto.Proto.Ref value) {
         if (socialDqSystemBuilder_ == null) {
@@ -67557,7 +68761,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public Builder clearSocialDqSystem() {
         if (socialDqSystemBuilder_ == null) {
@@ -67576,7 +68780,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getSocialDqSystemBuilder() {
         
@@ -67589,7 +68793,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getSocialDqSystemOrBuilder() {
         if (socialDqSystemBuilder_ != null) {
@@ -67605,7 +68809,7 @@ public final class Proto {
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
-       * <code>.protolca.Ref social_dq_system = 19;</code>
+       * <code>.protolca.Ref social_dq_system = 20;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -67631,7 +68835,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 20;</code>
+       * <code>string dq_entry = 21;</code>
        * @return The dqEntry.
        */
       public java.lang.String getDqEntry() {
@@ -67655,7 +68859,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 20;</code>
+       * <code>string dq_entry = 21;</code>
        * @return The bytes for dqEntry.
        */
       public com.google.protobuf.ByteString
@@ -67680,7 +68884,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 20;</code>
+       * <code>string dq_entry = 21;</code>
        * @param value The dqEntry to set.
        * @return This builder for chaining.
        */
@@ -67703,7 +68907,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 20;</code>
+       * <code>string dq_entry = 21;</code>
        * @return This builder for chaining.
        */
       public Builder clearDqEntry() {
@@ -67721,7 +68925,7 @@ public final class Proto {
        * values in the `dqEntry` vector map to these positions.
        * </pre>
        *
-       * <code>string dq_entry = 20;</code>
+       * <code>string dq_entry = 21;</code>
        * @param value The bytes for dqEntry to set.
        * @return This builder for chaining.
        */
@@ -67733,6 +68937,58 @@ public final class Proto {
   checkByteStringIsUtf8(value);
         
         dqEntry_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean infrastructureProcess_ ;
+      /**
+       * <pre>
+       * Indicates whether this process describes an infrastructure process. This
+       * field is part of the openLCA schema because of backward compatibility with
+       * EcoSpold 1. It does not really have a meaning in openLCA and should not be
+       * used anymore.
+       * </pre>
+       *
+       * <code>bool infrastructure_process = 22;</code>
+       * @return The infrastructureProcess.
+       */
+      @java.lang.Override
+      public boolean getInfrastructureProcess() {
+        return infrastructureProcess_;
+      }
+      /**
+       * <pre>
+       * Indicates whether this process describes an infrastructure process. This
+       * field is part of the openLCA schema because of backward compatibility with
+       * EcoSpold 1. It does not really have a meaning in openLCA and should not be
+       * used anymore.
+       * </pre>
+       *
+       * <code>bool infrastructure_process = 22;</code>
+       * @param value The infrastructureProcess to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfrastructureProcess(boolean value) {
+        
+        infrastructureProcess_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates whether this process describes an infrastructure process. This
+       * field is part of the openLCA schema because of backward compatibility with
+       * EcoSpold 1. It does not really have a meaning in openLCA and should not be
+       * used anymore.
+       * </pre>
+       *
+       * <code>bool infrastructure_process = 22;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfrastructureProcess() {
+        
+        infrastructureProcess_ = false;
         onChanged();
         return this;
       }
@@ -101374,251 +102630,255 @@ public final class Proto {
       "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n\021has_un" +
       "certainties\030\n \001(\010\022\035\n\006source\030\013 \001(\0132\r.prot" +
       "olca.Ref\022)\n\nindicators\030\014 \003(\0132\025.protolca." +
-      "DqIndicator\"\245\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\023\n\013internal_id\030\002 \001(\005\022\027\n\017avoided_pr" +
-      "oduct\030\003 \001(\010\022\037\n\004flow\030\004 \001(\0132\021.protolca.Flo" +
-      "wRef\022$\n\rflow_property\030\005 \001(\0132\r.protolca.R" +
-      "ef\022\r\n\005input\030\006 \001(\010\022\036\n\026quantitative_refere" +
-      "nce\030\007 \001(\010\022\030\n\020base_uncertainty\030\010 \001(\001\022.\n\020d" +
-      "efault_provider\030\t \001(\0132\024.protolca.Process" +
-      "Ref\022\016\n\006amount\030\n \001(\001\022\026\n\016amount_formula\030\013 " +
-      "\001(\t\022\033\n\004unit\030\014 \001(\0132\r.protolca.Ref\022\020\n\010dq_e" +
-      "ntry\030\r \001(\t\022*\n\013uncertainty\030\016 \001(\0132\025.protol" +
-      "ca.Uncertainty\022\023\n\013description\030\017 \001(\t\"\201\003\n\004" +
-      "Flow\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
+      "DqIndicator\"\360\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005" +
+      "@type\022\027\n\017avoided_product\030\002 \001(\010\022\024\n\014cost_f" +
+      "ormula\030\003 \001(\t\022\022\n\ncost_value\030\004 \001(\001\022\037\n\010curr" +
+      "ency\030\005 \001(\0132\r.protolca.Ref\022\023\n\013internal_id" +
+      "\030\006 \001(\005\022\037\n\004flow\030\007 \001(\0132\021.protolca.FlowRef\022" +
+      "$\n\rflow_property\030\010 \001(\0132\r.protolca.Ref\022\r\n" +
+      "\005input\030\t \001(\010\022\036\n\026quantitative_reference\030\n" +
+      " \001(\010\022\030\n\020base_uncertainty\030\013 \001(\001\022.\n\020defaul" +
+      "t_provider\030\014 \001(\0132\024.protolca.ProcessRef\022\016" +
+      "\n\006amount\030\r \001(\001\022\026\n\016amount_formula\030\016 \001(\t\022\033" +
+      "\n\004unit\030\017 \001(\0132\r.protolca.Ref\022\020\n\010dq_entry\030" +
+      "\020 \001(\t\022*\n\013uncertainty\030\021 \001(\0132\025.protolca.Un" +
+      "certainty\022\023\n\013description\030\022 \001(\t\"\201\003\n\004Flow\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
+      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
+      "\007library\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022.prot" +
+      "olca.FlowType\022\013\n\003cas\030\013 \001(\t\022\017\n\007formula\030\014 " +
+      "\001(\t\0225\n\017flow_properties\030\r \003(\0132\034.protolca." +
+      "FlowPropertyFactor\022\037\n\010location\030\016 \001(\0132\r.p" +
+      "rotolca.Ref\022\020\n\010synonyms\030\017 \001(\t\022\033\n\023infrast" +
+      "ructure_flow\030\020 \001(\010\"\340\001\n\007FlowMap\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
+      "\022\023\n\013last_change\030\006 \001(\t\022\035\n\006source\030\007 \001(\0132\r." +
+      "protolca.Ref\022\035\n\006target\030\010 \001(\0132\r.protolca." +
+      "Ref\022(\n\010mappings\030\t \003(\0132\026.protolca.FlowMap" +
+      "Entry\"\336\001\n\014FlowMapEntry\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
+      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
+      "_change\030\006 \001(\t\022\"\n\004from\030\007 \001(\0132\024.protolca.F" +
+      "lowMapRef\022 \n\002to\030\010 \001(\0132\024.protolca.FlowMap" +
+      "Ref\022\031\n\021conversion_factor\030\t \001(\001\"\205\001\n\nFlowM" +
+      "apRef\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\013" +
+      "2\021.protolca.FlowRef\022$\n\rflow_property\030\003 \001" +
+      "(\0132\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.protol" +
+      "ca.Ref\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001(\tR\005@" +
+      "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
+      "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
+      "t_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.proto" +
+      "lca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226" +
+      "\n\022flow_property_type\030\n \001(\0162\032.protolca.Fl" +
+      "owPropertyType\022!\n\nunit_group\030\013 \001(\0132\r.pro" +
+      "tolca.Ref\"\213\001\n\022FlowPropertyFactor\022\023\n\004type" +
+      "\030\001 \001(\tR\005@type\022$\n\rflow_property\030\002 \001(\0132\r.p" +
+      "rotolca.Ref\022\031\n\021conversion_factor\030\003 \001(\001\022\037" +
+      "\n\027reference_flow_property\030\004 \001(\010\"\332\001\n\007Flow" +
+      "Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@i" +
+      "d\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007" +
+      "version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rca" +
+      "tegory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(\t\022\020\n\010l" +
+      "ocation\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022.proto" +
+      "lca.FlowType\"`\n\nFlowResult\022\023\n\004type\030\001 \001(\t" +
+      "R\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.FlowRef" +
+      "\022\r\n\005input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\265\002\n\016Impac" +
+      "tCategory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
+      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
+      "\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tag" +
+      "s\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\033\n\023reference_un" +
+      "it_name\030\n \001(\t\022\'\n\nparameters\030\013 \003(\0132\023.prot" +
+      "olca.Parameter\022.\n\016impact_factors\030\014 \003(\0132\026" +
+      ".protolca.ImpactFactor\"\253\001\n\021ImpactCategor" +
+      "yRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
+      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
+      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rc" +
+      "ategory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(\t\"\364\001\n" +
+      "\014ImpactFactor\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004fl" +
+      "ow\030\002 \001(\0132\021.protolca.FlowRef\022\037\n\010location\030" +
+      "\003 \001(\0132\r.protolca.Ref\022$\n\rflow_property\030\004 " +
+      "\001(\0132\r.protolca.Ref\022\033\n\004unit\030\005 \001(\0132\r.proto" +
+      "lca.Ref\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007 \001(\t\022" +
+      "*\n\013uncertainty\030\010 \001(\0132\025.protolca.Uncertai" +
+      "nty\"\227\002\n\014ImpactMethod\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
+      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
+      "hange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca" +
+      ".Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\021i" +
+      "mpact_categories\030\n \003(\0132\033.protolca.Impact" +
+      "CategoryRef\022 \n\007nw_sets\030\013 \003(\0132\017.protolca." +
+      "NwSet\"h\n\014ImpactResult\022\023\n\004type\030\001 \001(\tR\005@ty" +
+      "pe\0224\n\017impact_category\030\002 \001(\0132\033.protolca.I" +
+      "mpactCategoryRef\022\r\n\005value\030\003 \001(\001\"\204\002\n\010Loca" +
+      "tion\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
       "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
       "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010c" +
       "ategory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003" +
-      "(\t\022\017\n\007library\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022" +
-      ".protolca.FlowType\022\013\n\003cas\030\013 \001(\t\022\017\n\007formu" +
-      "la\030\014 \001(\t\0225\n\017flow_properties\030\r \003(\0132\034.prot" +
-      "olca.FlowPropertyFactor\022\037\n\010location\030\016 \001(" +
-      "\0132\r.protolca.Ref\022\020\n\010synonyms\030\017 \001(\t\022\033\n\023in" +
-      "frastructure_flow\030\020 \001(\010\"\340\001\n\007FlowMap\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004nam" +
-      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030" +
-      "\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\035\n\006source\030\007 \001" +
-      "(\0132\r.protolca.Ref\022\035\n\006target\030\010 \001(\0132\r.prot" +
-      "olca.Ref\022(\n\010mappings\030\t \003(\0132\026.protolca.Fl" +
-      "owMapEntry\"\336\001\n\014FlowMapEntry\022\023\n\004type\030\001 \001(" +
-      "\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022" +
-      "\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n" +
-      "\013last_change\030\006 \001(\t\022\"\n\004from\030\007 \001(\0132\024.proto" +
-      "lca.FlowMapRef\022 \n\002to\030\010 \001(\0132\024.protolca.Fl" +
-      "owMapRef\022\031\n\021conversion_factor\030\t \001(\001\"\205\001\n\n" +
-      "FlowMapRef\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030" +
-      "\002 \001(\0132\021.protolca.FlowRef\022$\n\rflow_propert" +
-      "y\030\003 \001(\0132\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.p" +
-      "rotolca.Ref\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
-      "\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r." +
-      "protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t " +
-      "\001(\t\0226\n\022flow_property_type\030\n \001(\0162\032.protol" +
-      "ca.FlowPropertyType\022!\n\nunit_group\030\013 \001(\0132" +
-      "\r.protolca.Ref\"\213\001\n\022FlowPropertyFactor\022\023\n" +
-      "\004type\030\001 \001(\tR\005@type\022$\n\rflow_property\030\002 \001(" +
-      "\0132\r.protolca.Ref\022\031\n\021conversion_factor\030\003 " +
-      "\001(\001\022\037\n\027reference_flow_property\030\004 \001(\010\"\332\001\n" +
-      "\007FlowRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
-      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
-      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
-      "\025\n\rcategory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(\t" +
-      "\022\020\n\010location\030\t \001(\t\022%\n\tflow_type\030\n \001(\0162\022." +
-      "protolca.FlowType\"`\n\nFlowResult\022\023\n\004type\030" +
-      "\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\0132\021.protolca.Fl" +
-      "owRef\022\r\n\005input\030\003 \001(\010\022\r\n\005value\030\004 \001(\001\"\265\002\n\016" +
-      "ImpactCategory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
-      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
-      "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014" +
-      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\033\n\023referen" +
-      "ce_unit_name\030\n \001(\t\022\'\n\nparameters\030\013 \003(\0132\023" +
-      ".protolca.Parameter\022.\n\016impact_factors\030\014 " +
-      "\003(\0132\026.protolca.ImpactFactor\"\253\001\n\021ImpactCa" +
-      "tegoryRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
-      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
-      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
-      "\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010ref_unit\030\010 \001(" +
-      "\t\"\364\001\n\014ImpactFactor\022\023\n\004type\030\001 \001(\tR\005@type\022" +
-      "\037\n\004flow\030\002 \001(\0132\021.protolca.FlowRef\022\037\n\010loca" +
-      "tion\030\003 \001(\0132\r.protolca.Ref\022$\n\rflow_proper" +
-      "ty\030\004 \001(\0132\r.protolca.Ref\022\033\n\004unit\030\005 \001(\0132\r." +
-      "protolca.Ref\022\r\n\005value\030\006 \001(\001\022\017\n\007formula\030\007" +
-      " \001(\t\022*\n\013uncertainty\030\010 \001(\0132\025.protolca.Unc" +
-      "ertainty\"\365\001\n\014ImpactMethod\022\023\n\004type\030\001 \001(\tR" +
-      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
-      "ast_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pro" +
-      "tolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t" +
-      "\0226\n\021impact_categories\030\n \003(\0132\033.protolca.I" +
-      "mpactCategoryRef\"h\n\014ImpactResult\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\0224\n\017impact_category\030\002 \001(\0132\033" +
-      ".protolca.ImpactCategoryRef\022\r\n\005value\030\003 \001" +
-      "(\001\"\204\002\n\010Location\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022" +
-      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n" +
-      " \001(\t\022\020\n\010latitude\030\013 \001(\001\022\021\n\tlongitude\030\014 \001(" +
-      "\001\022\026\n\016geometry_bytes\030\r \001(\014\"\177\n\010NwFactor\022\023\n" +
-      "\004type\030\001 \001(\tR\005@type\022&\n\017impact_category\030\002 " +
-      "\001(\0132\r.protolca.Ref\022\034\n\024normalisation_fact" +
-      "or\030\003 \001(\001\022\030\n\020weighting_factor\030\004 \001(\001\"\270\001\n\005N" +
-      "wSet\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
-      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
-      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023w" +
-      "eighted_score_unit\030\007 \001(\t\022#\n\007factors\030\010 \003(" +
-      "\0132\022.protolca.NwFactor\"\322\002\n\tParameter\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004nam" +
-      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030" +
-      "\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007" +
-      " \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007lib" +
-      "rary\030\t \001(\t\0221\n\017parameter_scope\030\n \001(\0162\030.pr" +
-      "otolca.ParameterScope\022\027\n\017input_parameter" +
-      "\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007formula\030\r \001(\t\022*" +
-      "\n\013uncertainty\030\016 \001(\0132\025.protolca.Uncertain" +
-      "ty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007contex" +
-      "t\030\004 \001(\0132\r.protolca.Ref\"\227\005\n\007Process\022\023\n\004ty" +
-      "pe\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name" +
-      "\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005" +
-      " \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 " +
-      "\001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libr" +
-      "ary\030\t \001(\t\022;\n\031default_allocation_method\030\n" +
-      " \001(\0162\030.protolca.AllocationType\0226\n\022alloca" +
-      "tion_factors\030\013 \003(\0132\032.protolca.Allocation" +
-      "Factor\022%\n\texchanges\030\014 \003(\0132\022.protolca.Exc" +
-      "hange\022$\n\010location\030\r \001(\0132\022.protolca.Locat" +
-      "ion\022\'\n\nparameters\030\016 \003(\0132\023.protolca.Param" +
-      "eter\022=\n\025process_documentation\030\017 \001(\0132\036.pr" +
-      "otolca.ProcessDocumentation\022+\n\014process_t" +
-      "ype\030\020 \001(\0162\025.protolca.ProcessType\022 \n\tdq_s" +
-      "ystem\030\021 \001(\0132\r.protolca.Ref\022)\n\022exchange_d" +
-      "q_system\030\022 \001(\0132\r.protolca.Ref\022\'\n\020social_" +
-      "dq_system\030\023 \001(\0132\r.protolca.Ref\022\020\n\010dq_ent" +
-      "ry\030\024 \001(\t\"\242\006\n\024ProcessDocumentation\022\023\n\004typ" +
-      "e\030\001 \001(\tR\005@type\022\030\n\020time_description\030\002 \001(\t" +
-      "\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(" +
-      "\t\022\036\n\026technology_description\030\005 \001(\t\022#\n\033dat" +
-      "a_collection_description\030\006 \001(\t\022 \n\030comple" +
-      "teness_description\030\007 \001(\t\022\"\n\032data_selecti" +
-      "on_description\030\010 \001(\t\022\026\n\016review_details\030\t" +
-      " \001(\t\022\"\n\032data_treatment_description\030\n \001(\t" +
-      "\022$\n\034inventory_method_description\030\013 \001(\t\022&" +
-      "\n\036modeling_constants_description\030\014 \001(\t\022\037" +
-      "\n\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034\n\024sampl" +
-      "ing_description\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r" +
-      ".protolca.Ref\022 \n\030restrictions_descriptio" +
-      "n\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcreation_d" +
-      "ate\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(\0132\r.pro" +
-      "tolca.Ref\022%\n\016data_generator\030\024 \001(\0132\r.prot" +
-      "olca.Ref\022%\n\016data_set_owner\030\025 \001(\0132\r.proto" +
-      "lca.Ref\022\034\n\024intended_application\030\026 \001(\t\022\033\n" +
-      "\023project_description\030\027 \001(\t\022\"\n\013publicatio" +
-      "n\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geography_desc" +
-      "ription\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004type\030\001 " +
-      "\001(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.protolca." +
-      "Ref\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022\036\n\007proc" +
-      "ess\030\004 \001(\0132\r.protolca.Ref\022$\n\010exchange\030\005 \001" +
-      "(\0132\022.protolca.Exchange\"\321\001\n\nProcessRef\022\023\n" +
-      "\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004n" +
-      "ame\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versio" +
-      "n\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory" +
-      "_path\030\007 \003(\t\022\020\n\010location\030\010 \001(\t\022+\n\014process" +
-      "_type\030\t \001(\0162\025.protolca.ProcessType\"\336\003\n\rP" +
-      "roductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
-      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
-      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
-      "\001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004" +
-      "tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tprocesses" +
-      "\030\n \003(\0132\024.protolca.ProcessRef\022/\n\021referenc" +
-      "e_process\030\013 \001(\0132\024.protolca.ProcessRef\022.\n" +
-      "\022reference_exchange\030\014 \001(\0132\022.protolca.Exc" +
-      "hange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013target_u" +
-      "nit\030\016 \001(\0132\r.protolca.Ref\022+\n\024target_flow_" +
-      "property\030\017 \001(\0132\r.protolca.Ref\022,\n\rprocess" +
-      "_links\030\020 \003(\0132\025.protolca.ProcessLink\"\377\001\n\007" +
-      "Project\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
-      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
-      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037" +
-      "\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030" +
-      "\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_method\030" +
-      "\n \001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017.p" +
-      "rotolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@ty" +
-      "pe\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_" +
-      "change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014S" +
-      "impleResult\022\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow" +
-      "_results\030\002 \003(\0132\024.protolca.FlowResult\022.\n\016" +
-      "impact_results\030\003 \003(\0132\026.protolca.ImpactRe" +
-      "sult\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\tR\005" +
+      "(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\020\n\010lat" +
+      "itude\030\013 \001(\001\022\021\n\tlongitude\030\014 \001(\001\022\026\n\016geomet" +
+      "ry_bytes\030\r \001(\014\"\177\n\010NwFactor\022\023\n\004type\030\001 \001(\t" +
+      "R\005@type\022&\n\017impact_category\030\002 \001(\0132\r.proto" +
+      "lca.Ref\022\034\n\024normalisation_factor\030\003 \001(\001\022\030\n" +
+      "\020weighting_factor\030\004 \001(\001\"\270\001\n\005NwSet\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
+      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023weighted_sco" +
+      "re_unit\030\007 \001(\t\022#\n\007factors\030\010 \003(\0132\022.protolc" +
+      "a.NwFactor\"\322\002\n\tParameter\022\023\n\004type\030\001 \001(\tR\005" +
       "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
       "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
       "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
       "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
-      "\031\n\021activity_variable\030\n \001(\t\022(\n\021activity_q" +
-      "uantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ractivity" +
-      "_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_of_me" +
-      "asurement\030\r \001(\t\022\031\n\021evaluation_scheme\030\016 \001" +
-      "(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
-      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n" +
-      "\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030\n \001(" +
-      "\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 \001(\005\022" +
-      "\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertainty\022\023" +
-      "\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_type" +
-      "\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n\004mea" +
-      "n\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_me" +
-      "an\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n\007m" +
-      "inimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022\n\n" +
-      "\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_sd" +
-      "\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mode\030" +
-      "\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum\030\017" +
-      " \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit\022\023" +
-      "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
-      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
-      "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021convers" +
-      "ion_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001(\010" +
-      "\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004type" +
-      "\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003" +
-      " \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001" +
-      "(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(" +
-      "\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007librar" +
-      "y\030\t \001(\t\022,\n\025default_flow_property\030\n \001(\0132\r" +
-      ".protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.protolca." +
-      "Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED_ALL" +
-      "OCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATION\020\001\022" +
-      "\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_ALLOC" +
-      "ATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022\021\n\rN" +
-      "O_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036\n\032UN" +
-      "DEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE_CAL" +
-      "CULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020\002\022\025\n" +
-      "\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED_CAL" +
-      "CULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION\020\005*b" +
-      "\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW_PRO" +
-      "PERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022\025\n\021P" +
-      "HYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UNDEFI" +
-      "NED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001\022\020\n\014" +
-      "PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tModel" +
-      "Type\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PROJEC" +
-      "T\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CATEGOR" +
-      "Y\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005\022\010\n\004" +
-      "FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GROUP\020" +
-      "\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014\n\010CA" +
-      "TEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024\n\020SO" +
-      "CIAL_INDICATOR\020\017*f\n\016ParameterScope\022\035\n\031UN" +
-      "DEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS_SCO" +
-      "PE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SCOPE\020\003" +
-      "*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS_TYP" +
-      "E\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020\002*\234\001" +
-      "\n\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTAIN" +
-      "TY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001\022\027" +
-      "\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DIST" +
-      "RIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&\n\021" +
-      "org.openlca.protoB\005ProtoZ\n.;protolcab\006pr" +
-      "oto3"
+      "1\n\017parameter_scope\030\n \001(\0162\030.protolca.Para" +
+      "meterScope\022\027\n\017input_parameter\030\013 \001(\010\022\r\n\005v" +
+      "alue\030\014 \001(\001\022\017\n\007formula\030\r \001(\t\022*\n\013uncertain" +
+      "ty\030\016 \001(\0132\025.protolca.Uncertainty\"b\n\016Param" +
+      "eterRedef\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002" +
+      " \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007context\030\004 \001(\0132\r.p" +
+      "rotolca.Ref\"\321\005\n\007Process\022\023\n\004type\030\001 \001(\tR\005@" +
+      "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
+      "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
+      "t_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.proto" +
+      "lca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226" +
+      "\n\022allocation_factors\030\n \003(\0132\032.protolca.Al" +
+      "locationFactor\022;\n\031default_allocation_met" +
+      "hod\030\013 \001(\0162\030.protolca.AllocationType\022%\n\te" +
+      "xchanges\030\014 \003(\0132\022.protolca.Exchange\022\030\n\020la" +
+      "st_internal_id\030\r \001(\005\022$\n\010location\030\016 \001(\0132\022" +
+      ".protolca.Location\022\'\n\nparameters\030\017 \003(\0132\023" +
+      ".protolca.Parameter\022=\n\025process_documenta" +
+      "tion\030\020 \001(\0132\036.protolca.ProcessDocumentati" +
+      "on\022+\n\014process_type\030\021 \001(\0162\025.protolca.Proc" +
+      "essType\022 \n\tdq_system\030\022 \001(\0132\r.protolca.Re" +
+      "f\022)\n\022exchange_dq_system\030\023 \001(\0132\r.protolca" +
+      ".Ref\022\'\n\020social_dq_system\030\024 \001(\0132\r.protolc" +
+      "a.Ref\022\020\n\010dq_entry\030\025 \001(\t\022\036\n\026infrastructur" +
+      "e_process\030\026 \001(\010\"\242\006\n\024ProcessDocumentation" +
+      "\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_descriptio" +
+      "n\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_fr" +
+      "om\030\004 \001(\t\022\036\n\026technology_description\030\005 \001(\t" +
+      "\022#\n\033data_collection_description\030\006 \001(\t\022 \n" +
+      "\030completeness_description\030\007 \001(\t\022\"\n\032data_" +
+      "selection_description\030\010 \001(\t\022\026\n\016review_de" +
+      "tails\030\t \001(\t\022\"\n\032data_treatment_descriptio" +
+      "n\030\n \001(\t\022$\n\034inventory_method_description\030" +
+      "\013 \001(\t\022&\n\036modeling_constants_description\030" +
+      "\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034" +
+      "\n\024sampling_description\030\016 \001(\t\022\036\n\007sources\030" +
+      "\017 \003(\0132\r.protolca.Ref\022 \n\030restrictions_des" +
+      "cription\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcre" +
+      "ation_date\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(" +
+      "\0132\r.protolca.Ref\022%\n\016data_generator\030\024 \001(\013" +
+      "2\r.protolca.Ref\022%\n\016data_set_owner\030\025 \001(\0132" +
+      "\r.protolca.Ref\022\034\n\024intended_application\030\026" +
+      " \001(\t\022\033\n\023project_description\030\027 \001(\t\022\"\n\013pub" +
+      "lication\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geograp" +
+      "hy_description\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.pr" +
+      "otolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022" +
+      "\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022$\n\010excha" +
+      "nge\030\005 \001(\0132\022.protolca.Exchange\"\321\001\n\nProces" +
+      "sRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
+      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
+      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rc" +
+      "ategory_path\030\007 \003(\t\022\020\n\010location\030\010 \001(\t\022+\n\014" +
+      "process_type\030\t \001(\0162\025.protolca.ProcessTyp" +
+      "e\"\336\003\n\rProductSystem\022\023\n\004type\030\001 \001(\tR\005@type" +
+      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
+      "ange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca." +
+      "Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tpr" +
+      "ocesses\030\n \003(\0132\024.protolca.ProcessRef\022/\n\021r" +
+      "eference_process\030\013 \001(\0132\024.protolca.Proces" +
+      "sRef\022.\n\022reference_exchange\030\014 \001(\0132\022.proto" +
+      "lca.Exchange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013t" +
+      "arget_unit\030\016 \001(\0132\r.protolca.Ref\022+\n\024targe" +
+      "t_flow_property\030\017 \001(\0132\r.protolca.Ref\022,\n\r" +
+      "process_links\030\020 \003(\0132\025.protolca.ProcessLi" +
+      "nk\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
+      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
+      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
+      "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014" +
+      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_" +
+      "method\030\n \001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 " +
+      "\001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001" +
+      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
+      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
+      "\n\013last_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003" +
+      "(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@type\022" +
+      "*\n\014flow_results\030\002 \003(\0132\024.protolca.FlowRes" +
+      "ult\022.\n\016impact_results\030\003 \003(\0132\026.protolca.I" +
+      "mpactResult\"\343\002\n\017SocialIndicator\022\023\n\004type\030" +
+      "\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 " +
+      "\001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(" +
+      "\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\013" +
+      "2\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library" +
+      "\030\t \001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021act" +
+      "ivity_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ra" +
+      "ctivity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023uni" +
+      "t_of_measurement\030\r \001(\t\022\031\n\021evaluation_sch" +
+      "eme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@typ" +
+      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
+      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
+      "hange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca" +
+      ".Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003u" +
+      "rl\030\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year" +
+      "\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncert" +
+      "ainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distributi" +
+      "on_type\030\002 \001(\0162\031.protolca.UncertaintyType" +
+      "\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\t" +
+      "geom_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001" +
+      "(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010" +
+      " \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007" +
+      "geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014" +
+      "\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007ma" +
+      "ximum\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n" +
+      "\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
+      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
+      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021" +
+      "conversion_factor\030\007 \001(\001\022\026\n\016reference_uni" +
+      "t\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
+      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
+      "\007library\030\t \001(\t\022,\n\025default_flow_property\030" +
+      "\n \001(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.pr" +
+      "otolca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFI" +
+      "NED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCA" +
+      "TION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSA" +
+      "L_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION" +
+      "\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationTyp" +
+      "e\022\036\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIM" +
+      "PLE_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYS" +
+      "IS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALI" +
+      "ZED_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULAT" +
+      "ION\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_F" +
+      "LOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY" +
+      "\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n" +
+      "\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLO" +
+      "W\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002" +
+      "\n\tModelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n" +
+      "\007PROJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_" +
+      "CATEGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCES" +
+      "S\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT" +
+      "_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020" +
+      "\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020" +
+      "\016\022\024\n\020SOCIAL_INDICATOR\020\017*f\n\016ParameterScop" +
+      "e\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROC" +
+      "ESS_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_" +
+      "SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROC" +
+      "ESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCE" +
+      "SS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UN" +
+      "CERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUT" +
+      "ION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANG" +
+      "LE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTIO" +
+      "N\020\004B&\n\021org.openlca.protoB\005ProtoZ\n.;proto" +
+      "lcab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -101677,7 +102937,7 @@ public final class Proto {
     internal_static_protolca_Exchange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Exchange_descriptor,
-        new java.lang.String[] { "Type", "InternalId", "AvoidedProduct", "Flow", "FlowProperty", "Input", "QuantitativeReference", "BaseUncertainty", "DefaultProvider", "Amount", "AmountFormula", "Unit", "DqEntry", "Uncertainty", "Description", });
+        new java.lang.String[] { "Type", "AvoidedProduct", "CostFormula", "CostValue", "Currency", "InternalId", "Flow", "FlowProperty", "Input", "QuantitativeReference", "BaseUncertainty", "DefaultProvider", "Amount", "AmountFormula", "Unit", "DqEntry", "Uncertainty", "Description", });
     internal_static_protolca_Flow_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_protolca_Flow_fieldAccessorTable = new
@@ -101749,7 +103009,7 @@ public final class Proto {
     internal_static_protolca_ImpactMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactMethod_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", "NwSets", });
     internal_static_protolca_ImpactResult_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_protolca_ImpactResult_fieldAccessorTable = new
@@ -101791,7 +103051,7 @@ public final class Proto {
     internal_static_protolca_Process_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Process_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "DefaultAllocationMethod", "AllocationFactors", "Exchanges", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "AllocationFactors", "DefaultAllocationMethod", "Exchanges", "LastInternalId", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", "InfrastructureProcess", });
     internal_static_protolca_ProcessDocumentation_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_protolca_ProcessDocumentation_fieldAccessorTable = new
