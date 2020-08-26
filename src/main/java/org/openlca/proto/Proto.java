@@ -5154,37 +5154,10 @@ public final class Proto {
 
     /**
      * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     * @return Whether the productExchange field is set.
-     */
-    boolean hasProductExchange();
-    /**
-     * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     * @return The productExchange.
-     */
-    org.openlca.proto.Proto.Exchange getProductExchange();
-    /**
-     * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     */
-    org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder();
-
-    /**
-     * <pre>
      * The type of allocation.
      * </pre>
      *
-     * <code>.protolca.AllocationType allocation_type = 3;</code>
+     * <code>.protolca.AllocationType allocation_type = 2;</code>
      * @return The enum numeric value on the wire for allocationType.
      */
     int getAllocationTypeValue();
@@ -5193,10 +5166,43 @@ public final class Proto {
      * The type of allocation.
      * </pre>
      *
-     * <code>.protolca.AllocationType allocation_type = 3;</code>
+     * <code>.protolca.AllocationType allocation_type = 2;</code>
      * @return The allocationType.
      */
     org.openlca.proto.Proto.AllocationType getAllocationType();
+
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     * @return Whether the product field is set.
+     */
+    boolean hasProduct();
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     * @return The product.
+     */
+    org.openlca.proto.Proto.FlowRef getProduct();
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     */
+    org.openlca.proto.Proto.FlowRefOrBuilder getProductOrBuilder();
 
     /**
      * <pre>
@@ -5232,36 +5238,36 @@ public final class Proto {
 
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
-     * @return Whether the allocatedExchange field is set.
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
+     * @return Whether the exchange field is set.
      */
-    boolean hasAllocatedExchange();
+    boolean hasExchange();
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
-     * @return The allocatedExchange.
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
+     * @return The exchange.
      */
-    org.openlca.proto.Proto.Exchange getAllocatedExchange();
+    org.openlca.proto.Proto.ExchangeRef getExchange();
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
      */
-    org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder();
+    org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder();
   }
   /**
    * <pre>
@@ -5321,23 +5327,23 @@ public final class Proto {
               type_ = s;
               break;
             }
-            case 18: {
-              org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
-              if (productExchange_ != null) {
-                subBuilder = productExchange_.toBuilder();
-              }
-              productExchange_ = input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(productExchange_);
-                productExchange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
+            case 16: {
               int rawValue = input.readEnum();
 
               allocationType_ = rawValue;
+              break;
+            }
+            case 26: {
+              org.openlca.proto.Proto.FlowRef.Builder subBuilder = null;
+              if (product_ != null) {
+                subBuilder = product_.toBuilder();
+              }
+              product_ = input.readMessage(org.openlca.proto.Proto.FlowRef.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(product_);
+                product_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 33: {
@@ -5352,14 +5358,14 @@ public final class Proto {
               break;
             }
             case 50: {
-              org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
-              if (allocatedExchange_ != null) {
-                subBuilder = allocatedExchange_.toBuilder();
+              org.openlca.proto.Proto.ExchangeRef.Builder subBuilder = null;
+              if (exchange_ != null) {
+                subBuilder = exchange_.toBuilder();
               }
-              allocatedExchange_ = input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry);
+              exchange_ = input.readMessage(org.openlca.proto.Proto.ExchangeRef.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(allocatedExchange_);
-                allocatedExchange_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(exchange_);
+                exchange_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5444,52 +5450,14 @@ public final class Proto {
       }
     }
 
-    public static final int PRODUCT_EXCHANGE_FIELD_NUMBER = 2;
-    private org.openlca.proto.Proto.Exchange productExchange_;
-    /**
-     * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     * @return Whether the productExchange field is set.
-     */
-    @java.lang.Override
-    public boolean hasProductExchange() {
-      return productExchange_ != null;
-    }
-    /**
-     * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     * @return The productExchange.
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.Exchange getProductExchange() {
-      return productExchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : productExchange_;
-    }
-    /**
-     * <pre>
-     * The output product.
-     * </pre>
-     *
-     * <code>.protolca.Exchange product_exchange = 2;</code>
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder() {
-      return getProductExchange();
-    }
-
-    public static final int ALLOCATION_TYPE_FIELD_NUMBER = 3;
+    public static final int ALLOCATION_TYPE_FIELD_NUMBER = 2;
     private int allocationType_;
     /**
      * <pre>
      * The type of allocation.
      * </pre>
      *
-     * <code>.protolca.AllocationType allocation_type = 3;</code>
+     * <code>.protolca.AllocationType allocation_type = 2;</code>
      * @return The enum numeric value on the wire for allocationType.
      */
     @java.lang.Override public int getAllocationTypeValue() {
@@ -5500,13 +5468,57 @@ public final class Proto {
      * The type of allocation.
      * </pre>
      *
-     * <code>.protolca.AllocationType allocation_type = 3;</code>
+     * <code>.protolca.AllocationType allocation_type = 2;</code>
      * @return The allocationType.
      */
     @java.lang.Override public org.openlca.proto.Proto.AllocationType getAllocationType() {
       @SuppressWarnings("deprecation")
       org.openlca.proto.Proto.AllocationType result = org.openlca.proto.Proto.AllocationType.valueOf(allocationType_);
       return result == null ? org.openlca.proto.Proto.AllocationType.UNRECOGNIZED : result;
+    }
+
+    public static final int PRODUCT_FIELD_NUMBER = 3;
+    private org.openlca.proto.Proto.FlowRef product_;
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     * @return Whether the product field is set.
+     */
+    @java.lang.Override
+    public boolean hasProduct() {
+      return product_ != null;
+    }
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     * @return The product.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.FlowRef getProduct() {
+      return product_ == null ? org.openlca.proto.Proto.FlowRef.getDefaultInstance() : product_;
+    }
+    /**
+     * <pre>
+     * The output product (or waste input) to which this allocation factor is
+     * related. The must be an exchange with this product output (or waste input)
+     * in this process.
+     * </pre>
+     *
+     * <code>.protolca.FlowRef product = 3;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.FlowRefOrBuilder getProductOrBuilder() {
+      return getProduct();
     }
 
     public static final int VALUE_FIELD_NUMBER = 4;
@@ -5572,48 +5584,48 @@ public final class Proto {
       }
     }
 
-    public static final int ALLOCATED_EXCHANGE_FIELD_NUMBER = 6;
-    private org.openlca.proto.Proto.Exchange allocatedExchange_;
+    public static final int EXCHANGE_FIELD_NUMBER = 6;
+    private org.openlca.proto.Proto.ExchangeRef exchange_;
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
-     * @return Whether the allocatedExchange field is set.
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
+     * @return Whether the exchange field is set.
      */
     @java.lang.Override
-    public boolean hasAllocatedExchange() {
-      return allocatedExchange_ != null;
+    public boolean hasExchange() {
+      return exchange_ != null;
     }
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
-     * @return The allocatedExchange.
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
+     * @return The exchange.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.Exchange getAllocatedExchange() {
-      return allocatedExchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : allocatedExchange_;
+    public org.openlca.proto.Proto.ExchangeRef getExchange() {
+      return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
     }
     /**
      * <pre>
-     * An input product or elementary flow exchange which is allocated by this
-     * factor. This is only valid for causal allocation where allocation factors
-     * can be assigned to single exchanges.
+     * A product input, waste output, or elementary flow exchange which is
+     * allocated by this factor. This is only valid for causal allocation where
+     * allocation factors can be assigned to single exchanges.
      * </pre>
      *
-     * <code>.protolca.Exchange allocated_exchange = 6;</code>
+     * <code>.protolca.ExchangeRef exchange = 6;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
-      return getAllocatedExchange();
+    public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
+      return getExchange();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5633,11 +5645,11 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
-      if (productExchange_ != null) {
-        output.writeMessage(2, getProductExchange());
-      }
       if (allocationType_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
-        output.writeEnum(3, allocationType_);
+        output.writeEnum(2, allocationType_);
+      }
+      if (product_ != null) {
+        output.writeMessage(3, getProduct());
       }
       if (value_ != 0D) {
         output.writeDouble(4, value_);
@@ -5645,8 +5657,8 @@ public final class Proto {
       if (!getFormulaBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, formula_);
       }
-      if (allocatedExchange_ != null) {
-        output.writeMessage(6, getAllocatedExchange());
+      if (exchange_ != null) {
+        output.writeMessage(6, getExchange());
       }
       unknownFields.writeTo(output);
     }
@@ -5660,13 +5672,13 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
-      if (productExchange_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getProductExchange());
-      }
       if (allocationType_ != org.openlca.proto.Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, allocationType_);
+          .computeEnumSize(2, allocationType_);
+      }
+      if (product_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getProduct());
       }
       if (value_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -5675,9 +5687,9 @@ public final class Proto {
       if (!getFormulaBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, formula_);
       }
-      if (allocatedExchange_ != null) {
+      if (exchange_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getAllocatedExchange());
+          .computeMessageSize(6, getExchange());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5696,21 +5708,21 @@ public final class Proto {
 
       if (!getType()
           .equals(other.getType())) return false;
-      if (hasProductExchange() != other.hasProductExchange()) return false;
-      if (hasProductExchange()) {
-        if (!getProductExchange()
-            .equals(other.getProductExchange())) return false;
-      }
       if (allocationType_ != other.allocationType_) return false;
+      if (hasProduct() != other.hasProduct()) return false;
+      if (hasProduct()) {
+        if (!getProduct()
+            .equals(other.getProduct())) return false;
+      }
       if (java.lang.Double.doubleToLongBits(getValue())
           != java.lang.Double.doubleToLongBits(
               other.getValue())) return false;
       if (!getFormula()
           .equals(other.getFormula())) return false;
-      if (hasAllocatedExchange() != other.hasAllocatedExchange()) return false;
-      if (hasAllocatedExchange()) {
-        if (!getAllocatedExchange()
-            .equals(other.getAllocatedExchange())) return false;
+      if (hasExchange() != other.hasExchange()) return false;
+      if (hasExchange()) {
+        if (!getExchange()
+            .equals(other.getExchange())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -5725,20 +5737,20 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      if (hasProductExchange()) {
-        hash = (37 * hash) + PRODUCT_EXCHANGE_FIELD_NUMBER;
-        hash = (53 * hash) + getProductExchange().hashCode();
-      }
       hash = (37 * hash) + ALLOCATION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + allocationType_;
+      if (hasProduct()) {
+        hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
+        hash = (53 * hash) + getProduct().hashCode();
+      }
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getValue()));
       hash = (37 * hash) + FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + getFormula().hashCode();
-      if (hasAllocatedExchange()) {
-        hash = (37 * hash) + ALLOCATED_EXCHANGE_FIELD_NUMBER;
-        hash = (53 * hash) + getAllocatedExchange().hashCode();
+      if (hasExchange()) {
+        hash = (37 * hash) + EXCHANGE_FIELD_NUMBER;
+        hash = (53 * hash) + getExchange().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5879,23 +5891,23 @@ public final class Proto {
         super.clear();
         type_ = "";
 
-        if (productExchangeBuilder_ == null) {
-          productExchange_ = null;
-        } else {
-          productExchange_ = null;
-          productExchangeBuilder_ = null;
-        }
         allocationType_ = 0;
 
+        if (productBuilder_ == null) {
+          product_ = null;
+        } else {
+          product_ = null;
+          productBuilder_ = null;
+        }
         value_ = 0D;
 
         formula_ = "";
 
-        if (allocatedExchangeBuilder_ == null) {
-          allocatedExchange_ = null;
+        if (exchangeBuilder_ == null) {
+          exchange_ = null;
         } else {
-          allocatedExchange_ = null;
-          allocatedExchangeBuilder_ = null;
+          exchange_ = null;
+          exchangeBuilder_ = null;
         }
         return this;
       }
@@ -5924,18 +5936,18 @@ public final class Proto {
       public org.openlca.proto.Proto.AllocationFactor buildPartial() {
         org.openlca.proto.Proto.AllocationFactor result = new org.openlca.proto.Proto.AllocationFactor(this);
         result.type_ = type_;
-        if (productExchangeBuilder_ == null) {
-          result.productExchange_ = productExchange_;
-        } else {
-          result.productExchange_ = productExchangeBuilder_.build();
-        }
         result.allocationType_ = allocationType_;
+        if (productBuilder_ == null) {
+          result.product_ = product_;
+        } else {
+          result.product_ = productBuilder_.build();
+        }
         result.value_ = value_;
         result.formula_ = formula_;
-        if (allocatedExchangeBuilder_ == null) {
-          result.allocatedExchange_ = allocatedExchange_;
+        if (exchangeBuilder_ == null) {
+          result.exchange_ = exchange_;
         } else {
-          result.allocatedExchange_ = allocatedExchangeBuilder_.build();
+          result.exchange_ = exchangeBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5989,11 +6001,11 @@ public final class Proto {
           type_ = other.type_;
           onChanged();
         }
-        if (other.hasProductExchange()) {
-          mergeProductExchange(other.getProductExchange());
-        }
         if (other.allocationType_ != 0) {
           setAllocationTypeValue(other.getAllocationTypeValue());
+        }
+        if (other.hasProduct()) {
+          mergeProduct(other.getProduct());
         }
         if (other.getValue() != 0D) {
           setValue(other.getValue());
@@ -6002,8 +6014,8 @@ public final class Proto {
           formula_ = other.formula_;
           onChanged();
         }
-        if (other.hasAllocatedExchange()) {
-          mergeAllocatedExchange(other.getAllocatedExchange());
+        if (other.hasExchange()) {
+          mergeExchange(other.getExchange());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6135,168 +6147,13 @@ public final class Proto {
         return this;
       }
 
-      private org.openlca.proto.Proto.Exchange productExchange_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> productExchangeBuilder_;
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       * @return Whether the productExchange field is set.
-       */
-      public boolean hasProductExchange() {
-        return productExchangeBuilder_ != null || productExchange_ != null;
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       * @return The productExchange.
-       */
-      public org.openlca.proto.Proto.Exchange getProductExchange() {
-        if (productExchangeBuilder_ == null) {
-          return productExchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : productExchange_;
-        } else {
-          return productExchangeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public Builder setProductExchange(org.openlca.proto.Proto.Exchange value) {
-        if (productExchangeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          productExchange_ = value;
-          onChanged();
-        } else {
-          productExchangeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public Builder setProductExchange(
-          org.openlca.proto.Proto.Exchange.Builder builderForValue) {
-        if (productExchangeBuilder_ == null) {
-          productExchange_ = builderForValue.build();
-          onChanged();
-        } else {
-          productExchangeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public Builder mergeProductExchange(org.openlca.proto.Proto.Exchange value) {
-        if (productExchangeBuilder_ == null) {
-          if (productExchange_ != null) {
-            productExchange_ =
-              org.openlca.proto.Proto.Exchange.newBuilder(productExchange_).mergeFrom(value).buildPartial();
-          } else {
-            productExchange_ = value;
-          }
-          onChanged();
-        } else {
-          productExchangeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public Builder clearProductExchange() {
-        if (productExchangeBuilder_ == null) {
-          productExchange_ = null;
-          onChanged();
-        } else {
-          productExchange_ = null;
-          productExchangeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public org.openlca.proto.Proto.Exchange.Builder getProductExchangeBuilder() {
-        
-        onChanged();
-        return getProductExchangeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      public org.openlca.proto.Proto.ExchangeOrBuilder getProductExchangeOrBuilder() {
-        if (productExchangeBuilder_ != null) {
-          return productExchangeBuilder_.getMessageOrBuilder();
-        } else {
-          return productExchange_ == null ?
-              org.openlca.proto.Proto.Exchange.getDefaultInstance() : productExchange_;
-        }
-      }
-      /**
-       * <pre>
-       * The output product.
-       * </pre>
-       *
-       * <code>.protolca.Exchange product_exchange = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
-          getProductExchangeFieldBuilder() {
-        if (productExchangeBuilder_ == null) {
-          productExchangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder>(
-                  getProductExchange(),
-                  getParentForChildren(),
-                  isClean());
-          productExchange_ = null;
-        }
-        return productExchangeBuilder_;
-      }
-
       private int allocationType_ = 0;
       /**
        * <pre>
        * The type of allocation.
        * </pre>
        *
-       * <code>.protolca.AllocationType allocation_type = 3;</code>
+       * <code>.protolca.AllocationType allocation_type = 2;</code>
        * @return The enum numeric value on the wire for allocationType.
        */
       @java.lang.Override public int getAllocationTypeValue() {
@@ -6307,7 +6164,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.protolca.AllocationType allocation_type = 3;</code>
+       * <code>.protolca.AllocationType allocation_type = 2;</code>
        * @param value The enum numeric value on the wire for allocationType to set.
        * @return This builder for chaining.
        */
@@ -6322,7 +6179,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.protolca.AllocationType allocation_type = 3;</code>
+       * <code>.protolca.AllocationType allocation_type = 2;</code>
        * @return The allocationType.
        */
       @java.lang.Override
@@ -6336,7 +6193,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.protolca.AllocationType allocation_type = 3;</code>
+       * <code>.protolca.AllocationType allocation_type = 2;</code>
        * @param value The allocationType to set.
        * @return This builder for chaining.
        */
@@ -6354,7 +6211,7 @@ public final class Proto {
        * The type of allocation.
        * </pre>
        *
-       * <code>.protolca.AllocationType allocation_type = 3;</code>
+       * <code>.protolca.AllocationType allocation_type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllocationType() {
@@ -6362,6 +6219,179 @@ public final class Proto {
         allocationType_ = 0;
         onChanged();
         return this;
+      }
+
+      private org.openlca.proto.Proto.FlowRef product_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.FlowRef.Builder, org.openlca.proto.Proto.FlowRefOrBuilder> productBuilder_;
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       * @return Whether the product field is set.
+       */
+      public boolean hasProduct() {
+        return productBuilder_ != null || product_ != null;
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       * @return The product.
+       */
+      public org.openlca.proto.Proto.FlowRef getProduct() {
+        if (productBuilder_ == null) {
+          return product_ == null ? org.openlca.proto.Proto.FlowRef.getDefaultInstance() : product_;
+        } else {
+          return productBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public Builder setProduct(org.openlca.proto.Proto.FlowRef value) {
+        if (productBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          product_ = value;
+          onChanged();
+        } else {
+          productBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public Builder setProduct(
+          org.openlca.proto.Proto.FlowRef.Builder builderForValue) {
+        if (productBuilder_ == null) {
+          product_ = builderForValue.build();
+          onChanged();
+        } else {
+          productBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public Builder mergeProduct(org.openlca.proto.Proto.FlowRef value) {
+        if (productBuilder_ == null) {
+          if (product_ != null) {
+            product_ =
+              org.openlca.proto.Proto.FlowRef.newBuilder(product_).mergeFrom(value).buildPartial();
+          } else {
+            product_ = value;
+          }
+          onChanged();
+        } else {
+          productBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public Builder clearProduct() {
+        if (productBuilder_ == null) {
+          product_ = null;
+          onChanged();
+        } else {
+          product_ = null;
+          productBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public org.openlca.proto.Proto.FlowRef.Builder getProductBuilder() {
+        
+        onChanged();
+        return getProductFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      public org.openlca.proto.Proto.FlowRefOrBuilder getProductOrBuilder() {
+        if (productBuilder_ != null) {
+          return productBuilder_.getMessageOrBuilder();
+        } else {
+          return product_ == null ?
+              org.openlca.proto.Proto.FlowRef.getDefaultInstance() : product_;
+        }
+      }
+      /**
+       * <pre>
+       * The output product (or waste input) to which this allocation factor is
+       * related. The must be an exchange with this product output (or waste input)
+       * in this process.
+       * </pre>
+       *
+       * <code>.protolca.FlowRef product = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.FlowRef.Builder, org.openlca.proto.Proto.FlowRefOrBuilder> 
+          getProductFieldBuilder() {
+        if (productBuilder_ == null) {
+          productBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.FlowRef.Builder, org.openlca.proto.Proto.FlowRefOrBuilder>(
+                  getProduct(),
+                  getParentForChildren(),
+                  isClean());
+          product_ = null;
+        }
+        return productBuilder_;
       }
 
       private double value_ ;
@@ -6508,177 +6538,177 @@ public final class Proto {
         return this;
       }
 
-      private org.openlca.proto.Proto.Exchange allocatedExchange_;
+      private org.openlca.proto.Proto.ExchangeRef exchange_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> allocatedExchangeBuilder_;
+          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> exchangeBuilder_;
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
-       * @return Whether the allocatedExchange field is set.
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
+       * @return Whether the exchange field is set.
        */
-      public boolean hasAllocatedExchange() {
-        return allocatedExchangeBuilder_ != null || allocatedExchange_ != null;
+      public boolean hasExchange() {
+        return exchangeBuilder_ != null || exchange_ != null;
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
-       * @return The allocatedExchange.
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
+       * @return The exchange.
        */
-      public org.openlca.proto.Proto.Exchange getAllocatedExchange() {
-        if (allocatedExchangeBuilder_ == null) {
-          return allocatedExchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : allocatedExchange_;
+      public org.openlca.proto.Proto.ExchangeRef getExchange() {
+        if (exchangeBuilder_ == null) {
+          return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
         } else {
-          return allocatedExchangeBuilder_.getMessage();
+          return exchangeBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public Builder setAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
-        if (allocatedExchangeBuilder_ == null) {
+      public Builder setExchange(org.openlca.proto.Proto.ExchangeRef value) {
+        if (exchangeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          allocatedExchange_ = value;
+          exchange_ = value;
           onChanged();
         } else {
-          allocatedExchangeBuilder_.setMessage(value);
+          exchangeBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public Builder setAllocatedExchange(
-          org.openlca.proto.Proto.Exchange.Builder builderForValue) {
-        if (allocatedExchangeBuilder_ == null) {
-          allocatedExchange_ = builderForValue.build();
+      public Builder setExchange(
+          org.openlca.proto.Proto.ExchangeRef.Builder builderForValue) {
+        if (exchangeBuilder_ == null) {
+          exchange_ = builderForValue.build();
           onChanged();
         } else {
-          allocatedExchangeBuilder_.setMessage(builderForValue.build());
+          exchangeBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public Builder mergeAllocatedExchange(org.openlca.proto.Proto.Exchange value) {
-        if (allocatedExchangeBuilder_ == null) {
-          if (allocatedExchange_ != null) {
-            allocatedExchange_ =
-              org.openlca.proto.Proto.Exchange.newBuilder(allocatedExchange_).mergeFrom(value).buildPartial();
+      public Builder mergeExchange(org.openlca.proto.Proto.ExchangeRef value) {
+        if (exchangeBuilder_ == null) {
+          if (exchange_ != null) {
+            exchange_ =
+              org.openlca.proto.Proto.ExchangeRef.newBuilder(exchange_).mergeFrom(value).buildPartial();
           } else {
-            allocatedExchange_ = value;
+            exchange_ = value;
           }
           onChanged();
         } else {
-          allocatedExchangeBuilder_.mergeFrom(value);
+          exchangeBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public Builder clearAllocatedExchange() {
-        if (allocatedExchangeBuilder_ == null) {
-          allocatedExchange_ = null;
+      public Builder clearExchange() {
+        if (exchangeBuilder_ == null) {
+          exchange_ = null;
           onChanged();
         } else {
-          allocatedExchange_ = null;
-          allocatedExchangeBuilder_ = null;
+          exchange_ = null;
+          exchangeBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public org.openlca.proto.Proto.Exchange.Builder getAllocatedExchangeBuilder() {
+      public org.openlca.proto.Proto.ExchangeRef.Builder getExchangeBuilder() {
         
         onChanged();
-        return getAllocatedExchangeFieldBuilder().getBuilder();
+        return getExchangeFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
-      public org.openlca.proto.Proto.ExchangeOrBuilder getAllocatedExchangeOrBuilder() {
-        if (allocatedExchangeBuilder_ != null) {
-          return allocatedExchangeBuilder_.getMessageOrBuilder();
+      public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
+        if (exchangeBuilder_ != null) {
+          return exchangeBuilder_.getMessageOrBuilder();
         } else {
-          return allocatedExchange_ == null ?
-              org.openlca.proto.Proto.Exchange.getDefaultInstance() : allocatedExchange_;
+          return exchange_ == null ?
+              org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
         }
       }
       /**
        * <pre>
-       * An input product or elementary flow exchange which is allocated by this
-       * factor. This is only valid for causal allocation where allocation factors
-       * can be assigned to single exchanges.
+       * A product input, waste output, or elementary flow exchange which is
+       * allocated by this factor. This is only valid for causal allocation where
+       * allocation factors can be assigned to single exchanges.
        * </pre>
        *
-       * <code>.protolca.Exchange allocated_exchange = 6;</code>
+       * <code>.protolca.ExchangeRef exchange = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
-          getAllocatedExchangeFieldBuilder() {
-        if (allocatedExchangeBuilder_ == null) {
-          allocatedExchangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder>(
-                  getAllocatedExchange(),
+          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> 
+          getExchangeFieldBuilder() {
+        if (exchangeBuilder_ == null) {
+          exchangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder>(
+                  getExchange(),
                   getParentForChildren(),
                   isClean());
-          allocatedExchange_ = null;
+          exchange_ = null;
         }
-        return allocatedExchangeBuilder_;
+        return exchangeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -23711,6 +23741,721 @@ public final class Proto {
 
     @java.lang.Override
     public org.openlca.proto.Proto.Exchange getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ExchangeRefOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.ExchangeRef)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The internal ID of the exchange.
+     * </pre>
+     *
+     * <code>int32 internal_id = 2;</code>
+     * @return The internalId.
+     */
+    int getInternalId();
+  }
+  /**
+   * <pre>
+   * An instance of this class describes a reference to an exchange in a process.
+   * When we reference such an exchange we only need the information to indentify
+   * that exchange unambiguously in a process.
+   * </pre>
+   *
+   * Protobuf type {@code protolca.ExchangeRef}
+   */
+  public static final class ExchangeRef extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.ExchangeRef)
+      ExchangeRefOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExchangeRef.newBuilder() to construct.
+    private ExchangeRef(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExchangeRef() {
+      type_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ExchangeRef();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExchangeRef(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 16: {
+
+              internalId_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.Proto.internal_static_protolca_ExchangeRef_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.Proto.internal_static_protolca_ExchangeRef_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.Proto.ExchangeRef.class, org.openlca.proto.Proto.ExchangeRef.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INTERNAL_ID_FIELD_NUMBER = 2;
+    private int internalId_;
+    /**
+     * <pre>
+     * The internal ID of the exchange.
+     * </pre>
+     *
+     * <code>int32 internal_id = 2;</code>
+     * @return The internalId.
+     */
+    @java.lang.Override
+    public int getInternalId() {
+      return internalId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (internalId_ != 0) {
+        output.writeInt32(2, internalId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (internalId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, internalId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.Proto.ExchangeRef)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.Proto.ExchangeRef other = (org.openlca.proto.Proto.ExchangeRef) obj;
+
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (getInternalId()
+          != other.getInternalId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + INTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ExchangeRef parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.Proto.ExchangeRef prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * An instance of this class describes a reference to an exchange in a process.
+     * When we reference such an exchange we only need the information to indentify
+     * that exchange unambiguously in a process.
+     * </pre>
+     *
+     * Protobuf type {@code protolca.ExchangeRef}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.ExchangeRef)
+        org.openlca.proto.Proto.ExchangeRefOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.Proto.internal_static_protolca_ExchangeRef_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.Proto.internal_static_protolca_ExchangeRef_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.Proto.ExchangeRef.class, org.openlca.proto.Proto.ExchangeRef.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.Proto.ExchangeRef.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        internalId_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.Proto.internal_static_protolca_ExchangeRef_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ExchangeRef getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.ExchangeRef.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ExchangeRef build() {
+        org.openlca.proto.Proto.ExchangeRef result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ExchangeRef buildPartial() {
+        org.openlca.proto.Proto.ExchangeRef result = new org.openlca.proto.Proto.ExchangeRef(this);
+        result.type_ = type_;
+        result.internalId_ = internalId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.Proto.ExchangeRef) {
+          return mergeFrom((org.openlca.proto.Proto.ExchangeRef)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.Proto.ExchangeRef other) {
+        if (other == org.openlca.proto.Proto.ExchangeRef.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.getInternalId() != 0) {
+          setInternalId(other.getInternalId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.Proto.ExchangeRef parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.Proto.ExchangeRef) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int internalId_ ;
+      /**
+       * <pre>
+       * The internal ID of the exchange.
+       * </pre>
+       *
+       * <code>int32 internal_id = 2;</code>
+       * @return The internalId.
+       */
+      @java.lang.Override
+      public int getInternalId() {
+        return internalId_;
+      }
+      /**
+       * <pre>
+       * The internal ID of the exchange.
+       * </pre>
+       *
+       * <code>int32 internal_id = 2;</code>
+       * @param value The internalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInternalId(int value) {
+        
+        internalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal ID of the exchange.
+       * </pre>
+       *
+       * <code>int32 internal_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInternalId() {
+        
+        internalId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.ExchangeRef)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.ExchangeRef)
+    private static final org.openlca.proto.Proto.ExchangeRef DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.ExchangeRef();
+    }
+
+    public static org.openlca.proto.Proto.ExchangeRef getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExchangeRef>
+        PARSER = new com.google.protobuf.AbstractParser<ExchangeRef>() {
+      @java.lang.Override
+      public ExchangeRef parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExchangeRef(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExchangeRef> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExchangeRef> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.Proto.ExchangeRef getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -104878,6 +105623,11 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_Exchange_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_ExchangeRef_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_ExchangeRef_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_Flow_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -105054,60 +105804,61 @@ public final class Proto {
       "y\030\t \001(\t\022\017\n\007address\030\n \001(\t\022\014\n\004city\030\013 \001(\t\022\017" +
       "\n\007country\030\014 \001(\t\022\r\n\005email\030\r \001(\t\022\017\n\007telefa" +
       "x\030\016 \001(\t\022\021\n\ttelephone\030\017 \001(\t\022\017\n\007website\030\020 " +
-      "\001(\t\022\020\n\010zip_code\030\021 \001(\t\"\330\001\n\020AllocationFact" +
-      "or\022\023\n\004type\030\001 \001(\tR\005@type\022,\n\020product_excha" +
-      "nge\030\002 \001(\0132\022.protolca.Exchange\0221\n\017allocat" +
-      "ion_type\030\003 \001(\0162\030.protolca.AllocationType" +
-      "\022\r\n\005value\030\004 \001(\001\022\017\n\007formula\030\005 \001(\t\022.\n\022allo" +
-      "cated_exchange\030\006 \001(\0132\022.protolca.Exchange" +
-      "\"\230\003\n\020CalculationSetup\022\023\n\004type\030\001 \001(\tR\005@ty" +
-      "pe\0223\n\020calculation_type\030\002 \001(\0162\031.protolca." +
-      "CalculationType\022%\n\016product_system\030\003 \001(\0132" +
-      "\r.protolca.Ref\022$\n\rimpact_method\030\004 \001(\0132\r." +
-      "protolca.Ref\022\022\n\nwith_costs\030\005 \001(\010\022\035\n\006nw_s" +
-      "et\030\006 \001(\0132\r.protolca.Ref\0223\n\021allocation_me" +
-      "thod\030\007 \001(\0162\030.protolca.AllocationType\0222\n\020" +
-      "parameter_redefs\030\010 \003(\0132\030.protolca.Parame" +
-      "terRedef\022\016\n\006amount\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r" +
-      ".protolca.Ref\022$\n\rflow_property\030\013 \001(\0132\r.p" +
-      "rotolca.Ref\"\342\001\n\010Category\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
-      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
-      "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
-      "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
-      "\'\n\nmodel_type\030\n \001(\0162\023.protolca.ModelType" +
-      "\"\215\002\n\010Currency\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id" +
-      "\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description" +
-      "\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006" +
-      " \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n" +
-      "\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001" +
-      "(\t\022\031\n\021conversion_factor\030\013 \001(\001\022)\n\022referen" +
-      "ce_currency\030\014 \001(\0132\r.protolca.Ref\"e\n\013DqIn" +
-      "dicator\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001" +
-      "(\t\022\020\n\010position\030\003 \001(\005\022!\n\006scores\030\004 \003(\0132\021.p" +
-      "rotolca.DqScore\"i\n\007DqScore\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022\020\n\010position\030\002 \001(\005\022\r\n\005label\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\023\n\013uncertainty\030\005 \001" +
-      "(\001\"\236\002\n\010DqSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022" +
-      "\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\031\n\021has_un" +
-      "certainties\030\n \001(\010\022\035\n\006source\030\013 \001(\0132\r.prot" +
-      "olca.Ref\022)\n\nindicators\030\014 \003(\0132\025.protolca." +
-      "DqIndicator\"\360\003\n\010Exchange\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\027\n\017avoided_product\030\002 \001(\010\022\024\n\014cost_f" +
-      "ormula\030\003 \001(\t\022\022\n\ncost_value\030\004 \001(\001\022\037\n\010curr" +
-      "ency\030\005 \001(\0132\r.protolca.Ref\022\023\n\013internal_id" +
-      "\030\006 \001(\005\022\037\n\004flow\030\007 \001(\0132\021.protolca.FlowRef\022" +
-      "$\n\rflow_property\030\010 \001(\0132\r.protolca.Ref\022\r\n" +
-      "\005input\030\t \001(\010\022\036\n\026quantitative_reference\030\n" +
-      " \001(\010\022\030\n\020base_uncertainty\030\013 \001(\001\022.\n\020defaul" +
-      "t_provider\030\014 \001(\0132\024.protolca.ProcessRef\022\016" +
-      "\n\006amount\030\r \001(\001\022\026\n\016amount_formula\030\016 \001(\t\022\033" +
-      "\n\004unit\030\017 \001(\0132\r.protolca.Ref\022\020\n\010dq_entry\030" +
-      "\020 \001(\t\022*\n\013uncertainty\030\021 \001(\0132\025.protolca.Un" +
-      "certainty\022\023\n\013description\030\022 \001(\t\"\201\003\n\004Flow\022" +
+      "\001(\t\022\020\n\010zip_code\030\021 \001(\t\"\307\001\n\020AllocationFact" +
+      "or\022\023\n\004type\030\001 \001(\tR\005@type\0221\n\017allocation_ty" +
+      "pe\030\002 \001(\0162\030.protolca.AllocationType\022\"\n\007pr" +
+      "oduct\030\003 \001(\0132\021.protolca.FlowRef\022\r\n\005value\030" +
+      "\004 \001(\001\022\017\n\007formula\030\005 \001(\t\022\'\n\010exchange\030\006 \001(\013" +
+      "2\025.protolca.ExchangeRef\"\230\003\n\020CalculationS" +
+      "etup\022\023\n\004type\030\001 \001(\tR\005@type\0223\n\020calculation" +
+      "_type\030\002 \001(\0162\031.protolca.CalculationType\022%" +
+      "\n\016product_system\030\003 \001(\0132\r.protolca.Ref\022$\n" +
+      "\rimpact_method\030\004 \001(\0132\r.protolca.Ref\022\022\n\nw" +
+      "ith_costs\030\005 \001(\010\022\035\n\006nw_set\030\006 \001(\0132\r.protol" +
+      "ca.Ref\0223\n\021allocation_method\030\007 \001(\0162\030.prot" +
+      "olca.AllocationType\0222\n\020parameter_redefs\030" +
+      "\010 \003(\0132\030.protolca.ParameterRedef\022\016\n\006amoun" +
+      "t\030\t \001(\001\022\033\n\004unit\030\n \001(\0132\r.protolca.Ref\022$\n\r" +
+      "flow_property\030\013 \001(\0132\r.protolca.Ref\"\342\001\n\010C" +
+      "ategory\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\t" +
+      "R\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037" +
+      "\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030" +
+      "\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\nmodel_type\030\n \001" +
+      "(\0162\023.protolca.ModelType\"\215\002\n\010Currency\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
+      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
+      "brary\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\031\n\021conversion_" +
+      "factor\030\013 \001(\001\022)\n\022reference_currency\030\014 \001(\013" +
+      "2\r.protolca.Ref\"e\n\013DqIndicator\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\020\n\010position\030\003 " +
+      "\001(\005\022!\n\006scores\030\004 \003(\0132\021.protolca.DqScore\"i" +
+      "\n\007DqScore\022\023\n\004type\030\001 \001(\tR\005@type\022\020\n\010positi" +
+      "on\030\002 \001(\005\022\r\n\005label\030\003 \001(\t\022\023\n\013description\030\004" +
+      " \001(\t\022\023\n\013uncertainty\030\005 \001(\001\"\236\002\n\010DqSystem\022\023" +
+      "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
+      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
+      "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categor" +
+      "y\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007" +
+      "library\030\t \001(\t\022\031\n\021has_uncertainties\030\n \001(\010" +
+      "\022\035\n\006source\030\013 \001(\0132\r.protolca.Ref\022)\n\nindic" +
+      "ators\030\014 \003(\0132\025.protolca.DqIndicator\"\360\003\n\010E" +
+      "xchange\022\023\n\004type\030\001 \001(\tR\005@type\022\027\n\017avoided_" +
+      "product\030\002 \001(\010\022\024\n\014cost_formula\030\003 \001(\t\022\022\n\nc" +
+      "ost_value\030\004 \001(\001\022\037\n\010currency\030\005 \001(\0132\r.prot" +
+      "olca.Ref\022\023\n\013internal_id\030\006 \001(\005\022\037\n\004flow\030\007 " +
+      "\001(\0132\021.protolca.FlowRef\022$\n\rflow_property\030" +
+      "\010 \001(\0132\r.protolca.Ref\022\r\n\005input\030\t \001(\010\022\036\n\026q" +
+      "uantitative_reference\030\n \001(\010\022\030\n\020base_unce" +
+      "rtainty\030\013 \001(\001\022.\n\020default_provider\030\014 \001(\0132" +
+      "\024.protolca.ProcessRef\022\016\n\006amount\030\r \001(\001\022\026\n" +
+      "\016amount_formula\030\016 \001(\t\022\033\n\004unit\030\017 \001(\0132\r.pr" +
+      "otolca.Ref\022\020\n\010dq_entry\030\020 \001(\t\022*\n\013uncertai" +
+      "nty\030\021 \001(\0132\025.protolca.Uncertainty\022\023\n\013desc" +
+      "ription\030\022 \001(\t\"7\n\013ExchangeRef\022\023\n\004type\030\001 \001" +
+      "(\tR\005@type\022\023\n\013internal_id\030\002 \001(\005\"\201\003\n\004Flow\022" +
       "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
       "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
       "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
@@ -105373,7 +106124,7 @@ public final class Proto {
     internal_static_protolca_AllocationFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_AllocationFactor_descriptor,
-        new java.lang.String[] { "Type", "ProductExchange", "AllocationType", "Value", "Formula", "AllocatedExchange", });
+        new java.lang.String[] { "Type", "AllocationType", "Product", "Value", "Formula", "Exchange", });
     internal_static_protolca_CalculationSetup_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protolca_CalculationSetup_fieldAccessorTable = new
@@ -105416,194 +106167,200 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Exchange_descriptor,
         new java.lang.String[] { "Type", "AvoidedProduct", "CostFormula", "CostValue", "Currency", "InternalId", "Flow", "FlowProperty", "Input", "QuantitativeReference", "BaseUncertainty", "DefaultProvider", "Amount", "AmountFormula", "Unit", "DqEntry", "Uncertainty", "Description", });
-    internal_static_protolca_Flow_descriptor =
+    internal_static_protolca_ExchangeRef_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_protolca_ExchangeRef_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_ExchangeRef_descriptor,
+        new java.lang.String[] { "Type", "InternalId", });
+    internal_static_protolca_Flow_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_protolca_Flow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Flow_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "FlowType", "Cas", "Formula", "FlowProperties", "Location", "Synonyms", "InfrastructureFlow", });
     internal_static_protolca_FlowMap_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_protolca_FlowMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMap_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Source", "Target", "Mappings", });
     internal_static_protolca_FlowMapEntry_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_protolca_FlowMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMapEntry_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "From", "To", "ConversionFactor", });
     internal_static_protolca_FlowMapRef_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_protolca_FlowMapRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMapRef_descriptor,
         new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", });
     internal_static_protolca_FlowProperty_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_protolca_FlowProperty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowProperty_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "FlowPropertyType", "UnitGroup", });
     internal_static_protolca_FlowPropertyFactor_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_protolca_FlowPropertyFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowPropertyFactor_descriptor,
         new java.lang.String[] { "Type", "FlowProperty", "ConversionFactor", "ReferenceFlowProperty", });
     internal_static_protolca_FlowRef_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_protolca_FlowRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowRef_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "RefUnit", "Location", "FlowType", });
     internal_static_protolca_FlowResult_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_protolca_FlowResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowResult_descriptor,
         new java.lang.String[] { "Type", "Flow", "Input", "Value", });
     internal_static_protolca_ImpactCategory_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_protolca_ImpactCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategory_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ReferenceUnitName", "Parameters", "ImpactFactors", });
     internal_static_protolca_ImpactCategoryRef_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_protolca_ImpactCategoryRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactCategoryRef_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "RefUnit", });
     internal_static_protolca_ImpactFactor_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_protolca_ImpactFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactFactor_descriptor,
         new java.lang.String[] { "Type", "Flow", "Location", "FlowProperty", "Unit", "Value", "Formula", "Uncertainty", });
     internal_static_protolca_ImpactMethod_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_protolca_ImpactMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactMethod_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactCategories", "NwSets", });
     internal_static_protolca_ImpactResult_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_protolca_ImpactResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ImpactResult_descriptor,
         new java.lang.String[] { "Type", "ImpactCategory", "Value", });
     internal_static_protolca_Location_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_protolca_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Location_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Code", "Latitude", "Longitude", "GeometryBytes", });
     internal_static_protolca_NwFactor_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_protolca_NwFactor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_NwFactor_descriptor,
         new java.lang.String[] { "Type", "ImpactCategory", "NormalisationFactor", "WeightingFactor", });
     internal_static_protolca_NwSet_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_protolca_NwSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_NwSet_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "WeightedScoreUnit", "Factors", });
     internal_static_protolca_Parameter_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_protolca_Parameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Parameter_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ParameterScope", "InputParameter", "Value", "Formula", "Uncertainty", });
     internal_static_protolca_ParameterRedef_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_protolca_ParameterRedef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ParameterRedef_descriptor,
         new java.lang.String[] { "Type", "Name", "Value", "Context", });
     internal_static_protolca_Process_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_protolca_Process_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Process_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "AllocationFactors", "DefaultAllocationMethod", "Exchanges", "LastInternalId", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", "InfrastructureProcess", "SocialAspects", });
     internal_static_protolca_ProcessDocumentation_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_protolca_ProcessDocumentation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessDocumentation_descriptor,
         new java.lang.String[] { "Type", "TimeDescription", "ValidUntil", "ValidFrom", "TechnologyDescription", "DataCollectionDescription", "CompletenessDescription", "DataSelectionDescription", "ReviewDetails", "DataTreatmentDescription", "InventoryMethodDescription", "ModelingConstantsDescription", "Reviewer", "SamplingDescription", "Sources", "RestrictionsDescription", "Copyright", "CreationDate", "DataDocumentor", "DataGenerator", "DataSetOwner", "IntendedApplication", "ProjectDescription", "Publication", "GeographyDescription", });
     internal_static_protolca_ProcessLink_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_protolca_ProcessLink_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessLink_descriptor,
         new java.lang.String[] { "Type", "Provider", "Flow", "Process", "Exchange", });
     internal_static_protolca_ProcessRef_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_protolca_ProcessRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessRef_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "Location", "ProcessType", });
     internal_static_protolca_ProductSystem_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_protolca_ProductSystem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProductSystem_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Processes", "ReferenceProcess", "ReferenceExchange", "TargetAmount", "TargetUnit", "TargetFlowProperty", "ProcessLinks", });
     internal_static_protolca_Project_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_protolca_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Project_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactMethod", "NwSet", });
     internal_static_protolca_Ref_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_protolca_Ref_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Ref_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", });
     internal_static_protolca_SimpleResult_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_protolca_SimpleResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SimpleResult_descriptor,
         new java.lang.String[] { "Type", "FlowResults", "ImpactResults", });
     internal_static_protolca_SocialAspect_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_protolca_SocialAspect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialAspect_descriptor,
         new java.lang.String[] { "Type", "ActivityValue", "Comment", "Quality", "RawAmount", "RiskLevel", "SocialIndicator", "Source", });
     internal_static_protolca_SocialIndicator_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_protolca_SocialIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialIndicator_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ActivityVariable", "ActivityQuantity", "ActivityUnit", "UnitOfMeasurement", "EvaluationScheme", });
     internal_static_protolca_Source_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_protolca_Source_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Source_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Url", "TextReference", "Year", "ExternalFile", });
     internal_static_protolca_Uncertainty_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_protolca_Uncertainty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Uncertainty_descriptor,
         new java.lang.String[] { "Type", "DistributionType", "Mean", "MeanFormula", "GeomMean", "GeomMeanFormula", "Minimum", "MinimumFormula", "Sd", "SdFormula", "GeomSd", "GeomSdFormula", "Mode", "ModeFormula", "Maximum", "MaximumFormula", });
     internal_static_protolca_Unit_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_protolca_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Unit_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "ConversionFactor", "ReferenceUnit", "Synonyms", });
     internal_static_protolca_UnitGroup_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_protolca_UnitGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_UnitGroup_descriptor,

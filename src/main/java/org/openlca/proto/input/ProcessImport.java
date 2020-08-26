@@ -6,6 +6,8 @@ import java.util.Objects;
 
 import org.openlca.core.database.ProcessDao;
 import org.openlca.core.model.Actor;
+import org.openlca.core.model.AllocationFactor;
+import org.openlca.core.model.AllocationMethod;
 import org.openlca.core.model.DQSystem;
 import org.openlca.core.model.Exchange;
 import org.openlca.core.model.Parameter;
@@ -99,7 +101,7 @@ public class ProcessImport {
     proto.getSocialAspectsList()
       .stream()
       .map(this::socialAspect)
-      .forEach(aspect -> p.socialAspects.add(aspect));
+      .forEach(p.socialAspects::add);
 
     // when we are in update mode, we want to keep the
     // IDs of existing exchanges because they are may
@@ -136,7 +138,20 @@ public class ProcessImport {
       if (protoEx.getQuantitativeReference()) {
         p.quantitativeReference = e;
       }
+      p.exchanges.add(e);
     }
+
+    // allocation factors
+    // note that creating the allocation factors must be
+    // done after the exchanges where created because
+    // we need to reference them in case of causal
+    // allocation factors
+    p.allocationFactors.clear();
+    proto.getAllocationFactorsList()
+      .stream()
+      .map(a -> allocationFactor(a, p))
+      .filter(Objects::nonNull)
+      .forEach(p.allocationFactors::add);
   }
 
   private ProcessDocumentation doc(Proto.ProcessDocumentation proto) {
@@ -304,4 +319,43 @@ public class ProcessImport {
         return null;
     }
   }
+
+  private AllocationFactor allocationFactor(
+    Proto.AllocationFactor proto, Process process) {
+
+    var f = new AllocationFactor();
+
+    // find the ID of the allocated product
+    var productID = proto.getProduct().getId();
+    if (Strings.nullOrEmpty(productID))
+      return null;
+    f.productId = process.exchanges.stream()
+      .filter(e -> e.flow != null
+        && Objects.equals(e.flow.refId, productID))
+      .mapToLong(e -> e.flow.id)
+      .findAny()
+      .orElse(0L);
+
+    if (f.productId == 0L)
+      return null;
+
+    f.method = Util.allocationMethod(proto.getAllocationType());
+    f.value = proto.getValue();
+    f.formula = Strings.nullIfEmpty(proto.getFormula());
+
+    // find the related exchange in case of
+    // a causal allocation factor
+    if (f.method != AllocationMethod.CAUSAL)
+      return f;
+    var exchangeID = proto.getExchange().getInternalId();
+    if (exchangeID <= 0)
+      return null;
+    f.exchange = process.exchanges.stream()
+      .filter(e -> e.internalId == exchangeID)
+      .findAny()
+      .orElse(null);
+
+    return f.exchange != null ? f : null;
+  }
+
 }
