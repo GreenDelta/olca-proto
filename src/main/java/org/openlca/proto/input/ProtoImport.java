@@ -17,6 +17,7 @@ public class ProtoImport implements Runnable {
 
   final ProtoStore store;
   final IDatabase db;
+  final ProviderUpdate providerUpdate;
   UpdateMode updateMode = UpdateMode.NEVER;
 
   /**
@@ -38,6 +39,7 @@ public class ProtoImport implements Runnable {
   public ProtoImport(ProtoStore store, IDatabase db) {
     this.store = store;
     this.db = db;
+    this.providerUpdate = new ProviderUpdate(db);
   }
 
   public ProtoImport withUpdateMode(UpdateMode mode) {
@@ -149,9 +151,15 @@ public class ProtoImport implements Runnable {
     for (String id : store.getIDs("dq_systems")) {
       new DqSystemImport(this).of(id);
     }
+
     for (String id : store.getIDs("processes")) {
       new ProcessImport(this).of(id);
     }
+    // it is important to call the provider update
+    // when the processes have been imported or
+    // updated
+    providerUpdate.run();
+
     for (String id : store.getIDs("lcia_categories")) {
       new ImpactCategoryImport(this).of(id);
     }

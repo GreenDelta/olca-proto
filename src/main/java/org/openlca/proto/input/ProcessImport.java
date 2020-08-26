@@ -138,6 +138,17 @@ public class ProcessImport {
       if (protoEx.getQuantitativeReference()) {
         p.quantitativeReference = e;
       }
+
+      // register a possible provider
+      e.defaultProviderId = 0L;
+      var providerID = protoEx.getDefaultProvider().getId();
+      if (Strings.notEmpty(providerID)) {
+        imp.providerUpdate.add(ProviderUpdate.Link
+          .forProcess(p.refId)
+          .withExchangeID(e.internalId)
+          .withProvider(providerID));
+      }
+
       p.exchanges.add(e);
     }
 
