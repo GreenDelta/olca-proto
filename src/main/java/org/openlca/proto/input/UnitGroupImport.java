@@ -1,5 +1,8 @@
 package org.openlca.proto.input;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openlca.core.database.UnitGroupDao;
 import org.openlca.core.model.Unit;
 import org.openlca.core.model.UnitGroup;
@@ -9,6 +12,7 @@ import org.openlca.util.Strings;
 public class UnitGroupImport {
 
   private final ProtoImport config;
+  private boolean inUpdateMode;
 
   public UnitGroupImport(ProtoImport config) {
     this.config = config;
@@ -20,12 +24,12 @@ public class UnitGroupImport {
     var group = config.get(UnitGroup.class, id);
 
     // check if we are in update mode
-    var update = false;
+    inUpdateMode = false;
     if (group != null) {
       if (config.isHandled(group)
         || config.noUpdates())
         return group;
-      update = true;
+      inUpdateMode = true;
     }
 
     // check the proto object
@@ -33,7 +37,7 @@ public class UnitGroupImport {
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
-    if (update) {
+    if (inUpdateMode) {
       if (!config.shouldUpdate(group, wrap))
         return group;
     }
@@ -48,7 +52,7 @@ public class UnitGroupImport {
 
     // insert it
     var dao = new UnitGroupDao(config.db);
-    group = update
+    group = inUpdateMode
       ? dao.update(group)
       : dao.insert(group);
     config.putHandled(group);
@@ -67,20 +71,45 @@ public class UnitGroupImport {
   }
 
   private void map(Proto.UnitGroup proto, UnitGroup group) {
-    for (var u : proto.getUnitsList()) {
-      var unit = new Unit();
-      unit.refId = u.getId();
-      unit.name = u.getName();
-      unit.description = u.getDescription();
-      unit.conversionFactor = u.getConversionFactor();
-      unit.synonyms = u.getSynonymsList().stream()
-        .reduce((syn, acc) -> syn + ";" + acc)
-        .orElse(null);
-      if (u.getReferenceUnit()) {
+
+    // sync units (keep the IDs) if we are in update mode
+    // this is important because these units may are used
+    // in exchanges etc. and we do not want to break these
+    // pointers when updating an unit
+    Map<String, Unit> oldUnits = null;
+    if (inUpdateMode) {
+      oldUnits = new HashMap<>();
+      for (var unit : group.units) {
+        oldUnits.put(unit.name, unit);
+      }
+      group.units.clear();
+      group.referenceUnit = null;
+    }
+
+    for (var protoUnit : proto.getUnitsList()) {
+      Unit unit = null;
+      if (oldUnits != null) {
+        unit = oldUnits.get(protoUnit.getName());
+      }
+      if (unit == null) {
+        unit = new Unit();
+      }
+      mapUnit(protoUnit, unit);
+      if (protoUnit.getReferenceUnit()) {
         group.referenceUnit = unit;
       }
       group.units.add(unit);
     }
+  }
+
+  private void mapUnit(Proto.Unit proto, Unit unit) {
+    unit.refId = proto.getId();
+    unit.name = proto.getName();
+    unit.description = proto.getDescription();
+    unit.conversionFactor = proto.getConversionFactor();
+    unit.synonyms = proto.getSynonymsList().stream()
+      .reduce((syn, acc) -> syn + ";" + acc)
+      .orElse(null);
   }
 }
 

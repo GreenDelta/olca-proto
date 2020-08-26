@@ -104,9 +104,10 @@ public class ProcessImport {
         }
       });
       oldExchanges = m;
+      p.exchanges.clear();
+      p.quantitativeReference = null;
     }
 
-    p.exchanges.clear();
     p.lastInternalId = proto.getLastInternalId();
     for (var protoEx : proto.getExchangesList()) {
       Exchange e = null;

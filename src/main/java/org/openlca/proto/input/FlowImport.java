@@ -1,5 +1,8 @@
 package org.openlca.proto.input;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openlca.core.database.FlowDao;
 import org.openlca.core.model.Flow;
 import org.openlca.core.model.FlowPropertyFactor;
@@ -10,6 +13,7 @@ import org.openlca.util.Strings;
 public class FlowImport {
 
   private final ProtoImport imp;
+  private boolean inUpdateMode;
 
   public FlowImport(ProtoImport imp) {
     this.imp = imp;
@@ -21,12 +25,12 @@ public class FlowImport {
     var flow = imp.get(Flow.class, id);
 
     // check if we are in update mode
-    var update = false;
+    inUpdateMode = false;
     if (flow != null) {
       if (imp.isHandled(flow)
         || imp.noUpdates())
         return flow;
-      update = true;
+      inUpdateMode = true;
     }
 
     // check the proto object
@@ -34,7 +38,7 @@ public class FlowImport {
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
-    if (update) {
+    if (inUpdateMode) {
       if (!imp.shouldUpdate(flow, wrap))
         return flow;
     }
@@ -49,7 +53,7 @@ public class FlowImport {
 
     // insert it
     var dao = new FlowDao(imp.db);
-    flow = update
+    flow = inUpdateMode
       ? dao.update(flow)
       : dao.insert(flow);
     imp.putHandled(flow);
@@ -68,18 +72,41 @@ public class FlowImport {
       flow.location = new LocationImport(imp).of(locID);
     }
 
+    // sync existing flow property factors if we are in update
+    // mode to avoid ID changes of possibly used flow property
+    // factors
+    Map<String, FlowPropertyFactor> oldFactors = null;
+    if (inUpdateMode) {
+      oldFactors = new HashMap<>();
+      for(var factor : flow.flowPropertyFactors) {
+        var prop = factor.flowProperty;
+        if (prop == null || prop.refId == null)
+          continue;
+        oldFactors.put(prop.refId, factor);
+      }
+      flow.flowPropertyFactors.clear();
+      flow.referenceFlowProperty = null;
+    }
+
     // flow property factors
-    for (var prop : proto.getFlowPropertiesList()) {
-      var f = new FlowPropertyFactor();
-      var propID = prop.getFlowProperty().getId();
+    for (var protoFactor : proto.getFlowPropertiesList()) {
+      var propID = protoFactor.getFlowProperty().getId();
+      FlowPropertyFactor factor = null;
+      if (oldFactors != null) {
+        factor = oldFactors.get(propID);
+      }
+      if (factor == null) {
+        factor = new FlowPropertyFactor();
+      }
+
       if (Strings.notEmpty(propID)) {
-        f.flowProperty = new FlowPropertyImport(imp).of(propID);
+        factor.flowProperty = new FlowPropertyImport(imp).of(propID);
       }
-      f.conversionFactor = prop.getConversionFactor();
-      flow.flowPropertyFactors.add(f);
-      if (prop.getReferenceFlowProperty()) {
-        flow.referenceFlowProperty = f.flowProperty;
+      factor.conversionFactor = protoFactor.getConversionFactor();
+      if (protoFactor.getReferenceFlowProperty()) {
+        flow.referenceFlowProperty = factor.flowProperty;
       }
+      flow.flowPropertyFactors.add(factor);
     }
   }
 
