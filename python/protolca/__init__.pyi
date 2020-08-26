@@ -173,6 +173,39 @@ LCI_RESULT = typing___cast(ProcessTypeValue, 1)
 UNIT_PROCESS = typing___cast(ProcessTypeValue, 2)
 type___ProcessType = ProcessType
 
+RiskLevelValue = typing___NewType('RiskLevelValue', builtin___int)
+type___RiskLevelValue = RiskLevelValue
+RiskLevel: _RiskLevel
+class _RiskLevel(google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[RiskLevelValue]):
+    DESCRIPTOR: google___protobuf___descriptor___EnumDescriptor = ...
+    UNDEFINED_RISK_LEVEL = typing___cast(RiskLevelValue, 0)
+    NO_OPPORTUNITY = typing___cast(RiskLevelValue, 1)
+    HIGH_OPPORTUNITY = typing___cast(RiskLevelValue, 2)
+    MEDIUM_OPPORTUNITY = typing___cast(RiskLevelValue, 3)
+    LOW_OPPORTUNITY = typing___cast(RiskLevelValue, 4)
+    NO_RISK = typing___cast(RiskLevelValue, 5)
+    VERY_LOW_RISK = typing___cast(RiskLevelValue, 6)
+    LOW_RISK = typing___cast(RiskLevelValue, 7)
+    MEDIUM_RISK = typing___cast(RiskLevelValue, 8)
+    HIGH_RISK = typing___cast(RiskLevelValue, 9)
+    VERY_HIGH_RISK = typing___cast(RiskLevelValue, 10)
+    NO_DATA = typing___cast(RiskLevelValue, 11)
+    NOT_APPLICABLE = typing___cast(RiskLevelValue, 12)
+UNDEFINED_RISK_LEVEL = typing___cast(RiskLevelValue, 0)
+NO_OPPORTUNITY = typing___cast(RiskLevelValue, 1)
+HIGH_OPPORTUNITY = typing___cast(RiskLevelValue, 2)
+MEDIUM_OPPORTUNITY = typing___cast(RiskLevelValue, 3)
+LOW_OPPORTUNITY = typing___cast(RiskLevelValue, 4)
+NO_RISK = typing___cast(RiskLevelValue, 5)
+VERY_LOW_RISK = typing___cast(RiskLevelValue, 6)
+LOW_RISK = typing___cast(RiskLevelValue, 7)
+MEDIUM_RISK = typing___cast(RiskLevelValue, 8)
+HIGH_RISK = typing___cast(RiskLevelValue, 9)
+VERY_HIGH_RISK = typing___cast(RiskLevelValue, 10)
+NO_DATA = typing___cast(RiskLevelValue, 11)
+NOT_APPLICABLE = typing___cast(RiskLevelValue, 12)
+type___RiskLevel = RiskLevel
+
 UncertaintyTypeValue = typing___NewType('UncertaintyTypeValue', builtin___int)
 type___UncertaintyTypeValue = UncertaintyTypeValue
 UncertaintyType: _UncertaintyType
@@ -1098,6 +1131,9 @@ class Process(google___protobuf___message___Message):
     @property
     def social_dq_system(self) -> type___Ref: ...
 
+    @property
+    def social_aspects(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SocialAspect]: ...
+
     def __init__(self,
         *,
         type : typing___Optional[typing___Text] = None,
@@ -1122,9 +1158,10 @@ class Process(google___protobuf___message___Message):
         social_dq_system : typing___Optional[type___Ref] = None,
         dq_entry : typing___Optional[typing___Text] = None,
         infrastructure_process : typing___Optional[builtin___bool] = None,
+        social_aspects : typing___Optional[typing___Iterable[type___SocialAspect]] = None,
         ) -> None: ...
     def HasField(self, field_name: typing_extensions___Literal[u"category",b"category",u"dq_system",b"dq_system",u"exchange_dq_system",b"exchange_dq_system",u"location",b"location",u"process_documentation",b"process_documentation",u"social_dq_system",b"social_dq_system"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"allocation_factors",b"allocation_factors",u"category",b"category",u"default_allocation_method",b"default_allocation_method",u"description",b"description",u"dq_entry",b"dq_entry",u"dq_system",b"dq_system",u"exchange_dq_system",b"exchange_dq_system",u"exchanges",b"exchanges",u"id",b"id",u"infrastructure_process",b"infrastructure_process",u"last_change",b"last_change",u"last_internal_id",b"last_internal_id",u"library",b"library",u"location",b"location",u"name",b"name",u"parameters",b"parameters",u"process_documentation",b"process_documentation",u"process_type",b"process_type",u"social_dq_system",b"social_dq_system",u"tags",b"tags",u"type",b"type",u"version",b"version"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions___Literal[u"allocation_factors",b"allocation_factors",u"category",b"category",u"default_allocation_method",b"default_allocation_method",u"description",b"description",u"dq_entry",b"dq_entry",u"dq_system",b"dq_system",u"exchange_dq_system",b"exchange_dq_system",u"exchanges",b"exchanges",u"id",b"id",u"infrastructure_process",b"infrastructure_process",u"last_change",b"last_change",u"last_internal_id",b"last_internal_id",u"library",b"library",u"location",b"location",u"name",b"name",u"parameters",b"parameters",u"process_documentation",b"process_documentation",u"process_type",b"process_type",u"social_aspects",b"social_aspects",u"social_dq_system",b"social_dq_system",u"tags",b"tags",u"type",b"type",u"version",b"version"]) -> None: ...
 type___Process = Process
 
 class ProcessDocumentation(google___protobuf___message___Message):
@@ -1389,6 +1426,36 @@ class SimpleResult(google___protobuf___message___Message):
         ) -> None: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"flow_results",b"flow_results",u"impact_results",b"impact_results",u"type",b"type"]) -> None: ...
 type___SimpleResult = SimpleResult
+
+class SocialAspect(google___protobuf___message___Message):
+    DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
+    type: typing___Text = ...
+    activity_value: builtin___float = ...
+    comment: typing___Text = ...
+    quality: typing___Text = ...
+    raw_amount: typing___Text = ...
+    risk_level: type___RiskLevelValue = ...
+
+    @property
+    def social_indicator(self) -> type___Ref: ...
+
+    @property
+    def source(self) -> type___Ref: ...
+
+    def __init__(self,
+        *,
+        type : typing___Optional[typing___Text] = None,
+        activity_value : typing___Optional[builtin___float] = None,
+        comment : typing___Optional[typing___Text] = None,
+        quality : typing___Optional[typing___Text] = None,
+        raw_amount : typing___Optional[typing___Text] = None,
+        risk_level : typing___Optional[type___RiskLevelValue] = None,
+        social_indicator : typing___Optional[type___Ref] = None,
+        source : typing___Optional[type___Ref] = None,
+        ) -> None: ...
+    def HasField(self, field_name: typing_extensions___Literal[u"social_indicator",b"social_indicator",u"source",b"source"]) -> builtin___bool: ...
+    def ClearField(self, field_name: typing_extensions___Literal[u"activity_value",b"activity_value",u"comment",b"comment",u"quality",b"quality",u"raw_amount",b"raw_amount",u"risk_level",b"risk_level",u"social_indicator",b"social_indicator",u"source",b"source",u"type",b"type"]) -> None: ...
+type___SocialAspect = SocialAspect
 
 class SocialIndicator(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...

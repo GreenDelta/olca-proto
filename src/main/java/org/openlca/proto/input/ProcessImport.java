@@ -12,6 +12,8 @@ import org.openlca.core.model.Parameter;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessDocumentation;
 import org.openlca.core.model.ProcessType;
+import org.openlca.core.model.RiskLevel;
+import org.openlca.core.model.SocialAspect;
 import org.openlca.core.model.Source;
 import org.openlca.jsonld.Json;
 import org.openlca.proto.Proto;
@@ -91,6 +93,13 @@ public class ProcessImport {
       ParameterImport.map(protoParam, param);
       p.parameters.add(param);
     }
+
+    // social apsects
+    p.socialAspects.clear();
+    proto.getSocialAspectsList()
+      .stream()
+      .map(this::socialAspect)
+      .forEach(aspect -> p.socialAspects.add(aspect));
 
     // when we are in update mode, we want to keep the
     // IDs of existing exchanges because they are may
@@ -239,6 +248,60 @@ public class ProcessImport {
         .filter(u -> Objects.equals(u.refId, unitID))
         .findAny()
         .orElse(null);
+    }
+  }
+
+  private SocialAspect socialAspect(Proto.SocialAspect proto) {
+    var a = new SocialAspect();
+    var indicatorID = proto.getSocialIndicator().getId();
+    if (Strings.notEmpty(indicatorID)) {
+      a.indicator = new SocialIndicatorImport(imp).of(indicatorID);
+    }
+    a.comment = Strings.nullIfEmpty(proto.getComment());
+    a.quality = Strings.nullIfEmpty(proto.getQuality());
+    a.rawAmount = Strings.nullIfEmpty(proto.getRawAmount());
+    a.activityValue = proto.getActivityValue();
+    a.riskLevel = riskLevel(proto.getRiskLevel());
+    var sourceID = proto.getSource().getId();
+    if (Strings.notEmpty(sourceID)) {
+      a.source = new SourceImport(imp).of(sourceID);
+    }
+    return a;
+  }
+
+  private RiskLevel riskLevel(Proto.RiskLevel proto) {
+    if (proto == null)
+      return null;
+    // !note: we could match the enums via reflection
+    // as both have the same items but we do not do this
+    // because the items may change in the future.
+    switch (proto) {
+      case NO_OPPORTUNITY:
+        return RiskLevel.NO_OPPORTUNITY;
+      case HIGH_OPPORTUNITY:
+        return RiskLevel.HIGH_OPPORTUNITY;
+      case MEDIUM_OPPORTUNITY:
+        return RiskLevel.MEDIUM_OPPORTUNITY;
+      case LOW_OPPORTUNITY:
+        return RiskLevel.LOW_OPPORTUNITY;
+      case NO_RISK:
+        return RiskLevel.NO_RISK;
+      case VERY_LOW_RISK:
+        return RiskLevel.VERY_LOW_RISK;
+      case LOW_RISK:
+        return RiskLevel.LOW_RISK;
+      case MEDIUM_RISK:
+        return RiskLevel.MEDIUM_RISK;
+      case HIGH_RISK:
+        return RiskLevel.HIGH_RISK;
+      case VERY_HIGH_RISK:
+        return RiskLevel.VERY_HIGH_RISK;
+      case NO_DATA:
+        return RiskLevel.NO_DATA;
+      case NOT_APPLICABLE:
+        return RiskLevel.NOT_APPLICABLE;
+      default:
+        return null;
     }
   }
 }

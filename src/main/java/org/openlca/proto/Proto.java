@@ -1219,6 +1219,223 @@ public final class Proto {
   }
 
   /**
+   * Protobuf enum {@code protolca.RiskLevel}
+   */
+  public enum RiskLevel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_RISK_LEVEL = 0;</code>
+     */
+    UNDEFINED_RISK_LEVEL(0),
+    /**
+     * <code>NO_OPPORTUNITY = 1;</code>
+     */
+    NO_OPPORTUNITY(1),
+    /**
+     * <code>HIGH_OPPORTUNITY = 2;</code>
+     */
+    HIGH_OPPORTUNITY(2),
+    /**
+     * <code>MEDIUM_OPPORTUNITY = 3;</code>
+     */
+    MEDIUM_OPPORTUNITY(3),
+    /**
+     * <code>LOW_OPPORTUNITY = 4;</code>
+     */
+    LOW_OPPORTUNITY(4),
+    /**
+     * <code>NO_RISK = 5;</code>
+     */
+    NO_RISK(5),
+    /**
+     * <code>VERY_LOW_RISK = 6;</code>
+     */
+    VERY_LOW_RISK(6),
+    /**
+     * <code>LOW_RISK = 7;</code>
+     */
+    LOW_RISK(7),
+    /**
+     * <code>MEDIUM_RISK = 8;</code>
+     */
+    MEDIUM_RISK(8),
+    /**
+     * <code>HIGH_RISK = 9;</code>
+     */
+    HIGH_RISK(9),
+    /**
+     * <code>VERY_HIGH_RISK = 10;</code>
+     */
+    VERY_HIGH_RISK(10),
+    /**
+     * <code>NO_DATA = 11;</code>
+     */
+    NO_DATA(11),
+    /**
+     * <code>NOT_APPLICABLE = 12;</code>
+     */
+    NOT_APPLICABLE(12),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * This default option was added automatically
+     * and means that no values was set.
+     * </pre>
+     *
+     * <code>UNDEFINED_RISK_LEVEL = 0;</code>
+     */
+    public static final int UNDEFINED_RISK_LEVEL_VALUE = 0;
+    /**
+     * <code>NO_OPPORTUNITY = 1;</code>
+     */
+    public static final int NO_OPPORTUNITY_VALUE = 1;
+    /**
+     * <code>HIGH_OPPORTUNITY = 2;</code>
+     */
+    public static final int HIGH_OPPORTUNITY_VALUE = 2;
+    /**
+     * <code>MEDIUM_OPPORTUNITY = 3;</code>
+     */
+    public static final int MEDIUM_OPPORTUNITY_VALUE = 3;
+    /**
+     * <code>LOW_OPPORTUNITY = 4;</code>
+     */
+    public static final int LOW_OPPORTUNITY_VALUE = 4;
+    /**
+     * <code>NO_RISK = 5;</code>
+     */
+    public static final int NO_RISK_VALUE = 5;
+    /**
+     * <code>VERY_LOW_RISK = 6;</code>
+     */
+    public static final int VERY_LOW_RISK_VALUE = 6;
+    /**
+     * <code>LOW_RISK = 7;</code>
+     */
+    public static final int LOW_RISK_VALUE = 7;
+    /**
+     * <code>MEDIUM_RISK = 8;</code>
+     */
+    public static final int MEDIUM_RISK_VALUE = 8;
+    /**
+     * <code>HIGH_RISK = 9;</code>
+     */
+    public static final int HIGH_RISK_VALUE = 9;
+    /**
+     * <code>VERY_HIGH_RISK = 10;</code>
+     */
+    public static final int VERY_HIGH_RISK_VALUE = 10;
+    /**
+     * <code>NO_DATA = 11;</code>
+     */
+    public static final int NO_DATA_VALUE = 11;
+    /**
+     * <code>NOT_APPLICABLE = 12;</code>
+     */
+    public static final int NOT_APPLICABLE_VALUE = 12;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RiskLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RiskLevel forNumber(int value) {
+      switch (value) {
+        case 0: return UNDEFINED_RISK_LEVEL;
+        case 1: return NO_OPPORTUNITY;
+        case 2: return HIGH_OPPORTUNITY;
+        case 3: return MEDIUM_OPPORTUNITY;
+        case 4: return LOW_OPPORTUNITY;
+        case 5: return NO_RISK;
+        case 6: return VERY_LOW_RISK;
+        case 7: return LOW_RISK;
+        case 8: return MEDIUM_RISK;
+        case 9: return HIGH_RISK;
+        case 10: return VERY_HIGH_RISK;
+        case 11: return NO_DATA;
+        case 12: return NOT_APPLICABLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RiskLevel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RiskLevel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RiskLevel>() {
+            public RiskLevel findValueByNumber(int number) {
+              return RiskLevel.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.openlca.proto.Proto.getDescriptor().getEnumTypes().get(7);
+    }
+
+    private static final RiskLevel[] VALUES = values();
+
+    public static RiskLevel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RiskLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:protolca.RiskLevel)
+  }
+
+  /**
    * <pre>
    * Enumeration of uncertainty distribution types that can be used in exchanges,
    * parameters, LCIA factors, etc.
@@ -1342,7 +1559,7 @@ public final class Proto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.openlca.proto.Proto.getDescriptor().getEnumTypes().get(7);
+      return org.openlca.proto.Proto.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final UncertaintyType[] VALUES = values();
@@ -64082,6 +64299,50 @@ public final class Proto {
      * @return The infrastructureProcess.
      */
     boolean getInfrastructureProcess();
+
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    java.util.List<org.openlca.proto.Proto.SocialAspect> 
+        getSocialAspectsList();
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    org.openlca.proto.Proto.SocialAspect getSocialAspects(int index);
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    int getSocialAspectsCount();
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    java.util.List<? extends org.openlca.proto.Proto.SocialAspectOrBuilder> 
+        getSocialAspectsOrBuilderList();
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    org.openlca.proto.Proto.SocialAspectOrBuilder getSocialAspectsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code protolca.Process}
@@ -64110,6 +64371,7 @@ public final class Proto {
       parameters_ = java.util.Collections.emptyList();
       processType_ = 0;
       dqEntry_ = "";
+      socialAspects_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -64327,6 +64589,15 @@ public final class Proto {
               infrastructureProcess_ = input.readBool();
               break;
             }
+            case 186: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                socialAspects_ = new java.util.ArrayList<org.openlca.proto.Proto.SocialAspect>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              socialAspects_.add(
+                  input.readMessage(org.openlca.proto.Proto.SocialAspect.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -64353,6 +64624,9 @@ public final class Proto {
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          socialAspects_ = java.util.Collections.unmodifiableList(socialAspects_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -65246,6 +65520,66 @@ public final class Proto {
       return infrastructureProcess_;
     }
 
+    public static final int SOCIAL_ASPECTS_FIELD_NUMBER = 23;
+    private java.util.List<org.openlca.proto.Proto.SocialAspect> socialAspects_;
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.openlca.proto.Proto.SocialAspect> getSocialAspectsList() {
+      return socialAspects_;
+    }
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.openlca.proto.Proto.SocialAspectOrBuilder> 
+        getSocialAspectsOrBuilderList() {
+      return socialAspects_;
+    }
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    @java.lang.Override
+    public int getSocialAspectsCount() {
+      return socialAspects_.size();
+    }
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.SocialAspect getSocialAspects(int index) {
+      return socialAspects_.get(index);
+    }
+    /**
+     * <pre>
+     * A set of social aspects related to this process.
+     * </pre>
+     *
+     * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.SocialAspectOrBuilder getSocialAspectsOrBuilder(
+        int index) {
+      return socialAspects_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -65325,6 +65659,9 @@ public final class Proto {
       }
       if (infrastructureProcess_ != false) {
         output.writeBool(22, infrastructureProcess_);
+      }
+      for (int i = 0; i < socialAspects_.size(); i++) {
+        output.writeMessage(23, socialAspects_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -65419,6 +65756,10 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(22, infrastructureProcess_);
       }
+      for (int i = 0; i < socialAspects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, socialAspects_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -65494,6 +65835,8 @@ public final class Proto {
           .equals(other.getDqEntry())) return false;
       if (getInfrastructureProcess()
           != other.getInfrastructureProcess()) return false;
+      if (!getSocialAspectsList()
+          .equals(other.getSocialAspectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -65570,6 +65913,10 @@ public final class Proto {
       hash = (37 * hash) + INFRASTRUCTURE_PROCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getInfrastructureProcess());
+      if (getSocialAspectsCount() > 0) {
+        hash = (37 * hash) + SOCIAL_ASPECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSocialAspectsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -65701,6 +66048,7 @@ public final class Proto {
           getAllocationFactorsFieldBuilder();
           getExchangesFieldBuilder();
           getParametersFieldBuilder();
+          getSocialAspectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -65786,6 +66134,12 @@ public final class Proto {
 
         infrastructureProcess_ = false;
 
+        if (socialAspectsBuilder_ == null) {
+          socialAspects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          socialAspectsBuilder_.clear();
+        }
         return this;
       }
 
@@ -65887,6 +66241,15 @@ public final class Proto {
         }
         result.dqEntry_ = dqEntry_;
         result.infrastructureProcess_ = infrastructureProcess_;
+        if (socialAspectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            socialAspects_ = java.util.Collections.unmodifiableList(socialAspects_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.socialAspects_ = socialAspects_;
+        } else {
+          result.socialAspects_ = socialAspectsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -66084,6 +66447,32 @@ public final class Proto {
         }
         if (other.getInfrastructureProcess() != false) {
           setInfrastructureProcess(other.getInfrastructureProcess());
+        }
+        if (socialAspectsBuilder_ == null) {
+          if (!other.socialAspects_.isEmpty()) {
+            if (socialAspects_.isEmpty()) {
+              socialAspects_ = other.socialAspects_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSocialAspectsIsMutable();
+              socialAspects_.addAll(other.socialAspects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.socialAspects_.isEmpty()) {
+            if (socialAspectsBuilder_.isEmpty()) {
+              socialAspectsBuilder_.dispose();
+              socialAspectsBuilder_ = null;
+              socialAspects_ = other.socialAspects_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              socialAspectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSocialAspectsFieldBuilder() : null;
+            } else {
+              socialAspectsBuilder_.addAllMessages(other.socialAspects_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -68991,6 +69380,318 @@ public final class Proto {
         infrastructureProcess_ = false;
         onChanged();
         return this;
+      }
+
+      private java.util.List<org.openlca.proto.Proto.SocialAspect> socialAspects_ =
+        java.util.Collections.emptyList();
+      private void ensureSocialAspectsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          socialAspects_ = new java.util.ArrayList<org.openlca.proto.Proto.SocialAspect>(socialAspects_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.SocialAspect, org.openlca.proto.Proto.SocialAspect.Builder, org.openlca.proto.Proto.SocialAspectOrBuilder> socialAspectsBuilder_;
+
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.SocialAspect> getSocialAspectsList() {
+        if (socialAspectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(socialAspects_);
+        } else {
+          return socialAspectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public int getSocialAspectsCount() {
+        if (socialAspectsBuilder_ == null) {
+          return socialAspects_.size();
+        } else {
+          return socialAspectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public org.openlca.proto.Proto.SocialAspect getSocialAspects(int index) {
+        if (socialAspectsBuilder_ == null) {
+          return socialAspects_.get(index);
+        } else {
+          return socialAspectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder setSocialAspects(
+          int index, org.openlca.proto.Proto.SocialAspect value) {
+        if (socialAspectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSocialAspectsIsMutable();
+          socialAspects_.set(index, value);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder setSocialAspects(
+          int index, org.openlca.proto.Proto.SocialAspect.Builder builderForValue) {
+        if (socialAspectsBuilder_ == null) {
+          ensureSocialAspectsIsMutable();
+          socialAspects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          socialAspectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder addSocialAspects(org.openlca.proto.Proto.SocialAspect value) {
+        if (socialAspectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSocialAspectsIsMutable();
+          socialAspects_.add(value);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder addSocialAspects(
+          int index, org.openlca.proto.Proto.SocialAspect value) {
+        if (socialAspectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSocialAspectsIsMutable();
+          socialAspects_.add(index, value);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder addSocialAspects(
+          org.openlca.proto.Proto.SocialAspect.Builder builderForValue) {
+        if (socialAspectsBuilder_ == null) {
+          ensureSocialAspectsIsMutable();
+          socialAspects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          socialAspectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder addSocialAspects(
+          int index, org.openlca.proto.Proto.SocialAspect.Builder builderForValue) {
+        if (socialAspectsBuilder_ == null) {
+          ensureSocialAspectsIsMutable();
+          socialAspects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          socialAspectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder addAllSocialAspects(
+          java.lang.Iterable<? extends org.openlca.proto.Proto.SocialAspect> values) {
+        if (socialAspectsBuilder_ == null) {
+          ensureSocialAspectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, socialAspects_);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder clearSocialAspects() {
+        if (socialAspectsBuilder_ == null) {
+          socialAspects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public Builder removeSocialAspects(int index) {
+        if (socialAspectsBuilder_ == null) {
+          ensureSocialAspectsIsMutable();
+          socialAspects_.remove(index);
+          onChanged();
+        } else {
+          socialAspectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public org.openlca.proto.Proto.SocialAspect.Builder getSocialAspectsBuilder(
+          int index) {
+        return getSocialAspectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public org.openlca.proto.Proto.SocialAspectOrBuilder getSocialAspectsOrBuilder(
+          int index) {
+        if (socialAspectsBuilder_ == null) {
+          return socialAspects_.get(index);  } else {
+          return socialAspectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public java.util.List<? extends org.openlca.proto.Proto.SocialAspectOrBuilder> 
+           getSocialAspectsOrBuilderList() {
+        if (socialAspectsBuilder_ != null) {
+          return socialAspectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(socialAspects_);
+        }
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public org.openlca.proto.Proto.SocialAspect.Builder addSocialAspectsBuilder() {
+        return getSocialAspectsFieldBuilder().addBuilder(
+            org.openlca.proto.Proto.SocialAspect.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public org.openlca.proto.Proto.SocialAspect.Builder addSocialAspectsBuilder(
+          int index) {
+        return getSocialAspectsFieldBuilder().addBuilder(
+            index, org.openlca.proto.Proto.SocialAspect.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A set of social aspects related to this process.
+       * </pre>
+       *
+       * <code>repeated .protolca.SocialAspect social_aspects = 23;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.SocialAspect.Builder> 
+           getSocialAspectsBuilderList() {
+        return getSocialAspectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.SocialAspect, org.openlca.proto.Proto.SocialAspect.Builder, org.openlca.proto.Proto.SocialAspectOrBuilder> 
+          getSocialAspectsFieldBuilder() {
+        if (socialAspectsBuilder_ == null) {
+          socialAspectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openlca.proto.Proto.SocialAspect, org.openlca.proto.Proto.SocialAspect.Builder, org.openlca.proto.Proto.SocialAspectOrBuilder>(
+                  socialAspects_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          socialAspects_ = null;
+        }
+        return socialAspectsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -88071,6 +88772,1765 @@ public final class Proto {
 
   }
 
+  public interface SocialAspectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.SocialAspect)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The value of the activity variable of the related indicator.
+     * </pre>
+     *
+     * <code>double activity_value = 2;</code>
+     * @return The activityValue.
+     */
+    double getActivityValue();
+
+    /**
+     * <code>string comment = 3;</code>
+     * @return The comment.
+     */
+    java.lang.String getComment();
+    /**
+     * <code>string comment = 3;</code>
+     * @return The bytes for comment.
+     */
+    com.google.protobuf.ByteString
+        getCommentBytes();
+
+    /**
+     * <pre>
+     * A data quality entry, e.g. `(3,1,2,4,1)`.
+     * </pre>
+     *
+     * <code>string quality = 4;</code>
+     * @return The quality.
+     */
+    java.lang.String getQuality();
+    /**
+     * <pre>
+     * A data quality entry, e.g. `(3,1,2,4,1)`.
+     * </pre>
+     *
+     * <code>string quality = 4;</code>
+     * @return The bytes for quality.
+     */
+    com.google.protobuf.ByteString
+        getQualityBytes();
+
+    /**
+     * <pre>
+     * The raw amount of the indicator's unit of measurement (not required to be
+     * numeric currently)
+     * </pre>
+     *
+     * <code>string raw_amount = 5;</code>
+     * @return The rawAmount.
+     */
+    java.lang.String getRawAmount();
+    /**
+     * <pre>
+     * The raw amount of the indicator's unit of measurement (not required to be
+     * numeric currently)
+     * </pre>
+     *
+     * <code>string raw_amount = 5;</code>
+     * @return The bytes for rawAmount.
+     */
+    com.google.protobuf.ByteString
+        getRawAmountBytes();
+
+    /**
+     * <code>.protolca.RiskLevel risk_level = 6;</code>
+     * @return The enum numeric value on the wire for riskLevel.
+     */
+    int getRiskLevelValue();
+    /**
+     * <code>.protolca.RiskLevel risk_level = 6;</code>
+     * @return The riskLevel.
+     */
+    org.openlca.proto.Proto.RiskLevel getRiskLevel();
+
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     * @return Whether the socialIndicator field is set.
+     */
+    boolean hasSocialIndicator();
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     * @return The socialIndicator.
+     */
+    org.openlca.proto.Proto.Ref getSocialIndicator();
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getSocialIndicatorOrBuilder();
+
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     * @return Whether the source field is set.
+     */
+    boolean hasSource();
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     * @return The source.
+     */
+    org.openlca.proto.Proto.Ref getSource();
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     */
+    org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder();
+  }
+  /**
+   * <pre>
+   * An instance of this class describes a social aspect related to a social
+   * indicator in a process.
+   * </pre>
+   *
+   * Protobuf type {@code protolca.SocialAspect}
+   */
+  public static final class SocialAspect extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.SocialAspect)
+      SocialAspectOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SocialAspect.newBuilder() to construct.
+    private SocialAspect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SocialAspect() {
+      type_ = "";
+      comment_ = "";
+      quality_ = "";
+      rawAmount_ = "";
+      riskLevel_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SocialAspect();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SocialAspect(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 17: {
+
+              activityValue_ = input.readDouble();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              comment_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              quality_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rawAmount_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              riskLevel_ = rawValue;
+              break;
+            }
+            case 58: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (socialIndicator_ != null) {
+                subBuilder = socialIndicator_.toBuilder();
+              }
+              socialIndicator_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(socialIndicator_);
+                socialIndicator_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              if (source_ != null) {
+                subBuilder = source_.toBuilder();
+              }
+              source_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(source_);
+                source_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.Proto.internal_static_protolca_SocialAspect_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.Proto.internal_static_protolca_SocialAspect_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.Proto.SocialAspect.class, org.openlca.proto.Proto.SocialAspect.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTIVITY_VALUE_FIELD_NUMBER = 2;
+    private double activityValue_;
+    /**
+     * <pre>
+     * The value of the activity variable of the related indicator.
+     * </pre>
+     *
+     * <code>double activity_value = 2;</code>
+     * @return The activityValue.
+     */
+    @java.lang.Override
+    public double getActivityValue() {
+      return activityValue_;
+    }
+
+    public static final int COMMENT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object comment_;
+    /**
+     * <code>string comment = 3;</code>
+     * @return The comment.
+     */
+    @java.lang.Override
+    public java.lang.String getComment() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        comment_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string comment = 3;</code>
+     * @return The bytes for comment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommentBytes() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        comment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUALITY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object quality_;
+    /**
+     * <pre>
+     * A data quality entry, e.g. `(3,1,2,4,1)`.
+     * </pre>
+     *
+     * <code>string quality = 4;</code>
+     * @return The quality.
+     */
+    @java.lang.Override
+    public java.lang.String getQuality() {
+      java.lang.Object ref = quality_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        quality_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A data quality entry, e.g. `(3,1,2,4,1)`.
+     * </pre>
+     *
+     * <code>string quality = 4;</code>
+     * @return The bytes for quality.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getQualityBytes() {
+      java.lang.Object ref = quality_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        quality_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RAW_AMOUNT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object rawAmount_;
+    /**
+     * <pre>
+     * The raw amount of the indicator's unit of measurement (not required to be
+     * numeric currently)
+     * </pre>
+     *
+     * <code>string raw_amount = 5;</code>
+     * @return The rawAmount.
+     */
+    @java.lang.Override
+    public java.lang.String getRawAmount() {
+      java.lang.Object ref = rawAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rawAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The raw amount of the indicator's unit of measurement (not required to be
+     * numeric currently)
+     * </pre>
+     *
+     * <code>string raw_amount = 5;</code>
+     * @return The bytes for rawAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRawAmountBytes() {
+      java.lang.Object ref = rawAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rawAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RISK_LEVEL_FIELD_NUMBER = 6;
+    private int riskLevel_;
+    /**
+     * <code>.protolca.RiskLevel risk_level = 6;</code>
+     * @return The enum numeric value on the wire for riskLevel.
+     */
+    @java.lang.Override public int getRiskLevelValue() {
+      return riskLevel_;
+    }
+    /**
+     * <code>.protolca.RiskLevel risk_level = 6;</code>
+     * @return The riskLevel.
+     */
+    @java.lang.Override public org.openlca.proto.Proto.RiskLevel getRiskLevel() {
+      @SuppressWarnings("deprecation")
+      org.openlca.proto.Proto.RiskLevel result = org.openlca.proto.Proto.RiskLevel.valueOf(riskLevel_);
+      return result == null ? org.openlca.proto.Proto.RiskLevel.UNRECOGNIZED : result;
+    }
+
+    public static final int SOCIAL_INDICATOR_FIELD_NUMBER = 7;
+    private org.openlca.proto.Proto.Ref socialIndicator_;
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     * @return Whether the socialIndicator field is set.
+     */
+    @java.lang.Override
+    public boolean hasSocialIndicator() {
+      return socialIndicator_ != null;
+    }
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     * @return The socialIndicator.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getSocialIndicator() {
+      return socialIndicator_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : socialIndicator_;
+    }
+    /**
+     * <code>.protolca.Ref social_indicator = 7;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getSocialIndicatorOrBuilder() {
+      return getSocialIndicator();
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 8;
+    private org.openlca.proto.Proto.Ref source_;
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     * @return Whether the source field is set.
+     */
+    @java.lang.Override
+    public boolean hasSource() {
+      return source_ != null;
+    }
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     * @return The source.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getSource() {
+      return source_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : source_;
+    }
+    /**
+     * <code>.protolca.Ref source = 8;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder() {
+      return getSource();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (activityValue_ != 0D) {
+        output.writeDouble(2, activityValue_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, comment_);
+      }
+      if (!getQualityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, quality_);
+      }
+      if (!getRawAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rawAmount_);
+      }
+      if (riskLevel_ != org.openlca.proto.Proto.RiskLevel.UNDEFINED_RISK_LEVEL.getNumber()) {
+        output.writeEnum(6, riskLevel_);
+      }
+      if (socialIndicator_ != null) {
+        output.writeMessage(7, getSocialIndicator());
+      }
+      if (source_ != null) {
+        output.writeMessage(8, getSource());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (activityValue_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, activityValue_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, comment_);
+      }
+      if (!getQualityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, quality_);
+      }
+      if (!getRawAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rawAmount_);
+      }
+      if (riskLevel_ != org.openlca.proto.Proto.RiskLevel.UNDEFINED_RISK_LEVEL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, riskLevel_);
+      }
+      if (socialIndicator_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getSocialIndicator());
+      }
+      if (source_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getSource());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.Proto.SocialAspect)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.Proto.SocialAspect other = (org.openlca.proto.Proto.SocialAspect) obj;
+
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (java.lang.Double.doubleToLongBits(getActivityValue())
+          != java.lang.Double.doubleToLongBits(
+              other.getActivityValue())) return false;
+      if (!getComment()
+          .equals(other.getComment())) return false;
+      if (!getQuality()
+          .equals(other.getQuality())) return false;
+      if (!getRawAmount()
+          .equals(other.getRawAmount())) return false;
+      if (riskLevel_ != other.riskLevel_) return false;
+      if (hasSocialIndicator() != other.hasSocialIndicator()) return false;
+      if (hasSocialIndicator()) {
+        if (!getSocialIndicator()
+            .equals(other.getSocialIndicator())) return false;
+      }
+      if (hasSource() != other.hasSource()) return false;
+      if (hasSource()) {
+        if (!getSource()
+            .equals(other.getSource())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ACTIVITY_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getActivityValue()));
+      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComment().hashCode();
+      hash = (37 * hash) + QUALITY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuality().hashCode();
+      hash = (37 * hash) + RAW_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRawAmount().hashCode();
+      hash = (37 * hash) + RISK_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + riskLevel_;
+      if (hasSocialIndicator()) {
+        hash = (37 * hash) + SOCIAL_INDICATOR_FIELD_NUMBER;
+        hash = (53 * hash) + getSocialIndicator().hashCode();
+      }
+      if (hasSource()) {
+        hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSource().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.SocialAspect parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.Proto.SocialAspect prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * An instance of this class describes a social aspect related to a social
+     * indicator in a process.
+     * </pre>
+     *
+     * Protobuf type {@code protolca.SocialAspect}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.SocialAspect)
+        org.openlca.proto.Proto.SocialAspectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.Proto.internal_static_protolca_SocialAspect_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.Proto.internal_static_protolca_SocialAspect_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.Proto.SocialAspect.class, org.openlca.proto.Proto.SocialAspect.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.Proto.SocialAspect.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        activityValue_ = 0D;
+
+        comment_ = "";
+
+        quality_ = "";
+
+        rawAmount_ = "";
+
+        riskLevel_ = 0;
+
+        if (socialIndicatorBuilder_ == null) {
+          socialIndicator_ = null;
+        } else {
+          socialIndicator_ = null;
+          socialIndicatorBuilder_ = null;
+        }
+        if (sourceBuilder_ == null) {
+          source_ = null;
+        } else {
+          source_ = null;
+          sourceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.Proto.internal_static_protolca_SocialAspect_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.SocialAspect getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.SocialAspect.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.SocialAspect build() {
+        org.openlca.proto.Proto.SocialAspect result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.SocialAspect buildPartial() {
+        org.openlca.proto.Proto.SocialAspect result = new org.openlca.proto.Proto.SocialAspect(this);
+        result.type_ = type_;
+        result.activityValue_ = activityValue_;
+        result.comment_ = comment_;
+        result.quality_ = quality_;
+        result.rawAmount_ = rawAmount_;
+        result.riskLevel_ = riskLevel_;
+        if (socialIndicatorBuilder_ == null) {
+          result.socialIndicator_ = socialIndicator_;
+        } else {
+          result.socialIndicator_ = socialIndicatorBuilder_.build();
+        }
+        if (sourceBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = sourceBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.Proto.SocialAspect) {
+          return mergeFrom((org.openlca.proto.Proto.SocialAspect)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.Proto.SocialAspect other) {
+        if (other == org.openlca.proto.Proto.SocialAspect.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.getActivityValue() != 0D) {
+          setActivityValue(other.getActivityValue());
+        }
+        if (!other.getComment().isEmpty()) {
+          comment_ = other.comment_;
+          onChanged();
+        }
+        if (!other.getQuality().isEmpty()) {
+          quality_ = other.quality_;
+          onChanged();
+        }
+        if (!other.getRawAmount().isEmpty()) {
+          rawAmount_ = other.rawAmount_;
+          onChanged();
+        }
+        if (other.riskLevel_ != 0) {
+          setRiskLevelValue(other.getRiskLevelValue());
+        }
+        if (other.hasSocialIndicator()) {
+          mergeSocialIndicator(other.getSocialIndicator());
+        }
+        if (other.hasSource()) {
+          mergeSource(other.getSource());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.Proto.SocialAspect parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.Proto.SocialAspect) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double activityValue_ ;
+      /**
+       * <pre>
+       * The value of the activity variable of the related indicator.
+       * </pre>
+       *
+       * <code>double activity_value = 2;</code>
+       * @return The activityValue.
+       */
+      @java.lang.Override
+      public double getActivityValue() {
+        return activityValue_;
+      }
+      /**
+       * <pre>
+       * The value of the activity variable of the related indicator.
+       * </pre>
+       *
+       * <code>double activity_value = 2;</code>
+       * @param value The activityValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActivityValue(double value) {
+        
+        activityValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The value of the activity variable of the related indicator.
+       * </pre>
+       *
+       * <code>double activity_value = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearActivityValue() {
+        
+        activityValue_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object comment_ = "";
+      /**
+       * <code>string comment = 3;</code>
+       * @return The comment.
+       */
+      public java.lang.String getComment() {
+        java.lang.Object ref = comment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          comment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string comment = 3;</code>
+       * @return The bytes for comment.
+       */
+      public com.google.protobuf.ByteString
+          getCommentBytes() {
+        java.lang.Object ref = comment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          comment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string comment = 3;</code>
+       * @param value The comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComment(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearComment() {
+        
+        comment_ = getDefaultInstance().getComment();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 3;</code>
+       * @param value The bytes for comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object quality_ = "";
+      /**
+       * <pre>
+       * A data quality entry, e.g. `(3,1,2,4,1)`.
+       * </pre>
+       *
+       * <code>string quality = 4;</code>
+       * @return The quality.
+       */
+      public java.lang.String getQuality() {
+        java.lang.Object ref = quality_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          quality_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A data quality entry, e.g. `(3,1,2,4,1)`.
+       * </pre>
+       *
+       * <code>string quality = 4;</code>
+       * @return The bytes for quality.
+       */
+      public com.google.protobuf.ByteString
+          getQualityBytes() {
+        java.lang.Object ref = quality_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          quality_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A data quality entry, e.g. `(3,1,2,4,1)`.
+       * </pre>
+       *
+       * <code>string quality = 4;</code>
+       * @param value The quality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuality(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        quality_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A data quality entry, e.g. `(3,1,2,4,1)`.
+       * </pre>
+       *
+       * <code>string quality = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuality() {
+        
+        quality_ = getDefaultInstance().getQuality();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A data quality entry, e.g. `(3,1,2,4,1)`.
+       * </pre>
+       *
+       * <code>string quality = 4;</code>
+       * @param value The bytes for quality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQualityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        quality_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rawAmount_ = "";
+      /**
+       * <pre>
+       * The raw amount of the indicator's unit of measurement (not required to be
+       * numeric currently)
+       * </pre>
+       *
+       * <code>string raw_amount = 5;</code>
+       * @return The rawAmount.
+       */
+      public java.lang.String getRawAmount() {
+        java.lang.Object ref = rawAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rawAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The raw amount of the indicator's unit of measurement (not required to be
+       * numeric currently)
+       * </pre>
+       *
+       * <code>string raw_amount = 5;</code>
+       * @return The bytes for rawAmount.
+       */
+      public com.google.protobuf.ByteString
+          getRawAmountBytes() {
+        java.lang.Object ref = rawAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rawAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The raw amount of the indicator's unit of measurement (not required to be
+       * numeric currently)
+       * </pre>
+       *
+       * <code>string raw_amount = 5;</code>
+       * @param value The rawAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rawAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The raw amount of the indicator's unit of measurement (not required to be
+       * numeric currently)
+       * </pre>
+       *
+       * <code>string raw_amount = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRawAmount() {
+        
+        rawAmount_ = getDefaultInstance().getRawAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The raw amount of the indicator's unit of measurement (not required to be
+       * numeric currently)
+       * </pre>
+       *
+       * <code>string raw_amount = 5;</code>
+       * @param value The bytes for rawAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rawAmount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int riskLevel_ = 0;
+      /**
+       * <code>.protolca.RiskLevel risk_level = 6;</code>
+       * @return The enum numeric value on the wire for riskLevel.
+       */
+      @java.lang.Override public int getRiskLevelValue() {
+        return riskLevel_;
+      }
+      /**
+       * <code>.protolca.RiskLevel risk_level = 6;</code>
+       * @param value The enum numeric value on the wire for riskLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRiskLevelValue(int value) {
+        
+        riskLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.protolca.RiskLevel risk_level = 6;</code>
+       * @return The riskLevel.
+       */
+      @java.lang.Override
+      public org.openlca.proto.Proto.RiskLevel getRiskLevel() {
+        @SuppressWarnings("deprecation")
+        org.openlca.proto.Proto.RiskLevel result = org.openlca.proto.Proto.RiskLevel.valueOf(riskLevel_);
+        return result == null ? org.openlca.proto.Proto.RiskLevel.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.protolca.RiskLevel risk_level = 6;</code>
+       * @param value The riskLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRiskLevel(org.openlca.proto.Proto.RiskLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        riskLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.protolca.RiskLevel risk_level = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRiskLevel() {
+        
+        riskLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.Ref socialIndicator_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> socialIndicatorBuilder_;
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       * @return Whether the socialIndicator field is set.
+       */
+      public boolean hasSocialIndicator() {
+        return socialIndicatorBuilder_ != null || socialIndicator_ != null;
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       * @return The socialIndicator.
+       */
+      public org.openlca.proto.Proto.Ref getSocialIndicator() {
+        if (socialIndicatorBuilder_ == null) {
+          return socialIndicator_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : socialIndicator_;
+        } else {
+          return socialIndicatorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public Builder setSocialIndicator(org.openlca.proto.Proto.Ref value) {
+        if (socialIndicatorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          socialIndicator_ = value;
+          onChanged();
+        } else {
+          socialIndicatorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public Builder setSocialIndicator(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (socialIndicatorBuilder_ == null) {
+          socialIndicator_ = builderForValue.build();
+          onChanged();
+        } else {
+          socialIndicatorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public Builder mergeSocialIndicator(org.openlca.proto.Proto.Ref value) {
+        if (socialIndicatorBuilder_ == null) {
+          if (socialIndicator_ != null) {
+            socialIndicator_ =
+              org.openlca.proto.Proto.Ref.newBuilder(socialIndicator_).mergeFrom(value).buildPartial();
+          } else {
+            socialIndicator_ = value;
+          }
+          onChanged();
+        } else {
+          socialIndicatorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public Builder clearSocialIndicator() {
+        if (socialIndicatorBuilder_ == null) {
+          socialIndicator_ = null;
+          onChanged();
+        } else {
+          socialIndicator_ = null;
+          socialIndicatorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getSocialIndicatorBuilder() {
+        
+        onChanged();
+        return getSocialIndicatorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getSocialIndicatorOrBuilder() {
+        if (socialIndicatorBuilder_ != null) {
+          return socialIndicatorBuilder_.getMessageOrBuilder();
+        } else {
+          return socialIndicator_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : socialIndicator_;
+        }
+      }
+      /**
+       * <code>.protolca.Ref social_indicator = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getSocialIndicatorFieldBuilder() {
+        if (socialIndicatorBuilder_ == null) {
+          socialIndicatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getSocialIndicator(),
+                  getParentForChildren(),
+                  isClean());
+          socialIndicator_ = null;
+        }
+        return socialIndicatorBuilder_;
+      }
+
+      private org.openlca.proto.Proto.Ref source_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> sourceBuilder_;
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       * @return Whether the source field is set.
+       */
+      public boolean hasSource() {
+        return sourceBuilder_ != null || source_ != null;
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       * @return The source.
+       */
+      public org.openlca.proto.Proto.Ref getSource() {
+        if (sourceBuilder_ == null) {
+          return source_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : source_;
+        } else {
+          return sourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public Builder setSource(org.openlca.proto.Proto.Ref value) {
+        if (sourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          sourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public Builder setSource(
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+        if (sourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          sourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public Builder mergeSource(org.openlca.proto.Proto.Ref value) {
+        if (sourceBuilder_ == null) {
+          if (source_ != null) {
+            source_ =
+              org.openlca.proto.Proto.Ref.newBuilder(source_).mergeFrom(value).buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          sourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public Builder clearSource() {
+        if (sourceBuilder_ == null) {
+          source_ = null;
+          onChanged();
+        } else {
+          source_ = null;
+          sourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public org.openlca.proto.Proto.Ref.Builder getSourceBuilder() {
+        
+        onChanged();
+        return getSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      public org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder() {
+        if (sourceBuilder_ != null) {
+          return sourceBuilder_.getMessageOrBuilder();
+        } else {
+          return source_ == null ?
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : source_;
+        }
+      }
+      /**
+       * <code>.protolca.Ref source = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          getSourceFieldBuilder() {
+        if (sourceBuilder_ == null) {
+          sourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+                  getSource(),
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        return sourceBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.SocialAspect)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.SocialAspect)
+    private static final org.openlca.proto.Proto.SocialAspect DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.SocialAspect();
+    }
+
+    public static org.openlca.proto.Proto.SocialAspect getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SocialAspect>
+        PARSER = new com.google.protobuf.AbstractParser<SocialAspect>() {
+      @java.lang.Override
+      public SocialAspect parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SocialAspect(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SocialAspect> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SocialAspect> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.Proto.SocialAspect getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SocialIndicatorOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protolca.SocialIndicator)
       com.google.protobuf.MessageOrBuilder {
@@ -102548,6 +105008,11 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_SimpleResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_SocialAspect_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_SocialAspect_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_SocialIndicator_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -102739,7 +105204,7 @@ public final class Proto {
       "ty\030\016 \001(\0132\025.protolca.Uncertainty\"b\n\016Param" +
       "eterRedef\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002" +
       " \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007context\030\004 \001(\0132\r.p" +
-      "rotolca.Ref\"\321\005\n\007Process\022\023\n\004type\030\001 \001(\tR\005@" +
+      "rotolca.Ref\"\201\006\n\007Process\022\023\n\004type\030\001 \001(\tR\005@" +
       "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
       "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
       "t_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.proto" +
@@ -102757,128 +105222,141 @@ public final class Proto {
       "f\022)\n\022exchange_dq_system\030\023 \001(\0132\r.protolca" +
       ".Ref\022\'\n\020social_dq_system\030\024 \001(\0132\r.protolc" +
       "a.Ref\022\020\n\010dq_entry\030\025 \001(\t\022\036\n\026infrastructur" +
-      "e_process\030\026 \001(\010\"\242\006\n\024ProcessDocumentation" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_descriptio" +
-      "n\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\nvalid_fr" +
-      "om\030\004 \001(\t\022\036\n\026technology_description\030\005 \001(\t" +
-      "\022#\n\033data_collection_description\030\006 \001(\t\022 \n" +
-      "\030completeness_description\030\007 \001(\t\022\"\n\032data_" +
-      "selection_description\030\010 \001(\t\022\026\n\016review_de" +
-      "tails\030\t \001(\t\022\"\n\032data_treatment_descriptio" +
-      "n\030\n \001(\t\022$\n\034inventory_method_description\030" +
-      "\013 \001(\t\022&\n\036modeling_constants_description\030" +
-      "\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.protolca.Ref\022\034" +
-      "\n\024sampling_description\030\016 \001(\t\022\036\n\007sources\030" +
-      "\017 \003(\0132\r.protolca.Ref\022 \n\030restrictions_des" +
-      "cription\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcre" +
-      "ation_date\030\022 \001(\t\022&\n\017data_documentor\030\023 \001(" +
-      "\0132\r.protolca.Ref\022%\n\016data_generator\030\024 \001(\013" +
-      "2\r.protolca.Ref\022%\n\016data_set_owner\030\025 \001(\0132" +
-      "\r.protolca.Ref\022\034\n\024intended_application\030\026" +
-      " \001(\t\022\033\n\023project_description\030\027 \001(\t\022\"\n\013pub" +
-      "lication\030\030 \001(\0132\r.protolca.Ref\022\035\n\025geograp" +
-      "hy_description\030\031 \001(\t\"\246\001\n\013ProcessLink\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 \001(\0132\r.pr" +
-      "otolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022" +
-      "\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022$\n\010excha" +
-      "nge\030\005 \001(\0132\022.protolca.Exchange\"\321\001\n\nProces" +
-      "sRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@" +
-      "id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n" +
-      "\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rc" +
-      "ategory_path\030\007 \003(\t\022\020\n\010location\030\010 \001(\t\022+\n\014" +
-      "process_type\030\t \001(\0162\025.protolca.ProcessTyp" +
-      "e\"\336\003\n\rProductSystem\022\023\n\004type\030\001 \001(\tR\005@type" +
-      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
-      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
-      "ange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca." +
-      "Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tpr" +
-      "ocesses\030\n \003(\0132\024.protolca.ProcessRef\022/\n\021r" +
-      "eference_process\030\013 \001(\0132\024.protolca.Proces" +
-      "sRef\022.\n\022reference_exchange\030\014 \001(\0132\022.proto" +
-      "lca.Exchange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013t" +
-      "arget_unit\030\016 \001(\0132\r.protolca.Ref\022+\n\024targe" +
-      "t_flow_property\030\017 \001(\0132\r.protolca.Ref\022,\n\r" +
-      "process_links\030\020 \003(\0132\025.protolca.ProcessLi" +
-      "nk\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
-      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
-      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
-      "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014" +
-      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rimpact_" +
-      "method\030\n \001(\0132\r.protolca.Ref\022\037\n\006nw_set\030\013 " +
-      "\001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004type\030\001 \001" +
+      "e_process\030\026 \001(\010\022.\n\016social_aspects\030\027 \003(\0132" +
+      "\026.protolca.SocialAspect\"\242\006\n\024ProcessDocum" +
+      "entation\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_de" +
+      "scription\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\n" +
+      "valid_from\030\004 \001(\t\022\036\n\026technology_descripti" +
+      "on\030\005 \001(\t\022#\n\033data_collection_description\030" +
+      "\006 \001(\t\022 \n\030completeness_description\030\007 \001(\t\022" +
+      "\"\n\032data_selection_description\030\010 \001(\t\022\026\n\016r" +
+      "eview_details\030\t \001(\t\022\"\n\032data_treatment_de" +
+      "scription\030\n \001(\t\022$\n\034inventory_method_desc" +
+      "ription\030\013 \001(\t\022&\n\036modeling_constants_desc" +
+      "ription\030\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.protol" +
+      "ca.Ref\022\034\n\024sampling_description\030\016 \001(\t\022\036\n\007" +
+      "sources\030\017 \003(\0132\r.protolca.Ref\022 \n\030restrict" +
+      "ions_description\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(" +
+      "\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017data_documen" +
+      "tor\030\023 \001(\0132\r.protolca.Ref\022%\n\016data_generat" +
+      "or\030\024 \001(\0132\r.protolca.Ref\022%\n\016data_set_owne" +
+      "r\030\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_appli" +
+      "cation\030\026 \001(\t\022\033\n\023project_description\030\027 \001(" +
+      "\t\022\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022\035\n" +
+      "\025geography_description\030\031 \001(\t\"\246\001\n\013Process" +
+      "Link\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 " +
+      "\001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.proto" +
+      "lca.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022" +
+      "$\n\010exchange\030\005 \001(\0132\022.protolca.Exchange\"\321\001" +
+      "\n\nProcessRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
+      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
+      "\001(\t\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010location\030\010" +
+      " \001(\t\022+\n\014process_type\030\t \001(\0162\025.protolca.Pr" +
+      "ocessType\"\336\003\n\rProductSystem\022\023\n\004type\030\001 \001(" +
+      "\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022" +
+      "\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n" +
+      "\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.p" +
+      "rotolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001" +
+      "(\t\022\'\n\tprocesses\030\n \003(\0132\024.protolca.Process" +
+      "Ref\022/\n\021reference_process\030\013 \001(\0132\024.protolc" +
+      "a.ProcessRef\022.\n\022reference_exchange\030\014 \001(\013" +
+      "2\022.protolca.Exchange\022\025\n\rtarget_amount\030\r " +
+      "\001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.protolca.Ref\022" +
+      "+\n\024target_flow_property\030\017 \001(\0132\r.protolca" +
+      ".Ref\022,\n\rprocess_links\030\020 \003(\0132\025.protolca.P" +
+      "rocessLink\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
+      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
+      "_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protol" +
+      "ca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n" +
+      "\rimpact_method\030\n \001(\0132\r.protolca.Ref\022\037\n\006n" +
+      "w_set\030\013 \001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_" +
+      "path\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\t" +
+      "R\005@type\022*\n\014flow_results\030\002 \003(\0132\024.protolca" +
+      ".FlowResult\022.\n\016impact_results\030\003 \003(\0132\026.pr" +
+      "otolca.ImpactResult\"\342\001\n\014SocialAspect\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\026\n\016activity_value\030\002 \001(" +
+      "\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\022\n\nr" +
+      "aw_amount\030\005 \001(\t\022\'\n\nrisk_level\030\006 \001(\0162\023.pr" +
+      "otolca.RiskLevel\022\'\n\020social_indicator\030\007 \001" +
+      "(\0132\r.protolca.Ref\022\035\n\006source\030\010 \001(\0132\r.prot" +
+      "olca.Ref\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001" +
       "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
       "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
-      "\n\013last_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003" +
-      "(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@type\022" +
-      "*\n\014flow_results\030\002 \003(\0132\024.protolca.FlowRes" +
-      "ult\022.\n\016impact_results\030\003 \003(\0132\026.protolca.I" +
-      "mpactResult\"\343\002\n\017SocialIndicator\022\023\n\004type\030" +
-      "\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 " +
-      "\001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(" +
-      "\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\013" +
-      "2\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library" +
-      "\030\t \001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021act" +
-      "ivity_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ra" +
-      "ctivity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023uni" +
-      "t_of_measurement\030\r \001(\t\022\031\n\021evaluation_sch" +
-      "eme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
-      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
-      "hange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca" +
-      ".Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003u" +
-      "rl\030\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year" +
-      "\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncert" +
-      "ainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distributi" +
-      "on_type\030\002 \001(\0162\031.protolca.UncertaintyType" +
-      "\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\t" +
-      "geom_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001" +
-      "(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010" +
-      " \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007" +
-      "geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014" +
-      "\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007ma" +
-      "ximum\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n" +
-      "\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
-      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
-      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021" +
-      "conversion_factor\030\007 \001(\001\022\026\n\016reference_uni" +
-      "t\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
-      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
-      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
-      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
-      "\007library\030\t \001(\t\022,\n\025default_flow_property\030" +
-      "\n \001(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.pr" +
-      "otolca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFI" +
-      "NED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCA" +
-      "TION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSA" +
-      "L_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION" +
-      "\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationTyp" +
-      "e\022\036\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIM" +
-      "PLE_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYS" +
-      "IS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALI" +
-      "ZED_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULAT" +
-      "ION\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_F" +
-      "LOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY" +
-      "\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n" +
-      "\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLO" +
-      "W\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002" +
-      "\n\tModelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n" +
-      "\007PROJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_" +
-      "CATEGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCES" +
-      "S\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT" +
-      "_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020" +
-      "\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020" +
-      "\016\022\024\n\020SOCIAL_INDICATOR\020\017*f\n\016ParameterScop" +
-      "e\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROC" +
-      "ESS_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_" +
-      "SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROC" +
-      "ESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCE" +
-      "SS\020\002*\234\001\n\017UncertaintyType\022\036\n\032UNDEFINED_UN" +
-      "CERTAINTY_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUT" +
-      "ION\020\001\022\027\n\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANG" +
-      "LE_DISTRIBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTIO" +
-      "N\020\004B&\n\021org.openlca.protoB\005ProtoZ\n.;proto" +
-      "lcab\006proto3"
+      "\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r." +
+      "protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t " +
+      "\001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021activi" +
+      "ty_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\racti" +
+      "vity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_o" +
+      "f_measurement\030\r \001(\t\022\031\n\021evaluation_scheme" +
+      "\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017" +
+      "\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descrip" +
+      "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chan" +
+      "ge\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Re" +
+      "f\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030" +
+      "\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 " +
+      "\001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertain" +
+      "ty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_" +
+      "type\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n" +
+      "\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeo" +
+      "m_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022" +
+      "\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(" +
+      "\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geo" +
+      "m_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004m" +
+      "ode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maxim" +
+      "um\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Un" +
+      "it\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
+      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
+      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021con" +
+      "version_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010" +
+      " \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
+      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
+      "brary\030\t \001(\t\022,\n\025default_flow_property\030\n \001" +
+      "(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.proto" +
+      "lca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED" +
+      "_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATIO" +
+      "N\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_A" +
+      "LLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022" +
+      "\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036" +
+      "\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE" +
+      "_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020" +
+      "\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED" +
+      "_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION" +
+      "\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW" +
+      "_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022" +
+      "\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UN" +
+      "DEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001" +
+      "\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002\n\tM" +
+      "odelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n\007PR" +
+      "OJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_CAT" +
+      "EGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCESS\020\005" +
+      "\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT_GR" +
+      "OUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020\013\022\014" +
+      "\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020\016\022\024" +
+      "\n\020SOCIAL_INDICATOR\020\017*f\n\016ParameterScope\022\035" +
+      "\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCESS" +
+      "_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SCO" +
+      "PE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCESS" +
+      "_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS\020" +
+      "\002*\377\001\n\tRiskLevel\022\030\n\024UNDEFINED_RISK_LEVEL\020" +
+      "\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024\n\020HIGH_OPPORTUNIT" +
+      "Y\020\002\022\026\n\022MEDIUM_OPPORTUNITY\020\003\022\023\n\017LOW_OPPOR" +
+      "TUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021\n\rVERY_LOW_RISK\020\006" +
+      "\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIUM_RISK\020\010\022\r\n\tHIGH_" +
+      "RISK\020\t\022\022\n\016VERY_HIGH_RISK\020\n\022\013\n\007NO_DATA\020\013\022" +
+      "\022\n\016NOT_APPLICABLE\020\014*\234\001\n\017UncertaintyType\022" +
+      "\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_N" +
+      "ORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRIBUT" +
+      "ION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024UNIF" +
+      "ORM_DISTRIBUTION\020\004B&\n\021org.openlca.protoB" +
+      "\005ProtoZ\n.;protolcab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -103051,7 +105529,7 @@ public final class Proto {
     internal_static_protolca_Process_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Process_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "AllocationFactors", "DefaultAllocationMethod", "Exchanges", "LastInternalId", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", "InfrastructureProcess", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "AllocationFactors", "DefaultAllocationMethod", "Exchanges", "LastInternalId", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", "InfrastructureProcess", "SocialAspects", });
     internal_static_protolca_ProcessDocumentation_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_protolca_ProcessDocumentation_fieldAccessorTable = new
@@ -103094,32 +105572,38 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SimpleResult_descriptor,
         new java.lang.String[] { "Type", "FlowResults", "ImpactResults", });
-    internal_static_protolca_SocialIndicator_descriptor =
+    internal_static_protolca_SocialAspect_descriptor =
       getDescriptor().getMessageTypes().get(35);
+    internal_static_protolca_SocialAspect_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_SocialAspect_descriptor,
+        new java.lang.String[] { "Type", "ActivityValue", "Comment", "Quality", "RawAmount", "RiskLevel", "SocialIndicator", "Source", });
+    internal_static_protolca_SocialIndicator_descriptor =
+      getDescriptor().getMessageTypes().get(36);
     internal_static_protolca_SocialIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialIndicator_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ActivityVariable", "ActivityQuantity", "ActivityUnit", "UnitOfMeasurement", "EvaluationScheme", });
     internal_static_protolca_Source_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_protolca_Source_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Source_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Url", "TextReference", "Year", "ExternalFile", });
     internal_static_protolca_Uncertainty_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_protolca_Uncertainty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Uncertainty_descriptor,
         new java.lang.String[] { "Type", "DistributionType", "Mean", "MeanFormula", "GeomMean", "GeomMeanFormula", "Minimum", "MinimumFormula", "Sd", "SdFormula", "GeomSd", "GeomSdFormula", "Mode", "ModeFormula", "Maximum", "MaximumFormula", });
     internal_static_protolca_Unit_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_protolca_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Unit_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "ConversionFactor", "ReferenceUnit", "Synonyms", });
     internal_static_protolca_UnitGroup_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_protolca_UnitGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_UnitGroup_descriptor,

@@ -1282,6 +1282,9 @@ message Process {
   // used anymore.
   bool infrastructure_process = 22;
 
+  // A set of social aspects related to this process.
+  repeated SocialAspect social_aspects = 23;
+
 }
 
 message ProcessDocumentation {
@@ -1550,6 +1553,38 @@ message Ref {
 
 }
 
+enum RiskLevel {
+
+  // This default option was added automatically
+  // and means that no values was set.
+  UNDEFINED_RISK_LEVEL = 0;
+
+  NO_OPPORTUNITY = 1;
+
+  HIGH_OPPORTUNITY = 2;
+
+  MEDIUM_OPPORTUNITY = 3;
+
+  LOW_OPPORTUNITY = 4;
+
+  NO_RISK = 5;
+
+  VERY_LOW_RISK = 6;
+
+  LOW_RISK = 7;
+
+  MEDIUM_RISK = 8;
+
+  HIGH_RISK = 9;
+
+  VERY_HIGH_RISK = 10;
+
+  NO_DATA = 11;
+
+  NOT_APPLICABLE = 12;
+
+}
+
 message SimpleResult {
 
   // The type name of the respectiven entity.
@@ -1559,6 +1594,34 @@ message SimpleResult {
   repeated FlowResult flow_results = 2;
 
   repeated ImpactResult impact_results = 3;
+
+}
+
+// An instance of this class describes a social aspect related to a social
+// indicator in a process.
+message SocialAspect {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The value of the activity variable of the related indicator.
+  double activity_value = 2;
+
+  string comment = 3;
+
+  // A data quality entry, e.g. `(3,1,2,4,1)`.
+  string quality = 4;
+
+  // The raw amount of the indicator's unit of measurement (not required to be
+  // numeric currently)
+  string raw_amount = 5;
+
+  RiskLevel risk_level = 6;
+
+  Ref social_indicator = 7;
+
+  Ref source = 8;
 
 }
 
