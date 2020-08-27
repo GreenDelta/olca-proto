@@ -23,9 +23,12 @@ public class DqSystemImport {
     // check if we are in update mode
     var update = false;
     if (dqSystem != null) {
-      if (imp.isHandled(dqSystem)
-        || imp.noUpdates())
+      if (imp.isHandled(dqSystem))
         return dqSystem;
+      if (imp.noUpdates()) {
+        imp.putHandled(dqSystem);
+        return dqSystem;
+      }
       update = true;
     }
 
@@ -35,7 +38,7 @@ public class DqSystemImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!imp.shouldUpdate(dqSystem, wrap))
+      if (imp.skipUpdate(dqSystem, wrap))
         return dqSystem;
     }
 

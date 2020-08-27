@@ -35,7 +35,7 @@ public class SocialIndicatorImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!imp.shouldUpdate(indicator, wrap))
+      if (imp.skipUpdate(indicator, wrap))
         return indicator;
     }
 

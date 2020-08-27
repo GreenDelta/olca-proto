@@ -27,9 +27,12 @@ public class FlowImport {
     // check if we are in update mode
     inUpdateMode = false;
     if (flow != null) {
-      if (imp.isHandled(flow)
-        || imp.noUpdates())
+      if (imp.isHandled(flow))
         return flow;
+      if (imp.noUpdates()) {
+        imp.putHandled(flow);
+        return flow;
+      }
       inUpdateMode = true;
     }
 
@@ -39,7 +42,7 @@ public class FlowImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
-      if (!imp.shouldUpdate(flow, wrap))
+      if (imp.skipUpdate(flow, wrap))
         return flow;
     }
 

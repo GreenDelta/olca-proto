@@ -8,33 +8,36 @@ import org.openlca.util.Strings;
 
 public class FlowPropertyImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public FlowPropertyImport(ProtoImport config) {
-    this.config = config;
+  public FlowPropertyImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public FlowProperty of(String id) {
     if (id == null)
       return null;
-    var flowProperty = config.get(FlowProperty.class, id);
+    var flowProperty = imp.get(FlowProperty.class, id);
 
     // check if we are in update mode
     var update = false;
     if (flowProperty != null) {
-      if (config.isHandled(flowProperty)
-        || config.noUpdates())
+      if (imp.isHandled(flowProperty))
         return flowProperty;
+      if (imp.noUpdates()) {
+        imp.putHandled(flowProperty);
+        return flowProperty;
+      }
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getFlowProperty(id);
+    var proto = imp.store.getFlowProperty(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(flowProperty, wrap))
+      if (imp.skipUpdate(flowProperty, wrap))
         return flowProperty;
     }
 
@@ -43,15 +46,15 @@ public class FlowPropertyImport {
       flowProperty = new FlowProperty();
       flowProperty.refId = id;
     }
-    wrap.mapTo(flowProperty, config);
+    wrap.mapTo(flowProperty, imp);
     map(proto, flowProperty);
 
     // insert it
-    var dao = new FlowPropertyDao(config.db);
+    var dao = new FlowPropertyDao(imp.db);
     flowProperty = update
       ? dao.update(flowProperty)
       : dao.insert(flowProperty);
-    config.putHandled(flowProperty);
+    imp.putHandled(flowProperty);
     return flowProperty;
   }
 
@@ -62,7 +65,7 @@ public class FlowPropertyImport {
       : FlowPropertyType.PHYSICAL;
     var unitGroupID = proto.getUnitGroup().getId();
     if (Strings.notEmpty(unitGroupID)) {
-      flowProperty.unitGroup = new UnitGroupImport(config)
+      flowProperty.unitGroup = new UnitGroupImport(imp)
         .of(unitGroupID);
     }
   }

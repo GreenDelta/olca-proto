@@ -6,33 +6,33 @@ import org.openlca.proto.Proto;
 
 public class ProjectImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public ProjectImport(ProtoImport config) {
-    this.config = config;
+  public ProjectImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Project of(String id) {
     if (id == null)
       return null;
-    var project = config.get(Project.class, id);
+    var project = imp.get(Project.class, id);
 
     // check if we are in update mode
     var update = false;
     if (project != null) {
-      if (config.isHandled(project)
-        || config.noUpdates())
+      if (imp.isHandled(project)
+        || imp.noUpdates())
         return project;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getProject(id);
+    var proto = imp.store.getProject(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(project, wrap))
+      if (imp.skipUpdate(project, wrap))
         return project;
     }
 
@@ -41,15 +41,15 @@ public class ProjectImport {
       project = new Project();
       project.refId = id;
     }
-    wrap.mapTo(project, config);
+    wrap.mapTo(project, imp);
     map(proto, project);
 
     // insert it
-    var dao = new ProjectDao(config.db);
+    var dao = new ProjectDao(imp.db);
     project = update
       ? dao.update(project)
       : dao.insert(project);
-    config.putHandled(project);
+    imp.putHandled(project);
     return project;
   }
 

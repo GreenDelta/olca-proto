@@ -25,9 +25,12 @@ public class ImpactCategoryImport {
     // check if we are in update mode
     var update = false;
     if (impact != null) {
-      if (imp.isHandled(impact)
-        || imp.noUpdates())
+      if (imp.isHandled(impact))
         return impact;
+      if (imp.noUpdates()) {
+        imp.putHandled(impact);
+        return impact;
+      }
       update = true;
     }
 
@@ -37,7 +40,7 @@ public class ImpactCategoryImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!imp.shouldUpdate(impact, wrap))
+      if (imp.skipUpdate(impact, wrap))
         return impact;
     }
 

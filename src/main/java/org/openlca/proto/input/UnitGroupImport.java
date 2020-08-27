@@ -11,34 +11,34 @@ import org.openlca.util.Strings;
 
 public class UnitGroupImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
   private boolean inUpdateMode;
 
-  public UnitGroupImport(ProtoImport config) {
-    this.config = config;
+  public UnitGroupImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public UnitGroup of(String id) {
     if (id == null)
       return null;
-    var group = config.get(UnitGroup.class, id);
+    var group = imp.get(UnitGroup.class, id);
 
     // check if we are in update mode
     inUpdateMode = false;
     if (group != null) {
-      if (config.isHandled(group)
-        || config.noUpdates())
+      if (imp.isHandled(group)
+        || imp.noUpdates())
         return group;
       inUpdateMode = true;
     }
 
     // check the proto object
-    var proto = config.store.getUnitGroup(id);
+    var proto = imp.store.getUnitGroup(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
-      if (!config.shouldUpdate(group, wrap))
+      if (imp.skipUpdate(group, wrap))
         return group;
     }
 
@@ -47,22 +47,22 @@ public class UnitGroupImport {
       group = new UnitGroup();
       group.refId = id;
     }
-    wrap.mapTo(group, config);
+    wrap.mapTo(group, imp);
     map(proto, group);
 
     // insert it
-    var dao = new UnitGroupDao(config.db);
+    var dao = new UnitGroupDao(imp.db);
     group = inUpdateMode
       ? dao.update(group)
       : dao.insert(group);
-    config.putHandled(group);
+    imp.putHandled(group);
 
     // set a possible default flow property after
     // the unit group was saved to avoid endless
     // import cycles
     var propID = proto.getDefaultFlowProperty().getId();
     if (Strings.notEmpty(propID)) {
-      group.defaultFlowProperty = new FlowPropertyImport(config)
+      group.defaultFlowProperty = new FlowPropertyImport(imp)
         .of(propID);
       group = dao.update(group);
     }

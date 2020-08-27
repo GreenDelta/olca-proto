@@ -8,33 +8,36 @@ import org.openlca.proto.Proto;
 
 public class CurrencyImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public CurrencyImport(ProtoImport config) {
-    this.config = config;
+  public CurrencyImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Currency of(String id) {
     if (id == null)
       return null;
-    var currency = config.get(Currency.class, id);
+    var currency = imp.get(Currency.class, id);
 
     // check if we are in update mode
     var update = false;
     if (currency != null) {
-      if (config.isHandled(currency)
-        || config.noUpdates())
+      if (imp.isHandled(currency))
         return currency;
+      if (imp.noUpdates()) {
+        imp.putHandled(currency);
+        return currency;
+      }
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getCurrency(id);
+    var proto = imp.store.getCurrency(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(currency, wrap))
+      if (imp.skipUpdate(currency, wrap))
         return currency;
     }
 
@@ -42,15 +45,15 @@ public class CurrencyImport {
     if (currency == null) {
       currency = new Currency();
     }
-    wrap.mapTo(currency, config);
+    wrap.mapTo(currency, imp);
     map(proto, currency);
 
     // insert it
-    var dao = new CurrencyDao(config.db);
+    var dao = new CurrencyDao(imp.db);
     currency = update
       ? dao.update(currency)
       : dao.insert(currency);
-    config.putHandled(currency);
+    imp.putHandled(currency);
     return currency;
   }
 

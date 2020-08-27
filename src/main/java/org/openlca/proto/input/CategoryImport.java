@@ -10,45 +10,48 @@ import org.openlca.util.Strings;
 
 public class CategoryImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public CategoryImport(ProtoImport config) {
-    this.config = config;
+  public CategoryImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Category of(String id) {
     if (id == null)
       return null;
-    var mappedID = config.mappedCategories.get(id);
+    var mappedID = imp.mappedCategories.get(id);
     var category = mappedID != null
-      ? config.get(Category.class, mappedID)
-      : config.get(Category.class, id);
+      ? imp.get(Category.class, mappedID)
+      : imp.get(Category.class, id);
 
     var update = false;
     if (category != null) {
-      if (config.isHandled(category)
-        || config.noUpdates())
+      if (imp.isHandled(category))
         return category;
+      if (imp.noUpdates()) {
+        imp.putHandled(category);
+        return category;
+      }
       update = true;
     }
 
-    var proto = config.store.getCategory(id);
+    var proto = imp.store.getCategory(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(category, wrap))
+      if (imp.skipUpdate(category, wrap))
         return category;
     }
 
     if (category == null) {
       category = new Category();
     }
-    wrap.mapTo(category, config);
+    wrap.mapTo(category, imp);
     map(proto, category);
 
     // update a possible parent
-    var dao = new CategoryDao(config.db);
+    var dao = new CategoryDao(imp.db);
     var parent = category.category;
     if (parent == null) {
       category = update
@@ -82,9 +85,9 @@ public class CategoryImport {
     }
 
     if (!Strings.nullOrEqual(id, category.refId)) {
-      config.mappedCategories.put(id, category.refId);
+      imp.mappedCategories.put(id, category.refId);
     }
-    config.putHandled(category);
+    imp.putHandled(category);
     return category;
   }
 

@@ -52,27 +52,47 @@ public class ProtoImport implements Runnable {
       || updateMode == UpdateMode.NEVER;
   }
 
-  boolean shouldUpdate(RootEntity e, ProtoWrap wrap) {
-    if (e == null)
-      return false;
-    if (noUpdates())
-      return false;
-    if (updateMode == UpdateMode.ALWAYS)
-      return true;
 
-    // check if
-    long v = Strings.notEmpty(wrap.version())
-      ? Version.fromString(wrap.version()).getValue()
-      : 0;
-    if (v < e.version)
+  /**
+   * Returns true if an update of an existing entity should be skipped. This is
+   * true when we are not in update mode `always` and the version or last
+   * change date of the incoming object are smaller. If true is returned, the
+   * entity is also marked as handled so there is no need to call the
+   * `putHandled` method again after this call.
+   */
+  boolean skipUpdate(RootEntity existing, ProtoWrap incoming) {
+    if (existing == null)
+      return true;
+    if (noUpdates()) {
+      putHandled(existing);
+      return true;
+    }
+    if (updateMode == UpdateMode.ALWAYS)
       return false;
-    var date = Strings.notEmpty(wrap.lastChange())
-      ? Json.parseDate(wrap.lastChange())
+
+    // check the version
+    long version = Strings.notEmpty(incoming.version())
+      ? Version.fromString(incoming.version()).getValue()
+      : 0;
+    if (version > existing.version)
+      return false;
+    if (version < existing.version) {
+      putHandled(existing);
+      return true;
+    }
+
+    // equal version => check the date
+    var date = Strings.notEmpty(incoming.lastChange())
+      ? Json.parseDate(incoming.lastChange())
       : null;
-    var time = date != null
+    var lastChange = date != null
       ? date.getTime()
       : 0;
-    return v != e.version || time > e.lastChange;
+    if (lastChange <= existing.lastChange) {
+      putHandled(existing);
+      return true;
+    }
+    return false;
   }
 
   void putHandled(RootEntity e) {

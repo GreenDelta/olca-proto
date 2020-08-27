@@ -33,7 +33,7 @@ public class ParameterImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!imp.shouldUpdate(param, wrap))
+      if (imp.skipUpdate(param, wrap))
         return param;
     }
 

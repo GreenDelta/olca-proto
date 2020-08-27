@@ -6,33 +6,36 @@ import org.openlca.proto.Proto;
 
 public class ActorImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public ActorImport(ProtoImport config) {
-    this.config = config;
+  public ActorImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Actor of(String id) {
     if (id == null)
       return null;
-    var actor = config.get(Actor.class, id);
+    var actor = imp.get(Actor.class, id);
 
     // check if we are in update mode
     var update = false;
     if (actor != null) {
-      if (config.isHandled(actor)
-        || config.noUpdates())
+      if (imp.isHandled(actor))
         return actor;
+      if (imp.noUpdates()) {
+        imp.putHandled(actor);
+        return actor;
+      }
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getActor(id);
+    var proto = imp.store.getActor(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(actor, wrap))
+      if (imp.skipUpdate(actor, wrap))
         return actor;
     }
 
@@ -40,15 +43,15 @@ public class ActorImport {
     if (actor == null) {
       actor = new Actor();
     }
-    wrap.mapTo(actor, config);
+    wrap.mapTo(actor, imp);
     map(proto, actor);
 
     // insert it
-    var dao = new ActorDao(config.db);
+    var dao = new ActorDao(imp.db);
     actor = update
       ? dao.update(actor)
       : dao.insert(actor);
-    config.putHandled(actor);
+    imp.putHandled(actor);
     return actor;
   }
 

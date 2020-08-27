@@ -50,7 +50,7 @@ public class ProcessImport {
       return null;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
-      if (!imp.shouldUpdate(process, wrap))
+      if (imp.skipUpdate(process, wrap))
         return process;
     }
 

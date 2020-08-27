@@ -6,33 +6,33 @@ import org.openlca.proto.Proto;
 
 public class SourceImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public SourceImport(ProtoImport config) {
-    this.config = config;
+  public SourceImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Source of(String id) {
     if (id == null)
       return null;
-    var source = config.get(Source.class, id);
+    var source = imp.get(Source.class, id);
 
     // check if we are in update mode
     var update = false;
     if (source != null) {
-      if (config.isHandled(source)
-        || config.noUpdates())
+      if (imp.isHandled(source)
+        || imp.noUpdates())
         return source;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getSource(id);
+    var proto = imp.store.getSource(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(source, wrap))
+      if (imp.skipUpdate(source, wrap))
         return source;
     }
 
@@ -40,15 +40,15 @@ public class SourceImport {
     if (source == null) {
       source = new Source();
     }
-    wrap.mapTo(source, config);
+    wrap.mapTo(source, imp);
     map(proto, source);
 
     // insert it
-    var dao = new SourceDao(config.db);
+    var dao = new SourceDao(imp.db);
     source = update
       ? dao.update(source)
       : dao.insert(source);
-    config.putHandled(source);
+    imp.putHandled(source);
     return source;
   }
 

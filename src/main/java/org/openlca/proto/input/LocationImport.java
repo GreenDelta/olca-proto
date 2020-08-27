@@ -6,33 +6,33 @@ import org.openlca.proto.Proto;
 
 public class LocationImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public LocationImport(ProtoImport config) {
-    this.config = config;
+  public LocationImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public Location of(String id) {
     if (id == null)
       return null;
-    var location = config.get(Location.class, id);
+    var location = imp.get(Location.class, id);
 
     // check if we are in update mode
     var update = false;
     if (location != null) {
-      if (config.isHandled(location)
-        || config.noUpdates())
+      if (imp.isHandled(location)
+        || imp.noUpdates())
         return location;
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getLocation(id);
+    var proto = imp.store.getLocation(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(location, wrap))
+      if (imp.skipUpdate(location, wrap))
         return location;
     }
 
@@ -41,15 +41,15 @@ public class LocationImport {
       location = new Location();
       location.refId = id;
     }
-    wrap.mapTo(location, config);
+    wrap.mapTo(location, imp);
     map(proto, location);
 
     // insert it
-    var dao = new LocationDao(config.db);
+    var dao = new LocationDao(imp.db);
     location = update
       ? dao.update(location)
       : dao.insert(location);
-    config.putHandled(location);
+    imp.putHandled(location);
     return location;
   }
 

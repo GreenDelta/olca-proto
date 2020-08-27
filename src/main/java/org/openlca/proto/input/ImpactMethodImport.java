@@ -10,33 +10,36 @@ import org.openlca.proto.Proto;
 
 public class ImpactMethodImport {
 
-  private final ProtoImport config;
+  private final ProtoImport imp;
 
-  public ImpactMethodImport(ProtoImport config) {
-    this.config = config;
+  public ImpactMethodImport(ProtoImport imp) {
+    this.imp = imp;
   }
 
   public ImpactMethod of(String id) {
     if (id == null)
       return null;
-    var method = config.get(ImpactMethod.class, id);
+    var method = imp.get(ImpactMethod.class, id);
 
     // check if we are in update mode
     var update = false;
     if (method != null) {
-      if (config.isHandled(method)
-        || config.noUpdates())
+      if (imp.isHandled(method))
         return method;
+      if (imp.noUpdates()) {
+        imp.putHandled(method);
+        return method;
+      }
       update = true;
     }
 
     // check the proto object
-    var proto = config.store.getImpactMethod(id);
+    var proto = imp.store.getImpactMethod(id);
     if (proto == null)
       return null;
     var wrap = ProtoWrap.of(proto);
     if (update) {
-      if (!config.shouldUpdate(method, wrap))
+      if (imp.skipUpdate(method, wrap))
         return method;
     }
 
@@ -45,15 +48,15 @@ public class ImpactMethodImport {
       method = new ImpactMethod();
       method.refId = id;
     }
-    wrap.mapTo(method, config);
+    wrap.mapTo(method, imp);
     map(proto, method);
 
     // insert it
-    var dao = new ImpactMethodDao(config.db);
+    var dao = new ImpactMethodDao(imp.db);
     method = update
       ? dao.update(method)
       : dao.insert(method);
-    config.putHandled(method);
+    imp.putHandled(method);
     return method;
   }
 
@@ -61,7 +64,7 @@ public class ImpactMethodImport {
 
     for (var protoImp : proto.getImpactCategoriesList()) {
       var impactID = protoImp.getId();
-      var impact = new ImpactCategoryImport(config).of(impactID);
+      var impact = new ImpactCategoryImport(imp).of(impactID);
       if (impact != null) {
         method.impactCategories.add(impact);
       }
