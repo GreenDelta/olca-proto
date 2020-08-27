@@ -24,15 +24,13 @@ public class CategoryImport {
       ? imp.get(Category.class, mappedID)
       : imp.get(Category.class, id);
 
+    // check if we are in update mode
     var update = false;
     if (category != null) {
-      if (imp.isHandled(category))
-        return category;
-      if (imp.noUpdates()) {
-        imp.putHandled(category);
+      update = imp.shouldUpdate(category);
+      if(!update) {
         return category;
       }
-      update = true;
     }
 
     var proto = imp.store.getCategory(id);

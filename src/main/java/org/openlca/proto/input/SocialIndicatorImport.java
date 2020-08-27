@@ -23,10 +23,10 @@ public class SocialIndicatorImport {
     // check if we are in update mode
     var update = false;
     if (indicator != null) {
-      if (imp.isHandled(indicator)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(indicator);
+      if(!update) {
         return indicator;
-      update = true;
+      }
     }
 
     // check the proto object

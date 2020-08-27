@@ -47,11 +47,21 @@ public class ProtoImport implements Runnable {
     return this;
   }
 
-  boolean noUpdates() {
-    return updateMode == null
-      || updateMode == UpdateMode.NEVER;
+  /**
+   * Returns true if the given existing entity should be updated. If this is
+   * not the case, we mark it as handled.
+   */
+  boolean shouldUpdate(RootEntity entity) {
+    if (entity == null)
+      return false;
+    if (isHandled(entity))
+      return false;
+    if (updateMode == null || updateMode == UpdateMode.NEVER) {
+      putHandled(entity);
+      return false;
+    }
+    return true;
   }
-
 
   /**
    * Returns true if an update of an existing entity should be skipped. This is
@@ -63,10 +73,6 @@ public class ProtoImport implements Runnable {
   boolean skipUpdate(RootEntity existing, ProtoWrap incoming) {
     if (existing == null)
       return true;
-    if (noUpdates()) {
-      putHandled(existing);
-      return true;
-    }
     if (updateMode == UpdateMode.ALWAYS)
       return false;
 

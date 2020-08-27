@@ -25,13 +25,10 @@ public class ImpactCategoryImport {
     // check if we are in update mode
     var update = false;
     if (impact != null) {
-      if (imp.isHandled(impact))
-        return impact;
-      if (imp.noUpdates()) {
-        imp.putHandled(impact);
+      update = imp.shouldUpdate(impact);
+      if(!update) {
         return impact;
       }
-      update = true;
     }
 
     // check the proto object

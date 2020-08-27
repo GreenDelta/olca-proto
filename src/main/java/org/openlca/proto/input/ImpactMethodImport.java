@@ -24,13 +24,10 @@ public class ImpactMethodImport {
     // check if we are in update mode
     var update = false;
     if (method != null) {
-      if (imp.isHandled(method))
-        return method;
-      if (imp.noUpdates()) {
-        imp.putHandled(method);
+      update = imp.shouldUpdate(method);
+      if(!update) {
         return method;
       }
-      update = true;
     }
 
     // check the proto object

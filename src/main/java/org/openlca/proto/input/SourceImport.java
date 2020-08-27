@@ -20,10 +20,10 @@ public class SourceImport {
     // check if we are in update mode
     var update = false;
     if (source != null) {
-      if (imp.isHandled(source)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(source);
+      if(!update) {
         return source;
-      update = true;
+      }
     }
 
     // check the proto object

@@ -26,10 +26,10 @@ public class UnitGroupImport {
     // check if we are in update mode
     inUpdateMode = false;
     if (group != null) {
-      if (imp.isHandled(group)
-        || imp.noUpdates())
+      inUpdateMode = imp.shouldUpdate(group);
+      if(!inUpdateMode) {
         return group;
-      inUpdateMode = true;
+      }
     }
 
     // check the proto object

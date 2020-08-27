@@ -23,13 +23,10 @@ public class DqSystemImport {
     // check if we are in update mode
     var update = false;
     if (dqSystem != null) {
-      if (imp.isHandled(dqSystem))
-        return dqSystem;
-      if (imp.noUpdates()) {
-        imp.putHandled(dqSystem);
+      update = imp.shouldUpdate(dqSystem);
+      if(!update) {
         return dqSystem;
       }
-      update = true;
     }
 
     // check the proto object

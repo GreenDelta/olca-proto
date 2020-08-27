@@ -20,10 +20,10 @@ public class LocationImport {
     // check if we are in update mode
     var update = false;
     if (location != null) {
-      if (imp.isHandled(location)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(location);
+      if(!update) {
         return location;
-      update = true;
+      }
     }
 
     // check the proto object

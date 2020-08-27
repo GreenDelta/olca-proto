@@ -20,10 +20,10 @@ public class ProjectImport {
     // check if we are in update mode
     var update = false;
     if (project != null) {
-      if (imp.isHandled(project)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(project);
+      if(!update) {
         return project;
-      update = true;
+      }
     }
 
     // check the proto object

@@ -38,10 +38,10 @@ public class ProcessImport {
     // check if we are in update mode
     inUpdateMode = false;
     if (process != null) {
-      if (imp.isHandled(process)
-        || imp.noUpdates())
+      inUpdateMode = imp.shouldUpdate(process);
+      if(!inUpdateMode) {
         return process;
-      inUpdateMode = true;
+      }
     }
 
     // check the proto object

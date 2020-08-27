@@ -20,10 +20,10 @@ public class ProductSystemImport {
     // check if we are in update mode
     var update = false;
     if (sys != null) {
-      if (imp.isHandled(sys)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(sys);
+      if(!update) {
         return sys;
-      update = true;
+      }
     }
 
     // check the proto object

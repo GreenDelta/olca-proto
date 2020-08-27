@@ -21,10 +21,10 @@ public class ParameterImport {
     // check if we are in update mode
     var update = false;
     if (param != null) {
-      if (imp.isHandled(param)
-        || imp.noUpdates())
+      update = imp.shouldUpdate(param);
+      if(!update) {
         return param;
-      update = true;
+      }
     }
 
     // check the proto object

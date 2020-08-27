@@ -22,13 +22,10 @@ public class CurrencyImport {
     // check if we are in update mode
     var update = false;
     if (currency != null) {
-      if (imp.isHandled(currency))
-        return currency;
-      if (imp.noUpdates()) {
-        imp.putHandled(currency);
+      update = imp.shouldUpdate(currency);
+      if(!update) {
         return currency;
       }
-      update = true;
     }
 
     // check the proto object

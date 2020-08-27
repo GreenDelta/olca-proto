@@ -27,13 +27,10 @@ public class FlowImport {
     // check if we are in update mode
     inUpdateMode = false;
     if (flow != null) {
-      if (imp.isHandled(flow))
-        return flow;
-      if (imp.noUpdates()) {
-        imp.putHandled(flow);
+      inUpdateMode = imp.shouldUpdate(flow);
+      if(!inUpdateMode) {
         return flow;
       }
-      inUpdateMode = true;
     }
 
     // check the proto object

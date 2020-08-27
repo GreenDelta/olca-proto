@@ -22,13 +22,10 @@ public class FlowPropertyImport {
     // check if we are in update mode
     var update = false;
     if (flowProperty != null) {
-      if (imp.isHandled(flowProperty))
-        return flowProperty;
-      if (imp.noUpdates()) {
-        imp.putHandled(flowProperty);
+      update = imp.shouldUpdate(flowProperty);
+      if(!update) {
         return flowProperty;
       }
-      update = true;
     }
 
     // check the proto object

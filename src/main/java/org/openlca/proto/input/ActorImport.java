@@ -20,13 +20,9 @@ public class ActorImport {
     // check if we are in update mode
     var update = false;
     if (actor != null) {
-      if (imp.isHandled(actor))
+      update = imp.shouldUpdate(actor);
+      if (!update)
         return actor;
-      if (imp.noUpdates()) {
-        imp.putHandled(actor);
-        return actor;
-      }
-      update = true;
     }
 
     // check the proto object
