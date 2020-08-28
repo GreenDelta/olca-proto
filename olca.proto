@@ -1366,8 +1366,8 @@ message ProcessLink {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  // The descriptor of the process that provides a product or a waste
-  // treatment.
+  // The descriptor of the process or product system that provides a product or
+  // a waste treatment.
   Ref provider = 2;
 
   // The descriptor of the flow that is exchanged between the two processes.
@@ -1379,7 +1379,7 @@ message ProcessLink {
   // The exchange of the linked process (this is useful if the linked process
   // has multiple exchanges with the same flow that are linked to different
   // provides, e.g. in an electricity mix).
-  Exchange exchange = 5;
+  ExchangeRef exchange = 5;
 
 }
 
