@@ -1,0 +1,10 @@
+syntax = "proto3";
+package protolca.services;
+
+option java_package = "org.openlca.proto.services";
+
+import public "olca.proto";
+
+service ModelService {
+  rpc getFlow(protolca.Ref) returns (protolca.Flow);
+}
