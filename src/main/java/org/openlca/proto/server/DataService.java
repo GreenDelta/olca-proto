@@ -6,19 +6,19 @@ import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.model.Flow;
 import org.openlca.proto.Proto;
-import org.openlca.proto.services.ModelServiceGrpc;
+import org.openlca.proto.services.DataServiceGrpc;
 import org.openlca.util.Strings;
 
-class ModelService extends ModelServiceGrpc.ModelServiceImplBase {
+class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   private final IDatabase db;
 
-  ModelService(IDatabase db) {
+  DataService(IDatabase db) {
     this.db = db;
   }
 
   @Override
-  public void getFlow(Proto.Ref req, StreamObserver<Proto.Flow> resp) {
+  public void flow(Proto.Ref req, StreamObserver<Proto.Flow> resp) {
     var flow = db.get(Flow.class, req.getId());
     if (flow == null) {
       resp.onError(new EntityNotFoundException());

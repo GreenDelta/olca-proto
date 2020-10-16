@@ -13,7 +13,7 @@ public class Server {
 
   public Server(IDatabase db, int port) {
     this.server = ServerBuilder.forPort(port)
-      .addService(new ModelService(db))
+      .addService(new DataService(db))
       .build();
   }
 

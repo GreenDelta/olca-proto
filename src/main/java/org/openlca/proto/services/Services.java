@@ -24,9 +24,10 @@ public final class Services {
   static {
     java.lang.String[] descriptorData = {
       "\n\016services.proto\022\021protolca.services\032\nolc" +
-      "a.proto28\n\014ModelService\022(\n\007getFlow\022\r.pro" +
-      "tolca.Ref\032\016.protolca.FlowB\034\n\032org.openlca" +
-      ".proto.servicesP\000b\006proto3"
+      "a.proto2_\n\013DataService\022%\n\004flow\022\r.protolc" +
+      "a.Ref\032\016.protolca.Flow\022)\n\010put_flow\022\016.prot" +
+      "olca.Flow\032\r.protolca.RefB\034\n\032org.openlca." +
+      "proto.servicesP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
