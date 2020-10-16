@@ -23,7 +23,6 @@ import com.google.protobuf.Message;
 import com.google.protobuf.Parser;
 import com.google.protobuf.util.JsonFormat;
 import org.openlca.geo.geojson.GeoJSON;
-import org.openlca.geo.geojson.ProtoPack;
 import org.openlca.jsonld.Json;
 import org.slf4j.LoggerFactory;
 
@@ -239,7 +238,7 @@ public class ZipStore implements ProtoStore {
       var coll = GeoJSON.read(geo);
       if (coll == null ||coll.features.isEmpty())
         return builder.build();
-      var geoBytes = ProtoPack.packgz(coll);
+      var geoBytes = GeoJSON.pack(coll);
       if (geoBytes == null || geoBytes.length == 0)
         return  builder.build();
       builder.setGeometryBytes(
