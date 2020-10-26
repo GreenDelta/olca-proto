@@ -691,65 +691,77 @@ public final class Proto {
      */
     UNDEFINED_MODEL_TYPE(0),
     /**
-     * <code>PROJECT = 1;</code>
+     * <code>ACTOR = 1;</code>
      */
-    PROJECT(1),
+    ACTOR(1),
     /**
-     * <code>IMPACT_METHOD = 2;</code>
+     * <code>CATEGORY = 2;</code>
      */
-    IMPACT_METHOD(2),
+    CATEGORY(2),
     /**
-     * <code>IMPACT_CATEGORY = 3;</code>
+     * <code>CURRENCY = 3;</code>
      */
-    IMPACT_CATEGORY(3),
+    CURRENCY(3),
     /**
-     * <code>PRODUCT_SYSTEM = 4;</code>
+     * <code>DQ_SYSTEM = 4;</code>
      */
-    PRODUCT_SYSTEM(4),
+    DQ_SYSTEM(4),
     /**
-     * <code>PROCESS = 5;</code>
+     * <code>FLOW = 5;</code>
      */
-    PROCESS(5),
+    FLOW(5),
     /**
-     * <code>FLOW = 6;</code>
+     * <code>FLOW_PROPERTY = 6;</code>
      */
-    FLOW(6),
+    FLOW_PROPERTY(6),
     /**
-     * <code>FLOW_PROPERTY = 7;</code>
+     * <code>IMPACT_CATEGORY = 7;</code>
      */
-    FLOW_PROPERTY(7),
+    IMPACT_CATEGORY(7),
     /**
-     * <code>UNIT_GROUP = 8;</code>
+     * <code>IMPACT_METHOD = 8;</code>
      */
-    UNIT_GROUP(8),
+    IMPACT_METHOD(8),
     /**
-     * <code>UNIT = 9;</code>
+     * <code>LOCATION = 9;</code>
      */
-    UNIT(9),
+    LOCATION(9),
     /**
-     * <code>ACTOR = 10;</code>
+     * <code>NW_SET = 10;</code>
      */
-    ACTOR(10),
+    NW_SET(10),
     /**
-     * <code>SOURCE = 11;</code>
+     * <code>PARAMETER = 11;</code>
      */
-    SOURCE(11),
+    PARAMETER(11),
     /**
-     * <code>CATEGORY = 12;</code>
+     * <code>PROCESS = 12;</code>
      */
-    CATEGORY(12),
+    PROCESS(12),
     /**
-     * <code>LOCATION = 13;</code>
+     * <code>PRODUCT_SYSTEM = 13;</code>
      */
-    LOCATION(13),
+    PRODUCT_SYSTEM(13),
     /**
-     * <code>NW_SET = 14;</code>
+     * <code>PROJECT = 14;</code>
      */
-    NW_SET(14),
+    PROJECT(14),
     /**
      * <code>SOCIAL_INDICATOR = 15;</code>
      */
     SOCIAL_INDICATOR(15),
+    /**
+     * <code>SOURCE = 16;</code>
+     */
+    SOURCE(16),
+    /**
+     * <code>UNIT = 17;</code>
+     */
+    UNIT(17),
+    /**
+     * <code>UNIT_GROUP = 18;</code>
+     */
+    UNIT_GROUP(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -763,65 +775,77 @@ public final class Proto {
      */
     public static final int UNDEFINED_MODEL_TYPE_VALUE = 0;
     /**
-     * <code>PROJECT = 1;</code>
+     * <code>ACTOR = 1;</code>
      */
-    public static final int PROJECT_VALUE = 1;
+    public static final int ACTOR_VALUE = 1;
     /**
-     * <code>IMPACT_METHOD = 2;</code>
+     * <code>CATEGORY = 2;</code>
      */
-    public static final int IMPACT_METHOD_VALUE = 2;
+    public static final int CATEGORY_VALUE = 2;
     /**
-     * <code>IMPACT_CATEGORY = 3;</code>
+     * <code>CURRENCY = 3;</code>
      */
-    public static final int IMPACT_CATEGORY_VALUE = 3;
+    public static final int CURRENCY_VALUE = 3;
     /**
-     * <code>PRODUCT_SYSTEM = 4;</code>
+     * <code>DQ_SYSTEM = 4;</code>
      */
-    public static final int PRODUCT_SYSTEM_VALUE = 4;
+    public static final int DQ_SYSTEM_VALUE = 4;
     /**
-     * <code>PROCESS = 5;</code>
+     * <code>FLOW = 5;</code>
      */
-    public static final int PROCESS_VALUE = 5;
+    public static final int FLOW_VALUE = 5;
     /**
-     * <code>FLOW = 6;</code>
+     * <code>FLOW_PROPERTY = 6;</code>
      */
-    public static final int FLOW_VALUE = 6;
+    public static final int FLOW_PROPERTY_VALUE = 6;
     /**
-     * <code>FLOW_PROPERTY = 7;</code>
+     * <code>IMPACT_CATEGORY = 7;</code>
      */
-    public static final int FLOW_PROPERTY_VALUE = 7;
+    public static final int IMPACT_CATEGORY_VALUE = 7;
     /**
-     * <code>UNIT_GROUP = 8;</code>
+     * <code>IMPACT_METHOD = 8;</code>
      */
-    public static final int UNIT_GROUP_VALUE = 8;
+    public static final int IMPACT_METHOD_VALUE = 8;
     /**
-     * <code>UNIT = 9;</code>
+     * <code>LOCATION = 9;</code>
      */
-    public static final int UNIT_VALUE = 9;
+    public static final int LOCATION_VALUE = 9;
     /**
-     * <code>ACTOR = 10;</code>
+     * <code>NW_SET = 10;</code>
      */
-    public static final int ACTOR_VALUE = 10;
+    public static final int NW_SET_VALUE = 10;
     /**
-     * <code>SOURCE = 11;</code>
+     * <code>PARAMETER = 11;</code>
      */
-    public static final int SOURCE_VALUE = 11;
+    public static final int PARAMETER_VALUE = 11;
     /**
-     * <code>CATEGORY = 12;</code>
+     * <code>PROCESS = 12;</code>
      */
-    public static final int CATEGORY_VALUE = 12;
+    public static final int PROCESS_VALUE = 12;
     /**
-     * <code>LOCATION = 13;</code>
+     * <code>PRODUCT_SYSTEM = 13;</code>
      */
-    public static final int LOCATION_VALUE = 13;
+    public static final int PRODUCT_SYSTEM_VALUE = 13;
     /**
-     * <code>NW_SET = 14;</code>
+     * <code>PROJECT = 14;</code>
      */
-    public static final int NW_SET_VALUE = 14;
+    public static final int PROJECT_VALUE = 14;
     /**
      * <code>SOCIAL_INDICATOR = 15;</code>
      */
     public static final int SOCIAL_INDICATOR_VALUE = 15;
+    /**
+     * <code>SOURCE = 16;</code>
+     */
+    public static final int SOURCE_VALUE = 16;
+    /**
+     * <code>UNIT = 17;</code>
+     */
+    public static final int UNIT_VALUE = 17;
+    /**
+     * <code>UNIT_GROUP = 18;</code>
+     */
+    public static final int UNIT_GROUP_VALUE = 18;
 
 
     public final int getNumber() {
@@ -849,21 +873,24 @@ public final class Proto {
     public static ModelType forNumber(int value) {
       switch (value) {
         case 0: return UNDEFINED_MODEL_TYPE;
-        case 1: return PROJECT;
-        case 2: return IMPACT_METHOD;
-        case 3: return IMPACT_CATEGORY;
-        case 4: return PRODUCT_SYSTEM;
-        case 5: return PROCESS;
-        case 6: return FLOW;
-        case 7: return FLOW_PROPERTY;
-        case 8: return UNIT_GROUP;
-        case 9: return UNIT;
-        case 10: return ACTOR;
-        case 11: return SOURCE;
-        case 12: return CATEGORY;
-        case 13: return LOCATION;
-        case 14: return NW_SET;
+        case 1: return ACTOR;
+        case 2: return CATEGORY;
+        case 3: return CURRENCY;
+        case 4: return DQ_SYSTEM;
+        case 5: return FLOW;
+        case 6: return FLOW_PROPERTY;
+        case 7: return IMPACT_CATEGORY;
+        case 8: return IMPACT_METHOD;
+        case 9: return LOCATION;
+        case 10: return NW_SET;
+        case 11: return PARAMETER;
+        case 12: return PROCESS;
+        case 13: return PRODUCT_SYSTEM;
+        case 14: return PROJECT;
         case 15: return SOCIAL_INDICATOR;
+        case 16: return SOURCE;
+        case 17: return UNIT;
+        case 18: return UNIT_GROUP;
         default: return null;
       }
     }
@@ -75143,8 +75170,8 @@ public final class Proto {
 
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75153,8 +75180,8 @@ public final class Proto {
     boolean hasProvider();
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75163,8 +75190,8 @@ public final class Proto {
     org.openlca.proto.Proto.Ref getProvider();
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75232,7 +75259,7 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      * @return Whether the exchange field is set.
      */
     boolean hasExchange();
@@ -75243,10 +75270,10 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      * @return The exchange.
      */
-    org.openlca.proto.Proto.ExchangeRef getExchange();
+    org.openlca.proto.Proto.Exchange getExchange();
     /**
      * <pre>
      * The exchange of the linked process (this is useful if the linked process
@@ -75254,9 +75281,9 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      */
-    org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder();
+    org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder();
   }
   /**
    * <pre>
@@ -75354,11 +75381,11 @@ public final class Proto {
               break;
             }
             case 42: {
-              org.openlca.proto.Proto.ExchangeRef.Builder subBuilder = null;
+              org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
               if (exchange_ != null) {
                 subBuilder = exchange_.toBuilder();
               }
-              exchange_ = input.readMessage(org.openlca.proto.Proto.ExchangeRef.parser(), extensionRegistry);
+              exchange_ = input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(exchange_);
                 exchange_ = subBuilder.buildPartial();
@@ -75450,8 +75477,8 @@ public final class Proto {
     private org.openlca.proto.Proto.Ref provider_;
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75463,8 +75490,8 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75476,8 +75503,8 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The descriptor of the process or product system that provides a product or
-     * a waste treatment.
+     * The descriptor of the process that provides a product or a waste
+     * treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75564,7 +75591,7 @@ public final class Proto {
     }
 
     public static final int EXCHANGE_FIELD_NUMBER = 5;
-    private org.openlca.proto.Proto.ExchangeRef exchange_;
+    private org.openlca.proto.Proto.Exchange exchange_;
     /**
      * <pre>
      * The exchange of the linked process (this is useful if the linked process
@@ -75572,7 +75599,7 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      * @return Whether the exchange field is set.
      */
     @java.lang.Override
@@ -75586,12 +75613,12 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      * @return The exchange.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.ExchangeRef getExchange() {
-      return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
+    public org.openlca.proto.Proto.Exchange getExchange() {
+      return exchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
     }
     /**
      * <pre>
@@ -75600,10 +75627,10 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.ExchangeRef exchange = 5;</code>
+     * <code>.protolca.Exchange exchange = 5;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
+    public org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder() {
       return getExchange();
     }
 
@@ -76139,8 +76166,8 @@ public final class Proto {
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> providerBuilder_;
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76151,8 +76178,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76167,8 +76194,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76188,8 +76215,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76207,8 +76234,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76230,8 +76257,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76249,8 +76276,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76262,8 +76289,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76278,8 +76305,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process or product system that provides a product or
-       * a waste treatment.
+       * The descriptor of the process that provides a product or a waste
+       * treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76608,9 +76635,9 @@ public final class Proto {
         return processBuilder_;
       }
 
-      private org.openlca.proto.Proto.ExchangeRef exchange_;
+      private org.openlca.proto.Proto.Exchange exchange_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> exchangeBuilder_;
+          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> exchangeBuilder_;
       /**
        * <pre>
        * The exchange of the linked process (this is useful if the linked process
@@ -76618,7 +76645,7 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        * @return Whether the exchange field is set.
        */
       public boolean hasExchange() {
@@ -76631,12 +76658,12 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        * @return The exchange.
        */
-      public org.openlca.proto.Proto.ExchangeRef getExchange() {
+      public org.openlca.proto.Proto.Exchange getExchange() {
         if (exchangeBuilder_ == null) {
-          return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
+          return exchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
         } else {
           return exchangeBuilder_.getMessage();
         }
@@ -76648,9 +76675,9 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
-      public Builder setExchange(org.openlca.proto.Proto.ExchangeRef value) {
+      public Builder setExchange(org.openlca.proto.Proto.Exchange value) {
         if (exchangeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -76670,10 +76697,10 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
       public Builder setExchange(
-          org.openlca.proto.Proto.ExchangeRef.Builder builderForValue) {
+          org.openlca.proto.Proto.Exchange.Builder builderForValue) {
         if (exchangeBuilder_ == null) {
           exchange_ = builderForValue.build();
           onChanged();
@@ -76690,13 +76717,13 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
-      public Builder mergeExchange(org.openlca.proto.Proto.ExchangeRef value) {
+      public Builder mergeExchange(org.openlca.proto.Proto.Exchange value) {
         if (exchangeBuilder_ == null) {
           if (exchange_ != null) {
             exchange_ =
-              org.openlca.proto.Proto.ExchangeRef.newBuilder(exchange_).mergeFrom(value).buildPartial();
+              org.openlca.proto.Proto.Exchange.newBuilder(exchange_).mergeFrom(value).buildPartial();
           } else {
             exchange_ = value;
           }
@@ -76714,7 +76741,7 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
       public Builder clearExchange() {
         if (exchangeBuilder_ == null) {
@@ -76734,9 +76761,9 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
-      public org.openlca.proto.Proto.ExchangeRef.Builder getExchangeBuilder() {
+      public org.openlca.proto.Proto.Exchange.Builder getExchangeBuilder() {
         
         onChanged();
         return getExchangeFieldBuilder().getBuilder();
@@ -76748,14 +76775,14 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
-      public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
+      public org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder() {
         if (exchangeBuilder_ != null) {
           return exchangeBuilder_.getMessageOrBuilder();
         } else {
           return exchange_ == null ?
-              org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
+              org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
         }
       }
       /**
@@ -76765,14 +76792,14 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.ExchangeRef exchange = 5;</code>
+       * <code>.protolca.Exchange exchange = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> 
+          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
           getExchangeFieldBuilder() {
         if (exchangeBuilder_ == null) {
           exchangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder>(
+              org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder>(
                   getExchange(),
                   getParentForChildren(),
                   isClean());
@@ -105994,120 +106021,121 @@ public final class Proto {
       "r\030\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_appli" +
       "cation\030\026 \001(\t\022\033\n\023project_description\030\027 \001(" +
       "\t\022\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022\035\n" +
-      "\025geography_description\030\031 \001(\t\"\251\001\n\013Process" +
+      "\025geography_description\030\031 \001(\t\"\246\001\n\013Process" +
       "Link\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 " +
       "\001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.proto" +
       "lca.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022" +
-      "\'\n\010exchange\030\005 \001(\0132\025.protolca.ExchangeRef" +
-      "\"\321\001\n\nProcessRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010locatio" +
-      "n\030\010 \001(\t\022+\n\014process_type\030\t \001(\0162\025.protolca" +
-      ".ProcessType\"\336\003\n\rProductSystem\022\023\n\004type\030\001" +
-      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
-      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
-      "\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132" +
-      "\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030" +
-      "\t \001(\t\022\'\n\tprocesses\030\n \003(\0132\024.protolca.Proc" +
-      "essRef\022/\n\021reference_process\030\013 \001(\0132\024.prot" +
-      "olca.ProcessRef\022.\n\022reference_exchange\030\014 " +
-      "\001(\0132\022.protolca.Exchange\022\025\n\rtarget_amount" +
-      "\030\r \001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.protolca.R" +
-      "ef\022+\n\024target_flow_property\030\017 \001(\0132\r.proto" +
-      "lca.Ref\022,\n\rprocess_links\030\020 \003(\0132\025.protolc" +
-      "a.ProcessLink\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR" +
-      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
-      "ast_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pro" +
-      "tolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t" +
-      "\022$\n\rimpact_method\030\n \001(\0132\r.protolca.Ref\022\037" +
-      "\n\006nw_set\030\013 \001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
-      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
-      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcatego" +
-      "ry_path\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 " +
-      "\001(\tR\005@type\022*\n\014flow_results\030\002 \003(\0132\024.proto" +
-      "lca.FlowResult\022.\n\016impact_results\030\003 \003(\0132\026" +
-      ".protolca.ImpactResult\"\342\001\n\014SocialAspect\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022\026\n\016activity_value\030\002" +
-      " \001(\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\022" +
-      "\n\nraw_amount\030\005 \001(\t\022\'\n\nrisk_level\030\006 \001(\0162\023" +
-      ".protolca.RiskLevel\022\'\n\020social_indicator\030" +
-      "\007 \001(\0132\r.protolca.Ref\022\035\n\006source\030\010 \001(\0132\r.p" +
-      "rotolca.Ref\"\343\002\n\017SocialIndicator\022\023\n\004type\030" +
-      "\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 " +
-      "\001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(" +
-      "\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\013" +
-      "2\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library" +
-      "\030\t \001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021act" +
-      "ivity_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ra" +
-      "ctivity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023uni" +
-      "t_of_measurement\030\r \001(\t\022\031\n\021evaluation_sch" +
-      "eme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@typ" +
-      "e\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013desc" +
-      "ription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_c" +
-      "hange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca" +
-      ".Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003u" +
-      "rl\030\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year" +
-      "\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncert" +
-      "ainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distributi" +
-      "on_type\030\002 \001(\0162\031.protolca.UncertaintyType" +
-      "\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\t" +
-      "geom_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001" +
-      "(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010" +
-      " \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007" +
-      "geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014" +
-      "\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007ma" +
-      "ximum\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n" +
-      "\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003" +
-      "@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017" +
-      "\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021" +
-      "conversion_factor\030\007 \001(\001\022\026\n\016reference_uni" +
-      "t\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
-      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
-      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
-      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
-      "\007library\030\t \001(\t\022,\n\025default_flow_property\030" +
-      "\n \001(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.pr" +
-      "otolca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFI" +
-      "NED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCA" +
-      "TION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSA" +
-      "L_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION" +
-      "\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationTyp" +
-      "e\022\036\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIM" +
-      "PLE_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYS" +
-      "IS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALI" +
-      "ZED_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULAT" +
-      "ION\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_F" +
-      "LOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY" +
-      "\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n" +
-      "\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLO" +
-      "W\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\207\002" +
-      "\n\tModelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\013\n" +
-      "\007PROJECT\020\001\022\021\n\rIMPACT_METHOD\020\002\022\023\n\017IMPACT_" +
-      "CATEGORY\020\003\022\022\n\016PRODUCT_SYSTEM\020\004\022\013\n\007PROCES" +
-      "S\020\005\022\010\n\004FLOW\020\006\022\021\n\rFLOW_PROPERTY\020\007\022\016\n\nUNIT" +
-      "_GROUP\020\010\022\010\n\004UNIT\020\t\022\t\n\005ACTOR\020\n\022\n\n\006SOURCE\020" +
-      "\013\022\014\n\010CATEGORY\020\014\022\014\n\010LOCATION\020\r\022\n\n\006NW_SET\020" +
-      "\016\022\024\n\020SOCIAL_INDICATOR\020\017*f\n\016ParameterScop" +
-      "e\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROC" +
-      "ESS_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_" +
-      "SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROC" +
-      "ESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCE" +
-      "SS\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDEFINED_RISK_LEV" +
-      "EL\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024\n\020HIGH_OPPORTU" +
-      "NITY\020\002\022\026\n\022MEDIUM_OPPORTUNITY\020\003\022\023\n\017LOW_OP" +
-      "PORTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021\n\rVERY_LOW_RIS" +
-      "K\020\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIUM_RISK\020\010\022\r\n\tHI" +
-      "GH_RISK\020\t\022\022\n\016VERY_HIGH_RISK\020\n\022\013\n\007NO_DATA" +
-      "\020\013\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n\017UncertaintyTy" +
-      "pe\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LO" +
-      "G_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRI" +
-      "BUTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024U" +
-      "NIFORM_DISTRIBUTION\020\004B&\n\021org.openlca.pro" +
-      "toB\005ProtoZ\n.;protolcab\006proto3"
+      "$\n\010exchange\030\005 \001(\0132\022.protolca.Exchange\"\321\001" +
+      "\n\nProcessRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
+      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
+      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
+      "\001(\t\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010location\030\010" +
+      " \001(\t\022+\n\014process_type\030\t \001(\0162\025.protolca.Pr" +
+      "ocessType\"\336\003\n\rProductSystem\022\023\n\004type\030\001 \001(" +
+      "\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022" +
+      "\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n" +
+      "\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.p" +
+      "rotolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001" +
+      "(\t\022\'\n\tprocesses\030\n \003(\0132\024.protolca.Process" +
+      "Ref\022/\n\021reference_process\030\013 \001(\0132\024.protolc" +
+      "a.ProcessRef\022.\n\022reference_exchange\030\014 \001(\013" +
+      "2\022.protolca.Exchange\022\025\n\rtarget_amount\030\r " +
+      "\001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.protolca.Ref\022" +
+      "+\n\024target_flow_property\030\017 \001(\0132\r.protolca" +
+      ".Ref\022,\n\rprocess_links\030\020 \003(\0132\025.protolca.P" +
+      "rocessLink\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@t" +
+      "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
+      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
+      "_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protol" +
+      "ca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n" +
+      "\rimpact_method\030\n \001(\0132\r.protolca.Ref\022\037\n\006n" +
+      "w_set\030\013 \001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_" +
+      "path\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\t" +
+      "R\005@type\022*\n\014flow_results\030\002 \003(\0132\024.protolca" +
+      ".FlowResult\022.\n\016impact_results\030\003 \003(\0132\026.pr" +
+      "otolca.ImpactResult\"\342\001\n\014SocialAspect\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\026\n\016activity_value\030\002 \001(" +
+      "\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\022\n\nr" +
+      "aw_amount\030\005 \001(\t\022\'\n\nrisk_level\030\006 \001(\0162\023.pr" +
+      "otolca.RiskLevel\022\'\n\020social_indicator\030\007 \001" +
+      "(\0132\r.protolca.Ref\022\035\n\006source\030\010 \001(\0132\r.prot" +
+      "olca.Ref\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001" +
+      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
+      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
+      "\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r." +
+      "protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t " +
+      "\001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021activi" +
+      "ty_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\racti" +
+      "vity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_o" +
+      "f_measurement\030\r \001(\t\022\031\n\021evaluation_scheme" +
+      "\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017" +
+      "\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descrip" +
+      "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chan" +
+      "ge\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Re" +
+      "f\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030" +
+      "\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 " +
+      "\001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertain" +
+      "ty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_" +
+      "type\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n" +
+      "\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeo" +
+      "m_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022" +
+      "\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(" +
+      "\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geo" +
+      "m_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004m" +
+      "ode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maxim" +
+      "um\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Un" +
+      "it\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
+      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
+      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021con" +
+      "version_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010" +
+      " \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
+      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
+      "brary\030\t \001(\t\022,\n\025default_flow_property\030\n \001" +
+      "(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.proto" +
+      "lca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED" +
+      "_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATIO" +
+      "N\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_A" +
+      "LLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022" +
+      "\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036" +
+      "\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE" +
+      "_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020" +
+      "\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED" +
+      "_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION" +
+      "\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW" +
+      "_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022" +
+      "\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UN" +
+      "DEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001" +
+      "\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\263\002\n\tM" +
+      "odelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\t\n\005AC" +
+      "TOR\020\001\022\014\n\010CATEGORY\020\002\022\014\n\010CURRENCY\020\003\022\r\n\tDQ_" +
+      "SYSTEM\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_PROPERTY\020\006\022\023\n" +
+      "\017IMPACT_CATEGORY\020\007\022\021\n\rIMPACT_METHOD\020\010\022\014\n" +
+      "\010LOCATION\020\t\022\n\n\006NW_SET\020\n\022\r\n\tPARAMETER\020\013\022\013" +
+      "\n\007PROCESS\020\014\022\022\n\016PRODUCT_SYSTEM\020\r\022\013\n\007PROJE" +
+      "CT\020\016\022\024\n\020SOCIAL_INDICATOR\020\017\022\n\n\006SOURCE\020\020\022\010" +
+      "\n\004UNIT\020\021\022\016\n\nUNIT_GROUP\020\022*f\n\016ParameterSco" +
+      "pe\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPRO" +
+      "CESS_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL" +
+      "_SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PRO" +
+      "CESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROC" +
+      "ESS\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDEFINED_RISK_LE" +
+      "VEL\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024\n\020HIGH_OPPORT" +
+      "UNITY\020\002\022\026\n\022MEDIUM_OPPORTUNITY\020\003\022\023\n\017LOW_O" +
+      "PPORTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021\n\rVERY_LOW_RI" +
+      "SK\020\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIUM_RISK\020\010\022\r\n\tH" +
+      "IGH_RISK\020\t\022\022\n\016VERY_HIGH_RISK\020\n\022\013\n\007NO_DAT" +
+      "A\020\013\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n\017UncertaintyT" +
+      "ype\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027L" +
+      "OG_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTR" +
+      "IBUTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024" +
+      "UNIFORM_DISTRIBUTION\020\004B&\n\021org.openlca.pr" +
+      "otoB\005ProtoZ\n.;protolcab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

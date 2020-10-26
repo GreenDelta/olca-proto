@@ -1025,35 +1025,41 @@ enum ModelType {
   // and means that no values was set.
   UNDEFINED_MODEL_TYPE = 0;
 
-  PROJECT = 1;
+  ACTOR = 1;
 
-  IMPACT_METHOD = 2;
+  CATEGORY = 2;
 
-  IMPACT_CATEGORY = 3;
+  CURRENCY = 3;
 
-  PRODUCT_SYSTEM = 4;
+  DQ_SYSTEM = 4;
 
-  PROCESS = 5;
+  FLOW = 5;
 
-  FLOW = 6;
+  FLOW_PROPERTY = 6;
 
-  FLOW_PROPERTY = 7;
+  IMPACT_CATEGORY = 7;
 
-  UNIT_GROUP = 8;
+  IMPACT_METHOD = 8;
 
-  UNIT = 9;
+  LOCATION = 9;
 
-  ACTOR = 10;
+  NW_SET = 10;
 
-  SOURCE = 11;
+  PARAMETER = 11;
 
-  CATEGORY = 12;
+  PROCESS = 12;
 
-  LOCATION = 13;
+  PRODUCT_SYSTEM = 13;
 
-  NW_SET = 14;
+  PROJECT = 14;
 
   SOCIAL_INDICATOR = 15;
+
+  SOURCE = 16;
+
+  UNIT = 17;
+
+  UNIT_GROUP = 18;
 
 }
 
@@ -1366,8 +1372,8 @@ message ProcessLink {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  // The descriptor of the process or product system that provides a product or
-  // a waste treatment.
+  // The descriptor of the process that provides a product or a waste
+  // treatment.
   Ref provider = 2;
 
   // The descriptor of the flow that is exchanged between the two processes.
@@ -1379,7 +1385,7 @@ message ProcessLink {
   // The exchange of the linked process (this is useful if the linked process
   // has multiple exchanges with the same flow that are linked to different
   // provides, e.g. in an electricity mix).
-  ExchangeRef exchange = 5;
+  Exchange exchange = 5;
 
 }
 
