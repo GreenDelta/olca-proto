@@ -6,6 +6,10 @@ option java_package = "org.openlca.proto.services";
 import public "olca.proto";
 
 service DataService {
+
+  rpc actor(protolca.Ref) returns (protolca.Actor);
+  rpc put_actor(protolca.Actor) returns (protolca.Ref);
+
   rpc flow(protolca.Ref) returns (protolca.Flow);
   rpc put_flow(protolca.Flow) returns (protolca.Ref);
 }
