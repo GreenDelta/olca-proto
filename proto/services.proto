@@ -5,8 +5,12 @@ option java_package = "org.openlca.proto.services";
 
 import public "olca.proto";
 
+message Empty {
+}
+
 service DataService {
 
+  rpc actors(Empty) returns (stream protolca.Actor);
   rpc actor(protolca.Ref) returns (protolca.Actor);
   rpc put_actor(protolca.Actor) returns (protolca.Ref);
 

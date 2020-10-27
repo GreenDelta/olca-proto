@@ -3,6 +3,7 @@ package org.openlca.proto.server;
 import javax.persistence.EntityNotFoundException;
 
 import io.grpc.stub.StreamObserver;
+import org.openlca.core.database.ActorDao;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.model.Actor;
 import org.openlca.core.model.Flow;
@@ -10,6 +11,7 @@ import org.openlca.proto.Proto;
 import org.openlca.proto.output.ActorWriter;
 import org.openlca.proto.output.WriterConfig;
 import org.openlca.proto.services.DataServiceGrpc;
+import org.openlca.proto.services.Services;
 import org.openlca.util.Strings;
 
 class DataService extends DataServiceGrpc.DataServiceImplBase {
@@ -18,6 +20,18 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   DataService(IDatabase db) {
     this.db = db;
+  }
+
+  @Override
+  public void actors(Services.Empty req, StreamObserver<Proto.Actor> resp) {
+    var writer = new ActorWriter(WriterConfig.of(db));
+    var dao = new ActorDao(db);
+    dao.getDescriptors()
+      .stream()
+      .map(d -> dao.getForId(d.id))
+      .map(writer::write)
+      .forEach(resp::onNext);
+    resp.onCompleted();
   }
 
   @Override

@@ -27,6 +27,37 @@ public final class DataServiceGrpc {
   public static final String SERVICE_NAME = "protolca.services.DataService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
+      org.openlca.proto.Proto.Actor> getActorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "actors",
+      requestType = org.openlca.proto.services.Services.Empty.class,
+      responseType = org.openlca.proto.Proto.Actor.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
+      org.openlca.proto.Proto.Actor> getActorsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Actor> getActorsMethod;
+    if ((getActorsMethod = DataServiceGrpc.getActorsMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getActorsMethod = DataServiceGrpc.getActorsMethod) == null) {
+          DataServiceGrpc.getActorsMethod = getActorsMethod =
+              io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Actor>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "actors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.services.Services.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.Proto.Actor.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("actors"))
+              .build();
+        }
+      }
+    }
+    return getActorsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
       org.openlca.proto.Proto.Actor> getActorMethod;
 
@@ -201,6 +232,13 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void actors(org.openlca.proto.services.Services.Empty request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
+      asyncUnimplementedUnaryCall(getActorsMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void actor(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
       asyncUnimplementedUnaryCall(getActorMethod(), responseObserver);
@@ -229,6 +267,13 @@ public final class DataServiceGrpc {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getActorsMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                org.openlca.proto.services.Services.Empty,
+                org.openlca.proto.Proto.Actor>(
+                  this, METHODID_ACTORS)))
           .addMethod(
             getActorMethod(),
             asyncUnaryCall(
@@ -277,6 +322,14 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void actors(org.openlca.proto.services.Services.Empty request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getActorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void actor(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
       asyncUnaryCall(
@@ -320,6 +373,14 @@ public final class DataServiceGrpc {
     protected DataServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public java.util.Iterator<org.openlca.proto.Proto.Actor> actors(
+        org.openlca.proto.services.Services.Empty request) {
+      return blockingServerStreamingCall(
+          getChannel(), getActorsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -398,10 +459,11 @@ public final class DataServiceGrpc {
     }
   }
 
-  private static final int METHODID_ACTOR = 0;
-  private static final int METHODID_PUT_ACTOR = 1;
-  private static final int METHODID_FLOW = 2;
-  private static final int METHODID_PUT_FLOW = 3;
+  private static final int METHODID_ACTORS = 0;
+  private static final int METHODID_ACTOR = 1;
+  private static final int METHODID_PUT_ACTOR = 2;
+  private static final int METHODID_FLOW = 3;
+  private static final int METHODID_PUT_FLOW = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -420,6 +482,10 @@ public final class DataServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_ACTORS:
+          serviceImpl.actors((org.openlca.proto.services.Services.Empty) request,
+              (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor>) responseObserver);
+          break;
         case METHODID_ACTOR:
           serviceImpl.actor((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor>) responseObserver);
@@ -497,6 +563,7 @@ public final class DataServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new DataServiceFileDescriptorSupplier())
+              .addMethod(getActorsMethod())
               .addMethod(getActorMethod())
               .addMethod(getPutActorMethod())
               .addMethod(getFlowMethod())

@@ -1,17 +1,19 @@
 package org.openlca.proto.server;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import io.grpc.ServerBuilder;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.database.derby.DerbyDatabase;
+import org.slf4j.LoggerFactory;
 
 public class Server {
 
+  private final int port;
   private final io.grpc.Server server;
 
   public Server(IDatabase db, int port) {
+    this.port = port;
     this.server = ServerBuilder.forPort(port)
       .addService(new DataService(db))
       .build();
@@ -19,6 +21,8 @@ public class Server {
 
   public void start() {
     try {
+      var log = LoggerFactory.getLogger(getClass());
+      log.info("start server: localhost:{}", port);
       server.start();
       Runtime.getRuntime().addShutdownHook(new Thread(() -> {
         System.out.println("shut down server");
@@ -29,6 +33,7 @@ public class Server {
         }
         System.out.println("server shut down");
       }));
+      log.info("server waiting for connections");
       server.awaitTermination();
     } catch (Exception e) {
       throw new RuntimeException("failed to start server", e);
@@ -46,8 +51,8 @@ public class Server {
   }
 
   public static void main(String[] args) {
-    var dbDir = "C:/Users/Win10/openLCA-data-1.4/databases/ei2";
-    var db = new DerbyDatabase(new File(dbDir));
+
+    var db = DerbyDatabase.fromDataDir("ei22");
     Runtime.getRuntime().addShutdownHook(new Thread(() -> {
       try {
         System.out.println("close database...");
