@@ -16,7 +16,7 @@ service DataService {
   rpc put_actor(protolca.Actor) returns (protolca.Ref);
 
   // methods for Category
-  rpc categorys(Empty) returns (stream protolca.Category);
+  rpc categories(Empty) returns (stream protolca.Category);
   rpc category(protolca.Ref) returns (protolca.Category);
   rpc put_category(protolca.Category) returns (protolca.Ref);
 

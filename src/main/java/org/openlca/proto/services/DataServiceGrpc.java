@@ -121,34 +121,34 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Category> getCategorysMethod;
+      org.openlca.proto.Proto.Category> getCategoriesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "categorys",
+      fullMethodName = SERVICE_NAME + '/' + "categories",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Category.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Category> getCategorysMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category> getCategorysMethod;
-    if ((getCategorysMethod = DataServiceGrpc.getCategorysMethod) == null) {
+      org.openlca.proto.Proto.Category> getCategoriesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category> getCategoriesMethod;
+    if ((getCategoriesMethod = DataServiceGrpc.getCategoriesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCategorysMethod = DataServiceGrpc.getCategorysMethod) == null) {
-          DataServiceGrpc.getCategorysMethod = getCategorysMethod =
+        if ((getCategoriesMethod = DataServiceGrpc.getCategoriesMethod) == null) {
+          DataServiceGrpc.getCategoriesMethod = getCategoriesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "categorys"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "categories"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Category.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("categorys"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("categories"))
               .build();
         }
       }
     }
-    return getCategorysMethod;
+    return getCategoriesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
@@ -1592,9 +1592,9 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public void categorys(org.openlca.proto.services.Services.Empty request,
+    public void categories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category> responseObserver) {
-      asyncUnimplementedUnaryCall(getCategorysMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getCategoriesMethod(), responseObserver);
     }
 
     /**
@@ -1971,12 +1971,12 @@ public final class DataServiceGrpc {
                 org.openlca.proto.Proto.Ref>(
                   this, METHODID_PUT_ACTOR)))
           .addMethod(
-            getCategorysMethod(),
+            getCategoriesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Category>(
-                  this, METHODID_CATEGORYS)))
+                  this, METHODID_CATEGORIES)))
           .addMethod(
             getCategoryMethod(),
             asyncUnaryCall(
@@ -2335,10 +2335,10 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public void categorys(org.openlca.proto.services.Services.Empty request,
+    public void categories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getCategorysMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCategoriesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2780,10 +2780,10 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Category> categorys(
+    public java.util.Iterator<org.openlca.proto.Proto.Category> categories(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getCategorysMethod(), getCallOptions(), request);
+          getChannel(), getCategoriesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3425,7 +3425,7 @@ public final class DataServiceGrpc {
   private static final int METHODID_ACTORS = 0;
   private static final int METHODID_ACTOR = 1;
   private static final int METHODID_PUT_ACTOR = 2;
-  private static final int METHODID_CATEGORYS = 3;
+  private static final int METHODID_CATEGORIES = 3;
   private static final int METHODID_CATEGORY = 4;
   private static final int METHODID_PUT_CATEGORY = 5;
   private static final int METHODID_CURRENCIES = 6;
@@ -3500,8 +3500,8 @@ public final class DataServiceGrpc {
           serviceImpl.putActor((org.openlca.proto.Proto.Actor) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Ref>) responseObserver);
           break;
-        case METHODID_CATEGORYS:
-          serviceImpl.categorys((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_CATEGORIES:
+          serviceImpl.categories((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category>) responseObserver);
           break;
         case METHODID_CATEGORY:
@@ -3744,7 +3744,7 @@ public final class DataServiceGrpc {
               .addMethod(getActorsMethod())
               .addMethod(getActorMethod())
               .addMethod(getPutActorMethod())
-              .addMethod(getCategorysMethod())
+              .addMethod(getCategoriesMethod())
               .addMethod(getCategoryMethod())
               .addMethod(getPutCategoryMethod())
               .addMethod(getCurrenciesMethod())
