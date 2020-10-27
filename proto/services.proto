@@ -10,10 +10,83 @@ message Empty {
 
 service DataService {
 
+  // methods for Actor
   rpc actors(Empty) returns (stream protolca.Actor);
   rpc actor(protolca.Ref) returns (protolca.Actor);
   rpc put_actor(protolca.Actor) returns (protolca.Ref);
 
+  // methods for Category
+  rpc categorys(Empty) returns (stream protolca.Category);
+  rpc category(protolca.Ref) returns (protolca.Category);
+  rpc put_category(protolca.Category) returns (protolca.Ref);
+
+  // methods for Currency
+  rpc currencies(Empty) returns (stream protolca.Currency);
+  rpc currency(protolca.Ref) returns (protolca.Currency);
+  rpc put_currency(protolca.Currency) returns (protolca.Ref);
+
+  // methods for DQSystem
+  rpc dq_systems(Empty) returns (stream protolca.DqSystem);
+  rpc dq_system(protolca.Ref) returns (protolca.DqSystem);
+  rpc put_dq_system(protolca.DqSystem) returns (protolca.Ref);
+
+  // methods for Flow
+  rpc flows(Empty) returns (stream protolca.Flow);
   rpc flow(protolca.Ref) returns (protolca.Flow);
   rpc put_flow(protolca.Flow) returns (protolca.Ref);
+
+  // methods for FlowProperty
+  rpc flow_properties(Empty) returns (stream protolca.FlowProperty);
+  rpc flow_property(protolca.Ref) returns (protolca.FlowProperty);
+  rpc put_flow_property(protolca.FlowProperty) returns (protolca.Ref);
+
+  // methods for ImpactCategory
+  rpc impact_categories(Empty) returns (stream protolca.ImpactCategory);
+  rpc impact_category(protolca.Ref) returns (protolca.ImpactCategory);
+  rpc put_impact_category(protolca.ImpactCategory) returns (protolca.Ref);
+
+  // methods for ImpactMethod
+  rpc impact_methods(Empty) returns (stream protolca.ImpactMethod);
+  rpc impact_method(protolca.Ref) returns (protolca.ImpactMethod);
+  rpc put_impact_method(protolca.ImpactMethod) returns (protolca.Ref);
+
+  // methods for Location
+  rpc locations(Empty) returns (stream protolca.Location);
+  rpc location(protolca.Ref) returns (protolca.Location);
+  rpc put_location(protolca.Location) returns (protolca.Ref);
+
+  // methods for Parameter
+  rpc parameters(Empty) returns (stream protolca.Parameter);
+  rpc parameter(protolca.Ref) returns (protolca.Parameter);
+  rpc put_parameter(protolca.Parameter) returns (protolca.Ref);
+
+  // methods for Process
+  rpc processes(Empty) returns (stream protolca.Process);
+  rpc process(protolca.Ref) returns (protolca.Process);
+  rpc put_process(protolca.Process) returns (protolca.Ref);
+
+  // methods for ProductSystem
+  rpc product_systems(Empty) returns (stream protolca.ProductSystem);
+  rpc product_system(protolca.Ref) returns (protolca.ProductSystem);
+  rpc put_product_system(protolca.ProductSystem) returns (protolca.Ref);
+
+  // methods for Project
+  rpc projects(Empty) returns (stream protolca.Project);
+  rpc project(protolca.Ref) returns (protolca.Project);
+  rpc put_project(protolca.Project) returns (protolca.Ref);
+
+  // methods for SocialIndicator
+  rpc social_indicators(Empty) returns (stream protolca.SocialIndicator);
+  rpc social_indicator(protolca.Ref) returns (protolca.SocialIndicator);
+  rpc put_social_indicator(protolca.SocialIndicator) returns (protolca.Ref);
+
+  // methods for Source
+  rpc sources(Empty) returns (stream protolca.Source);
+  rpc source(protolca.Ref) returns (protolca.Source);
+  rpc put_source(protolca.Source) returns (protolca.Ref);
+
+  // methods for UnitGroup
+  rpc unit_groups(Empty) returns (stream protolca.UnitGroup);
+  rpc unit_group(protolca.Ref) returns (protolca.UnitGroup);
+  rpc put_unit_group(protolca.UnitGroup) returns (protolca.Ref);
 }
