@@ -1,7 +1,5 @@
 package org.openlca.proto.server;
 
-import javax.persistence.EntityNotFoundException;
-
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.ActorDao;
 import org.openlca.core.database.CategoryDao;
@@ -65,15 +63,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void actor(Proto.Ref req, StreamObserver<Proto.Actor> resp) {
+  public void actor(Proto.Ref req, StreamObserver<Services.ActorStatus> resp) {
+    var status = Services.ActorStatus.newBuilder();
     var actor = db.get(Actor.class, req.getId());
     if (actor == null) {
-      resp.onError(new EntityNotFoundException());
+      status.setError("No Actor with id='" + req.getId() + "' exists");
     } else {
       var proto = new ActorWriter(WriterConfig.of(db))
         .write(actor);
-      resp.onNext(proto);
+      status.setActor(proto);
     }
+    resp.onNext(status.build());
     resp.onCompleted();
   }
 
@@ -126,18 +126,38 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void flow(Proto.Ref req, StreamObserver<Proto.Flow> resp) {
-    var flow = db.get(Flow.class, req.getId());
-    if (flow == null) {
-      resp.onError(new EntityNotFoundException());
+  public void flow(Proto.Ref req, StreamObserver<Services.FlowStatus> resp) {
+    var status = Services.FlowStatus.newBuilder();
+    Flow flow = null;
+
+    var id = req.getId();
+    if (Strings.notEmpty(id)) {
+      // try to find it by ID
+      flow = db.get(Flow.class, id);
+      if (flow == null) {
+        status.setError("A Flow with id='" + id + "' does not exist");
+      }
+
     } else {
-      var proto = Proto.Flow.newBuilder()
-        .setId(flow.refId)
-        .setName(Strings.orEmpty(flow.name))
-        .setDescription(Strings.orEmpty(flow.description))
-        .build();
-      resp.onNext(proto);
+      // try to find it by name
+      var name = req.getName();
+      if (Strings.nullOrEmpty(name)) {
+        status.setError("An id or name is required");
+      } else {
+        flow = db.forName(Flow.class, name);
+        if (flow == null) {
+          status.setError("A Flow with name='" + name + "' does not exist");
+        }
+      }
     }
+
+    if (flow != null) {
+      var proto = new FlowWriter(WriterConfig.of(db))
+        .write(flow);
+      status.setFlow(proto);
+    }
+
+    resp.onNext(status.build());
     resp.onCompleted();
   }
 
