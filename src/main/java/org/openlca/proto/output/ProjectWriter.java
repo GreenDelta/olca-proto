@@ -38,7 +38,7 @@ public class ProjectWriter {
         .forEach(proto::addTags);
     }
     if (project.category != null) {
-      proto.setCategory(Out.toRef(project.category, config));
+      proto.setCategory(Refs.toRef(project.category, config));
     }
 
     // model specific fields

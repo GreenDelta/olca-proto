@@ -38,7 +38,7 @@ public class ImpactMethodWriter {
         .forEach(proto::addTags);
     }
     if (method.category != null) {
-      proto.setCategory(Out.toRef(method.category, config));
+      proto.setCategory(Refs.toRef(method.category, config));
     }
 
     // model specific fields

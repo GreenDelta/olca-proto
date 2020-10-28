@@ -38,7 +38,7 @@ public class ImpactCategoryWriter {
         .forEach(proto::addTags);
     }
     if (impact.category != null) {
-      proto.setCategory(Out.toRef(impact.category, config));
+      proto.setCategory(Refs.toRef(impact.category, config));
     }
 
     // model specific fields

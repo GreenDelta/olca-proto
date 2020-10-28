@@ -38,7 +38,7 @@ public class ActorWriter {
         .forEach(proto::addTags);
     }
     if (a.category != null) {
-      proto.setCategory(Out.toRef(a.category, config));
+      proto.setCategory(Refs.toRef(a.category, config));
     }
 
     // model specific fields

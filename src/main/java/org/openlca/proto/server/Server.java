@@ -52,7 +52,7 @@ public class Server {
 
   public static void main(String[] args) {
 
-    var db = DerbyDatabase.fromDataDir("ei2");
+    var db = DerbyDatabase.fromDataDir("proto");
     Runtime.getRuntime().addShutdownHook(new Thread(() -> {
       try {
         System.out.println("close database...");

@@ -38,7 +38,7 @@ public class UnitGroupWriter {
         .forEach(proto::addTags);
     }
     if (group.category != null) {
-      proto.setCategory(Out.toRef(group.category, config));
+      proto.setCategory(Refs.toRef(group.category, config));
     }
 
     // model specific fields

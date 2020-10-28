@@ -9,16 +9,15 @@ import org.openlca.proto.Proto;
 import org.openlca.util.Categories;
 import org.openlca.util.Strings;
 
-class Out {
+public final class Refs {
 
-  static Proto.Ref toRef(RootEntity e, WriterConfig config) {
+  private Refs() {
+  }
+
+  public static Proto.Ref toRef(RootEntity e) {
     var proto = Proto.Ref.newBuilder();
     if (e == null)
       return proto.build();
-    if (config != null && config.dependencies != null) {
-      config.dependencies.push(e);
-    }
-
     proto.setId(Strings.orEmpty(e.refId));
     proto.setName(Strings.orEmpty(e.name));
     proto.setDescription(Strings.orEmpty(e.description));
@@ -40,5 +39,15 @@ class Out {
       }
     }
     return proto.build();
+  }
+
+  static Proto.Ref toRef(RootEntity e, WriterConfig config) {
+    var proto = toRef(e);
+    if (e == null)
+      return proto;
+    if (config != null && config.dependencies != null) {
+      config.dependencies.push(e);
+    }
+    return proto;
   }
 }

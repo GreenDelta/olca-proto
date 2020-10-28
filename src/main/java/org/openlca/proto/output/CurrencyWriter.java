@@ -38,7 +38,7 @@ public class CurrencyWriter {
         .forEach(proto::addTags);
     }
     if (c.category != null) {
-      proto.setCategory(Out.toRef(c.category, config));
+      proto.setCategory(Refs.toRef(c.category, config));
     }
 
     // model specific fields
@@ -46,7 +46,7 @@ public class CurrencyWriter {
     proto.setConversionFactor(c.conversionFactor);
     if (c.referenceCurrency != null) {
       proto.setReferenceCurrency(
-        Out.toRef(c.referenceCurrency, config));
+        Refs.toRef(c.referenceCurrency, config));
     }
 
     return proto.build();

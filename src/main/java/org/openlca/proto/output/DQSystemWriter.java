@@ -38,7 +38,7 @@ public class DQSystemWriter {
         .forEach(proto::addTags);
     }
     if (dqSystem.category != null) {
-      proto.setCategory(Out.toRef(dqSystem.category, config));
+      proto.setCategory(Refs.toRef(dqSystem.category, config));
     }
 
     // model specific fields

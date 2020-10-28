@@ -38,7 +38,7 @@ public class FlowWriter {
         .forEach(proto::addTags);
     }
     if (flow.category != null) {
-      proto.setCategory(Out.toRef(flow.category, config));
+      proto.setCategory(Refs.toRef(flow.category, config));
     }
 
     // model specific fields

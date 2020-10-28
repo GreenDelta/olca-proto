@@ -38,7 +38,7 @@ public class ProcessWriter {
         .forEach(proto::addTags);
     }
     if (process.category != null) {
-      proto.setCategory(Out.toRef(process.category, config));
+      proto.setCategory(Refs.toRef(process.category, config));
     }
 
     // model specific fields

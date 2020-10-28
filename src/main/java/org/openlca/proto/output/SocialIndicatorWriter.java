@@ -38,7 +38,7 @@ public class SocialIndicatorWriter {
         .forEach(proto::addTags);
     }
     if (indicator.category != null) {
-      proto.setCategory(Out.toRef(indicator.category, config));
+      proto.setCategory(Refs.toRef(indicator.category, config));
     }
 
     // model specific fields

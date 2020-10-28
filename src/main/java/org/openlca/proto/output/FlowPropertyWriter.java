@@ -38,7 +38,7 @@ public class FlowPropertyWriter {
         .forEach(proto::addTags);
     }
     if (property.category != null) {
-      proto.setCategory(Out.toRef(property.category, config));
+      proto.setCategory(Refs.toRef(property.category, config));
     }
 
     // model specific fields

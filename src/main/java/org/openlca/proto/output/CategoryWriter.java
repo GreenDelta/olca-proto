@@ -38,7 +38,7 @@ public class CategoryWriter {
         .forEach(proto::addTags);
     }
     if (c.category != null) {
-      proto.setCategory(Out.toRef(c.category, config));
+      proto.setCategory(Refs.toRef(c.category, config));
     }
 
     proto.setModelType(type(c));

@@ -20,7 +20,11 @@ import org.openlca.core.database.SourceDao;
 import org.openlca.core.database.UnitGroupDao;
 import org.openlca.core.model.Actor;
 import org.openlca.core.model.Flow;
+import org.openlca.core.model.RootEntity;
+import org.openlca.jsonld.input.UpdateMode;
+import org.openlca.proto.MemStore;
 import org.openlca.proto.Proto;
+import org.openlca.proto.input.ProtoImport;
 import org.openlca.proto.output.ActorWriter;
 import org.openlca.proto.output.CategoryWriter;
 import org.openlca.proto.output.CurrencyWriter;
@@ -34,6 +38,7 @@ import org.openlca.proto.output.ParameterWriter;
 import org.openlca.proto.output.ProcessWriter;
 import org.openlca.proto.output.ProductSystemWriter;
 import org.openlca.proto.output.ProjectWriter;
+import org.openlca.proto.output.Refs;
 import org.openlca.proto.output.SocialIndicatorWriter;
 import org.openlca.proto.output.SourceWriter;
 import org.openlca.proto.output.UnitGroupWriter;
@@ -164,6 +169,13 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   @Override
   public void putFlow(Proto.Flow req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putFlow(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.IF_NEWER)
+      .run();
+    resp.onNext(importStatusOf(Flow.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -296,5 +308,20 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  private Services.RefStatus importStatusOf(
+    Class<? extends RootEntity> type, String id) {
+    var e = db.get(type, id);
+    if (e == null) {
+      return Services.RefStatus.newBuilder()
+        .setOk(false)
+        .setError("Import of " + type.getSimpleName() + " " + id + " failed")
+        .build();
+    }
+    return Services.RefStatus.newBuilder()
+      .setOk(true)
+      .setRef(Refs.toRef(e))
+      .build();
   }
 }
