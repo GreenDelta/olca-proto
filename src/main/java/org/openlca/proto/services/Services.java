@@ -437,27 +437,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Ref ref = 2;</code>
      * @return Whether the ref field is set.
      */
     boolean hasRef();
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>.protolca.Ref ref = 2;</code>
      * @return The ref.
      */
     org.openlca.proto.Proto.Ref getRef();
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>.protolca.Ref ref = 2;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getRefOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -509,7 +515,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (ref_ != null) {
                 subBuilder = ref_.toBuilder();
@@ -522,7 +533,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -560,10 +571,21 @@ public final class Services {
               org.openlca.proto.services.Services.RefStatus.class, org.openlca.proto.services.Services.RefStatus.Builder.class);
     }
 
-    public static final int REF_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int REF_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Ref ref_;
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>.protolca.Ref ref = 2;</code>
      * @return Whether the ref field is set.
      */
     @java.lang.Override
@@ -571,7 +593,7 @@ public final class Services {
       return ref_ != null;
     }
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>.protolca.Ref ref = 2;</code>
      * @return The ref.
      */
     @java.lang.Override
@@ -579,17 +601,17 @@ public final class Services {
       return ref_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : ref_;
     }
     /**
-     * <code>.protolca.Ref ref = 1;</code>
+     * <code>.protolca.Ref ref = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.RefOrBuilder getRefOrBuilder() {
       return getRef();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -606,7 +628,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -638,11 +660,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (ref_ != null) {
-        output.writeMessage(1, getRef());
+        output.writeMessage(2, getRef());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -653,12 +678,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (ref_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRef());
+          .computeMessageSize(2, getRef());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -675,6 +704,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.RefStatus other = (org.openlca.proto.services.Services.RefStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasRef() != other.hasRef()) return false;
       if (hasRef()) {
         if (!getRef()
@@ -693,6 +724,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasRef()) {
         hash = (37 * hash) + REF_FIELD_NUMBER;
         hash = (53 * hash) + getRef().hashCode();
@@ -832,6 +866,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (refBuilder_ == null) {
           ref_ = null;
         } else {
@@ -866,6 +902,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.RefStatus buildPartial() {
         org.openlca.proto.services.Services.RefStatus result = new org.openlca.proto.services.Services.RefStatus(this);
+        result.ok_ = ok_;
         if (refBuilder_ == null) {
           result.ref_ = ref_;
         } else {
@@ -920,6 +957,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.RefStatus other) {
         if (other == org.openlca.proto.services.Services.RefStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasRef()) {
           mergeRef(other.getRef());
         }
@@ -956,18 +996,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Ref ref_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> refBuilder_;
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        * @return Whether the ref field is set.
        */
       public boolean hasRef() {
         return refBuilder_ != null || ref_ != null;
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        * @return The ref.
        */
       public org.openlca.proto.Proto.Ref getRef() {
@@ -978,7 +1049,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public Builder setRef(org.openlca.proto.Proto.Ref value) {
         if (refBuilder_ == null) {
@@ -994,7 +1065,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public Builder setRef(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -1008,7 +1079,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public Builder mergeRef(org.openlca.proto.Proto.Ref value) {
         if (refBuilder_ == null) {
@@ -1026,7 +1097,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public Builder clearRef() {
         if (refBuilder_ == null) {
@@ -1040,7 +1111,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getRefBuilder() {
         
@@ -1048,7 +1119,7 @@ public final class Services {
         return getRefFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getRefOrBuilder() {
         if (refBuilder_ != null) {
@@ -1059,7 +1130,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Ref ref = 1;</code>
+       * <code>.protolca.Ref ref = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -1077,7 +1148,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -1093,7 +1164,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -1110,7 +1181,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -1125,7 +1196,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -1135,7 +1206,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -1208,27 +1279,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Actor actor = 2;</code>
      * @return Whether the actor field is set.
      */
     boolean hasActor();
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>.protolca.Actor actor = 2;</code>
      * @return The actor.
      */
     org.openlca.proto.Proto.Actor getActor();
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>.protolca.Actor actor = 2;</code>
      */
     org.openlca.proto.Proto.ActorOrBuilder getActorOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -1280,7 +1357,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Actor.Builder subBuilder = null;
               if (actor_ != null) {
                 subBuilder = actor_.toBuilder();
@@ -1293,7 +1375,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -1331,10 +1413,21 @@ public final class Services {
               org.openlca.proto.services.Services.ActorStatus.class, org.openlca.proto.services.Services.ActorStatus.Builder.class);
     }
 
-    public static final int ACTOR_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int ACTOR_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Actor actor_;
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>.protolca.Actor actor = 2;</code>
      * @return Whether the actor field is set.
      */
     @java.lang.Override
@@ -1342,7 +1435,7 @@ public final class Services {
       return actor_ != null;
     }
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>.protolca.Actor actor = 2;</code>
      * @return The actor.
      */
     @java.lang.Override
@@ -1350,17 +1443,17 @@ public final class Services {
       return actor_ == null ? org.openlca.proto.Proto.Actor.getDefaultInstance() : actor_;
     }
     /**
-     * <code>.protolca.Actor actor = 1;</code>
+     * <code>.protolca.Actor actor = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ActorOrBuilder getActorOrBuilder() {
       return getActor();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -1377,7 +1470,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -1409,11 +1502,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (actor_ != null) {
-        output.writeMessage(1, getActor());
+        output.writeMessage(2, getActor());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -1424,12 +1520,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (actor_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getActor());
+          .computeMessageSize(2, getActor());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1446,6 +1546,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ActorStatus other = (org.openlca.proto.services.Services.ActorStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasActor() != other.hasActor()) return false;
       if (hasActor()) {
         if (!getActor()
@@ -1464,6 +1566,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasActor()) {
         hash = (37 * hash) + ACTOR_FIELD_NUMBER;
         hash = (53 * hash) + getActor().hashCode();
@@ -1603,6 +1708,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (actorBuilder_ == null) {
           actor_ = null;
         } else {
@@ -1637,6 +1744,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ActorStatus buildPartial() {
         org.openlca.proto.services.Services.ActorStatus result = new org.openlca.proto.services.Services.ActorStatus(this);
+        result.ok_ = ok_;
         if (actorBuilder_ == null) {
           result.actor_ = actor_;
         } else {
@@ -1691,6 +1799,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ActorStatus other) {
         if (other == org.openlca.proto.services.Services.ActorStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasActor()) {
           mergeActor(other.getActor());
         }
@@ -1727,18 +1838,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Actor actor_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Actor, org.openlca.proto.Proto.Actor.Builder, org.openlca.proto.Proto.ActorOrBuilder> actorBuilder_;
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        * @return Whether the actor field is set.
        */
       public boolean hasActor() {
         return actorBuilder_ != null || actor_ != null;
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        * @return The actor.
        */
       public org.openlca.proto.Proto.Actor getActor() {
@@ -1749,7 +1891,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public Builder setActor(org.openlca.proto.Proto.Actor value) {
         if (actorBuilder_ == null) {
@@ -1765,7 +1907,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public Builder setActor(
           org.openlca.proto.Proto.Actor.Builder builderForValue) {
@@ -1779,7 +1921,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public Builder mergeActor(org.openlca.proto.Proto.Actor value) {
         if (actorBuilder_ == null) {
@@ -1797,7 +1939,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public Builder clearActor() {
         if (actorBuilder_ == null) {
@@ -1811,7 +1953,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public org.openlca.proto.Proto.Actor.Builder getActorBuilder() {
         
@@ -1819,7 +1961,7 @@ public final class Services {
         return getActorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       public org.openlca.proto.Proto.ActorOrBuilder getActorOrBuilder() {
         if (actorBuilder_ != null) {
@@ -1830,7 +1972,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Actor actor = 1;</code>
+       * <code>.protolca.Actor actor = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Actor, org.openlca.proto.Proto.Actor.Builder, org.openlca.proto.Proto.ActorOrBuilder> 
@@ -1848,7 +1990,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -1864,7 +2006,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -1881,7 +2023,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -1896,7 +2038,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -1906,7 +2048,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -1979,27 +2121,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Category category = 2;</code>
      * @return Whether the category field is set.
      */
     boolean hasCategory();
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>.protolca.Category category = 2;</code>
      * @return The category.
      */
     org.openlca.proto.Proto.Category getCategory();
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>.protolca.Category category = 2;</code>
      */
     org.openlca.proto.Proto.CategoryOrBuilder getCategoryOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -2051,7 +2199,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Category.Builder subBuilder = null;
               if (category_ != null) {
                 subBuilder = category_.toBuilder();
@@ -2064,7 +2217,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -2102,10 +2255,21 @@ public final class Services {
               org.openlca.proto.services.Services.CategoryStatus.class, org.openlca.proto.services.Services.CategoryStatus.Builder.class);
     }
 
-    public static final int CATEGORY_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Category category_;
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>.protolca.Category category = 2;</code>
      * @return Whether the category field is set.
      */
     @java.lang.Override
@@ -2113,7 +2277,7 @@ public final class Services {
       return category_ != null;
     }
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>.protolca.Category category = 2;</code>
      * @return The category.
      */
     @java.lang.Override
@@ -2121,17 +2285,17 @@ public final class Services {
       return category_ == null ? org.openlca.proto.Proto.Category.getDefaultInstance() : category_;
     }
     /**
-     * <code>.protolca.Category category = 1;</code>
+     * <code>.protolca.Category category = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.CategoryOrBuilder getCategoryOrBuilder() {
       return getCategory();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -2148,7 +2312,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -2180,11 +2344,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (category_ != null) {
-        output.writeMessage(1, getCategory());
+        output.writeMessage(2, getCategory());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -2195,12 +2362,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (category_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCategory());
+          .computeMessageSize(2, getCategory());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2217,6 +2388,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.CategoryStatus other = (org.openlca.proto.services.Services.CategoryStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasCategory() != other.hasCategory()) return false;
       if (hasCategory()) {
         if (!getCategory()
@@ -2235,6 +2408,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasCategory()) {
         hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getCategory().hashCode();
@@ -2374,6 +2550,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (categoryBuilder_ == null) {
           category_ = null;
         } else {
@@ -2408,6 +2586,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.CategoryStatus buildPartial() {
         org.openlca.proto.services.Services.CategoryStatus result = new org.openlca.proto.services.Services.CategoryStatus(this);
+        result.ok_ = ok_;
         if (categoryBuilder_ == null) {
           result.category_ = category_;
         } else {
@@ -2462,6 +2641,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.CategoryStatus other) {
         if (other == org.openlca.proto.services.Services.CategoryStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasCategory()) {
           mergeCategory(other.getCategory());
         }
@@ -2498,18 +2680,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Category category_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Category, org.openlca.proto.Proto.Category.Builder, org.openlca.proto.Proto.CategoryOrBuilder> categoryBuilder_;
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        * @return Whether the category field is set.
        */
       public boolean hasCategory() {
         return categoryBuilder_ != null || category_ != null;
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        * @return The category.
        */
       public org.openlca.proto.Proto.Category getCategory() {
@@ -2520,7 +2733,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public Builder setCategory(org.openlca.proto.Proto.Category value) {
         if (categoryBuilder_ == null) {
@@ -2536,7 +2749,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public Builder setCategory(
           org.openlca.proto.Proto.Category.Builder builderForValue) {
@@ -2550,7 +2763,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public Builder mergeCategory(org.openlca.proto.Proto.Category value) {
         if (categoryBuilder_ == null) {
@@ -2568,7 +2781,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public Builder clearCategory() {
         if (categoryBuilder_ == null) {
@@ -2582,7 +2795,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public org.openlca.proto.Proto.Category.Builder getCategoryBuilder() {
         
@@ -2590,7 +2803,7 @@ public final class Services {
         return getCategoryFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       public org.openlca.proto.Proto.CategoryOrBuilder getCategoryOrBuilder() {
         if (categoryBuilder_ != null) {
@@ -2601,7 +2814,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Category category = 1;</code>
+       * <code>.protolca.Category category = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Category, org.openlca.proto.Proto.Category.Builder, org.openlca.proto.Proto.CategoryOrBuilder> 
@@ -2619,7 +2832,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -2635,7 +2848,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -2652,7 +2865,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -2667,7 +2880,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -2677,7 +2890,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -2750,27 +2963,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Currency currency = 2;</code>
      * @return Whether the currency field is set.
      */
     boolean hasCurrency();
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>.protolca.Currency currency = 2;</code>
      * @return The currency.
      */
     org.openlca.proto.Proto.Currency getCurrency();
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>.protolca.Currency currency = 2;</code>
      */
     org.openlca.proto.Proto.CurrencyOrBuilder getCurrencyOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -2822,7 +3041,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Currency.Builder subBuilder = null;
               if (currency_ != null) {
                 subBuilder = currency_.toBuilder();
@@ -2835,7 +3059,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -2873,10 +3097,21 @@ public final class Services {
               org.openlca.proto.services.Services.CurrencyStatus.class, org.openlca.proto.services.Services.CurrencyStatus.Builder.class);
     }
 
-    public static final int CURRENCY_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Currency currency_;
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>.protolca.Currency currency = 2;</code>
      * @return Whether the currency field is set.
      */
     @java.lang.Override
@@ -2884,7 +3119,7 @@ public final class Services {
       return currency_ != null;
     }
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>.protolca.Currency currency = 2;</code>
      * @return The currency.
      */
     @java.lang.Override
@@ -2892,17 +3127,17 @@ public final class Services {
       return currency_ == null ? org.openlca.proto.Proto.Currency.getDefaultInstance() : currency_;
     }
     /**
-     * <code>.protolca.Currency currency = 1;</code>
+     * <code>.protolca.Currency currency = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.CurrencyOrBuilder getCurrencyOrBuilder() {
       return getCurrency();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -2919,7 +3154,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -2951,11 +3186,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (currency_ != null) {
-        output.writeMessage(1, getCurrency());
+        output.writeMessage(2, getCurrency());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -2966,12 +3204,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (currency_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCurrency());
+          .computeMessageSize(2, getCurrency());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2988,6 +3230,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.CurrencyStatus other = (org.openlca.proto.services.Services.CurrencyStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasCurrency() != other.hasCurrency()) return false;
       if (hasCurrency()) {
         if (!getCurrency()
@@ -3006,6 +3250,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasCurrency()) {
         hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
         hash = (53 * hash) + getCurrency().hashCode();
@@ -3145,6 +3392,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (currencyBuilder_ == null) {
           currency_ = null;
         } else {
@@ -3179,6 +3428,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.CurrencyStatus buildPartial() {
         org.openlca.proto.services.Services.CurrencyStatus result = new org.openlca.proto.services.Services.CurrencyStatus(this);
+        result.ok_ = ok_;
         if (currencyBuilder_ == null) {
           result.currency_ = currency_;
         } else {
@@ -3233,6 +3483,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.CurrencyStatus other) {
         if (other == org.openlca.proto.services.Services.CurrencyStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasCurrency()) {
           mergeCurrency(other.getCurrency());
         }
@@ -3269,18 +3522,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Currency currency_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Currency, org.openlca.proto.Proto.Currency.Builder, org.openlca.proto.Proto.CurrencyOrBuilder> currencyBuilder_;
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        * @return Whether the currency field is set.
        */
       public boolean hasCurrency() {
         return currencyBuilder_ != null || currency_ != null;
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        * @return The currency.
        */
       public org.openlca.proto.Proto.Currency getCurrency() {
@@ -3291,7 +3575,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public Builder setCurrency(org.openlca.proto.Proto.Currency value) {
         if (currencyBuilder_ == null) {
@@ -3307,7 +3591,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public Builder setCurrency(
           org.openlca.proto.Proto.Currency.Builder builderForValue) {
@@ -3321,7 +3605,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public Builder mergeCurrency(org.openlca.proto.Proto.Currency value) {
         if (currencyBuilder_ == null) {
@@ -3339,7 +3623,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public Builder clearCurrency() {
         if (currencyBuilder_ == null) {
@@ -3353,7 +3637,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public org.openlca.proto.Proto.Currency.Builder getCurrencyBuilder() {
         
@@ -3361,7 +3645,7 @@ public final class Services {
         return getCurrencyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       public org.openlca.proto.Proto.CurrencyOrBuilder getCurrencyOrBuilder() {
         if (currencyBuilder_ != null) {
@@ -3372,7 +3656,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Currency currency = 1;</code>
+       * <code>.protolca.Currency currency = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Currency, org.openlca.proto.Proto.Currency.Builder, org.openlca.proto.Proto.CurrencyOrBuilder> 
@@ -3390,7 +3674,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -3406,7 +3690,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -3423,7 +3707,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -3438,7 +3722,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -3448,7 +3732,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -3521,27 +3805,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      * @return Whether the dqSystem field is set.
      */
     boolean hasDqSystem();
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      * @return The dqSystem.
      */
     org.openlca.proto.Proto.DqSystem getDqSystem();
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      */
     org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -3593,7 +3883,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.DqSystem.Builder subBuilder = null;
               if (dqSystem_ != null) {
                 subBuilder = dqSystem_.toBuilder();
@@ -3606,7 +3901,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -3644,10 +3939,21 @@ public final class Services {
               org.openlca.proto.services.Services.DqSystemStatus.class, org.openlca.proto.services.Services.DqSystemStatus.Builder.class);
     }
 
-    public static final int DQ_SYSTEM_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int DQ_SYSTEM_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.DqSystem dqSystem_;
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      * @return Whether the dqSystem field is set.
      */
     @java.lang.Override
@@ -3655,7 +3961,7 @@ public final class Services {
       return dqSystem_ != null;
     }
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      * @return The dqSystem.
      */
     @java.lang.Override
@@ -3663,17 +3969,17 @@ public final class Services {
       return dqSystem_ == null ? org.openlca.proto.Proto.DqSystem.getDefaultInstance() : dqSystem_;
     }
     /**
-     * <code>.protolca.DqSystem dq_system = 1;</code>
+     * <code>.protolca.DqSystem dq_system = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder() {
       return getDqSystem();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -3690,7 +3996,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -3722,11 +4028,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (dqSystem_ != null) {
-        output.writeMessage(1, getDqSystem());
+        output.writeMessage(2, getDqSystem());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -3737,12 +4046,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (dqSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDqSystem());
+          .computeMessageSize(2, getDqSystem());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3759,6 +4072,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.DqSystemStatus other = (org.openlca.proto.services.Services.DqSystemStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasDqSystem() != other.hasDqSystem()) return false;
       if (hasDqSystem()) {
         if (!getDqSystem()
@@ -3777,6 +4092,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasDqSystem()) {
         hash = (37 * hash) + DQ_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getDqSystem().hashCode();
@@ -3916,6 +4234,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (dqSystemBuilder_ == null) {
           dqSystem_ = null;
         } else {
@@ -3950,6 +4270,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.DqSystemStatus buildPartial() {
         org.openlca.proto.services.Services.DqSystemStatus result = new org.openlca.proto.services.Services.DqSystemStatus(this);
+        result.ok_ = ok_;
         if (dqSystemBuilder_ == null) {
           result.dqSystem_ = dqSystem_;
         } else {
@@ -4004,6 +4325,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.DqSystemStatus other) {
         if (other == org.openlca.proto.services.Services.DqSystemStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasDqSystem()) {
           mergeDqSystem(other.getDqSystem());
         }
@@ -4040,18 +4364,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.DqSystem dqSystem_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.DqSystem, org.openlca.proto.Proto.DqSystem.Builder, org.openlca.proto.Proto.DqSystemOrBuilder> dqSystemBuilder_;
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        * @return Whether the dqSystem field is set.
        */
       public boolean hasDqSystem() {
         return dqSystemBuilder_ != null || dqSystem_ != null;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        * @return The dqSystem.
        */
       public org.openlca.proto.Proto.DqSystem getDqSystem() {
@@ -4062,7 +4417,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public Builder setDqSystem(org.openlca.proto.Proto.DqSystem value) {
         if (dqSystemBuilder_ == null) {
@@ -4078,7 +4433,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public Builder setDqSystem(
           org.openlca.proto.Proto.DqSystem.Builder builderForValue) {
@@ -4092,7 +4447,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public Builder mergeDqSystem(org.openlca.proto.Proto.DqSystem value) {
         if (dqSystemBuilder_ == null) {
@@ -4110,7 +4465,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public Builder clearDqSystem() {
         if (dqSystemBuilder_ == null) {
@@ -4124,7 +4479,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public org.openlca.proto.Proto.DqSystem.Builder getDqSystemBuilder() {
         
@@ -4132,7 +4487,7 @@ public final class Services {
         return getDqSystemFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       public org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder() {
         if (dqSystemBuilder_ != null) {
@@ -4143,7 +4498,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 1;</code>
+       * <code>.protolca.DqSystem dq_system = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.DqSystem, org.openlca.proto.Proto.DqSystem.Builder, org.openlca.proto.Proto.DqSystemOrBuilder> 
@@ -4161,7 +4516,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -4177,7 +4532,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -4194,7 +4549,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -4209,7 +4564,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -4219,7 +4574,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -4292,27 +4647,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Flow flow = 2;</code>
      * @return Whether the flow field is set.
      */
     boolean hasFlow();
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>.protolca.Flow flow = 2;</code>
      * @return The flow.
      */
     org.openlca.proto.Proto.Flow getFlow();
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>.protolca.Flow flow = 2;</code>
      */
     org.openlca.proto.Proto.FlowOrBuilder getFlowOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -4364,7 +4725,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Flow.Builder subBuilder = null;
               if (flow_ != null) {
                 subBuilder = flow_.toBuilder();
@@ -4377,7 +4743,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -4415,10 +4781,21 @@ public final class Services {
               org.openlca.proto.services.Services.FlowStatus.class, org.openlca.proto.services.Services.FlowStatus.Builder.class);
     }
 
-    public static final int FLOW_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int FLOW_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Flow flow_;
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>.protolca.Flow flow = 2;</code>
      * @return Whether the flow field is set.
      */
     @java.lang.Override
@@ -4426,7 +4803,7 @@ public final class Services {
       return flow_ != null;
     }
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>.protolca.Flow flow = 2;</code>
      * @return The flow.
      */
     @java.lang.Override
@@ -4434,17 +4811,17 @@ public final class Services {
       return flow_ == null ? org.openlca.proto.Proto.Flow.getDefaultInstance() : flow_;
     }
     /**
-     * <code>.protolca.Flow flow = 1;</code>
+     * <code>.protolca.Flow flow = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowOrBuilder getFlowOrBuilder() {
       return getFlow();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -4461,7 +4838,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -4493,11 +4870,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (flow_ != null) {
-        output.writeMessage(1, getFlow());
+        output.writeMessage(2, getFlow());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -4508,12 +4888,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (flow_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getFlow());
+          .computeMessageSize(2, getFlow());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4530,6 +4914,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.FlowStatus other = (org.openlca.proto.services.Services.FlowStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasFlow() != other.hasFlow()) return false;
       if (hasFlow()) {
         if (!getFlow()
@@ -4548,6 +4934,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasFlow()) {
         hash = (37 * hash) + FLOW_FIELD_NUMBER;
         hash = (53 * hash) + getFlow().hashCode();
@@ -4687,6 +5076,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (flowBuilder_ == null) {
           flow_ = null;
         } else {
@@ -4721,6 +5112,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.FlowStatus buildPartial() {
         org.openlca.proto.services.Services.FlowStatus result = new org.openlca.proto.services.Services.FlowStatus(this);
+        result.ok_ = ok_;
         if (flowBuilder_ == null) {
           result.flow_ = flow_;
         } else {
@@ -4775,6 +5167,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.FlowStatus other) {
         if (other == org.openlca.proto.services.Services.FlowStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasFlow()) {
           mergeFlow(other.getFlow());
         }
@@ -4811,18 +5206,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Flow flow_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Flow, org.openlca.proto.Proto.Flow.Builder, org.openlca.proto.Proto.FlowOrBuilder> flowBuilder_;
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        * @return Whether the flow field is set.
        */
       public boolean hasFlow() {
         return flowBuilder_ != null || flow_ != null;
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        * @return The flow.
        */
       public org.openlca.proto.Proto.Flow getFlow() {
@@ -4833,7 +5259,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public Builder setFlow(org.openlca.proto.Proto.Flow value) {
         if (flowBuilder_ == null) {
@@ -4849,7 +5275,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public Builder setFlow(
           org.openlca.proto.Proto.Flow.Builder builderForValue) {
@@ -4863,7 +5289,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public Builder mergeFlow(org.openlca.proto.Proto.Flow value) {
         if (flowBuilder_ == null) {
@@ -4881,7 +5307,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public Builder clearFlow() {
         if (flowBuilder_ == null) {
@@ -4895,7 +5321,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public org.openlca.proto.Proto.Flow.Builder getFlowBuilder() {
         
@@ -4903,7 +5329,7 @@ public final class Services {
         return getFlowFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       public org.openlca.proto.Proto.FlowOrBuilder getFlowOrBuilder() {
         if (flowBuilder_ != null) {
@@ -4914,7 +5340,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Flow flow = 1;</code>
+       * <code>.protolca.Flow flow = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Flow, org.openlca.proto.Proto.Flow.Builder, org.openlca.proto.Proto.FlowOrBuilder> 
@@ -4932,7 +5358,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -4948,7 +5374,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -4965,7 +5391,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -4980,7 +5406,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -4990,7 +5416,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -5063,27 +5489,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      * @return Whether the flowProperty field is set.
      */
     boolean hasFlowProperty();
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      * @return The flowProperty.
      */
     org.openlca.proto.Proto.FlowProperty getFlowProperty();
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      */
     org.openlca.proto.Proto.FlowPropertyOrBuilder getFlowPropertyOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -5135,7 +5567,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.FlowProperty.Builder subBuilder = null;
               if (flowProperty_ != null) {
                 subBuilder = flowProperty_.toBuilder();
@@ -5148,7 +5585,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -5186,10 +5623,21 @@ public final class Services {
               org.openlca.proto.services.Services.FlowPropertyStatus.class, org.openlca.proto.services.Services.FlowPropertyStatus.Builder.class);
     }
 
-    public static final int FLOW_PROPERTY_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int FLOW_PROPERTY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.FlowProperty flowProperty_;
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      * @return Whether the flowProperty field is set.
      */
     @java.lang.Override
@@ -5197,7 +5645,7 @@ public final class Services {
       return flowProperty_ != null;
     }
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      * @return The flowProperty.
      */
     @java.lang.Override
@@ -5205,17 +5653,17 @@ public final class Services {
       return flowProperty_ == null ? org.openlca.proto.Proto.FlowProperty.getDefaultInstance() : flowProperty_;
     }
     /**
-     * <code>.protolca.FlowProperty flow_property = 1;</code>
+     * <code>.protolca.FlowProperty flow_property = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.FlowPropertyOrBuilder getFlowPropertyOrBuilder() {
       return getFlowProperty();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -5232,7 +5680,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -5264,11 +5712,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (flowProperty_ != null) {
-        output.writeMessage(1, getFlowProperty());
+        output.writeMessage(2, getFlowProperty());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -5279,12 +5730,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (flowProperty_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getFlowProperty());
+          .computeMessageSize(2, getFlowProperty());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5301,6 +5756,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.FlowPropertyStatus other = (org.openlca.proto.services.Services.FlowPropertyStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasFlowProperty() != other.hasFlowProperty()) return false;
       if (hasFlowProperty()) {
         if (!getFlowProperty()
@@ -5319,6 +5776,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasFlowProperty()) {
         hash = (37 * hash) + FLOW_PROPERTY_FIELD_NUMBER;
         hash = (53 * hash) + getFlowProperty().hashCode();
@@ -5458,6 +5918,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (flowPropertyBuilder_ == null) {
           flowProperty_ = null;
         } else {
@@ -5492,6 +5954,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.FlowPropertyStatus buildPartial() {
         org.openlca.proto.services.Services.FlowPropertyStatus result = new org.openlca.proto.services.Services.FlowPropertyStatus(this);
+        result.ok_ = ok_;
         if (flowPropertyBuilder_ == null) {
           result.flowProperty_ = flowProperty_;
         } else {
@@ -5546,6 +6009,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.FlowPropertyStatus other) {
         if (other == org.openlca.proto.services.Services.FlowPropertyStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasFlowProperty()) {
           mergeFlowProperty(other.getFlowProperty());
         }
@@ -5582,18 +6048,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.FlowProperty flowProperty_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.FlowProperty, org.openlca.proto.Proto.FlowProperty.Builder, org.openlca.proto.Proto.FlowPropertyOrBuilder> flowPropertyBuilder_;
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        * @return Whether the flowProperty field is set.
        */
       public boolean hasFlowProperty() {
         return flowPropertyBuilder_ != null || flowProperty_ != null;
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        * @return The flowProperty.
        */
       public org.openlca.proto.Proto.FlowProperty getFlowProperty() {
@@ -5604,7 +6101,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public Builder setFlowProperty(org.openlca.proto.Proto.FlowProperty value) {
         if (flowPropertyBuilder_ == null) {
@@ -5620,7 +6117,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public Builder setFlowProperty(
           org.openlca.proto.Proto.FlowProperty.Builder builderForValue) {
@@ -5634,7 +6131,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public Builder mergeFlowProperty(org.openlca.proto.Proto.FlowProperty value) {
         if (flowPropertyBuilder_ == null) {
@@ -5652,7 +6149,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public Builder clearFlowProperty() {
         if (flowPropertyBuilder_ == null) {
@@ -5666,7 +6163,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public org.openlca.proto.Proto.FlowProperty.Builder getFlowPropertyBuilder() {
         
@@ -5674,7 +6171,7 @@ public final class Services {
         return getFlowPropertyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       public org.openlca.proto.Proto.FlowPropertyOrBuilder getFlowPropertyOrBuilder() {
         if (flowPropertyBuilder_ != null) {
@@ -5685,7 +6182,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.FlowProperty flow_property = 1;</code>
+       * <code>.protolca.FlowProperty flow_property = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.FlowProperty, org.openlca.proto.Proto.FlowProperty.Builder, org.openlca.proto.Proto.FlowPropertyOrBuilder> 
@@ -5703,7 +6200,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -5719,7 +6216,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -5736,7 +6233,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -5751,7 +6248,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -5761,7 +6258,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -5834,27 +6331,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     boolean hasImpactCategory();
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      * @return The impactCategory.
      */
     org.openlca.proto.Proto.ImpactCategory getImpactCategory();
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      */
     org.openlca.proto.Proto.ImpactCategoryOrBuilder getImpactCategoryOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -5906,7 +6409,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.ImpactCategory.Builder subBuilder = null;
               if (impactCategory_ != null) {
                 subBuilder = impactCategory_.toBuilder();
@@ -5919,7 +6427,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -5957,10 +6465,21 @@ public final class Services {
               org.openlca.proto.services.Services.ImpactCategoryStatus.class, org.openlca.proto.services.Services.ImpactCategoryStatus.Builder.class);
     }
 
-    public static final int IMPACT_CATEGORY_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int IMPACT_CATEGORY_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.ImpactCategory impactCategory_;
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     @java.lang.Override
@@ -5968,7 +6487,7 @@ public final class Services {
       return impactCategory_ != null;
     }
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      * @return The impactCategory.
      */
     @java.lang.Override
@@ -5976,17 +6495,17 @@ public final class Services {
       return impactCategory_ == null ? org.openlca.proto.Proto.ImpactCategory.getDefaultInstance() : impactCategory_;
     }
     /**
-     * <code>.protolca.ImpactCategory impact_category = 1;</code>
+     * <code>.protolca.ImpactCategory impact_category = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactCategoryOrBuilder getImpactCategoryOrBuilder() {
       return getImpactCategory();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -6003,7 +6522,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -6035,11 +6554,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (impactCategory_ != null) {
-        output.writeMessage(1, getImpactCategory());
+        output.writeMessage(2, getImpactCategory());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -6050,12 +6572,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (impactCategory_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getImpactCategory());
+          .computeMessageSize(2, getImpactCategory());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6072,6 +6598,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ImpactCategoryStatus other = (org.openlca.proto.services.Services.ImpactCategoryStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasImpactCategory() != other.hasImpactCategory()) return false;
       if (hasImpactCategory()) {
         if (!getImpactCategory()
@@ -6090,6 +6618,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasImpactCategory()) {
         hash = (37 * hash) + IMPACT_CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + getImpactCategory().hashCode();
@@ -6229,6 +6760,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (impactCategoryBuilder_ == null) {
           impactCategory_ = null;
         } else {
@@ -6263,6 +6796,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ImpactCategoryStatus buildPartial() {
         org.openlca.proto.services.Services.ImpactCategoryStatus result = new org.openlca.proto.services.Services.ImpactCategoryStatus(this);
+        result.ok_ = ok_;
         if (impactCategoryBuilder_ == null) {
           result.impactCategory_ = impactCategory_;
         } else {
@@ -6317,6 +6851,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ImpactCategoryStatus other) {
         if (other == org.openlca.proto.services.Services.ImpactCategoryStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasImpactCategory()) {
           mergeImpactCategory(other.getImpactCategory());
         }
@@ -6353,18 +6890,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.ImpactCategory impactCategory_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ImpactCategory, org.openlca.proto.Proto.ImpactCategory.Builder, org.openlca.proto.Proto.ImpactCategoryOrBuilder> impactCategoryBuilder_;
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        * @return Whether the impactCategory field is set.
        */
       public boolean hasImpactCategory() {
         return impactCategoryBuilder_ != null || impactCategory_ != null;
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        * @return The impactCategory.
        */
       public org.openlca.proto.Proto.ImpactCategory getImpactCategory() {
@@ -6375,7 +6943,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public Builder setImpactCategory(org.openlca.proto.Proto.ImpactCategory value) {
         if (impactCategoryBuilder_ == null) {
@@ -6391,7 +6959,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public Builder setImpactCategory(
           org.openlca.proto.Proto.ImpactCategory.Builder builderForValue) {
@@ -6405,7 +6973,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public Builder mergeImpactCategory(org.openlca.proto.Proto.ImpactCategory value) {
         if (impactCategoryBuilder_ == null) {
@@ -6423,7 +6991,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public Builder clearImpactCategory() {
         if (impactCategoryBuilder_ == null) {
@@ -6437,7 +7005,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactCategory.Builder getImpactCategoryBuilder() {
         
@@ -6445,7 +7013,7 @@ public final class Services {
         return getImpactCategoryFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactCategoryOrBuilder getImpactCategoryOrBuilder() {
         if (impactCategoryBuilder_ != null) {
@@ -6456,7 +7024,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ImpactCategory impact_category = 1;</code>
+       * <code>.protolca.ImpactCategory impact_category = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ImpactCategory, org.openlca.proto.Proto.ImpactCategory.Builder, org.openlca.proto.Proto.ImpactCategoryOrBuilder> 
@@ -6474,7 +7042,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -6490,7 +7058,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -6507,7 +7075,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -6522,7 +7090,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -6532,7 +7100,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -6605,27 +7173,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      * @return Whether the impactMethod field is set.
      */
     boolean hasImpactMethod();
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      * @return The impactMethod.
      */
     org.openlca.proto.Proto.ImpactMethod getImpactMethod();
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      */
     org.openlca.proto.Proto.ImpactMethodOrBuilder getImpactMethodOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -6677,7 +7251,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.ImpactMethod.Builder subBuilder = null;
               if (impactMethod_ != null) {
                 subBuilder = impactMethod_.toBuilder();
@@ -6690,7 +7269,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -6728,10 +7307,21 @@ public final class Services {
               org.openlca.proto.services.Services.ImpactMethodStatus.class, org.openlca.proto.services.Services.ImpactMethodStatus.Builder.class);
     }
 
-    public static final int IMPACT_METHOD_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int IMPACT_METHOD_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.ImpactMethod impactMethod_;
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      * @return Whether the impactMethod field is set.
      */
     @java.lang.Override
@@ -6739,7 +7329,7 @@ public final class Services {
       return impactMethod_ != null;
     }
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      * @return The impactMethod.
      */
     @java.lang.Override
@@ -6747,17 +7337,17 @@ public final class Services {
       return impactMethod_ == null ? org.openlca.proto.Proto.ImpactMethod.getDefaultInstance() : impactMethod_;
     }
     /**
-     * <code>.protolca.ImpactMethod impact_method = 1;</code>
+     * <code>.protolca.ImpactMethod impact_method = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ImpactMethodOrBuilder getImpactMethodOrBuilder() {
       return getImpactMethod();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -6774,7 +7364,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -6806,11 +7396,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (impactMethod_ != null) {
-        output.writeMessage(1, getImpactMethod());
+        output.writeMessage(2, getImpactMethod());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -6821,12 +7414,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (impactMethod_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getImpactMethod());
+          .computeMessageSize(2, getImpactMethod());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6843,6 +7440,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ImpactMethodStatus other = (org.openlca.proto.services.Services.ImpactMethodStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasImpactMethod() != other.hasImpactMethod()) return false;
       if (hasImpactMethod()) {
         if (!getImpactMethod()
@@ -6861,6 +7460,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasImpactMethod()) {
         hash = (37 * hash) + IMPACT_METHOD_FIELD_NUMBER;
         hash = (53 * hash) + getImpactMethod().hashCode();
@@ -7000,6 +7602,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (impactMethodBuilder_ == null) {
           impactMethod_ = null;
         } else {
@@ -7034,6 +7638,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ImpactMethodStatus buildPartial() {
         org.openlca.proto.services.Services.ImpactMethodStatus result = new org.openlca.proto.services.Services.ImpactMethodStatus(this);
+        result.ok_ = ok_;
         if (impactMethodBuilder_ == null) {
           result.impactMethod_ = impactMethod_;
         } else {
@@ -7088,6 +7693,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ImpactMethodStatus other) {
         if (other == org.openlca.proto.services.Services.ImpactMethodStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasImpactMethod()) {
           mergeImpactMethod(other.getImpactMethod());
         }
@@ -7124,18 +7732,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.ImpactMethod impactMethod_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ImpactMethod, org.openlca.proto.Proto.ImpactMethod.Builder, org.openlca.proto.Proto.ImpactMethodOrBuilder> impactMethodBuilder_;
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        * @return Whether the impactMethod field is set.
        */
       public boolean hasImpactMethod() {
         return impactMethodBuilder_ != null || impactMethod_ != null;
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        * @return The impactMethod.
        */
       public org.openlca.proto.Proto.ImpactMethod getImpactMethod() {
@@ -7146,7 +7785,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public Builder setImpactMethod(org.openlca.proto.Proto.ImpactMethod value) {
         if (impactMethodBuilder_ == null) {
@@ -7162,7 +7801,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public Builder setImpactMethod(
           org.openlca.proto.Proto.ImpactMethod.Builder builderForValue) {
@@ -7176,7 +7815,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public Builder mergeImpactMethod(org.openlca.proto.Proto.ImpactMethod value) {
         if (impactMethodBuilder_ == null) {
@@ -7194,7 +7833,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public Builder clearImpactMethod() {
         if (impactMethodBuilder_ == null) {
@@ -7208,7 +7847,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactMethod.Builder getImpactMethodBuilder() {
         
@@ -7216,7 +7855,7 @@ public final class Services {
         return getImpactMethodFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       public org.openlca.proto.Proto.ImpactMethodOrBuilder getImpactMethodOrBuilder() {
         if (impactMethodBuilder_ != null) {
@@ -7227,7 +7866,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ImpactMethod impact_method = 1;</code>
+       * <code>.protolca.ImpactMethod impact_method = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ImpactMethod, org.openlca.proto.Proto.ImpactMethod.Builder, org.openlca.proto.Proto.ImpactMethodOrBuilder> 
@@ -7245,7 +7884,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -7261,7 +7900,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -7278,7 +7917,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -7293,7 +7932,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -7303,7 +7942,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -7376,27 +8015,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Location location = 2;</code>
      * @return Whether the location field is set.
      */
     boolean hasLocation();
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>.protolca.Location location = 2;</code>
      * @return The location.
      */
     org.openlca.proto.Proto.Location getLocation();
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>.protolca.Location location = 2;</code>
      */
     org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -7448,7 +8093,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Location.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
@@ -7461,7 +8111,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -7499,10 +8149,21 @@ public final class Services {
               org.openlca.proto.services.Services.LocationStatus.class, org.openlca.proto.services.Services.LocationStatus.Builder.class);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Location location_;
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>.protolca.Location location = 2;</code>
      * @return Whether the location field is set.
      */
     @java.lang.Override
@@ -7510,7 +8171,7 @@ public final class Services {
       return location_ != null;
     }
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>.protolca.Location location = 2;</code>
      * @return The location.
      */
     @java.lang.Override
@@ -7518,17 +8179,17 @@ public final class Services {
       return location_ == null ? org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
     }
     /**
-     * <code>.protolca.Location location = 1;</code>
+     * <code>.protolca.Location location = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
       return getLocation();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -7545,7 +8206,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -7577,11 +8238,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (location_ != null) {
-        output.writeMessage(1, getLocation());
+        output.writeMessage(2, getLocation());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -7592,12 +8256,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLocation());
+          .computeMessageSize(2, getLocation());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7614,6 +8282,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.LocationStatus other = (org.openlca.proto.services.Services.LocationStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasLocation() != other.hasLocation()) return false;
       if (hasLocation()) {
         if (!getLocation()
@@ -7632,6 +8302,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasLocation()) {
         hash = (37 * hash) + LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getLocation().hashCode();
@@ -7771,6 +8444,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (locationBuilder_ == null) {
           location_ = null;
         } else {
@@ -7805,6 +8480,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.LocationStatus buildPartial() {
         org.openlca.proto.services.Services.LocationStatus result = new org.openlca.proto.services.Services.LocationStatus(this);
+        result.ok_ = ok_;
         if (locationBuilder_ == null) {
           result.location_ = location_;
         } else {
@@ -7859,6 +8535,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.LocationStatus other) {
         if (other == org.openlca.proto.services.Services.LocationStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
         }
@@ -7895,18 +8574,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Location location_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> locationBuilder_;
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        * @return Whether the location field is set.
        */
       public boolean hasLocation() {
         return locationBuilder_ != null || location_ != null;
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        * @return The location.
        */
       public org.openlca.proto.Proto.Location getLocation() {
@@ -7917,7 +8627,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public Builder setLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -7933,7 +8643,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public Builder setLocation(
           org.openlca.proto.Proto.Location.Builder builderForValue) {
@@ -7947,7 +8657,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public Builder mergeLocation(org.openlca.proto.Proto.Location value) {
         if (locationBuilder_ == null) {
@@ -7965,7 +8675,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -7979,7 +8689,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public org.openlca.proto.Proto.Location.Builder getLocationBuilder() {
         
@@ -7987,7 +8697,7 @@ public final class Services {
         return getLocationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
@@ -7998,7 +8708,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Location location = 1;</code>
+       * <code>.protolca.Location location = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> 
@@ -8016,7 +8726,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -8032,7 +8742,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -8049,7 +8759,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -8064,7 +8774,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -8074,7 +8784,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -8147,27 +8857,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Parameter parameter = 2;</code>
      * @return Whether the parameter field is set.
      */
     boolean hasParameter();
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>.protolca.Parameter parameter = 2;</code>
      * @return The parameter.
      */
     org.openlca.proto.Proto.Parameter getParameter();
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>.protolca.Parameter parameter = 2;</code>
      */
     org.openlca.proto.Proto.ParameterOrBuilder getParameterOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -8219,7 +8935,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Parameter.Builder subBuilder = null;
               if (parameter_ != null) {
                 subBuilder = parameter_.toBuilder();
@@ -8232,7 +8953,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -8270,10 +8991,21 @@ public final class Services {
               org.openlca.proto.services.Services.ParameterStatus.class, org.openlca.proto.services.Services.ParameterStatus.Builder.class);
     }
 
-    public static final int PARAMETER_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int PARAMETER_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Parameter parameter_;
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>.protolca.Parameter parameter = 2;</code>
      * @return Whether the parameter field is set.
      */
     @java.lang.Override
@@ -8281,7 +9013,7 @@ public final class Services {
       return parameter_ != null;
     }
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>.protolca.Parameter parameter = 2;</code>
      * @return The parameter.
      */
     @java.lang.Override
@@ -8289,17 +9021,17 @@ public final class Services {
       return parameter_ == null ? org.openlca.proto.Proto.Parameter.getDefaultInstance() : parameter_;
     }
     /**
-     * <code>.protolca.Parameter parameter = 1;</code>
+     * <code>.protolca.Parameter parameter = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterOrBuilder getParameterOrBuilder() {
       return getParameter();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -8316,7 +9048,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -8348,11 +9080,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (parameter_ != null) {
-        output.writeMessage(1, getParameter());
+        output.writeMessage(2, getParameter());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -8363,12 +9098,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (parameter_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getParameter());
+          .computeMessageSize(2, getParameter());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8385,6 +9124,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ParameterStatus other = (org.openlca.proto.services.Services.ParameterStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasParameter() != other.hasParameter()) return false;
       if (hasParameter()) {
         if (!getParameter()
@@ -8403,6 +9144,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasParameter()) {
         hash = (37 * hash) + PARAMETER_FIELD_NUMBER;
         hash = (53 * hash) + getParameter().hashCode();
@@ -8542,6 +9286,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (parameterBuilder_ == null) {
           parameter_ = null;
         } else {
@@ -8576,6 +9322,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ParameterStatus buildPartial() {
         org.openlca.proto.services.Services.ParameterStatus result = new org.openlca.proto.services.Services.ParameterStatus(this);
+        result.ok_ = ok_;
         if (parameterBuilder_ == null) {
           result.parameter_ = parameter_;
         } else {
@@ -8630,6 +9377,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ParameterStatus other) {
         if (other == org.openlca.proto.services.Services.ParameterStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasParameter()) {
           mergeParameter(other.getParameter());
         }
@@ -8666,18 +9416,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Parameter parameter_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> parameterBuilder_;
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        * @return Whether the parameter field is set.
        */
       public boolean hasParameter() {
         return parameterBuilder_ != null || parameter_ != null;
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        * @return The parameter.
        */
       public org.openlca.proto.Proto.Parameter getParameter() {
@@ -8688,7 +9469,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public Builder setParameter(org.openlca.proto.Proto.Parameter value) {
         if (parameterBuilder_ == null) {
@@ -8704,7 +9485,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public Builder setParameter(
           org.openlca.proto.Proto.Parameter.Builder builderForValue) {
@@ -8718,7 +9499,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public Builder mergeParameter(org.openlca.proto.Proto.Parameter value) {
         if (parameterBuilder_ == null) {
@@ -8736,7 +9517,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public Builder clearParameter() {
         if (parameterBuilder_ == null) {
@@ -8750,7 +9531,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public org.openlca.proto.Proto.Parameter.Builder getParameterBuilder() {
         
@@ -8758,7 +9539,7 @@ public final class Services {
         return getParameterFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       public org.openlca.proto.Proto.ParameterOrBuilder getParameterOrBuilder() {
         if (parameterBuilder_ != null) {
@@ -8769,7 +9550,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Parameter parameter = 1;</code>
+       * <code>.protolca.Parameter parameter = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Parameter, org.openlca.proto.Proto.Parameter.Builder, org.openlca.proto.Proto.ParameterOrBuilder> 
@@ -8787,7 +9568,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -8803,7 +9584,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -8820,7 +9601,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -8835,7 +9616,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -8845,7 +9626,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -8918,27 +9699,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Process process = 2;</code>
      * @return Whether the process field is set.
      */
     boolean hasProcess();
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>.protolca.Process process = 2;</code>
      * @return The process.
      */
     org.openlca.proto.Proto.Process getProcess();
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>.protolca.Process process = 2;</code>
      */
     org.openlca.proto.Proto.ProcessOrBuilder getProcessOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -8990,7 +9777,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Process.Builder subBuilder = null;
               if (process_ != null) {
                 subBuilder = process_.toBuilder();
@@ -9003,7 +9795,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -9041,10 +9833,21 @@ public final class Services {
               org.openlca.proto.services.Services.ProcessStatus.class, org.openlca.proto.services.Services.ProcessStatus.Builder.class);
     }
 
-    public static final int PROCESS_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int PROCESS_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Process process_;
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>.protolca.Process process = 2;</code>
      * @return Whether the process field is set.
      */
     @java.lang.Override
@@ -9052,7 +9855,7 @@ public final class Services {
       return process_ != null;
     }
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>.protolca.Process process = 2;</code>
      * @return The process.
      */
     @java.lang.Override
@@ -9060,17 +9863,17 @@ public final class Services {
       return process_ == null ? org.openlca.proto.Proto.Process.getDefaultInstance() : process_;
     }
     /**
-     * <code>.protolca.Process process = 1;</code>
+     * <code>.protolca.Process process = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProcessOrBuilder getProcessOrBuilder() {
       return getProcess();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -9087,7 +9890,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -9119,11 +9922,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (process_ != null) {
-        output.writeMessage(1, getProcess());
+        output.writeMessage(2, getProcess());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -9134,12 +9940,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (process_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getProcess());
+          .computeMessageSize(2, getProcess());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9156,6 +9966,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ProcessStatus other = (org.openlca.proto.services.Services.ProcessStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasProcess() != other.hasProcess()) return false;
       if (hasProcess()) {
         if (!getProcess()
@@ -9174,6 +9986,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasProcess()) {
         hash = (37 * hash) + PROCESS_FIELD_NUMBER;
         hash = (53 * hash) + getProcess().hashCode();
@@ -9313,6 +10128,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (processBuilder_ == null) {
           process_ = null;
         } else {
@@ -9347,6 +10164,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ProcessStatus buildPartial() {
         org.openlca.proto.services.Services.ProcessStatus result = new org.openlca.proto.services.Services.ProcessStatus(this);
+        result.ok_ = ok_;
         if (processBuilder_ == null) {
           result.process_ = process_;
         } else {
@@ -9401,6 +10219,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ProcessStatus other) {
         if (other == org.openlca.proto.services.Services.ProcessStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasProcess()) {
           mergeProcess(other.getProcess());
         }
@@ -9437,18 +10258,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Process process_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Process, org.openlca.proto.Proto.Process.Builder, org.openlca.proto.Proto.ProcessOrBuilder> processBuilder_;
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        * @return Whether the process field is set.
        */
       public boolean hasProcess() {
         return processBuilder_ != null || process_ != null;
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        * @return The process.
        */
       public org.openlca.proto.Proto.Process getProcess() {
@@ -9459,7 +10311,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public Builder setProcess(org.openlca.proto.Proto.Process value) {
         if (processBuilder_ == null) {
@@ -9475,7 +10327,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public Builder setProcess(
           org.openlca.proto.Proto.Process.Builder builderForValue) {
@@ -9489,7 +10341,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public Builder mergeProcess(org.openlca.proto.Proto.Process value) {
         if (processBuilder_ == null) {
@@ -9507,7 +10359,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public Builder clearProcess() {
         if (processBuilder_ == null) {
@@ -9521,7 +10373,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public org.openlca.proto.Proto.Process.Builder getProcessBuilder() {
         
@@ -9529,7 +10381,7 @@ public final class Services {
         return getProcessFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       public org.openlca.proto.Proto.ProcessOrBuilder getProcessOrBuilder() {
         if (processBuilder_ != null) {
@@ -9540,7 +10392,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Process process = 1;</code>
+       * <code>.protolca.Process process = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Process, org.openlca.proto.Proto.Process.Builder, org.openlca.proto.Proto.ProcessOrBuilder> 
@@ -9558,7 +10410,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -9574,7 +10426,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -9591,7 +10443,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -9606,7 +10458,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -9616,7 +10468,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -9689,27 +10541,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      * @return Whether the productSystem field is set.
      */
     boolean hasProductSystem();
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      * @return The productSystem.
      */
     org.openlca.proto.Proto.ProductSystem getProductSystem();
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      */
     org.openlca.proto.Proto.ProductSystemOrBuilder getProductSystemOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -9761,7 +10619,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.ProductSystem.Builder subBuilder = null;
               if (productSystem_ != null) {
                 subBuilder = productSystem_.toBuilder();
@@ -9774,7 +10637,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -9812,10 +10675,21 @@ public final class Services {
               org.openlca.proto.services.Services.ProductSystemStatus.class, org.openlca.proto.services.Services.ProductSystemStatus.Builder.class);
     }
 
-    public static final int PRODUCT_SYSTEM_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int PRODUCT_SYSTEM_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.ProductSystem productSystem_;
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      * @return Whether the productSystem field is set.
      */
     @java.lang.Override
@@ -9823,7 +10697,7 @@ public final class Services {
       return productSystem_ != null;
     }
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      * @return The productSystem.
      */
     @java.lang.Override
@@ -9831,17 +10705,17 @@ public final class Services {
       return productSystem_ == null ? org.openlca.proto.Proto.ProductSystem.getDefaultInstance() : productSystem_;
     }
     /**
-     * <code>.protolca.ProductSystem product_system = 1;</code>
+     * <code>.protolca.ProductSystem product_system = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProductSystemOrBuilder getProductSystemOrBuilder() {
       return getProductSystem();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -9858,7 +10732,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -9890,11 +10764,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (productSystem_ != null) {
-        output.writeMessage(1, getProductSystem());
+        output.writeMessage(2, getProductSystem());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -9905,12 +10782,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (productSystem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getProductSystem());
+          .computeMessageSize(2, getProductSystem());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9927,6 +10808,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ProductSystemStatus other = (org.openlca.proto.services.Services.ProductSystemStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasProductSystem() != other.hasProductSystem()) return false;
       if (hasProductSystem()) {
         if (!getProductSystem()
@@ -9945,6 +10828,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasProductSystem()) {
         hash = (37 * hash) + PRODUCT_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getProductSystem().hashCode();
@@ -10084,6 +10970,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (productSystemBuilder_ == null) {
           productSystem_ = null;
         } else {
@@ -10118,6 +11006,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ProductSystemStatus buildPartial() {
         org.openlca.proto.services.Services.ProductSystemStatus result = new org.openlca.proto.services.Services.ProductSystemStatus(this);
+        result.ok_ = ok_;
         if (productSystemBuilder_ == null) {
           result.productSystem_ = productSystem_;
         } else {
@@ -10172,6 +11061,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ProductSystemStatus other) {
         if (other == org.openlca.proto.services.Services.ProductSystemStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasProductSystem()) {
           mergeProductSystem(other.getProductSystem());
         }
@@ -10208,18 +11100,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.ProductSystem productSystem_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProductSystem, org.openlca.proto.Proto.ProductSystem.Builder, org.openlca.proto.Proto.ProductSystemOrBuilder> productSystemBuilder_;
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        * @return Whether the productSystem field is set.
        */
       public boolean hasProductSystem() {
         return productSystemBuilder_ != null || productSystem_ != null;
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        * @return The productSystem.
        */
       public org.openlca.proto.Proto.ProductSystem getProductSystem() {
@@ -10230,7 +11153,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public Builder setProductSystem(org.openlca.proto.Proto.ProductSystem value) {
         if (productSystemBuilder_ == null) {
@@ -10246,7 +11169,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public Builder setProductSystem(
           org.openlca.proto.Proto.ProductSystem.Builder builderForValue) {
@@ -10260,7 +11183,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public Builder mergeProductSystem(org.openlca.proto.Proto.ProductSystem value) {
         if (productSystemBuilder_ == null) {
@@ -10278,7 +11201,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public Builder clearProductSystem() {
         if (productSystemBuilder_ == null) {
@@ -10292,7 +11215,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public org.openlca.proto.Proto.ProductSystem.Builder getProductSystemBuilder() {
         
@@ -10300,7 +11223,7 @@ public final class Services {
         return getProductSystemFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       public org.openlca.proto.Proto.ProductSystemOrBuilder getProductSystemOrBuilder() {
         if (productSystemBuilder_ != null) {
@@ -10311,7 +11234,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.ProductSystem product_system = 1;</code>
+       * <code>.protolca.ProductSystem product_system = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.ProductSystem, org.openlca.proto.Proto.ProductSystem.Builder, org.openlca.proto.Proto.ProductSystemOrBuilder> 
@@ -10329,7 +11252,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -10345,7 +11268,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -10362,7 +11285,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -10377,7 +11300,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -10387,7 +11310,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -10460,27 +11383,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Project project = 2;</code>
      * @return Whether the project field is set.
      */
     boolean hasProject();
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>.protolca.Project project = 2;</code>
      * @return The project.
      */
     org.openlca.proto.Proto.Project getProject();
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>.protolca.Project project = 2;</code>
      */
     org.openlca.proto.Proto.ProjectOrBuilder getProjectOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -10532,7 +11461,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Project.Builder subBuilder = null;
               if (project_ != null) {
                 subBuilder = project_.toBuilder();
@@ -10545,7 +11479,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -10583,10 +11517,21 @@ public final class Services {
               org.openlca.proto.services.Services.ProjectStatus.class, org.openlca.proto.services.Services.ProjectStatus.Builder.class);
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Project project_;
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>.protolca.Project project = 2;</code>
      * @return Whether the project field is set.
      */
     @java.lang.Override
@@ -10594,7 +11539,7 @@ public final class Services {
       return project_ != null;
     }
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>.protolca.Project project = 2;</code>
      * @return The project.
      */
     @java.lang.Override
@@ -10602,17 +11547,17 @@ public final class Services {
       return project_ == null ? org.openlca.proto.Proto.Project.getDefaultInstance() : project_;
     }
     /**
-     * <code>.protolca.Project project = 1;</code>
+     * <code>.protolca.Project project = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.ProjectOrBuilder getProjectOrBuilder() {
       return getProject();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -10629,7 +11574,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -10661,11 +11606,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (project_ != null) {
-        output.writeMessage(1, getProject());
+        output.writeMessage(2, getProject());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -10676,12 +11624,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (project_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getProject());
+          .computeMessageSize(2, getProject());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10698,6 +11650,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.ProjectStatus other = (org.openlca.proto.services.Services.ProjectStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasProject() != other.hasProject()) return false;
       if (hasProject()) {
         if (!getProject()
@@ -10716,6 +11670,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasProject()) {
         hash = (37 * hash) + PROJECT_FIELD_NUMBER;
         hash = (53 * hash) + getProject().hashCode();
@@ -10855,6 +11812,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (projectBuilder_ == null) {
           project_ = null;
         } else {
@@ -10889,6 +11848,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.ProjectStatus buildPartial() {
         org.openlca.proto.services.Services.ProjectStatus result = new org.openlca.proto.services.Services.ProjectStatus(this);
+        result.ok_ = ok_;
         if (projectBuilder_ == null) {
           result.project_ = project_;
         } else {
@@ -10943,6 +11903,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.ProjectStatus other) {
         if (other == org.openlca.proto.services.Services.ProjectStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasProject()) {
           mergeProject(other.getProject());
         }
@@ -10979,18 +11942,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Project project_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Project, org.openlca.proto.Proto.Project.Builder, org.openlca.proto.Proto.ProjectOrBuilder> projectBuilder_;
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        * @return Whether the project field is set.
        */
       public boolean hasProject() {
         return projectBuilder_ != null || project_ != null;
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        * @return The project.
        */
       public org.openlca.proto.Proto.Project getProject() {
@@ -11001,7 +11995,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public Builder setProject(org.openlca.proto.Proto.Project value) {
         if (projectBuilder_ == null) {
@@ -11017,7 +12011,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public Builder setProject(
           org.openlca.proto.Proto.Project.Builder builderForValue) {
@@ -11031,7 +12025,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public Builder mergeProject(org.openlca.proto.Proto.Project value) {
         if (projectBuilder_ == null) {
@@ -11049,7 +12043,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public Builder clearProject() {
         if (projectBuilder_ == null) {
@@ -11063,7 +12057,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public org.openlca.proto.Proto.Project.Builder getProjectBuilder() {
         
@@ -11071,7 +12065,7 @@ public final class Services {
         return getProjectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       public org.openlca.proto.Proto.ProjectOrBuilder getProjectOrBuilder() {
         if (projectBuilder_ != null) {
@@ -11082,7 +12076,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Project project = 1;</code>
+       * <code>.protolca.Project project = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Project, org.openlca.proto.Proto.Project.Builder, org.openlca.proto.Proto.ProjectOrBuilder> 
@@ -11100,7 +12094,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -11116,7 +12110,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -11133,7 +12127,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -11148,7 +12142,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -11158,7 +12152,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -11231,27 +12225,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      * @return Whether the socialIndicator field is set.
      */
     boolean hasSocialIndicator();
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      * @return The socialIndicator.
      */
     org.openlca.proto.Proto.SocialIndicator getSocialIndicator();
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      */
     org.openlca.proto.Proto.SocialIndicatorOrBuilder getSocialIndicatorOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -11303,7 +12303,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.SocialIndicator.Builder subBuilder = null;
               if (socialIndicator_ != null) {
                 subBuilder = socialIndicator_.toBuilder();
@@ -11316,7 +12321,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -11354,10 +12359,21 @@ public final class Services {
               org.openlca.proto.services.Services.SocialIndicatorStatus.class, org.openlca.proto.services.Services.SocialIndicatorStatus.Builder.class);
     }
 
-    public static final int SOCIAL_INDICATOR_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int SOCIAL_INDICATOR_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.SocialIndicator socialIndicator_;
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      * @return Whether the socialIndicator field is set.
      */
     @java.lang.Override
@@ -11365,7 +12381,7 @@ public final class Services {
       return socialIndicator_ != null;
     }
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      * @return The socialIndicator.
      */
     @java.lang.Override
@@ -11373,17 +12389,17 @@ public final class Services {
       return socialIndicator_ == null ? org.openlca.proto.Proto.SocialIndicator.getDefaultInstance() : socialIndicator_;
     }
     /**
-     * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+     * <code>.protolca.SocialIndicator social_indicator = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.SocialIndicatorOrBuilder getSocialIndicatorOrBuilder() {
       return getSocialIndicator();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -11400,7 +12416,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -11432,11 +12448,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (socialIndicator_ != null) {
-        output.writeMessage(1, getSocialIndicator());
+        output.writeMessage(2, getSocialIndicator());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -11447,12 +12466,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (socialIndicator_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSocialIndicator());
+          .computeMessageSize(2, getSocialIndicator());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11469,6 +12492,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.SocialIndicatorStatus other = (org.openlca.proto.services.Services.SocialIndicatorStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasSocialIndicator() != other.hasSocialIndicator()) return false;
       if (hasSocialIndicator()) {
         if (!getSocialIndicator()
@@ -11487,6 +12512,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasSocialIndicator()) {
         hash = (37 * hash) + SOCIAL_INDICATOR_FIELD_NUMBER;
         hash = (53 * hash) + getSocialIndicator().hashCode();
@@ -11626,6 +12654,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (socialIndicatorBuilder_ == null) {
           socialIndicator_ = null;
         } else {
@@ -11660,6 +12690,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.SocialIndicatorStatus buildPartial() {
         org.openlca.proto.services.Services.SocialIndicatorStatus result = new org.openlca.proto.services.Services.SocialIndicatorStatus(this);
+        result.ok_ = ok_;
         if (socialIndicatorBuilder_ == null) {
           result.socialIndicator_ = socialIndicator_;
         } else {
@@ -11714,6 +12745,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.SocialIndicatorStatus other) {
         if (other == org.openlca.proto.services.Services.SocialIndicatorStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasSocialIndicator()) {
           mergeSocialIndicator(other.getSocialIndicator());
         }
@@ -11750,18 +12784,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.SocialIndicator socialIndicator_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.SocialIndicator, org.openlca.proto.Proto.SocialIndicator.Builder, org.openlca.proto.Proto.SocialIndicatorOrBuilder> socialIndicatorBuilder_;
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        * @return Whether the socialIndicator field is set.
        */
       public boolean hasSocialIndicator() {
         return socialIndicatorBuilder_ != null || socialIndicator_ != null;
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        * @return The socialIndicator.
        */
       public org.openlca.proto.Proto.SocialIndicator getSocialIndicator() {
@@ -11772,7 +12837,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public Builder setSocialIndicator(org.openlca.proto.Proto.SocialIndicator value) {
         if (socialIndicatorBuilder_ == null) {
@@ -11788,7 +12853,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public Builder setSocialIndicator(
           org.openlca.proto.Proto.SocialIndicator.Builder builderForValue) {
@@ -11802,7 +12867,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public Builder mergeSocialIndicator(org.openlca.proto.Proto.SocialIndicator value) {
         if (socialIndicatorBuilder_ == null) {
@@ -11820,7 +12885,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public Builder clearSocialIndicator() {
         if (socialIndicatorBuilder_ == null) {
@@ -11834,7 +12899,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public org.openlca.proto.Proto.SocialIndicator.Builder getSocialIndicatorBuilder() {
         
@@ -11842,7 +12907,7 @@ public final class Services {
         return getSocialIndicatorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       public org.openlca.proto.Proto.SocialIndicatorOrBuilder getSocialIndicatorOrBuilder() {
         if (socialIndicatorBuilder_ != null) {
@@ -11853,7 +12918,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.SocialIndicator social_indicator = 1;</code>
+       * <code>.protolca.SocialIndicator social_indicator = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.SocialIndicator, org.openlca.proto.Proto.SocialIndicator.Builder, org.openlca.proto.Proto.SocialIndicatorOrBuilder> 
@@ -11871,7 +12936,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -11887,7 +12952,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -11904,7 +12969,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -11919,7 +12984,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -11929,7 +12994,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -12002,27 +13067,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.Source source = 2;</code>
      * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>.protolca.Source source = 2;</code>
      * @return The source.
      */
     org.openlca.proto.Proto.Source getSource();
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>.protolca.Source source = 2;</code>
      */
     org.openlca.proto.Proto.SourceOrBuilder getSourceOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -12074,7 +13145,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.Source.Builder subBuilder = null;
               if (source_ != null) {
                 subBuilder = source_.toBuilder();
@@ -12087,7 +13163,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -12125,10 +13201,21 @@ public final class Services {
               org.openlca.proto.services.Services.SourceStatus.class, org.openlca.proto.services.Services.SourceStatus.Builder.class);
     }
 
-    public static final int SOURCE_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.Source source_;
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>.protolca.Source source = 2;</code>
      * @return Whether the source field is set.
      */
     @java.lang.Override
@@ -12136,7 +13223,7 @@ public final class Services {
       return source_ != null;
     }
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>.protolca.Source source = 2;</code>
      * @return The source.
      */
     @java.lang.Override
@@ -12144,17 +13231,17 @@ public final class Services {
       return source_ == null ? org.openlca.proto.Proto.Source.getDefaultInstance() : source_;
     }
     /**
-     * <code>.protolca.Source source = 1;</code>
+     * <code>.protolca.Source source = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.SourceOrBuilder getSourceOrBuilder() {
       return getSource();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -12171,7 +13258,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -12203,11 +13290,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (source_ != null) {
-        output.writeMessage(1, getSource());
+        output.writeMessage(2, getSource());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -12218,12 +13308,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (source_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSource());
+          .computeMessageSize(2, getSource());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12240,6 +13334,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.SourceStatus other = (org.openlca.proto.services.Services.SourceStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasSource() != other.hasSource()) return false;
       if (hasSource()) {
         if (!getSource()
@@ -12258,6 +13354,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasSource()) {
         hash = (37 * hash) + SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getSource().hashCode();
@@ -12397,6 +13496,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (sourceBuilder_ == null) {
           source_ = null;
         } else {
@@ -12431,6 +13532,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.SourceStatus buildPartial() {
         org.openlca.proto.services.Services.SourceStatus result = new org.openlca.proto.services.Services.SourceStatus(this);
+        result.ok_ = ok_;
         if (sourceBuilder_ == null) {
           result.source_ = source_;
         } else {
@@ -12485,6 +13587,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.SourceStatus other) {
         if (other == org.openlca.proto.services.Services.SourceStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasSource()) {
           mergeSource(other.getSource());
         }
@@ -12521,18 +13626,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.Source source_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Source, org.openlca.proto.Proto.Source.Builder, org.openlca.proto.Proto.SourceOrBuilder> sourceBuilder_;
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        * @return Whether the source field is set.
        */
       public boolean hasSource() {
         return sourceBuilder_ != null || source_ != null;
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        * @return The source.
        */
       public org.openlca.proto.Proto.Source getSource() {
@@ -12543,7 +13679,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public Builder setSource(org.openlca.proto.Proto.Source value) {
         if (sourceBuilder_ == null) {
@@ -12559,7 +13695,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public Builder setSource(
           org.openlca.proto.Proto.Source.Builder builderForValue) {
@@ -12573,7 +13709,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public Builder mergeSource(org.openlca.proto.Proto.Source value) {
         if (sourceBuilder_ == null) {
@@ -12591,7 +13727,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public Builder clearSource() {
         if (sourceBuilder_ == null) {
@@ -12605,7 +13741,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public org.openlca.proto.Proto.Source.Builder getSourceBuilder() {
         
@@ -12613,7 +13749,7 @@ public final class Services {
         return getSourceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       public org.openlca.proto.Proto.SourceOrBuilder getSourceOrBuilder() {
         if (sourceBuilder_ != null) {
@@ -12624,7 +13760,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.Source source = 1;</code>
+       * <code>.protolca.Source source = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Source, org.openlca.proto.Proto.Source.Builder, org.openlca.proto.Proto.SourceOrBuilder> 
@@ -12642,7 +13778,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -12658,7 +13794,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -12675,7 +13811,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -12690,7 +13826,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -12700,7 +13836,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -12773,27 +13909,33 @@ public final class Services {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      * @return Whether the unitGroup field is set.
      */
     boolean hasUnitGroup();
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      * @return The unitGroup.
      */
     org.openlca.proto.Proto.UnitGroup getUnitGroup();
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      */
     org.openlca.proto.Proto.UnitGroupOrBuilder getUnitGroupOrBuilder();
 
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -12845,7 +13987,12 @@ public final class Services {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
               org.openlca.proto.Proto.UnitGroup.Builder subBuilder = null;
               if (unitGroup_ != null) {
                 subBuilder = unitGroup_.toBuilder();
@@ -12858,7 +14005,7 @@ public final class Services {
 
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -12896,10 +14043,21 @@ public final class Services {
               org.openlca.proto.services.Services.UnitGroupStatus.class, org.openlca.proto.services.Services.UnitGroupStatus.Builder.class);
     }
 
-    public static final int UNIT_GROUP_FIELD_NUMBER = 1;
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int UNIT_GROUP_FIELD_NUMBER = 2;
     private org.openlca.proto.Proto.UnitGroup unitGroup_;
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      * @return Whether the unitGroup field is set.
      */
     @java.lang.Override
@@ -12907,7 +14065,7 @@ public final class Services {
       return unitGroup_ != null;
     }
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      * @return The unitGroup.
      */
     @java.lang.Override
@@ -12915,17 +14073,17 @@ public final class Services {
       return unitGroup_ == null ? org.openlca.proto.Proto.UnitGroup.getDefaultInstance() : unitGroup_;
     }
     /**
-     * <code>.protolca.UnitGroup unit_group = 1;</code>
+     * <code>.protolca.UnitGroup unit_group = 2;</code>
      */
     @java.lang.Override
     public org.openlca.proto.Proto.UnitGroupOrBuilder getUnitGroupOrBuilder() {
       return getUnitGroup();
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -12942,7 +14100,7 @@ public final class Services {
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 3;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -12974,11 +14132,14 @@ public final class Services {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
       if (unitGroup_ != null) {
-        output.writeMessage(1, getUnitGroup());
+        output.writeMessage(2, getUnitGroup());
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -12989,12 +14150,16 @@ public final class Services {
       if (size != -1) return size;
 
       size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
       if (unitGroup_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUnitGroup());
+          .computeMessageSize(2, getUnitGroup());
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13011,6 +14176,8 @@ public final class Services {
       }
       org.openlca.proto.services.Services.UnitGroupStatus other = (org.openlca.proto.services.Services.UnitGroupStatus) obj;
 
+      if (getOk()
+          != other.getOk()) return false;
       if (hasUnitGroup() != other.hasUnitGroup()) return false;
       if (hasUnitGroup()) {
         if (!getUnitGroup()
@@ -13029,6 +14196,9 @@ public final class Services {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
       if (hasUnitGroup()) {
         hash = (37 * hash) + UNIT_GROUP_FIELD_NUMBER;
         hash = (53 * hash) + getUnitGroup().hashCode();
@@ -13168,6 +14338,8 @@ public final class Services {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ok_ = false;
+
         if (unitGroupBuilder_ == null) {
           unitGroup_ = null;
         } else {
@@ -13202,6 +14374,7 @@ public final class Services {
       @java.lang.Override
       public org.openlca.proto.services.Services.UnitGroupStatus buildPartial() {
         org.openlca.proto.services.Services.UnitGroupStatus result = new org.openlca.proto.services.Services.UnitGroupStatus(this);
+        result.ok_ = ok_;
         if (unitGroupBuilder_ == null) {
           result.unitGroup_ = unitGroup_;
         } else {
@@ -13256,6 +14429,9 @@ public final class Services {
 
       public Builder mergeFrom(org.openlca.proto.services.Services.UnitGroupStatus other) {
         if (other == org.openlca.proto.services.Services.UnitGroupStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
         if (other.hasUnitGroup()) {
           mergeUnitGroup(other.getUnitGroup());
         }
@@ -13292,18 +14468,49 @@ public final class Services {
         return this;
       }
 
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
       private org.openlca.proto.Proto.UnitGroup unitGroup_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.UnitGroup, org.openlca.proto.Proto.UnitGroup.Builder, org.openlca.proto.Proto.UnitGroupOrBuilder> unitGroupBuilder_;
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        * @return Whether the unitGroup field is set.
        */
       public boolean hasUnitGroup() {
         return unitGroupBuilder_ != null || unitGroup_ != null;
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        * @return The unitGroup.
        */
       public org.openlca.proto.Proto.UnitGroup getUnitGroup() {
@@ -13314,7 +14521,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public Builder setUnitGroup(org.openlca.proto.Proto.UnitGroup value) {
         if (unitGroupBuilder_ == null) {
@@ -13330,7 +14537,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public Builder setUnitGroup(
           org.openlca.proto.Proto.UnitGroup.Builder builderForValue) {
@@ -13344,7 +14551,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public Builder mergeUnitGroup(org.openlca.proto.Proto.UnitGroup value) {
         if (unitGroupBuilder_ == null) {
@@ -13362,7 +14569,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public Builder clearUnitGroup() {
         if (unitGroupBuilder_ == null) {
@@ -13376,7 +14583,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public org.openlca.proto.Proto.UnitGroup.Builder getUnitGroupBuilder() {
         
@@ -13384,7 +14591,7 @@ public final class Services {
         return getUnitGroupFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       public org.openlca.proto.Proto.UnitGroupOrBuilder getUnitGroupOrBuilder() {
         if (unitGroupBuilder_ != null) {
@@ -13395,7 +14602,7 @@ public final class Services {
         }
       }
       /**
-       * <code>.protolca.UnitGroup unit_group = 1;</code>
+       * <code>.protolca.UnitGroup unit_group = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.UnitGroup, org.openlca.proto.Proto.UnitGroup.Builder, org.openlca.proto.Proto.UnitGroupOrBuilder> 
@@ -13413,7 +14620,7 @@ public final class Services {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -13429,7 +14636,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -13446,7 +14653,7 @@ public final class Services {
         }
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -13461,7 +14668,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -13471,7 +14678,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>string error = 2;</code>
+       * <code>string error = 3;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -13639,118 +14846,123 @@ public final class Services {
   static {
     java.lang.String[] descriptorData = {
       "\n\016services.proto\022\021protolca.services\032\nolc" +
-      "a.proto\"\007\n\005Empty\"6\n\tRefStatus\022\032\n\003ref\030\001 \001" +
-      "(\0132\r.protolca.Ref\022\r\n\005error\030\002 \001(\t\"<\n\013Acto" +
-      "rStatus\022\036\n\005actor\030\001 \001(\0132\017.protolca.Actor\022" +
-      "\r\n\005error\030\002 \001(\t\"E\n\016CategoryStatus\022$\n\010cate" +
-      "gory\030\001 \001(\0132\022.protolca.Category\022\r\n\005error\030" +
-      "\002 \001(\t\"E\n\016CurrencyStatus\022$\n\010currency\030\001 \001(" +
-      "\0132\022.protolca.Currency\022\r\n\005error\030\002 \001(\t\"F\n\016" +
-      "DqSystemStatus\022%\n\tdq_system\030\001 \001(\0132\022.prot" +
-      "olca.DqSystem\022\r\n\005error\030\002 \001(\t\"9\n\nFlowStat" +
-      "us\022\034\n\004flow\030\001 \001(\0132\016.protolca.Flow\022\r\n\005erro" +
-      "r\030\002 \001(\t\"R\n\022FlowPropertyStatus\022-\n\rflow_pr" +
-      "operty\030\001 \001(\0132\026.protolca.FlowProperty\022\r\n\005" +
-      "error\030\002 \001(\t\"X\n\024ImpactCategoryStatus\0221\n\017i" +
-      "mpact_category\030\001 \001(\0132\030.protolca.ImpactCa" +
-      "tegory\022\r\n\005error\030\002 \001(\t\"R\n\022ImpactMethodSta" +
-      "tus\022-\n\rimpact_method\030\001 \001(\0132\026.protolca.Im" +
-      "pactMethod\022\r\n\005error\030\002 \001(\t\"E\n\016LocationSta" +
-      "tus\022$\n\010location\030\001 \001(\0132\022.protolca.Locatio" +
-      "n\022\r\n\005error\030\002 \001(\t\"H\n\017ParameterStatus\022&\n\tp" +
-      "arameter\030\001 \001(\0132\023.protolca.Parameter\022\r\n\005e" +
-      "rror\030\002 \001(\t\"B\n\rProcessStatus\022\"\n\007process\030\001" +
-      " \001(\0132\021.protolca.Process\022\r\n\005error\030\002 \001(\t\"U" +
-      "\n\023ProductSystemStatus\022/\n\016product_system\030" +
-      "\001 \001(\0132\027.protolca.ProductSystem\022\r\n\005error\030" +
-      "\002 \001(\t\"B\n\rProjectStatus\022\"\n\007project\030\001 \001(\0132" +
-      "\021.protolca.Project\022\r\n\005error\030\002 \001(\t\"[\n\025Soc" +
-      "ialIndicatorStatus\0223\n\020social_indicator\030\001" +
-      " \001(\0132\031.protolca.SocialIndicator\022\r\n\005error" +
-      "\030\002 \001(\t\"?\n\014SourceStatus\022 \n\006source\030\001 \001(\0132\020" +
-      ".protolca.Source\022\r\n\005error\030\002 \001(\t\"I\n\017UnitG" +
-      "roupStatus\022\'\n\nunit_group\030\001 \001(\0132\023.protolc" +
-      "a.UnitGroup\022\r\n\005error\030\002 \001(\t2\335\030\n\013DataServi" +
-      "ce\0225\n\006actors\022\030.protolca.services.Empty\032\017" +
-      ".protolca.Actor0\001\0226\n\005actor\022\r.protolca.Re" +
-      "f\032\036.protolca.services.ActorStatus\022:\n\tput" +
-      "_actor\022\017.protolca.Actor\032\034.protolca.servi" +
-      "ces.RefStatus\022<\n\ncategories\022\030.protolca.s" +
-      "ervices.Empty\032\022.protolca.Category0\001\022<\n\010c" +
-      "ategory\022\r.protolca.Ref\032!.protolca.servic" +
-      "es.CategoryStatus\022@\n\014put_category\022\022.prot" +
-      "olca.Category\032\034.protolca.services.RefSta" +
-      "tus\022<\n\ncurrencies\022\030.protolca.services.Em" +
-      "pty\032\022.protolca.Currency0\001\022<\n\010currency\022\r." +
-      "protolca.Ref\032!.protolca.services.Currenc" +
-      "yStatus\022@\n\014put_currency\022\022.protolca.Curre" +
-      "ncy\032\034.protolca.services.RefStatus\022<\n\ndq_" +
-      "systems\022\030.protolca.services.Empty\032\022.prot" +
-      "olca.DqSystem0\001\022=\n\tdq_system\022\r.protolca." +
-      "Ref\032!.protolca.services.DqSystemStatus\022A" +
-      "\n\rput_dq_system\022\022.protolca.DqSystem\032\034.pr" +
-      "otolca.services.RefStatus\0223\n\005flows\022\030.pro" +
-      "tolca.services.Empty\032\016.protolca.Flow0\001\0224" +
-      "\n\004flow\022\r.protolca.Ref\032\035.protolca.service" +
-      "s.FlowStatus\0228\n\010put_flow\022\016.protolca.Flow" +
-      "\032\034.protolca.services.RefStatus\022E\n\017flow_p" +
-      "roperties\022\030.protolca.services.Empty\032\026.pr" +
-      "otolca.FlowProperty0\001\022E\n\rflow_property\022\r" +
-      ".protolca.Ref\032%.protolca.services.FlowPr" +
-      "opertyStatus\022I\n\021put_flow_property\022\026.prot" +
-      "olca.FlowProperty\032\034.protolca.services.Re" +
-      "fStatus\022I\n\021impact_categories\022\030.protolca." +
-      "services.Empty\032\030.protolca.ImpactCategory" +
-      "0\001\022I\n\017impact_category\022\r.protolca.Ref\032\'.p" +
-      "rotolca.services.ImpactCategoryStatus\022M\n" +
-      "\023put_impact_category\022\030.protolca.ImpactCa" +
-      "tegory\032\034.protolca.services.RefStatus\022D\n\016" +
-      "impact_methods\022\030.protolca.services.Empty" +
-      "\032\026.protolca.ImpactMethod0\001\022E\n\rimpact_met" +
-      "hod\022\r.protolca.Ref\032%.protolca.services.I" +
-      "mpactMethodStatus\022I\n\021put_impact_method\022\026" +
-      ".protolca.ImpactMethod\032\034.protolca.servic" +
-      "es.RefStatus\022;\n\tlocations\022\030.protolca.ser" +
-      "vices.Empty\032\022.protolca.Location0\001\022<\n\010loc" +
-      "ation\022\r.protolca.Ref\032!.protolca.services" +
-      ".LocationStatus\022@\n\014put_location\022\022.protol" +
-      "ca.Location\032\034.protolca.services.RefStatu" +
-      "s\022=\n\nparameters\022\030.protolca.services.Empt" +
-      "y\032\023.protolca.Parameter0\001\022>\n\tparameter\022\r." +
-      "protolca.Ref\032\".protolca.services.Paramet" +
-      "erStatus\022B\n\rput_parameter\022\023.protolca.Par" +
-      "ameter\032\034.protolca.services.RefStatus\022:\n\t" +
-      "processes\022\030.protolca.services.Empty\032\021.pr" +
-      "otolca.Process0\001\022:\n\007process\022\r.protolca.R" +
-      "ef\032 .protolca.services.ProcessStatus\022>\n\013" +
-      "put_process\022\021.protolca.Process\032\034.protolc" +
-      "a.services.RefStatus\022F\n\017product_systems\022" +
-      "\030.protolca.services.Empty\032\027.protolca.Pro" +
-      "ductSystem0\001\022G\n\016product_system\022\r.protolc" +
-      "a.Ref\032&.protolca.services.ProductSystemS" +
-      "tatus\022K\n\022put_product_system\022\027.protolca.P" +
-      "roductSystem\032\034.protolca.services.RefStat" +
-      "us\0229\n\010projects\022\030.protolca.services.Empty" +
-      "\032\021.protolca.Project0\001\022:\n\007project\022\r.proto" +
-      "lca.Ref\032 .protolca.services.ProjectStatu" +
-      "s\022>\n\013put_project\022\021.protolca.Project\032\034.pr" +
-      "otolca.services.RefStatus\022J\n\021social_indi" +
-      "cators\022\030.protolca.services.Empty\032\031.proto" +
-      "lca.SocialIndicator0\001\022K\n\020social_indicato" +
-      "r\022\r.protolca.Ref\032(.protolca.services.Soc" +
-      "ialIndicatorStatus\022O\n\024put_social_indicat" +
-      "or\022\031.protolca.SocialIndicator\032\034.protolca" +
-      ".services.RefStatus\0227\n\007sources\022\030.protolc" +
-      "a.services.Empty\032\020.protolca.Source0\001\0228\n\006" +
-      "source\022\r.protolca.Ref\032\037.protolca.service" +
-      "s.SourceStatus\022<\n\nput_source\022\020.protolca." +
-      "Source\032\034.protolca.services.RefStatus\022>\n\013" +
-      "unit_groups\022\030.protolca.services.Empty\032\023." +
-      "protolca.UnitGroup0\001\022?\n\nunit_group\022\r.pro" +
-      "tolca.Ref\032\".protolca.services.UnitGroupS" +
-      "tatus\022C\n\016put_unit_group\022\023.protolca.UnitG" +
-      "roup\032\034.protolca.services.RefStatusB\034\n\032or" +
-      "g.openlca.proto.servicesP\000b\006proto3"
+      "a.proto\"\007\n\005Empty\"B\n\tRefStatus\022\n\n\002ok\030\001 \001(" +
+      "\010\022\032\n\003ref\030\002 \001(\0132\r.protolca.Ref\022\r\n\005error\030\003" +
+      " \001(\t\"H\n\013ActorStatus\022\n\n\002ok\030\001 \001(\010\022\036\n\005actor" +
+      "\030\002 \001(\0132\017.protolca.Actor\022\r\n\005error\030\003 \001(\t\"Q" +
+      "\n\016CategoryStatus\022\n\n\002ok\030\001 \001(\010\022$\n\010category" +
+      "\030\002 \001(\0132\022.protolca.Category\022\r\n\005error\030\003 \001(" +
+      "\t\"Q\n\016CurrencyStatus\022\n\n\002ok\030\001 \001(\010\022$\n\010curre" +
+      "ncy\030\002 \001(\0132\022.protolca.Currency\022\r\n\005error\030\003" +
+      " \001(\t\"R\n\016DqSystemStatus\022\n\n\002ok\030\001 \001(\010\022%\n\tdq" +
+      "_system\030\002 \001(\0132\022.protolca.DqSystem\022\r\n\005err" +
+      "or\030\003 \001(\t\"E\n\nFlowStatus\022\n\n\002ok\030\001 \001(\010\022\034\n\004fl" +
+      "ow\030\002 \001(\0132\016.protolca.Flow\022\r\n\005error\030\003 \001(\t\"" +
+      "^\n\022FlowPropertyStatus\022\n\n\002ok\030\001 \001(\010\022-\n\rflo" +
+      "w_property\030\002 \001(\0132\026.protolca.FlowProperty" +
+      "\022\r\n\005error\030\003 \001(\t\"d\n\024ImpactCategoryStatus\022" +
+      "\n\n\002ok\030\001 \001(\010\0221\n\017impact_category\030\002 \001(\0132\030.p" +
+      "rotolca.ImpactCategory\022\r\n\005error\030\003 \001(\t\"^\n" +
+      "\022ImpactMethodStatus\022\n\n\002ok\030\001 \001(\010\022-\n\rimpac" +
+      "t_method\030\002 \001(\0132\026.protolca.ImpactMethod\022\r" +
+      "\n\005error\030\003 \001(\t\"Q\n\016LocationStatus\022\n\n\002ok\030\001 " +
+      "\001(\010\022$\n\010location\030\002 \001(\0132\022.protolca.Locatio" +
+      "n\022\r\n\005error\030\003 \001(\t\"T\n\017ParameterStatus\022\n\n\002o" +
+      "k\030\001 \001(\010\022&\n\tparameter\030\002 \001(\0132\023.protolca.Pa" +
+      "rameter\022\r\n\005error\030\003 \001(\t\"N\n\rProcessStatus\022" +
+      "\n\n\002ok\030\001 \001(\010\022\"\n\007process\030\002 \001(\0132\021.protolca." +
+      "Process\022\r\n\005error\030\003 \001(\t\"a\n\023ProductSystemS" +
+      "tatus\022\n\n\002ok\030\001 \001(\010\022/\n\016product_system\030\002 \001(" +
+      "\0132\027.protolca.ProductSystem\022\r\n\005error\030\003 \001(" +
+      "\t\"N\n\rProjectStatus\022\n\n\002ok\030\001 \001(\010\022\"\n\007projec" +
+      "t\030\002 \001(\0132\021.protolca.Project\022\r\n\005error\030\003 \001(" +
+      "\t\"g\n\025SocialIndicatorStatus\022\n\n\002ok\030\001 \001(\010\0223" +
+      "\n\020social_indicator\030\002 \001(\0132\031.protolca.Soci" +
+      "alIndicator\022\r\n\005error\030\003 \001(\t\"K\n\014SourceStat" +
+      "us\022\n\n\002ok\030\001 \001(\010\022 \n\006source\030\002 \001(\0132\020.protolc" +
+      "a.Source\022\r\n\005error\030\003 \001(\t\"U\n\017UnitGroupStat" +
+      "us\022\n\n\002ok\030\001 \001(\010\022\'\n\nunit_group\030\002 \001(\0132\023.pro" +
+      "tolca.UnitGroup\022\r\n\005error\030\003 \001(\t2\335\030\n\013DataS" +
+      "ervice\0225\n\006actors\022\030.protolca.services.Emp" +
+      "ty\032\017.protolca.Actor0\001\0226\n\005actor\022\r.protolc" +
+      "a.Ref\032\036.protolca.services.ActorStatus\022:\n" +
+      "\tput_actor\022\017.protolca.Actor\032\034.protolca.s" +
+      "ervices.RefStatus\022<\n\ncategories\022\030.protol" +
+      "ca.services.Empty\032\022.protolca.Category0\001\022" +
+      "<\n\010category\022\r.protolca.Ref\032!.protolca.se" +
+      "rvices.CategoryStatus\022@\n\014put_category\022\022." +
+      "protolca.Category\032\034.protolca.services.Re" +
+      "fStatus\022<\n\ncurrencies\022\030.protolca.service" +
+      "s.Empty\032\022.protolca.Currency0\001\022<\n\010currenc" +
+      "y\022\r.protolca.Ref\032!.protolca.services.Cur" +
+      "rencyStatus\022@\n\014put_currency\022\022.protolca.C" +
+      "urrency\032\034.protolca.services.RefStatus\022<\n" +
+      "\ndq_systems\022\030.protolca.services.Empty\032\022." +
+      "protolca.DqSystem0\001\022=\n\tdq_system\022\r.proto" +
+      "lca.Ref\032!.protolca.services.DqSystemStat" +
+      "us\022A\n\rput_dq_system\022\022.protolca.DqSystem\032" +
+      "\034.protolca.services.RefStatus\0223\n\005flows\022\030" +
+      ".protolca.services.Empty\032\016.protolca.Flow" +
+      "0\001\0224\n\004flow\022\r.protolca.Ref\032\035.protolca.ser" +
+      "vices.FlowStatus\0228\n\010put_flow\022\016.protolca." +
+      "Flow\032\034.protolca.services.RefStatus\022E\n\017fl" +
+      "ow_properties\022\030.protolca.services.Empty\032" +
+      "\026.protolca.FlowProperty0\001\022E\n\rflow_proper" +
+      "ty\022\r.protolca.Ref\032%.protolca.services.Fl" +
+      "owPropertyStatus\022I\n\021put_flow_property\022\026." +
+      "protolca.FlowProperty\032\034.protolca.service" +
+      "s.RefStatus\022I\n\021impact_categories\022\030.proto" +
+      "lca.services.Empty\032\030.protolca.ImpactCate" +
+      "gory0\001\022I\n\017impact_category\022\r.protolca.Ref" +
+      "\032\'.protolca.services.ImpactCategoryStatu" +
+      "s\022M\n\023put_impact_category\022\030.protolca.Impa" +
+      "ctCategory\032\034.protolca.services.RefStatus" +
+      "\022D\n\016impact_methods\022\030.protolca.services.E" +
+      "mpty\032\026.protolca.ImpactMethod0\001\022E\n\rimpact" +
+      "_method\022\r.protolca.Ref\032%.protolca.servic" +
+      "es.ImpactMethodStatus\022I\n\021put_impact_meth" +
+      "od\022\026.protolca.ImpactMethod\032\034.protolca.se" +
+      "rvices.RefStatus\022;\n\tlocations\022\030.protolca" +
+      ".services.Empty\032\022.protolca.Location0\001\022<\n" +
+      "\010location\022\r.protolca.Ref\032!.protolca.serv" +
+      "ices.LocationStatus\022@\n\014put_location\022\022.pr" +
+      "otolca.Location\032\034.protolca.services.RefS" +
+      "tatus\022=\n\nparameters\022\030.protolca.services." +
+      "Empty\032\023.protolca.Parameter0\001\022>\n\tparamete" +
+      "r\022\r.protolca.Ref\032\".protolca.services.Par" +
+      "ameterStatus\022B\n\rput_parameter\022\023.protolca" +
+      ".Parameter\032\034.protolca.services.RefStatus" +
+      "\022:\n\tprocesses\022\030.protolca.services.Empty\032" +
+      "\021.protolca.Process0\001\022:\n\007process\022\r.protol" +
+      "ca.Ref\032 .protolca.services.ProcessStatus" +
+      "\022>\n\013put_process\022\021.protolca.Process\032\034.pro" +
+      "tolca.services.RefStatus\022F\n\017product_syst" +
+      "ems\022\030.protolca.services.Empty\032\027.protolca" +
+      ".ProductSystem0\001\022G\n\016product_system\022\r.pro" +
+      "tolca.Ref\032&.protolca.services.ProductSys" +
+      "temStatus\022K\n\022put_product_system\022\027.protol" +
+      "ca.ProductSystem\032\034.protolca.services.Ref" +
+      "Status\0229\n\010projects\022\030.protolca.services.E" +
+      "mpty\032\021.protolca.Project0\001\022:\n\007project\022\r.p" +
+      "rotolca.Ref\032 .protolca.services.ProjectS" +
+      "tatus\022>\n\013put_project\022\021.protolca.Project\032" +
+      "\034.protolca.services.RefStatus\022J\n\021social_" +
+      "indicators\022\030.protolca.services.Empty\032\031.p" +
+      "rotolca.SocialIndicator0\001\022K\n\020social_indi" +
+      "cator\022\r.protolca.Ref\032(.protolca.services" +
+      ".SocialIndicatorStatus\022O\n\024put_social_ind" +
+      "icator\022\031.protolca.SocialIndicator\032\034.prot" +
+      "olca.services.RefStatus\0227\n\007sources\022\030.pro" +
+      "tolca.services.Empty\032\020.protolca.Source0\001" +
+      "\0228\n\006source\022\r.protolca.Ref\032\037.protolca.ser" +
+      "vices.SourceStatus\022<\n\nput_source\022\020.proto" +
+      "lca.Source\032\034.protolca.services.RefStatus" +
+      "\022>\n\013unit_groups\022\030.protolca.services.Empt" +
+      "y\032\023.protolca.UnitGroup0\001\022?\n\nunit_group\022\r" +
+      ".protolca.Ref\032\".protolca.services.UnitGr" +
+      "oupStatus\022C\n\016put_unit_group\022\023.protolca.U" +
+      "nitGroup\032\034.protolca.services.RefStatusB\034" +
+      "\n\032org.openlca.proto.servicesP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13768,103 +14980,103 @@ public final class Services {
     internal_static_protolca_services_RefStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_RefStatus_descriptor,
-        new java.lang.String[] { "Ref", "Error", });
+        new java.lang.String[] { "Ok", "Ref", "Error", });
     internal_static_protolca_services_ActorStatus_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protolca_services_ActorStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ActorStatus_descriptor,
-        new java.lang.String[] { "Actor", "Error", });
+        new java.lang.String[] { "Ok", "Actor", "Error", });
     internal_static_protolca_services_CategoryStatus_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_protolca_services_CategoryStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_CategoryStatus_descriptor,
-        new java.lang.String[] { "Category", "Error", });
+        new java.lang.String[] { "Ok", "Category", "Error", });
     internal_static_protolca_services_CurrencyStatus_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_protolca_services_CurrencyStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_CurrencyStatus_descriptor,
-        new java.lang.String[] { "Currency", "Error", });
+        new java.lang.String[] { "Ok", "Currency", "Error", });
     internal_static_protolca_services_DqSystemStatus_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_protolca_services_DqSystemStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_DqSystemStatus_descriptor,
-        new java.lang.String[] { "DqSystem", "Error", });
+        new java.lang.String[] { "Ok", "DqSystem", "Error", });
     internal_static_protolca_services_FlowStatus_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_protolca_services_FlowStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_FlowStatus_descriptor,
-        new java.lang.String[] { "Flow", "Error", });
+        new java.lang.String[] { "Ok", "Flow", "Error", });
     internal_static_protolca_services_FlowPropertyStatus_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_protolca_services_FlowPropertyStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_FlowPropertyStatus_descriptor,
-        new java.lang.String[] { "FlowProperty", "Error", });
+        new java.lang.String[] { "Ok", "FlowProperty", "Error", });
     internal_static_protolca_services_ImpactCategoryStatus_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_protolca_services_ImpactCategoryStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ImpactCategoryStatus_descriptor,
-        new java.lang.String[] { "ImpactCategory", "Error", });
+        new java.lang.String[] { "Ok", "ImpactCategory", "Error", });
     internal_static_protolca_services_ImpactMethodStatus_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_protolca_services_ImpactMethodStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ImpactMethodStatus_descriptor,
-        new java.lang.String[] { "ImpactMethod", "Error", });
+        new java.lang.String[] { "Ok", "ImpactMethod", "Error", });
     internal_static_protolca_services_LocationStatus_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_protolca_services_LocationStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_LocationStatus_descriptor,
-        new java.lang.String[] { "Location", "Error", });
+        new java.lang.String[] { "Ok", "Location", "Error", });
     internal_static_protolca_services_ParameterStatus_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_protolca_services_ParameterStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ParameterStatus_descriptor,
-        new java.lang.String[] { "Parameter", "Error", });
+        new java.lang.String[] { "Ok", "Parameter", "Error", });
     internal_static_protolca_services_ProcessStatus_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_protolca_services_ProcessStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ProcessStatus_descriptor,
-        new java.lang.String[] { "Process", "Error", });
+        new java.lang.String[] { "Ok", "Process", "Error", });
     internal_static_protolca_services_ProductSystemStatus_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_protolca_services_ProductSystemStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ProductSystemStatus_descriptor,
-        new java.lang.String[] { "ProductSystem", "Error", });
+        new java.lang.String[] { "Ok", "ProductSystem", "Error", });
     internal_static_protolca_services_ProjectStatus_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_protolca_services_ProjectStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_ProjectStatus_descriptor,
-        new java.lang.String[] { "Project", "Error", });
+        new java.lang.String[] { "Ok", "Project", "Error", });
     internal_static_protolca_services_SocialIndicatorStatus_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_protolca_services_SocialIndicatorStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_SocialIndicatorStatus_descriptor,
-        new java.lang.String[] { "SocialIndicator", "Error", });
+        new java.lang.String[] { "Ok", "SocialIndicator", "Error", });
     internal_static_protolca_services_SourceStatus_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_protolca_services_SourceStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_SourceStatus_descriptor,
-        new java.lang.String[] { "Source", "Error", });
+        new java.lang.String[] { "Ok", "Source", "Error", });
     internal_static_protolca_services_UnitGroupStatus_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_protolca_services_UnitGroupStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_UnitGroupStatus_descriptor,
-        new java.lang.String[] { "UnitGroup", "Error", });
+        new java.lang.String[] { "Ok", "UnitGroup", "Error", });
     org.openlca.proto.Proto.getDescriptor();
   }
 

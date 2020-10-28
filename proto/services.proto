@@ -9,88 +9,105 @@ message Empty {
 }
 
 message RefStatus {
-  protolca.Ref ref = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Ref ref = 2;
+  string error = 3;
 }
 
 message ActorStatus {
-  protolca.Actor actor = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Actor actor = 2;
+  string error = 3;
 }
 
 message CategoryStatus {
-  protolca.Category category = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Category category = 2;
+  string error = 3;
 }
 
 message CurrencyStatus {
-  protolca.Currency currency = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Currency currency = 2;
+  string error = 3;
 }
 
 message DqSystemStatus {
-  protolca.DqSystem dq_system = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.DqSystem dq_system = 2;
+  string error = 3;
 }
 
 message FlowStatus {
-  protolca.Flow flow = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Flow flow = 2;
+  string error = 3;
 }
 
 message FlowPropertyStatus {
-  protolca.FlowProperty flow_property = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.FlowProperty flow_property = 2;
+  string error = 3;
 }
 
 message ImpactCategoryStatus {
-  protolca.ImpactCategory impact_category = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.ImpactCategory impact_category = 2;
+  string error = 3;
 }
 
 message ImpactMethodStatus {
-  protolca.ImpactMethod impact_method = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.ImpactMethod impact_method = 2;
+  string error = 3;
 }
 
 message LocationStatus {
-  protolca.Location location = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Location location = 2;
+  string error = 3;
 }
 
 message ParameterStatus {
-  protolca.Parameter parameter = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Parameter parameter = 2;
+  string error = 3;
 }
 
 message ProcessStatus {
-  protolca.Process process = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Process process = 2;
+  string error = 3;
 }
 
 message ProductSystemStatus {
-  protolca.ProductSystem product_system = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.ProductSystem product_system = 2;
+  string error = 3;
 }
 
 message ProjectStatus {
-  protolca.Project project = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Project project = 2;
+  string error = 3;
 }
 
 message SocialIndicatorStatus {
-  protolca.SocialIndicator social_indicator = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.SocialIndicator social_indicator = 2;
+  string error = 3;
 }
 
 message SourceStatus {
-  protolca.Source source = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.Source source = 2;
+  string error = 3;
 }
 
 message UnitGroupStatus {
-  protolca.UnitGroup unit_group = 1;
-  string error = 2;
+  bool ok = 1;
+  protolca.UnitGroup unit_group = 2;
+  string error = 3;
 }
 
 service DataService {

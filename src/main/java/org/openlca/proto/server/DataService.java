@@ -155,10 +155,15 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       var proto = new FlowWriter(WriterConfig.of(db))
         .write(flow);
       status.setFlow(proto);
+      status.setOk(true);
     }
 
     resp.onNext(status.build());
     resp.onCompleted();
+  }
+
+  @Override
+  public void putFlow(Proto.Flow req, StreamObserver<Services.RefStatus> resp) {
   }
 
   @Override
