@@ -8,6 +8,11 @@ import public "olca.proto";
 message Empty {
 }
 
+message Status {
+  bool ok = 1;
+  string error = 2;
+}
+
 message RefStatus {
   bool ok = 1;
   protolca.Ref ref = 2;
@@ -111,6 +116,8 @@ message UnitGroupStatus {
 }
 
 service DataService {
+
+  rpc delete(protolca.Ref) returns (Status);
 
   // methods for Actor
   rpc actors(Empty) returns (stream protolca.Actor);

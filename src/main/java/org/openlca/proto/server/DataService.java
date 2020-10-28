@@ -1,5 +1,9 @@
 package org.openlca.proto.server;
 
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.function.Consumer;
+
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.ActorDao;
 import org.openlca.core.database.CategoryDao;
@@ -19,7 +23,9 @@ import org.openlca.core.database.SocialIndicatorDao;
 import org.openlca.core.database.SourceDao;
 import org.openlca.core.database.UnitGroupDao;
 import org.openlca.core.model.Actor;
+import org.openlca.core.model.CategorizedEntity;
 import org.openlca.core.model.Flow;
+import org.openlca.core.model.ModelType;
 import org.openlca.core.model.RootEntity;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.MemStore;
@@ -53,6 +59,50 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   DataService(IDatabase db) {
     this.db = db;
+  }
+
+  @Override
+  public void delete(Proto.Ref req, StreamObserver<Services.Status> resp) {
+    var type = Arrays.stream(ModelType.values())
+      .map(ModelType::getModelClass)
+      .filter(Objects::nonNull)
+      .filter(clazz -> clazz.getSimpleName().equals(req.getType()))
+      .findAny()
+      .orElse(null);
+
+    Consumer<String> error = msg -> {
+      var status = Services.Status.newBuilder()
+        .setOk(false)
+        .setError(msg)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    if (type == null) {
+      error.accept("Unknown model type: " + req.getType());
+      return;
+    }
+
+    if (!CategorizedEntity.class.isAssignableFrom(type)) {
+      error.accept(req.getType() + " is not a standalone entity");
+      return;
+    }
+
+    var entity = db.get(type, req.getId());
+    if (entity == null) {
+      error.accept(
+        "A " + req.getType() + " with id="
+        + req.getId() + " does not exist");
+      return;
+    }
+
+    db.delete(entity);
+    var status = Services.Status.newBuilder()
+      .setOk(true)
+      .build();
+    resp.onNext(status);
+    resp.onCompleted();
   }
 
   @Override

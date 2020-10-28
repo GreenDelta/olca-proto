@@ -22,6 +22,7 @@ public class FlowWriter {
       return proto.build();
 
     // root entitiy fields
+    proto.setType("Flow");
     proto.setId(Strings.orEmpty(flow.refId));
     proto.setName(Strings.orEmpty(flow.name));
     proto.setDescription(Strings.orEmpty(flow.description));

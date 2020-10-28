@@ -27,6 +27,37 @@ public final class DataServiceGrpc {
   public static final String SERVICE_NAME = "protolca.services.DataService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
+      org.openlca.proto.services.Services.Status> getDeleteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "delete",
+      requestType = org.openlca.proto.Proto.Ref.class,
+      responseType = org.openlca.proto.services.Services.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
+      org.openlca.proto.services.Services.Status> getDeleteMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.Status> getDeleteMethod;
+    if ((getDeleteMethod = DataServiceGrpc.getDeleteMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDeleteMethod = DataServiceGrpc.getDeleteMethod) == null) {
+          DataServiceGrpc.getDeleteMethod = getDeleteMethod =
+              io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "delete"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.Proto.Ref.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.services.Services.Status.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("delete"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
       org.openlca.proto.Proto.Actor> getActorsMethod;
 
@@ -1564,6 +1595,13 @@ public final class DataServiceGrpc {
   public static abstract class DataServiceImplBase implements io.grpc.BindableService {
 
     /**
+     */
+    public void delete(org.openlca.proto.Proto.Ref request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * methods for Actor
      * </pre>
@@ -1950,6 +1988,13 @@ public final class DataServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+            getDeleteMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.openlca.proto.Proto.Ref,
+                org.openlca.proto.services.Services.Status>(
+                  this, METHODID_DELETE)))
+          .addMethod(
             getActorsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
@@ -2301,6 +2346,14 @@ public final class DataServiceGrpc {
     protected DataServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataServiceStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public void delete(org.openlca.proto.Proto.Ref request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2751,6 +2804,13 @@ public final class DataServiceGrpc {
     }
 
     /**
+     */
+    public org.openlca.proto.services.Services.Status delete(org.openlca.proto.Proto.Ref request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * methods for Actor
      * </pre>
@@ -3167,6 +3227,14 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.Status> delete(
+        org.openlca.proto.Proto.Ref request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ActorStatus> actor(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
@@ -3422,54 +3490,55 @@ public final class DataServiceGrpc {
     }
   }
 
-  private static final int METHODID_ACTORS = 0;
-  private static final int METHODID_ACTOR = 1;
-  private static final int METHODID_PUT_ACTOR = 2;
-  private static final int METHODID_CATEGORIES = 3;
-  private static final int METHODID_CATEGORY = 4;
-  private static final int METHODID_PUT_CATEGORY = 5;
-  private static final int METHODID_CURRENCIES = 6;
-  private static final int METHODID_CURRENCY = 7;
-  private static final int METHODID_PUT_CURRENCY = 8;
-  private static final int METHODID_DQ_SYSTEMS = 9;
-  private static final int METHODID_DQ_SYSTEM = 10;
-  private static final int METHODID_PUT_DQ_SYSTEM = 11;
-  private static final int METHODID_FLOWS = 12;
-  private static final int METHODID_FLOW = 13;
-  private static final int METHODID_PUT_FLOW = 14;
-  private static final int METHODID_FLOW_PROPERTIES = 15;
-  private static final int METHODID_FLOW_PROPERTY = 16;
-  private static final int METHODID_PUT_FLOW_PROPERTY = 17;
-  private static final int METHODID_IMPACT_CATEGORIES = 18;
-  private static final int METHODID_IMPACT_CATEGORY = 19;
-  private static final int METHODID_PUT_IMPACT_CATEGORY = 20;
-  private static final int METHODID_IMPACT_METHODS = 21;
-  private static final int METHODID_IMPACT_METHOD = 22;
-  private static final int METHODID_PUT_IMPACT_METHOD = 23;
-  private static final int METHODID_LOCATIONS = 24;
-  private static final int METHODID_LOCATION = 25;
-  private static final int METHODID_PUT_LOCATION = 26;
-  private static final int METHODID_PARAMETERS = 27;
-  private static final int METHODID_PARAMETER = 28;
-  private static final int METHODID_PUT_PARAMETER = 29;
-  private static final int METHODID_PROCESSES = 30;
-  private static final int METHODID_PROCESS = 31;
-  private static final int METHODID_PUT_PROCESS = 32;
-  private static final int METHODID_PRODUCT_SYSTEMS = 33;
-  private static final int METHODID_PRODUCT_SYSTEM = 34;
-  private static final int METHODID_PUT_PRODUCT_SYSTEM = 35;
-  private static final int METHODID_PROJECTS = 36;
-  private static final int METHODID_PROJECT = 37;
-  private static final int METHODID_PUT_PROJECT = 38;
-  private static final int METHODID_SOCIAL_INDICATORS = 39;
-  private static final int METHODID_SOCIAL_INDICATOR = 40;
-  private static final int METHODID_PUT_SOCIAL_INDICATOR = 41;
-  private static final int METHODID_SOURCES = 42;
-  private static final int METHODID_SOURCE = 43;
-  private static final int METHODID_PUT_SOURCE = 44;
-  private static final int METHODID_UNIT_GROUPS = 45;
-  private static final int METHODID_UNIT_GROUP = 46;
-  private static final int METHODID_PUT_UNIT_GROUP = 47;
+  private static final int METHODID_DELETE = 0;
+  private static final int METHODID_ACTORS = 1;
+  private static final int METHODID_ACTOR = 2;
+  private static final int METHODID_PUT_ACTOR = 3;
+  private static final int METHODID_CATEGORIES = 4;
+  private static final int METHODID_CATEGORY = 5;
+  private static final int METHODID_PUT_CATEGORY = 6;
+  private static final int METHODID_CURRENCIES = 7;
+  private static final int METHODID_CURRENCY = 8;
+  private static final int METHODID_PUT_CURRENCY = 9;
+  private static final int METHODID_DQ_SYSTEMS = 10;
+  private static final int METHODID_DQ_SYSTEM = 11;
+  private static final int METHODID_PUT_DQ_SYSTEM = 12;
+  private static final int METHODID_FLOWS = 13;
+  private static final int METHODID_FLOW = 14;
+  private static final int METHODID_PUT_FLOW = 15;
+  private static final int METHODID_FLOW_PROPERTIES = 16;
+  private static final int METHODID_FLOW_PROPERTY = 17;
+  private static final int METHODID_PUT_FLOW_PROPERTY = 18;
+  private static final int METHODID_IMPACT_CATEGORIES = 19;
+  private static final int METHODID_IMPACT_CATEGORY = 20;
+  private static final int METHODID_PUT_IMPACT_CATEGORY = 21;
+  private static final int METHODID_IMPACT_METHODS = 22;
+  private static final int METHODID_IMPACT_METHOD = 23;
+  private static final int METHODID_PUT_IMPACT_METHOD = 24;
+  private static final int METHODID_LOCATIONS = 25;
+  private static final int METHODID_LOCATION = 26;
+  private static final int METHODID_PUT_LOCATION = 27;
+  private static final int METHODID_PARAMETERS = 28;
+  private static final int METHODID_PARAMETER = 29;
+  private static final int METHODID_PUT_PARAMETER = 30;
+  private static final int METHODID_PROCESSES = 31;
+  private static final int METHODID_PROCESS = 32;
+  private static final int METHODID_PUT_PROCESS = 33;
+  private static final int METHODID_PRODUCT_SYSTEMS = 34;
+  private static final int METHODID_PRODUCT_SYSTEM = 35;
+  private static final int METHODID_PUT_PRODUCT_SYSTEM = 36;
+  private static final int METHODID_PROJECTS = 37;
+  private static final int METHODID_PROJECT = 38;
+  private static final int METHODID_PUT_PROJECT = 39;
+  private static final int METHODID_SOCIAL_INDICATORS = 40;
+  private static final int METHODID_SOCIAL_INDICATOR = 41;
+  private static final int METHODID_PUT_SOCIAL_INDICATOR = 42;
+  private static final int METHODID_SOURCES = 43;
+  private static final int METHODID_SOURCE = 44;
+  private static final int METHODID_PUT_SOURCE = 45;
+  private static final int METHODID_UNIT_GROUPS = 46;
+  private static final int METHODID_UNIT_GROUP = 47;
+  private static final int METHODID_PUT_UNIT_GROUP = 48;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3488,6 +3557,10 @@ public final class DataServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_DELETE:
+          serviceImpl.delete((org.openlca.proto.Proto.Ref) request,
+              (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status>) responseObserver);
+          break;
         case METHODID_ACTORS:
           serviceImpl.actors((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor>) responseObserver);
@@ -3741,6 +3814,7 @@ public final class DataServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new DataServiceFileDescriptorSupplier())
+              .addMethod(getDeleteMethod())
               .addMethod(getActorsMethod())
               .addMethod(getActorMethod())
               .addMethod(getPutActorMethod())
