@@ -25,9 +25,23 @@ import org.openlca.core.database.SourceDao;
 import org.openlca.core.database.UnitGroupDao;
 import org.openlca.core.model.Actor;
 import org.openlca.core.model.CategorizedEntity;
+import org.openlca.core.model.Category;
+import org.openlca.core.model.Currency;
+import org.openlca.core.model.DQSystem;
 import org.openlca.core.model.Flow;
+import org.openlca.core.model.FlowProperty;
+import org.openlca.core.model.ImpactCategory;
+import org.openlca.core.model.ImpactMethod;
+import org.openlca.core.model.Location;
 import org.openlca.core.model.ModelType;
+import org.openlca.core.model.Parameter;
+import org.openlca.core.model.Process;
+import org.openlca.core.model.ProductSystem;
+import org.openlca.core.model.Project;
 import org.openlca.core.model.RootEntity;
+import org.openlca.core.model.SocialIndicator;
+import org.openlca.core.model.Source;
+import org.openlca.core.model.UnitGroup;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.MemStore;
 import org.openlca.proto.Proto;
@@ -156,6 +170,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void category(Proto.Ref req, StreamObserver<Services.CategoryStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.CategoryStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Category> onSuccess = category -> {
+      var proto = new CategoryWriter(WriterConfig.of(db))
+        .write(category);
+      var status = Services.CategoryStatus.newBuilder()
+        .setOk(true)
+        .setCategory(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Category.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void currencies(Services.Empty _req, StreamObserver<Proto.Currency> resp) {
     var writer = new CurrencyWriter(WriterConfig.of(db));
     var dao = new CurrencyDao(db);
@@ -168,6 +207,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void currency(Proto.Ref req, StreamObserver<Services.CurrencyStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.CurrencyStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Currency> onSuccess = currency -> {
+      var proto = new CurrencyWriter(WriterConfig.of(db))
+        .write(currency);
+      var status = Services.CurrencyStatus.newBuilder()
+        .setOk(true)
+        .setCurrency(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Currency.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void dqSystems(Services.Empty _req, StreamObserver<Proto.DqSystem> resp) {
     var writer = new DQSystemWriter(WriterConfig.of(db));
     var dao = new DQSystemDao(db);
@@ -177,6 +241,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void dqSystem(Proto.Ref req, StreamObserver<Services.DqSystemStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.DqSystemStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<DQSystem> onSuccess = dqSystem -> {
+      var proto = new DQSystemWriter(WriterConfig.of(db))
+        .write(dqSystem);
+      var status = Services.DqSystemStatus.newBuilder()
+        .setOk(true)
+        .setDqSystem(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(DQSystem.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -193,39 +282,27 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   @Override
   public void flow(Proto.Ref req, StreamObserver<Services.FlowStatus> resp) {
-    var status = Services.FlowStatus.newBuilder();
-    Flow flow = null;
+    Consumer<String> onError = error -> {
+      var status = Services.FlowStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
 
-    var id = req.getId();
-    if (Strings.notEmpty(id)) {
-      // try to find it by ID
-      flow = db.get(Flow.class, id);
-      if (flow == null) {
-        status.setError("A Flow with id='" + id + "' does not exist");
-      }
-
-    } else {
-      // try to find it by name
-      var name = req.getName();
-      if (Strings.nullOrEmpty(name)) {
-        status.setError("An id or name is required");
-      } else {
-        flow = db.forName(Flow.class, name);
-        if (flow == null) {
-          status.setError("A Flow with name='" + name + "' does not exist");
-        }
-      }
-    }
-
-    if (flow != null) {
+    Consumer<Flow> onSuccess = flow -> {
       var proto = new FlowWriter(WriterConfig.of(db))
         .write(flow);
-      status.setFlow(proto);
-      status.setOk(true);
-    }
+      var status = Services.FlowStatus.newBuilder()
+        .setOk(true)
+        .setFlow(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
 
-    resp.onNext(status.build());
-    resp.onCompleted();
+    handleGetOf(Flow.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -252,6 +329,32 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void flowProperty(Proto.Ref req, StreamObserver<Services.FlowPropertyStatus>
+    resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.FlowPropertyStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<FlowProperty> onSuccess = property -> {
+      var proto = new FlowPropertyWriter(WriterConfig.of(db))
+        .write(property);
+      var status = Services.FlowPropertyStatus.newBuilder()
+        .setOk(true)
+        .setFlowProperty(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(FlowProperty.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void impactCategories(Services.Empty _req, StreamObserver<Proto.ImpactCategory> resp) {
     var writer = new ImpactCategoryWriter(WriterConfig.of(db));
     var dao = new ImpactCategoryDao(db);
@@ -261,6 +364,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void impactCategory(Proto.Ref req, StreamObserver<Services.ImpactCategoryStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ImpactCategoryStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<ImpactCategory> onSuccess = impact -> {
+      var proto = new ImpactCategoryWriter(WriterConfig.of(db))
+        .write(impact);
+      var status = Services.ImpactCategoryStatus.newBuilder()
+        .setOk(true)
+        .setImpactCategory(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(ImpactCategory.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -276,6 +404,32 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void impactMethod(Proto.Ref req, StreamObserver<Services.ImpactMethodStatus>
+    resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ImpactMethodStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<ImpactMethod> onSuccess = method -> {
+      var proto = new ImpactMethodWriter(WriterConfig.of(db))
+        .write(method);
+      var status = Services.ImpactMethodStatus.newBuilder()
+        .setOk(true)
+        .setImpactMethod(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(ImpactMethod.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void locations(Services.Empty _req, StreamObserver<Proto.Location> resp) {
     var writer = new LocationWriter(WriterConfig.of(db));
     var dao = new LocationDao(db);
@@ -285,6 +439,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void location(Proto.Ref req, StreamObserver<Services.LocationStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.LocationStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Location> onSuccess = location -> {
+      var proto = new LocationWriter(WriterConfig.of(db))
+        .write(location);
+      var status = Services.LocationStatus.newBuilder()
+        .setOk(true)
+        .setLocation(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Location.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -300,6 +479,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void parameter(Proto.Ref req, StreamObserver<Services.ParameterStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ParameterStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Parameter> onSuccess = parameter -> {
+      var proto = new ParameterWriter(WriterConfig.of(db))
+        .write(parameter);
+      var status = Services.ParameterStatus.newBuilder()
+        .setOk(true)
+        .setParameter(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Parameter.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void processes(Services.Empty _req, StreamObserver<Proto.Process> resp) {
     var writer = new ProcessWriter(WriterConfig.of(db));
     var dao = new ProcessDao(db);
@@ -309,6 +513,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void process(Proto.Ref req, StreamObserver<Services.ProcessStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ProcessStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Process> onSuccess = process -> {
+      var proto = new ProcessWriter(WriterConfig.of(db))
+        .write(process);
+      var status = Services.ProcessStatus.newBuilder()
+        .setOk(true)
+        .setProcess(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Process.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -324,6 +553,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void productSystem(Proto.Ref req, StreamObserver<Services.ProductSystemStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ProductSystemStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<ProductSystem> onSuccess = system -> {
+      var proto = new ProductSystemWriter(WriterConfig.of(db))
+        .write(system);
+      var status = Services.ProductSystemStatus.newBuilder()
+        .setOk(true)
+        .setProductSystem(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(ProductSystem.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void projects(Services.Empty _req, StreamObserver<Proto.Project> resp) {
     var writer = new ProjectWriter(WriterConfig.of(db));
     var dao = new ProjectDao(db);
@@ -333,6 +587,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void project(Proto.Ref req, StreamObserver<Services.ProjectStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.ProjectStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Project> onSuccess = project -> {
+      var proto = new ProjectWriter(WriterConfig.of(db))
+        .write(project);
+      var status = Services.ProjectStatus.newBuilder()
+        .setOk(true)
+        .setProject(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Project.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -348,6 +627,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void socialIndicator(Proto.Ref req, StreamObserver<Services.SocialIndicatorStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.SocialIndicatorStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<SocialIndicator> onSuccess = indicator -> {
+      var proto = new SocialIndicatorWriter(WriterConfig.of(db))
+        .write(indicator);
+      var status = Services.SocialIndicatorStatus.newBuilder()
+        .setOk(true)
+        .setSocialIndicator(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(SocialIndicator.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void sources(Services.Empty _req, StreamObserver<Proto.Source> resp) {
     var writer = new SourceWriter(WriterConfig.of(db));
     var dao = new SourceDao(db);
@@ -360,6 +664,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void source(Proto.Ref req, StreamObserver<Services.SourceStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.SourceStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Source> onSuccess = source -> {
+      var proto = new SourceWriter(WriterConfig.of(db))
+        .write(source);
+      var status = Services.SourceStatus.newBuilder()
+        .setOk(true)
+        .setSource(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Source.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
   public void unitGroups(Services.Empty _req, StreamObserver<Proto.UnitGroup> resp) {
     var writer = new UnitGroupWriter(WriterConfig.of(db));
     var dao = new UnitGroupDao(db);
@@ -369,6 +698,31 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .map(writer::write)
       .forEach(resp::onNext);
     resp.onCompleted();
+  }
+
+  @Override
+  public void unitGroup(Proto.Ref req, StreamObserver<Services.UnitGroupStatus> resp) {
+    Consumer<String> onError = error -> {
+      var status = Services.UnitGroupStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<UnitGroup> onSuccess = group -> {
+      var proto = new UnitGroupWriter(WriterConfig.of(db))
+        .write(group);
+      var status = Services.UnitGroupStatus.newBuilder()
+        .setOk(true)
+        .setUnitGroup(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(UnitGroup.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   private Services.RefStatus importStatusOf(
@@ -418,7 +772,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     } else {
       onError.accept(
         "An instance of " + type.getSimpleName()
-        + " with name='" + name + "' does not exist");
+          + " with name='" + name + "' does not exist");
     }
   }
 }
