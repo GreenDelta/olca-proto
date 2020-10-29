@@ -52,16 +52,65 @@ public class Server {
 
   public static void main(String[] args) {
 
-    var db = DerbyDatabase.fromDataDir("methods");
-    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-      try {
-        System.out.println("close database...");
-        db.close();
-        System.out.println("database closed.");
-      } catch (Exception e) {
-        System.out.println("failed to close database");
+    String dbArg = null;
+    String portArg = null;
+
+    String flag = null;
+    for (var arg : args) {
+      if (arg.startsWith("-")) {
+        flag = arg;
+        continue;
       }
-    }));
-    new Server(db, 8080).start();
+      if (flag == null) {
+        System.err.println("Invalid argument: " + arg);
+        return;
+      }
+      switch (flag) {
+        case "-db":
+          dbArg = arg;
+          break;
+        case "-port":
+          portArg = arg;
+          break;
+        default:
+          System.err.println("Unknown flag: " + flag);
+          return;
+      }
+    }
+
+    if (dbArg == null) {
+      System.err.println(
+        "No database given. You can set it via `-db <database>`.");
+      return;
+    }
+
+    int port;
+    if (portArg == null) {
+      System.out.println("No port given. Take 8080 as default");
+      port = 8080;
+    } else {
+      try {
+        port = Integer.parseInt(portArg, 10);
+      } catch (Exception e) {
+        System.err.println(portArg + " is not a valid port number.");
+        return;
+      }
+    }
+
+    try {
+      var db = DerbyDatabase.fromDataDir(dbArg);
+      Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        try {
+          System.out.println("close database...");
+          db.close();
+          System.out.println("database closed.");
+        } catch (Exception e) {
+          System.out.println("failed to close database");
+        }
+      }));
+      new Server(db, port).start();
+    } catch (Exception e) {
+      System.err.println("Failed to start server: " + e.getMessage());
+    }
   }
 }
