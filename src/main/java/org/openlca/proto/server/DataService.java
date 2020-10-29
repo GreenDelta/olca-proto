@@ -3,6 +3,7 @@ package org.openlca.proto.server;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.ActorDao;
@@ -93,7 +94,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     if (entity == null) {
       error.accept(
         "A " + req.getType() + " with id="
-        + req.getId() + " does not exist");
+          + req.getId() + " does not exist");
       return;
     }
 
@@ -119,17 +120,27 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   @Override
   public void actor(Proto.Ref req, StreamObserver<Services.ActorStatus> resp) {
-    var status = Services.ActorStatus.newBuilder();
-    var actor = db.get(Actor.class, req.getId());
-    if (actor == null) {
-      status.setError("No Actor with id='" + req.getId() + "' exists");
-    } else {
+    Consumer<String> onError = error -> {
+      var status = Services.ActorStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    Consumer<Actor> onSuccess = actor -> {
       var proto = new ActorWriter(WriterConfig.of(db))
         .write(actor);
-      status.setActor(proto);
-    }
-    resp.onNext(status.build());
-    resp.onCompleted();
+      var status = Services.ActorStatus.newBuilder()
+        .setOk(true)
+        .setActor(proto)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    handleGetOf(Actor.class, req.getId(), req::getName, onSuccess, onError);
   }
 
   @Override
@@ -373,5 +384,41 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .setOk(true)
       .setRef(Refs.toRef(e))
       .build();
+  }
+
+  private <T extends RootEntity> void handleGetOf(
+    Class<T> type,
+    String id,
+    Supplier<String> nameFn,
+    Consumer<T> onSuccess,
+    Consumer<String> onError) {
+
+    // get by ID
+    if (Strings.notEmpty(id)) {
+      var e = db.get(type, id);
+      if (e != null) {
+        onSuccess.accept(e);
+      } else {
+        onError.accept(
+          "An instance of " + type.getSimpleName()
+            + " with id='" + id + "' does not exist");
+      }
+      return;
+    }
+
+    // get by name
+    var name = nameFn.get();
+    if (Strings.nullOrEmpty(name)) {
+      onError.accept("An id or name is required");
+      return;
+    }
+    var e = db.forName(type, name);
+    if (e != null) {
+      onSuccess.accept(e);
+    } else {
+      onError.accept(
+        "An instance of " + type.getSimpleName()
+        + " with name='" + name + "' does not exist");
+    }
   }
 }

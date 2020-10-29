@@ -117,6 +117,9 @@ message UnitGroupStatus {
 
 service DataService {
 
+  // Deletes the object with the `id` and `type` of the given descriptor from
+  // the database. Note that the type is a string with the name of the
+  // corresponding model class, e.g. `Process` or `Flow`.
   rpc delete(protolca.Ref) returns (Status);
 
   // methods for Actor
