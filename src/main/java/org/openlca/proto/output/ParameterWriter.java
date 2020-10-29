@@ -21,7 +21,8 @@ public class ParameterWriter {
     if (parameter == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Parameter");
     proto.setId(Strings.orEmpty(parameter.refId));
     proto.setName(Strings.orEmpty(parameter.name));
     proto.setDescription(Strings.orEmpty(parameter.description));

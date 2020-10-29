@@ -21,7 +21,8 @@ public class ImpactMethodWriter {
     if (method == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("ImpactMethod");
     proto.setId(Strings.orEmpty(method.refId));
     proto.setName(Strings.orEmpty(method.name));
     proto.setDescription(Strings.orEmpty(method.description));

@@ -21,7 +21,8 @@ public class FlowPropertyWriter {
     if (property == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("FlowProperty");
     proto.setId(Strings.orEmpty(property.refId));
     proto.setName(Strings.orEmpty(property.name));
     proto.setDescription(Strings.orEmpty(property.description));

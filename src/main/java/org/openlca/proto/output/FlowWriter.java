@@ -2,6 +2,7 @@ package org.openlca.proto.output;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Objects;
 
 import org.openlca.core.model.Flow;
 import org.openlca.core.model.Version;
@@ -21,7 +22,7 @@ public class FlowWriter {
     if (flow == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
     proto.setType("Flow");
     proto.setId(Strings.orEmpty(flow.refId));
     proto.setName(Strings.orEmpty(flow.name));
@@ -43,8 +44,45 @@ public class FlowWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setCas(Strings.orEmpty(flow.casNumber));
+    proto.setFormula(Strings.orEmpty(flow.formula));
+    proto.setInfrastructureFlow(flow.infrastructureFlow);
+    proto.setSynonyms(Strings.orEmpty(flow.synonyms));
+    writeFlowType(flow, proto);
+    if (flow.location != null) {
+      proto.setLocation(Refs.toRef(flow.location, config));
+    }
+    writeFlowProperties(flow, proto);
 
     return proto.build();
+  }
+
+  private void writeFlowType(Flow flow, Proto.Flow.Builder proto) {
+    if (flow.flowType == null)
+      return;
+    switch (flow.flowType) {
+      case ELEMENTARY_FLOW:
+        proto.setFlowType(Proto.FlowType.ELEMENTARY_FLOW);
+        break;
+      case PRODUCT_FLOW:
+        proto.setFlowType(Proto.FlowType.PRODUCT_FLOW);
+        break;
+      case WASTE_FLOW:
+        proto.setFlowType(Proto.FlowType.WASTE_FLOW);
+        break;
+    }
+  }
+
+  private void writeFlowProperties(Flow flow, Proto.Flow.Builder proto) {
+    for (var f : flow.flowPropertyFactors) {
+      var protoF = Proto.FlowPropertyFactor.newBuilder();
+      protoF.setConversionFactor(f.conversionFactor);
+      if (f.flowProperty != null) {
+        protoF.setFlowProperty(Refs.toRef(f.flowProperty, config));
+        protoF.setReferenceFlowProperty(
+          Objects.equals(f.flowProperty, flow.referenceFlowProperty));
+      }
+      proto.addFlowProperties(protoF.build());
+    }
   }
 }

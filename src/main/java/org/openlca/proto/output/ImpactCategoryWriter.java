@@ -21,7 +21,8 @@ public class ImpactCategoryWriter {
     if (impact == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("ImpactCategory");
     proto.setId(Strings.orEmpty(impact.refId));
     proto.setName(Strings.orEmpty(impact.name));
     proto.setDescription(Strings.orEmpty(impact.description));

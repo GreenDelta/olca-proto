@@ -21,7 +21,8 @@ public class ActorWriter {
     if (a == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Actor");
     proto.setId(Strings.orEmpty(a.refId));
     proto.setName(Strings.orEmpty(a.name));
     proto.setDescription(Strings.orEmpty(a.description));

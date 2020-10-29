@@ -21,7 +21,8 @@ public class SourceWriter {
     if (source == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Source");
     proto.setId(Strings.orEmpty(source.refId));
     proto.setName(Strings.orEmpty(source.name));
     proto.setDescription(Strings.orEmpty(source.description));

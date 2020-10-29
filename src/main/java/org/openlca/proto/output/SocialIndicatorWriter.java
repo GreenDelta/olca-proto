@@ -21,7 +21,8 @@ public class SocialIndicatorWriter {
     if (indicator == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("SocialIndicator");
     proto.setId(Strings.orEmpty(indicator.refId));
     proto.setName(Strings.orEmpty(indicator.name));
     proto.setDescription(Strings.orEmpty(indicator.description));

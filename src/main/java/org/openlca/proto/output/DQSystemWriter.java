@@ -21,7 +21,8 @@ public class DQSystemWriter {
     if (dqSystem == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("DQSystem");
     proto.setId(Strings.orEmpty(dqSystem.refId));
     proto.setName(Strings.orEmpty(dqSystem.name));
     proto.setDescription(Strings.orEmpty(dqSystem.description));

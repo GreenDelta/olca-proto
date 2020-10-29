@@ -21,7 +21,8 @@ public class LocationWriter {
     if (location == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Location");
     proto.setId(Strings.orEmpty(location.refId));
     proto.setName(Strings.orEmpty(location.name));
     proto.setDescription(Strings.orEmpty(location.description));

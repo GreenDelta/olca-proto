@@ -21,7 +21,8 @@ public class UnitGroupWriter {
     if (group == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("UnitGroup");
     proto.setId(Strings.orEmpty(group.refId));
     proto.setName(Strings.orEmpty(group.name));
     proto.setDescription(Strings.orEmpty(group.description));

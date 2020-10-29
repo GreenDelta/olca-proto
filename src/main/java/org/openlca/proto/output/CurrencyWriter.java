@@ -21,7 +21,8 @@ public class CurrencyWriter {
     if (c == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Currency");
     proto.setId(Strings.orEmpty(c.refId));
     proto.setName(Strings.orEmpty(c.name));
     proto.setDescription(Strings.orEmpty(c.description));

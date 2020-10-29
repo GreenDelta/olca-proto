@@ -21,7 +21,8 @@ public class ProcessWriter {
     if (process == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Process");
     proto.setId(Strings.orEmpty(process.refId));
     proto.setName(Strings.orEmpty(process.name));
     proto.setDescription(Strings.orEmpty(process.description));

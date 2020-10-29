@@ -21,7 +21,8 @@ public class ProjectWriter {
     if (project == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("Project");
     proto.setId(Strings.orEmpty(project.refId));
     proto.setName(Strings.orEmpty(project.name));
     proto.setDescription(Strings.orEmpty(project.description));

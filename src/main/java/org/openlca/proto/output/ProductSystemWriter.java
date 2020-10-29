@@ -21,7 +21,8 @@ public class ProductSystemWriter {
     if (system == null)
       return proto.build();
 
-    // root entitiy fields
+    // root entity fields
+    proto.setType("ProductSystem");
     proto.setId(Strings.orEmpty(system.refId));
     proto.setName(Strings.orEmpty(system.name));
     proto.setDescription(Strings.orEmpty(system.description));
