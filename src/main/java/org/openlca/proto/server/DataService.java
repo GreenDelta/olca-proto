@@ -158,6 +158,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putActor(Proto.Actor req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putActor(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Actor.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void categories(Services.Empty _req, StreamObserver<Proto.Category> resp) {
     var writer = new CategoryWriter(WriterConfig.of(db));
     var dao = new CategoryDao(db);
@@ -192,6 +203,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(Category.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putCategory(Proto.Category req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putCategory(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Category.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -232,6 +254,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putCurrency(Proto.Currency req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putCurrency(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Currency.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void dqSystems(Services.Empty _req, StreamObserver<Proto.DqSystem> resp) {
     var writer = new DQSystemWriter(WriterConfig.of(db));
     var dao = new DQSystemDao(db);
@@ -266,6 +299,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(DQSystem.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putDqSystem(Proto.DqSystem req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putDQSystem(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(DQSystem.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -310,7 +354,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     var store = new MemStore();
     store.putFlow(req);
     new ProtoImport(store, db)
-      .withUpdateMode(UpdateMode.IF_NEWER)
+      .withUpdateMode(UpdateMode.ALWAYS)
       .run();
     resp.onNext(importStatusOf(Flow.class, req.getId()));
     resp.onCompleted();
@@ -355,6 +399,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putFlowProperty(Proto.FlowProperty req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putFlowProperty(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(FlowProperty.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void impactCategories(Services.Empty _req, StreamObserver<Proto.ImpactCategory> resp) {
     var writer = new ImpactCategoryWriter(WriterConfig.of(db));
     var dao = new ImpactCategoryDao(db);
@@ -389,6 +444,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(ImpactCategory.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putImpactCategory(Proto.ImpactCategory req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putImpactCategory(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(ImpactCategory.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -430,6 +496,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putImpactMethod(Proto.ImpactMethod req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putImpactMethod(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(ImpactMethod.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void locations(Services.Empty _req, StreamObserver<Proto.Location> resp) {
     var writer = new LocationWriter(WriterConfig.of(db));
     var dao = new LocationDao(db);
@@ -464,6 +541,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(Location.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putLocation(Proto.Location req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putLocation(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Location.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -504,6 +592,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putParameter(Proto.Parameter req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putParameter(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Parameter.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void processes(Services.Empty _req, StreamObserver<Proto.Process> resp) {
     var writer = new ProcessWriter(WriterConfig.of(db));
     var dao = new ProcessDao(db);
@@ -538,6 +637,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(Process.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putProcess(Proto.Process req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putProcess(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Process.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -578,6 +688,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putProductSystem(Proto.ProductSystem req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putProductSystem(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(ProductSystem.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void projects(Services.Empty _req, StreamObserver<Proto.Project> resp) {
     var writer = new ProjectWriter(WriterConfig.of(db));
     var dao = new ProjectDao(db);
@@ -612,6 +733,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(Project.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putProject(Proto.Project req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putProject(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Project.class, req.getId()));
+    resp.onCompleted();
   }
 
   @Override
@@ -652,6 +784,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putSocialIndicator(Proto.SocialIndicator req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putSocialIndicator(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(SocialIndicator.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void sources(Services.Empty _req, StreamObserver<Proto.Source> resp) {
     var writer = new SourceWriter(WriterConfig.of(db));
     var dao = new SourceDao(db);
@@ -689,6 +832,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
+  public void putSource(Proto.Source req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putSource(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(Source.class, req.getId()));
+    resp.onCompleted();
+  }
+
+  @Override
   public void unitGroups(Services.Empty _req, StreamObserver<Proto.UnitGroup> resp) {
     var writer = new UnitGroupWriter(WriterConfig.of(db));
     var dao = new UnitGroupDao(db);
@@ -723,6 +877,17 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     };
 
     handleGetOf(UnitGroup.class, req.getId(), req::getName, onSuccess, onError);
+  }
+
+  @Override
+  public void putUnitGroup(Proto.UnitGroup req, StreamObserver<Services.RefStatus> resp) {
+    var store = new MemStore();
+    store.putUnitGroup(req);
+    new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS)
+      .run();
+    resp.onNext(importStatusOf(UnitGroup.class, req.getId()));
+    resp.onCompleted();
   }
 
   private Services.RefStatus importStatusOf(
