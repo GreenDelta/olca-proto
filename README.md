@@ -6,9 +6,11 @@ serialization in JSON(-LD) and a fast binary format. In addition, it and comes
 with a [gRPC server](https://grpc.io/) that may could replace the current IPC
 implementation in openLCA.
 
+__Generating the model__
+
 The [genproto](./scripts/genproto/main.go) tool directly generates the
-[olca.proto](olca.proto) definition from the YAML files of the `olca-schema`
-project:
+[olca.proto](./proto/olca.proto) definition from the YAML files of the
+`olca-schema` project:
 
 ```
 $ genproto path/to/olca-schema path/to/olca.proto
@@ -18,12 +20,35 @@ From the `olca.proto` definition we then generate the APIs with the `gen`
 script:
 
 ```
-$ gen
+$ scripts/gen
 ```
 
-This requires that the protocol buffers compiler is in your path.
+This requires that the Protocol Buffers and gRPC compiler is in your path (see
+the `scripts/gen.bat` script).
 
-__Java__
+__Building the server__
+
+The standalone server can be created via the `server-app` Maven profile:
+
+```
+$ mvn package -P server-app
+```
+
+This will generate the server application in the `target/dist` folder. The
+server can be started via:
+
+```
+$ run -db <database> [-port <port>]
+```
+
+Where database is the name of a database in the openLCA database folder
+(`~/openLCA-1.4-data/databases/<database>`). The port number is optional,
+`8080` is chosen by default if it is not specified.
+
+__API Examples__
+
+A Python package for client-side communication is in development here:
+https://github.com/msrocka/olca-grpc.py
 
 For Java, a single class `Proto` is generated:
 
@@ -51,8 +76,6 @@ This will generate the following output:
   "flowType": "PRODUCT_FLOW"
 }
 ```
-
-__Go__
 
 To generate the `Go` package, you need put the
 [Go plugin protoc-gen-go](https://github.com/protocolbuffers/protobuf-go) of the

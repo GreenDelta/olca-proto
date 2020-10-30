@@ -99,18 +99,12 @@ public class Server {
 
     try {
       var db = DerbyDatabase.fromDataDir(dbArg);
-      Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-        try {
-          System.out.println("close database...");
-          db.close();
-          System.out.println("database closed.");
-        } catch (Exception e) {
-          System.out.println("failed to close database");
-        }
-      }));
       new Server(db, port).start();
+      System.out.println("close database...");
+      db.close();
+      System.out.println("database closed.");
     } catch (Exception e) {
-      System.err.println("Failed to start server: " + e.getMessage());
+      System.err.println("Server error: " + e.getMessage());
     }
   }
 }
