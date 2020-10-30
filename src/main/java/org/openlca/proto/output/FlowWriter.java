@@ -48,29 +48,13 @@ public class FlowWriter {
     proto.setFormula(Strings.orEmpty(flow.formula));
     proto.setInfrastructureFlow(flow.infrastructureFlow);
     proto.setSynonyms(Strings.orEmpty(flow.synonyms));
-    writeFlowType(flow, proto);
+    proto.setFlowType(Util.flowTypeOf(flow));
     if (flow.location != null) {
       proto.setLocation(Refs.toRef(flow.location, config));
     }
     writeFlowProperties(flow, proto);
 
     return proto.build();
-  }
-
-  private void writeFlowType(Flow flow, Proto.Flow.Builder proto) {
-    if (flow.flowType == null)
-      return;
-    switch (flow.flowType) {
-      case ELEMENTARY_FLOW:
-        proto.setFlowType(Proto.FlowType.ELEMENTARY_FLOW);
-        break;
-      case PRODUCT_FLOW:
-        proto.setFlowType(Proto.FlowType.PRODUCT_FLOW);
-        break;
-      case WASTE_FLOW:
-        proto.setFlowType(Proto.FlowType.WASTE_FLOW);
-        break;
-    }
   }
 
   private void writeFlowProperties(Flow flow, Proto.Flow.Builder proto) {

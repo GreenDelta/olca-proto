@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.Arrays;
 
 import org.openlca.core.model.DQSystem;
+import org.openlca.core.model.SocialIndicator;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
@@ -43,8 +44,30 @@ public class DQSystemWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setHasUncertainties(dqSystem.hasUncertainties);
+    if (dqSystem.source != null) {
+      proto.setSource(Refs.toRef(dqSystem.source, config));
+    }
+    writeIndicators(dqSystem, proto);
 
     return proto.build();
+  }
+
+  private void writeIndicators(
+    DQSystem dqSystem, Proto.DqSystem.Builder proto) {
+    for (var indicator : dqSystem.indicators) {
+      var protoInd = Proto.DqIndicator.newBuilder();
+      protoInd.setName(Strings.orEmpty(indicator.name));
+      protoInd.setPosition(indicator.position);
+      for (var score: indicator.scores) {
+        var protoScore = Proto.DqScore.newBuilder();
+        protoScore.setDescription(Strings.orEmpty(score.description));
+        protoScore.setLabel(Strings.orEmpty(score.label));
+        protoScore.setPosition(score.position);
+        protoScore.setUncertainty(score.uncertainty);
+        protoInd.addScores(protoScore.build());
+      }
+      proto.addIndicators(protoInd.build());
+    }
   }
 }

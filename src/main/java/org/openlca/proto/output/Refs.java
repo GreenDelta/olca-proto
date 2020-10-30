@@ -3,6 +3,7 @@ package org.openlca.proto.output;
 import java.time.Instant;
 
 import org.openlca.core.model.CategorizedEntity;
+import org.openlca.core.model.Flow;
 import org.openlca.core.model.RootEntity;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
@@ -45,9 +46,52 @@ public final class Refs {
     var proto = toRef(e);
     if (e == null)
       return proto;
+
+    // push the dependency
     if (config != null && config.dependencies != null) {
       config.dependencies.push(e);
     }
     return proto;
+  }
+
+  static Proto.FlowRef toFlowRef(Flow flow, WriterConfig config) {
+    var proto = Proto.FlowRef.newBuilder();
+    if (flow == null)
+      return proto.build();
+
+    // push the dependency
+    if (config != null && config.dependencies != null) {
+      config.dependencies.push(flow);
+    }
+
+    proto.setId(Strings.orEmpty(flow.refId));
+    proto.setName(Strings.orEmpty(flow.name));
+    proto.setDescription(Strings.orEmpty(flow.description));
+    proto.setVersion(Version.asString(flow.version));
+    proto.setType(flow.getClass().getSimpleName());
+    if (flow.lastChange != 0L) {
+      var instant = Instant.ofEpochMilli(flow.lastChange);
+      proto.setLastChange(instant.toString());
+    }
+
+    // add a the category path
+    if (flow.category != null) {
+      var path = Categories.path(flow.category);
+      if (!path.isEmpty()) {
+        proto.addAllCategoryPath(path);
+      }
+    }
+
+    // FlowRef specific fields
+    if (flow.location != null) {
+      proto.setLocation(Strings.orEmpty(flow.location.code));
+    }
+    var refUnit = flow.getReferenceUnit();
+    if (refUnit != null) {
+      proto.setRefUnit(Strings.orEmpty(refUnit.name));
+    }
+    proto.setFlowType(Util.flowTypeOf(flow));
+
+    return proto.build();
   }
 }

@@ -43,8 +43,27 @@ public class FlowPropertyWriter {
     }
 
     // model specific fields
-    // TODO
+    writeFlowPropertyType(property, proto);
+    if (property.unitGroup != null) {
+      proto.setUnitGroup(Refs.toRef(property.unitGroup, config));
+    }
 
     return proto.build();
+  }
+
+  private void writeFlowPropertyType(
+    FlowProperty property, Proto.FlowProperty.Builder proto) {
+    if (property.flowPropertyType == null)
+      return;
+    switch (property.flowPropertyType) {
+      case PHYSICAL:
+        proto.setFlowPropertyType(
+          Proto.FlowPropertyType.PHYSICAL_QUANTITY);
+        break;
+      case ECONOMIC:
+        proto.setFlowPropertyType(
+          Proto.FlowPropertyType.ECONOMIC_QUANTITY);
+        break;
+    }
   }
 }
