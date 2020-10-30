@@ -1,9 +1,12 @@
 # olca-proto
-`olca-proto` is an implementation of the
-[olca-schema](https://github.com/GreenDelta/olca-schema)
-format that supports serialization in JSON-LD and
-[protocol buffers](https://developers.google.com/protocol-buffers). The
-[genproto](./scripts/genproto/main.go) tool directly generates the
+`olca-proto` is an experimental implementation of the
+[olca-schema](https://github.com/GreenDelta/olca-schema) based on
+[Protocol Buffers](https://developers.google.com/protocol-buffers). It supports
+serialization in JSON(-LD) and a fast binary format. In addition, it and comes
+with a [gRPC server](https://grpc.io/) that may could replace the current IPC
+implementation in openLCA.
+
+The [genproto](./scripts/genproto/main.go) tool directly generates the
 [olca.proto](olca.proto) definition from the YAML files of the `olca-schema`
 project:
 
