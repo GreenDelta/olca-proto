@@ -2,16 +2,16 @@ package org.openlca.proto;
 
 import java.util.Arrays;
 
-import org.openlca.core.model.ImpactFactor;
 import org.openlca.core.model.RootEntity;
+import org.openlca.core.model.Uncertainty;
 import org.openlca.util.Strings;
 
 public class Gen {
 
   public static void main(String[] args) {
-    var root = ImpactFactor.class;
-    var varName = "factor";
-    var protoName = "protoFac";
+    var root = Uncertainty.class;
+    var varName = "u";
+    var protoName = "proto";
 
     Arrays.stream(root.getDeclaredFields())
       .sorted((f1, f2) -> Strings.compare(f1.getName(), f2.getName()))
@@ -34,6 +34,11 @@ public class Gen {
           System.out.printf(
             "%s(%s.%s);%n",
             setter, varName, field);
+
+        } else if (type.equals(Double.class)) {
+          System.out.printf(
+            "if (%s.%s != null) {%n  %s(%s.%s);%n}%n",
+            varName, field, setter, varName, field);
 
         } else if (RootEntity.class.isAssignableFrom(type)) {
           System.out.printf(

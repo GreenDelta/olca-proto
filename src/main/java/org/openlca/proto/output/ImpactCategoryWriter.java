@@ -54,18 +54,30 @@ public class ImpactCategoryWriter {
     ImpactCategory impact, Proto.ImpactCategory.Builder proto) {
     for (var factor : impact.impactFactors) {
       var protoFac = Proto.ImpactFactor.newBuilder();
+
       if (factor.flow != null) {
         protoFac.setFlow(Refs.toFlowRef(factor.flow, config));
       }
-// ? proto.protoFac.setFlowPropertyFactor(flow.flowPropertyFactor)
+
+      var prop = factor.flowPropertyFactor;
+      if (prop != null && prop.flowProperty != null) {
+        protoFac.setFlowProperty(Refs.toRef(prop.flowProperty));
+      }
+
       protoFac.setFormula(Strings.orEmpty(factor.formula));
+
       if (factor.location != null) {
         protoFac.setLocation(Refs.toRef(factor.location, config));
       }
-// ? proto.protoFac.setUncertainty(flow.uncertainty)
-      if (factor.unit != null) {
-        protoFac.setUnit(Refs.toRef(factor.unit, config));
+
+      if (factor.uncertainty != null) {
+        protoFac.setUncertainty(Util.uncertainty(factor.uncertainty));
       }
+
+      if (factor.unit != null) {
+        protoFac.setUnit(Refs.toRef(factor.unit));
+      }
+
       protoFac.setValue(factor.value);
       proto.addImpactFactors(protoFac.build());
     }
