@@ -43,8 +43,28 @@ public class ParameterWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setFormula(Strings.orEmpty(parameter.formula));
+    proto.setInputParameter(parameter.isInputParameter);
+    if (parameter.uncertainty != null) {
+      proto.setUncertainty(
+        Util.uncertainty(parameter.uncertainty));
+    }
+    proto.setValue(parameter.value);
+    proto.setParameterScope(scopeOf(parameter));
 
     return proto.build();
+  }
+
+  private Proto.ParameterScope scopeOf(Parameter param) {
+    if (param == null || param.scope == null)
+      return Proto.ParameterScope.GLOBAL_SCOPE;
+    switch (param.scope) {
+      case IMPACT:
+        return Proto.ParameterScope.IMPACT_SCOPE;
+      case PROCESS:
+        return Proto.ParameterScope.PROCESS_SCOPE;
+      default:
+        return Proto.ParameterScope.GLOBAL_SCOPE;
+    }
   }
 }

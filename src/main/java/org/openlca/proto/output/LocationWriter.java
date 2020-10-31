@@ -3,6 +3,7 @@ package org.openlca.proto.output;
 import java.time.Instant;
 import java.util.Arrays;
 
+import com.google.protobuf.ByteString;
 import org.openlca.core.model.Location;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
@@ -43,7 +44,13 @@ public class LocationWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setCode(Strings.orEmpty(location.code));
+    proto.setLatitude(location.latitude);
+    proto.setLongitude(location.longitude);
+    if (location.geodata != null) {
+      proto.setGeometryBytes(
+        ByteString.copyFrom(location.geodata));
+    }
 
     return proto.build();
   }

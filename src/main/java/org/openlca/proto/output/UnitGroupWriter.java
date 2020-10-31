@@ -2,6 +2,7 @@ package org.openlca.proto.output;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Objects;
 
 import org.openlca.core.model.UnitGroup;
 import org.openlca.core.model.Version;
@@ -43,8 +44,29 @@ public class UnitGroupWriter {
     }
 
     // model specific fields
-    // TODO
+    if (group.defaultFlowProperty != null) {
+      proto.setDefaultFlowProperty(
+        Refs.toRef(group.defaultFlowProperty, config));
+    }
+    writeUnits(group, proto);
 
     return proto.build();
+  }
+
+  private void writeUnits(
+    UnitGroup group, Proto.UnitGroup.Builder proto) {
+    for (var unit : group.units) {
+      var protoUnit = Proto.Unit.newBuilder();
+      protoUnit.setConversionFactor(unit.conversionFactor);
+      if (unit.synonyms != null) {
+        Arrays.stream(unit.synonyms.split(";"))
+          .map(String::trim)
+          .filter(Strings::notEmpty)
+          .forEach(protoUnit::addSynonyms);
+      }
+      protoUnit.setReferenceUnit(
+        Objects.equals(unit, group.referenceUnit));
+      proto.addUnits(protoUnit.build());
+    }
   }
 }

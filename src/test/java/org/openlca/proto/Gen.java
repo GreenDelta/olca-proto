@@ -2,16 +2,16 @@ package org.openlca.proto;
 
 import java.util.Arrays;
 
-import org.openlca.core.model.NwFactor;
 import org.openlca.core.model.RootEntity;
+import org.openlca.core.model.SocialIndicator;
 import org.openlca.util.Strings;
 
 public class Gen {
 
   public static void main(String[] args) {
-    var root = NwFactor.class;
-    var varName = "nwFactor";
-    var protoName = "protoFactor";
+    var root = SocialIndicator.class;
+    var varName = "indicator";
+    var protoName = "proto";
 
     Arrays.stream(root.getDeclaredFields())
       .sorted((f1, f2) -> Strings.compare(f1.getName(), f2.getName()))

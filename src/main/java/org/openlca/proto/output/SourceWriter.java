@@ -43,7 +43,10 @@ public class SourceWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setExternalFile(Strings.orEmpty(source.externalFile));
+    proto.setTextReference(Strings.orEmpty(source.textReference));
+    proto.setUrl(Strings.orEmpty(source.url));
+    proto.setYear(source.year);
 
     return proto.build();
   }

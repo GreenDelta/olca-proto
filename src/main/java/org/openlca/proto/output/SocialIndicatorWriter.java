@@ -43,7 +43,20 @@ public class SocialIndicatorWriter {
     }
 
     // model specific fields
-    // TODO
+    if (indicator.activityQuantity != null) {
+      proto.setActivityQuantity(
+        Refs.toRef(indicator.activityQuantity, config));
+    }
+    if (indicator.activityUnit != null) {
+      proto.setActivityUnit(
+        Refs.toRef(indicator.activityUnit));
+    }
+    proto.setActivityVariable(
+      Strings.orEmpty(indicator.activityVariable));
+    proto.setEvaluationScheme(
+      Strings.orEmpty(indicator.evaluationScheme));
+    proto.setUnitOfMeasurement(
+      Strings.orEmpty(indicator.unitOfMeasurement));
 
     return proto.build();
   }
