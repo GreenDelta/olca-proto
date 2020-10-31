@@ -43,8 +43,40 @@ public class ImpactMethodWriter {
     }
 
     // model specific fields
-    // TODO
+    for (var impact : method.impactCategories) {
+      proto.addImpactCategories(Refs.toImpactRef(impact, config));
+    }
+    writeNwSets(method, proto);
 
     return proto.build();
+  }
+
+  private void writeNwSets(
+    ImpactMethod method, Proto.ImpactMethod.Builder proto) {
+    for (var nwSet : method.nwSets) {
+      var nwProto = Proto.NwSet.newBuilder();
+      nwProto.setId(Strings.orEmpty(nwSet.refId));
+      nwProto.setName(Strings.orEmpty(nwSet.name));
+      nwProto.setDescription(Strings.orEmpty(nwSet.name));
+      nwProto.setWeightedScoreUnit(
+        Strings.orEmpty(nwSet.weightedScoreUnit));
+      for (var nwFactor : nwSet.factors) {
+        var protoFactor = Proto.NwFactor.newBuilder();
+        if (nwFactor.impactCategory != null) {
+          protoFactor.setImpactCategory(
+            Refs.toRef(nwFactor.impactCategory, config));
+        }
+        if (nwFactor.normalisationFactor != null) {
+          protoFactor.setNormalisationFactor(
+            nwFactor.normalisationFactor);
+        }
+        if (nwFactor.weightingFactor != null) {
+          protoFactor.setWeightingFactor(
+            nwFactor.weightingFactor);
+        }
+        nwProto.addFactors(protoFactor.build());
+      }
+      proto.addNwSets(nwProto.build());
+    }
   }
 }

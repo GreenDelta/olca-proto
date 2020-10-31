@@ -4,6 +4,7 @@ import java.time.Instant;
 
 import org.openlca.core.model.CategorizedEntity;
 import org.openlca.core.model.Flow;
+import org.openlca.core.model.ImpactCategory;
 import org.openlca.core.model.RootEntity;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
@@ -55,6 +56,7 @@ public final class Refs {
   }
 
   static Proto.FlowRef toFlowRef(Flow flow, WriterConfig config) {
+
     var proto = Proto.FlowRef.newBuilder();
     if (flow == null)
       return proto.build();
@@ -91,6 +93,42 @@ public final class Refs {
       proto.setRefUnit(Strings.orEmpty(refUnit.name));
     }
     proto.setFlowType(Util.flowTypeOf(flow));
+
+    return proto.build();
+  }
+
+  static Proto.ImpactCategoryRef toImpactRef(
+    ImpactCategory impact, WriterConfig config) {
+
+    var proto = Proto.ImpactCategoryRef.newBuilder();
+    if (impact == null)
+      return proto.build();
+
+    // push the dependency
+    if (config != null && config.dependencies != null) {
+      config.dependencies.push(impact);
+    }
+
+    proto.setId(Strings.orEmpty(impact.refId));
+    proto.setName(Strings.orEmpty(impact.name));
+    proto.setDescription(Strings.orEmpty(impact.description));
+    proto.setVersion(Version.asString(impact.version));
+    proto.setType(impact.getClass().getSimpleName());
+    if (impact.lastChange != 0L) {
+      var instant = Instant.ofEpochMilli(impact.lastChange);
+      proto.setLastChange(instant.toString());
+    }
+
+    // add a the category path
+    if (impact.category != null) {
+      var path = Categories.path(impact.category);
+      if (!path.isEmpty()) {
+        proto.addAllCategoryPath(path);
+      }
+    }
+
+    // ImpactCategoryRef specific fields
+    proto.setRefUnit(Strings.orEmpty(impact.referenceUnit));
 
     return proto.build();
   }
