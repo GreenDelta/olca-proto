@@ -75,17 +75,17 @@ public class MemStore implements ProtoStore {
   }
 
   @Override
-  public Proto.DqSystem getDQSystem(String id) {
+  public Proto.DQSystem getDQSystem(String id) {
     var map = store.get("dq_systems");
     if (map == null)
       return null;
     var proto = map.get(id);
-    return proto instanceof Proto.DqSystem
-      ? (Proto.DqSystem) proto
+    return proto instanceof Proto.DQSystem
+      ? (Proto.DQSystem) proto
       : null;
   }
 
-  public void putDQSystem(Proto.DqSystem proto) {
+  public void putDQSystem(Proto.DQSystem proto) {
     if (proto == null)
       return;
     var map = store.computeIfAbsent(

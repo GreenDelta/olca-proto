@@ -323,7 +323,7 @@ abstract class ProtoWrap {
     };
   }
 
-  static ProtoWrap of(Proto.DqSystem proto) {
+  static ProtoWrap of(Proto.DQSystem proto) {
     return new ProtoWrap() {
       @Override
       String id() {

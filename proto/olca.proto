@@ -274,8 +274,8 @@ message Currency {
 
 }
 
-// An indicator of a data quality system ([DqSystem]).
-message DqIndicator {
+// An indicator of a data quality system ([DQSystem]).
+message DQIndicator {
 
   // The type name of the respectiven entity.
   // This field is used for JSON-LD compatibility.
@@ -285,13 +285,13 @@ message DqIndicator {
 
   int32 position = 3;
 
-  repeated DqScore scores = 4;
+  repeated DQScore scores = 4;
 
 }
 
-// An score value of an indicator ([DqIndicator]) in a data quality system
-// ([DqSystem]).
-message DqScore {
+// An score value of an indicator ([DQIndicator]) in a data quality system
+// ([DQSystem]).
+message DQScore {
 
   // The type name of the respectiven entity.
   // This field is used for JSON-LD compatibility.
@@ -329,7 +329,7 @@ message DqScore {
 // scores can be assigned by the user. These labels are then displayed instead
 // of `1, 2, 3 ...` in the user interface or result exports. However,
 // internally the numeric values are used in the data model and calculations.
-message DqSystem {
+message DQSystem {
 
   // The type name of the respectiven entity.
   // This field is used for JSON-LD compatibility.
@@ -368,7 +368,7 @@ message DqSystem {
 
   Ref source = 11;
 
-  repeated DqIndicator indicators = 12;
+  repeated DQIndicator indicators = 12;
 
 }
 
@@ -1072,7 +1072,7 @@ message NwFactor {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  Ref impact_category = 2;
+  ImpactCategoryRef impact_category = 2;
 
   double normalisation_factor = 3;
 
@@ -1270,7 +1270,8 @@ message Process {
   // with `1`.
   int32 last_internal_id = 13;
 
-  Location location = 14;
+  // The location of the process.
+  Ref location = 14;
 
   repeated Parameter parameters = 15;
 
@@ -1278,16 +1279,16 @@ message Process {
 
   ProcessType process_type = 17;
 
-  // A reference to a data quality system ([DqSystem]) with which the overall
+  // A reference to a data quality system ([DQSystem]) with which the overall
   // quality of the process can be assessed.
   Ref dq_system = 18;
 
-  // A reference to a data quality system ([DqSystem]) with which the quality
+  // A reference to a data quality system ([DQSystem]) with which the quality
   // of individual inputs and outputs ([Exchange]s) of the process can be
   // assessed.
   Ref exchange_dq_system = 19;
 
-  // A reference to a data quality system ([DqSystem]) with which the quality
+  // A reference to a data quality system ([DQSystem]) with which the quality
   // of individual social aspects of the process can be assessed.
   Ref social_dq_system = 20;
 
@@ -1372,8 +1373,8 @@ message ProcessLink {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  // The descriptor of the process that provides a product or a waste
-  // treatment.
+  // The descriptor of the process or product system that provides a product or
+  // a waste treatment.
   Ref provider = 2;
 
   // The descriptor of the flow that is exchanged between the two processes.
@@ -1385,7 +1386,7 @@ message ProcessLink {
   // The exchange of the linked process (this is useful if the linked process
   // has multiple exchanges with the same flow that are linked to different
   // provides, e.g. in an electricity mix).
-  Exchange exchange = 5;
+  ExchangeRef exchange = 5;
 
 }
 

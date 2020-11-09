@@ -19,7 +19,7 @@ public interface ProtoStore extends Closeable {
 
   Proto.FlowProperty getFlowProperty(String id);
 
-  Proto.DqSystem getDQSystem(String id);
+  Proto.DQSystem getDQSystem(String id);
 
   Proto.Flow getFlow(String id);
 

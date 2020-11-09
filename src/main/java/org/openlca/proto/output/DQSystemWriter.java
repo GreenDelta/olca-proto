@@ -4,7 +4,6 @@ import java.time.Instant;
 import java.util.Arrays;
 
 import org.openlca.core.model.DQSystem;
-import org.openlca.core.model.SocialIndicator;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
@@ -17,8 +16,8 @@ public class DQSystemWriter {
     this.config = config;
   }
 
-  public Proto.DqSystem write(DQSystem dqSystem) {
-    var proto = Proto.DqSystem.newBuilder();
+  public Proto.DQSystem write(DQSystem dqSystem) {
+    var proto = Proto.DQSystem.newBuilder();
     if (dqSystem == null)
       return proto.build();
 
@@ -54,13 +53,13 @@ public class DQSystemWriter {
   }
 
   private void writeIndicators(
-    DQSystem dqSystem, Proto.DqSystem.Builder proto) {
+    DQSystem dqSystem, Proto.DQSystem.Builder proto) {
     for (var indicator : dqSystem.indicators) {
-      var protoInd = Proto.DqIndicator.newBuilder();
+      var protoInd = Proto.DQIndicator.newBuilder();
       protoInd.setName(Strings.orEmpty(indicator.name));
       protoInd.setPosition(indicator.position);
       for (var score: indicator.scores) {
-        var protoScore = Proto.DqScore.newBuilder();
+        var protoScore = Proto.DQScore.newBuilder();
         protoScore.setDescription(Strings.orEmpty(score.description));
         protoScore.setLabel(Strings.orEmpty(score.label));
         protoScore.setPosition(score.position);

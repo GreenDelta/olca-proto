@@ -39,7 +39,7 @@ message CurrencyStatus {
 
 message DqSystemStatus {
   bool ok = 1;
-  protolca.DqSystem dq_system = 2;
+  protolca.DQSystem dq_system = 2;
   string error = 3;
 }
 
@@ -138,9 +138,9 @@ service DataService {
   rpc put_currency(protolca.Currency) returns (RefStatus);
 
   // methods for DQSystem
-  rpc dq_systems(Empty) returns (stream protolca.DqSystem);
+  rpc dq_systems(Empty) returns (stream protolca.DQSystem);
   rpc dq_system(protolca.Ref) returns (DqSystemStatus);
-  rpc put_dq_system(protolca.DqSystem) returns (RefStatus);
+  rpc put_dq_system(protolca.DQSystem) returns (RefStatus);
 
   // methods for Flow
   rpc flows(Empty) returns (stream protolca.Flow);

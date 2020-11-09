@@ -56,7 +56,7 @@ public class DqSystemImport {
     return dqSystem;
   }
 
-  private void map(Proto.DqSystem proto, DQSystem sys) {
+  private void map(Proto.DQSystem proto, DQSystem sys) {
     sys.hasUncertainties = proto.getHasUncertainties();
     var sourceID = proto.getSource().getId();
     if (Strings.notEmpty(sourceID)) {

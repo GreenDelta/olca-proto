@@ -300,11 +300,11 @@ public class ZipStore implements ProtoStore {
   }
 
   @Override
-  public Proto.DqSystem getDQSystem(String id) {
-    var proto = readBin("dq_systems", id, Proto.DqSystem.parser());
+  public Proto.DQSystem getDQSystem(String id) {
+    var proto = readBin("dq_systems", id, Proto.DQSystem.parser());
     if (proto != null)
       return proto;
-    var builder = Proto.DqSystem.newBuilder();
+    var builder = Proto.DQSystem.newBuilder();
     if (readJson("dq_systems", id, builder)) {
       return builder.build();
     }

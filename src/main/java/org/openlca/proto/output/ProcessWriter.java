@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.Arrays;
 
 import org.openlca.core.model.Process;
+import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
@@ -43,8 +44,37 @@ public class ProcessWriter {
     }
 
     // model specific fields
-    // TODO
+    proto.setProcessType(processType(process));
+    proto.setDefaultAllocationMethod(allocationType(process));
+    proto.setInfrastructureProcess(process.infrastructureProcess);
+
+    if (process.location != null) {
+    }
 
     return proto.build();
   }
+
+  private Proto.ProcessType processType(Process p) {
+    if (p == null || p.processType == null)
+      return Proto.ProcessType.UNDEFINED_PROCESS_TYPE;
+    return p.processType == ProcessType.LCI_RESULT
+      ? Proto.ProcessType.LCI_RESULT
+      : Proto.ProcessType.UNIT_PROCESS;
+  }
+
+  private Proto.AllocationType allocationType(Process p) {
+    if (p == null || p.defaultAllocationMethod == null)
+      return Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE;
+    switch (p.defaultAllocationMethod) {
+      case CAUSAL:
+        return Proto.AllocationType.CAUSAL_ALLOCATION;
+      case ECONOMIC:
+        return Proto.AllocationType.ECONOMIC_ALLOCATION;
+      case PHYSICAL:
+        return Proto.AllocationType.PHYSICAL_ALLOCATION;
+      default:
+        return Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE;
+    }
+  }
+
 }

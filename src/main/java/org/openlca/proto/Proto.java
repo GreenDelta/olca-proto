@@ -14958,8 +14958,8 @@ public final class Proto {
 
   }
 
-  public interface DqIndicatorOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protolca.DqIndicator)
+  public interface DQIndicatorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.DQIndicator)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -15003,46 +15003,46 @@ public final class Proto {
     int getPosition();
 
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
-    java.util.List<org.openlca.proto.Proto.DqScore> 
+    java.util.List<org.openlca.proto.Proto.DQScore> 
         getScoresList();
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
-    org.openlca.proto.Proto.DqScore getScores(int index);
+    org.openlca.proto.Proto.DQScore getScores(int index);
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     int getScoresCount();
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
-    java.util.List<? extends org.openlca.proto.Proto.DqScoreOrBuilder> 
+    java.util.List<? extends org.openlca.proto.Proto.DQScoreOrBuilder> 
         getScoresOrBuilderList();
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
-    org.openlca.proto.Proto.DqScoreOrBuilder getScoresOrBuilder(
+    org.openlca.proto.Proto.DQScoreOrBuilder getScoresOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * An indicator of a data quality system ([DqSystem]).
+   * An indicator of a data quality system ([DQSystem]).
    * </pre>
    *
-   * Protobuf type {@code protolca.DqIndicator}
+   * Protobuf type {@code protolca.DQIndicator}
    */
-  public static final class DqIndicator extends
+  public static final class DQIndicator extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protolca.DqIndicator)
-      DqIndicatorOrBuilder {
+      // @@protoc_insertion_point(message_implements:protolca.DQIndicator)
+      DQIndicatorOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DqIndicator.newBuilder() to construct.
-    private DqIndicator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DQIndicator.newBuilder() to construct.
+    private DQIndicator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DqIndicator() {
+    private DQIndicator() {
       type_ = "";
       name_ = "";
       scores_ = java.util.Collections.emptyList();
@@ -15052,7 +15052,7 @@ public final class Proto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DqIndicator();
+      return new DQIndicator();
     }
 
     @java.lang.Override
@@ -15060,7 +15060,7 @@ public final class Proto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DqIndicator(
+    private DQIndicator(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -15098,11 +15098,11 @@ public final class Proto {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                scores_ = new java.util.ArrayList<org.openlca.proto.Proto.DqScore>();
+                scores_ = new java.util.ArrayList<org.openlca.proto.Proto.DQScore>();
                 mutable_bitField0_ |= 0x00000001;
               }
               scores_.add(
-                  input.readMessage(org.openlca.proto.Proto.DqScore.parser(), extensionRegistry));
+                  input.readMessage(org.openlca.proto.Proto.DQScore.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -15129,15 +15129,15 @@ public final class Proto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqIndicator_descriptor;
+      return org.openlca.proto.Proto.internal_static_protolca_DQIndicator_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqIndicator_fieldAccessorTable
+      return org.openlca.proto.Proto.internal_static_protolca_DQIndicator_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openlca.proto.Proto.DqIndicator.class, org.openlca.proto.Proto.DqIndicator.Builder.class);
+              org.openlca.proto.Proto.DQIndicator.class, org.openlca.proto.Proto.DQIndicator.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -15238,41 +15238,41 @@ public final class Proto {
     }
 
     public static final int SCORES_FIELD_NUMBER = 4;
-    private java.util.List<org.openlca.proto.Proto.DqScore> scores_;
+    private java.util.List<org.openlca.proto.Proto.DQScore> scores_;
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<org.openlca.proto.Proto.DqScore> getScoresList() {
+    public java.util.List<org.openlca.proto.Proto.DQScore> getScoresList() {
       return scores_;
     }
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.openlca.proto.Proto.DqScoreOrBuilder> 
+    public java.util.List<? extends org.openlca.proto.Proto.DQScoreOrBuilder> 
         getScoresOrBuilderList() {
       return scores_;
     }
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     @java.lang.Override
     public int getScoresCount() {
       return scores_.size();
     }
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqScore getScores(int index) {
+    public org.openlca.proto.Proto.DQScore getScores(int index) {
       return scores_.get(index);
     }
     /**
-     * <code>repeated .protolca.DqScore scores = 4;</code>
+     * <code>repeated .protolca.DQScore scores = 4;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqScoreOrBuilder getScoresOrBuilder(
+    public org.openlca.proto.Proto.DQScoreOrBuilder getScoresOrBuilder(
         int index) {
       return scores_.get(index);
     }
@@ -15336,10 +15336,10 @@ public final class Proto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openlca.proto.Proto.DqIndicator)) {
+      if (!(obj instanceof org.openlca.proto.Proto.DQIndicator)) {
         return super.equals(obj);
       }
-      org.openlca.proto.Proto.DqIndicator other = (org.openlca.proto.Proto.DqIndicator) obj;
+      org.openlca.proto.Proto.DQIndicator other = (org.openlca.proto.Proto.DQIndicator) obj;
 
       if (!getType()
           .equals(other.getType())) return false;
@@ -15375,69 +15375,69 @@ public final class Proto {
       return hash;
     }
 
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(byte[] data)
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseDelimitedFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQIndicator parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseDelimitedFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqIndicator parseFrom(
+    public static org.openlca.proto.Proto.DQIndicator parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -15450,7 +15450,7 @@ public final class Proto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openlca.proto.Proto.DqIndicator prototype) {
+    public static Builder newBuilder(org.openlca.proto.Proto.DQIndicator prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -15467,29 +15467,29 @@ public final class Proto {
     }
     /**
      * <pre>
-     * An indicator of a data quality system ([DqSystem]).
+     * An indicator of a data quality system ([DQSystem]).
      * </pre>
      *
-     * Protobuf type {@code protolca.DqIndicator}
+     * Protobuf type {@code protolca.DQIndicator}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protolca.DqIndicator)
-        org.openlca.proto.Proto.DqIndicatorOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protolca.DQIndicator)
+        org.openlca.proto.Proto.DQIndicatorOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqIndicator_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQIndicator_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqIndicator_fieldAccessorTable
+        return org.openlca.proto.Proto.internal_static_protolca_DQIndicator_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openlca.proto.Proto.DqIndicator.class, org.openlca.proto.Proto.DqIndicator.Builder.class);
+                org.openlca.proto.Proto.DQIndicator.class, org.openlca.proto.Proto.DQIndicator.Builder.class);
       }
 
-      // Construct using org.openlca.proto.Proto.DqIndicator.newBuilder()
+      // Construct using org.openlca.proto.Proto.DQIndicator.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -15526,17 +15526,17 @@ public final class Proto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqIndicator_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQIndicator_descriptor;
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqIndicator getDefaultInstanceForType() {
-        return org.openlca.proto.Proto.DqIndicator.getDefaultInstance();
+      public org.openlca.proto.Proto.DQIndicator getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.DQIndicator.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqIndicator build() {
-        org.openlca.proto.Proto.DqIndicator result = buildPartial();
+      public org.openlca.proto.Proto.DQIndicator build() {
+        org.openlca.proto.Proto.DQIndicator result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -15544,8 +15544,8 @@ public final class Proto {
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqIndicator buildPartial() {
-        org.openlca.proto.Proto.DqIndicator result = new org.openlca.proto.Proto.DqIndicator(this);
+      public org.openlca.proto.Proto.DQIndicator buildPartial() {
+        org.openlca.proto.Proto.DQIndicator result = new org.openlca.proto.Proto.DQIndicator(this);
         int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.name_ = name_;
@@ -15597,16 +15597,16 @@ public final class Proto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openlca.proto.Proto.DqIndicator) {
-          return mergeFrom((org.openlca.proto.Proto.DqIndicator)other);
+        if (other instanceof org.openlca.proto.Proto.DQIndicator) {
+          return mergeFrom((org.openlca.proto.Proto.DQIndicator)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openlca.proto.Proto.DqIndicator other) {
-        if (other == org.openlca.proto.Proto.DqIndicator.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.openlca.proto.Proto.DQIndicator other) {
+        if (other == org.openlca.proto.Proto.DQIndicator.getDefaultInstance()) return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
           onChanged();
@@ -15659,11 +15659,11 @@ public final class Proto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openlca.proto.Proto.DqIndicator parsedMessage = null;
+        org.openlca.proto.Proto.DQIndicator parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openlca.proto.Proto.DqIndicator) e.getUnfinishedMessage();
+          parsedMessage = (org.openlca.proto.Proto.DQIndicator) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -15882,22 +15882,22 @@ public final class Proto {
         return this;
       }
 
-      private java.util.List<org.openlca.proto.Proto.DqScore> scores_ =
+      private java.util.List<org.openlca.proto.Proto.DQScore> scores_ =
         java.util.Collections.emptyList();
       private void ensureScoresIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          scores_ = new java.util.ArrayList<org.openlca.proto.Proto.DqScore>(scores_);
+          scores_ = new java.util.ArrayList<org.openlca.proto.Proto.DQScore>(scores_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.DqScore, org.openlca.proto.Proto.DqScore.Builder, org.openlca.proto.Proto.DqScoreOrBuilder> scoresBuilder_;
+          org.openlca.proto.Proto.DQScore, org.openlca.proto.Proto.DQScore.Builder, org.openlca.proto.Proto.DQScoreOrBuilder> scoresBuilder_;
 
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public java.util.List<org.openlca.proto.Proto.DqScore> getScoresList() {
+      public java.util.List<org.openlca.proto.Proto.DQScore> getScoresList() {
         if (scoresBuilder_ == null) {
           return java.util.Collections.unmodifiableList(scores_);
         } else {
@@ -15905,7 +15905,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public int getScoresCount() {
         if (scoresBuilder_ == null) {
@@ -15915,9 +15915,9 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public org.openlca.proto.Proto.DqScore getScores(int index) {
+      public org.openlca.proto.Proto.DQScore getScores(int index) {
         if (scoresBuilder_ == null) {
           return scores_.get(index);
         } else {
@@ -15925,10 +15925,10 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder setScores(
-          int index, org.openlca.proto.Proto.DqScore value) {
+          int index, org.openlca.proto.Proto.DQScore value) {
         if (scoresBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15942,10 +15942,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder setScores(
-          int index, org.openlca.proto.Proto.DqScore.Builder builderForValue) {
+          int index, org.openlca.proto.Proto.DQScore.Builder builderForValue) {
         if (scoresBuilder_ == null) {
           ensureScoresIsMutable();
           scores_.set(index, builderForValue.build());
@@ -15956,9 +15956,9 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public Builder addScores(org.openlca.proto.Proto.DqScore value) {
+      public Builder addScores(org.openlca.proto.Proto.DQScore value) {
         if (scoresBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15972,10 +15972,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder addScores(
-          int index, org.openlca.proto.Proto.DqScore value) {
+          int index, org.openlca.proto.Proto.DQScore value) {
         if (scoresBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15989,10 +15989,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder addScores(
-          org.openlca.proto.Proto.DqScore.Builder builderForValue) {
+          org.openlca.proto.Proto.DQScore.Builder builderForValue) {
         if (scoresBuilder_ == null) {
           ensureScoresIsMutable();
           scores_.add(builderForValue.build());
@@ -16003,10 +16003,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder addScores(
-          int index, org.openlca.proto.Proto.DqScore.Builder builderForValue) {
+          int index, org.openlca.proto.Proto.DQScore.Builder builderForValue) {
         if (scoresBuilder_ == null) {
           ensureScoresIsMutable();
           scores_.add(index, builderForValue.build());
@@ -16017,10 +16017,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder addAllScores(
-          java.lang.Iterable<? extends org.openlca.proto.Proto.DqScore> values) {
+          java.lang.Iterable<? extends org.openlca.proto.Proto.DQScore> values) {
         if (scoresBuilder_ == null) {
           ensureScoresIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -16032,7 +16032,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder clearScores() {
         if (scoresBuilder_ == null) {
@@ -16045,7 +16045,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
       public Builder removeScores(int index) {
         if (scoresBuilder_ == null) {
@@ -16058,16 +16058,16 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public org.openlca.proto.Proto.DqScore.Builder getScoresBuilder(
+      public org.openlca.proto.Proto.DQScore.Builder getScoresBuilder(
           int index) {
         return getScoresFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public org.openlca.proto.Proto.DqScoreOrBuilder getScoresOrBuilder(
+      public org.openlca.proto.Proto.DQScoreOrBuilder getScoresOrBuilder(
           int index) {
         if (scoresBuilder_ == null) {
           return scores_.get(index);  } else {
@@ -16075,9 +16075,9 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public java.util.List<? extends org.openlca.proto.Proto.DqScoreOrBuilder> 
+      public java.util.List<? extends org.openlca.proto.Proto.DQScoreOrBuilder> 
            getScoresOrBuilderList() {
         if (scoresBuilder_ != null) {
           return scoresBuilder_.getMessageOrBuilderList();
@@ -16086,33 +16086,33 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public org.openlca.proto.Proto.DqScore.Builder addScoresBuilder() {
+      public org.openlca.proto.Proto.DQScore.Builder addScoresBuilder() {
         return getScoresFieldBuilder().addBuilder(
-            org.openlca.proto.Proto.DqScore.getDefaultInstance());
+            org.openlca.proto.Proto.DQScore.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public org.openlca.proto.Proto.DqScore.Builder addScoresBuilder(
+      public org.openlca.proto.Proto.DQScore.Builder addScoresBuilder(
           int index) {
         return getScoresFieldBuilder().addBuilder(
-            index, org.openlca.proto.Proto.DqScore.getDefaultInstance());
+            index, org.openlca.proto.Proto.DQScore.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqScore scores = 4;</code>
+       * <code>repeated .protolca.DQScore scores = 4;</code>
        */
-      public java.util.List<org.openlca.proto.Proto.DqScore.Builder> 
+      public java.util.List<org.openlca.proto.Proto.DQScore.Builder> 
            getScoresBuilderList() {
         return getScoresFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.DqScore, org.openlca.proto.Proto.DqScore.Builder, org.openlca.proto.Proto.DqScoreOrBuilder> 
+          org.openlca.proto.Proto.DQScore, org.openlca.proto.Proto.DQScore.Builder, org.openlca.proto.Proto.DQScoreOrBuilder> 
           getScoresFieldBuilder() {
         if (scoresBuilder_ == null) {
           scoresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openlca.proto.Proto.DqScore, org.openlca.proto.Proto.DqScore.Builder, org.openlca.proto.Proto.DqScoreOrBuilder>(
+              org.openlca.proto.Proto.DQScore, org.openlca.proto.Proto.DQScore.Builder, org.openlca.proto.Proto.DQScoreOrBuilder>(
                   scores_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -16134,48 +16134,48 @@ public final class Proto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protolca.DqIndicator)
+      // @@protoc_insertion_point(builder_scope:protolca.DQIndicator)
     }
 
-    // @@protoc_insertion_point(class_scope:protolca.DqIndicator)
-    private static final org.openlca.proto.Proto.DqIndicator DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protolca.DQIndicator)
+    private static final org.openlca.proto.Proto.DQIndicator DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DqIndicator();
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DQIndicator();
     }
 
-    public static org.openlca.proto.Proto.DqIndicator getDefaultInstance() {
+    public static org.openlca.proto.Proto.DQIndicator getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DqIndicator>
-        PARSER = new com.google.protobuf.AbstractParser<DqIndicator>() {
+    private static final com.google.protobuf.Parser<DQIndicator>
+        PARSER = new com.google.protobuf.AbstractParser<DQIndicator>() {
       @java.lang.Override
-      public DqIndicator parsePartialFrom(
+      public DQIndicator parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DqIndicator(input, extensionRegistry);
+        return new DQIndicator(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DqIndicator> parser() {
+    public static com.google.protobuf.Parser<DQIndicator> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DqIndicator> getParserForType() {
+    public com.google.protobuf.Parser<DQIndicator> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openlca.proto.Proto.DqIndicator getDefaultInstanceForType() {
+    public org.openlca.proto.Proto.DQIndicator getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DqScoreOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protolca.DqScore)
+  public interface DQScoreOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.DQScore)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -16238,22 +16238,22 @@ public final class Proto {
   }
   /**
    * <pre>
-   * An score value of an indicator ([DqIndicator]) in a data quality system
-   * ([DqSystem]).
+   * An score value of an indicator ([DQIndicator]) in a data quality system
+   * ([DQSystem]).
    * </pre>
    *
-   * Protobuf type {@code protolca.DqScore}
+   * Protobuf type {@code protolca.DQScore}
    */
-  public static final class DqScore extends
+  public static final class DQScore extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protolca.DqScore)
-      DqScoreOrBuilder {
+      // @@protoc_insertion_point(message_implements:protolca.DQScore)
+      DQScoreOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DqScore.newBuilder() to construct.
-    private DqScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DQScore.newBuilder() to construct.
+    private DQScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DqScore() {
+    private DQScore() {
       type_ = "";
       label_ = "";
       description_ = "";
@@ -16263,7 +16263,7 @@ public final class Proto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DqScore();
+      return new DQScore();
     }
 
     @java.lang.Override
@@ -16271,7 +16271,7 @@ public final class Proto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DqScore(
+    private DQScore(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16338,15 +16338,15 @@ public final class Proto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqScore_descriptor;
+      return org.openlca.proto.Proto.internal_static_protolca_DQScore_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqScore_fieldAccessorTable
+      return org.openlca.proto.Proto.internal_static_protolca_DQScore_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openlca.proto.Proto.DqScore.class, org.openlca.proto.Proto.DqScore.Builder.class);
+              org.openlca.proto.Proto.DQScore.class, org.openlca.proto.Proto.DQScore.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -16560,10 +16560,10 @@ public final class Proto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openlca.proto.Proto.DqScore)) {
+      if (!(obj instanceof org.openlca.proto.Proto.DQScore)) {
         return super.equals(obj);
       }
-      org.openlca.proto.Proto.DqScore other = (org.openlca.proto.Proto.DqScore) obj;
+      org.openlca.proto.Proto.DQScore other = (org.openlca.proto.Proto.DQScore) obj;
 
       if (!getType()
           .equals(other.getType())) return false;
@@ -16603,69 +16603,69 @@ public final class Proto {
       return hash;
     }
 
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(byte[] data)
+    public static org.openlca.proto.Proto.DQScore parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQScore parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqScore parseDelimitedFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQScore parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqScore parseDelimitedFrom(
+    public static org.openlca.proto.Proto.DQScore parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqScore parseFrom(
+    public static org.openlca.proto.Proto.DQScore parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16678,7 +16678,7 @@ public final class Proto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openlca.proto.Proto.DqScore prototype) {
+    public static Builder newBuilder(org.openlca.proto.Proto.DQScore prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16695,30 +16695,30 @@ public final class Proto {
     }
     /**
      * <pre>
-     * An score value of an indicator ([DqIndicator]) in a data quality system
-     * ([DqSystem]).
+     * An score value of an indicator ([DQIndicator]) in a data quality system
+     * ([DQSystem]).
      * </pre>
      *
-     * Protobuf type {@code protolca.DqScore}
+     * Protobuf type {@code protolca.DQScore}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protolca.DqScore)
-        org.openlca.proto.Proto.DqScoreOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protolca.DQScore)
+        org.openlca.proto.Proto.DQScoreOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqScore_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQScore_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqScore_fieldAccessorTable
+        return org.openlca.proto.Proto.internal_static_protolca_DQScore_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openlca.proto.Proto.DqScore.class, org.openlca.proto.Proto.DqScore.Builder.class);
+                org.openlca.proto.Proto.DQScore.class, org.openlca.proto.Proto.DQScore.Builder.class);
       }
 
-      // Construct using org.openlca.proto.Proto.DqScore.newBuilder()
+      // Construct using org.openlca.proto.Proto.DQScore.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -16752,17 +16752,17 @@ public final class Proto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqScore_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQScore_descriptor;
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqScore getDefaultInstanceForType() {
-        return org.openlca.proto.Proto.DqScore.getDefaultInstance();
+      public org.openlca.proto.Proto.DQScore getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.DQScore.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqScore build() {
-        org.openlca.proto.Proto.DqScore result = buildPartial();
+      public org.openlca.proto.Proto.DQScore build() {
+        org.openlca.proto.Proto.DQScore result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16770,8 +16770,8 @@ public final class Proto {
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqScore buildPartial() {
-        org.openlca.proto.Proto.DqScore result = new org.openlca.proto.Proto.DqScore(this);
+      public org.openlca.proto.Proto.DQScore buildPartial() {
+        org.openlca.proto.Proto.DQScore result = new org.openlca.proto.Proto.DQScore(this);
         result.type_ = type_;
         result.position_ = position_;
         result.label_ = label_;
@@ -16815,16 +16815,16 @@ public final class Proto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openlca.proto.Proto.DqScore) {
-          return mergeFrom((org.openlca.proto.Proto.DqScore)other);
+        if (other instanceof org.openlca.proto.Proto.DQScore) {
+          return mergeFrom((org.openlca.proto.Proto.DQScore)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openlca.proto.Proto.DqScore other) {
-        if (other == org.openlca.proto.Proto.DqScore.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.openlca.proto.Proto.DQScore other) {
+        if (other == org.openlca.proto.Proto.DQScore.getDefaultInstance()) return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
           onChanged();
@@ -16858,11 +16858,11 @@ public final class Proto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openlca.proto.Proto.DqScore parsedMessage = null;
+        org.openlca.proto.Proto.DQScore parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openlca.proto.Proto.DqScore) e.getUnfinishedMessage();
+          parsedMessage = (org.openlca.proto.Proto.DQScore) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17199,48 +17199,48 @@ public final class Proto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protolca.DqScore)
+      // @@protoc_insertion_point(builder_scope:protolca.DQScore)
     }
 
-    // @@protoc_insertion_point(class_scope:protolca.DqScore)
-    private static final org.openlca.proto.Proto.DqScore DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protolca.DQScore)
+    private static final org.openlca.proto.Proto.DQScore DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DqScore();
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DQScore();
     }
 
-    public static org.openlca.proto.Proto.DqScore getDefaultInstance() {
+    public static org.openlca.proto.Proto.DQScore getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DqScore>
-        PARSER = new com.google.protobuf.AbstractParser<DqScore>() {
+    private static final com.google.protobuf.Parser<DQScore>
+        PARSER = new com.google.protobuf.AbstractParser<DQScore>() {
       @java.lang.Override
-      public DqScore parsePartialFrom(
+      public DQScore parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DqScore(input, extensionRegistry);
+        return new DQScore(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DqScore> parser() {
+    public static com.google.protobuf.Parser<DQScore> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DqScore> getParserForType() {
+    public com.google.protobuf.Parser<DQScore> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openlca.proto.Proto.DqScore getDefaultInstanceForType() {
+    public org.openlca.proto.Proto.DQScore getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DqSystemOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protolca.DqSystem)
+  public interface DQSystemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.DQSystem)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -17487,27 +17487,27 @@ public final class Proto {
     org.openlca.proto.Proto.RefOrBuilder getSourceOrBuilder();
 
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
-    java.util.List<org.openlca.proto.Proto.DqIndicator> 
+    java.util.List<org.openlca.proto.Proto.DQIndicator> 
         getIndicatorsList();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
-    org.openlca.proto.Proto.DqIndicator getIndicators(int index);
+    org.openlca.proto.Proto.DQIndicator getIndicators(int index);
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     int getIndicatorsCount();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
-    java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
+    java.util.List<? extends org.openlca.proto.Proto.DQIndicatorOrBuilder> 
         getIndicatorsOrBuilderList();
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
-    org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
+    org.openlca.proto.Proto.DQIndicatorOrBuilder getIndicatorsOrBuilder(
         int index);
   }
   /**
@@ -17536,18 +17536,18 @@ public final class Proto {
    * internally the numeric values are used in the data model and calculations.
    * </pre>
    *
-   * Protobuf type {@code protolca.DqSystem}
+   * Protobuf type {@code protolca.DQSystem}
    */
-  public static final class DqSystem extends
+  public static final class DQSystem extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protolca.DqSystem)
-      DqSystemOrBuilder {
+      // @@protoc_insertion_point(message_implements:protolca.DQSystem)
+      DQSystemOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DqSystem.newBuilder() to construct.
-    private DqSystem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DQSystem.newBuilder() to construct.
+    private DQSystem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DqSystem() {
+    private DQSystem() {
       type_ = "";
       id_ = "";
       name_ = "";
@@ -17563,7 +17563,7 @@ public final class Proto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DqSystem();
+      return new DQSystem();
     }
 
     @java.lang.Override
@@ -17571,7 +17571,7 @@ public final class Proto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DqSystem(
+    private DQSystem(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -17674,11 +17674,11 @@ public final class Proto {
             }
             case 98: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DqIndicator>();
+                indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DQIndicator>();
                 mutable_bitField0_ |= 0x00000002;
               }
               indicators_.add(
-                  input.readMessage(org.openlca.proto.Proto.DqIndicator.parser(), extensionRegistry));
+                  input.readMessage(org.openlca.proto.Proto.DQIndicator.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -17708,15 +17708,15 @@ public final class Proto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqSystem_descriptor;
+      return org.openlca.proto.Proto.internal_static_protolca_DQSystem_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openlca.proto.Proto.internal_static_protolca_DqSystem_fieldAccessorTable
+      return org.openlca.proto.Proto.internal_static_protolca_DQSystem_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openlca.proto.Proto.DqSystem.class, org.openlca.proto.Proto.DqSystem.Builder.class);
+              org.openlca.proto.Proto.DQSystem.class, org.openlca.proto.Proto.DQSystem.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -18182,41 +18182,41 @@ public final class Proto {
     }
 
     public static final int INDICATORS_FIELD_NUMBER = 12;
-    private java.util.List<org.openlca.proto.Proto.DqIndicator> indicators_;
+    private java.util.List<org.openlca.proto.Proto.DQIndicator> indicators_;
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     @java.lang.Override
-    public java.util.List<org.openlca.proto.Proto.DqIndicator> getIndicatorsList() {
+    public java.util.List<org.openlca.proto.Proto.DQIndicator> getIndicatorsList() {
       return indicators_;
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
+    public java.util.List<? extends org.openlca.proto.Proto.DQIndicatorOrBuilder> 
         getIndicatorsOrBuilderList() {
       return indicators_;
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     @java.lang.Override
     public int getIndicatorsCount() {
       return indicators_.size();
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqIndicator getIndicators(int index) {
+    public org.openlca.proto.Proto.DQIndicator getIndicators(int index) {
       return indicators_.get(index);
     }
     /**
-     * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+     * <code>repeated .protolca.DQIndicator indicators = 12;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
+    public org.openlca.proto.Proto.DQIndicatorOrBuilder getIndicatorsOrBuilder(
         int index) {
       return indicators_.get(index);
     }
@@ -18335,10 +18335,10 @@ public final class Proto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openlca.proto.Proto.DqSystem)) {
+      if (!(obj instanceof org.openlca.proto.Proto.DQSystem)) {
         return super.equals(obj);
       }
-      org.openlca.proto.Proto.DqSystem other = (org.openlca.proto.Proto.DqSystem) obj;
+      org.openlca.proto.Proto.DQSystem other = (org.openlca.proto.Proto.DQSystem) obj;
 
       if (!getType()
           .equals(other.getType())) return false;
@@ -18419,69 +18419,69 @@ public final class Proto {
       return hash;
     }
 
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(byte[] data)
+    public static org.openlca.proto.Proto.DQSystem parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQSystem parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqSystem parseDelimitedFrom(java.io.InputStream input)
+    public static org.openlca.proto.Proto.DQSystem parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqSystem parseDelimitedFrom(
+    public static org.openlca.proto.Proto.DQSystem parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.Proto.DqSystem parseFrom(
+    public static org.openlca.proto.Proto.DQSystem parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18494,7 +18494,7 @@ public final class Proto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openlca.proto.Proto.DqSystem prototype) {
+    public static Builder newBuilder(org.openlca.proto.Proto.DQSystem prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -18535,26 +18535,26 @@ public final class Proto {
      * internally the numeric values are used in the data model and calculations.
      * </pre>
      *
-     * Protobuf type {@code protolca.DqSystem}
+     * Protobuf type {@code protolca.DQSystem}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protolca.DqSystem)
-        org.openlca.proto.Proto.DqSystemOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protolca.DQSystem)
+        org.openlca.proto.Proto.DQSystemOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqSystem_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQSystem_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqSystem_fieldAccessorTable
+        return org.openlca.proto.Proto.internal_static_protolca_DQSystem_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openlca.proto.Proto.DqSystem.class, org.openlca.proto.Proto.DqSystem.Builder.class);
+                org.openlca.proto.Proto.DQSystem.class, org.openlca.proto.Proto.DQSystem.Builder.class);
       }
 
-      // Construct using org.openlca.proto.Proto.DqSystem.newBuilder()
+      // Construct using org.openlca.proto.Proto.DQSystem.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -18615,17 +18615,17 @@ public final class Proto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openlca.proto.Proto.internal_static_protolca_DqSystem_descriptor;
+        return org.openlca.proto.Proto.internal_static_protolca_DQSystem_descriptor;
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqSystem getDefaultInstanceForType() {
-        return org.openlca.proto.Proto.DqSystem.getDefaultInstance();
+      public org.openlca.proto.Proto.DQSystem getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.DQSystem.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqSystem build() {
-        org.openlca.proto.Proto.DqSystem result = buildPartial();
+      public org.openlca.proto.Proto.DQSystem build() {
+        org.openlca.proto.Proto.DQSystem result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -18633,8 +18633,8 @@ public final class Proto {
       }
 
       @java.lang.Override
-      public org.openlca.proto.Proto.DqSystem buildPartial() {
-        org.openlca.proto.Proto.DqSystem result = new org.openlca.proto.Proto.DqSystem(this);
+      public org.openlca.proto.Proto.DQSystem buildPartial() {
+        org.openlca.proto.Proto.DQSystem result = new org.openlca.proto.Proto.DQSystem(this);
         int from_bitField0_ = bitField0_;
         result.type_ = type_;
         result.id_ = id_;
@@ -18706,16 +18706,16 @@ public final class Proto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openlca.proto.Proto.DqSystem) {
-          return mergeFrom((org.openlca.proto.Proto.DqSystem)other);
+        if (other instanceof org.openlca.proto.Proto.DQSystem) {
+          return mergeFrom((org.openlca.proto.Proto.DQSystem)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openlca.proto.Proto.DqSystem other) {
-        if (other == org.openlca.proto.Proto.DqSystem.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.openlca.proto.Proto.DQSystem other) {
+        if (other == org.openlca.proto.Proto.DQSystem.getDefaultInstance()) return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
           onChanged();
@@ -18804,11 +18804,11 @@ public final class Proto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openlca.proto.Proto.DqSystem parsedMessage = null;
+        org.openlca.proto.Proto.DQSystem parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openlca.proto.Proto.DqSystem) e.getUnfinishedMessage();
+          parsedMessage = (org.openlca.proto.Proto.DQSystem) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19976,22 +19976,22 @@ public final class Proto {
         return sourceBuilder_;
       }
 
-      private java.util.List<org.openlca.proto.Proto.DqIndicator> indicators_ =
+      private java.util.List<org.openlca.proto.Proto.DQIndicator> indicators_ =
         java.util.Collections.emptyList();
       private void ensureIndicatorsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DqIndicator>(indicators_);
+          indicators_ = new java.util.ArrayList<org.openlca.proto.Proto.DQIndicator>(indicators_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.DqIndicator, org.openlca.proto.Proto.DqIndicator.Builder, org.openlca.proto.Proto.DqIndicatorOrBuilder> indicatorsBuilder_;
+          org.openlca.proto.Proto.DQIndicator, org.openlca.proto.Proto.DQIndicator.Builder, org.openlca.proto.Proto.DQIndicatorOrBuilder> indicatorsBuilder_;
 
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public java.util.List<org.openlca.proto.Proto.DqIndicator> getIndicatorsList() {
+      public java.util.List<org.openlca.proto.Proto.DQIndicator> getIndicatorsList() {
         if (indicatorsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(indicators_);
         } else {
@@ -19999,7 +19999,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public int getIndicatorsCount() {
         if (indicatorsBuilder_ == null) {
@@ -20009,9 +20009,9 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public org.openlca.proto.Proto.DqIndicator getIndicators(int index) {
+      public org.openlca.proto.Proto.DQIndicator getIndicators(int index) {
         if (indicatorsBuilder_ == null) {
           return indicators_.get(index);
         } else {
@@ -20019,10 +20019,10 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder setIndicators(
-          int index, org.openlca.proto.Proto.DqIndicator value) {
+          int index, org.openlca.proto.Proto.DQIndicator value) {
         if (indicatorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -20036,10 +20036,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder setIndicators(
-          int index, org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
+          int index, org.openlca.proto.Proto.DQIndicator.Builder builderForValue) {
         if (indicatorsBuilder_ == null) {
           ensureIndicatorsIsMutable();
           indicators_.set(index, builderForValue.build());
@@ -20050,9 +20050,9 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public Builder addIndicators(org.openlca.proto.Proto.DqIndicator value) {
+      public Builder addIndicators(org.openlca.proto.Proto.DQIndicator value) {
         if (indicatorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -20066,10 +20066,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
-          int index, org.openlca.proto.Proto.DqIndicator value) {
+          int index, org.openlca.proto.Proto.DQIndicator value) {
         if (indicatorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -20083,10 +20083,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
-          org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
+          org.openlca.proto.Proto.DQIndicator.Builder builderForValue) {
         if (indicatorsBuilder_ == null) {
           ensureIndicatorsIsMutable();
           indicators_.add(builderForValue.build());
@@ -20097,10 +20097,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder addIndicators(
-          int index, org.openlca.proto.Proto.DqIndicator.Builder builderForValue) {
+          int index, org.openlca.proto.Proto.DQIndicator.Builder builderForValue) {
         if (indicatorsBuilder_ == null) {
           ensureIndicatorsIsMutable();
           indicators_.add(index, builderForValue.build());
@@ -20111,10 +20111,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder addAllIndicators(
-          java.lang.Iterable<? extends org.openlca.proto.Proto.DqIndicator> values) {
+          java.lang.Iterable<? extends org.openlca.proto.Proto.DQIndicator> values) {
         if (indicatorsBuilder_ == null) {
           ensureIndicatorsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -20126,7 +20126,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder clearIndicators() {
         if (indicatorsBuilder_ == null) {
@@ -20139,7 +20139,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
       public Builder removeIndicators(int index) {
         if (indicatorsBuilder_ == null) {
@@ -20152,16 +20152,16 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public org.openlca.proto.Proto.DqIndicator.Builder getIndicatorsBuilder(
+      public org.openlca.proto.Proto.DQIndicator.Builder getIndicatorsBuilder(
           int index) {
         return getIndicatorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public org.openlca.proto.Proto.DqIndicatorOrBuilder getIndicatorsOrBuilder(
+      public org.openlca.proto.Proto.DQIndicatorOrBuilder getIndicatorsOrBuilder(
           int index) {
         if (indicatorsBuilder_ == null) {
           return indicators_.get(index);  } else {
@@ -20169,9 +20169,9 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public java.util.List<? extends org.openlca.proto.Proto.DqIndicatorOrBuilder> 
+      public java.util.List<? extends org.openlca.proto.Proto.DQIndicatorOrBuilder> 
            getIndicatorsOrBuilderList() {
         if (indicatorsBuilder_ != null) {
           return indicatorsBuilder_.getMessageOrBuilderList();
@@ -20180,33 +20180,33 @@ public final class Proto {
         }
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public org.openlca.proto.Proto.DqIndicator.Builder addIndicatorsBuilder() {
+      public org.openlca.proto.Proto.DQIndicator.Builder addIndicatorsBuilder() {
         return getIndicatorsFieldBuilder().addBuilder(
-            org.openlca.proto.Proto.DqIndicator.getDefaultInstance());
+            org.openlca.proto.Proto.DQIndicator.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public org.openlca.proto.Proto.DqIndicator.Builder addIndicatorsBuilder(
+      public org.openlca.proto.Proto.DQIndicator.Builder addIndicatorsBuilder(
           int index) {
         return getIndicatorsFieldBuilder().addBuilder(
-            index, org.openlca.proto.Proto.DqIndicator.getDefaultInstance());
+            index, org.openlca.proto.Proto.DQIndicator.getDefaultInstance());
       }
       /**
-       * <code>repeated .protolca.DqIndicator indicators = 12;</code>
+       * <code>repeated .protolca.DQIndicator indicators = 12;</code>
        */
-      public java.util.List<org.openlca.proto.Proto.DqIndicator.Builder> 
+      public java.util.List<org.openlca.proto.Proto.DQIndicator.Builder> 
            getIndicatorsBuilderList() {
         return getIndicatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openlca.proto.Proto.DqIndicator, org.openlca.proto.Proto.DqIndicator.Builder, org.openlca.proto.Proto.DqIndicatorOrBuilder> 
+          org.openlca.proto.Proto.DQIndicator, org.openlca.proto.Proto.DQIndicator.Builder, org.openlca.proto.Proto.DQIndicatorOrBuilder> 
           getIndicatorsFieldBuilder() {
         if (indicatorsBuilder_ == null) {
           indicatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openlca.proto.Proto.DqIndicator, org.openlca.proto.Proto.DqIndicator.Builder, org.openlca.proto.Proto.DqIndicatorOrBuilder>(
+              org.openlca.proto.Proto.DQIndicator, org.openlca.proto.Proto.DQIndicator.Builder, org.openlca.proto.Proto.DQIndicatorOrBuilder>(
                   indicators_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -20228,41 +20228,41 @@ public final class Proto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protolca.DqSystem)
+      // @@protoc_insertion_point(builder_scope:protolca.DQSystem)
     }
 
-    // @@protoc_insertion_point(class_scope:protolca.DqSystem)
-    private static final org.openlca.proto.Proto.DqSystem DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protolca.DQSystem)
+    private static final org.openlca.proto.Proto.DQSystem DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DqSystem();
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.DQSystem();
     }
 
-    public static org.openlca.proto.Proto.DqSystem getDefaultInstance() {
+    public static org.openlca.proto.Proto.DQSystem getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DqSystem>
-        PARSER = new com.google.protobuf.AbstractParser<DqSystem>() {
+    private static final com.google.protobuf.Parser<DQSystem>
+        PARSER = new com.google.protobuf.AbstractParser<DQSystem>() {
       @java.lang.Override
-      public DqSystem parsePartialFrom(
+      public DQSystem parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DqSystem(input, extensionRegistry);
+        return new DQSystem(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DqSystem> parser() {
+    public static com.google.protobuf.Parser<DQSystem> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DqSystem> getParserForType() {
+    public com.google.protobuf.Parser<DQSystem> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openlca.proto.Proto.DqSystem getDefaultInstanceForType() {
+    public org.openlca.proto.Proto.DQSystem getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -57023,19 +57023,19 @@ public final class Proto {
         getTypeBytes();
 
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     boolean hasImpactCategory();
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      * @return The impactCategory.
      */
-    org.openlca.proto.Proto.Ref getImpactCategory();
+    org.openlca.proto.Proto.ImpactCategoryRef getImpactCategory();
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      */
-    org.openlca.proto.Proto.RefOrBuilder getImpactCategoryOrBuilder();
+    org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder();
 
     /**
      * <code>double normalisation_factor = 3;</code>
@@ -57108,11 +57108,11 @@ public final class Proto {
               break;
             }
             case 18: {
-              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
+              org.openlca.proto.Proto.ImpactCategoryRef.Builder subBuilder = null;
               if (impactCategory_ != null) {
                 subBuilder = impactCategory_.toBuilder();
               }
-              impactCategory_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
+              impactCategory_ = input.readMessage(org.openlca.proto.Proto.ImpactCategoryRef.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(impactCategory_);
                 impactCategory_ = subBuilder.buildPartial();
@@ -57211,9 +57211,9 @@ public final class Proto {
     }
 
     public static final int IMPACT_CATEGORY_FIELD_NUMBER = 2;
-    private org.openlca.proto.Proto.Ref impactCategory_;
+    private org.openlca.proto.Proto.ImpactCategoryRef impactCategory_;
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      * @return Whether the impactCategory field is set.
      */
     @java.lang.Override
@@ -57221,18 +57221,18 @@ public final class Proto {
       return impactCategory_ != null;
     }
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      * @return The impactCategory.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.Ref getImpactCategory() {
-      return impactCategory_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : impactCategory_;
+    public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategory() {
+      return impactCategory_ == null ? org.openlca.proto.Proto.ImpactCategoryRef.getDefaultInstance() : impactCategory_;
     }
     /**
-     * <code>.protolca.Ref impact_category = 2;</code>
+     * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.RefOrBuilder getImpactCategoryOrBuilder() {
+    public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder() {
       return getImpactCategory();
     }
 
@@ -57735,31 +57735,31 @@ public final class Proto {
         return this;
       }
 
-      private org.openlca.proto.Proto.Ref impactCategory_;
+      private org.openlca.proto.Proto.ImpactCategoryRef impactCategory_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> impactCategoryBuilder_;
+          org.openlca.proto.Proto.ImpactCategoryRef, org.openlca.proto.Proto.ImpactCategoryRef.Builder, org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> impactCategoryBuilder_;
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        * @return Whether the impactCategory field is set.
        */
       public boolean hasImpactCategory() {
         return impactCategoryBuilder_ != null || impactCategory_ != null;
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        * @return The impactCategory.
        */
-      public org.openlca.proto.Proto.Ref getImpactCategory() {
+      public org.openlca.proto.Proto.ImpactCategoryRef getImpactCategory() {
         if (impactCategoryBuilder_ == null) {
-          return impactCategory_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : impactCategory_;
+          return impactCategory_ == null ? org.openlca.proto.Proto.ImpactCategoryRef.getDefaultInstance() : impactCategory_;
         } else {
           return impactCategoryBuilder_.getMessage();
         }
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
-      public Builder setImpactCategory(org.openlca.proto.Proto.Ref value) {
+      public Builder setImpactCategory(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -57773,10 +57773,10 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder setImpactCategory(
-          org.openlca.proto.Proto.Ref.Builder builderForValue) {
+          org.openlca.proto.Proto.ImpactCategoryRef.Builder builderForValue) {
         if (impactCategoryBuilder_ == null) {
           impactCategory_ = builderForValue.build();
           onChanged();
@@ -57787,13 +57787,13 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
-      public Builder mergeImpactCategory(org.openlca.proto.Proto.Ref value) {
+      public Builder mergeImpactCategory(org.openlca.proto.Proto.ImpactCategoryRef value) {
         if (impactCategoryBuilder_ == null) {
           if (impactCategory_ != null) {
             impactCategory_ =
-              org.openlca.proto.Proto.Ref.newBuilder(impactCategory_).mergeFrom(value).buildPartial();
+              org.openlca.proto.Proto.ImpactCategoryRef.newBuilder(impactCategory_).mergeFrom(value).buildPartial();
           } else {
             impactCategory_ = value;
           }
@@ -57805,7 +57805,7 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
       public Builder clearImpactCategory() {
         if (impactCategoryBuilder_ == null) {
@@ -57819,33 +57819,33 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
-      public org.openlca.proto.Proto.Ref.Builder getImpactCategoryBuilder() {
+      public org.openlca.proto.Proto.ImpactCategoryRef.Builder getImpactCategoryBuilder() {
         
         onChanged();
         return getImpactCategoryFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
-      public org.openlca.proto.Proto.RefOrBuilder getImpactCategoryOrBuilder() {
+      public org.openlca.proto.Proto.ImpactCategoryRefOrBuilder getImpactCategoryOrBuilder() {
         if (impactCategoryBuilder_ != null) {
           return impactCategoryBuilder_.getMessageOrBuilder();
         } else {
           return impactCategory_ == null ?
-              org.openlca.proto.Proto.Ref.getDefaultInstance() : impactCategory_;
+              org.openlca.proto.Proto.ImpactCategoryRef.getDefaultInstance() : impactCategory_;
         }
       }
       /**
-       * <code>.protolca.Ref impact_category = 2;</code>
+       * <code>.protolca.ImpactCategoryRef impact_category = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
+          org.openlca.proto.Proto.ImpactCategoryRef, org.openlca.proto.Proto.ImpactCategoryRef.Builder, org.openlca.proto.Proto.ImpactCategoryRefOrBuilder> 
           getImpactCategoryFieldBuilder() {
         if (impactCategoryBuilder_ == null) {
           impactCategoryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
+              org.openlca.proto.Proto.ImpactCategoryRef, org.openlca.proto.Proto.ImpactCategoryRef.Builder, org.openlca.proto.Proto.ImpactCategoryRefOrBuilder>(
                   getImpactCategory(),
                   getParentForChildren(),
                   isClean());
@@ -64874,19 +64874,31 @@ public final class Proto {
     int getLastInternalId();
 
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      * @return Whether the location field is set.
      */
     boolean hasLocation();
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      * @return The location.
      */
-    org.openlca.proto.Proto.Location getLocation();
+    org.openlca.proto.Proto.Ref getLocation();
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      */
-    org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder();
+    org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder();
 
     /**
      * <code>repeated .protolca.Parameter parameters = 15;</code>
@@ -64940,7 +64952,7 @@ public final class Proto {
 
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -64950,7 +64962,7 @@ public final class Proto {
     boolean hasDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -64960,7 +64972,7 @@ public final class Proto {
     org.openlca.proto.Proto.Ref getDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -64970,7 +64982,7 @@ public final class Proto {
 
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -64981,7 +64993,7 @@ public final class Proto {
     boolean hasExchangeDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -64992,7 +65004,7 @@ public final class Proto {
     org.openlca.proto.Proto.Ref getExchangeDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -65003,7 +65015,7 @@ public final class Proto {
 
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -65013,7 +65025,7 @@ public final class Proto {
     boolean hasSocialDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -65023,7 +65035,7 @@ public final class Proto {
     org.openlca.proto.Proto.Ref getSocialDqSystem();
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -65271,11 +65283,11 @@ public final class Proto {
               break;
             }
             case 114: {
-              org.openlca.proto.Proto.Location.Builder subBuilder = null;
+              org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
               }
-              location_ = input.readMessage(org.openlca.proto.Proto.Location.parser(), extensionRegistry);
+              location_ = input.readMessage(org.openlca.proto.Proto.Ref.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(location_);
                 location_ = subBuilder.buildPartial();
@@ -65984,9 +65996,13 @@ public final class Proto {
     }
 
     public static final int LOCATION_FIELD_NUMBER = 14;
-    private org.openlca.proto.Proto.Location location_;
+    private org.openlca.proto.Proto.Ref location_;
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      * @return Whether the location field is set.
      */
     @java.lang.Override
@@ -65994,18 +66010,26 @@ public final class Proto {
       return location_ != null;
     }
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      * @return The location.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.Location getLocation() {
-      return location_ == null ? org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
+    public org.openlca.proto.Proto.Ref getLocation() {
+      return location_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
     }
     /**
-     * <code>.protolca.Location location = 14;</code>
+     * <pre>
+     * The location of the process.
+     * </pre>
+     *
+     * <code>.protolca.Ref location = 14;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
+    public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
       return getLocation();
     }
 
@@ -66098,7 +66122,7 @@ public final class Proto {
     private org.openlca.proto.Proto.Ref dqSystem_;
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -66111,7 +66135,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -66124,7 +66148,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the overall
+     * A reference to a data quality system ([DQSystem]) with which the overall
      * quality of the process can be assessed.
      * </pre>
      *
@@ -66139,7 +66163,7 @@ public final class Proto {
     private org.openlca.proto.Proto.Ref exchangeDqSystem_;
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -66153,7 +66177,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -66167,7 +66191,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual inputs and outputs ([Exchange]s) of the process can be
      * assessed.
      * </pre>
@@ -66183,7 +66207,7 @@ public final class Proto {
     private org.openlca.proto.Proto.Ref socialDqSystem_;
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -66196,7 +66220,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -66209,7 +66233,7 @@ public final class Proto {
     }
     /**
      * <pre>
-     * A reference to a data quality system ([DqSystem]) with which the quality
+     * A reference to a data quality system ([DQSystem]) with which the quality
      * of individual social aspects of the process can be assessed.
      * </pre>
      *
@@ -68953,31 +68977,43 @@ public final class Proto {
         return this;
       }
 
-      private org.openlca.proto.Proto.Location location_;
+      private org.openlca.proto.Proto.Ref location_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> locationBuilder_;
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> locationBuilder_;
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        * @return Whether the location field is set.
        */
       public boolean hasLocation() {
         return locationBuilder_ != null || location_ != null;
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        * @return The location.
        */
-      public org.openlca.proto.Proto.Location getLocation() {
+      public org.openlca.proto.Proto.Ref getLocation() {
         if (locationBuilder_ == null) {
-          return location_ == null ? org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
+          return location_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
         } else {
           return locationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
-      public Builder setLocation(org.openlca.proto.Proto.Location value) {
+      public Builder setLocation(org.openlca.proto.Proto.Ref value) {
         if (locationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -68991,10 +69027,14 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder setLocation(
-          org.openlca.proto.Proto.Location.Builder builderForValue) {
+          org.openlca.proto.Proto.Ref.Builder builderForValue) {
         if (locationBuilder_ == null) {
           location_ = builderForValue.build();
           onChanged();
@@ -69005,13 +69045,17 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
-      public Builder mergeLocation(org.openlca.proto.Proto.Location value) {
+      public Builder mergeLocation(org.openlca.proto.Proto.Ref value) {
         if (locationBuilder_ == null) {
           if (location_ != null) {
             location_ =
-              org.openlca.proto.Proto.Location.newBuilder(location_).mergeFrom(value).buildPartial();
+              org.openlca.proto.Proto.Ref.newBuilder(location_).mergeFrom(value).buildPartial();
           } else {
             location_ = value;
           }
@@ -69023,7 +69067,11 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -69037,33 +69085,45 @@ public final class Proto {
         return this;
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
-      public org.openlca.proto.Proto.Location.Builder getLocationBuilder() {
+      public org.openlca.proto.Proto.Ref.Builder getLocationBuilder() {
         
         onChanged();
         return getLocationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
-      public org.openlca.proto.Proto.LocationOrBuilder getLocationOrBuilder() {
+      public org.openlca.proto.Proto.RefOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
           return locationBuilder_.getMessageOrBuilder();
         } else {
           return location_ == null ?
-              org.openlca.proto.Proto.Location.getDefaultInstance() : location_;
+              org.openlca.proto.Proto.Ref.getDefaultInstance() : location_;
         }
       }
       /**
-       * <code>.protolca.Location location = 14;</code>
+       * <pre>
+       * The location of the process.
+       * </pre>
+       *
+       * <code>.protolca.Ref location = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder> 
+          org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
           getLocationFieldBuilder() {
         if (locationBuilder_ == null) {
           locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.Location, org.openlca.proto.Proto.Location.Builder, org.openlca.proto.Proto.LocationOrBuilder>(
+              org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder>(
                   getLocation(),
                   getParentForChildren(),
                   isClean());
@@ -69490,7 +69550,7 @@ public final class Proto {
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> dqSystemBuilder_;
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69502,7 +69562,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69518,7 +69578,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69539,7 +69599,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69558,7 +69618,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69581,7 +69641,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69600,7 +69660,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69613,7 +69673,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69629,7 +69689,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the overall
+       * A reference to a data quality system ([DQSystem]) with which the overall
        * quality of the process can be assessed.
        * </pre>
        *
@@ -69654,7 +69714,7 @@ public final class Proto {
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> exchangeDqSystemBuilder_;
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69667,7 +69727,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69684,7 +69744,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69706,7 +69766,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69726,7 +69786,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69750,7 +69810,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69770,7 +69830,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69784,7 +69844,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69801,7 +69861,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual inputs and outputs ([Exchange]s) of the process can be
        * assessed.
        * </pre>
@@ -69827,7 +69887,7 @@ public final class Proto {
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> socialDqSystemBuilder_;
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69839,7 +69899,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69855,7 +69915,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69876,7 +69936,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69895,7 +69955,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69918,7 +69978,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69937,7 +69997,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69950,7 +70010,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -69966,7 +70026,7 @@ public final class Proto {
       }
       /**
        * <pre>
-       * A reference to a data quality system ([DqSystem]) with which the quality
+       * A reference to a data quality system ([DQSystem]) with which the quality
        * of individual social aspects of the process can be assessed.
        * </pre>
        *
@@ -75170,8 +75230,8 @@ public final class Proto {
 
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75180,8 +75240,8 @@ public final class Proto {
     boolean hasProvider();
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75190,8 +75250,8 @@ public final class Proto {
     org.openlca.proto.Proto.Ref getProvider();
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75259,7 +75319,7 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      * @return Whether the exchange field is set.
      */
     boolean hasExchange();
@@ -75270,10 +75330,10 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      * @return The exchange.
      */
-    org.openlca.proto.Proto.Exchange getExchange();
+    org.openlca.proto.Proto.ExchangeRef getExchange();
     /**
      * <pre>
      * The exchange of the linked process (this is useful if the linked process
@@ -75281,9 +75341,9 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      */
-    org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder();
+    org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder();
   }
   /**
    * <pre>
@@ -75381,11 +75441,11 @@ public final class Proto {
               break;
             }
             case 42: {
-              org.openlca.proto.Proto.Exchange.Builder subBuilder = null;
+              org.openlca.proto.Proto.ExchangeRef.Builder subBuilder = null;
               if (exchange_ != null) {
                 subBuilder = exchange_.toBuilder();
               }
-              exchange_ = input.readMessage(org.openlca.proto.Proto.Exchange.parser(), extensionRegistry);
+              exchange_ = input.readMessage(org.openlca.proto.Proto.ExchangeRef.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(exchange_);
                 exchange_ = subBuilder.buildPartial();
@@ -75477,8 +75537,8 @@ public final class Proto {
     private org.openlca.proto.Proto.Ref provider_;
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75490,8 +75550,8 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75503,8 +75563,8 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The descriptor of the process that provides a product or a waste
-     * treatment.
+     * The descriptor of the process or product system that provides a product or
+     * a waste treatment.
      * </pre>
      *
      * <code>.protolca.Ref provider = 2;</code>
@@ -75591,7 +75651,7 @@ public final class Proto {
     }
 
     public static final int EXCHANGE_FIELD_NUMBER = 5;
-    private org.openlca.proto.Proto.Exchange exchange_;
+    private org.openlca.proto.Proto.ExchangeRef exchange_;
     /**
      * <pre>
      * The exchange of the linked process (this is useful if the linked process
@@ -75599,7 +75659,7 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      * @return Whether the exchange field is set.
      */
     @java.lang.Override
@@ -75613,12 +75673,12 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      * @return The exchange.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.Exchange getExchange() {
-      return exchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
+    public org.openlca.proto.Proto.ExchangeRef getExchange() {
+      return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
     }
     /**
      * <pre>
@@ -75627,10 +75687,10 @@ public final class Proto {
      * provides, e.g. in an electricity mix).
      * </pre>
      *
-     * <code>.protolca.Exchange exchange = 5;</code>
+     * <code>.protolca.ExchangeRef exchange = 5;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder() {
+    public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
       return getExchange();
     }
 
@@ -76166,8 +76226,8 @@ public final class Proto {
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> providerBuilder_;
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76178,8 +76238,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76194,8 +76254,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76215,8 +76275,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76234,8 +76294,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76257,8 +76317,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76276,8 +76336,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76289,8 +76349,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76305,8 +76365,8 @@ public final class Proto {
       }
       /**
        * <pre>
-       * The descriptor of the process that provides a product or a waste
-       * treatment.
+       * The descriptor of the process or product system that provides a product or
+       * a waste treatment.
        * </pre>
        *
        * <code>.protolca.Ref provider = 2;</code>
@@ -76635,9 +76695,9 @@ public final class Proto {
         return processBuilder_;
       }
 
-      private org.openlca.proto.Proto.Exchange exchange_;
+      private org.openlca.proto.Proto.ExchangeRef exchange_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> exchangeBuilder_;
+          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> exchangeBuilder_;
       /**
        * <pre>
        * The exchange of the linked process (this is useful if the linked process
@@ -76645,7 +76705,7 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        * @return Whether the exchange field is set.
        */
       public boolean hasExchange() {
@@ -76658,12 +76718,12 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        * @return The exchange.
        */
-      public org.openlca.proto.Proto.Exchange getExchange() {
+      public org.openlca.proto.Proto.ExchangeRef getExchange() {
         if (exchangeBuilder_ == null) {
-          return exchange_ == null ? org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
+          return exchange_ == null ? org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
         } else {
           return exchangeBuilder_.getMessage();
         }
@@ -76675,9 +76735,9 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
-      public Builder setExchange(org.openlca.proto.Proto.Exchange value) {
+      public Builder setExchange(org.openlca.proto.Proto.ExchangeRef value) {
         if (exchangeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -76697,10 +76757,10 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
       public Builder setExchange(
-          org.openlca.proto.Proto.Exchange.Builder builderForValue) {
+          org.openlca.proto.Proto.ExchangeRef.Builder builderForValue) {
         if (exchangeBuilder_ == null) {
           exchange_ = builderForValue.build();
           onChanged();
@@ -76717,13 +76777,13 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
-      public Builder mergeExchange(org.openlca.proto.Proto.Exchange value) {
+      public Builder mergeExchange(org.openlca.proto.Proto.ExchangeRef value) {
         if (exchangeBuilder_ == null) {
           if (exchange_ != null) {
             exchange_ =
-              org.openlca.proto.Proto.Exchange.newBuilder(exchange_).mergeFrom(value).buildPartial();
+              org.openlca.proto.Proto.ExchangeRef.newBuilder(exchange_).mergeFrom(value).buildPartial();
           } else {
             exchange_ = value;
           }
@@ -76741,7 +76801,7 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
       public Builder clearExchange() {
         if (exchangeBuilder_ == null) {
@@ -76761,9 +76821,9 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
-      public org.openlca.proto.Proto.Exchange.Builder getExchangeBuilder() {
+      public org.openlca.proto.Proto.ExchangeRef.Builder getExchangeBuilder() {
         
         onChanged();
         return getExchangeFieldBuilder().getBuilder();
@@ -76775,14 +76835,14 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
-      public org.openlca.proto.Proto.ExchangeOrBuilder getExchangeOrBuilder() {
+      public org.openlca.proto.Proto.ExchangeRefOrBuilder getExchangeOrBuilder() {
         if (exchangeBuilder_ != null) {
           return exchangeBuilder_.getMessageOrBuilder();
         } else {
           return exchange_ == null ?
-              org.openlca.proto.Proto.Exchange.getDefaultInstance() : exchange_;
+              org.openlca.proto.Proto.ExchangeRef.getDefaultInstance() : exchange_;
         }
       }
       /**
@@ -76792,14 +76852,14 @@ public final class Proto {
        * provides, e.g. in an electricity mix).
        * </pre>
        *
-       * <code>.protolca.Exchange exchange = 5;</code>
+       * <code>.protolca.ExchangeRef exchange = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder> 
+          org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder> 
           getExchangeFieldBuilder() {
         if (exchangeBuilder_ == null) {
           exchangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.Exchange, org.openlca.proto.Proto.Exchange.Builder, org.openlca.proto.Proto.ExchangeOrBuilder>(
+              org.openlca.proto.Proto.ExchangeRef, org.openlca.proto.Proto.ExchangeRef.Builder, org.openlca.proto.Proto.ExchangeRefOrBuilder>(
                   getExchange(),
                   getParentForChildren(),
                   isClean());
@@ -105630,20 +105690,20 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_Currency_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protolca_DqIndicator_descriptor;
+    internal_static_protolca_DQIndicator_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protolca_DqIndicator_fieldAccessorTable;
+      internal_static_protolca_DQIndicator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protolca_DqScore_descriptor;
+    internal_static_protolca_DQScore_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protolca_DqScore_fieldAccessorTable;
+      internal_static_protolca_DQScore_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protolca_DqSystem_descriptor;
+    internal_static_protolca_DQSystem_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protolca_DqSystem_fieldAccessorTable;
+      internal_static_protolca_DQSystem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_Exchange_descriptor;
   private static final 
@@ -105859,19 +105919,19 @@ public final class Proto {
       "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
       "brary\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\031\n\021conversion_" +
       "factor\030\013 \001(\001\022)\n\022reference_currency\030\014 \001(\013" +
-      "2\r.protolca.Ref\"e\n\013DqIndicator\022\023\n\004type\030\001" +
+      "2\r.protolca.Ref\"e\n\013DQIndicator\022\023\n\004type\030\001" +
       " \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\020\n\010position\030\003 " +
-      "\001(\005\022!\n\006scores\030\004 \003(\0132\021.protolca.DqScore\"i" +
-      "\n\007DqScore\022\023\n\004type\030\001 \001(\tR\005@type\022\020\n\010positi" +
+      "\001(\005\022!\n\006scores\030\004 \003(\0132\021.protolca.DQScore\"i" +
+      "\n\007DQScore\022\023\n\004type\030\001 \001(\tR\005@type\022\020\n\010positi" +
       "on\030\002 \001(\005\022\r\n\005label\030\003 \001(\t\022\023\n\013description\030\004" +
-      " \001(\t\022\023\n\013uncertainty\030\005 \001(\001\"\236\002\n\010DqSystem\022\023" +
+      " \001(\t\022\023\n\013uncertainty\030\005 \001(\001\"\236\002\n\010DQSystem\022\023" +
       "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
       "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
       "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categor" +
       "y\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007" +
       "library\030\t \001(\t\022\031\n\021has_uncertainties\030\n \001(\010" +
       "\022\035\n\006source\030\013 \001(\0132\r.protolca.Ref\022)\n\nindic" +
-      "ators\030\014 \003(\0132\025.protolca.DqIndicator\"\360\003\n\010E" +
+      "ators\030\014 \003(\0132\025.protolca.DQIndicator\"\360\003\n\010E" +
       "xchange\022\023\n\004type\030\001 \001(\tR\005@type\022\027\n\017avoided_" +
       "product\030\002 \001(\010\022\024\n\014cost_formula\030\003 \001(\t\022\022\n\nc" +
       "ost_value\030\004 \001(\001\022\037\n\010currency\030\005 \001(\0132\r.prot" +
@@ -105963,179 +106023,180 @@ public final class Proto {
       "ategory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003" +
       "(\t\022\017\n\007library\030\t \001(\t\022\014\n\004code\030\n \001(\t\022\020\n\010lat" +
       "itude\030\013 \001(\001\022\021\n\tlongitude\030\014 \001(\001\022\026\n\016geomet" +
-      "ry_bytes\030\r \001(\014\"\177\n\010NwFactor\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022&\n\017impact_category\030\002 \001(\0132\r.proto" +
-      "lca.Ref\022\034\n\024normalisation_factor\030\003 \001(\001\022\030\n" +
-      "\020weighting_factor\030\004 \001(\001\"\270\001\n\005NwSet\022\023\n\004typ" +
-      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
-      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
-      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\033\n\023weighted_sco" +
-      "re_unit\030\007 \001(\t\022#\n\007factors\030\010 \003(\0132\022.protolc" +
-      "a.NwFactor\"\322\002\n\tParameter\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013" +
-      "description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013la" +
-      "st_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.prot" +
-      "olca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022" +
-      "1\n\017parameter_scope\030\n \001(\0162\030.protolca.Para" +
-      "meterScope\022\027\n\017input_parameter\030\013 \001(\010\022\r\n\005v" +
-      "alue\030\014 \001(\001\022\017\n\007formula\030\r \001(\t\022*\n\013uncertain" +
-      "ty\030\016 \001(\0132\025.protolca.Uncertainty\"b\n\016Param" +
-      "eterRedef\022\023\n\004type\030\001 \001(\tR\005@type\022\014\n\004name\030\002" +
-      " \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007context\030\004 \001(\0132\r.p" +
-      "rotolca.Ref\"\201\006\n\007Process\022\023\n\004type\030\001 \001(\tR\005@" +
-      "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
-      "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
-      "t_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.proto" +
-      "lca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226" +
-      "\n\022allocation_factors\030\n \003(\0132\032.protolca.Al" +
-      "locationFactor\022;\n\031default_allocation_met" +
-      "hod\030\013 \001(\0162\030.protolca.AllocationType\022%\n\te" +
-      "xchanges\030\014 \003(\0132\022.protolca.Exchange\022\030\n\020la" +
-      "st_internal_id\030\r \001(\005\022$\n\010location\030\016 \001(\0132\022" +
-      ".protolca.Location\022\'\n\nparameters\030\017 \003(\0132\023" +
-      ".protolca.Parameter\022=\n\025process_documenta" +
-      "tion\030\020 \001(\0132\036.protolca.ProcessDocumentati" +
-      "on\022+\n\014process_type\030\021 \001(\0162\025.protolca.Proc" +
-      "essType\022 \n\tdq_system\030\022 \001(\0132\r.protolca.Re" +
-      "f\022)\n\022exchange_dq_system\030\023 \001(\0132\r.protolca" +
-      ".Ref\022\'\n\020social_dq_system\030\024 \001(\0132\r.protolc" +
-      "a.Ref\022\020\n\010dq_entry\030\025 \001(\t\022\036\n\026infrastructur" +
-      "e_process\030\026 \001(\010\022.\n\016social_aspects\030\027 \003(\0132" +
-      "\026.protolca.SocialAspect\"\242\006\n\024ProcessDocum" +
-      "entation\022\023\n\004type\030\001 \001(\tR\005@type\022\030\n\020time_de" +
-      "scription\030\002 \001(\t\022\023\n\013valid_until\030\003 \001(\t\022\022\n\n" +
-      "valid_from\030\004 \001(\t\022\036\n\026technology_descripti" +
-      "on\030\005 \001(\t\022#\n\033data_collection_description\030" +
-      "\006 \001(\t\022 \n\030completeness_description\030\007 \001(\t\022" +
-      "\"\n\032data_selection_description\030\010 \001(\t\022\026\n\016r" +
-      "eview_details\030\t \001(\t\022\"\n\032data_treatment_de" +
-      "scription\030\n \001(\t\022$\n\034inventory_method_desc" +
-      "ription\030\013 \001(\t\022&\n\036modeling_constants_desc" +
-      "ription\030\014 \001(\t\022\037\n\010reviewer\030\r \001(\0132\r.protol" +
-      "ca.Ref\022\034\n\024sampling_description\030\016 \001(\t\022\036\n\007" +
-      "sources\030\017 \003(\0132\r.protolca.Ref\022 \n\030restrict" +
-      "ions_description\030\020 \001(\t\022\021\n\tcopyright\030\021 \001(" +
-      "\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017data_documen" +
-      "tor\030\023 \001(\0132\r.protolca.Ref\022%\n\016data_generat" +
-      "or\030\024 \001(\0132\r.protolca.Ref\022%\n\016data_set_owne" +
-      "r\030\025 \001(\0132\r.protolca.Ref\022\034\n\024intended_appli" +
-      "cation\030\026 \001(\t\022\033\n\023project_description\030\027 \001(" +
-      "\t\022\"\n\013publication\030\030 \001(\0132\r.protolca.Ref\022\035\n" +
-      "\025geography_description\030\031 \001(\t\"\246\001\n\013Process" +
-      "Link\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010provider\030\002 " +
-      "\001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001(\0132\r.proto" +
-      "lca.Ref\022\036\n\007process\030\004 \001(\0132\r.protolca.Ref\022" +
-      "$\n\010exchange\030\005 \001(\0132\022.protolca.Exchange\"\321\001" +
-      "\n\nProcessRef\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030" +
-      "\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030" +
-      "\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 " +
-      "\001(\t\022\025\n\rcategory_path\030\007 \003(\t\022\020\n\010location\030\010" +
-      " \001(\t\022+\n\014process_type\030\t \001(\0162\025.protolca.Pr" +
-      "ocessType\"\336\003\n\rProductSystem\022\023\n\004type\030\001 \001(" +
-      "\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022" +
-      "\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n" +
-      "\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.p" +
-      "rotolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001" +
-      "(\t\022\'\n\tprocesses\030\n \003(\0132\024.protolca.Process" +
-      "Ref\022/\n\021reference_process\030\013 \001(\0132\024.protolc" +
-      "a.ProcessRef\022.\n\022reference_exchange\030\014 \001(\013" +
-      "2\022.protolca.Exchange\022\025\n\rtarget_amount\030\r " +
-      "\001(\001\022\"\n\013target_unit\030\016 \001(\0132\r.protolca.Ref\022" +
-      "+\n\024target_flow_property\030\017 \001(\0132\r.protolca" +
-      ".Ref\022,\n\rprocess_links\030\020 \003(\0132\025.protolca.P" +
-      "rocessLink\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@t" +
-      "ype\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013de" +
-      "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
-      "_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protol" +
-      "ca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n" +
-      "\rimpact_method\030\n \001(\0132\r.protolca.Ref\022\037\n\006n" +
-      "w_set\030\013 \001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
-      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
-      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_" +
-      "path\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\t" +
-      "R\005@type\022*\n\014flow_results\030\002 \003(\0132\024.protolca" +
-      ".FlowResult\022.\n\016impact_results\030\003 \003(\0132\026.pr" +
-      "otolca.ImpactResult\"\342\001\n\014SocialAspect\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\026\n\016activity_value\030\002 \001(" +
-      "\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\022\n\nr" +
-      "aw_amount\030\005 \001(\t\022\'\n\nrisk_level\030\006 \001(\0162\023.pr" +
-      "otolca.RiskLevel\022\'\n\020social_indicator\030\007 \001" +
-      "(\0132\r.protolca.Ref\022\035\n\006source\030\010 \001(\0132\r.prot" +
-      "olca.Ref\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001" +
-      "(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t" +
-      "\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023" +
-      "\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r." +
-      "protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t " +
-      "\001(\t\022\031\n\021activity_variable\030\n \001(\t\022(\n\021activi" +
-      "ty_quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\racti" +
-      "vity_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_o" +
-      "f_measurement\030\r \001(\t\022\031\n\021evaluation_scheme" +
-      "\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017" +
-      "\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descrip" +
-      "tion\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_chan" +
-      "ge\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Re" +
-      "f\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030" +
-      "\n \001(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 " +
-      "\001(\005\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertain" +
-      "ty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_" +
-      "type\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n" +
-      "\004mean\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeo" +
-      "m_mean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022" +
-      "\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(" +
-      "\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geo" +
-      "m_sd\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004m" +
-      "ode\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maxim" +
-      "um\030\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Un" +
-      "it\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id" +
-      "\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007v" +
-      "ersion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021con" +
-      "version_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010" +
-      " \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004" +
-      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
-      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
-      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030" +
-      "\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007li" +
-      "brary\030\t \001(\t\022,\n\025default_flow_property\030\n \001" +
-      "(\0132\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.proto" +
-      "lca.Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED" +
-      "_ALLOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATIO" +
-      "N\020\001\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_A" +
-      "LLOCATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022" +
-      "\021\n\rNO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036" +
-      "\n\032UNDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE" +
-      "_CALCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020" +
-      "\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED" +
-      "_CALCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION" +
-      "\020\005*b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW" +
-      "_PROPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022" +
-      "\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UN" +
-      "DEFINED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001" +
-      "\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\263\002\n\tM" +
-      "odelType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\t\n\005AC" +
-      "TOR\020\001\022\014\n\010CATEGORY\020\002\022\014\n\010CURRENCY\020\003\022\r\n\tDQ_" +
-      "SYSTEM\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_PROPERTY\020\006\022\023\n" +
-      "\017IMPACT_CATEGORY\020\007\022\021\n\rIMPACT_METHOD\020\010\022\014\n" +
-      "\010LOCATION\020\t\022\n\n\006NW_SET\020\n\022\r\n\tPARAMETER\020\013\022\013" +
-      "\n\007PROCESS\020\014\022\022\n\016PRODUCT_SYSTEM\020\r\022\013\n\007PROJE" +
-      "CT\020\016\022\024\n\020SOCIAL_INDICATOR\020\017\022\n\n\006SOURCE\020\020\022\010" +
-      "\n\004UNIT\020\021\022\016\n\nUNIT_GROUP\020\022*f\n\016ParameterSco" +
-      "pe\022\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPRO" +
-      "CESS_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL" +
-      "_SCOPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PRO" +
-      "CESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROC" +
-      "ESS\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDEFINED_RISK_LE" +
-      "VEL\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024\n\020HIGH_OPPORT" +
-      "UNITY\020\002\022\026\n\022MEDIUM_OPPORTUNITY\020\003\022\023\n\017LOW_O" +
-      "PPORTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021\n\rVERY_LOW_RI" +
-      "SK\020\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIUM_RISK\020\010\022\r\n\tH" +
-      "IGH_RISK\020\t\022\022\n\016VERY_HIGH_RISK\020\n\022\013\n\007NO_DAT" +
-      "A\020\013\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n\017UncertaintyT" +
-      "ype\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027L" +
-      "OG_NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTR" +
-      "IBUTION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024" +
-      "UNIFORM_DISTRIBUTION\020\004B&\n\021org.openlca.pr" +
-      "otoB\005ProtoZ\n.;protolcab\006proto3"
+      "ry_bytes\030\r \001(\014\"\215\001\n\010NwFactor\022\023\n\004type\030\001 \001(" +
+      "\tR\005@type\0224\n\017impact_category\030\002 \001(\0132\033.prot" +
+      "olca.ImpactCategoryRef\022\034\n\024normalisation_" +
+      "factor\030\003 \001(\001\022\030\n\020weighting_factor\030\004 \001(\001\"\270" +
+      "\001\n\005NwSet\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(" +
+      "\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(" +
+      "\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022" +
+      "\033\n\023weighted_score_unit\030\007 \001(\t\022#\n\007factors\030" +
+      "\010 \003(\0132\022.protolca.NwFactor\"\322\002\n\tParameter\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010catego" +
+      "ry\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n" +
+      "\007library\030\t \001(\t\0221\n\017parameter_scope\030\n \001(\0162" +
+      "\030.protolca.ParameterScope\022\027\n\017input_param" +
+      "eter\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007formula\030\r \001" +
+      "(\t\022*\n\013uncertainty\030\016 \001(\0132\025.protolca.Uncer" +
+      "tainty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005" +
+      "@type\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007co" +
+      "ntext\030\004 \001(\0132\r.protolca.Ref\"\374\005\n\007Process\022\023" +
+      "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
+      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
+      "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categor" +
+      "y\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007" +
+      "library\030\t \001(\t\0226\n\022allocation_factors\030\n \003(" +
+      "\0132\032.protolca.AllocationFactor\022;\n\031default" +
+      "_allocation_method\030\013 \001(\0162\030.protolca.Allo" +
+      "cationType\022%\n\texchanges\030\014 \003(\0132\022.protolca" +
+      ".Exchange\022\030\n\020last_internal_id\030\r \001(\005\022\037\n\010l" +
+      "ocation\030\016 \001(\0132\r.protolca.Ref\022\'\n\nparamete" +
+      "rs\030\017 \003(\0132\023.protolca.Parameter\022=\n\025process" +
+      "_documentation\030\020 \001(\0132\036.protolca.ProcessD" +
+      "ocumentation\022+\n\014process_type\030\021 \001(\0162\025.pro" +
+      "tolca.ProcessType\022 \n\tdq_system\030\022 \001(\0132\r.p" +
+      "rotolca.Ref\022)\n\022exchange_dq_system\030\023 \001(\0132" +
+      "\r.protolca.Ref\022\'\n\020social_dq_system\030\024 \001(\013" +
+      "2\r.protolca.Ref\022\020\n\010dq_entry\030\025 \001(\t\022\036\n\026inf" +
+      "rastructure_process\030\026 \001(\010\022.\n\016social_aspe" +
+      "cts\030\027 \003(\0132\026.protolca.SocialAspect\"\242\006\n\024Pr" +
+      "ocessDocumentation\022\023\n\004type\030\001 \001(\tR\005@type\022" +
+      "\030\n\020time_description\030\002 \001(\t\022\023\n\013valid_until" +
+      "\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(\t\022\036\n\026technology" +
+      "_description\030\005 \001(\t\022#\n\033data_collection_de" +
+      "scription\030\006 \001(\t\022 \n\030completeness_descript" +
+      "ion\030\007 \001(\t\022\"\n\032data_selection_description\030" +
+      "\010 \001(\t\022\026\n\016review_details\030\t \001(\t\022\"\n\032data_tr" +
+      "eatment_description\030\n \001(\t\022$\n\034inventory_m" +
+      "ethod_description\030\013 \001(\t\022&\n\036modeling_cons" +
+      "tants_description\030\014 \001(\t\022\037\n\010reviewer\030\r \001(" +
+      "\0132\r.protolca.Ref\022\034\n\024sampling_description" +
+      "\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r.protolca.Ref\022 " +
+      "\n\030restrictions_description\030\020 \001(\t\022\021\n\tcopy" +
+      "right\030\021 \001(\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017da" +
+      "ta_documentor\030\023 \001(\0132\r.protolca.Ref\022%\n\016da" +
+      "ta_generator\030\024 \001(\0132\r.protolca.Ref\022%\n\016dat" +
+      "a_set_owner\030\025 \001(\0132\r.protolca.Ref\022\034\n\024inte" +
+      "nded_application\030\026 \001(\t\022\033\n\023project_descri" +
+      "ption\030\027 \001(\t\022\"\n\013publication\030\030 \001(\0132\r.proto" +
+      "lca.Ref\022\035\n\025geography_description\030\031 \001(\t\"\251" +
+      "\001\n\013ProcessLink\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010p" +
+      "rovider\030\002 \001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001" +
+      "(\0132\r.protolca.Ref\022\036\n\007process\030\004 \001(\0132\r.pro" +
+      "tolca.Ref\022\'\n\010exchange\030\005 \001(\0132\025.protolca.E" +
+      "xchangeRef\"\321\001\n\nProcessRef\022\023\n\004type\030\001 \001(\tR" +
+      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
+      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
+      "ast_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\022" +
+      "\020\n\010location\030\010 \001(\t\022+\n\014process_type\030\t \001(\0162" +
+      "\025.protolca.ProcessType\"\336\003\n\rProductSystem" +
+      "\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014" +
+      "\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ver" +
+      "sion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categ" +
+      "ory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017" +
+      "\n\007library\030\t \001(\t\022\'\n\tprocesses\030\n \003(\0132\024.pro" +
+      "tolca.ProcessRef\022/\n\021reference_process\030\013 " +
+      "\001(\0132\024.protolca.ProcessRef\022.\n\022reference_e" +
+      "xchange\030\014 \001(\0132\022.protolca.Exchange\022\025\n\rtar" +
+      "get_amount\030\r \001(\001\022\"\n\013target_unit\030\016 \001(\0132\r." +
+      "protolca.Ref\022+\n\024target_flow_property\030\017 \001" +
+      "(\0132\r.protolca.Ref\022,\n\rprocess_links\030\020 \003(\013" +
+      "2\025.protolca.ProcessLink\"\377\001\n\007Project\022\023\n\004t" +
+      "ype\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004nam" +
+      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030" +
+      "\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007" +
+      " \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007lib" +
+      "rary\030\t \001(\t\022$\n\rimpact_method\030\n \001(\0132\r.prot" +
+      "olca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017.protolca.NwSe" +
+      "t\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
+      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
+      "\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014SimpleResult\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow_results\030\002 \003" +
+      "(\0132\024.protolca.FlowResult\022.\n\016impact_resul" +
+      "ts\030\003 \003(\0132\026.protolca.ImpactResult\"\342\001\n\014Soc" +
+      "ialAspect\022\023\n\004type\030\001 \001(\tR\005@type\022\026\n\016activi" +
+      "ty_value\030\002 \001(\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quali" +
+      "ty\030\004 \001(\t\022\022\n\nraw_amount\030\005 \001(\t\022\'\n\nrisk_lev" +
+      "el\030\006 \001(\0162\023.protolca.RiskLevel\022\'\n\020social_" +
+      "indicator\030\007 \001(\0132\r.protolca.Ref\022\035\n\006source" +
+      "\030\010 \001(\0132\r.protolca.Ref\"\343\002\n\017SocialIndicato" +
+      "r\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
+      "\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ve" +
+      "rsion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cate" +
+      "gory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022" +
+      "\017\n\007library\030\t \001(\t\022\031\n\021activity_variable\030\n " +
+      "\001(\t\022(\n\021activity_quantity\030\013 \001(\0132\r.protolc" +
+      "a.Ref\022$\n\ractivity_unit\030\014 \001(\0132\r.protolca." +
+      "Ref\022\033\n\023unit_of_measurement\030\r \001(\t\022\031\n\021eval" +
+      "uation_scheme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001" +
+      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
+      "\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132" +
+      "\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030" +
+      "\t \001(\t\022\013\n\003url\030\n \001(\t\022\026\n\016text_reference\030\013 \001" +
+      "(\t\022\014\n\004year\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"" +
+      "\354\002\n\013Uncertainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021" +
+      "distribution_type\030\002 \001(\0162\031.protolca.Uncer" +
+      "taintyType\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula" +
+      "\030\004 \001(\t\022\021\n\tgeom_mean\030\005 \001(\001\022\031\n\021geom_mean_f" +
+      "ormula\030\006 \001(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum" +
+      "_formula\030\010 \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula" +
+      "\030\n \001(\t\022\017\n\007geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formu" +
+      "la\030\014 \001(\t\022\014\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016" +
+      " \001(\t\022\017\n\007maximum\030\017 \001(\001\022\027\n\017maximum_formula" +
+      "\030\020 \001(\t\"\272\001\n\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
+      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
+      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
+      "\030\006 \001(\t\022\031\n\021conversion_factor\030\007 \001(\001\022\026\n\016ref" +
+      "erence_unit\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\t" +
+      "UnitGroup\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
+      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
+      "\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tag" +
+      "s\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022,\n\025default_flow" +
+      "_property\030\n \001(\0132\r.protolca.Ref\022\035\n\005units\030" +
+      "\013 \003(\0132\016.protolca.Unit*\247\001\n\016AllocationType" +
+      "\022\035\n\031UNDEFINED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSI" +
+      "CAL_ALLOCATION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020" +
+      "\002\022\025\n\021CAUSAL_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_" +
+      "ALLOCATION\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017Calc" +
+      "ulationType\022\036\n\032UNDEFINED_CALCULATION_TYP" +
+      "E\020\000\022\026\n\022SIMPLE_CALCULATION\020\001\022\031\n\025CONTRIBUT" +
+      "ION_ANALYSIS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n" +
+      "\030REGIONALIZED_CALCULATION\020\004\022\032\n\026MONTE_CAR" +
+      "LO_SIMULATION\020\005*b\n\020FlowPropertyType\022 \n\034U" +
+      "NDEFINED_FLOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMI" +
+      "C_QUANTITY\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010F" +
+      "lowType\022\027\n\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEM" +
+      "ENTARY_FLOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE" +
+      "_FLOW\020\003*\263\002\n\tModelType\022\030\n\024UNDEFINED_MODEL" +
+      "_TYPE\020\000\022\t\n\005ACTOR\020\001\022\014\n\010CATEGORY\020\002\022\014\n\010CURR" +
+      "ENCY\020\003\022\r\n\tDQ_SYSTEM\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_" +
+      "PROPERTY\020\006\022\023\n\017IMPACT_CATEGORY\020\007\022\021\n\rIMPAC" +
+      "T_METHOD\020\010\022\014\n\010LOCATION\020\t\022\n\n\006NW_SET\020\n\022\r\n\t" +
+      "PARAMETER\020\013\022\013\n\007PROCESS\020\014\022\022\n\016PRODUCT_SYST" +
+      "EM\020\r\022\013\n\007PROJECT\020\016\022\024\n\020SOCIAL_INDICATOR\020\017\022" +
+      "\n\n\006SOURCE\020\020\022\010\n\004UNIT\020\021\022\016\n\nUNIT_GROUP\020\022*f\n" +
+      "\016ParameterScope\022\035\n\031UNDEFINED_PARAMETER_S" +
+      "COPE\020\000\022\021\n\rPROCESS_SCOPE\020\001\022\020\n\014IMPACT_SCOP" +
+      "E\020\002\022\020\n\014GLOBAL_SCOPE\020\003*K\n\013ProcessType\022\032\n\026" +
+      "UNDEFINED_PROCESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001" +
+      "\022\020\n\014UNIT_PROCESS\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDE" +
+      "FINED_RISK_LEVEL\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024" +
+      "\n\020HIGH_OPPORTUNITY\020\002\022\026\n\022MEDIUM_OPPORTUNI" +
+      "TY\020\003\022\023\n\017LOW_OPPORTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021" +
+      "\n\rVERY_LOW_RISK\020\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIU" +
+      "M_RISK\020\010\022\r\n\tHIGH_RISK\020\t\022\022\n\016VERY_HIGH_RIS" +
+      "K\020\n\022\013\n\007NO_DATA\020\013\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n" +
+      "\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTAINT" +
+      "Y_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001\022\027\n" +
+      "\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DISTR" +
+      "IBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&\n\021o" +
+      "rg.openlca.protoB\005ProtoZ\n.;protolcab\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -106171,23 +106232,23 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Currency_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Code", "ConversionFactor", "ReferenceCurrency", });
-    internal_static_protolca_DqIndicator_descriptor =
+    internal_static_protolca_DQIndicator_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_protolca_DqIndicator_fieldAccessorTable = new
+    internal_static_protolca_DQIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protolca_DqIndicator_descriptor,
+        internal_static_protolca_DQIndicator_descriptor,
         new java.lang.String[] { "Type", "Name", "Position", "Scores", });
-    internal_static_protolca_DqScore_descriptor =
+    internal_static_protolca_DQScore_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_protolca_DqScore_fieldAccessorTable = new
+    internal_static_protolca_DQScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protolca_DqScore_descriptor,
+        internal_static_protolca_DQScore_descriptor,
         new java.lang.String[] { "Type", "Position", "Label", "Description", "Uncertainty", });
-    internal_static_protolca_DqSystem_descriptor =
+    internal_static_protolca_DQSystem_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_protolca_DqSystem_fieldAccessorTable = new
+    internal_static_protolca_DQSystem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protolca_DqSystem_descriptor,
+        internal_static_protolca_DQSystem_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "HasUncertainties", "Source", "Indicators", });
     internal_static_protolca_Exchange_descriptor =
       getDescriptor().getMessageTypes().get(8);

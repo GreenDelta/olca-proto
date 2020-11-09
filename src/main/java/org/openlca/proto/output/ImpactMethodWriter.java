@@ -64,7 +64,7 @@ public class ImpactMethodWriter {
         var protoFactor = Proto.NwFactor.newBuilder();
         if (nwFactor.impactCategory != null) {
           protoFactor.setImpactCategory(
-            Refs.toRef(nwFactor.impactCategory, config));
+            Refs.toImpactRef(nwFactor.impactCategory, config));
         }
         if (nwFactor.normalisationFactor != null) {
           protoFactor.setNormalisationFactor(

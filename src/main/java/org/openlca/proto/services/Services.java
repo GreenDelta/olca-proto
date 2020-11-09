@@ -4450,19 +4450,19 @@ public final class Services {
     boolean getOk();
 
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      * @return Whether the dqSystem field is set.
      */
     boolean hasDqSystem();
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      * @return The dqSystem.
      */
-    org.openlca.proto.Proto.DqSystem getDqSystem();
+    org.openlca.proto.Proto.DQSystem getDqSystem();
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      */
-    org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder();
+    org.openlca.proto.Proto.DQSystemOrBuilder getDqSystemOrBuilder();
 
     /**
      * <code>string error = 3;</code>
@@ -4528,11 +4528,11 @@ public final class Services {
               break;
             }
             case 18: {
-              org.openlca.proto.Proto.DqSystem.Builder subBuilder = null;
+              org.openlca.proto.Proto.DQSystem.Builder subBuilder = null;
               if (dqSystem_ != null) {
                 subBuilder = dqSystem_.toBuilder();
               }
-              dqSystem_ = input.readMessage(org.openlca.proto.Proto.DqSystem.parser(), extensionRegistry);
+              dqSystem_ = input.readMessage(org.openlca.proto.Proto.DQSystem.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(dqSystem_);
                 dqSystem_ = subBuilder.buildPartial();
@@ -4590,9 +4590,9 @@ public final class Services {
     }
 
     public static final int DQ_SYSTEM_FIELD_NUMBER = 2;
-    private org.openlca.proto.Proto.DqSystem dqSystem_;
+    private org.openlca.proto.Proto.DQSystem dqSystem_;
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      * @return Whether the dqSystem field is set.
      */
     @java.lang.Override
@@ -4600,18 +4600,18 @@ public final class Services {
       return dqSystem_ != null;
     }
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      * @return The dqSystem.
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqSystem getDqSystem() {
-      return dqSystem_ == null ? org.openlca.proto.Proto.DqSystem.getDefaultInstance() : dqSystem_;
+    public org.openlca.proto.Proto.DQSystem getDqSystem() {
+      return dqSystem_ == null ? org.openlca.proto.Proto.DQSystem.getDefaultInstance() : dqSystem_;
     }
     /**
-     * <code>.protolca.DqSystem dq_system = 2;</code>
+     * <code>.protolca.DQSystem dq_system = 2;</code>
      */
     @java.lang.Override
-    public org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder() {
+    public org.openlca.proto.Proto.DQSystemOrBuilder getDqSystemOrBuilder() {
       return getDqSystem();
     }
 
@@ -5034,31 +5034,31 @@ public final class Services {
         return this;
       }
 
-      private org.openlca.proto.Proto.DqSystem dqSystem_;
+      private org.openlca.proto.Proto.DQSystem dqSystem_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.DqSystem, org.openlca.proto.Proto.DqSystem.Builder, org.openlca.proto.Proto.DqSystemOrBuilder> dqSystemBuilder_;
+          org.openlca.proto.Proto.DQSystem, org.openlca.proto.Proto.DQSystem.Builder, org.openlca.proto.Proto.DQSystemOrBuilder> dqSystemBuilder_;
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        * @return Whether the dqSystem field is set.
        */
       public boolean hasDqSystem() {
         return dqSystemBuilder_ != null || dqSystem_ != null;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        * @return The dqSystem.
        */
-      public org.openlca.proto.Proto.DqSystem getDqSystem() {
+      public org.openlca.proto.Proto.DQSystem getDqSystem() {
         if (dqSystemBuilder_ == null) {
-          return dqSystem_ == null ? org.openlca.proto.Proto.DqSystem.getDefaultInstance() : dqSystem_;
+          return dqSystem_ == null ? org.openlca.proto.Proto.DQSystem.getDefaultInstance() : dqSystem_;
         } else {
           return dqSystemBuilder_.getMessage();
         }
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
-      public Builder setDqSystem(org.openlca.proto.Proto.DqSystem value) {
+      public Builder setDqSystem(org.openlca.proto.Proto.DQSystem value) {
         if (dqSystemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5072,10 +5072,10 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
       public Builder setDqSystem(
-          org.openlca.proto.Proto.DqSystem.Builder builderForValue) {
+          org.openlca.proto.Proto.DQSystem.Builder builderForValue) {
         if (dqSystemBuilder_ == null) {
           dqSystem_ = builderForValue.build();
           onChanged();
@@ -5086,13 +5086,13 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
-      public Builder mergeDqSystem(org.openlca.proto.Proto.DqSystem value) {
+      public Builder mergeDqSystem(org.openlca.proto.Proto.DQSystem value) {
         if (dqSystemBuilder_ == null) {
           if (dqSystem_ != null) {
             dqSystem_ =
-              org.openlca.proto.Proto.DqSystem.newBuilder(dqSystem_).mergeFrom(value).buildPartial();
+              org.openlca.proto.Proto.DQSystem.newBuilder(dqSystem_).mergeFrom(value).buildPartial();
           } else {
             dqSystem_ = value;
           }
@@ -5104,7 +5104,7 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
       public Builder clearDqSystem() {
         if (dqSystemBuilder_ == null) {
@@ -5118,33 +5118,33 @@ public final class Services {
         return this;
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
-      public org.openlca.proto.Proto.DqSystem.Builder getDqSystemBuilder() {
+      public org.openlca.proto.Proto.DQSystem.Builder getDqSystemBuilder() {
         
         onChanged();
         return getDqSystemFieldBuilder().getBuilder();
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
-      public org.openlca.proto.Proto.DqSystemOrBuilder getDqSystemOrBuilder() {
+      public org.openlca.proto.Proto.DQSystemOrBuilder getDqSystemOrBuilder() {
         if (dqSystemBuilder_ != null) {
           return dqSystemBuilder_.getMessageOrBuilder();
         } else {
           return dqSystem_ == null ?
-              org.openlca.proto.Proto.DqSystem.getDefaultInstance() : dqSystem_;
+              org.openlca.proto.Proto.DQSystem.getDefaultInstance() : dqSystem_;
         }
       }
       /**
-       * <code>.protolca.DqSystem dq_system = 2;</code>
+       * <code>.protolca.DQSystem dq_system = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openlca.proto.Proto.DqSystem, org.openlca.proto.Proto.DqSystem.Builder, org.openlca.proto.Proto.DqSystemOrBuilder> 
+          org.openlca.proto.Proto.DQSystem, org.openlca.proto.Proto.DQSystem.Builder, org.openlca.proto.Proto.DQSystemOrBuilder> 
           getDqSystemFieldBuilder() {
         if (dqSystemBuilder_ == null) {
           dqSystemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openlca.proto.Proto.DqSystem, org.openlca.proto.Proto.DqSystem.Builder, org.openlca.proto.Proto.DqSystemOrBuilder>(
+              org.openlca.proto.Proto.DQSystem, org.openlca.proto.Proto.DQSystem.Builder, org.openlca.proto.Proto.DQSystemOrBuilder>(
                   getDqSystem(),
                   getParentForChildren(),
                   isClean());
@@ -15500,7 +15500,7 @@ public final class Services {
       "\n\016CurrencyStatus\022\n\n\002ok\030\001 \001(\010\022$\n\010currency" +
       "\030\002 \001(\0132\022.protolca.Currency\022\r\n\005error\030\003 \001(" +
       "\t\"R\n\016DqSystemStatus\022\n\n\002ok\030\001 \001(\010\022%\n\tdq_sy" +
-      "stem\030\002 \001(\0132\022.protolca.DqSystem\022\r\n\005error\030" +
+      "stem\030\002 \001(\0132\022.protolca.DQSystem\022\r\n\005error\030" +
       "\003 \001(\t\"E\n\nFlowStatus\022\n\n\002ok\030\001 \001(\010\022\034\n\004flow\030" +
       "\002 \001(\0132\016.protolca.Flow\022\r\n\005error\030\003 \001(\t\"^\n\022" +
       "FlowPropertyStatus\022\n\n\002ok\030\001 \001(\010\022-\n\rflow_p" +
@@ -15544,10 +15544,10 @@ public final class Services {
       "vices.CurrencyStatus\022@\n\014put_currency\022\022.p" +
       "rotolca.Currency\032\034.protolca.services.Ref" +
       "Status\022<\n\ndq_systems\022\030.protolca.services" +
-      ".Empty\032\022.protolca.DqSystem0\001\022=\n\tdq_syste" +
+      ".Empty\032\022.protolca.DQSystem0\001\022=\n\tdq_syste" +
       "m\022\r.protolca.Ref\032!.protolca.services.DqS" +
       "ystemStatus\022A\n\rput_dq_system\022\022.protolca." +
-      "DqSystem\032\034.protolca.services.RefStatus\0223" +
+      "DQSystem\032\034.protolca.services.RefStatus\0223" +
       "\n\005flows\022\030.protolca.services.Empty\032\016.prot" +
       "olca.Flow0\001\0224\n\004flow\022\r.protolca.Ref\032\035.pro" +
       "tolca.services.FlowStatus\0228\n\010put_flow\022\016." +

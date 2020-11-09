@@ -265,7 +265,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void dqSystems(Services.Empty _req, StreamObserver<Proto.DqSystem> resp) {
+  public void dqSystems(Services.Empty _req, StreamObserver<Proto.DQSystem> resp) {
     var writer = new DQSystemWriter(WriterConfig.of(db));
     var dao = new DQSystemDao(db);
     dao.getDescriptors()
@@ -302,7 +302,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void putDqSystem(Proto.DqSystem req, StreamObserver<Services.RefStatus> resp) {
+  public void putDqSystem(Proto.DQSystem req, StreamObserver<Services.RefStatus> resp) {
     var store = new MemStore();
     store.putDQSystem(req);
     new ProtoImport(store, db)
