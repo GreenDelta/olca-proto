@@ -2,11 +2,13 @@ package org.openlca.proto.output;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import org.openlca.core.database.ProcessDao;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessType;
+import org.openlca.core.model.SocialAspect;
 import org.openlca.core.model.Version;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
@@ -74,6 +76,8 @@ public class ProcessWriter {
       proto.addParameters(paramWriter.write(param));
     }
 
+    writeExchanges(process, proto);
+    writeSocialAspects(process, proto);
 
     return proto.build();
   }
@@ -121,6 +125,9 @@ public class ProcessWriter {
         pe.setCurrency(Refs.toRef(e.currency, config));
       }
       pe.setInternalId(e.internalId);
+      if (e.uncertainty != null) {
+        pe.setUncertainty(Util.uncertainty(e.uncertainty));
+      }
 
       // default provider
       if (e.defaultProviderId > 0) {
@@ -130,7 +137,54 @@ public class ProcessWriter {
           pe.setDefaultProvider(Refs.toProcessRef(provider));
         }
       }
+
+      // flow references
+      if (e.flow != null) {
+        pe.setFlow(Refs.toFlowRef(e.flow, config));
+      }
+      if (e.flowPropertyFactor != null) {
+        var fp = e.flowPropertyFactor.flowProperty;
+        if (fp != null) {
+          pe.setFlowProperty(Refs.toRef(fp));
+        }
+      }
+      if (e.unit != null) {
+        pe.setUnit(Refs.toRef(e.unit));
+      }
+
+      if (Objects.equals(e, p.quantitativeReference)) {
+        pe.setQuantitativeReference(true);
+      }
+
+      proto.addExchanges(pe);
     }
   }
 
+  private void writeSocialAspects(Process p, Proto.Process.Builder proto) {
+    for (var aspect : p.socialAspects) {
+      var pa = Proto.SocialAspect.newBuilder();
+      if (aspect.indicator != null) {
+        pa.setSocialIndicator(Refs.toRef(aspect.indicator, config));
+      }
+      pa.setComment(Strings.orEmpty(aspect.comment));
+      pa.setQuality(Strings.orEmpty(aspect.quality));
+      pa.setRawAmount(Strings.orEmpty(aspect.rawAmount));
+      pa.setActivityValue(aspect.activityValue);
+      pa.setRiskLevel(riskLevel(aspect));
+      if (aspect.source != null) {
+        pa.setSource(Refs.toRef(aspect.source, config));
+      }
+      proto.addSocialAspects(pa);
+    }
+  }
+
+  private Proto.RiskLevel riskLevel(SocialAspect aspect) {
+    if (aspect == null || aspect.riskLevel == null)
+      return Proto.RiskLevel.UNDEFINED_RISK_LEVEL;
+    try {
+      return Proto.RiskLevel.valueOf(aspect.riskLevel.name());
+    } catch (Exception e) {
+      return Proto.RiskLevel.UNDEFINED_RISK_LEVEL;
+    }
+  }
 }
