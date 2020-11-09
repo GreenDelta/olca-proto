@@ -3,9 +3,10 @@ package org.openlca.proto.output;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.stream.Stream;
+import java.util.function.LongFunction;
 
 import org.openlca.core.database.ProcessDao;
+import org.openlca.core.model.AllocationMethod;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.SocialAspect;
@@ -49,7 +50,8 @@ public class ProcessWriter {
 
     // model specific fields
     proto.setProcessType(processType(process));
-    proto.setDefaultAllocationMethod(allocationType(process));
+    proto.setDefaultAllocationMethod(
+      allocationType(process.defaultAllocationMethod));
     proto.setInfrastructureProcess(process.infrastructureProcess);
     if (process.location != null) {
       proto.setLocation(Refs.toRef(process.location, config));
@@ -71,13 +73,14 @@ public class ProcessWriter {
     }
 
     // parameters
-    var paramWriter  = new ParameterWriter(config);
+    var paramWriter = new ParameterWriter(config);
     for (var param : process.parameters) {
       proto.addParameters(paramWriter.write(param));
     }
 
     writeExchanges(process, proto);
     writeSocialAspects(process, proto);
+    writeAllocationFactors(process, proto);
 
     return proto.build();
   }
@@ -90,16 +93,20 @@ public class ProcessWriter {
       : Proto.ProcessType.UNIT_PROCESS;
   }
 
-  private Proto.AllocationType allocationType(Process p) {
-    if (p == null || p.defaultAllocationMethod == null)
+  private Proto.AllocationType allocationType(AllocationMethod m) {
+    if (m == null)
       return Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE;
-    switch (p.defaultAllocationMethod) {
+    switch (m) {
       case CAUSAL:
         return Proto.AllocationType.CAUSAL_ALLOCATION;
       case ECONOMIC:
         return Proto.AllocationType.ECONOMIC_ALLOCATION;
       case PHYSICAL:
         return Proto.AllocationType.PHYSICAL_ALLOCATION;
+      case NONE:
+        return Proto.AllocationType.NO_ALLOCATION;
+      case USE_DEFAULT:
+        return Proto.AllocationType.USE_DEFAULT_ALLOCATION;
       default:
         return Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE;
     }
@@ -187,4 +194,33 @@ public class ProcessWriter {
       return Proto.RiskLevel.UNDEFINED_RISK_LEVEL;
     }
   }
+
+  private void writeAllocationFactors(Process p, Proto.Process.Builder proto) {
+    LongFunction<Proto.FlowRef> product = flowID -> {
+      for (var e : p.exchanges) {
+        if (e.flow != null && e.flow.id == flowID) {
+          return Refs.toFlowRef(e.flow, config);
+        }
+      }
+      return null;
+    };
+
+    for (var f : p.allocationFactors) {
+      var pf = Proto.AllocationFactor.newBuilder();
+      pf.setAllocationType(allocationType(f.method));
+      if (f.method == AllocationMethod.CAUSAL && f.exchange != null) {
+        var eref = Proto.ExchangeRef.newBuilder();
+        eref.setInternalId(f.exchange.internalId);
+        pf.setExchange(eref);
+      }
+      var productRef = product.apply(f.productId);
+      if (productRef != null) {
+        pf.setProduct(productRef);
+      }
+      pf.setValue(f.value);
+      pf.setFormula(Strings.orEmpty(f.formula));
+      proto.addAllocationFactors(pf);
+    }
+  }
+
 }
