@@ -57,6 +57,9 @@ public class UnitGroupWriter {
     UnitGroup group, Proto.UnitGroup.Builder proto) {
     for (var unit : group.units) {
       var protoUnit = Proto.Unit.newBuilder();
+      protoUnit.setId(Strings.orEmpty(unit.refId));
+      protoUnit.setName(Strings.orEmpty(unit.name));
+      protoUnit.setDescription(Strings.orEmpty(unit.description));
       protoUnit.setConversionFactor(unit.conversionFactor);
       if (unit.synonyms != null) {
         Arrays.stream(unit.synonyms.split(";"))
