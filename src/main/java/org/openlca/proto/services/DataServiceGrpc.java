@@ -369,28 +369,28 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.DqSystemStatus> getDqSystemMethod;
+      org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "dq_system",
       requestType = org.openlca.proto.Proto.Ref.class,
-      responseType = org.openlca.proto.services.Services.DqSystemStatus.class,
+      responseType = org.openlca.proto.services.Services.DQSystemStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.DqSystemStatus> getDqSystemMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DqSystemStatus> getDqSystemMethod;
+      org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod;
     if ((getDqSystemMethod = DataServiceGrpc.getDqSystemMethod) == null) {
       synchronized (DataServiceGrpc.class) {
         if ((getDqSystemMethod = DataServiceGrpc.getDqSystemMethod) == null) {
           DataServiceGrpc.getDqSystemMethod = getDqSystemMethod =
-              io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DqSystemStatus>newBuilder()
+              io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DQSystemStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "dq_system"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.openlca.proto.services.Services.DqSystemStatus.getDefaultInstance()))
+                  org.openlca.proto.services.Services.DQSystemStatus.getDefaultInstance()))
               .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("dq_system"))
               .build();
         }
@@ -1691,7 +1691,7 @@ public final class DataServiceGrpc {
     /**
      */
     public void dqSystem(org.openlca.proto.Proto.Ref request,
-        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DqSystemStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getDqSystemMethod(), responseObserver);
     }
 
@@ -2074,7 +2074,7 @@ public final class DataServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
-                org.openlca.proto.services.Services.DqSystemStatus>(
+                org.openlca.proto.services.Services.DQSystemStatus>(
                   this, METHODID_DQ_SYSTEM)))
           .addMethod(
             getPutDqSystemMethod(),
@@ -2461,7 +2461,7 @@ public final class DataServiceGrpc {
     /**
      */
     public void dqSystem(org.openlca.proto.Proto.Ref request,
-        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DqSystemStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDqSystemMethod(), getCallOptions()), request, responseObserver);
     }
@@ -2913,7 +2913,7 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public org.openlca.proto.services.Services.DqSystemStatus dqSystem(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.DQSystemStatus dqSystem(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
           getChannel(), getDqSystemMethod(), getCallOptions(), request);
     }
@@ -3303,7 +3303,7 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.DqSystemStatus> dqSystem(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.DQSystemStatus> dqSystem(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
           getChannel().newCall(getDqSystemMethod(), getCallOptions()), request);
@@ -3623,7 +3623,7 @@ public final class DataServiceGrpc {
           break;
         case METHODID_DQ_SYSTEM:
           serviceImpl.dqSystem((org.openlca.proto.Proto.Ref) request,
-              (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DqSystemStatus>) responseObserver);
+              (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus>) responseObserver);
           break;
         case METHODID_PUT_DQ_SYSTEM:
           serviceImpl.putDqSystem((org.openlca.proto.Proto.DQSystem) request,

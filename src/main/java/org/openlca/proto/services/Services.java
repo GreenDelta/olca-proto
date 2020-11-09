@@ -4439,8 +4439,8 @@ public final class Services {
 
   }
 
-  public interface DqSystemStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protolca.services.DqSystemStatus)
+  public interface DQSystemStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.services.DQSystemStatus)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4477,18 +4477,18 @@ public final class Services {
         getErrorBytes();
   }
   /**
-   * Protobuf type {@code protolca.services.DqSystemStatus}
+   * Protobuf type {@code protolca.services.DQSystemStatus}
    */
-  public static final class DqSystemStatus extends
+  public static final class DQSystemStatus extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protolca.services.DqSystemStatus)
-      DqSystemStatusOrBuilder {
+      // @@protoc_insertion_point(message_implements:protolca.services.DQSystemStatus)
+      DQSystemStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DqSystemStatus.newBuilder() to construct.
-    private DqSystemStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DQSystemStatus.newBuilder() to construct.
+    private DQSystemStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DqSystemStatus() {
+    private DQSystemStatus() {
       error_ = "";
     }
 
@@ -4496,7 +4496,7 @@ public final class Services {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DqSystemStatus();
+      return new DQSystemStatus();
     }
 
     @java.lang.Override
@@ -4504,7 +4504,7 @@ public final class Services {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DqSystemStatus(
+    private DQSystemStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4567,15 +4567,15 @@ public final class Services {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openlca.proto.services.Services.internal_static_protolca_services_DqSystemStatus_descriptor;
+      return org.openlca.proto.services.Services.internal_static_protolca_services_DQSystemStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openlca.proto.services.Services.internal_static_protolca_services_DqSystemStatus_fieldAccessorTable
+      return org.openlca.proto.services.Services.internal_static_protolca_services_DQSystemStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openlca.proto.services.Services.DqSystemStatus.class, org.openlca.proto.services.Services.DqSystemStatus.Builder.class);
+              org.openlca.proto.services.Services.DQSystemStatus.class, org.openlca.proto.services.Services.DQSystemStatus.Builder.class);
     }
 
     public static final int OK_FIELD_NUMBER = 1;
@@ -4706,10 +4706,10 @@ public final class Services {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openlca.proto.services.Services.DqSystemStatus)) {
+      if (!(obj instanceof org.openlca.proto.services.Services.DQSystemStatus)) {
         return super.equals(obj);
       }
-      org.openlca.proto.services.Services.DqSystemStatus other = (org.openlca.proto.services.Services.DqSystemStatus) obj;
+      org.openlca.proto.services.Services.DQSystemStatus other = (org.openlca.proto.services.Services.DQSystemStatus) obj;
 
       if (getOk()
           != other.getOk()) return false;
@@ -4745,69 +4745,69 @@ public final class Services {
       return hash;
     }
 
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(byte[] data)
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(java.io.InputStream input)
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseDelimitedFrom(java.io.InputStream input)
+    public static org.openlca.proto.services.Services.DQSystemStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseDelimitedFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openlca.proto.services.Services.DqSystemStatus parseFrom(
+    public static org.openlca.proto.services.Services.DQSystemStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4820,7 +4820,7 @@ public final class Services {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openlca.proto.services.Services.DqSystemStatus prototype) {
+    public static Builder newBuilder(org.openlca.proto.services.Services.DQSystemStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4836,26 +4836,26 @@ public final class Services {
       return builder;
     }
     /**
-     * Protobuf type {@code protolca.services.DqSystemStatus}
+     * Protobuf type {@code protolca.services.DQSystemStatus}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protolca.services.DqSystemStatus)
-        org.openlca.proto.services.Services.DqSystemStatusOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protolca.services.DQSystemStatus)
+        org.openlca.proto.services.Services.DQSystemStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openlca.proto.services.Services.internal_static_protolca_services_DqSystemStatus_descriptor;
+        return org.openlca.proto.services.Services.internal_static_protolca_services_DQSystemStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openlca.proto.services.Services.internal_static_protolca_services_DqSystemStatus_fieldAccessorTable
+        return org.openlca.proto.services.Services.internal_static_protolca_services_DQSystemStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openlca.proto.services.Services.DqSystemStatus.class, org.openlca.proto.services.Services.DqSystemStatus.Builder.class);
+                org.openlca.proto.services.Services.DQSystemStatus.class, org.openlca.proto.services.Services.DQSystemStatus.Builder.class);
       }
 
-      // Construct using org.openlca.proto.services.Services.DqSystemStatus.newBuilder()
+      // Construct using org.openlca.proto.services.Services.DQSystemStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4889,17 +4889,17 @@ public final class Services {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openlca.proto.services.Services.internal_static_protolca_services_DqSystemStatus_descriptor;
+        return org.openlca.proto.services.Services.internal_static_protolca_services_DQSystemStatus_descriptor;
       }
 
       @java.lang.Override
-      public org.openlca.proto.services.Services.DqSystemStatus getDefaultInstanceForType() {
-        return org.openlca.proto.services.Services.DqSystemStatus.getDefaultInstance();
+      public org.openlca.proto.services.Services.DQSystemStatus getDefaultInstanceForType() {
+        return org.openlca.proto.services.Services.DQSystemStatus.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openlca.proto.services.Services.DqSystemStatus build() {
-        org.openlca.proto.services.Services.DqSystemStatus result = buildPartial();
+      public org.openlca.proto.services.Services.DQSystemStatus build() {
+        org.openlca.proto.services.Services.DQSystemStatus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4907,8 +4907,8 @@ public final class Services {
       }
 
       @java.lang.Override
-      public org.openlca.proto.services.Services.DqSystemStatus buildPartial() {
-        org.openlca.proto.services.Services.DqSystemStatus result = new org.openlca.proto.services.Services.DqSystemStatus(this);
+      public org.openlca.proto.services.Services.DQSystemStatus buildPartial() {
+        org.openlca.proto.services.Services.DQSystemStatus result = new org.openlca.proto.services.Services.DQSystemStatus(this);
         result.ok_ = ok_;
         if (dqSystemBuilder_ == null) {
           result.dqSystem_ = dqSystem_;
@@ -4954,16 +4954,16 @@ public final class Services {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openlca.proto.services.Services.DqSystemStatus) {
-          return mergeFrom((org.openlca.proto.services.Services.DqSystemStatus)other);
+        if (other instanceof org.openlca.proto.services.Services.DQSystemStatus) {
+          return mergeFrom((org.openlca.proto.services.Services.DQSystemStatus)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openlca.proto.services.Services.DqSystemStatus other) {
-        if (other == org.openlca.proto.services.Services.DqSystemStatus.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.openlca.proto.services.Services.DQSystemStatus other) {
+        if (other == org.openlca.proto.services.Services.DQSystemStatus.getDefaultInstance()) return this;
         if (other.getOk() != false) {
           setOk(other.getOk());
         }
@@ -4989,11 +4989,11 @@ public final class Services {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openlca.proto.services.Services.DqSystemStatus parsedMessage = null;
+        org.openlca.proto.services.Services.DQSystemStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openlca.proto.services.Services.DqSystemStatus) e.getUnfinishedMessage();
+          parsedMessage = (org.openlca.proto.services.Services.DQSystemStatus) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5241,41 +5241,41 @@ public final class Services {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protolca.services.DqSystemStatus)
+      // @@protoc_insertion_point(builder_scope:protolca.services.DQSystemStatus)
     }
 
-    // @@protoc_insertion_point(class_scope:protolca.services.DqSystemStatus)
-    private static final org.openlca.proto.services.Services.DqSystemStatus DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protolca.services.DQSystemStatus)
+    private static final org.openlca.proto.services.Services.DQSystemStatus DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openlca.proto.services.Services.DqSystemStatus();
+      DEFAULT_INSTANCE = new org.openlca.proto.services.Services.DQSystemStatus();
     }
 
-    public static org.openlca.proto.services.Services.DqSystemStatus getDefaultInstance() {
+    public static org.openlca.proto.services.Services.DQSystemStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DqSystemStatus>
-        PARSER = new com.google.protobuf.AbstractParser<DqSystemStatus>() {
+    private static final com.google.protobuf.Parser<DQSystemStatus>
+        PARSER = new com.google.protobuf.AbstractParser<DQSystemStatus>() {
       @java.lang.Override
-      public DqSystemStatus parsePartialFrom(
+      public DQSystemStatus parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DqSystemStatus(input, extensionRegistry);
+        return new DQSystemStatus(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DqSystemStatus> parser() {
+    public static com.google.protobuf.Parser<DQSystemStatus> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DqSystemStatus> getParserForType() {
+    public com.google.protobuf.Parser<DQSystemStatus> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openlca.proto.services.Services.DqSystemStatus getDefaultInstanceForType() {
+    public org.openlca.proto.services.Services.DQSystemStatus getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15416,10 +15416,10 @@ public final class Services {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_services_CurrencyStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protolca_services_DqSystemStatus_descriptor;
+    internal_static_protolca_services_DQSystemStatus_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protolca_services_DqSystemStatus_fieldAccessorTable;
+      internal_static_protolca_services_DQSystemStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_services_FlowStatus_descriptor;
   private static final 
@@ -15499,7 +15499,7 @@ public final class Services {
       "\001(\0132\022.protolca.Category\022\r\n\005error\030\003 \001(\t\"Q" +
       "\n\016CurrencyStatus\022\n\n\002ok\030\001 \001(\010\022$\n\010currency" +
       "\030\002 \001(\0132\022.protolca.Currency\022\r\n\005error\030\003 \001(" +
-      "\t\"R\n\016DqSystemStatus\022\n\n\002ok\030\001 \001(\010\022%\n\tdq_sy" +
+      "\t\"R\n\016DQSystemStatus\022\n\n\002ok\030\001 \001(\010\022%\n\tdq_sy" +
       "stem\030\002 \001(\0132\022.protolca.DQSystem\022\r\n\005error\030" +
       "\003 \001(\t\"E\n\nFlowStatus\022\n\n\002ok\030\001 \001(\010\022\034\n\004flow\030" +
       "\002 \001(\0132\016.protolca.Flow\022\r\n\005error\030\003 \001(\t\"^\n\022" +
@@ -15545,7 +15545,7 @@ public final class Services {
       "rotolca.Currency\032\034.protolca.services.Ref" +
       "Status\022<\n\ndq_systems\022\030.protolca.services" +
       ".Empty\032\022.protolca.DQSystem0\001\022=\n\tdq_syste" +
-      "m\022\r.protolca.Ref\032!.protolca.services.DqS" +
+      "m\022\r.protolca.Ref\032!.protolca.services.DQS" +
       "ystemStatus\022A\n\rput_dq_system\022\022.protolca." +
       "DQSystem\032\034.protolca.services.RefStatus\0223" +
       "\n\005flows\022\030.protolca.services.Empty\032\016.prot" +
@@ -15652,11 +15652,11 @@ public final class Services {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_CurrencyStatus_descriptor,
         new java.lang.String[] { "Ok", "Currency", "Error", });
-    internal_static_protolca_services_DqSystemStatus_descriptor =
+    internal_static_protolca_services_DQSystemStatus_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_protolca_services_DqSystemStatus_fieldAccessorTable = new
+    internal_static_protolca_services_DQSystemStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protolca_services_DqSystemStatus_descriptor,
+        internal_static_protolca_services_DQSystemStatus_descriptor,
         new java.lang.String[] { "Ok", "DqSystem", "Error", });
     internal_static_protolca_services_FlowStatus_descriptor =
       getDescriptor().getMessageTypes().get(7);

@@ -277,9 +277,9 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void dqSystem(Proto.Ref req, StreamObserver<Services.DqSystemStatus> resp) {
+  public void dqSystem(Proto.Ref req, StreamObserver<Services.DQSystemStatus> resp) {
     Consumer<String> onError = error -> {
-      var status = Services.DqSystemStatus.newBuilder()
+      var status = Services.DQSystemStatus.newBuilder()
         .setOk(false)
         .setError(error)
         .build();
@@ -290,7 +290,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     Consumer<DQSystem> onSuccess = dqSystem -> {
       var proto = new DQSystemWriter(WriterConfig.of(db))
         .write(dqSystem);
-      var status = Services.DqSystemStatus.newBuilder()
+      var status = Services.DQSystemStatus.newBuilder()
         .setOk(true)
         .setDqSystem(proto)
         .build();
