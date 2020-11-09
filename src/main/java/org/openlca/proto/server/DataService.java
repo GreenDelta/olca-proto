@@ -45,6 +45,7 @@ import org.openlca.core.model.UnitGroup;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.MemStore;
 import org.openlca.proto.Proto;
+import org.openlca.proto.input.CategoryImport;
 import org.openlca.proto.input.ProtoImport;
 import org.openlca.proto.output.ActorWriter;
 import org.openlca.proto.output.CategoryWriter;
@@ -207,12 +208,23 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
 
   @Override
   public void putCategory(Proto.Category req, StreamObserver<Services.RefStatus> resp) {
+    // note that categories behave a bit differently when inserted into a
+    // database: their reference IDs may change as they are calculated from
+    // the respective category paths
     var store = new MemStore();
     store.putCategory(req);
-    new ProtoImport(store, db)
-      .withUpdateMode(UpdateMode.ALWAYS)
-      .run();
-    resp.onNext(importStatusOf(Category.class, req.getId()));
+    var imp = new ProtoImport(store, db)
+      .withUpdateMode(UpdateMode.ALWAYS);
+    var category = new CategoryImport(imp).of(req.getId());
+    var status = Services.RefStatus.newBuilder();
+    if (category == null) {
+      status.setOk(false)
+        .setError("Import of category id=" + req.getId() + " failed");
+    } else {
+      status.setOk(true)
+        .setRef(Refs.toRef(category));
+    }
+    resp.onNext(status.build());
     resp.onCompleted();
   }
 

@@ -46,7 +46,9 @@ public class SourceWriter {
     proto.setExternalFile(Strings.orEmpty(source.externalFile));
     proto.setTextReference(Strings.orEmpty(source.textReference));
     proto.setUrl(Strings.orEmpty(source.url));
-    proto.setYear(source.year);
+    if (source.year != null) {
+      proto.setYear(source.year);
+    }
 
     return proto.build();
   }
