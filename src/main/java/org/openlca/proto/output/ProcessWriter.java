@@ -2,7 +2,9 @@ package org.openlca.proto.output;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
+import org.openlca.core.database.ProcessDao;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.Version;
@@ -47,9 +49,31 @@ public class ProcessWriter {
     proto.setProcessType(processType(process));
     proto.setDefaultAllocationMethod(allocationType(process));
     proto.setInfrastructureProcess(process.infrastructureProcess);
-
     if (process.location != null) {
+      proto.setLocation(Refs.toRef(process.location, config));
     }
+    proto.setLastInternalId(process.lastInternalId);
+
+    // DQ systems
+    if (process.dqSystem != null) {
+      proto.setDqSystem(Refs.toRef(process.dqSystem, config));
+    }
+    proto.setDqEntry(Strings.orEmpty(process.dqEntry));
+    if (process.exchangeDqSystem != null) {
+      proto.setExchangeDqSystem(
+        Refs.toRef(process.exchangeDqSystem, config));
+    }
+    if (process.socialDqSystem != null) {
+      proto.setSocialDqSystem(
+        Refs.toRef(process.socialDqSystem, config));
+    }
+
+    // parameters
+    var paramWriter  = new ParameterWriter(config);
+    for (var param : process.parameters) {
+      proto.addParameters(paramWriter.write(param));
+    }
+
 
     return proto.build();
   }
@@ -74,6 +98,38 @@ public class ProcessWriter {
         return Proto.AllocationType.PHYSICAL_ALLOCATION;
       default:
         return Proto.AllocationType.UNDEFINED_ALLOCATION_TYPE;
+    }
+  }
+
+  private void writeExchanges(Process p, Proto.Process.Builder proto) {
+    for (var e : p.exchanges) {
+      var pe = Proto.Exchange.newBuilder();
+      pe.setAvoidedProduct(e.isAvoided);
+      pe.setInput(e.isInput);
+      if (e.baseUncertainty != null) {
+        pe.setBaseUncertainty(e.baseUncertainty);
+      }
+      pe.setAmount(e.amount);
+      pe.setAmountFormula(Strings.orEmpty(e.formula));
+      pe.setDqEntry(Strings.orEmpty(e.dqEntry));
+      pe.setDescription(Strings.orEmpty(e.description));
+      pe.setCostFormula(Strings.orEmpty(e.costFormula));
+      if (e.costs != null) {
+        pe.setCostValue(e.costs);
+      }
+      if (e.currency != null) {
+        pe.setCurrency(Refs.toRef(e.currency, config));
+      }
+      pe.setInternalId(e.internalId);
+
+      // default provider
+      if (e.defaultProviderId > 0) {
+        var provider = new ProcessDao(config.db)
+          .getDescriptor(e.defaultProviderId);
+        if (provider != null) {
+          pe.setDefaultProvider(Refs.toProcessRef(provider));
+        }
+      }
     }
   }
 

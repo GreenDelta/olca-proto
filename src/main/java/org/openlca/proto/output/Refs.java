@@ -7,6 +7,8 @@ import org.openlca.core.model.Flow;
 import org.openlca.core.model.ImpactCategory;
 import org.openlca.core.model.RootEntity;
 import org.openlca.core.model.Version;
+import org.openlca.core.model.descriptors.Descriptor;
+import org.openlca.core.model.descriptors.ProcessDescriptor;
 import org.openlca.proto.Proto;
 import org.openlca.util.Categories;
 import org.openlca.util.Strings;
@@ -40,6 +42,56 @@ public final class Refs {
         }
       }
     }
+    return proto.build();
+  }
+
+  public static Proto.Ref toRef(Descriptor d) {
+    var proto = Proto.Ref.newBuilder();
+    if (d == null)
+      return proto.build();
+    proto.setId(Strings.orEmpty(d.refId));
+    proto.setName(Strings.orEmpty(d.name));
+    proto.setDescription(Strings.orEmpty(d.description));
+    proto.setVersion(Version.asString(d.version));
+
+    // entity type
+    if (d.type != null) {
+      var type = d.type.getModelClass();
+      if (type != null) {
+        proto.setType(type.getSimpleName());
+      }
+    }
+
+    if (d.lastChange != 0L) {
+      var instant = Instant.ofEpochMilli(d.lastChange);
+      proto.setLastChange(instant.toString());
+    }
+
+    return proto.build();
+  }
+
+  public static Proto.ProcessRef toProcessRef(ProcessDescriptor d) {
+    var proto = Proto.ProcessRef.newBuilder();
+    if (d == null)
+      return proto.build();
+    proto.setId(Strings.orEmpty(d.refId));
+    proto.setName(Strings.orEmpty(d.name));
+    proto.setDescription(Strings.orEmpty(d.description));
+    proto.setVersion(Version.asString(d.version));
+
+    // entity type
+    if (d.type != null) {
+      var type = d.type.getModelClass();
+      if (type != null) {
+        proto.setType(type.getSimpleName());
+      }
+    }
+
+    if (d.lastChange != 0L) {
+      var instant = Instant.ofEpochMilli(d.lastChange);
+      proto.setLastChange(instant.toString());
+    }
+
     return proto.build();
   }
 
