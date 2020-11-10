@@ -81,6 +81,12 @@ public class ProcessImport {
       proto.getDefaultAllocationMethod());
     p.documentation = doc(proto.getProcessDocumentation());
 
+    // location
+    var locID = proto.getLocation().getId();
+    if (Strings.notEmpty(locID)) {
+      p.location = new LocationImport(imp).of(locID);
+    }
+
     // DQ systems
     p.dqEntry = proto.getDqEntry();
     p.dqSystem = dqSystem(proto.getDqSystem());
