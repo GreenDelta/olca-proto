@@ -31,7 +31,7 @@ public class CurrencyImport {
     // check the proto object
     var proto = imp.store.getCurrency(id);
     if (proto == null)
-      return null;
+      return currency;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(currency, wrap))

@@ -28,7 +28,7 @@ public class ActorImport {
     // check the proto object
     var proto = imp.store.getActor(id);
     if (proto == null)
-      return null;
+      return actor;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(actor, wrap))

@@ -35,7 +35,7 @@ public class CategoryImport {
 
     var proto = imp.store.getCategory(id);
     if (proto == null)
-      return null;
+      return category;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(category, wrap))

@@ -29,7 +29,7 @@ public class SourceImport {
     // check the proto object
     var proto = imp.store.getSource(id);
     if (proto == null)
-      return null;
+      return source;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(source, wrap))

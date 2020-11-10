@@ -36,7 +36,7 @@ public class FlowImport {
     // check the proto object
     var proto = imp.store.getFlow(id);
     if (proto == null)
-      return null;
+      return flow;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
       if (imp.skipUpdate(flow, wrap))

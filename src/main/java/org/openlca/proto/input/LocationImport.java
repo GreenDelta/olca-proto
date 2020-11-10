@@ -29,7 +29,7 @@ public class LocationImport {
     // check the proto object
     var proto = imp.store.getLocation(id);
     if (proto == null)
-      return null;
+      return location;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(location, wrap))

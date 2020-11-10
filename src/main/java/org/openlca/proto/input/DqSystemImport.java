@@ -32,7 +32,7 @@ public class DqSystemImport {
     // check the proto object
     var proto = imp.store.getDQSystem(id);
     if (proto == null)
-      return null;
+      return dqSystem;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(dqSystem, wrap))

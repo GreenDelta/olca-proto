@@ -47,7 +47,7 @@ public class ProcessImport {
     // check the proto object
     var proto = imp.store.getProcess(id);
     if (proto == null)
-      return null;
+      return process;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
       if (imp.skipUpdate(process, wrap))

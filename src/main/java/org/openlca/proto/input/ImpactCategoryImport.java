@@ -34,7 +34,7 @@ public class ImpactCategoryImport {
     // check the proto object
     var proto = imp.store.getImpactCategory(id);
     if (proto == null)
-      return null;
+      return impact;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(impact, wrap))

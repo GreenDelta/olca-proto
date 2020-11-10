@@ -32,7 +32,7 @@ public class SocialIndicatorImport {
     // check the proto object
     var proto = imp.store.getSocialIndicator(id);
     if (proto == null)
-      return null;
+      return indicator;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(indicator, wrap))

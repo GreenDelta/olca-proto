@@ -30,7 +30,7 @@ public class ParameterImport {
     // check the proto object
     var proto = imp.store.getParameter(id);
     if (proto == null)
-      return null;
+      return param;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(param, wrap))

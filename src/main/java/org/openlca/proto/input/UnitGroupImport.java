@@ -35,7 +35,7 @@ public class UnitGroupImport {
     // check the proto object
     var proto = imp.store.getUnitGroup(id);
     if (proto == null)
-      return null;
+      return group;
     var wrap = ProtoWrap.of(proto);
     if (inUpdateMode) {
       if (imp.skipUpdate(group, wrap))

@@ -43,7 +43,7 @@ public class ProductSystemImport {
     // check the proto object
     var proto = imp.store.getProductSystem(id);
     if (proto == null)
-      return null;
+      return sys;
     var wrap = ProtoWrap.of(proto);
     if (update) {
       if (imp.skipUpdate(sys, wrap))
