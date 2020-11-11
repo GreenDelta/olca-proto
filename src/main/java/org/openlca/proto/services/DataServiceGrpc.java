@@ -31,7 +31,7 @@ public final class DataServiceGrpc {
       org.openlca.proto.services.Services.Status> getDeleteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "delete",
+      fullMethodName = SERVICE_NAME + '/' + "Delete",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.Status.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -44,13 +44,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getDeleteMethod = getDeleteMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "delete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Delete"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Status.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("delete"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("Delete"))
               .build();
         }
       }
@@ -59,72 +59,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Actor> getActorsMethod;
+      org.openlca.proto.Proto.Actor> getGetActorsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "actors",
+      fullMethodName = SERVICE_NAME + '/' + "GetActors",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Actor.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Actor> getActorsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Actor> getActorsMethod;
-    if ((getActorsMethod = DataServiceGrpc.getActorsMethod) == null) {
+      org.openlca.proto.Proto.Actor> getGetActorsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Actor> getGetActorsMethod;
+    if ((getGetActorsMethod = DataServiceGrpc.getGetActorsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getActorsMethod = DataServiceGrpc.getActorsMethod) == null) {
-          DataServiceGrpc.getActorsMethod = getActorsMethod =
+        if ((getGetActorsMethod = DataServiceGrpc.getGetActorsMethod) == null) {
+          DataServiceGrpc.getGetActorsMethod = getGetActorsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Actor>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "actors"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetActors"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Actor.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("actors"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetActors"))
               .build();
         }
       }
     }
-    return getActorsMethod;
+    return getGetActorsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ActorStatus> getActorMethod;
+      org.openlca.proto.services.Services.ActorStatus> getGetActorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "actor",
+      fullMethodName = SERVICE_NAME + '/' + "GetActor",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ActorStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ActorStatus> getActorMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ActorStatus> getActorMethod;
-    if ((getActorMethod = DataServiceGrpc.getActorMethod) == null) {
+      org.openlca.proto.services.Services.ActorStatus> getGetActorMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ActorStatus> getGetActorMethod;
+    if ((getGetActorMethod = DataServiceGrpc.getGetActorMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getActorMethod = DataServiceGrpc.getActorMethod) == null) {
-          DataServiceGrpc.getActorMethod = getActorMethod =
+        if ((getGetActorMethod = DataServiceGrpc.getGetActorMethod) == null) {
+          DataServiceGrpc.getGetActorMethod = getGetActorMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ActorStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "actor"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetActor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ActorStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("actor"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetActor"))
               .build();
         }
       }
     }
-    return getActorMethod;
+    return getGetActorMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Actor,
       org.openlca.proto.services.Services.RefStatus> getPutActorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_actor",
+      fullMethodName = SERVICE_NAME + '/' + "PutActor",
       requestType = org.openlca.proto.Proto.Actor.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -137,13 +137,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutActorMethod = getPutActorMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Actor, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_actor"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutActor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Actor.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_actor"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutActor"))
               .build();
         }
       }
@@ -152,72 +152,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Category> getCategoriesMethod;
+      org.openlca.proto.Proto.Category> getGetCategoriesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "categories",
+      fullMethodName = SERVICE_NAME + '/' + "GetCategories",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Category.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Category> getCategoriesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category> getCategoriesMethod;
-    if ((getCategoriesMethod = DataServiceGrpc.getCategoriesMethod) == null) {
+      org.openlca.proto.Proto.Category> getGetCategoriesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category> getGetCategoriesMethod;
+    if ((getGetCategoriesMethod = DataServiceGrpc.getGetCategoriesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCategoriesMethod = DataServiceGrpc.getCategoriesMethod) == null) {
-          DataServiceGrpc.getCategoriesMethod = getCategoriesMethod =
+        if ((getGetCategoriesMethod = DataServiceGrpc.getGetCategoriesMethod) == null) {
+          DataServiceGrpc.getGetCategoriesMethod = getGetCategoriesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Category>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "categories"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCategories"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Category.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("categories"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetCategories"))
               .build();
         }
       }
     }
-    return getCategoriesMethod;
+    return getGetCategoriesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.CategoryStatus> getCategoryMethod;
+      org.openlca.proto.services.Services.CategoryStatus> getGetCategoryMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "category",
+      fullMethodName = SERVICE_NAME + '/' + "GetCategory",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.CategoryStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.CategoryStatus> getCategoryMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CategoryStatus> getCategoryMethod;
-    if ((getCategoryMethod = DataServiceGrpc.getCategoryMethod) == null) {
+      org.openlca.proto.services.Services.CategoryStatus> getGetCategoryMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CategoryStatus> getGetCategoryMethod;
+    if ((getGetCategoryMethod = DataServiceGrpc.getGetCategoryMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCategoryMethod = DataServiceGrpc.getCategoryMethod) == null) {
-          DataServiceGrpc.getCategoryMethod = getCategoryMethod =
+        if ((getGetCategoryMethod = DataServiceGrpc.getGetCategoryMethod) == null) {
+          DataServiceGrpc.getGetCategoryMethod = getGetCategoryMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CategoryStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "category"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCategory"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.CategoryStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("category"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetCategory"))
               .build();
         }
       }
     }
-    return getCategoryMethod;
+    return getGetCategoryMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Category,
       org.openlca.proto.services.Services.RefStatus> getPutCategoryMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_category",
+      fullMethodName = SERVICE_NAME + '/' + "PutCategory",
       requestType = org.openlca.proto.Proto.Category.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -230,13 +230,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutCategoryMethod = getPutCategoryMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Category, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_category"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutCategory"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Category.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_category"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutCategory"))
               .build();
         }
       }
@@ -245,72 +245,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Currency> getCurrenciesMethod;
+      org.openlca.proto.Proto.Currency> getGetCurrenciesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "currencies",
+      fullMethodName = SERVICE_NAME + '/' + "GetCurrencies",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Currency.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Currency> getCurrenciesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Currency> getCurrenciesMethod;
-    if ((getCurrenciesMethod = DataServiceGrpc.getCurrenciesMethod) == null) {
+      org.openlca.proto.Proto.Currency> getGetCurrenciesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Currency> getGetCurrenciesMethod;
+    if ((getGetCurrenciesMethod = DataServiceGrpc.getGetCurrenciesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCurrenciesMethod = DataServiceGrpc.getCurrenciesMethod) == null) {
-          DataServiceGrpc.getCurrenciesMethod = getCurrenciesMethod =
+        if ((getGetCurrenciesMethod = DataServiceGrpc.getGetCurrenciesMethod) == null) {
+          DataServiceGrpc.getGetCurrenciesMethod = getGetCurrenciesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Currency>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "currencies"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCurrencies"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Currency.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("currencies"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetCurrencies"))
               .build();
         }
       }
     }
-    return getCurrenciesMethod;
+    return getGetCurrenciesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.CurrencyStatus> getCurrencyMethod;
+      org.openlca.proto.services.Services.CurrencyStatus> getGetCurrencyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "currency",
+      fullMethodName = SERVICE_NAME + '/' + "GetCurrency",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.CurrencyStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.CurrencyStatus> getCurrencyMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CurrencyStatus> getCurrencyMethod;
-    if ((getCurrencyMethod = DataServiceGrpc.getCurrencyMethod) == null) {
+      org.openlca.proto.services.Services.CurrencyStatus> getGetCurrencyMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CurrencyStatus> getGetCurrencyMethod;
+    if ((getGetCurrencyMethod = DataServiceGrpc.getGetCurrencyMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCurrencyMethod = DataServiceGrpc.getCurrencyMethod) == null) {
-          DataServiceGrpc.getCurrencyMethod = getCurrencyMethod =
+        if ((getGetCurrencyMethod = DataServiceGrpc.getGetCurrencyMethod) == null) {
+          DataServiceGrpc.getGetCurrencyMethod = getGetCurrencyMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.CurrencyStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "currency"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCurrency"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.CurrencyStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("currency"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetCurrency"))
               .build();
         }
       }
     }
-    return getCurrencyMethod;
+    return getGetCurrencyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Currency,
       org.openlca.proto.services.Services.RefStatus> getPutCurrencyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_currency",
+      fullMethodName = SERVICE_NAME + '/' + "PutCurrency",
       requestType = org.openlca.proto.Proto.Currency.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -323,13 +323,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutCurrencyMethod = getPutCurrencyMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Currency, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_currency"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutCurrency"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Currency.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_currency"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutCurrency"))
               .build();
         }
       }
@@ -338,165 +338,165 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.DQSystem> getDqSystemsMethod;
+      org.openlca.proto.Proto.DQSystem> getGetDQSystemsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "dq_systems",
+      fullMethodName = SERVICE_NAME + '/' + "GetDQSystems",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.DQSystem.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.DQSystem> getDqSystemsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.DQSystem> getDqSystemsMethod;
-    if ((getDqSystemsMethod = DataServiceGrpc.getDqSystemsMethod) == null) {
+      org.openlca.proto.Proto.DQSystem> getGetDQSystemsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.DQSystem> getGetDQSystemsMethod;
+    if ((getGetDQSystemsMethod = DataServiceGrpc.getGetDQSystemsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getDqSystemsMethod = DataServiceGrpc.getDqSystemsMethod) == null) {
-          DataServiceGrpc.getDqSystemsMethod = getDqSystemsMethod =
+        if ((getGetDQSystemsMethod = DataServiceGrpc.getGetDQSystemsMethod) == null) {
+          DataServiceGrpc.getGetDQSystemsMethod = getGetDQSystemsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.DQSystem>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "dq_systems"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDQSystems"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.DQSystem.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("dq_systems"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetDQSystems"))
               .build();
         }
       }
     }
-    return getDqSystemsMethod;
+    return getGetDQSystemsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod;
+      org.openlca.proto.services.Services.DQSystemStatus> getGetDQSystemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "dq_system",
+      fullMethodName = SERVICE_NAME + '/' + "GetDQSystem",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.DQSystemStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DQSystemStatus> getDqSystemMethod;
-    if ((getDqSystemMethod = DataServiceGrpc.getDqSystemMethod) == null) {
+      org.openlca.proto.services.Services.DQSystemStatus> getGetDQSystemMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DQSystemStatus> getGetDQSystemMethod;
+    if ((getGetDQSystemMethod = DataServiceGrpc.getGetDQSystemMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getDqSystemMethod = DataServiceGrpc.getDqSystemMethod) == null) {
-          DataServiceGrpc.getDqSystemMethod = getDqSystemMethod =
+        if ((getGetDQSystemMethod = DataServiceGrpc.getGetDQSystemMethod) == null) {
+          DataServiceGrpc.getGetDQSystemMethod = getGetDQSystemMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.DQSystemStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "dq_system"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDQSystem"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.DQSystemStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("dq_system"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetDQSystem"))
               .build();
         }
       }
     }
-    return getDqSystemMethod;
+    return getGetDQSystemMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.DQSystem,
-      org.openlca.proto.services.Services.RefStatus> getPutDqSystemMethod;
+      org.openlca.proto.services.Services.RefStatus> getPutDQSystemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_dq_system",
+      fullMethodName = SERVICE_NAME + '/' + "PutDQSystem",
       requestType = org.openlca.proto.Proto.DQSystem.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.DQSystem,
-      org.openlca.proto.services.Services.RefStatus> getPutDqSystemMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.DQSystem, org.openlca.proto.services.Services.RefStatus> getPutDqSystemMethod;
-    if ((getPutDqSystemMethod = DataServiceGrpc.getPutDqSystemMethod) == null) {
+      org.openlca.proto.services.Services.RefStatus> getPutDQSystemMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.DQSystem, org.openlca.proto.services.Services.RefStatus> getPutDQSystemMethod;
+    if ((getPutDQSystemMethod = DataServiceGrpc.getPutDQSystemMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getPutDqSystemMethod = DataServiceGrpc.getPutDqSystemMethod) == null) {
-          DataServiceGrpc.getPutDqSystemMethod = getPutDqSystemMethod =
+        if ((getPutDQSystemMethod = DataServiceGrpc.getPutDQSystemMethod) == null) {
+          DataServiceGrpc.getPutDQSystemMethod = getPutDQSystemMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.DQSystem, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_dq_system"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutDQSystem"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.DQSystem.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_dq_system"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutDQSystem"))
               .build();
         }
       }
     }
-    return getPutDqSystemMethod;
+    return getPutDQSystemMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Flow> getFlowsMethod;
+      org.openlca.proto.Proto.Flow> getGetFlowsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "flows",
+      fullMethodName = SERVICE_NAME + '/' + "GetFlows",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Flow.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Flow> getFlowsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Flow> getFlowsMethod;
-    if ((getFlowsMethod = DataServiceGrpc.getFlowsMethod) == null) {
+      org.openlca.proto.Proto.Flow> getGetFlowsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Flow> getGetFlowsMethod;
+    if ((getGetFlowsMethod = DataServiceGrpc.getGetFlowsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getFlowsMethod = DataServiceGrpc.getFlowsMethod) == null) {
-          DataServiceGrpc.getFlowsMethod = getFlowsMethod =
+        if ((getGetFlowsMethod = DataServiceGrpc.getGetFlowsMethod) == null) {
+          DataServiceGrpc.getGetFlowsMethod = getGetFlowsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Flow>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "flows"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFlows"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Flow.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("flows"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetFlows"))
               .build();
         }
       }
     }
-    return getFlowsMethod;
+    return getGetFlowsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.FlowStatus> getFlowMethod;
+      org.openlca.proto.services.Services.FlowStatus> getGetFlowMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "flow",
+      fullMethodName = SERVICE_NAME + '/' + "GetFlow",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.FlowStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.FlowStatus> getFlowMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowStatus> getFlowMethod;
-    if ((getFlowMethod = DataServiceGrpc.getFlowMethod) == null) {
+      org.openlca.proto.services.Services.FlowStatus> getGetFlowMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowStatus> getGetFlowMethod;
+    if ((getGetFlowMethod = DataServiceGrpc.getGetFlowMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getFlowMethod = DataServiceGrpc.getFlowMethod) == null) {
-          DataServiceGrpc.getFlowMethod = getFlowMethod =
+        if ((getGetFlowMethod = DataServiceGrpc.getGetFlowMethod) == null) {
+          DataServiceGrpc.getGetFlowMethod = getGetFlowMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "flow"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFlow"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.FlowStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("flow"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetFlow"))
               .build();
         }
       }
     }
-    return getFlowMethod;
+    return getGetFlowMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Flow,
       org.openlca.proto.services.Services.RefStatus> getPutFlowMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_flow",
+      fullMethodName = SERVICE_NAME + '/' + "PutFlow",
       requestType = org.openlca.proto.Proto.Flow.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -509,13 +509,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutFlowMethod = getPutFlowMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Flow, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_flow"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutFlow"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Flow.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_flow"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutFlow"))
               .build();
         }
       }
@@ -524,72 +524,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.FlowProperty> getFlowPropertiesMethod;
+      org.openlca.proto.Proto.FlowProperty> getGetFlowPropertiesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "flow_properties",
+      fullMethodName = SERVICE_NAME + '/' + "GetFlowProperties",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.FlowProperty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.FlowProperty> getFlowPropertiesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.FlowProperty> getFlowPropertiesMethod;
-    if ((getFlowPropertiesMethod = DataServiceGrpc.getFlowPropertiesMethod) == null) {
+      org.openlca.proto.Proto.FlowProperty> getGetFlowPropertiesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.FlowProperty> getGetFlowPropertiesMethod;
+    if ((getGetFlowPropertiesMethod = DataServiceGrpc.getGetFlowPropertiesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getFlowPropertiesMethod = DataServiceGrpc.getFlowPropertiesMethod) == null) {
-          DataServiceGrpc.getFlowPropertiesMethod = getFlowPropertiesMethod =
+        if ((getGetFlowPropertiesMethod = DataServiceGrpc.getGetFlowPropertiesMethod) == null) {
+          DataServiceGrpc.getGetFlowPropertiesMethod = getGetFlowPropertiesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.FlowProperty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "flow_properties"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFlowProperties"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.FlowProperty.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("flow_properties"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetFlowProperties"))
               .build();
         }
       }
     }
-    return getFlowPropertiesMethod;
+    return getGetFlowPropertiesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.FlowPropertyStatus> getFlowPropertyMethod;
+      org.openlca.proto.services.Services.FlowPropertyStatus> getGetFlowPropertyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "flow_property",
+      fullMethodName = SERVICE_NAME + '/' + "GetFlowProperty",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.FlowPropertyStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.FlowPropertyStatus> getFlowPropertyMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowPropertyStatus> getFlowPropertyMethod;
-    if ((getFlowPropertyMethod = DataServiceGrpc.getFlowPropertyMethod) == null) {
+      org.openlca.proto.services.Services.FlowPropertyStatus> getGetFlowPropertyMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowPropertyStatus> getGetFlowPropertyMethod;
+    if ((getGetFlowPropertyMethod = DataServiceGrpc.getGetFlowPropertyMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getFlowPropertyMethod = DataServiceGrpc.getFlowPropertyMethod) == null) {
-          DataServiceGrpc.getFlowPropertyMethod = getFlowPropertyMethod =
+        if ((getGetFlowPropertyMethod = DataServiceGrpc.getGetFlowPropertyMethod) == null) {
+          DataServiceGrpc.getGetFlowPropertyMethod = getGetFlowPropertyMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.FlowPropertyStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "flow_property"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFlowProperty"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.FlowPropertyStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("flow_property"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetFlowProperty"))
               .build();
         }
       }
     }
-    return getFlowPropertyMethod;
+    return getGetFlowPropertyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.FlowProperty,
       org.openlca.proto.services.Services.RefStatus> getPutFlowPropertyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_flow_property",
+      fullMethodName = SERVICE_NAME + '/' + "PutFlowProperty",
       requestType = org.openlca.proto.Proto.FlowProperty.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -602,13 +602,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutFlowPropertyMethod = getPutFlowPropertyMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.FlowProperty, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_flow_property"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutFlowProperty"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.FlowProperty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_flow_property"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutFlowProperty"))
               .build();
         }
       }
@@ -617,72 +617,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ImpactCategory> getImpactCategoriesMethod;
+      org.openlca.proto.Proto.ImpactCategory> getGetImpactCategoriesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "impact_categories",
+      fullMethodName = SERVICE_NAME + '/' + "GetImpactCategories",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.ImpactCategory.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ImpactCategory> getImpactCategoriesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactCategory> getImpactCategoriesMethod;
-    if ((getImpactCategoriesMethod = DataServiceGrpc.getImpactCategoriesMethod) == null) {
+      org.openlca.proto.Proto.ImpactCategory> getGetImpactCategoriesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactCategory> getGetImpactCategoriesMethod;
+    if ((getGetImpactCategoriesMethod = DataServiceGrpc.getGetImpactCategoriesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getImpactCategoriesMethod = DataServiceGrpc.getImpactCategoriesMethod) == null) {
-          DataServiceGrpc.getImpactCategoriesMethod = getImpactCategoriesMethod =
+        if ((getGetImpactCategoriesMethod = DataServiceGrpc.getGetImpactCategoriesMethod) == null) {
+          DataServiceGrpc.getGetImpactCategoriesMethod = getGetImpactCategoriesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactCategory>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "impact_categories"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImpactCategories"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ImpactCategory.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("impact_categories"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetImpactCategories"))
               .build();
         }
       }
     }
-    return getImpactCategoriesMethod;
+    return getGetImpactCategoriesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ImpactCategoryStatus> getImpactCategoryMethod;
+      org.openlca.proto.services.Services.ImpactCategoryStatus> getGetImpactCategoryMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "impact_category",
+      fullMethodName = SERVICE_NAME + '/' + "GetImpactCategory",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ImpactCategoryStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ImpactCategoryStatus> getImpactCategoryMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactCategoryStatus> getImpactCategoryMethod;
-    if ((getImpactCategoryMethod = DataServiceGrpc.getImpactCategoryMethod) == null) {
+      org.openlca.proto.services.Services.ImpactCategoryStatus> getGetImpactCategoryMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactCategoryStatus> getGetImpactCategoryMethod;
+    if ((getGetImpactCategoryMethod = DataServiceGrpc.getGetImpactCategoryMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getImpactCategoryMethod = DataServiceGrpc.getImpactCategoryMethod) == null) {
-          DataServiceGrpc.getImpactCategoryMethod = getImpactCategoryMethod =
+        if ((getGetImpactCategoryMethod = DataServiceGrpc.getGetImpactCategoryMethod) == null) {
+          DataServiceGrpc.getGetImpactCategoryMethod = getGetImpactCategoryMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactCategoryStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "impact_category"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImpactCategory"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ImpactCategoryStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("impact_category"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetImpactCategory"))
               .build();
         }
       }
     }
-    return getImpactCategoryMethod;
+    return getGetImpactCategoryMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.ImpactCategory,
       org.openlca.proto.services.Services.RefStatus> getPutImpactCategoryMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_impact_category",
+      fullMethodName = SERVICE_NAME + '/' + "PutImpactCategory",
       requestType = org.openlca.proto.Proto.ImpactCategory.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -695,13 +695,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutImpactCategoryMethod = getPutImpactCategoryMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.ImpactCategory, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_impact_category"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutImpactCategory"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ImpactCategory.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_impact_category"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutImpactCategory"))
               .build();
         }
       }
@@ -710,72 +710,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ImpactMethod> getImpactMethodsMethod;
+      org.openlca.proto.Proto.ImpactMethod> getGetImpactMethodsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "impact_methods",
+      fullMethodName = SERVICE_NAME + '/' + "GetImpactMethods",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.ImpactMethod.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ImpactMethod> getImpactMethodsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactMethod> getImpactMethodsMethod;
-    if ((getImpactMethodsMethod = DataServiceGrpc.getImpactMethodsMethod) == null) {
+      org.openlca.proto.Proto.ImpactMethod> getGetImpactMethodsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactMethod> getGetImpactMethodsMethod;
+    if ((getGetImpactMethodsMethod = DataServiceGrpc.getGetImpactMethodsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getImpactMethodsMethod = DataServiceGrpc.getImpactMethodsMethod) == null) {
-          DataServiceGrpc.getImpactMethodsMethod = getImpactMethodsMethod =
+        if ((getGetImpactMethodsMethod = DataServiceGrpc.getGetImpactMethodsMethod) == null) {
+          DataServiceGrpc.getGetImpactMethodsMethod = getGetImpactMethodsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ImpactMethod>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "impact_methods"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImpactMethods"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ImpactMethod.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("impact_methods"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetImpactMethods"))
               .build();
         }
       }
     }
-    return getImpactMethodsMethod;
+    return getGetImpactMethodsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ImpactMethodStatus> getImpactMethodMethod;
+      org.openlca.proto.services.Services.ImpactMethodStatus> getGetImpactMethodMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "impact_method",
+      fullMethodName = SERVICE_NAME + '/' + "GetImpactMethod",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ImpactMethodStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ImpactMethodStatus> getImpactMethodMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactMethodStatus> getImpactMethodMethod;
-    if ((getImpactMethodMethod = DataServiceGrpc.getImpactMethodMethod) == null) {
+      org.openlca.proto.services.Services.ImpactMethodStatus> getGetImpactMethodMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactMethodStatus> getGetImpactMethodMethod;
+    if ((getGetImpactMethodMethod = DataServiceGrpc.getGetImpactMethodMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getImpactMethodMethod = DataServiceGrpc.getImpactMethodMethod) == null) {
-          DataServiceGrpc.getImpactMethodMethod = getImpactMethodMethod =
+        if ((getGetImpactMethodMethod = DataServiceGrpc.getGetImpactMethodMethod) == null) {
+          DataServiceGrpc.getGetImpactMethodMethod = getGetImpactMethodMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ImpactMethodStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "impact_method"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImpactMethod"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ImpactMethodStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("impact_method"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetImpactMethod"))
               .build();
         }
       }
     }
-    return getImpactMethodMethod;
+    return getGetImpactMethodMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.ImpactMethod,
       org.openlca.proto.services.Services.RefStatus> getPutImpactMethodMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_impact_method",
+      fullMethodName = SERVICE_NAME + '/' + "PutImpactMethod",
       requestType = org.openlca.proto.Proto.ImpactMethod.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -788,13 +788,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutImpactMethodMethod = getPutImpactMethodMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.ImpactMethod, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_impact_method"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutImpactMethod"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ImpactMethod.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_impact_method"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutImpactMethod"))
               .build();
         }
       }
@@ -803,72 +803,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Location> getLocationsMethod;
+      org.openlca.proto.Proto.Location> getGetLocationsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "locations",
+      fullMethodName = SERVICE_NAME + '/' + "GetLocations",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Location.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Location> getLocationsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Location> getLocationsMethod;
-    if ((getLocationsMethod = DataServiceGrpc.getLocationsMethod) == null) {
+      org.openlca.proto.Proto.Location> getGetLocationsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Location> getGetLocationsMethod;
+    if ((getGetLocationsMethod = DataServiceGrpc.getGetLocationsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getLocationsMethod = DataServiceGrpc.getLocationsMethod) == null) {
-          DataServiceGrpc.getLocationsMethod = getLocationsMethod =
+        if ((getGetLocationsMethod = DataServiceGrpc.getGetLocationsMethod) == null) {
+          DataServiceGrpc.getGetLocationsMethod = getGetLocationsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Location>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "locations"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLocations"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Location.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("locations"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetLocations"))
               .build();
         }
       }
     }
-    return getLocationsMethod;
+    return getGetLocationsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.LocationStatus> getLocationMethod;
+      org.openlca.proto.services.Services.LocationStatus> getGetLocationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "location",
+      fullMethodName = SERVICE_NAME + '/' + "GetLocation",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.LocationStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.LocationStatus> getLocationMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.LocationStatus> getLocationMethod;
-    if ((getLocationMethod = DataServiceGrpc.getLocationMethod) == null) {
+      org.openlca.proto.services.Services.LocationStatus> getGetLocationMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.LocationStatus> getGetLocationMethod;
+    if ((getGetLocationMethod = DataServiceGrpc.getGetLocationMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getLocationMethod = DataServiceGrpc.getLocationMethod) == null) {
-          DataServiceGrpc.getLocationMethod = getLocationMethod =
+        if ((getGetLocationMethod = DataServiceGrpc.getGetLocationMethod) == null) {
+          DataServiceGrpc.getGetLocationMethod = getGetLocationMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.LocationStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "location"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLocation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.LocationStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("location"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetLocation"))
               .build();
         }
       }
     }
-    return getLocationMethod;
+    return getGetLocationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Location,
       org.openlca.proto.services.Services.RefStatus> getPutLocationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_location",
+      fullMethodName = SERVICE_NAME + '/' + "PutLocation",
       requestType = org.openlca.proto.Proto.Location.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -881,13 +881,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutLocationMethod = getPutLocationMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Location, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_location"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutLocation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Location.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_location"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutLocation"))
               .build();
         }
       }
@@ -896,72 +896,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Parameter> getParametersMethod;
+      org.openlca.proto.Proto.Parameter> getGetParametersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "parameters",
+      fullMethodName = SERVICE_NAME + '/' + "GetParameters",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Parameter.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Parameter> getParametersMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Parameter> getParametersMethod;
-    if ((getParametersMethod = DataServiceGrpc.getParametersMethod) == null) {
+      org.openlca.proto.Proto.Parameter> getGetParametersMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Parameter> getGetParametersMethod;
+    if ((getGetParametersMethod = DataServiceGrpc.getGetParametersMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getParametersMethod = DataServiceGrpc.getParametersMethod) == null) {
-          DataServiceGrpc.getParametersMethod = getParametersMethod =
+        if ((getGetParametersMethod = DataServiceGrpc.getGetParametersMethod) == null) {
+          DataServiceGrpc.getGetParametersMethod = getGetParametersMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Parameter>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "parameters"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetParameters"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Parameter.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("parameters"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetParameters"))
               .build();
         }
       }
     }
-    return getParametersMethod;
+    return getGetParametersMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ParameterStatus> getParameterMethod;
+      org.openlca.proto.services.Services.ParameterStatus> getGetParameterMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "parameter",
+      fullMethodName = SERVICE_NAME + '/' + "GetParameter",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ParameterStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ParameterStatus> getParameterMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ParameterStatus> getParameterMethod;
-    if ((getParameterMethod = DataServiceGrpc.getParameterMethod) == null) {
+      org.openlca.proto.services.Services.ParameterStatus> getGetParameterMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ParameterStatus> getGetParameterMethod;
+    if ((getGetParameterMethod = DataServiceGrpc.getGetParameterMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getParameterMethod = DataServiceGrpc.getParameterMethod) == null) {
-          DataServiceGrpc.getParameterMethod = getParameterMethod =
+        if ((getGetParameterMethod = DataServiceGrpc.getGetParameterMethod) == null) {
+          DataServiceGrpc.getGetParameterMethod = getGetParameterMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ParameterStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "parameter"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetParameter"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ParameterStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("parameter"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetParameter"))
               .build();
         }
       }
     }
-    return getParameterMethod;
+    return getGetParameterMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Parameter,
       org.openlca.proto.services.Services.RefStatus> getPutParameterMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_parameter",
+      fullMethodName = SERVICE_NAME + '/' + "PutParameter",
       requestType = org.openlca.proto.Proto.Parameter.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -974,13 +974,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutParameterMethod = getPutParameterMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Parameter, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_parameter"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutParameter"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Parameter.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_parameter"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutParameter"))
               .build();
         }
       }
@@ -989,72 +989,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Process> getProcessesMethod;
+      org.openlca.proto.Proto.Process> getGetProcessesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "processes",
+      fullMethodName = SERVICE_NAME + '/' + "GetProcesses",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Process.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Process> getProcessesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Process> getProcessesMethod;
-    if ((getProcessesMethod = DataServiceGrpc.getProcessesMethod) == null) {
+      org.openlca.proto.Proto.Process> getGetProcessesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Process> getGetProcessesMethod;
+    if ((getGetProcessesMethod = DataServiceGrpc.getGetProcessesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProcessesMethod = DataServiceGrpc.getProcessesMethod) == null) {
-          DataServiceGrpc.getProcessesMethod = getProcessesMethod =
+        if ((getGetProcessesMethod = DataServiceGrpc.getGetProcessesMethod) == null) {
+          DataServiceGrpc.getGetProcessesMethod = getGetProcessesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Process>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "processes"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProcesses"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Process.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("processes"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProcesses"))
               .build();
         }
       }
     }
-    return getProcessesMethod;
+    return getGetProcessesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProcessStatus> getProcessMethod;
+      org.openlca.proto.services.Services.ProcessStatus> getGetProcessMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "process",
+      fullMethodName = SERVICE_NAME + '/' + "GetProcess",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ProcessStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProcessStatus> getProcessMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProcessStatus> getProcessMethod;
-    if ((getProcessMethod = DataServiceGrpc.getProcessMethod) == null) {
+      org.openlca.proto.services.Services.ProcessStatus> getGetProcessMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProcessStatus> getGetProcessMethod;
+    if ((getGetProcessMethod = DataServiceGrpc.getGetProcessMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProcessMethod = DataServiceGrpc.getProcessMethod) == null) {
-          DataServiceGrpc.getProcessMethod = getProcessMethod =
+        if ((getGetProcessMethod = DataServiceGrpc.getGetProcessMethod) == null) {
+          DataServiceGrpc.getGetProcessMethod = getGetProcessMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProcessStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "process"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProcess"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ProcessStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("process"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProcess"))
               .build();
         }
       }
     }
-    return getProcessMethod;
+    return getGetProcessMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Process,
       org.openlca.proto.services.Services.RefStatus> getPutProcessMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_process",
+      fullMethodName = SERVICE_NAME + '/' + "PutProcess",
       requestType = org.openlca.proto.Proto.Process.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1067,13 +1067,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutProcessMethod = getPutProcessMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Process, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_process"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutProcess"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Process.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_process"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutProcess"))
               .build();
         }
       }
@@ -1082,72 +1082,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ProductSystem> getProductSystemsMethod;
+      org.openlca.proto.Proto.ProductSystem> getGetProductSystemsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "product_systems",
+      fullMethodName = SERVICE_NAME + '/' + "GetProductSystems",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.ProductSystem.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.ProductSystem> getProductSystemsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ProductSystem> getProductSystemsMethod;
-    if ((getProductSystemsMethod = DataServiceGrpc.getProductSystemsMethod) == null) {
+      org.openlca.proto.Proto.ProductSystem> getGetProductSystemsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ProductSystem> getGetProductSystemsMethod;
+    if ((getGetProductSystemsMethod = DataServiceGrpc.getGetProductSystemsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProductSystemsMethod = DataServiceGrpc.getProductSystemsMethod) == null) {
-          DataServiceGrpc.getProductSystemsMethod = getProductSystemsMethod =
+        if ((getGetProductSystemsMethod = DataServiceGrpc.getGetProductSystemsMethod) == null) {
+          DataServiceGrpc.getGetProductSystemsMethod = getGetProductSystemsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.ProductSystem>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "product_systems"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductSystems"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ProductSystem.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("product_systems"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProductSystems"))
               .build();
         }
       }
     }
-    return getProductSystemsMethod;
+    return getGetProductSystemsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProductSystemStatus> getProductSystemMethod;
+      org.openlca.proto.services.Services.ProductSystemStatus> getGetProductSystemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "product_system",
+      fullMethodName = SERVICE_NAME + '/' + "GetProductSystem",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ProductSystemStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProductSystemStatus> getProductSystemMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProductSystemStatus> getProductSystemMethod;
-    if ((getProductSystemMethod = DataServiceGrpc.getProductSystemMethod) == null) {
+      org.openlca.proto.services.Services.ProductSystemStatus> getGetProductSystemMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProductSystemStatus> getGetProductSystemMethod;
+    if ((getGetProductSystemMethod = DataServiceGrpc.getGetProductSystemMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProductSystemMethod = DataServiceGrpc.getProductSystemMethod) == null) {
-          DataServiceGrpc.getProductSystemMethod = getProductSystemMethod =
+        if ((getGetProductSystemMethod = DataServiceGrpc.getGetProductSystemMethod) == null) {
+          DataServiceGrpc.getGetProductSystemMethod = getGetProductSystemMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProductSystemStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "product_system"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductSystem"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ProductSystemStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("product_system"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProductSystem"))
               .build();
         }
       }
     }
-    return getProductSystemMethod;
+    return getGetProductSystemMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.ProductSystem,
       org.openlca.proto.services.Services.RefStatus> getPutProductSystemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_product_system",
+      fullMethodName = SERVICE_NAME + '/' + "PutProductSystem",
       requestType = org.openlca.proto.Proto.ProductSystem.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1160,13 +1160,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutProductSystemMethod = getPutProductSystemMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.ProductSystem, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_product_system"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutProductSystem"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.ProductSystem.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_product_system"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutProductSystem"))
               .build();
         }
       }
@@ -1175,72 +1175,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Project> getProjectsMethod;
+      org.openlca.proto.Proto.Project> getGetProjectsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "projects",
+      fullMethodName = SERVICE_NAME + '/' + "GetProjects",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Project.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Project> getProjectsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Project> getProjectsMethod;
-    if ((getProjectsMethod = DataServiceGrpc.getProjectsMethod) == null) {
+      org.openlca.proto.Proto.Project> getGetProjectsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Project> getGetProjectsMethod;
+    if ((getGetProjectsMethod = DataServiceGrpc.getGetProjectsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProjectsMethod = DataServiceGrpc.getProjectsMethod) == null) {
-          DataServiceGrpc.getProjectsMethod = getProjectsMethod =
+        if ((getGetProjectsMethod = DataServiceGrpc.getGetProjectsMethod) == null) {
+          DataServiceGrpc.getGetProjectsMethod = getGetProjectsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Project>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "projects"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProjects"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Project.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("projects"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProjects"))
               .build();
         }
       }
     }
-    return getProjectsMethod;
+    return getGetProjectsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProjectStatus> getProjectMethod;
+      org.openlca.proto.services.Services.ProjectStatus> getGetProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "project",
+      fullMethodName = SERVICE_NAME + '/' + "GetProject",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.ProjectStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.ProjectStatus> getProjectMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProjectStatus> getProjectMethod;
-    if ((getProjectMethod = DataServiceGrpc.getProjectMethod) == null) {
+      org.openlca.proto.services.Services.ProjectStatus> getGetProjectMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProjectStatus> getGetProjectMethod;
+    if ((getGetProjectMethod = DataServiceGrpc.getGetProjectMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getProjectMethod = DataServiceGrpc.getProjectMethod) == null) {
-          DataServiceGrpc.getProjectMethod = getProjectMethod =
+        if ((getGetProjectMethod = DataServiceGrpc.getGetProjectMethod) == null) {
+          DataServiceGrpc.getGetProjectMethod = getGetProjectMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.ProjectStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "project"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.ProjectStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("project"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProject"))
               .build();
         }
       }
     }
-    return getProjectMethod;
+    return getGetProjectMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Project,
       org.openlca.proto.services.Services.RefStatus> getPutProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_project",
+      fullMethodName = SERVICE_NAME + '/' + "PutProject",
       requestType = org.openlca.proto.Proto.Project.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1253,13 +1253,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutProjectMethod = getPutProjectMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Project, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_project"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Project.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_project"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutProject"))
               .build();
         }
       }
@@ -1268,72 +1268,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.SocialIndicator> getSocialIndicatorsMethod;
+      org.openlca.proto.Proto.SocialIndicator> getGetSocialIndicatorsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "social_indicators",
+      fullMethodName = SERVICE_NAME + '/' + "GetSocialIndicators",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.SocialIndicator.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.SocialIndicator> getSocialIndicatorsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.SocialIndicator> getSocialIndicatorsMethod;
-    if ((getSocialIndicatorsMethod = DataServiceGrpc.getSocialIndicatorsMethod) == null) {
+      org.openlca.proto.Proto.SocialIndicator> getGetSocialIndicatorsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.SocialIndicator> getGetSocialIndicatorsMethod;
+    if ((getGetSocialIndicatorsMethod = DataServiceGrpc.getGetSocialIndicatorsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getSocialIndicatorsMethod = DataServiceGrpc.getSocialIndicatorsMethod) == null) {
-          DataServiceGrpc.getSocialIndicatorsMethod = getSocialIndicatorsMethod =
+        if ((getGetSocialIndicatorsMethod = DataServiceGrpc.getGetSocialIndicatorsMethod) == null) {
+          DataServiceGrpc.getGetSocialIndicatorsMethod = getGetSocialIndicatorsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.SocialIndicator>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "social_indicators"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSocialIndicators"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.SocialIndicator.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("social_indicators"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetSocialIndicators"))
               .build();
         }
       }
     }
-    return getSocialIndicatorsMethod;
+    return getGetSocialIndicatorsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.SocialIndicatorStatus> getSocialIndicatorMethod;
+      org.openlca.proto.services.Services.SocialIndicatorStatus> getGetSocialIndicatorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "social_indicator",
+      fullMethodName = SERVICE_NAME + '/' + "GetSocialIndicator",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.SocialIndicatorStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.SocialIndicatorStatus> getSocialIndicatorMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SocialIndicatorStatus> getSocialIndicatorMethod;
-    if ((getSocialIndicatorMethod = DataServiceGrpc.getSocialIndicatorMethod) == null) {
+      org.openlca.proto.services.Services.SocialIndicatorStatus> getGetSocialIndicatorMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SocialIndicatorStatus> getGetSocialIndicatorMethod;
+    if ((getGetSocialIndicatorMethod = DataServiceGrpc.getGetSocialIndicatorMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getSocialIndicatorMethod = DataServiceGrpc.getSocialIndicatorMethod) == null) {
-          DataServiceGrpc.getSocialIndicatorMethod = getSocialIndicatorMethod =
+        if ((getGetSocialIndicatorMethod = DataServiceGrpc.getGetSocialIndicatorMethod) == null) {
+          DataServiceGrpc.getGetSocialIndicatorMethod = getGetSocialIndicatorMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SocialIndicatorStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "social_indicator"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSocialIndicator"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.SocialIndicatorStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("social_indicator"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetSocialIndicator"))
               .build();
         }
       }
     }
-    return getSocialIndicatorMethod;
+    return getGetSocialIndicatorMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.SocialIndicator,
       org.openlca.proto.services.Services.RefStatus> getPutSocialIndicatorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_social_indicator",
+      fullMethodName = SERVICE_NAME + '/' + "PutSocialIndicator",
       requestType = org.openlca.proto.Proto.SocialIndicator.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1346,13 +1346,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutSocialIndicatorMethod = getPutSocialIndicatorMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.SocialIndicator, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_social_indicator"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutSocialIndicator"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.SocialIndicator.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_social_indicator"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutSocialIndicator"))
               .build();
         }
       }
@@ -1361,72 +1361,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Source> getSourcesMethod;
+      org.openlca.proto.Proto.Source> getGetSourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "sources",
+      fullMethodName = SERVICE_NAME + '/' + "GetSources",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.Source.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.Source> getSourcesMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Source> getSourcesMethod;
-    if ((getSourcesMethod = DataServiceGrpc.getSourcesMethod) == null) {
+      org.openlca.proto.Proto.Source> getGetSourcesMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Source> getGetSourcesMethod;
+    if ((getGetSourcesMethod = DataServiceGrpc.getGetSourcesMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getSourcesMethod = DataServiceGrpc.getSourcesMethod) == null) {
-          DataServiceGrpc.getSourcesMethod = getSourcesMethod =
+        if ((getGetSourcesMethod = DataServiceGrpc.getGetSourcesMethod) == null) {
+          DataServiceGrpc.getGetSourcesMethod = getGetSourcesMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.Source>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sources"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSources"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Source.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("sources"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetSources"))
               .build();
         }
       }
     }
-    return getSourcesMethod;
+    return getGetSourcesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.SourceStatus> getSourceMethod;
+      org.openlca.proto.services.Services.SourceStatus> getGetSourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "source",
+      fullMethodName = SERVICE_NAME + '/' + "GetSource",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.SourceStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.SourceStatus> getSourceMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SourceStatus> getSourceMethod;
-    if ((getSourceMethod = DataServiceGrpc.getSourceMethod) == null) {
+      org.openlca.proto.services.Services.SourceStatus> getGetSourceMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SourceStatus> getGetSourceMethod;
+    if ((getGetSourceMethod = DataServiceGrpc.getGetSourceMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getSourceMethod = DataServiceGrpc.getSourceMethod) == null) {
-          DataServiceGrpc.getSourceMethod = getSourceMethod =
+        if ((getGetSourceMethod = DataServiceGrpc.getGetSourceMethod) == null) {
+          DataServiceGrpc.getGetSourceMethod = getGetSourceMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.SourceStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "source"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSource"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.SourceStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("source"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetSource"))
               .build();
         }
       }
     }
-    return getSourceMethod;
+    return getGetSourceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Source,
       org.openlca.proto.services.Services.RefStatus> getPutSourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_source",
+      fullMethodName = SERVICE_NAME + '/' + "PutSource",
       requestType = org.openlca.proto.Proto.Source.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1439,13 +1439,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutSourceMethod = getPutSourceMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Source, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_source"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutSource"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Source.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_source"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutSource"))
               .build();
         }
       }
@@ -1454,72 +1454,72 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.UnitGroup> getUnitGroupsMethod;
+      org.openlca.proto.Proto.UnitGroup> getGetUnitGroupsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "unit_groups",
+      fullMethodName = SERVICE_NAME + '/' + "GetUnitGroups",
       requestType = org.openlca.proto.services.Services.Empty.class,
       responseType = org.openlca.proto.Proto.UnitGroup.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
-      org.openlca.proto.Proto.UnitGroup> getUnitGroupsMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.UnitGroup> getUnitGroupsMethod;
-    if ((getUnitGroupsMethod = DataServiceGrpc.getUnitGroupsMethod) == null) {
+      org.openlca.proto.Proto.UnitGroup> getGetUnitGroupsMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.UnitGroup> getGetUnitGroupsMethod;
+    if ((getGetUnitGroupsMethod = DataServiceGrpc.getGetUnitGroupsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getUnitGroupsMethod = DataServiceGrpc.getUnitGroupsMethod) == null) {
-          DataServiceGrpc.getUnitGroupsMethod = getUnitGroupsMethod =
+        if ((getGetUnitGroupsMethod = DataServiceGrpc.getGetUnitGroupsMethod) == null) {
+          DataServiceGrpc.getGetUnitGroupsMethod = getGetUnitGroupsMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.Empty, org.openlca.proto.Proto.UnitGroup>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "unit_groups"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUnitGroups"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.UnitGroup.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("unit_groups"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetUnitGroups"))
               .build();
         }
       }
     }
-    return getUnitGroupsMethod;
+    return getGetUnitGroupsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.UnitGroupStatus> getUnitGroupMethod;
+      org.openlca.proto.services.Services.UnitGroupStatus> getGetUnitGroupMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "unit_group",
+      fullMethodName = SERVICE_NAME + '/' + "GetUnitGroup",
       requestType = org.openlca.proto.Proto.Ref.class,
       responseType = org.openlca.proto.services.Services.UnitGroupStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref,
-      org.openlca.proto.services.Services.UnitGroupStatus> getUnitGroupMethod() {
-    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.UnitGroupStatus> getUnitGroupMethod;
-    if ((getUnitGroupMethod = DataServiceGrpc.getUnitGroupMethod) == null) {
+      org.openlca.proto.services.Services.UnitGroupStatus> getGetUnitGroupMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.UnitGroupStatus> getGetUnitGroupMethod;
+    if ((getGetUnitGroupMethod = DataServiceGrpc.getGetUnitGroupMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getUnitGroupMethod = DataServiceGrpc.getUnitGroupMethod) == null) {
-          DataServiceGrpc.getUnitGroupMethod = getUnitGroupMethod =
+        if ((getGetUnitGroupMethod = DataServiceGrpc.getGetUnitGroupMethod) == null) {
+          DataServiceGrpc.getGetUnitGroupMethod = getGetUnitGroupMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.Ref, org.openlca.proto.services.Services.UnitGroupStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "unit_group"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUnitGroup"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.Ref.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.UnitGroupStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("unit_group"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetUnitGroup"))
               .build();
         }
       }
     }
-    return getUnitGroupMethod;
+    return getGetUnitGroupMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.UnitGroup,
       org.openlca.proto.services.Services.RefStatus> getPutUnitGroupMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "put_unit_group",
+      fullMethodName = SERVICE_NAME + '/' + "PutUnitGroup",
       requestType = org.openlca.proto.Proto.UnitGroup.class,
       responseType = org.openlca.proto.services.Services.RefStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -1532,13 +1532,13 @@ public final class DataServiceGrpc {
           DataServiceGrpc.getPutUnitGroupMethod = getPutUnitGroupMethod =
               io.grpc.MethodDescriptor.<org.openlca.proto.Proto.UnitGroup, org.openlca.proto.services.Services.RefStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put_unit_group"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutUnitGroup"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.Proto.UnitGroup.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.openlca.proto.services.Services.RefStatus.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("put_unit_group"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PutUnitGroup"))
               .build();
         }
       }
@@ -1611,16 +1611,16 @@ public final class DataServiceGrpc {
      * methods for Actor
      * </pre>
      */
-    public void actors(org.openlca.proto.services.Services.Empty request,
+    public void getActors(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
-      asyncUnimplementedUnaryCall(getActorsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetActorsMethod(), responseObserver);
     }
 
     /**
      */
-    public void actor(org.openlca.proto.Proto.Ref request,
+    public void getActor(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ActorStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getActorMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetActorMethod(), responseObserver);
     }
 
     /**
@@ -1635,16 +1635,16 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public void categories(org.openlca.proto.services.Services.Empty request,
+    public void getCategories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category> responseObserver) {
-      asyncUnimplementedUnaryCall(getCategoriesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCategoriesMethod(), responseObserver);
     }
 
     /**
      */
-    public void category(org.openlca.proto.Proto.Ref request,
+    public void getCategory(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CategoryStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getCategoryMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCategoryMethod(), responseObserver);
     }
 
     /**
@@ -1659,16 +1659,16 @@ public final class DataServiceGrpc {
      * methods for Currency
      * </pre>
      */
-    public void currencies(org.openlca.proto.services.Services.Empty request,
+    public void getCurrencies(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Currency> responseObserver) {
-      asyncUnimplementedUnaryCall(getCurrenciesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCurrenciesMethod(), responseObserver);
     }
 
     /**
      */
-    public void currency(org.openlca.proto.Proto.Ref request,
+    public void getCurrency(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CurrencyStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getCurrencyMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCurrencyMethod(), responseObserver);
     }
 
     /**
@@ -1683,23 +1683,23 @@ public final class DataServiceGrpc {
      * methods for DQSystem
      * </pre>
      */
-    public void dqSystems(org.openlca.proto.services.Services.Empty request,
+    public void getDQSystems(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.DQSystem> responseObserver) {
-      asyncUnimplementedUnaryCall(getDqSystemsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetDQSystemsMethod(), responseObserver);
     }
 
     /**
      */
-    public void dqSystem(org.openlca.proto.Proto.Ref request,
+    public void getDQSystem(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getDqSystemMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetDQSystemMethod(), responseObserver);
     }
 
     /**
      */
-    public void putDqSystem(org.openlca.proto.Proto.DQSystem request,
+    public void putDQSystem(org.openlca.proto.Proto.DQSystem request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getPutDqSystemMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPutDQSystemMethod(), responseObserver);
     }
 
     /**
@@ -1707,16 +1707,16 @@ public final class DataServiceGrpc {
      * methods for Flow
      * </pre>
      */
-    public void flows(org.openlca.proto.services.Services.Empty request,
+    public void getFlows(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Flow> responseObserver) {
-      asyncUnimplementedUnaryCall(getFlowsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetFlowsMethod(), responseObserver);
     }
 
     /**
      */
-    public void flow(org.openlca.proto.Proto.Ref request,
+    public void getFlow(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getFlowMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetFlowMethod(), responseObserver);
     }
 
     /**
@@ -1731,16 +1731,16 @@ public final class DataServiceGrpc {
      * methods for FlowProperty
      * </pre>
      */
-    public void flowProperties(org.openlca.proto.services.Services.Empty request,
+    public void getFlowProperties(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.FlowProperty> responseObserver) {
-      asyncUnimplementedUnaryCall(getFlowPropertiesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetFlowPropertiesMethod(), responseObserver);
     }
 
     /**
      */
-    public void flowProperty(org.openlca.proto.Proto.Ref request,
+    public void getFlowProperty(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowPropertyStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getFlowPropertyMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetFlowPropertyMethod(), responseObserver);
     }
 
     /**
@@ -1755,16 +1755,16 @@ public final class DataServiceGrpc {
      * methods for ImpactCategory
      * </pre>
      */
-    public void impactCategories(org.openlca.proto.services.Services.Empty request,
+    public void getImpactCategories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactCategory> responseObserver) {
-      asyncUnimplementedUnaryCall(getImpactCategoriesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetImpactCategoriesMethod(), responseObserver);
     }
 
     /**
      */
-    public void impactCategory(org.openlca.proto.Proto.Ref request,
+    public void getImpactCategory(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactCategoryStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getImpactCategoryMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetImpactCategoryMethod(), responseObserver);
     }
 
     /**
@@ -1779,16 +1779,16 @@ public final class DataServiceGrpc {
      * methods for ImpactMethod
      * </pre>
      */
-    public void impactMethods(org.openlca.proto.services.Services.Empty request,
+    public void getImpactMethods(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactMethod> responseObserver) {
-      asyncUnimplementedUnaryCall(getImpactMethodsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetImpactMethodsMethod(), responseObserver);
     }
 
     /**
      */
-    public void impactMethod(org.openlca.proto.Proto.Ref request,
+    public void getImpactMethod(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactMethodStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getImpactMethodMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetImpactMethodMethod(), responseObserver);
     }
 
     /**
@@ -1803,16 +1803,16 @@ public final class DataServiceGrpc {
      * methods for Location
      * </pre>
      */
-    public void locations(org.openlca.proto.services.Services.Empty request,
+    public void getLocations(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Location> responseObserver) {
-      asyncUnimplementedUnaryCall(getLocationsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetLocationsMethod(), responseObserver);
     }
 
     /**
      */
-    public void location(org.openlca.proto.Proto.Ref request,
+    public void getLocation(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.LocationStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getLocationMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetLocationMethod(), responseObserver);
     }
 
     /**
@@ -1827,16 +1827,16 @@ public final class DataServiceGrpc {
      * methods for Parameter
      * </pre>
      */
-    public void parameters(org.openlca.proto.services.Services.Empty request,
+    public void getParameters(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Parameter> responseObserver) {
-      asyncUnimplementedUnaryCall(getParametersMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetParametersMethod(), responseObserver);
     }
 
     /**
      */
-    public void parameter(org.openlca.proto.Proto.Ref request,
+    public void getParameter(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ParameterStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getParameterMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetParameterMethod(), responseObserver);
     }
 
     /**
@@ -1851,16 +1851,16 @@ public final class DataServiceGrpc {
      * methods for Process
      * </pre>
      */
-    public void processes(org.openlca.proto.services.Services.Empty request,
+    public void getProcesses(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Process> responseObserver) {
-      asyncUnimplementedUnaryCall(getProcessesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProcessesMethod(), responseObserver);
     }
 
     /**
      */
-    public void process(org.openlca.proto.Proto.Ref request,
+    public void getProcess(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProcessStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getProcessMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProcessMethod(), responseObserver);
     }
 
     /**
@@ -1875,16 +1875,16 @@ public final class DataServiceGrpc {
      * methods for ProductSystem
      * </pre>
      */
-    public void productSystems(org.openlca.proto.services.Services.Empty request,
+    public void getProductSystems(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProductSystem> responseObserver) {
-      asyncUnimplementedUnaryCall(getProductSystemsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProductSystemsMethod(), responseObserver);
     }
 
     /**
      */
-    public void productSystem(org.openlca.proto.Proto.Ref request,
+    public void getProductSystem(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProductSystemStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getProductSystemMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProductSystemMethod(), responseObserver);
     }
 
     /**
@@ -1899,16 +1899,16 @@ public final class DataServiceGrpc {
      * methods for Project
      * </pre>
      */
-    public void projects(org.openlca.proto.services.Services.Empty request,
+    public void getProjects(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Project> responseObserver) {
-      asyncUnimplementedUnaryCall(getProjectsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProjectsMethod(), responseObserver);
     }
 
     /**
      */
-    public void project(org.openlca.proto.Proto.Ref request,
+    public void getProject(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProjectStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getProjectMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProjectMethod(), responseObserver);
     }
 
     /**
@@ -1923,16 +1923,16 @@ public final class DataServiceGrpc {
      * methods for SocialIndicator
      * </pre>
      */
-    public void socialIndicators(org.openlca.proto.services.Services.Empty request,
+    public void getSocialIndicators(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.SocialIndicator> responseObserver) {
-      asyncUnimplementedUnaryCall(getSocialIndicatorsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSocialIndicatorsMethod(), responseObserver);
     }
 
     /**
      */
-    public void socialIndicator(org.openlca.proto.Proto.Ref request,
+    public void getSocialIndicator(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SocialIndicatorStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSocialIndicatorMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSocialIndicatorMethod(), responseObserver);
     }
 
     /**
@@ -1947,16 +1947,16 @@ public final class DataServiceGrpc {
      * methods for Source
      * </pre>
      */
-    public void sources(org.openlca.proto.services.Services.Empty request,
+    public void getSources(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Source> responseObserver) {
-      asyncUnimplementedUnaryCall(getSourcesMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSourcesMethod(), responseObserver);
     }
 
     /**
      */
-    public void source(org.openlca.proto.Proto.Ref request,
+    public void getSource(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SourceStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSourceMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSourceMethod(), responseObserver);
     }
 
     /**
@@ -1971,16 +1971,16 @@ public final class DataServiceGrpc {
      * methods for UnitGroup
      * </pre>
      */
-    public void unitGroups(org.openlca.proto.services.Services.Empty request,
+    public void getUnitGroups(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.UnitGroup> responseObserver) {
-      asyncUnimplementedUnaryCall(getUnitGroupsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetUnitGroupsMethod(), responseObserver);
     }
 
     /**
      */
-    public void unitGroup(org.openlca.proto.Proto.Ref request,
+    public void getUnitGroup(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.UnitGroupStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getUnitGroupMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetUnitGroupMethod(), responseObserver);
     }
 
     /**
@@ -2000,19 +2000,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.Status>(
                   this, METHODID_DELETE)))
           .addMethod(
-            getActorsMethod(),
+            getGetActorsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Actor>(
-                  this, METHODID_ACTORS)))
+                  this, METHODID_GET_ACTORS)))
           .addMethod(
-            getActorMethod(),
+            getGetActorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ActorStatus>(
-                  this, METHODID_ACTOR)))
+                  this, METHODID_GET_ACTOR)))
           .addMethod(
             getPutActorMethod(),
             asyncUnaryCall(
@@ -2021,19 +2021,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_ACTOR)))
           .addMethod(
-            getCategoriesMethod(),
+            getGetCategoriesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Category>(
-                  this, METHODID_CATEGORIES)))
+                  this, METHODID_GET_CATEGORIES)))
           .addMethod(
-            getCategoryMethod(),
+            getGetCategoryMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.CategoryStatus>(
-                  this, METHODID_CATEGORY)))
+                  this, METHODID_GET_CATEGORY)))
           .addMethod(
             getPutCategoryMethod(),
             asyncUnaryCall(
@@ -2042,19 +2042,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_CATEGORY)))
           .addMethod(
-            getCurrenciesMethod(),
+            getGetCurrenciesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Currency>(
-                  this, METHODID_CURRENCIES)))
+                  this, METHODID_GET_CURRENCIES)))
           .addMethod(
-            getCurrencyMethod(),
+            getGetCurrencyMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.CurrencyStatus>(
-                  this, METHODID_CURRENCY)))
+                  this, METHODID_GET_CURRENCY)))
           .addMethod(
             getPutCurrencyMethod(),
             asyncUnaryCall(
@@ -2063,40 +2063,40 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_CURRENCY)))
           .addMethod(
-            getDqSystemsMethod(),
+            getGetDQSystemsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.DQSystem>(
-                  this, METHODID_DQ_SYSTEMS)))
+                  this, METHODID_GET_DQSYSTEMS)))
           .addMethod(
-            getDqSystemMethod(),
+            getGetDQSystemMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.DQSystemStatus>(
-                  this, METHODID_DQ_SYSTEM)))
+                  this, METHODID_GET_DQSYSTEM)))
           .addMethod(
-            getPutDqSystemMethod(),
+            getPutDQSystemMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.DQSystem,
                 org.openlca.proto.services.Services.RefStatus>(
-                  this, METHODID_PUT_DQ_SYSTEM)))
+                  this, METHODID_PUT_DQSYSTEM)))
           .addMethod(
-            getFlowsMethod(),
+            getGetFlowsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Flow>(
-                  this, METHODID_FLOWS)))
+                  this, METHODID_GET_FLOWS)))
           .addMethod(
-            getFlowMethod(),
+            getGetFlowMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.FlowStatus>(
-                  this, METHODID_FLOW)))
+                  this, METHODID_GET_FLOW)))
           .addMethod(
             getPutFlowMethod(),
             asyncUnaryCall(
@@ -2105,19 +2105,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_FLOW)))
           .addMethod(
-            getFlowPropertiesMethod(),
+            getGetFlowPropertiesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.FlowProperty>(
-                  this, METHODID_FLOW_PROPERTIES)))
+                  this, METHODID_GET_FLOW_PROPERTIES)))
           .addMethod(
-            getFlowPropertyMethod(),
+            getGetFlowPropertyMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.FlowPropertyStatus>(
-                  this, METHODID_FLOW_PROPERTY)))
+                  this, METHODID_GET_FLOW_PROPERTY)))
           .addMethod(
             getPutFlowPropertyMethod(),
             asyncUnaryCall(
@@ -2126,19 +2126,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_FLOW_PROPERTY)))
           .addMethod(
-            getImpactCategoriesMethod(),
+            getGetImpactCategoriesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.ImpactCategory>(
-                  this, METHODID_IMPACT_CATEGORIES)))
+                  this, METHODID_GET_IMPACT_CATEGORIES)))
           .addMethod(
-            getImpactCategoryMethod(),
+            getGetImpactCategoryMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ImpactCategoryStatus>(
-                  this, METHODID_IMPACT_CATEGORY)))
+                  this, METHODID_GET_IMPACT_CATEGORY)))
           .addMethod(
             getPutImpactCategoryMethod(),
             asyncUnaryCall(
@@ -2147,19 +2147,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_IMPACT_CATEGORY)))
           .addMethod(
-            getImpactMethodsMethod(),
+            getGetImpactMethodsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.ImpactMethod>(
-                  this, METHODID_IMPACT_METHODS)))
+                  this, METHODID_GET_IMPACT_METHODS)))
           .addMethod(
-            getImpactMethodMethod(),
+            getGetImpactMethodMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ImpactMethodStatus>(
-                  this, METHODID_IMPACT_METHOD)))
+                  this, METHODID_GET_IMPACT_METHOD)))
           .addMethod(
             getPutImpactMethodMethod(),
             asyncUnaryCall(
@@ -2168,19 +2168,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_IMPACT_METHOD)))
           .addMethod(
-            getLocationsMethod(),
+            getGetLocationsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Location>(
-                  this, METHODID_LOCATIONS)))
+                  this, METHODID_GET_LOCATIONS)))
           .addMethod(
-            getLocationMethod(),
+            getGetLocationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.LocationStatus>(
-                  this, METHODID_LOCATION)))
+                  this, METHODID_GET_LOCATION)))
           .addMethod(
             getPutLocationMethod(),
             asyncUnaryCall(
@@ -2189,19 +2189,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_LOCATION)))
           .addMethod(
-            getParametersMethod(),
+            getGetParametersMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Parameter>(
-                  this, METHODID_PARAMETERS)))
+                  this, METHODID_GET_PARAMETERS)))
           .addMethod(
-            getParameterMethod(),
+            getGetParameterMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ParameterStatus>(
-                  this, METHODID_PARAMETER)))
+                  this, METHODID_GET_PARAMETER)))
           .addMethod(
             getPutParameterMethod(),
             asyncUnaryCall(
@@ -2210,19 +2210,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_PARAMETER)))
           .addMethod(
-            getProcessesMethod(),
+            getGetProcessesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Process>(
-                  this, METHODID_PROCESSES)))
+                  this, METHODID_GET_PROCESSES)))
           .addMethod(
-            getProcessMethod(),
+            getGetProcessMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ProcessStatus>(
-                  this, METHODID_PROCESS)))
+                  this, METHODID_GET_PROCESS)))
           .addMethod(
             getPutProcessMethod(),
             asyncUnaryCall(
@@ -2231,19 +2231,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_PROCESS)))
           .addMethod(
-            getProductSystemsMethod(),
+            getGetProductSystemsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.ProductSystem>(
-                  this, METHODID_PRODUCT_SYSTEMS)))
+                  this, METHODID_GET_PRODUCT_SYSTEMS)))
           .addMethod(
-            getProductSystemMethod(),
+            getGetProductSystemMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ProductSystemStatus>(
-                  this, METHODID_PRODUCT_SYSTEM)))
+                  this, METHODID_GET_PRODUCT_SYSTEM)))
           .addMethod(
             getPutProductSystemMethod(),
             asyncUnaryCall(
@@ -2252,19 +2252,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_PRODUCT_SYSTEM)))
           .addMethod(
-            getProjectsMethod(),
+            getGetProjectsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Project>(
-                  this, METHODID_PROJECTS)))
+                  this, METHODID_GET_PROJECTS)))
           .addMethod(
-            getProjectMethod(),
+            getGetProjectMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.ProjectStatus>(
-                  this, METHODID_PROJECT)))
+                  this, METHODID_GET_PROJECT)))
           .addMethod(
             getPutProjectMethod(),
             asyncUnaryCall(
@@ -2273,19 +2273,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_PROJECT)))
           .addMethod(
-            getSocialIndicatorsMethod(),
+            getGetSocialIndicatorsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.SocialIndicator>(
-                  this, METHODID_SOCIAL_INDICATORS)))
+                  this, METHODID_GET_SOCIAL_INDICATORS)))
           .addMethod(
-            getSocialIndicatorMethod(),
+            getGetSocialIndicatorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.SocialIndicatorStatus>(
-                  this, METHODID_SOCIAL_INDICATOR)))
+                  this, METHODID_GET_SOCIAL_INDICATOR)))
           .addMethod(
             getPutSocialIndicatorMethod(),
             asyncUnaryCall(
@@ -2294,19 +2294,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_SOCIAL_INDICATOR)))
           .addMethod(
-            getSourcesMethod(),
+            getGetSourcesMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.Source>(
-                  this, METHODID_SOURCES)))
+                  this, METHODID_GET_SOURCES)))
           .addMethod(
-            getSourceMethod(),
+            getGetSourceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.SourceStatus>(
-                  this, METHODID_SOURCE)))
+                  this, METHODID_GET_SOURCE)))
           .addMethod(
             getPutSourceMethod(),
             asyncUnaryCall(
@@ -2315,19 +2315,19 @@ public final class DataServiceGrpc {
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_SOURCE)))
           .addMethod(
-            getUnitGroupsMethod(),
+            getGetUnitGroupsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 org.openlca.proto.services.Services.Empty,
                 org.openlca.proto.Proto.UnitGroup>(
-                  this, METHODID_UNIT_GROUPS)))
+                  this, METHODID_GET_UNIT_GROUPS)))
           .addMethod(
-            getUnitGroupMethod(),
+            getGetUnitGroupMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.openlca.proto.Proto.Ref,
                 org.openlca.proto.services.Services.UnitGroupStatus>(
-                  this, METHODID_UNIT_GROUP)))
+                  this, METHODID_GET_UNIT_GROUP)))
           .addMethod(
             getPutUnitGroupMethod(),
             asyncUnaryCall(
@@ -2371,18 +2371,18 @@ public final class DataServiceGrpc {
      * methods for Actor
      * </pre>
      */
-    public void actors(org.openlca.proto.services.Services.Empty request,
+    public void getActors(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getActorsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetActorsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void actor(org.openlca.proto.Proto.Ref request,
+    public void getActor(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ActorStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getActorMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetActorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2398,18 +2398,18 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public void categories(org.openlca.proto.services.Services.Empty request,
+    public void getCategories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getCategoriesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetCategoriesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void category(org.openlca.proto.Proto.Ref request,
+    public void getCategory(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CategoryStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCategoryMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetCategoryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2425,18 +2425,18 @@ public final class DataServiceGrpc {
      * methods for Currency
      * </pre>
      */
-    public void currencies(org.openlca.proto.services.Services.Empty request,
+    public void getCurrencies(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Currency> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getCurrenciesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetCurrenciesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void currency(org.openlca.proto.Proto.Ref request,
+    public void getCurrency(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CurrencyStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCurrencyMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetCurrencyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2452,26 +2452,26 @@ public final class DataServiceGrpc {
      * methods for DQSystem
      * </pre>
      */
-    public void dqSystems(org.openlca.proto.services.Services.Empty request,
+    public void getDQSystems(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.DQSystem> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getDqSystemsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDQSystemsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void dqSystem(org.openlca.proto.Proto.Ref request,
+    public void getDQSystem(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDqSystemMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDQSystemMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void putDqSystem(org.openlca.proto.Proto.DQSystem request,
+    public void putDQSystem(org.openlca.proto.Proto.DQSystem request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPutDqSystemMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getPutDQSystemMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2479,18 +2479,18 @@ public final class DataServiceGrpc {
      * methods for Flow
      * </pre>
      */
-    public void flows(org.openlca.proto.services.Services.Empty request,
+    public void getFlows(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Flow> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getFlowsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetFlowsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void flow(org.openlca.proto.Proto.Ref request,
+    public void getFlow(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getFlowMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetFlowMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2506,18 +2506,18 @@ public final class DataServiceGrpc {
      * methods for FlowProperty
      * </pre>
      */
-    public void flowProperties(org.openlca.proto.services.Services.Empty request,
+    public void getFlowProperties(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.FlowProperty> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getFlowPropertiesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetFlowPropertiesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void flowProperty(org.openlca.proto.Proto.Ref request,
+    public void getFlowProperty(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowPropertyStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getFlowPropertyMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetFlowPropertyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2533,18 +2533,18 @@ public final class DataServiceGrpc {
      * methods for ImpactCategory
      * </pre>
      */
-    public void impactCategories(org.openlca.proto.services.Services.Empty request,
+    public void getImpactCategories(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactCategory> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getImpactCategoriesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetImpactCategoriesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void impactCategory(org.openlca.proto.Proto.Ref request,
+    public void getImpactCategory(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactCategoryStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImpactCategoryMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetImpactCategoryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2560,18 +2560,18 @@ public final class DataServiceGrpc {
      * methods for ImpactMethod
      * </pre>
      */
-    public void impactMethods(org.openlca.proto.services.Services.Empty request,
+    public void getImpactMethods(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactMethod> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getImpactMethodsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetImpactMethodsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void impactMethod(org.openlca.proto.Proto.Ref request,
+    public void getImpactMethod(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactMethodStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImpactMethodMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetImpactMethodMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2587,18 +2587,18 @@ public final class DataServiceGrpc {
      * methods for Location
      * </pre>
      */
-    public void locations(org.openlca.proto.services.Services.Empty request,
+    public void getLocations(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Location> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getLocationsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetLocationsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void location(org.openlca.proto.Proto.Ref request,
+    public void getLocation(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.LocationStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getLocationMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetLocationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2614,18 +2614,18 @@ public final class DataServiceGrpc {
      * methods for Parameter
      * </pre>
      */
-    public void parameters(org.openlca.proto.services.Services.Empty request,
+    public void getParameters(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Parameter> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getParametersMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetParametersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void parameter(org.openlca.proto.Proto.Ref request,
+    public void getParameter(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ParameterStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getParameterMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetParameterMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2641,18 +2641,18 @@ public final class DataServiceGrpc {
      * methods for Process
      * </pre>
      */
-    public void processes(org.openlca.proto.services.Services.Empty request,
+    public void getProcesses(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Process> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getProcessesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProcessesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void process(org.openlca.proto.Proto.Ref request,
+    public void getProcess(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProcessStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getProcessMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProcessMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2668,18 +2668,18 @@ public final class DataServiceGrpc {
      * methods for ProductSystem
      * </pre>
      */
-    public void productSystems(org.openlca.proto.services.Services.Empty request,
+    public void getProductSystems(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProductSystem> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getProductSystemsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProductSystemsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void productSystem(org.openlca.proto.Proto.Ref request,
+    public void getProductSystem(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProductSystemStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getProductSystemMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProductSystemMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2695,18 +2695,18 @@ public final class DataServiceGrpc {
      * methods for Project
      * </pre>
      */
-    public void projects(org.openlca.proto.services.Services.Empty request,
+    public void getProjects(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Project> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getProjectsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProjectsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void project(org.openlca.proto.Proto.Ref request,
+    public void getProject(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProjectStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getProjectMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProjectMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2722,18 +2722,18 @@ public final class DataServiceGrpc {
      * methods for SocialIndicator
      * </pre>
      */
-    public void socialIndicators(org.openlca.proto.services.Services.Empty request,
+    public void getSocialIndicators(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.SocialIndicator> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getSocialIndicatorsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSocialIndicatorsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void socialIndicator(org.openlca.proto.Proto.Ref request,
+    public void getSocialIndicator(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SocialIndicatorStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSocialIndicatorMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSocialIndicatorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2749,18 +2749,18 @@ public final class DataServiceGrpc {
      * methods for Source
      * </pre>
      */
-    public void sources(org.openlca.proto.services.Services.Empty request,
+    public void getSources(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Source> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getSourcesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void source(org.openlca.proto.Proto.Ref request,
+    public void getSource(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SourceStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSourceMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSourceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2776,18 +2776,18 @@ public final class DataServiceGrpc {
      * methods for UnitGroup
      * </pre>
      */
-    public void unitGroups(org.openlca.proto.services.Services.Empty request,
+    public void getUnitGroups(org.openlca.proto.services.Services.Empty request,
         io.grpc.stub.StreamObserver<org.openlca.proto.Proto.UnitGroup> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getUnitGroupsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetUnitGroupsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void unitGroup(org.openlca.proto.Proto.Ref request,
+    public void getUnitGroup(org.openlca.proto.Proto.Ref request,
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.UnitGroupStatus> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUnitGroupMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetUnitGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2830,17 +2830,17 @@ public final class DataServiceGrpc {
      * methods for Actor
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Actor> actors(
+    public java.util.Iterator<org.openlca.proto.Proto.Actor> getActors(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getActorsMethod(), getCallOptions(), request);
+          getChannel(), getGetActorsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ActorStatus actor(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ActorStatus getActor(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getActorMethod(), getCallOptions(), request);
+          getChannel(), getGetActorMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2855,17 +2855,17 @@ public final class DataServiceGrpc {
      * methods for Category
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Category> categories(
+    public java.util.Iterator<org.openlca.proto.Proto.Category> getCategories(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getCategoriesMethod(), getCallOptions(), request);
+          getChannel(), getGetCategoriesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.CategoryStatus category(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.CategoryStatus getCategory(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getCategoryMethod(), getCallOptions(), request);
+          getChannel(), getGetCategoryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2880,17 +2880,17 @@ public final class DataServiceGrpc {
      * methods for Currency
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Currency> currencies(
+    public java.util.Iterator<org.openlca.proto.Proto.Currency> getCurrencies(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getCurrenciesMethod(), getCallOptions(), request);
+          getChannel(), getGetCurrenciesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.CurrencyStatus currency(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.CurrencyStatus getCurrency(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getCurrencyMethod(), getCallOptions(), request);
+          getChannel(), getGetCurrencyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2905,24 +2905,24 @@ public final class DataServiceGrpc {
      * methods for DQSystem
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.DQSystem> dqSystems(
+    public java.util.Iterator<org.openlca.proto.Proto.DQSystem> getDQSystems(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getDqSystemsMethod(), getCallOptions(), request);
+          getChannel(), getGetDQSystemsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.DQSystemStatus dqSystem(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.DQSystemStatus getDQSystem(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getDqSystemMethod(), getCallOptions(), request);
+          getChannel(), getGetDQSystemMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.RefStatus putDqSystem(org.openlca.proto.Proto.DQSystem request) {
+    public org.openlca.proto.services.Services.RefStatus putDQSystem(org.openlca.proto.Proto.DQSystem request) {
       return blockingUnaryCall(
-          getChannel(), getPutDqSystemMethod(), getCallOptions(), request);
+          getChannel(), getPutDQSystemMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2930,17 +2930,17 @@ public final class DataServiceGrpc {
      * methods for Flow
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Flow> flows(
+    public java.util.Iterator<org.openlca.proto.Proto.Flow> getFlows(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getFlowsMethod(), getCallOptions(), request);
+          getChannel(), getGetFlowsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.FlowStatus flow(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.FlowStatus getFlow(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getFlowMethod(), getCallOptions(), request);
+          getChannel(), getGetFlowMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2955,17 +2955,17 @@ public final class DataServiceGrpc {
      * methods for FlowProperty
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.FlowProperty> flowProperties(
+    public java.util.Iterator<org.openlca.proto.Proto.FlowProperty> getFlowProperties(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getFlowPropertiesMethod(), getCallOptions(), request);
+          getChannel(), getGetFlowPropertiesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.FlowPropertyStatus flowProperty(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.FlowPropertyStatus getFlowProperty(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getFlowPropertyMethod(), getCallOptions(), request);
+          getChannel(), getGetFlowPropertyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2980,17 +2980,17 @@ public final class DataServiceGrpc {
      * methods for ImpactCategory
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.ImpactCategory> impactCategories(
+    public java.util.Iterator<org.openlca.proto.Proto.ImpactCategory> getImpactCategories(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getImpactCategoriesMethod(), getCallOptions(), request);
+          getChannel(), getGetImpactCategoriesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ImpactCategoryStatus impactCategory(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ImpactCategoryStatus getImpactCategory(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getImpactCategoryMethod(), getCallOptions(), request);
+          getChannel(), getGetImpactCategoryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3005,17 +3005,17 @@ public final class DataServiceGrpc {
      * methods for ImpactMethod
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.ImpactMethod> impactMethods(
+    public java.util.Iterator<org.openlca.proto.Proto.ImpactMethod> getImpactMethods(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getImpactMethodsMethod(), getCallOptions(), request);
+          getChannel(), getGetImpactMethodsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ImpactMethodStatus impactMethod(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ImpactMethodStatus getImpactMethod(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getImpactMethodMethod(), getCallOptions(), request);
+          getChannel(), getGetImpactMethodMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3030,17 +3030,17 @@ public final class DataServiceGrpc {
      * methods for Location
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Location> locations(
+    public java.util.Iterator<org.openlca.proto.Proto.Location> getLocations(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getLocationsMethod(), getCallOptions(), request);
+          getChannel(), getGetLocationsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.LocationStatus location(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.LocationStatus getLocation(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getLocationMethod(), getCallOptions(), request);
+          getChannel(), getGetLocationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3055,17 +3055,17 @@ public final class DataServiceGrpc {
      * methods for Parameter
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Parameter> parameters(
+    public java.util.Iterator<org.openlca.proto.Proto.Parameter> getParameters(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getParametersMethod(), getCallOptions(), request);
+          getChannel(), getGetParametersMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ParameterStatus parameter(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ParameterStatus getParameter(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getParameterMethod(), getCallOptions(), request);
+          getChannel(), getGetParameterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3080,17 +3080,17 @@ public final class DataServiceGrpc {
      * methods for Process
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Process> processes(
+    public java.util.Iterator<org.openlca.proto.Proto.Process> getProcesses(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getProcessesMethod(), getCallOptions(), request);
+          getChannel(), getGetProcessesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ProcessStatus process(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ProcessStatus getProcess(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getProcessMethod(), getCallOptions(), request);
+          getChannel(), getGetProcessMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3105,17 +3105,17 @@ public final class DataServiceGrpc {
      * methods for ProductSystem
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.ProductSystem> productSystems(
+    public java.util.Iterator<org.openlca.proto.Proto.ProductSystem> getProductSystems(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getProductSystemsMethod(), getCallOptions(), request);
+          getChannel(), getGetProductSystemsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ProductSystemStatus productSystem(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ProductSystemStatus getProductSystem(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getProductSystemMethod(), getCallOptions(), request);
+          getChannel(), getGetProductSystemMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3130,17 +3130,17 @@ public final class DataServiceGrpc {
      * methods for Project
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Project> projects(
+    public java.util.Iterator<org.openlca.proto.Proto.Project> getProjects(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getProjectsMethod(), getCallOptions(), request);
+          getChannel(), getGetProjectsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.ProjectStatus project(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.ProjectStatus getProject(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getProjectMethod(), getCallOptions(), request);
+          getChannel(), getGetProjectMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3155,17 +3155,17 @@ public final class DataServiceGrpc {
      * methods for SocialIndicator
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.SocialIndicator> socialIndicators(
+    public java.util.Iterator<org.openlca.proto.Proto.SocialIndicator> getSocialIndicators(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getSocialIndicatorsMethod(), getCallOptions(), request);
+          getChannel(), getGetSocialIndicatorsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.SocialIndicatorStatus socialIndicator(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.SocialIndicatorStatus getSocialIndicator(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getSocialIndicatorMethod(), getCallOptions(), request);
+          getChannel(), getGetSocialIndicatorMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3180,17 +3180,17 @@ public final class DataServiceGrpc {
      * methods for Source
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.Source> sources(
+    public java.util.Iterator<org.openlca.proto.Proto.Source> getSources(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getSourcesMethod(), getCallOptions(), request);
+          getChannel(), getGetSourcesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.SourceStatus source(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.SourceStatus getSource(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getSourceMethod(), getCallOptions(), request);
+          getChannel(), getGetSourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3205,17 +3205,17 @@ public final class DataServiceGrpc {
      * methods for UnitGroup
      * </pre>
      */
-    public java.util.Iterator<org.openlca.proto.Proto.UnitGroup> unitGroups(
+    public java.util.Iterator<org.openlca.proto.Proto.UnitGroup> getUnitGroups(
         org.openlca.proto.services.Services.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getUnitGroupsMethod(), getCallOptions(), request);
+          getChannel(), getGetUnitGroupsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public org.openlca.proto.services.Services.UnitGroupStatus unitGroup(org.openlca.proto.Proto.Ref request) {
+    public org.openlca.proto.services.Services.UnitGroupStatus getUnitGroup(org.openlca.proto.Proto.Ref request) {
       return blockingUnaryCall(
-          getChannel(), getUnitGroupMethod(), getCallOptions(), request);
+          getChannel(), getGetUnitGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3255,10 +3255,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ActorStatus> actor(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ActorStatus> getActor(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getActorMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetActorMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3271,10 +3271,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.CategoryStatus> category(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.CategoryStatus> getCategory(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getCategoryMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetCategoryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3287,10 +3287,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.CurrencyStatus> currency(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.CurrencyStatus> getCurrency(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getCurrencyMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetCurrencyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3303,26 +3303,26 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.DQSystemStatus> dqSystem(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.DQSystemStatus> getDQSystem(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getDqSystemMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetDQSystemMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.RefStatus> putDqSystem(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.RefStatus> putDQSystem(
         org.openlca.proto.Proto.DQSystem request) {
       return futureUnaryCall(
-          getChannel().newCall(getPutDqSystemMethod(), getCallOptions()), request);
+          getChannel().newCall(getPutDQSystemMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.FlowStatus> flow(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.FlowStatus> getFlow(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getFlowMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetFlowMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3335,10 +3335,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.FlowPropertyStatus> flowProperty(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.FlowPropertyStatus> getFlowProperty(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getFlowPropertyMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetFlowPropertyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3351,10 +3351,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ImpactCategoryStatus> impactCategory(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ImpactCategoryStatus> getImpactCategory(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getImpactCategoryMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetImpactCategoryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3367,10 +3367,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ImpactMethodStatus> impactMethod(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ImpactMethodStatus> getImpactMethod(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getImpactMethodMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetImpactMethodMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3383,10 +3383,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.LocationStatus> location(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.LocationStatus> getLocation(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getLocationMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetLocationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3399,10 +3399,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ParameterStatus> parameter(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ParameterStatus> getParameter(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getParameterMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetParameterMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3415,10 +3415,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProcessStatus> process(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProcessStatus> getProcess(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getProcessMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetProcessMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3431,10 +3431,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProductSystemStatus> productSystem(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProductSystemStatus> getProductSystem(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getProductSystemMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetProductSystemMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3447,10 +3447,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProjectStatus> project(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.ProjectStatus> getProject(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getProjectMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetProjectMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3463,10 +3463,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.SocialIndicatorStatus> socialIndicator(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.SocialIndicatorStatus> getSocialIndicator(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getSocialIndicatorMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetSocialIndicatorMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3479,10 +3479,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.SourceStatus> source(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.SourceStatus> getSource(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getSourceMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetSourceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3495,10 +3495,10 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.UnitGroupStatus> unitGroup(
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.UnitGroupStatus> getUnitGroup(
         org.openlca.proto.Proto.Ref request) {
       return futureUnaryCall(
-          getChannel().newCall(getUnitGroupMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetUnitGroupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3511,53 +3511,53 @@ public final class DataServiceGrpc {
   }
 
   private static final int METHODID_DELETE = 0;
-  private static final int METHODID_ACTORS = 1;
-  private static final int METHODID_ACTOR = 2;
+  private static final int METHODID_GET_ACTORS = 1;
+  private static final int METHODID_GET_ACTOR = 2;
   private static final int METHODID_PUT_ACTOR = 3;
-  private static final int METHODID_CATEGORIES = 4;
-  private static final int METHODID_CATEGORY = 5;
+  private static final int METHODID_GET_CATEGORIES = 4;
+  private static final int METHODID_GET_CATEGORY = 5;
   private static final int METHODID_PUT_CATEGORY = 6;
-  private static final int METHODID_CURRENCIES = 7;
-  private static final int METHODID_CURRENCY = 8;
+  private static final int METHODID_GET_CURRENCIES = 7;
+  private static final int METHODID_GET_CURRENCY = 8;
   private static final int METHODID_PUT_CURRENCY = 9;
-  private static final int METHODID_DQ_SYSTEMS = 10;
-  private static final int METHODID_DQ_SYSTEM = 11;
-  private static final int METHODID_PUT_DQ_SYSTEM = 12;
-  private static final int METHODID_FLOWS = 13;
-  private static final int METHODID_FLOW = 14;
+  private static final int METHODID_GET_DQSYSTEMS = 10;
+  private static final int METHODID_GET_DQSYSTEM = 11;
+  private static final int METHODID_PUT_DQSYSTEM = 12;
+  private static final int METHODID_GET_FLOWS = 13;
+  private static final int METHODID_GET_FLOW = 14;
   private static final int METHODID_PUT_FLOW = 15;
-  private static final int METHODID_FLOW_PROPERTIES = 16;
-  private static final int METHODID_FLOW_PROPERTY = 17;
+  private static final int METHODID_GET_FLOW_PROPERTIES = 16;
+  private static final int METHODID_GET_FLOW_PROPERTY = 17;
   private static final int METHODID_PUT_FLOW_PROPERTY = 18;
-  private static final int METHODID_IMPACT_CATEGORIES = 19;
-  private static final int METHODID_IMPACT_CATEGORY = 20;
+  private static final int METHODID_GET_IMPACT_CATEGORIES = 19;
+  private static final int METHODID_GET_IMPACT_CATEGORY = 20;
   private static final int METHODID_PUT_IMPACT_CATEGORY = 21;
-  private static final int METHODID_IMPACT_METHODS = 22;
-  private static final int METHODID_IMPACT_METHOD = 23;
+  private static final int METHODID_GET_IMPACT_METHODS = 22;
+  private static final int METHODID_GET_IMPACT_METHOD = 23;
   private static final int METHODID_PUT_IMPACT_METHOD = 24;
-  private static final int METHODID_LOCATIONS = 25;
-  private static final int METHODID_LOCATION = 26;
+  private static final int METHODID_GET_LOCATIONS = 25;
+  private static final int METHODID_GET_LOCATION = 26;
   private static final int METHODID_PUT_LOCATION = 27;
-  private static final int METHODID_PARAMETERS = 28;
-  private static final int METHODID_PARAMETER = 29;
+  private static final int METHODID_GET_PARAMETERS = 28;
+  private static final int METHODID_GET_PARAMETER = 29;
   private static final int METHODID_PUT_PARAMETER = 30;
-  private static final int METHODID_PROCESSES = 31;
-  private static final int METHODID_PROCESS = 32;
+  private static final int METHODID_GET_PROCESSES = 31;
+  private static final int METHODID_GET_PROCESS = 32;
   private static final int METHODID_PUT_PROCESS = 33;
-  private static final int METHODID_PRODUCT_SYSTEMS = 34;
-  private static final int METHODID_PRODUCT_SYSTEM = 35;
+  private static final int METHODID_GET_PRODUCT_SYSTEMS = 34;
+  private static final int METHODID_GET_PRODUCT_SYSTEM = 35;
   private static final int METHODID_PUT_PRODUCT_SYSTEM = 36;
-  private static final int METHODID_PROJECTS = 37;
-  private static final int METHODID_PROJECT = 38;
+  private static final int METHODID_GET_PROJECTS = 37;
+  private static final int METHODID_GET_PROJECT = 38;
   private static final int METHODID_PUT_PROJECT = 39;
-  private static final int METHODID_SOCIAL_INDICATORS = 40;
-  private static final int METHODID_SOCIAL_INDICATOR = 41;
+  private static final int METHODID_GET_SOCIAL_INDICATORS = 40;
+  private static final int METHODID_GET_SOCIAL_INDICATOR = 41;
   private static final int METHODID_PUT_SOCIAL_INDICATOR = 42;
-  private static final int METHODID_SOURCES = 43;
-  private static final int METHODID_SOURCE = 44;
+  private static final int METHODID_GET_SOURCES = 43;
+  private static final int METHODID_GET_SOURCE = 44;
   private static final int METHODID_PUT_SOURCE = 45;
-  private static final int METHODID_UNIT_GROUPS = 46;
-  private static final int METHODID_UNIT_GROUP = 47;
+  private static final int METHODID_GET_UNIT_GROUPS = 46;
+  private static final int METHODID_GET_UNIT_GROUP = 47;
   private static final int METHODID_PUT_UNIT_GROUP = 48;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -3581,192 +3581,192 @@ public final class DataServiceGrpc {
           serviceImpl.delete((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status>) responseObserver);
           break;
-        case METHODID_ACTORS:
-          serviceImpl.actors((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_ACTORS:
+          serviceImpl.getActors((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Actor>) responseObserver);
           break;
-        case METHODID_ACTOR:
-          serviceImpl.actor((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_ACTOR:
+          serviceImpl.getActor((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ActorStatus>) responseObserver);
           break;
         case METHODID_PUT_ACTOR:
           serviceImpl.putActor((org.openlca.proto.Proto.Actor) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_CATEGORIES:
-          serviceImpl.categories((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_CATEGORIES:
+          serviceImpl.getCategories((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Category>) responseObserver);
           break;
-        case METHODID_CATEGORY:
-          serviceImpl.category((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_CATEGORY:
+          serviceImpl.getCategory((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CategoryStatus>) responseObserver);
           break;
         case METHODID_PUT_CATEGORY:
           serviceImpl.putCategory((org.openlca.proto.Proto.Category) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_CURRENCIES:
-          serviceImpl.currencies((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_CURRENCIES:
+          serviceImpl.getCurrencies((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Currency>) responseObserver);
           break;
-        case METHODID_CURRENCY:
-          serviceImpl.currency((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_CURRENCY:
+          serviceImpl.getCurrency((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.CurrencyStatus>) responseObserver);
           break;
         case METHODID_PUT_CURRENCY:
           serviceImpl.putCurrency((org.openlca.proto.Proto.Currency) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_DQ_SYSTEMS:
-          serviceImpl.dqSystems((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_DQSYSTEMS:
+          serviceImpl.getDQSystems((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.DQSystem>) responseObserver);
           break;
-        case METHODID_DQ_SYSTEM:
-          serviceImpl.dqSystem((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_DQSYSTEM:
+          serviceImpl.getDQSystem((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.DQSystemStatus>) responseObserver);
           break;
-        case METHODID_PUT_DQ_SYSTEM:
-          serviceImpl.putDqSystem((org.openlca.proto.Proto.DQSystem) request,
+        case METHODID_PUT_DQSYSTEM:
+          serviceImpl.putDQSystem((org.openlca.proto.Proto.DQSystem) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_FLOWS:
-          serviceImpl.flows((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_FLOWS:
+          serviceImpl.getFlows((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Flow>) responseObserver);
           break;
-        case METHODID_FLOW:
-          serviceImpl.flow((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_FLOW:
+          serviceImpl.getFlow((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowStatus>) responseObserver);
           break;
         case METHODID_PUT_FLOW:
           serviceImpl.putFlow((org.openlca.proto.Proto.Flow) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_FLOW_PROPERTIES:
-          serviceImpl.flowProperties((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_FLOW_PROPERTIES:
+          serviceImpl.getFlowProperties((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.FlowProperty>) responseObserver);
           break;
-        case METHODID_FLOW_PROPERTY:
-          serviceImpl.flowProperty((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_FLOW_PROPERTY:
+          serviceImpl.getFlowProperty((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowPropertyStatus>) responseObserver);
           break;
         case METHODID_PUT_FLOW_PROPERTY:
           serviceImpl.putFlowProperty((org.openlca.proto.Proto.FlowProperty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_IMPACT_CATEGORIES:
-          serviceImpl.impactCategories((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_IMPACT_CATEGORIES:
+          serviceImpl.getImpactCategories((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactCategory>) responseObserver);
           break;
-        case METHODID_IMPACT_CATEGORY:
-          serviceImpl.impactCategory((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_IMPACT_CATEGORY:
+          serviceImpl.getImpactCategory((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactCategoryStatus>) responseObserver);
           break;
         case METHODID_PUT_IMPACT_CATEGORY:
           serviceImpl.putImpactCategory((org.openlca.proto.Proto.ImpactCategory) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_IMPACT_METHODS:
-          serviceImpl.impactMethods((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_IMPACT_METHODS:
+          serviceImpl.getImpactMethods((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ImpactMethod>) responseObserver);
           break;
-        case METHODID_IMPACT_METHOD:
-          serviceImpl.impactMethod((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_IMPACT_METHOD:
+          serviceImpl.getImpactMethod((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ImpactMethodStatus>) responseObserver);
           break;
         case METHODID_PUT_IMPACT_METHOD:
           serviceImpl.putImpactMethod((org.openlca.proto.Proto.ImpactMethod) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_LOCATIONS:
-          serviceImpl.locations((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_LOCATIONS:
+          serviceImpl.getLocations((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Location>) responseObserver);
           break;
-        case METHODID_LOCATION:
-          serviceImpl.location((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_LOCATION:
+          serviceImpl.getLocation((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.LocationStatus>) responseObserver);
           break;
         case METHODID_PUT_LOCATION:
           serviceImpl.putLocation((org.openlca.proto.Proto.Location) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_PARAMETERS:
-          serviceImpl.parameters((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_PARAMETERS:
+          serviceImpl.getParameters((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Parameter>) responseObserver);
           break;
-        case METHODID_PARAMETER:
-          serviceImpl.parameter((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_PARAMETER:
+          serviceImpl.getParameter((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ParameterStatus>) responseObserver);
           break;
         case METHODID_PUT_PARAMETER:
           serviceImpl.putParameter((org.openlca.proto.Proto.Parameter) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_PROCESSES:
-          serviceImpl.processes((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_PROCESSES:
+          serviceImpl.getProcesses((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Process>) responseObserver);
           break;
-        case METHODID_PROCESS:
-          serviceImpl.process((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_PROCESS:
+          serviceImpl.getProcess((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProcessStatus>) responseObserver);
           break;
         case METHODID_PUT_PROCESS:
           serviceImpl.putProcess((org.openlca.proto.Proto.Process) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_PRODUCT_SYSTEMS:
-          serviceImpl.productSystems((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_PRODUCT_SYSTEMS:
+          serviceImpl.getProductSystems((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProductSystem>) responseObserver);
           break;
-        case METHODID_PRODUCT_SYSTEM:
-          serviceImpl.productSystem((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_PRODUCT_SYSTEM:
+          serviceImpl.getProductSystem((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProductSystemStatus>) responseObserver);
           break;
         case METHODID_PUT_PRODUCT_SYSTEM:
           serviceImpl.putProductSystem((org.openlca.proto.Proto.ProductSystem) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_PROJECTS:
-          serviceImpl.projects((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_PROJECTS:
+          serviceImpl.getProjects((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Project>) responseObserver);
           break;
-        case METHODID_PROJECT:
-          serviceImpl.project((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_PROJECT:
+          serviceImpl.getProject((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.ProjectStatus>) responseObserver);
           break;
         case METHODID_PUT_PROJECT:
           serviceImpl.putProject((org.openlca.proto.Proto.Project) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_SOCIAL_INDICATORS:
-          serviceImpl.socialIndicators((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_SOCIAL_INDICATORS:
+          serviceImpl.getSocialIndicators((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.SocialIndicator>) responseObserver);
           break;
-        case METHODID_SOCIAL_INDICATOR:
-          serviceImpl.socialIndicator((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_SOCIAL_INDICATOR:
+          serviceImpl.getSocialIndicator((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SocialIndicatorStatus>) responseObserver);
           break;
         case METHODID_PUT_SOCIAL_INDICATOR:
           serviceImpl.putSocialIndicator((org.openlca.proto.Proto.SocialIndicator) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_SOURCES:
-          serviceImpl.sources((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_SOURCES:
+          serviceImpl.getSources((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.Source>) responseObserver);
           break;
-        case METHODID_SOURCE:
-          serviceImpl.source((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_SOURCE:
+          serviceImpl.getSource((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.SourceStatus>) responseObserver);
           break;
         case METHODID_PUT_SOURCE:
           serviceImpl.putSource((org.openlca.proto.Proto.Source) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
-        case METHODID_UNIT_GROUPS:
-          serviceImpl.unitGroups((org.openlca.proto.services.Services.Empty) request,
+        case METHODID_GET_UNIT_GROUPS:
+          serviceImpl.getUnitGroups((org.openlca.proto.services.Services.Empty) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.UnitGroup>) responseObserver);
           break;
-        case METHODID_UNIT_GROUP:
-          serviceImpl.unitGroup((org.openlca.proto.Proto.Ref) request,
+        case METHODID_GET_UNIT_GROUP:
+          serviceImpl.getUnitGroup((org.openlca.proto.Proto.Ref) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.UnitGroupStatus>) responseObserver);
           break;
         case METHODID_PUT_UNIT_GROUP:
@@ -3835,53 +3835,53 @@ public final class DataServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new DataServiceFileDescriptorSupplier())
               .addMethod(getDeleteMethod())
-              .addMethod(getActorsMethod())
-              .addMethod(getActorMethod())
+              .addMethod(getGetActorsMethod())
+              .addMethod(getGetActorMethod())
               .addMethod(getPutActorMethod())
-              .addMethod(getCategoriesMethod())
-              .addMethod(getCategoryMethod())
+              .addMethod(getGetCategoriesMethod())
+              .addMethod(getGetCategoryMethod())
               .addMethod(getPutCategoryMethod())
-              .addMethod(getCurrenciesMethod())
-              .addMethod(getCurrencyMethod())
+              .addMethod(getGetCurrenciesMethod())
+              .addMethod(getGetCurrencyMethod())
               .addMethod(getPutCurrencyMethod())
-              .addMethod(getDqSystemsMethod())
-              .addMethod(getDqSystemMethod())
-              .addMethod(getPutDqSystemMethod())
-              .addMethod(getFlowsMethod())
-              .addMethod(getFlowMethod())
+              .addMethod(getGetDQSystemsMethod())
+              .addMethod(getGetDQSystemMethod())
+              .addMethod(getPutDQSystemMethod())
+              .addMethod(getGetFlowsMethod())
+              .addMethod(getGetFlowMethod())
               .addMethod(getPutFlowMethod())
-              .addMethod(getFlowPropertiesMethod())
-              .addMethod(getFlowPropertyMethod())
+              .addMethod(getGetFlowPropertiesMethod())
+              .addMethod(getGetFlowPropertyMethod())
               .addMethod(getPutFlowPropertyMethod())
-              .addMethod(getImpactCategoriesMethod())
-              .addMethod(getImpactCategoryMethod())
+              .addMethod(getGetImpactCategoriesMethod())
+              .addMethod(getGetImpactCategoryMethod())
               .addMethod(getPutImpactCategoryMethod())
-              .addMethod(getImpactMethodsMethod())
-              .addMethod(getImpactMethodMethod())
+              .addMethod(getGetImpactMethodsMethod())
+              .addMethod(getGetImpactMethodMethod())
               .addMethod(getPutImpactMethodMethod())
-              .addMethod(getLocationsMethod())
-              .addMethod(getLocationMethod())
+              .addMethod(getGetLocationsMethod())
+              .addMethod(getGetLocationMethod())
               .addMethod(getPutLocationMethod())
-              .addMethod(getParametersMethod())
-              .addMethod(getParameterMethod())
+              .addMethod(getGetParametersMethod())
+              .addMethod(getGetParameterMethod())
               .addMethod(getPutParameterMethod())
-              .addMethod(getProcessesMethod())
-              .addMethod(getProcessMethod())
+              .addMethod(getGetProcessesMethod())
+              .addMethod(getGetProcessMethod())
               .addMethod(getPutProcessMethod())
-              .addMethod(getProductSystemsMethod())
-              .addMethod(getProductSystemMethod())
+              .addMethod(getGetProductSystemsMethod())
+              .addMethod(getGetProductSystemMethod())
               .addMethod(getPutProductSystemMethod())
-              .addMethod(getProjectsMethod())
-              .addMethod(getProjectMethod())
+              .addMethod(getGetProjectsMethod())
+              .addMethod(getGetProjectMethod())
               .addMethod(getPutProjectMethod())
-              .addMethod(getSocialIndicatorsMethod())
-              .addMethod(getSocialIndicatorMethod())
+              .addMethod(getGetSocialIndicatorsMethod())
+              .addMethod(getGetSocialIndicatorMethod())
               .addMethod(getPutSocialIndicatorMethod())
-              .addMethod(getSourcesMethod())
-              .addMethod(getSourceMethod())
+              .addMethod(getGetSourcesMethod())
+              .addMethod(getGetSourceMethod())
               .addMethod(getPutSourceMethod())
-              .addMethod(getUnitGroupsMethod())
-              .addMethod(getUnitGroupMethod())
+              .addMethod(getGetUnitGroupsMethod())
+              .addMethod(getGetUnitGroupMethod())
               .addMethod(getPutUnitGroupMethod())
               .build();
         }

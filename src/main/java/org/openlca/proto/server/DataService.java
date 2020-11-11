@@ -122,7 +122,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void actors(Services.Empty req, StreamObserver<Proto.Actor> resp) {
+  public void getActors(Services.Empty req, StreamObserver<Proto.Actor> resp) {
     var writer = new ActorWriter(WriterConfig.of(db));
     var dao = new ActorDao(db);
     dao.getDescriptors()
@@ -134,7 +134,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void actor(Proto.Ref req, StreamObserver<Services.ActorStatus> resp) {
+  public void getActor(Proto.Ref req, StreamObserver<Services.ActorStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ActorStatus.newBuilder()
         .setOk(false)
@@ -170,7 +170,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void categories(Services.Empty _req, StreamObserver<Proto.Category> resp) {
+  public void getCategories(Services.Empty _req, StreamObserver<Proto.Category> resp) {
     var writer = new CategoryWriter(WriterConfig.of(db));
     var dao = new CategoryDao(db);
     dao.getDescriptors()
@@ -182,7 +182,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void category(Proto.Ref req, StreamObserver<Services.CategoryStatus> resp) {
+  public void getCategory(Proto.Ref req, StreamObserver<Services.CategoryStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.CategoryStatus.newBuilder()
         .setOk(false)
@@ -229,7 +229,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void currencies(Services.Empty _req, StreamObserver<Proto.Currency> resp) {
+  public void getCurrencies(Services.Empty _req, StreamObserver<Proto.Currency> resp) {
     var writer = new CurrencyWriter(WriterConfig.of(db));
     var dao = new CurrencyDao(db);
     dao.getDescriptors()
@@ -241,7 +241,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void currency(Proto.Ref req, StreamObserver<Services.CurrencyStatus> resp) {
+  public void getCurrency(Proto.Ref req, StreamObserver<Services.CurrencyStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.CurrencyStatus.newBuilder()
         .setOk(false)
@@ -277,7 +277,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void dqSystems(Services.Empty _req, StreamObserver<Proto.DQSystem> resp) {
+  public void getDQSystems(Services.Empty _req, StreamObserver<Proto.DQSystem> resp) {
     var writer = new DQSystemWriter(WriterConfig.of(db));
     var dao = new DQSystemDao(db);
     dao.getDescriptors()
@@ -289,7 +289,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void dqSystem(Proto.Ref req, StreamObserver<Services.DQSystemStatus> resp) {
+  public void getDQSystem(Proto.Ref req, StreamObserver<Services.DQSystemStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.DQSystemStatus.newBuilder()
         .setOk(false)
@@ -314,7 +314,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void putDqSystem(Proto.DQSystem req, StreamObserver<Services.RefStatus> resp) {
+  public void putDQSystem(Proto.DQSystem req, StreamObserver<Services.RefStatus> resp) {
     var store = new MemStore();
     store.putDQSystem(req);
     new ProtoImport(store, db)
@@ -325,7 +325,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void flows(Services.Empty _req, StreamObserver<Proto.Flow> resp) {
+  public void getFlows(Services.Empty _req, StreamObserver<Proto.Flow> resp) {
     var writer = new FlowWriter(WriterConfig.of(db));
     var dao = new FlowDao(db);
     dao.getDescriptors()
@@ -337,7 +337,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void flow(Proto.Ref req, StreamObserver<Services.FlowStatus> resp) {
+  public void getFlow(Proto.Ref req, StreamObserver<Services.FlowStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.FlowStatus.newBuilder()
         .setOk(false)
@@ -373,7 +373,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void flowProperties(Services.Empty _req, StreamObserver<Proto.FlowProperty> resp) {
+  public void getFlowProperties(Services.Empty _req, StreamObserver<Proto.FlowProperty> resp) {
     var writer = new FlowPropertyWriter(WriterConfig.of(db));
     var dao = new FlowPropertyDao(db);
     dao.getDescriptors()
@@ -385,7 +385,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void flowProperty(Proto.Ref req, StreamObserver<Services.FlowPropertyStatus>
+  public void getFlowProperty(Proto.Ref req, StreamObserver<Services.FlowPropertyStatus>
     resp) {
     Consumer<String> onError = error -> {
       var status = Services.FlowPropertyStatus.newBuilder()
@@ -422,7 +422,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void impactCategories(Services.Empty _req, StreamObserver<Proto.ImpactCategory> resp) {
+  public void getImpactCategories(Services.Empty _req, StreamObserver<Proto.ImpactCategory> resp) {
     var writer = new ImpactCategoryWriter(WriterConfig.of(db));
     var dao = new ImpactCategoryDao(db);
     dao.getDescriptors()
@@ -434,7 +434,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void impactCategory(Proto.Ref req, StreamObserver<Services.ImpactCategoryStatus> resp) {
+  public void getImpactCategory(Proto.Ref req, StreamObserver<Services.ImpactCategoryStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ImpactCategoryStatus.newBuilder()
         .setOk(false)
@@ -470,7 +470,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void impactMethods(Services.Empty _req, StreamObserver<Proto.ImpactMethod> resp) {
+  public void getImpactMethods(Services.Empty _req, StreamObserver<Proto.ImpactMethod> resp) {
     var writer = new ImpactMethodWriter(WriterConfig.of(db));
     var dao = new ImpactMethodDao(db);
     dao.getDescriptors()
@@ -482,7 +482,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void impactMethod(Proto.Ref req, StreamObserver<Services.ImpactMethodStatus>
+  public void getImpactMethod(Proto.Ref req, StreamObserver<Services.ImpactMethodStatus>
     resp) {
     Consumer<String> onError = error -> {
       var status = Services.ImpactMethodStatus.newBuilder()
@@ -519,7 +519,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void locations(Services.Empty _req, StreamObserver<Proto.Location> resp) {
+  public void getLocations(Services.Empty _req, StreamObserver<Proto.Location> resp) {
     var writer = new LocationWriter(WriterConfig.of(db));
     var dao = new LocationDao(db);
     dao.getDescriptors()
@@ -531,7 +531,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void location(Proto.Ref req, StreamObserver<Services.LocationStatus> resp) {
+  public void getLocation(Proto.Ref req, StreamObserver<Services.LocationStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.LocationStatus.newBuilder()
         .setOk(false)
@@ -567,7 +567,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void parameters(Services.Empty _req, StreamObserver<Proto.Parameter> resp) {
+  public void getParameters(Services.Empty _req, StreamObserver<Proto.Parameter> resp) {
     var writer = new ParameterWriter(WriterConfig.of(db));
     var dao = new ParameterDao(db);
     dao.getDescriptors()
@@ -579,7 +579,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void parameter(Proto.Ref req, StreamObserver<Services.ParameterStatus> resp) {
+  public void getParameter(Proto.Ref req, StreamObserver<Services.ParameterStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ParameterStatus.newBuilder()
         .setOk(false)
@@ -615,7 +615,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void processes(Services.Empty _req, StreamObserver<Proto.Process> resp) {
+  public void getProcesses(Services.Empty _req, StreamObserver<Proto.Process> resp) {
     var writer = new ProcessWriter(WriterConfig.of(db));
     var dao = new ProcessDao(db);
     dao.getDescriptors()
@@ -627,7 +627,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void process(Proto.Ref req, StreamObserver<Services.ProcessStatus> resp) {
+  public void getProcess(Proto.Ref req, StreamObserver<Services.ProcessStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ProcessStatus.newBuilder()
         .setOk(false)
@@ -663,7 +663,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void productSystems(Services.Empty _req, StreamObserver<Proto.ProductSystem> resp) {
+  public void getProductSystems(Services.Empty _req, StreamObserver<Proto.ProductSystem> resp) {
     var writer = new ProductSystemWriter(WriterConfig.of(db));
     var dao = new ProductSystemDao(db);
     dao.getDescriptors()
@@ -675,7 +675,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void productSystem(Proto.Ref req, StreamObserver<Services.ProductSystemStatus> resp) {
+  public void getProductSystem(Proto.Ref req, StreamObserver<Services.ProductSystemStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ProductSystemStatus.newBuilder()
         .setOk(false)
@@ -711,7 +711,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void projects(Services.Empty _req, StreamObserver<Proto.Project> resp) {
+  public void getProjects(Services.Empty _req, StreamObserver<Proto.Project> resp) {
     var writer = new ProjectWriter(WriterConfig.of(db));
     var dao = new ProjectDao(db);
     dao.getDescriptors()
@@ -723,7 +723,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void project(Proto.Ref req, StreamObserver<Services.ProjectStatus> resp) {
+  public void getProject(Proto.Ref req, StreamObserver<Services.ProjectStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.ProjectStatus.newBuilder()
         .setOk(false)
@@ -759,7 +759,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void socialIndicators(Services.Empty _req, StreamObserver<Proto.SocialIndicator> resp) {
+  public void getSocialIndicators(Services.Empty _req, StreamObserver<Proto.SocialIndicator> resp) {
     var writer = new SocialIndicatorWriter(WriterConfig.of(db));
     var dao = new SocialIndicatorDao(db);
     dao.getDescriptors()
@@ -771,7 +771,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void socialIndicator(Proto.Ref req, StreamObserver<Services.SocialIndicatorStatus> resp) {
+  public void getSocialIndicator(Proto.Ref req, StreamObserver<Services.SocialIndicatorStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.SocialIndicatorStatus.newBuilder()
         .setOk(false)
@@ -807,7 +807,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void sources(Services.Empty _req, StreamObserver<Proto.Source> resp) {
+  public void getSources(Services.Empty _req, StreamObserver<Proto.Source> resp) {
     var writer = new SourceWriter(WriterConfig.of(db));
     var dao = new SourceDao(db);
     dao.getDescriptors()
@@ -819,7 +819,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void source(Proto.Ref req, StreamObserver<Services.SourceStatus> resp) {
+  public void getSource(Proto.Ref req, StreamObserver<Services.SourceStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.SourceStatus.newBuilder()
         .setOk(false)
@@ -855,7 +855,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void unitGroups(Services.Empty _req, StreamObserver<Proto.UnitGroup> resp) {
+  public void getUnitGroups(Services.Empty _req, StreamObserver<Proto.UnitGroup> resp) {
     var writer = new UnitGroupWriter(WriterConfig.of(db));
     var dao = new UnitGroupDao(db);
     dao.getDescriptors()
@@ -867,7 +867,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
   }
 
   @Override
-  public void unitGroup(Proto.Ref req, StreamObserver<Services.UnitGroupStatus> resp) {
+  public void getUnitGroup(Proto.Ref req, StreamObserver<Services.UnitGroupStatus> resp) {
     Consumer<String> onError = error -> {
       var status = Services.UnitGroupStatus.newBuilder()
         .setOk(false)

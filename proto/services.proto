@@ -120,85 +120,85 @@ service DataService {
   // Deletes the object with the `id` and `type` of the given descriptor from
   // the database. Note that the type is a string with the name of the
   // corresponding model class, e.g. `Process` or `Flow`.
-  rpc delete(protolca.Ref) returns (Status);
+  rpc Delete(protolca.Ref) returns (Status);
 
   // methods for Actor
-  rpc actors(Empty) returns (stream protolca.Actor);
-  rpc actor(protolca.Ref) returns (ActorStatus);
-  rpc put_actor(protolca.Actor) returns (RefStatus);
+  rpc GetActors(Empty) returns (stream protolca.Actor);
+  rpc GetActor(protolca.Ref) returns (ActorStatus);
+  rpc PutActor(protolca.Actor) returns (RefStatus);
 
   // methods for Category
-  rpc categories(Empty) returns (stream protolca.Category);
-  rpc category(protolca.Ref) returns (CategoryStatus);
-  rpc put_category(protolca.Category) returns (RefStatus);
+  rpc GetCategories(Empty) returns (stream protolca.Category);
+  rpc GetCategory(protolca.Ref) returns (CategoryStatus);
+  rpc PutCategory(protolca.Category) returns (RefStatus);
 
   // methods for Currency
-  rpc currencies(Empty) returns (stream protolca.Currency);
-  rpc currency(protolca.Ref) returns (CurrencyStatus);
-  rpc put_currency(protolca.Currency) returns (RefStatus);
+  rpc GetCurrencies(Empty) returns (stream protolca.Currency);
+  rpc GetCurrency(protolca.Ref) returns (CurrencyStatus);
+  rpc PutCurrency(protolca.Currency) returns (RefStatus);
 
   // methods for DQSystem
-  rpc dq_systems(Empty) returns (stream protolca.DQSystem);
-  rpc dq_system(protolca.Ref) returns (DQSystemStatus);
-  rpc put_dq_system(protolca.DQSystem) returns (RefStatus);
+  rpc GetDQSystems(Empty) returns (stream protolca.DQSystem);
+  rpc GetDQSystem(protolca.Ref) returns (DQSystemStatus);
+  rpc PutDQSystem(protolca.DQSystem) returns (RefStatus);
 
   // methods for Flow
-  rpc flows(Empty) returns (stream protolca.Flow);
-  rpc flow(protolca.Ref) returns (FlowStatus);
-  rpc put_flow(protolca.Flow) returns (RefStatus);
+  rpc GetFlows(Empty) returns (stream protolca.Flow);
+  rpc GetFlow(protolca.Ref) returns (FlowStatus);
+  rpc PutFlow(protolca.Flow) returns (RefStatus);
 
   // methods for FlowProperty
-  rpc flow_properties(Empty) returns (stream protolca.FlowProperty);
-  rpc flow_property(protolca.Ref) returns (FlowPropertyStatus);
-  rpc put_flow_property(protolca.FlowProperty) returns (RefStatus);
+  rpc GetFlowProperties(Empty) returns (stream protolca.FlowProperty);
+  rpc GetFlowProperty(protolca.Ref) returns (FlowPropertyStatus);
+  rpc PutFlowProperty(protolca.FlowProperty) returns (RefStatus);
 
   // methods for ImpactCategory
-  rpc impact_categories(Empty) returns (stream protolca.ImpactCategory);
-  rpc impact_category(protolca.Ref) returns (ImpactCategoryStatus);
-  rpc put_impact_category(protolca.ImpactCategory) returns (RefStatus);
+  rpc GetImpactCategories(Empty) returns (stream protolca.ImpactCategory);
+  rpc GetImpactCategory(protolca.Ref) returns (ImpactCategoryStatus);
+  rpc PutImpactCategory(protolca.ImpactCategory) returns (RefStatus);
 
   // methods for ImpactMethod
-  rpc impact_methods(Empty) returns (stream protolca.ImpactMethod);
-  rpc impact_method(protolca.Ref) returns (ImpactMethodStatus);
-  rpc put_impact_method(protolca.ImpactMethod) returns (RefStatus);
+  rpc GetImpactMethods(Empty) returns (stream protolca.ImpactMethod);
+  rpc GetImpactMethod(protolca.Ref) returns (ImpactMethodStatus);
+  rpc PutImpactMethod(protolca.ImpactMethod) returns (RefStatus);
 
   // methods for Location
-  rpc locations(Empty) returns (stream protolca.Location);
-  rpc location(protolca.Ref) returns (LocationStatus);
-  rpc put_location(protolca.Location) returns (RefStatus);
+  rpc GetLocations(Empty) returns (stream protolca.Location);
+  rpc GetLocation(protolca.Ref) returns (LocationStatus);
+  rpc PutLocation(protolca.Location) returns (RefStatus);
 
   // methods for Parameter
-  rpc parameters(Empty) returns (stream protolca.Parameter);
-  rpc parameter(protolca.Ref) returns (ParameterStatus);
-  rpc put_parameter(protolca.Parameter) returns (RefStatus);
+  rpc GetParameters(Empty) returns (stream protolca.Parameter);
+  rpc GetParameter(protolca.Ref) returns (ParameterStatus);
+  rpc PutParameter(protolca.Parameter) returns (RefStatus);
 
   // methods for Process
-  rpc processes(Empty) returns (stream protolca.Process);
-  rpc process(protolca.Ref) returns (ProcessStatus);
-  rpc put_process(protolca.Process) returns (RefStatus);
+  rpc GetProcesses(Empty) returns (stream protolca.Process);
+  rpc GetProcess(protolca.Ref) returns (ProcessStatus);
+  rpc PutProcess(protolca.Process) returns (RefStatus);
 
   // methods for ProductSystem
-  rpc product_systems(Empty) returns (stream protolca.ProductSystem);
-  rpc product_system(protolca.Ref) returns (ProductSystemStatus);
-  rpc put_product_system(protolca.ProductSystem) returns (RefStatus);
+  rpc GetProductSystems(Empty) returns (stream protolca.ProductSystem);
+  rpc GetProductSystem(protolca.Ref) returns (ProductSystemStatus);
+  rpc PutProductSystem(protolca.ProductSystem) returns (RefStatus);
 
   // methods for Project
-  rpc projects(Empty) returns (stream protolca.Project);
-  rpc project(protolca.Ref) returns (ProjectStatus);
-  rpc put_project(protolca.Project) returns (RefStatus);
+  rpc GetProjects(Empty) returns (stream protolca.Project);
+  rpc GetProject(protolca.Ref) returns (ProjectStatus);
+  rpc PutProject(protolca.Project) returns (RefStatus);
 
   // methods for SocialIndicator
-  rpc social_indicators(Empty) returns (stream protolca.SocialIndicator);
-  rpc social_indicator(protolca.Ref) returns (SocialIndicatorStatus);
-  rpc put_social_indicator(protolca.SocialIndicator) returns (RefStatus);
+  rpc GetSocialIndicators(Empty) returns (stream protolca.SocialIndicator);
+  rpc GetSocialIndicator(protolca.Ref) returns (SocialIndicatorStatus);
+  rpc PutSocialIndicator(protolca.SocialIndicator) returns (RefStatus);
 
   // methods for Source
-  rpc sources(Empty) returns (stream protolca.Source);
-  rpc source(protolca.Ref) returns (SourceStatus);
-  rpc put_source(protolca.Source) returns (RefStatus);
+  rpc GetSources(Empty) returns (stream protolca.Source);
+  rpc GetSource(protolca.Ref) returns (SourceStatus);
+  rpc PutSource(protolca.Source) returns (RefStatus);
 
   // methods for UnitGroup
-  rpc unit_groups(Empty) returns (stream protolca.UnitGroup);
-  rpc unit_group(protolca.Ref) returns (UnitGroupStatus);
-  rpc put_unit_group(protolca.UnitGroup) returns (RefStatus);
+  rpc GetUnitGroups(Empty) returns (stream protolca.UnitGroup);
+  rpc GetUnitGroup(protolca.Ref) returns (UnitGroupStatus);
+  rpc PutUnitGroup(protolca.UnitGroup) returns (RefStatus);
 }
