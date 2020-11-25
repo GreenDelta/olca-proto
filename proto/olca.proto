@@ -1185,15 +1185,49 @@ message ParameterRedef {
   // This field is used for JSON-LD compatibility.
   string type = 1 [json_name = "@type"];
 
-  // The parameter name.
-  string name = 2;
-
-  // The (new) value of the parameter.
-  double value = 3;
-
   // The context of the paramater (a process or LCIA method). If no context is
   // provided it is assumed that this is a redefinition of a global parameter.
-  Ref context = 4;
+  Ref context = 2;
+
+  // A description of this parameter redefinition.
+  string description = 3;
+
+  // The name of the redefined parameter. Note that parameter names are used in
+  // formulas so they need to follow specific syntax rules. A redefinition
+  // replaces a bound parameter in a specific context and thus has to exactly
+  // match the respective name.
+  string name = 4;
+
+  // An uncertainty distribution for the redefined parameter value.
+  Uncertainty uncertainty = 5;
+
+  // The value of the redefined parameter.
+  double value = 6;
+
+}
+
+// An instance of this class is just a set of parameter redefinitions attached
+// to a product system. It can have a name and a description. One of the
+// parameter sets can be defined as the baseline of the product system. In the
+// calculation the baseline set is then taken by default.
+message ParameterRedefSet {
+
+  // The type name of the respectiven entity.
+  // This field is used for JSON-LD compatibility.
+  string type = 1 [json_name = "@type"];
+
+  // The name of the parameter set.
+  string name = 2;
+
+  // A description of the parameter set.
+  string description = 3;
+
+  // Indicates if this set of parameter redefinitions is the baseline for a
+  // product system.
+  bool is_baseline = 4;
+
+  // The parameter redefinitions of this redefinition set.
+  repeated ParameterRedef parameters = 5;
 
 }
 
@@ -1500,6 +1534,10 @@ message ProductSystem {
 
   // The process links of the product system.
   repeated ProcessLink process_links = 16;
+
+  // A list of possible sets of parameter redefinitions for this product
+  // system.
+  repeated ParameterRedefSet parameter_sets = 17;
 
 }
 

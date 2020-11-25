@@ -75,7 +75,9 @@ package protolca;
 
 option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
+option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
+
 `
 
 // BytesHint is a comment we add to fields with `bytes` as data type.

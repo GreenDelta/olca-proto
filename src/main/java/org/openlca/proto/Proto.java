@@ -63402,41 +63402,11 @@ public final class Proto {
 
     /**
      * <pre>
-     * The parameter name.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <pre>
-     * The parameter name.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <pre>
-     * The (new) value of the parameter.
-     * </pre>
-     *
-     * <code>double value = 3;</code>
-     * @return The value.
-     */
-    double getValue();
-
-    /**
-     * <pre>
      * The context of the paramater (a process or LCIA method). If no context is
      * provided it is assumed that this is a redefinition of a global parameter.
      * </pre>
      *
-     * <code>.protolca.Ref context = 4;</code>
+     * <code>.protolca.Ref context = 2;</code>
      * @return Whether the context field is set.
      */
     boolean hasContext();
@@ -63446,7 +63416,7 @@ public final class Proto {
      * provided it is assumed that this is a redefinition of a global parameter.
      * </pre>
      *
-     * <code>.protolca.Ref context = 4;</code>
+     * <code>.protolca.Ref context = 2;</code>
      * @return The context.
      */
     org.openlca.proto.Proto.Ref getContext();
@@ -63456,9 +63426,92 @@ public final class Proto {
      * provided it is assumed that this is a redefinition of a global parameter.
      * </pre>
      *
-     * <code>.protolca.Ref context = 4;</code>
+     * <code>.protolca.Ref context = 2;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getContextOrBuilder();
+
+    /**
+     * <pre>
+     * A description of this parameter redefinition.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * A description of this parameter redefinition.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * The name of the redefined parameter. Note that parameter names are used in
+     * formulas so they need to follow specific syntax rules. A redefinition
+     * replaces a bound parameter in a specific context and thus has to exactly
+     * match the respective name.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the redefined parameter. Note that parameter names are used in
+     * formulas so they need to follow specific syntax rules. A redefinition
+     * replaces a bound parameter in a specific context and thus has to exactly
+     * match the respective name.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     * @return Whether the uncertainty field is set.
+     */
+    boolean hasUncertainty();
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     * @return The uncertainty.
+     */
+    org.openlca.proto.Proto.Uncertainty getUncertainty();
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     */
+    org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder();
+
+    /**
+     * <pre>
+     * The value of the redefined parameter.
+     * </pre>
+     *
+     * <code>double value = 6;</code>
+     * @return The value.
+     */
+    double getValue();
   }
   /**
    * <pre>
@@ -63478,6 +63531,7 @@ public final class Proto {
     }
     private ParameterRedef() {
       type_ = "";
+      description_ = "";
       name_ = "";
     }
 
@@ -63518,17 +63572,6 @@ public final class Proto {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 25: {
-
-              value_ = input.readDouble();
-              break;
-            }
-            case 34: {
               org.openlca.proto.Proto.Ref.Builder subBuilder = null;
               if (context_ != null) {
                 subBuilder = context_.toBuilder();
@@ -63539,6 +63582,36 @@ public final class Proto {
                 context_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 42: {
+              org.openlca.proto.Proto.Uncertainty.Builder subBuilder = null;
+              if (uncertainty_ != null) {
+                subBuilder = uncertainty_.toBuilder();
+              }
+              uncertainty_ = input.readMessage(org.openlca.proto.Proto.Uncertainty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(uncertainty_);
+                uncertainty_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 49: {
+
+              value_ = input.readDouble();
               break;
             }
             default: {
@@ -63621,14 +63694,104 @@ public final class Proto {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
+    public static final int CONTEXT_FIELD_NUMBER = 2;
+    private org.openlca.proto.Proto.Ref context_;
+    /**
+     * <pre>
+     * The context of the paramater (a process or LCIA method). If no context is
+     * provided it is assumed that this is a redefinition of a global parameter.
+     * </pre>
+     *
+     * <code>.protolca.Ref context = 2;</code>
+     * @return Whether the context field is set.
+     */
+    @java.lang.Override
+    public boolean hasContext() {
+      return context_ != null;
+    }
+    /**
+     * <pre>
+     * The context of the paramater (a process or LCIA method). If no context is
+     * provided it is assumed that this is a redefinition of a global parameter.
+     * </pre>
+     *
+     * <code>.protolca.Ref context = 2;</code>
+     * @return The context.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Ref getContext() {
+      return context_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : context_;
+    }
+    /**
+     * <pre>
+     * The context of the paramater (a process or LCIA method). If no context is
+     * provided it is assumed that this is a redefinition of a global parameter.
+     * </pre>
+     *
+     * <code>.protolca.Ref context = 2;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.RefOrBuilder getContextOrBuilder() {
+      return getContext();
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * A description of this parameter redefinition.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A description of this parameter redefinition.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * The parameter name.
+     * The name of the redefined parameter. Note that parameter names are used in
+     * formulas so they need to follow specific syntax rules. A redefinition
+     * replaces a bound parameter in a specific context and thus has to exactly
+     * match the respective name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 4;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -63646,10 +63809,13 @@ public final class Proto {
     }
     /**
      * <pre>
-     * The parameter name.
+     * The name of the redefined parameter. Note that parameter names are used in
+     * formulas so they need to follow specific syntax rules. A redefinition
+     * replaces a bound parameter in a specific context and thus has to exactly
+     * match the respective name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 4;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -63667,60 +63833,57 @@ public final class Proto {
       }
     }
 
-    public static final int VALUE_FIELD_NUMBER = 3;
+    public static final int UNCERTAINTY_FIELD_NUMBER = 5;
+    private org.openlca.proto.Proto.Uncertainty uncertainty_;
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     * @return Whether the uncertainty field is set.
+     */
+    @java.lang.Override
+    public boolean hasUncertainty() {
+      return uncertainty_ != null;
+    }
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     * @return The uncertainty.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.Uncertainty getUncertainty() {
+      return uncertainty_ == null ? org.openlca.proto.Proto.Uncertainty.getDefaultInstance() : uncertainty_;
+    }
+    /**
+     * <pre>
+     * An uncertainty distribution for the redefined parameter value.
+     * </pre>
+     *
+     * <code>.protolca.Uncertainty uncertainty = 5;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
+      return getUncertainty();
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 6;
     private double value_;
     /**
      * <pre>
-     * The (new) value of the parameter.
+     * The value of the redefined parameter.
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 6;</code>
      * @return The value.
      */
     @java.lang.Override
     public double getValue() {
       return value_;
-    }
-
-    public static final int CONTEXT_FIELD_NUMBER = 4;
-    private org.openlca.proto.Proto.Ref context_;
-    /**
-     * <pre>
-     * The context of the paramater (a process or LCIA method). If no context is
-     * provided it is assumed that this is a redefinition of a global parameter.
-     * </pre>
-     *
-     * <code>.protolca.Ref context = 4;</code>
-     * @return Whether the context field is set.
-     */
-    @java.lang.Override
-    public boolean hasContext() {
-      return context_ != null;
-    }
-    /**
-     * <pre>
-     * The context of the paramater (a process or LCIA method). If no context is
-     * provided it is assumed that this is a redefinition of a global parameter.
-     * </pre>
-     *
-     * <code>.protolca.Ref context = 4;</code>
-     * @return The context.
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.Ref getContext() {
-      return context_ == null ? org.openlca.proto.Proto.Ref.getDefaultInstance() : context_;
-    }
-    /**
-     * <pre>
-     * The context of the paramater (a process or LCIA method). If no context is
-     * provided it is assumed that this is a redefinition of a global parameter.
-     * </pre>
-     *
-     * <code>.protolca.Ref context = 4;</code>
-     */
-    @java.lang.Override
-    public org.openlca.proto.Proto.RefOrBuilder getContextOrBuilder() {
-      return getContext();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -63740,14 +63903,20 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
+      if (context_ != null) {
+        output.writeMessage(2, getContext());
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      if (uncertainty_ != null) {
+        output.writeMessage(5, getUncertainty());
       }
       if (value_ != 0D) {
-        output.writeDouble(3, value_);
-      }
-      if (context_ != null) {
-        output.writeMessage(4, getContext());
+        output.writeDouble(6, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -63761,16 +63930,23 @@ public final class Proto {
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
+      if (context_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getContext());
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      }
+      if (uncertainty_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getUncertainty());
       }
       if (value_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, value_);
-      }
-      if (context_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getContext());
+          .computeDoubleSize(6, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -63789,16 +63965,23 @@ public final class Proto {
 
       if (!getType()
           .equals(other.getType())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (java.lang.Double.doubleToLongBits(getValue())
-          != java.lang.Double.doubleToLongBits(
-              other.getValue())) return false;
       if (hasContext() != other.hasContext()) return false;
       if (hasContext()) {
         if (!getContext()
             .equals(other.getContext())) return false;
       }
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (hasUncertainty() != other.hasUncertainty()) return false;
+      if (hasUncertainty()) {
+        if (!getUncertainty()
+            .equals(other.getUncertainty())) return false;
+      }
+      if (java.lang.Double.doubleToLongBits(getValue())
+          != java.lang.Double.doubleToLongBits(
+              other.getValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -63812,15 +63995,21 @@ public final class Proto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getValue()));
       if (hasContext()) {
         hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getContext().hashCode();
       }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (hasUncertainty()) {
+        hash = (37 * hash) + UNCERTAINTY_FIELD_NUMBER;
+        hash = (53 * hash) + getUncertainty().hashCode();
+      }
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getValue()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -63960,16 +64149,24 @@ public final class Proto {
         super.clear();
         type_ = "";
 
-        name_ = "";
-
-        value_ = 0D;
-
         if (contextBuilder_ == null) {
           context_ = null;
         } else {
           context_ = null;
           contextBuilder_ = null;
         }
+        description_ = "";
+
+        name_ = "";
+
+        if (uncertaintyBuilder_ == null) {
+          uncertainty_ = null;
+        } else {
+          uncertainty_ = null;
+          uncertaintyBuilder_ = null;
+        }
+        value_ = 0D;
+
         return this;
       }
 
@@ -63997,13 +64194,19 @@ public final class Proto {
       public org.openlca.proto.Proto.ParameterRedef buildPartial() {
         org.openlca.proto.Proto.ParameterRedef result = new org.openlca.proto.Proto.ParameterRedef(this);
         result.type_ = type_;
-        result.name_ = name_;
-        result.value_ = value_;
         if (contextBuilder_ == null) {
           result.context_ = context_;
         } else {
           result.context_ = contextBuilder_.build();
         }
+        result.description_ = description_;
+        result.name_ = name_;
+        if (uncertaintyBuilder_ == null) {
+          result.uncertainty_ = uncertainty_;
+        } else {
+          result.uncertainty_ = uncertaintyBuilder_.build();
+        }
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -64056,15 +64259,22 @@ public final class Proto {
           type_ = other.type_;
           onChanged();
         }
+        if (other.hasContext()) {
+          mergeContext(other.getContext());
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
+        if (other.hasUncertainty()) {
+          mergeUncertainty(other.getUncertainty());
+        }
         if (other.getValue() != 0D) {
           setValue(other.getValue());
-        }
-        if (other.hasContext()) {
-          mergeContext(other.getContext());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -64196,145 +64406,6 @@ public final class Proto {
         return this;
       }
 
-      private java.lang.Object name_ = "";
-      /**
-       * <pre>
-       * The parameter name.
-       * </pre>
-       *
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The parameter name.
-       * </pre>
-       *
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The parameter name.
-       * </pre>
-       *
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The parameter name.
-       * </pre>
-       *
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The parameter name.
-       * </pre>
-       *
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private double value_ ;
-      /**
-       * <pre>
-       * The (new) value of the parameter.
-       * </pre>
-       *
-       * <code>double value = 3;</code>
-       * @return The value.
-       */
-      @java.lang.Override
-      public double getValue() {
-        return value_;
-      }
-      /**
-       * <pre>
-       * The (new) value of the parameter.
-       * </pre>
-       *
-       * <code>double value = 3;</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(double value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The (new) value of the parameter.
-       * </pre>
-       *
-       * <code>double value = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        
-        value_ = 0D;
-        onChanged();
-        return this;
-      }
-
       private org.openlca.proto.Proto.Ref context_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> contextBuilder_;
@@ -64344,7 +64415,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        * @return Whether the context field is set.
        */
       public boolean hasContext() {
@@ -64356,7 +64427,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        * @return The context.
        */
       public org.openlca.proto.Proto.Ref getContext() {
@@ -64372,7 +64443,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public Builder setContext(org.openlca.proto.Proto.Ref value) {
         if (contextBuilder_ == null) {
@@ -64393,7 +64464,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public Builder setContext(
           org.openlca.proto.Proto.Ref.Builder builderForValue) {
@@ -64412,7 +64483,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public Builder mergeContext(org.openlca.proto.Proto.Ref value) {
         if (contextBuilder_ == null) {
@@ -64435,7 +64506,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public Builder clearContext() {
         if (contextBuilder_ == null) {
@@ -64454,7 +64525,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public org.openlca.proto.Proto.Ref.Builder getContextBuilder() {
         
@@ -64467,7 +64538,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       public org.openlca.proto.Proto.RefOrBuilder getContextOrBuilder() {
         if (contextBuilder_ != null) {
@@ -64483,7 +64554,7 @@ public final class Proto {
        * provided it is assumed that this is a redefinition of a global parameter.
        * </pre>
        *
-       * <code>.protolca.Ref context = 4;</code>
+       * <code>.protolca.Ref context = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openlca.proto.Proto.Ref, org.openlca.proto.Proto.Ref.Builder, org.openlca.proto.Proto.RefOrBuilder> 
@@ -64497,6 +64568,411 @@ public final class Proto {
           context_ = null;
         }
         return contextBuilder_;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * A description of this parameter redefinition.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A description of this parameter redefinition.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A description of this parameter redefinition.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A description of this parameter redefinition.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A description of this parameter redefinition.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the redefined parameter. Note that parameter names are used in
+       * formulas so they need to follow specific syntax rules. A redefinition
+       * replaces a bound parameter in a specific context and thus has to exactly
+       * match the respective name.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the redefined parameter. Note that parameter names are used in
+       * formulas so they need to follow specific syntax rules. A redefinition
+       * replaces a bound parameter in a specific context and thus has to exactly
+       * match the respective name.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the redefined parameter. Note that parameter names are used in
+       * formulas so they need to follow specific syntax rules. A redefinition
+       * replaces a bound parameter in a specific context and thus has to exactly
+       * match the respective name.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the redefined parameter. Note that parameter names are used in
+       * formulas so they need to follow specific syntax rules. A redefinition
+       * replaces a bound parameter in a specific context and thus has to exactly
+       * match the respective name.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the redefined parameter. Note that parameter names are used in
+       * formulas so they need to follow specific syntax rules. A redefinition
+       * replaces a bound parameter in a specific context and thus has to exactly
+       * match the respective name.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.Uncertainty uncertainty_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder> uncertaintyBuilder_;
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       * @return Whether the uncertainty field is set.
+       */
+      public boolean hasUncertainty() {
+        return uncertaintyBuilder_ != null || uncertainty_ != null;
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       * @return The uncertainty.
+       */
+      public org.openlca.proto.Proto.Uncertainty getUncertainty() {
+        if (uncertaintyBuilder_ == null) {
+          return uncertainty_ == null ? org.openlca.proto.Proto.Uncertainty.getDefaultInstance() : uncertainty_;
+        } else {
+          return uncertaintyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public Builder setUncertainty(org.openlca.proto.Proto.Uncertainty value) {
+        if (uncertaintyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uncertainty_ = value;
+          onChanged();
+        } else {
+          uncertaintyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public Builder setUncertainty(
+          org.openlca.proto.Proto.Uncertainty.Builder builderForValue) {
+        if (uncertaintyBuilder_ == null) {
+          uncertainty_ = builderForValue.build();
+          onChanged();
+        } else {
+          uncertaintyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public Builder mergeUncertainty(org.openlca.proto.Proto.Uncertainty value) {
+        if (uncertaintyBuilder_ == null) {
+          if (uncertainty_ != null) {
+            uncertainty_ =
+              org.openlca.proto.Proto.Uncertainty.newBuilder(uncertainty_).mergeFrom(value).buildPartial();
+          } else {
+            uncertainty_ = value;
+          }
+          onChanged();
+        } else {
+          uncertaintyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public Builder clearUncertainty() {
+        if (uncertaintyBuilder_ == null) {
+          uncertainty_ = null;
+          onChanged();
+        } else {
+          uncertainty_ = null;
+          uncertaintyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public org.openlca.proto.Proto.Uncertainty.Builder getUncertaintyBuilder() {
+        
+        onChanged();
+        return getUncertaintyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      public org.openlca.proto.Proto.UncertaintyOrBuilder getUncertaintyOrBuilder() {
+        if (uncertaintyBuilder_ != null) {
+          return uncertaintyBuilder_.getMessageOrBuilder();
+        } else {
+          return uncertainty_ == null ?
+              org.openlca.proto.Proto.Uncertainty.getDefaultInstance() : uncertainty_;
+        }
+      }
+      /**
+       * <pre>
+       * An uncertainty distribution for the redefined parameter value.
+       * </pre>
+       *
+       * <code>.protolca.Uncertainty uncertainty = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder> 
+          getUncertaintyFieldBuilder() {
+        if (uncertaintyBuilder_ == null) {
+          uncertaintyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.Uncertainty, org.openlca.proto.Proto.Uncertainty.Builder, org.openlca.proto.Proto.UncertaintyOrBuilder>(
+                  getUncertainty(),
+                  getParentForChildren(),
+                  isClean());
+          uncertainty_ = null;
+        }
+        return uncertaintyBuilder_;
+      }
+
+      private double value_ ;
+      /**
+       * <pre>
+       * The value of the redefined parameter.
+       * </pre>
+       *
+       * <code>double value = 6;</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public double getValue() {
+        return value_;
+      }
+      /**
+       * <pre>
+       * The value of the redefined parameter.
+       * </pre>
+       *
+       * <code>double value = 6;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(double value) {
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The value of the redefined parameter.
+       * </pre>
+       *
+       * <code>double value = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        
+        value_ = 0D;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -64546,6 +65022,1588 @@ public final class Proto {
 
     @java.lang.Override
     public org.openlca.proto.Proto.ParameterRedef getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ParameterRedefSetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.ParameterRedefSet)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * The name of the parameter set.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * The name of the parameter set.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * A description of the parameter set.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * A description of the parameter set.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * Indicates if this set of parameter redefinitions is the baseline for a
+     * product system.
+     * </pre>
+     *
+     * <code>bool is_baseline = 4;</code>
+     * @return The isBaseline.
+     */
+    boolean getIsBaseline();
+
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    java.util.List<org.openlca.proto.Proto.ParameterRedef> 
+        getParametersList();
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    org.openlca.proto.Proto.ParameterRedef getParameters(int index);
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    int getParametersCount();
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
+        getParametersOrBuilderList();
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    org.openlca.proto.Proto.ParameterRedefOrBuilder getParametersOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * An instance of this class is just a set of parameter redefinitions attached
+   * to a product system. It can have a name and a description. One of the
+   * parameter sets can be defined as the baseline of the product system. In the
+   * calculation the baseline set is then taken by default.
+   * </pre>
+   *
+   * Protobuf type {@code protolca.ParameterRedefSet}
+   */
+  public static final class ParameterRedefSet extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.ParameterRedefSet)
+      ParameterRedefSetOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ParameterRedefSet.newBuilder() to construct.
+    private ParameterRedefSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ParameterRedefSet() {
+      type_ = "";
+      name_ = "";
+      description_ = "";
+      parameters_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ParameterRedefSet();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ParameterRedefSet(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 32: {
+
+              isBaseline_ = input.readBool();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.ParameterRedef>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              parameters_.add(
+                  input.readMessage(org.openlca.proto.Proto.ParameterRedef.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.Proto.internal_static_protolca_ParameterRedefSet_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.Proto.internal_static_protolca_ParameterRedefSet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.Proto.ParameterRedefSet.class, org.openlca.proto.Proto.ParameterRedefSet.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The type name of the respectiven entity.
+     * This field is used for JSON-LD compatibility.
+     * </pre>
+     *
+     * <code>string type = 1[json_name = "&#64;type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The name of the parameter set.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the parameter set.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * A description of the parameter set.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A description of the parameter set.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_BASELINE_FIELD_NUMBER = 4;
+    private boolean isBaseline_;
+    /**
+     * <pre>
+     * Indicates if this set of parameter redefinitions is the baseline for a
+     * product system.
+     * </pre>
+     *
+     * <code>bool is_baseline = 4;</code>
+     * @return The isBaseline.
+     */
+    @java.lang.Override
+    public boolean getIsBaseline() {
+      return isBaseline_;
+    }
+
+    public static final int PARAMETERS_FIELD_NUMBER = 5;
+    private java.util.List<org.openlca.proto.Proto.ParameterRedef> parameters_;
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.openlca.proto.Proto.ParameterRedef> getParametersList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    @java.lang.Override
+    public int getParametersCount() {
+      return parameters_.size();
+    }
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterRedef getParameters(int index) {
+      return parameters_.get(index);
+    }
+    /**
+     * <pre>
+     * The parameter redefinitions of this redefinition set.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterRedefOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+      }
+      if (isBaseline_ != false) {
+        output.writeBool(4, isBaseline_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(5, parameters_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+      }
+      if (isBaseline_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isBaseline_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, parameters_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.Proto.ParameterRedefSet)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.Proto.ParameterRedefSet other = (org.openlca.proto.Proto.ParameterRedefSet) obj;
+
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (getIsBaseline()
+          != other.getIsBaseline()) return false;
+      if (!getParametersList()
+          .equals(other.getParametersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + IS_BASELINE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsBaseline());
+      if (getParametersCount() > 0) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParametersList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.Proto.ParameterRedefSet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.Proto.ParameterRedefSet prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * An instance of this class is just a set of parameter redefinitions attached
+     * to a product system. It can have a name and a description. One of the
+     * parameter sets can be defined as the baseline of the product system. In the
+     * calculation the baseline set is then taken by default.
+     * </pre>
+     *
+     * Protobuf type {@code protolca.ParameterRedefSet}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.ParameterRedefSet)
+        org.openlca.proto.Proto.ParameterRedefSetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.Proto.internal_static_protolca_ParameterRedefSet_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.Proto.internal_static_protolca_ParameterRedefSet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.Proto.ParameterRedefSet.class, org.openlca.proto.Proto.ParameterRedefSet.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.Proto.ParameterRedefSet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getParametersFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        name_ = "";
+
+        description_ = "";
+
+        isBaseline_ = false;
+
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.Proto.internal_static_protolca_ParameterRedefSet_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ParameterRedefSet getDefaultInstanceForType() {
+        return org.openlca.proto.Proto.ParameterRedefSet.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ParameterRedefSet build() {
+        org.openlca.proto.Proto.ParameterRedefSet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.Proto.ParameterRedefSet buildPartial() {
+        org.openlca.proto.Proto.ParameterRedefSet result = new org.openlca.proto.Proto.ParameterRedefSet(this);
+        int from_bitField0_ = bitField0_;
+        result.type_ = type_;
+        result.name_ = name_;
+        result.description_ = description_;
+        result.isBaseline_ = isBaseline_;
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.Proto.ParameterRedefSet) {
+          return mergeFrom((org.openlca.proto.Proto.ParameterRedefSet)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.Proto.ParameterRedefSet other) {
+        if (other == org.openlca.proto.Proto.ParameterRedefSet.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.getIsBaseline() != false) {
+          setIsBaseline(other.getIsBaseline());
+        }
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.Proto.ParameterRedefSet parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.Proto.ParameterRedefSet) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type name of the respectiven entity.
+       * This field is used for JSON-LD compatibility.
+       * </pre>
+       *
+       * <code>string type = 1[json_name = "&#64;type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * The name of the parameter set.
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the parameter set.
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the parameter set.
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the parameter set.
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The name of the parameter set.
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * A description of the parameter set.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A description of the parameter set.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A description of the parameter set.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A description of the parameter set.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A description of the parameter set.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isBaseline_ ;
+      /**
+       * <pre>
+       * Indicates if this set of parameter redefinitions is the baseline for a
+       * product system.
+       * </pre>
+       *
+       * <code>bool is_baseline = 4;</code>
+       * @return The isBaseline.
+       */
+      @java.lang.Override
+      public boolean getIsBaseline() {
+        return isBaseline_;
+      }
+      /**
+       * <pre>
+       * Indicates if this set of parameter redefinitions is the baseline for a
+       * product system.
+       * </pre>
+       *
+       * <code>bool is_baseline = 4;</code>
+       * @param value The isBaseline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsBaseline(boolean value) {
+        
+        isBaseline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates if this set of parameter redefinitions is the baseline for a
+       * product system.
+       * </pre>
+       *
+       * <code>bool is_baseline = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsBaseline() {
+        
+        isBaseline_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.openlca.proto.Proto.ParameterRedef> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          parameters_ = new java.util.ArrayList<org.openlca.proto.Proto.ParameterRedef>(parameters_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.ParameterRedef, org.openlca.proto.Proto.ParameterRedef.Builder, org.openlca.proto.Proto.ParameterRedefOrBuilder> parametersBuilder_;
+
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.ParameterRedef> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public int getParametersCount() {
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedef getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder setParameters(
+          int index, org.openlca.proto.Proto.ParameterRedef value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder setParameters(
+          int index, org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder addParameters(org.openlca.proto.Proto.ParameterRedef value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder addParameters(
+          int index, org.openlca.proto.Proto.ParameterRedef value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder addParameters(
+          org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder addParameters(
+          int index, org.openlca.proto.Proto.ParameterRedef.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends org.openlca.proto.Proto.ParameterRedef> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedef.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedef.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            org.openlca.proto.Proto.ParameterRedef.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedef.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, org.openlca.proto.Proto.ParameterRedef.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The parameter redefinitions of this redefinition set.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedef parameters = 5;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.ParameterRedef.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.ParameterRedef, org.openlca.proto.Proto.ParameterRedef.Builder, org.openlca.proto.Proto.ParameterRedefOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openlca.proto.Proto.ParameterRedef, org.openlca.proto.Proto.ParameterRedef.Builder, org.openlca.proto.Proto.ParameterRedefOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.ParameterRedefSet)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.ParameterRedefSet)
+    private static final org.openlca.proto.Proto.ParameterRedefSet DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.Proto.ParameterRedefSet();
+    }
+
+    public static org.openlca.proto.Proto.ParameterRedefSet getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParameterRedefSet>
+        PARSER = new com.google.protobuf.AbstractParser<ParameterRedefSet>() {
+      @java.lang.Override
+      public ParameterRedefSet parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ParameterRedefSet(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ParameterRedefSet> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParameterRedefSet> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterRedefSet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -79563,6 +81621,55 @@ public final class Proto {
      */
     org.openlca.proto.Proto.ProcessLinkOrBuilder getProcessLinksOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    java.util.List<org.openlca.proto.Proto.ParameterRedefSet> 
+        getParameterSetsList();
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    org.openlca.proto.Proto.ParameterRedefSet getParameterSets(int index);
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    int getParameterSetsCount();
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    java.util.List<? extends org.openlca.proto.Proto.ParameterRedefSetOrBuilder> 
+        getParameterSetsOrBuilderList();
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    org.openlca.proto.Proto.ParameterRedefSetOrBuilder getParameterSetsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -79592,6 +81699,7 @@ public final class Proto {
       library_ = "";
       processes_ = java.util.Collections.emptyList();
       processLinks_ = java.util.Collections.emptyList();
+      parameterSets_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -79764,6 +81872,15 @@ public final class Proto {
                   input.readMessage(org.openlca.proto.Proto.ProcessLink.parser(), extensionRegistry));
               break;
             }
+            case 138: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                parameterSets_ = new java.util.ArrayList<org.openlca.proto.Proto.ParameterRedefSet>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              parameterSets_.add(
+                  input.readMessage(org.openlca.proto.Proto.ParameterRedefSet.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -79787,6 +81904,9 @@ public final class Proto {
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           processLinks_ = java.util.Collections.unmodifiableList(processLinks_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          parameterSets_ = java.util.Collections.unmodifiableList(parameterSets_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -80526,6 +82646,71 @@ public final class Proto {
       return processLinks_.get(index);
     }
 
+    public static final int PARAMETER_SETS_FIELD_NUMBER = 17;
+    private java.util.List<org.openlca.proto.Proto.ParameterRedefSet> parameterSets_;
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.openlca.proto.Proto.ParameterRedefSet> getParameterSetsList() {
+      return parameterSets_;
+    }
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefSetOrBuilder> 
+        getParameterSetsOrBuilderList() {
+      return parameterSets_;
+    }
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    @java.lang.Override
+    public int getParameterSetsCount() {
+      return parameterSets_.size();
+    }
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterRedefSet getParameterSets(int index) {
+      return parameterSets_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of possible sets of parameter redefinitions for this product
+     * system.
+     * </pre>
+     *
+     * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ParameterRedefSetOrBuilder getParameterSetsOrBuilder(
+        int index) {
+      return parameterSets_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -80587,6 +82772,9 @@ public final class Proto {
       }
       for (int i = 0; i < processLinks_.size(); i++) {
         output.writeMessage(16, processLinks_.get(i));
+      }
+      for (int i = 0; i < parameterSets_.size(); i++) {
+        output.writeMessage(17, parameterSets_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -80658,6 +82846,10 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, processLinks_.get(i));
       }
+      for (int i = 0; i < parameterSets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, parameterSets_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -80721,6 +82913,8 @@ public final class Proto {
       }
       if (!getProcessLinksList()
           .equals(other.getProcessLinksList())) return false;
+      if (!getParameterSetsList()
+          .equals(other.getParameterSetsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -80780,6 +82974,10 @@ public final class Proto {
       if (getProcessLinksCount() > 0) {
         hash = (37 * hash) + PROCESS_LINKS_FIELD_NUMBER;
         hash = (53 * hash) + getProcessLinksList().hashCode();
+      }
+      if (getParameterSetsCount() > 0) {
+        hash = (37 * hash) + PARAMETER_SETS_FIELD_NUMBER;
+        hash = (53 * hash) + getParameterSetsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -80916,6 +83114,7 @@ public final class Proto {
                 .alwaysUseFieldBuilders) {
           getProcessesFieldBuilder();
           getProcessLinksFieldBuilder();
+          getParameterSetsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -80980,6 +83179,12 @@ public final class Proto {
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           processLinksBuilder_.clear();
+        }
+        if (parameterSetsBuilder_ == null) {
+          parameterSets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          parameterSetsBuilder_.clear();
         }
         return this;
       }
@@ -81063,6 +83268,15 @@ public final class Proto {
           result.processLinks_ = processLinks_;
         } else {
           result.processLinks_ = processLinksBuilder_.build();
+        }
+        if (parameterSetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            parameterSets_ = java.util.Collections.unmodifiableList(parameterSets_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.parameterSets_ = parameterSets_;
+        } else {
+          result.parameterSets_ = parameterSetsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -81217,6 +83431,32 @@ public final class Proto {
                    getProcessLinksFieldBuilder() : null;
             } else {
               processLinksBuilder_.addAllMessages(other.processLinks_);
+            }
+          }
+        }
+        if (parameterSetsBuilder_ == null) {
+          if (!other.parameterSets_.isEmpty()) {
+            if (parameterSets_.isEmpty()) {
+              parameterSets_ = other.parameterSets_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureParameterSetsIsMutable();
+              parameterSets_.addAll(other.parameterSets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameterSets_.isEmpty()) {
+            if (parameterSetsBuilder_.isEmpty()) {
+              parameterSetsBuilder_.dispose();
+              parameterSetsBuilder_ = null;
+              parameterSets_ = other.parameterSets_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              parameterSetsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParameterSetsFieldBuilder() : null;
+            } else {
+              parameterSetsBuilder_.addAllMessages(other.parameterSets_);
             }
           }
         }
@@ -83569,6 +85809,336 @@ public final class Proto {
           processLinks_ = null;
         }
         return processLinksBuilder_;
+      }
+
+      private java.util.List<org.openlca.proto.Proto.ParameterRedefSet> parameterSets_ =
+        java.util.Collections.emptyList();
+      private void ensureParameterSetsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          parameterSets_ = new java.util.ArrayList<org.openlca.proto.Proto.ParameterRedefSet>(parameterSets_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.ParameterRedefSet, org.openlca.proto.Proto.ParameterRedefSet.Builder, org.openlca.proto.Proto.ParameterRedefSetOrBuilder> parameterSetsBuilder_;
+
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.ParameterRedefSet> getParameterSetsList() {
+        if (parameterSetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameterSets_);
+        } else {
+          return parameterSetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public int getParameterSetsCount() {
+        if (parameterSetsBuilder_ == null) {
+          return parameterSets_.size();
+        } else {
+          return parameterSetsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefSet getParameterSets(int index) {
+        if (parameterSetsBuilder_ == null) {
+          return parameterSets_.get(index);
+        } else {
+          return parameterSetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder setParameterSets(
+          int index, org.openlca.proto.Proto.ParameterRedefSet value) {
+        if (parameterSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParameterSetsIsMutable();
+          parameterSets_.set(index, value);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder setParameterSets(
+          int index, org.openlca.proto.Proto.ParameterRedefSet.Builder builderForValue) {
+        if (parameterSetsBuilder_ == null) {
+          ensureParameterSetsIsMutable();
+          parameterSets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parameterSetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder addParameterSets(org.openlca.proto.Proto.ParameterRedefSet value) {
+        if (parameterSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParameterSetsIsMutable();
+          parameterSets_.add(value);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder addParameterSets(
+          int index, org.openlca.proto.Proto.ParameterRedefSet value) {
+        if (parameterSetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParameterSetsIsMutable();
+          parameterSets_.add(index, value);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder addParameterSets(
+          org.openlca.proto.Proto.ParameterRedefSet.Builder builderForValue) {
+        if (parameterSetsBuilder_ == null) {
+          ensureParameterSetsIsMutable();
+          parameterSets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parameterSetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder addParameterSets(
+          int index, org.openlca.proto.Proto.ParameterRedefSet.Builder builderForValue) {
+        if (parameterSetsBuilder_ == null) {
+          ensureParameterSetsIsMutable();
+          parameterSets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parameterSetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder addAllParameterSets(
+          java.lang.Iterable<? extends org.openlca.proto.Proto.ParameterRedefSet> values) {
+        if (parameterSetsBuilder_ == null) {
+          ensureParameterSetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameterSets_);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder clearParameterSets() {
+        if (parameterSetsBuilder_ == null) {
+          parameterSets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public Builder removeParameterSets(int index) {
+        if (parameterSetsBuilder_ == null) {
+          ensureParameterSetsIsMutable();
+          parameterSets_.remove(index);
+          onChanged();
+        } else {
+          parameterSetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefSet.Builder getParameterSetsBuilder(
+          int index) {
+        return getParameterSetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefSetOrBuilder getParameterSetsOrBuilder(
+          int index) {
+        if (parameterSetsBuilder_ == null) {
+          return parameterSets_.get(index);  } else {
+          return parameterSetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public java.util.List<? extends org.openlca.proto.Proto.ParameterRedefSetOrBuilder> 
+           getParameterSetsOrBuilderList() {
+        if (parameterSetsBuilder_ != null) {
+          return parameterSetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameterSets_);
+        }
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefSet.Builder addParameterSetsBuilder() {
+        return getParameterSetsFieldBuilder().addBuilder(
+            org.openlca.proto.Proto.ParameterRedefSet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public org.openlca.proto.Proto.ParameterRedefSet.Builder addParameterSetsBuilder(
+          int index) {
+        return getParameterSetsFieldBuilder().addBuilder(
+            index, org.openlca.proto.Proto.ParameterRedefSet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of possible sets of parameter redefinitions for this product
+       * system.
+       * </pre>
+       *
+       * <code>repeated .protolca.ParameterRedefSet parameter_sets = 17;</code>
+       */
+      public java.util.List<org.openlca.proto.Proto.ParameterRedefSet.Builder> 
+           getParameterSetsBuilderList() {
+        return getParameterSetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openlca.proto.Proto.ParameterRedefSet, org.openlca.proto.Proto.ParameterRedefSet.Builder, org.openlca.proto.Proto.ParameterRedefSetOrBuilder> 
+          getParameterSetsFieldBuilder() {
+        if (parameterSetsBuilder_ == null) {
+          parameterSetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openlca.proto.Proto.ParameterRedefSet, org.openlca.proto.Proto.ParameterRedefSet.Builder, org.openlca.proto.Proto.ParameterRedefSetOrBuilder>(
+                  parameterSets_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameterSets_ = null;
+        }
+        return parameterSetsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -105805,6 +108375,11 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_ParameterRedef_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_ParameterRedefSet_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_ParameterRedefSet_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_Process_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -106040,163 +108615,169 @@ public final class Proto {
       "\030.protolca.ParameterScope\022\027\n\017input_param" +
       "eter\030\013 \001(\010\022\r\n\005value\030\014 \001(\001\022\017\n\007formula\030\r \001" +
       "(\t\022*\n\013uncertainty\030\016 \001(\0132\025.protolca.Uncer" +
-      "tainty\"b\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR\005" +
-      "@type\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\036\n\007co" +
-      "ntext\030\004 \001(\0132\r.protolca.Ref\"\374\005\n\007Process\022\023" +
-      "\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004" +
-      "name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007versi" +
-      "on\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categor" +
-      "y\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007" +
-      "library\030\t \001(\t\0226\n\022allocation_factors\030\n \003(" +
-      "\0132\032.protolca.AllocationFactor\022;\n\031default" +
-      "_allocation_method\030\013 \001(\0162\030.protolca.Allo" +
-      "cationType\022%\n\texchanges\030\014 \003(\0132\022.protolca" +
-      ".Exchange\022\030\n\020last_internal_id\030\r \001(\005\022\037\n\010l" +
-      "ocation\030\016 \001(\0132\r.protolca.Ref\022\'\n\nparamete" +
-      "rs\030\017 \003(\0132\023.protolca.Parameter\022=\n\025process" +
-      "_documentation\030\020 \001(\0132\036.protolca.ProcessD" +
-      "ocumentation\022+\n\014process_type\030\021 \001(\0162\025.pro" +
-      "tolca.ProcessType\022 \n\tdq_system\030\022 \001(\0132\r.p" +
-      "rotolca.Ref\022)\n\022exchange_dq_system\030\023 \001(\0132" +
-      "\r.protolca.Ref\022\'\n\020social_dq_system\030\024 \001(\013" +
-      "2\r.protolca.Ref\022\020\n\010dq_entry\030\025 \001(\t\022\036\n\026inf" +
-      "rastructure_process\030\026 \001(\010\022.\n\016social_aspe" +
-      "cts\030\027 \003(\0132\026.protolca.SocialAspect\"\242\006\n\024Pr" +
-      "ocessDocumentation\022\023\n\004type\030\001 \001(\tR\005@type\022" +
-      "\030\n\020time_description\030\002 \001(\t\022\023\n\013valid_until" +
-      "\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(\t\022\036\n\026technology" +
-      "_description\030\005 \001(\t\022#\n\033data_collection_de" +
-      "scription\030\006 \001(\t\022 \n\030completeness_descript" +
-      "ion\030\007 \001(\t\022\"\n\032data_selection_description\030" +
-      "\010 \001(\t\022\026\n\016review_details\030\t \001(\t\022\"\n\032data_tr" +
-      "eatment_description\030\n \001(\t\022$\n\034inventory_m" +
-      "ethod_description\030\013 \001(\t\022&\n\036modeling_cons" +
-      "tants_description\030\014 \001(\t\022\037\n\010reviewer\030\r \001(" +
-      "\0132\r.protolca.Ref\022\034\n\024sampling_description" +
-      "\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r.protolca.Ref\022 " +
-      "\n\030restrictions_description\030\020 \001(\t\022\021\n\tcopy" +
-      "right\030\021 \001(\010\022\025\n\rcreation_date\030\022 \001(\t\022&\n\017da" +
-      "ta_documentor\030\023 \001(\0132\r.protolca.Ref\022%\n\016da" +
-      "ta_generator\030\024 \001(\0132\r.protolca.Ref\022%\n\016dat" +
-      "a_set_owner\030\025 \001(\0132\r.protolca.Ref\022\034\n\024inte" +
-      "nded_application\030\026 \001(\t\022\033\n\023project_descri" +
-      "ption\030\027 \001(\t\022\"\n\013publication\030\030 \001(\0132\r.proto" +
-      "lca.Ref\022\035\n\025geography_description\030\031 \001(\t\"\251" +
-      "\001\n\013ProcessLink\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\010p" +
-      "rovider\030\002 \001(\0132\r.protolca.Ref\022\033\n\004flow\030\003 \001" +
-      "(\0132\r.protolca.Ref\022\036\n\007process\030\004 \001(\0132\r.pro" +
-      "tolca.Ref\022\'\n\010exchange\030\005 \001(\0132\025.protolca.E" +
-      "xchangeRef\"\321\001\n\nProcessRef\022\023\n\004type\030\001 \001(\tR" +
-      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
-      "ast_change\030\006 \001(\t\022\025\n\rcategory_path\030\007 \003(\t\022" +
-      "\020\n\010location\030\010 \001(\t\022+\n\014process_type\030\t \001(\0162" +
-      "\025.protolca.ProcessType\"\336\003\n\rProductSystem" +
-      "\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014" +
-      "\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ver" +
-      "sion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010categ" +
-      "ory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017" +
-      "\n\007library\030\t \001(\t\022\'\n\tprocesses\030\n \003(\0132\024.pro" +
-      "tolca.ProcessRef\022/\n\021reference_process\030\013 " +
-      "\001(\0132\024.protolca.ProcessRef\022.\n\022reference_e" +
-      "xchange\030\014 \001(\0132\022.protolca.Exchange\022\025\n\rtar" +
-      "get_amount\030\r \001(\001\022\"\n\013target_unit\030\016 \001(\0132\r." +
-      "protolca.Ref\022+\n\024target_flow_property\030\017 \001" +
-      "(\0132\r.protolca.Ref\022,\n\rprocess_links\030\020 \003(\013" +
-      "2\025.protolca.ProcessLink\"\377\001\n\007Project\022\023\n\004t" +
-      "ype\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004nam" +
-      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030" +
-      "\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007" +
-      " \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007lib" +
-      "rary\030\t \001(\t\022$\n\rimpact_method\030\n \001(\0132\r.prot" +
-      "olca.Ref\022\037\n\006nw_set\030\013 \001(\0132\017.protolca.NwSe" +
-      "t\"\213\001\n\003Ref\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
-      "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
-      "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
-      "\022\025\n\rcategory_path\030\007 \003(\t\"\177\n\014SimpleResult\022" +
-      "\023\n\004type\030\001 \001(\tR\005@type\022*\n\014flow_results\030\002 \003" +
-      "(\0132\024.protolca.FlowResult\022.\n\016impact_resul" +
-      "ts\030\003 \003(\0132\026.protolca.ImpactResult\"\342\001\n\014Soc" +
-      "ialAspect\022\023\n\004type\030\001 \001(\tR\005@type\022\026\n\016activi" +
-      "ty_value\030\002 \001(\001\022\017\n\007comment\030\003 \001(\t\022\017\n\007quali" +
-      "ty\030\004 \001(\t\022\022\n\nraw_amount\030\005 \001(\t\022\'\n\nrisk_lev" +
-      "el\030\006 \001(\0162\023.protolca.RiskLevel\022\'\n\020social_" +
-      "indicator\030\007 \001(\0132\r.protolca.Ref\022\035\n\006source" +
-      "\030\010 \001(\0132\r.protolca.Ref\"\343\002\n\017SocialIndicato" +
-      "r\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022" +
-      "\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007ve" +
-      "rsion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010cate" +
-      "gory\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022" +
-      "\017\n\007library\030\t \001(\t\022\031\n\021activity_variable\030\n " +
-      "\001(\t\022(\n\021activity_quantity\030\013 \001(\0132\r.protolc" +
-      "a.Ref\022$\n\ractivity_unit\030\014 \001(\0132\r.protolca." +
-      "Ref\022\033\n\023unit_of_measurement\030\r \001(\t\022\031\n\021eval" +
-      "uation_scheme\030\016 \001(\t\"\201\002\n\006Source\022\023\n\004type\030\001" +
-      " \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001" +
-      "(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t" +
-      "\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132" +
-      "\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030" +
-      "\t \001(\t\022\013\n\003url\030\n \001(\t\022\026\n\016text_reference\030\013 \001" +
-      "(\t\022\014\n\004year\030\014 \001(\005\022\025\n\rexternal_file\030\r \001(\t\"" +
-      "\354\002\n\013Uncertainty\022\023\n\004type\030\001 \001(\tR\005@type\0224\n\021" +
-      "distribution_type\030\002 \001(\0162\031.protolca.Uncer" +
-      "taintyType\022\014\n\004mean\030\003 \001(\001\022\024\n\014mean_formula" +
-      "\030\004 \001(\t\022\021\n\tgeom_mean\030\005 \001(\001\022\031\n\021geom_mean_f" +
-      "ormula\030\006 \001(\t\022\017\n\007minimum\030\007 \001(\001\022\027\n\017minimum" +
-      "_formula\030\010 \001(\t\022\n\n\002sd\030\t \001(\001\022\022\n\nsd_formula" +
-      "\030\n \001(\t\022\017\n\007geom_sd\030\013 \001(\001\022\027\n\017geom_sd_formu" +
-      "la\030\014 \001(\t\022\014\n\004mode\030\r \001(\001\022\024\n\014mode_formula\030\016" +
-      " \001(\t\022\017\n\007maximum\030\017 \001(\001\022\027\n\017maximum_formula" +
-      "\030\020 \001(\t\"\272\001\n\004Unit\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002" +
-      "id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descripti" +
-      "on\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change" +
-      "\030\006 \001(\t\022\031\n\021conversion_factor\030\007 \001(\001\022\026\n\016ref" +
-      "erence_unit\030\010 \001(\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\t" +
-      "UnitGroup\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
+      "tainty\"\243\001\n\016ParameterRedef\022\023\n\004type\030\001 \001(\tR" +
+      "\005@type\022\036\n\007context\030\002 \001(\0132\r.protolca.Ref\022\023" +
+      "\n\013description\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022*\n\013unc" +
+      "ertainty\030\005 \001(\0132\025.protolca.Uncertainty\022\r\n" +
+      "\005value\030\006 \001(\001\"\216\001\n\021ParameterRedefSet\022\023\n\004ty" +
+      "pe\030\001 \001(\tR\005@type\022\014\n\004name\030\002 \001(\t\022\023\n\013descrip" +
+      "tion\030\003 \001(\t\022\023\n\013is_baseline\030\004 \001(\010\022,\n\nparam" +
+      "eters\030\005 \003(\0132\030.protolca.ParameterRedef\"\374\005" +
+      "\n\007Process\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001" +
       "(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001" +
       "(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t" +
       "\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004tag" +
-      "s\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022,\n\025default_flow" +
-      "_property\030\n \001(\0132\r.protolca.Ref\022\035\n\005units\030" +
-      "\013 \003(\0132\016.protolca.Unit*\247\001\n\016AllocationType" +
-      "\022\035\n\031UNDEFINED_ALLOCATION_TYPE\020\000\022\027\n\023PHYSI" +
-      "CAL_ALLOCATION\020\001\022\027\n\023ECONOMIC_ALLOCATION\020" +
-      "\002\022\025\n\021CAUSAL_ALLOCATION\020\003\022\032\n\026USE_DEFAULT_" +
-      "ALLOCATION\020\004\022\021\n\rNO_ALLOCATION\020\005*\265\001\n\017Calc" +
-      "ulationType\022\036\n\032UNDEFINED_CALCULATION_TYP" +
-      "E\020\000\022\026\n\022SIMPLE_CALCULATION\020\001\022\031\n\025CONTRIBUT" +
-      "ION_ANALYSIS\020\002\022\025\n\021UPSTREAM_ANALYSIS\020\003\022\034\n" +
-      "\030REGIONALIZED_CALCULATION\020\004\022\032\n\026MONTE_CAR" +
-      "LO_SIMULATION\020\005*b\n\020FlowPropertyType\022 \n\034U" +
-      "NDEFINED_FLOW_PROPERTY_TYPE\020\000\022\025\n\021ECONOMI" +
-      "C_QUANTITY\020\001\022\025\n\021PHYSICAL_QUANTITY\020\002*Z\n\010F" +
-      "lowType\022\027\n\023UNDEFINED_FLOW_TYPE\020\000\022\023\n\017ELEM" +
-      "ENTARY_FLOW\020\001\022\020\n\014PRODUCT_FLOW\020\002\022\016\n\nWASTE" +
-      "_FLOW\020\003*\263\002\n\tModelType\022\030\n\024UNDEFINED_MODEL" +
-      "_TYPE\020\000\022\t\n\005ACTOR\020\001\022\014\n\010CATEGORY\020\002\022\014\n\010CURR" +
-      "ENCY\020\003\022\r\n\tDQ_SYSTEM\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_" +
-      "PROPERTY\020\006\022\023\n\017IMPACT_CATEGORY\020\007\022\021\n\rIMPAC" +
-      "T_METHOD\020\010\022\014\n\010LOCATION\020\t\022\n\n\006NW_SET\020\n\022\r\n\t" +
-      "PARAMETER\020\013\022\013\n\007PROCESS\020\014\022\022\n\016PRODUCT_SYST" +
-      "EM\020\r\022\013\n\007PROJECT\020\016\022\024\n\020SOCIAL_INDICATOR\020\017\022" +
-      "\n\n\006SOURCE\020\020\022\010\n\004UNIT\020\021\022\016\n\nUNIT_GROUP\020\022*f\n" +
-      "\016ParameterScope\022\035\n\031UNDEFINED_PARAMETER_S" +
-      "COPE\020\000\022\021\n\rPROCESS_SCOPE\020\001\022\020\n\014IMPACT_SCOP" +
-      "E\020\002\022\020\n\014GLOBAL_SCOPE\020\003*K\n\013ProcessType\022\032\n\026" +
-      "UNDEFINED_PROCESS_TYPE\020\000\022\016\n\nLCI_RESULT\020\001" +
-      "\022\020\n\014UNIT_PROCESS\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDE" +
-      "FINED_RISK_LEVEL\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024" +
-      "\n\020HIGH_OPPORTUNITY\020\002\022\026\n\022MEDIUM_OPPORTUNI" +
-      "TY\020\003\022\023\n\017LOW_OPPORTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021" +
-      "\n\rVERY_LOW_RISK\020\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIU" +
-      "M_RISK\020\010\022\r\n\tHIGH_RISK\020\t\022\022\n\016VERY_HIGH_RIS" +
-      "K\020\n\022\013\n\007NO_DATA\020\013\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n" +
-      "\017UncertaintyType\022\036\n\032UNDEFINED_UNCERTAINT" +
-      "Y_TYPE\020\000\022\033\n\027LOG_NORMAL_DISTRIBUTION\020\001\022\027\n" +
-      "\023NORMAL_DISTRIBUTION\020\002\022\031\n\025TRIANGLE_DISTR" +
-      "IBUTION\020\003\022\030\n\024UNIFORM_DISTRIBUTION\020\004B&\n\021o" +
-      "rg.openlca.protoB\005ProtoZ\n.;protolcab\006pro" +
-      "to3"
+      "s\030\010 \003(\t\022\017\n\007library\030\t \001(\t\0226\n\022allocation_f" +
+      "actors\030\n \003(\0132\032.protolca.AllocationFactor" +
+      "\022;\n\031default_allocation_method\030\013 \001(\0162\030.pr" +
+      "otolca.AllocationType\022%\n\texchanges\030\014 \003(\013" +
+      "2\022.protolca.Exchange\022\030\n\020last_internal_id" +
+      "\030\r \001(\005\022\037\n\010location\030\016 \001(\0132\r.protolca.Ref\022" +
+      "\'\n\nparameters\030\017 \003(\0132\023.protolca.Parameter" +
+      "\022=\n\025process_documentation\030\020 \001(\0132\036.protol" +
+      "ca.ProcessDocumentation\022+\n\014process_type\030" +
+      "\021 \001(\0162\025.protolca.ProcessType\022 \n\tdq_syste" +
+      "m\030\022 \001(\0132\r.protolca.Ref\022)\n\022exchange_dq_sy" +
+      "stem\030\023 \001(\0132\r.protolca.Ref\022\'\n\020social_dq_s" +
+      "ystem\030\024 \001(\0132\r.protolca.Ref\022\020\n\010dq_entry\030\025" +
+      " \001(\t\022\036\n\026infrastructure_process\030\026 \001(\010\022.\n\016" +
+      "social_aspects\030\027 \003(\0132\026.protolca.SocialAs" +
+      "pect\"\242\006\n\024ProcessDocumentation\022\023\n\004type\030\001 " +
+      "\001(\tR\005@type\022\030\n\020time_description\030\002 \001(\t\022\023\n\013" +
+      "valid_until\030\003 \001(\t\022\022\n\nvalid_from\030\004 \001(\t\022\036\n" +
+      "\026technology_description\030\005 \001(\t\022#\n\033data_co" +
+      "llection_description\030\006 \001(\t\022 \n\030completene" +
+      "ss_description\030\007 \001(\t\022\"\n\032data_selection_d" +
+      "escription\030\010 \001(\t\022\026\n\016review_details\030\t \001(\t" +
+      "\022\"\n\032data_treatment_description\030\n \001(\t\022$\n\034" +
+      "inventory_method_description\030\013 \001(\t\022&\n\036mo" +
+      "deling_constants_description\030\014 \001(\t\022\037\n\010re" +
+      "viewer\030\r \001(\0132\r.protolca.Ref\022\034\n\024sampling_" +
+      "description\030\016 \001(\t\022\036\n\007sources\030\017 \003(\0132\r.pro" +
+      "tolca.Ref\022 \n\030restrictions_description\030\020 " +
+      "\001(\t\022\021\n\tcopyright\030\021 \001(\010\022\025\n\rcreation_date\030" +
+      "\022 \001(\t\022&\n\017data_documentor\030\023 \001(\0132\r.protolc" +
+      "a.Ref\022%\n\016data_generator\030\024 \001(\0132\r.protolca" +
+      ".Ref\022%\n\016data_set_owner\030\025 \001(\0132\r.protolca." +
+      "Ref\022\034\n\024intended_application\030\026 \001(\t\022\033\n\023pro" +
+      "ject_description\030\027 \001(\t\022\"\n\013publication\030\030 " +
+      "\001(\0132\r.protolca.Ref\022\035\n\025geography_descript" +
+      "ion\030\031 \001(\t\"\251\001\n\013ProcessLink\022\023\n\004type\030\001 \001(\tR" +
+      "\005@type\022\037\n\010provider\030\002 \001(\0132\r.protolca.Ref\022" +
+      "\033\n\004flow\030\003 \001(\0132\r.protolca.Ref\022\036\n\007process\030" +
+      "\004 \001(\0132\r.protolca.Ref\022\'\n\010exchange\030\005 \001(\0132\025" +
+      ".protolca.ExchangeRef\"\321\001\n\nProcessRef\022\023\n\004" +
+      "type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004na" +
+      "me\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version" +
+      "\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_" +
+      "path\030\007 \003(\t\022\020\n\010location\030\010 \001(\t\022+\n\014process_" +
+      "type\030\t \001(\0162\025.protolca.ProcessType\"\223\004\n\rPr" +
+      "oductSystem\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002" +
+      " \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
+      " \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030\006 \001" +
+      "(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014\n\004t" +
+      "ags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\'\n\tprocesses\030" +
+      "\n \003(\0132\024.protolca.ProcessRef\022/\n\021reference" +
+      "_process\030\013 \001(\0132\024.protolca.ProcessRef\022.\n\022" +
+      "reference_exchange\030\014 \001(\0132\022.protolca.Exch" +
+      "ange\022\025\n\rtarget_amount\030\r \001(\001\022\"\n\013target_un" +
+      "it\030\016 \001(\0132\r.protolca.Ref\022+\n\024target_flow_p" +
+      "roperty\030\017 \001(\0132\r.protolca.Ref\022,\n\rprocess_" +
+      "links\030\020 \003(\0132\025.protolca.ProcessLink\0223\n\016pa" +
+      "rameter_sets\030\021 \003(\0132\033.protolca.ParameterR" +
+      "edefSet\"\377\001\n\007Project\022\023\n\004type\030\001 \001(\tR\005@type" +
+      "\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descr" +
+      "iption\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_ch" +
+      "ange\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca." +
+      "Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022$\n\rim" +
+      "pact_method\030\n \001(\0132\r.protolca.Ref\022\037\n\006nw_s" +
+      "et\030\013 \001(\0132\017.protolca.NwSet\"\213\001\n\003Ref\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
+      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\025\n\rcategory_pat" +
+      "h\030\007 \003(\t\"\177\n\014SimpleResult\022\023\n\004type\030\001 \001(\tR\005@" +
+      "type\022*\n\014flow_results\030\002 \003(\0132\024.protolca.Fl" +
+      "owResult\022.\n\016impact_results\030\003 \003(\0132\026.proto" +
+      "lca.ImpactResult\"\342\001\n\014SocialAspect\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\026\n\016activity_value\030\002 \001(\001\022\017" +
+      "\n\007comment\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\022\n\nraw_" +
+      "amount\030\005 \001(\t\022\'\n\nrisk_level\030\006 \001(\0162\023.proto" +
+      "lca.RiskLevel\022\'\n\020social_indicator\030\007 \001(\0132" +
+      "\r.protolca.Ref\022\035\n\006source\030\010 \001(\0132\r.protolc" +
+      "a.Ref\"\343\002\n\017SocialIndicator\022\023\n\004type\030\001 \001(\tR" +
+      "\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n" +
+      "\013description\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013l" +
+      "ast_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.pro" +
+      "tolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t" +
+      "\022\031\n\021activity_variable\030\n \001(\t\022(\n\021activity_" +
+      "quantity\030\013 \001(\0132\r.protolca.Ref\022$\n\ractivit" +
+      "y_unit\030\014 \001(\0132\r.protolca.Ref\022\033\n\023unit_of_m" +
+      "easurement\030\r \001(\t\022\031\n\021evaluation_scheme\030\016 " +
+      "\001(\t\"\201\002\n\006Source\022\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002i" +
+      "d\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013descriptio" +
+      "n\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last_change\030" +
+      "\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.protolca.Ref\022\014" +
+      "\n\004tags\030\010 \003(\t\022\017\n\007library\030\t \001(\t\022\013\n\003url\030\n \001" +
+      "(\t\022\026\n\016text_reference\030\013 \001(\t\022\014\n\004year\030\014 \001(\005" +
+      "\022\025\n\rexternal_file\030\r \001(\t\"\354\002\n\013Uncertainty\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\0224\n\021distribution_typ" +
+      "e\030\002 \001(\0162\031.protolca.UncertaintyType\022\014\n\004me" +
+      "an\030\003 \001(\001\022\024\n\014mean_formula\030\004 \001(\t\022\021\n\tgeom_m" +
+      "ean\030\005 \001(\001\022\031\n\021geom_mean_formula\030\006 \001(\t\022\017\n\007" +
+      "minimum\030\007 \001(\001\022\027\n\017minimum_formula\030\010 \001(\t\022\n" +
+      "\n\002sd\030\t \001(\001\022\022\n\nsd_formula\030\n \001(\t\022\017\n\007geom_s" +
+      "d\030\013 \001(\001\022\027\n\017geom_sd_formula\030\014 \001(\t\022\014\n\004mode" +
+      "\030\r \001(\001\022\024\n\014mode_formula\030\016 \001(\t\022\017\n\007maximum\030" +
+      "\017 \001(\001\022\027\n\017maximum_formula\030\020 \001(\t\"\272\001\n\004Unit\022" +
+      "\023\n\004type\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n" +
+      "\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007vers" +
+      "ion\030\005 \001(\t\022\023\n\013last_change\030\006 \001(\t\022\031\n\021conver" +
+      "sion_factor\030\007 \001(\001\022\026\n\016reference_unit\030\010 \001(" +
+      "\010\022\020\n\010synonyms\030\t \003(\t\"\207\002\n\tUnitGroup\022\023\n\004typ" +
+      "e\030\001 \001(\tR\005@type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\017\n\007version\030\005 " +
+      "\001(\t\022\023\n\013last_change\030\006 \001(\t\022\037\n\010category\030\007 \001" +
+      "(\0132\r.protolca.Ref\022\014\n\004tags\030\010 \003(\t\022\017\n\007libra" +
+      "ry\030\t \001(\t\022,\n\025default_flow_property\030\n \001(\0132" +
+      "\r.protolca.Ref\022\035\n\005units\030\013 \003(\0132\016.protolca" +
+      ".Unit*\247\001\n\016AllocationType\022\035\n\031UNDEFINED_AL" +
+      "LOCATION_TYPE\020\000\022\027\n\023PHYSICAL_ALLOCATION\020\001" +
+      "\022\027\n\023ECONOMIC_ALLOCATION\020\002\022\025\n\021CAUSAL_ALLO" +
+      "CATION\020\003\022\032\n\026USE_DEFAULT_ALLOCATION\020\004\022\021\n\r" +
+      "NO_ALLOCATION\020\005*\265\001\n\017CalculationType\022\036\n\032U" +
+      "NDEFINED_CALCULATION_TYPE\020\000\022\026\n\022SIMPLE_CA" +
+      "LCULATION\020\001\022\031\n\025CONTRIBUTION_ANALYSIS\020\002\022\025" +
+      "\n\021UPSTREAM_ANALYSIS\020\003\022\034\n\030REGIONALIZED_CA" +
+      "LCULATION\020\004\022\032\n\026MONTE_CARLO_SIMULATION\020\005*" +
+      "b\n\020FlowPropertyType\022 \n\034UNDEFINED_FLOW_PR" +
+      "OPERTY_TYPE\020\000\022\025\n\021ECONOMIC_QUANTITY\020\001\022\025\n\021" +
+      "PHYSICAL_QUANTITY\020\002*Z\n\010FlowType\022\027\n\023UNDEF" +
+      "INED_FLOW_TYPE\020\000\022\023\n\017ELEMENTARY_FLOW\020\001\022\020\n" +
+      "\014PRODUCT_FLOW\020\002\022\016\n\nWASTE_FLOW\020\003*\263\002\n\tMode" +
+      "lType\022\030\n\024UNDEFINED_MODEL_TYPE\020\000\022\t\n\005ACTOR" +
+      "\020\001\022\014\n\010CATEGORY\020\002\022\014\n\010CURRENCY\020\003\022\r\n\tDQ_SYS" +
+      "TEM\020\004\022\010\n\004FLOW\020\005\022\021\n\rFLOW_PROPERTY\020\006\022\023\n\017IM" +
+      "PACT_CATEGORY\020\007\022\021\n\rIMPACT_METHOD\020\010\022\014\n\010LO" +
+      "CATION\020\t\022\n\n\006NW_SET\020\n\022\r\n\tPARAMETER\020\013\022\013\n\007P" +
+      "ROCESS\020\014\022\022\n\016PRODUCT_SYSTEM\020\r\022\013\n\007PROJECT\020" +
+      "\016\022\024\n\020SOCIAL_INDICATOR\020\017\022\n\n\006SOURCE\020\020\022\010\n\004U" +
+      "NIT\020\021\022\016\n\nUNIT_GROUP\020\022*f\n\016ParameterScope\022" +
+      "\035\n\031UNDEFINED_PARAMETER_SCOPE\020\000\022\021\n\rPROCES" +
+      "S_SCOPE\020\001\022\020\n\014IMPACT_SCOPE\020\002\022\020\n\014GLOBAL_SC" +
+      "OPE\020\003*K\n\013ProcessType\022\032\n\026UNDEFINED_PROCES" +
+      "S_TYPE\020\000\022\016\n\nLCI_RESULT\020\001\022\020\n\014UNIT_PROCESS" +
+      "\020\002*\377\001\n\tRiskLevel\022\030\n\024UNDEFINED_RISK_LEVEL" +
+      "\020\000\022\022\n\016NO_OPPORTUNITY\020\001\022\024\n\020HIGH_OPPORTUNI" +
+      "TY\020\002\022\026\n\022MEDIUM_OPPORTUNITY\020\003\022\023\n\017LOW_OPPO" +
+      "RTUNITY\020\004\022\013\n\007NO_RISK\020\005\022\021\n\rVERY_LOW_RISK\020" +
+      "\006\022\014\n\010LOW_RISK\020\007\022\017\n\013MEDIUM_RISK\020\010\022\r\n\tHIGH" +
+      "_RISK\020\t\022\022\n\016VERY_HIGH_RISK\020\n\022\013\n\007NO_DATA\020\013" +
+      "\022\022\n\016NOT_APPLICABLE\020\014*\234\001\n\017UncertaintyType" +
+      "\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_" +
+      "NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRIBU" +
+      "TION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024UNI" +
+      "FORM_DISTRIBUTION\020\004B&\n\021org.openlca.proto" +
+      "B\005ProtoZ\n.;protolcab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -106369,87 +108950,93 @@ public final class Proto {
     internal_static_protolca_ParameterRedef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ParameterRedef_descriptor,
-        new java.lang.String[] { "Type", "Name", "Value", "Context", });
-    internal_static_protolca_Process_descriptor =
+        new java.lang.String[] { "Type", "Context", "Description", "Name", "Uncertainty", "Value", });
+    internal_static_protolca_ParameterRedefSet_descriptor =
       getDescriptor().getMessageTypes().get(28);
+    internal_static_protolca_ParameterRedefSet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_ParameterRedefSet_descriptor,
+        new java.lang.String[] { "Type", "Name", "Description", "IsBaseline", "Parameters", });
+    internal_static_protolca_Process_descriptor =
+      getDescriptor().getMessageTypes().get(29);
     internal_static_protolca_Process_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Process_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "AllocationFactors", "DefaultAllocationMethod", "Exchanges", "LastInternalId", "Location", "Parameters", "ProcessDocumentation", "ProcessType", "DqSystem", "ExchangeDqSystem", "SocialDqSystem", "DqEntry", "InfrastructureProcess", "SocialAspects", });
     internal_static_protolca_ProcessDocumentation_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_protolca_ProcessDocumentation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessDocumentation_descriptor,
         new java.lang.String[] { "Type", "TimeDescription", "ValidUntil", "ValidFrom", "TechnologyDescription", "DataCollectionDescription", "CompletenessDescription", "DataSelectionDescription", "ReviewDetails", "DataTreatmentDescription", "InventoryMethodDescription", "ModelingConstantsDescription", "Reviewer", "SamplingDescription", "Sources", "RestrictionsDescription", "Copyright", "CreationDate", "DataDocumentor", "DataGenerator", "DataSetOwner", "IntendedApplication", "ProjectDescription", "Publication", "GeographyDescription", });
     internal_static_protolca_ProcessLink_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_protolca_ProcessLink_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessLink_descriptor,
         new java.lang.String[] { "Type", "Provider", "Flow", "Process", "Exchange", });
     internal_static_protolca_ProcessRef_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_protolca_ProcessRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProcessRef_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", "Location", "ProcessType", });
     internal_static_protolca_ProductSystem_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_protolca_ProductSystem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_ProductSystem_descriptor,
-        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Processes", "ReferenceProcess", "ReferenceExchange", "TargetAmount", "TargetUnit", "TargetFlowProperty", "ProcessLinks", });
+        new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Processes", "ReferenceProcess", "ReferenceExchange", "TargetAmount", "TargetUnit", "TargetFlowProperty", "ProcessLinks", "ParameterSets", });
     internal_static_protolca_Project_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_protolca_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Project_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ImpactMethod", "NwSet", });
     internal_static_protolca_Ref_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_protolca_Ref_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Ref_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "CategoryPath", });
     internal_static_protolca_SimpleResult_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_protolca_SimpleResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SimpleResult_descriptor,
         new java.lang.String[] { "Type", "FlowResults", "ImpactResults", });
     internal_static_protolca_SocialAspect_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_protolca_SocialAspect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialAspect_descriptor,
         new java.lang.String[] { "Type", "ActivityValue", "Comment", "Quality", "RawAmount", "RiskLevel", "SocialIndicator", "Source", });
     internal_static_protolca_SocialIndicator_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_protolca_SocialIndicator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_SocialIndicator_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "ActivityVariable", "ActivityQuantity", "ActivityUnit", "UnitOfMeasurement", "EvaluationScheme", });
     internal_static_protolca_Source_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_protolca_Source_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Source_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "Category", "Tags", "Library", "Url", "TextReference", "Year", "ExternalFile", });
     internal_static_protolca_Uncertainty_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_protolca_Uncertainty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Uncertainty_descriptor,
         new java.lang.String[] { "Type", "DistributionType", "Mean", "MeanFormula", "GeomMean", "GeomMeanFormula", "Minimum", "MinimumFormula", "Sd", "SdFormula", "GeomSd", "GeomSdFormula", "Mode", "ModeFormula", "Maximum", "MaximumFormula", });
     internal_static_protolca_Unit_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_protolca_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_Unit_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Description", "Version", "LastChange", "ConversionFactor", "ReferenceUnit", "Synonyms", });
     internal_static_protolca_UnitGroup_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_protolca_UnitGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_UnitGroup_descriptor,

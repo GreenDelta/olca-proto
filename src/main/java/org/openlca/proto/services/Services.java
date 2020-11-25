@@ -15609,8 +15609,9 @@ public final class Services {
       ".UnitGroup0\001\022A\n\014GetUnitGroup\022\r.protolca." +
       "Ref\032\".protolca.services.UnitGroupStatus\022" +
       "A\n\014PutUnitGroup\022\023.protolca.UnitGroup\032\034.p" +
-      "rotolca.services.RefStatusB\034\n\032org.openlc" +
-      "a.proto.servicesP\000b\006proto3"
+      "rotolca.services.RefStatusB<\n\032org.openlc" +
+      "a.proto.servicesZ\n.;protolca\252\002\021ProtoLCA." +
+      "ServicesP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
