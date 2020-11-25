@@ -1546,6 +1546,37 @@ public final class DataServiceGrpc {
     return getPutUnitGroupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.openlca.proto.Proto.FlowRef,
+      org.openlca.proto.Proto.ProcessRef> getGetProvidersForMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProvidersFor",
+      requestType = org.openlca.proto.Proto.FlowRef.class,
+      responseType = org.openlca.proto.Proto.ProcessRef.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.openlca.proto.Proto.FlowRef,
+      org.openlca.proto.Proto.ProcessRef> getGetProvidersForMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.ProcessRef> getGetProvidersForMethod;
+    if ((getGetProvidersForMethod = DataServiceGrpc.getGetProvidersForMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getGetProvidersForMethod = DataServiceGrpc.getGetProvidersForMethod) == null) {
+          DataServiceGrpc.getGetProvidersForMethod = getGetProvidersForMethod =
+              io.grpc.MethodDescriptor.<org.openlca.proto.Proto.FlowRef, org.openlca.proto.Proto.ProcessRef>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProvidersFor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.Proto.FlowRef.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.Proto.ProcessRef.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("GetProvidersFor"))
+              .build();
+        }
+      }
+    }
+    return getGetProvidersForMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -1990,6 +2021,20 @@ public final class DataServiceGrpc {
       asyncUnimplementedUnaryCall(getPutUnitGroupMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Get possible providers for the given flow. For products
+     * these are processes with that product on the output side
+     * and for waste flows processes with that waste flow on the
+     * input side. For elementary flows, an empty stream is
+     * returned.
+     * </pre>
+     */
+    public void getProvidersFor(org.openlca.proto.Proto.FlowRef request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProcessRef> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetProvidersForMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -2335,6 +2380,13 @@ public final class DataServiceGrpc {
                 org.openlca.proto.Proto.UnitGroup,
                 org.openlca.proto.services.Services.RefStatus>(
                   this, METHODID_PUT_UNIT_GROUP)))
+          .addMethod(
+            getGetProvidersForMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                org.openlca.proto.Proto.FlowRef,
+                org.openlca.proto.Proto.ProcessRef>(
+                  this, METHODID_GET_PROVIDERS_FOR)))
           .build();
     }
   }
@@ -2797,6 +2849,21 @@ public final class DataServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getPutUnitGroupMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Get possible providers for the given flow. For products
+     * these are processes with that product on the output side
+     * and for waste flows processes with that waste flow on the
+     * input side. For elementary flows, an empty stream is
+     * returned.
+     * </pre>
+     */
+    public void getProvidersFor(org.openlca.proto.Proto.FlowRef request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProcessRef> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetProvidersForMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -3224,6 +3291,21 @@ public final class DataServiceGrpc {
       return blockingUnaryCall(
           getChannel(), getPutUnitGroupMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Get possible providers for the given flow. For products
+     * these are processes with that product on the output side
+     * and for waste flows processes with that waste flow on the
+     * input side. For elementary flows, an empty stream is
+     * returned.
+     * </pre>
+     */
+    public java.util.Iterator<org.openlca.proto.Proto.ProcessRef> getProvidersFor(
+        org.openlca.proto.Proto.FlowRef request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetProvidersForMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3559,6 +3641,7 @@ public final class DataServiceGrpc {
   private static final int METHODID_GET_UNIT_GROUPS = 46;
   private static final int METHODID_GET_UNIT_GROUP = 47;
   private static final int METHODID_PUT_UNIT_GROUP = 48;
+  private static final int METHODID_GET_PROVIDERS_FOR = 49;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3773,6 +3856,10 @@ public final class DataServiceGrpc {
           serviceImpl.putUnitGroup((org.openlca.proto.Proto.UnitGroup) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.RefStatus>) responseObserver);
           break;
+        case METHODID_GET_PROVIDERS_FOR:
+          serviceImpl.getProvidersFor((org.openlca.proto.Proto.FlowRef) request,
+              (io.grpc.stub.StreamObserver<org.openlca.proto.Proto.ProcessRef>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3883,6 +3970,7 @@ public final class DataServiceGrpc {
               .addMethod(getGetUnitGroupsMethod())
               .addMethod(getGetUnitGroupMethod())
               .addMethod(getPutUnitGroupMethod())
+              .addMethod(getGetProvidersForMethod())
               .build();
         }
       }

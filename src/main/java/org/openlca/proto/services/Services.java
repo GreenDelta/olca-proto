@@ -15385,6 +15385,1416 @@ public final class Services {
 
   }
 
+  public interface FlowMapStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.services.FlowMapStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     * @return Whether the flowMap field is set.
+     */
+    boolean hasFlowMap();
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     * @return The flowMap.
+     */
+    org.openlca.proto.Proto.FlowMap getFlowMap();
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     */
+    org.openlca.proto.Proto.FlowMapOrBuilder getFlowMapOrBuilder();
+
+    /**
+     * <code>string error = 3;</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 3;</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code protolca.services.FlowMapStatus}
+   */
+  public static final class FlowMapStatus extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.services.FlowMapStatus)
+      FlowMapStatusOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlowMapStatus.newBuilder() to construct.
+    private FlowMapStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlowMapStatus() {
+      error_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FlowMapStatus();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlowMapStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              ok_ = input.readBool();
+              break;
+            }
+            case 18: {
+              org.openlca.proto.Proto.FlowMap.Builder subBuilder = null;
+              if (flowMap_ != null) {
+                subBuilder = flowMap_.toBuilder();
+              }
+              flowMap_ = input.readMessage(org.openlca.proto.Proto.FlowMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(flowMap_);
+                flowMap_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.services.Services.FlowMapStatus.class, org.openlca.proto.services.Services.FlowMapStatus.Builder.class);
+    }
+
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int FLOW_MAP_FIELD_NUMBER = 2;
+    private org.openlca.proto.Proto.FlowMap flowMap_;
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     * @return Whether the flowMap field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlowMap() {
+      return flowMap_ != null;
+    }
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     * @return The flowMap.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.FlowMap getFlowMap() {
+      return flowMap_ == null ? org.openlca.proto.Proto.FlowMap.getDefaultInstance() : flowMap_;
+    }
+    /**
+     * <code>.protolca.FlowMap flow_map = 2;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.FlowMapOrBuilder getFlowMapOrBuilder() {
+      return getFlowMap();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 3;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 3;</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 3;</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
+      if (flowMap_ != null) {
+        output.writeMessage(2, getFlowMap());
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
+      if (flowMap_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getFlowMap());
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.services.Services.FlowMapStatus)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.services.Services.FlowMapStatus other = (org.openlca.proto.services.Services.FlowMapStatus) obj;
+
+      if (getOk()
+          != other.getOk()) return false;
+      if (hasFlowMap() != other.hasFlowMap()) return false;
+      if (hasFlowMap()) {
+        if (!getFlowMap()
+            .equals(other.getFlowMap())) return false;
+      }
+      if (!getError()
+          .equals(other.getError())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
+      if (hasFlowMap()) {
+        hash = (37 * hash) + FLOW_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + getFlowMap().hashCode();
+      }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.services.Services.FlowMapStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protolca.services.FlowMapStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.services.FlowMapStatus)
+        org.openlca.proto.services.Services.FlowMapStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.services.Services.FlowMapStatus.class, org.openlca.proto.services.Services.FlowMapStatus.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.services.Services.FlowMapStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ok_ = false;
+
+        if (flowMapBuilder_ == null) {
+          flowMap_ = null;
+        } else {
+          flowMap_ = null;
+          flowMapBuilder_ = null;
+        }
+        error_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapStatus getDefaultInstanceForType() {
+        return org.openlca.proto.services.Services.FlowMapStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapStatus build() {
+        org.openlca.proto.services.Services.FlowMapStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapStatus buildPartial() {
+        org.openlca.proto.services.Services.FlowMapStatus result = new org.openlca.proto.services.Services.FlowMapStatus(this);
+        result.ok_ = ok_;
+        if (flowMapBuilder_ == null) {
+          result.flowMap_ = flowMap_;
+        } else {
+          result.flowMap_ = flowMapBuilder_.build();
+        }
+        result.error_ = error_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.services.Services.FlowMapStatus) {
+          return mergeFrom((org.openlca.proto.services.Services.FlowMapStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.services.Services.FlowMapStatus other) {
+        if (other == org.openlca.proto.services.Services.FlowMapStatus.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
+        if (other.hasFlowMap()) {
+          mergeFlowMap(other.getFlowMap());
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.services.Services.FlowMapStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.services.Services.FlowMapStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+        
+        ok_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
+      private org.openlca.proto.Proto.FlowMap flowMap_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.FlowMap, org.openlca.proto.Proto.FlowMap.Builder, org.openlca.proto.Proto.FlowMapOrBuilder> flowMapBuilder_;
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       * @return Whether the flowMap field is set.
+       */
+      public boolean hasFlowMap() {
+        return flowMapBuilder_ != null || flowMap_ != null;
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       * @return The flowMap.
+       */
+      public org.openlca.proto.Proto.FlowMap getFlowMap() {
+        if (flowMapBuilder_ == null) {
+          return flowMap_ == null ? org.openlca.proto.Proto.FlowMap.getDefaultInstance() : flowMap_;
+        } else {
+          return flowMapBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public Builder setFlowMap(org.openlca.proto.Proto.FlowMap value) {
+        if (flowMapBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          flowMap_ = value;
+          onChanged();
+        } else {
+          flowMapBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public Builder setFlowMap(
+          org.openlca.proto.Proto.FlowMap.Builder builderForValue) {
+        if (flowMapBuilder_ == null) {
+          flowMap_ = builderForValue.build();
+          onChanged();
+        } else {
+          flowMapBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public Builder mergeFlowMap(org.openlca.proto.Proto.FlowMap value) {
+        if (flowMapBuilder_ == null) {
+          if (flowMap_ != null) {
+            flowMap_ =
+              org.openlca.proto.Proto.FlowMap.newBuilder(flowMap_).mergeFrom(value).buildPartial();
+          } else {
+            flowMap_ = value;
+          }
+          onChanged();
+        } else {
+          flowMapBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public Builder clearFlowMap() {
+        if (flowMapBuilder_ == null) {
+          flowMap_ = null;
+          onChanged();
+        } else {
+          flowMap_ = null;
+          flowMapBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public org.openlca.proto.Proto.FlowMap.Builder getFlowMapBuilder() {
+        
+        onChanged();
+        return getFlowMapFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      public org.openlca.proto.Proto.FlowMapOrBuilder getFlowMapOrBuilder() {
+        if (flowMapBuilder_ != null) {
+          return flowMapBuilder_.getMessageOrBuilder();
+        } else {
+          return flowMap_ == null ?
+              org.openlca.proto.Proto.FlowMap.getDefaultInstance() : flowMap_;
+        }
+      }
+      /**
+       * <code>.protolca.FlowMap flow_map = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.FlowMap, org.openlca.proto.Proto.FlowMap.Builder, org.openlca.proto.Proto.FlowMapOrBuilder> 
+          getFlowMapFieldBuilder() {
+        if (flowMapBuilder_ == null) {
+          flowMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.FlowMap, org.openlca.proto.Proto.FlowMap.Builder, org.openlca.proto.Proto.FlowMapOrBuilder>(
+                  getFlowMap(),
+                  getParentForChildren(),
+                  isClean());
+          flowMap_ = null;
+        }
+        return flowMapBuilder_;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 3;</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 3;</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 3;</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 3;</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.services.FlowMapStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.services.FlowMapStatus)
+    private static final org.openlca.proto.services.Services.FlowMapStatus DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.services.Services.FlowMapStatus();
+    }
+
+    public static org.openlca.proto.services.Services.FlowMapStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlowMapStatus>
+        PARSER = new com.google.protobuf.AbstractParser<FlowMapStatus>() {
+      @java.lang.Override
+      public FlowMapStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlowMapStatus(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlowMapStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlowMapStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.services.Services.FlowMapStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FlowMapInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protolca.services.FlowMapInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code protolca.services.FlowMapInfo}
+   */
+  public static final class FlowMapInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protolca.services.FlowMapInfo)
+      FlowMapInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlowMapInfo.newBuilder() to construct.
+    private FlowMapInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlowMapInfo() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FlowMapInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlowMapInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openlca.proto.services.Services.FlowMapInfo.class, org.openlca.proto.services.Services.FlowMapInfo.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openlca.proto.services.Services.FlowMapInfo)) {
+        return super.equals(obj);
+      }
+      org.openlca.proto.services.Services.FlowMapInfo other = (org.openlca.proto.services.Services.FlowMapInfo) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openlca.proto.services.Services.FlowMapInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openlca.proto.services.Services.FlowMapInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protolca.services.FlowMapInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protolca.services.FlowMapInfo)
+        org.openlca.proto.services.Services.FlowMapInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openlca.proto.services.Services.FlowMapInfo.class, org.openlca.proto.services.Services.FlowMapInfo.Builder.class);
+      }
+
+      // Construct using org.openlca.proto.services.Services.FlowMapInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openlca.proto.services.Services.internal_static_protolca_services_FlowMapInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapInfo getDefaultInstanceForType() {
+        return org.openlca.proto.services.Services.FlowMapInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapInfo build() {
+        org.openlca.proto.services.Services.FlowMapInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openlca.proto.services.Services.FlowMapInfo buildPartial() {
+        org.openlca.proto.services.Services.FlowMapInfo result = new org.openlca.proto.services.Services.FlowMapInfo(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openlca.proto.services.Services.FlowMapInfo) {
+          return mergeFrom((org.openlca.proto.services.Services.FlowMapInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openlca.proto.services.Services.FlowMapInfo other) {
+        if (other == org.openlca.proto.services.Services.FlowMapInfo.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openlca.proto.services.Services.FlowMapInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openlca.proto.services.Services.FlowMapInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protolca.services.FlowMapInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:protolca.services.FlowMapInfo)
+    private static final org.openlca.proto.services.Services.FlowMapInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openlca.proto.services.Services.FlowMapInfo();
+    }
+
+    public static org.openlca.proto.services.Services.FlowMapInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlowMapInfo>
+        PARSER = new com.google.protobuf.AbstractParser<FlowMapInfo>() {
+      @java.lang.Override
+      public FlowMapInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlowMapInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlowMapInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlowMapInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openlca.proto.services.Services.FlowMapInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protolca_services_Empty_descriptor;
   private static final 
@@ -15480,6 +16890,16 @@ public final class Services {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protolca_services_UnitGroupStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_services_FlowMapStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_services_FlowMapStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protolca_services_FlowMapInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protolca_services_FlowMapInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -15527,91 +16947,101 @@ public final class Services {
       "\n\n\002ok\030\001 \001(\010\022 \n\006source\030\002 \001(\0132\020.protolca.S" +
       "ource\022\r\n\005error\030\003 \001(\t\"U\n\017UnitGroupStatus\022" +
       "\n\n\002ok\030\001 \001(\010\022\'\n\nunit_group\030\002 \001(\0132\023.protol" +
-      "ca.UnitGroup\022\r\n\005error\030\003 \001(\t2\314\031\n\013DataServ" +
-      "ice\0222\n\006Delete\022\r.protolca.Ref\032\031.protolca." +
-      "services.Status\0228\n\tGetActors\022\030.protolca." +
-      "services.Empty\032\017.protolca.Actor0\001\0229\n\010Get" +
-      "Actor\022\r.protolca.Ref\032\036.protolca.services" +
-      ".ActorStatus\0229\n\010PutActor\022\017.protolca.Acto" +
-      "r\032\034.protolca.services.RefStatus\022?\n\rGetCa" +
-      "tegories\022\030.protolca.services.Empty\032\022.pro" +
-      "tolca.Category0\001\022?\n\013GetCategory\022\r.protol" +
-      "ca.Ref\032!.protolca.services.CategoryStatu" +
-      "s\022?\n\013PutCategory\022\022.protolca.Category\032\034.p" +
-      "rotolca.services.RefStatus\022?\n\rGetCurrenc" +
-      "ies\022\030.protolca.services.Empty\032\022.protolca" +
-      ".Currency0\001\022?\n\013GetCurrency\022\r.protolca.Re" +
-      "f\032!.protolca.services.CurrencyStatus\022?\n\013" +
-      "PutCurrency\022\022.protolca.Currency\032\034.protol" +
-      "ca.services.RefStatus\022>\n\014GetDQSystems\022\030." +
-      "protolca.services.Empty\032\022.protolca.DQSys" +
-      "tem0\001\022?\n\013GetDQSystem\022\r.protolca.Ref\032!.pr" +
-      "otolca.services.DQSystemStatus\022?\n\013PutDQS" +
-      "ystem\022\022.protolca.DQSystem\032\034.protolca.ser" +
-      "vices.RefStatus\0226\n\010GetFlows\022\030.protolca.s" +
-      "ervices.Empty\032\016.protolca.Flow0\001\0227\n\007GetFl" +
-      "ow\022\r.protolca.Ref\032\035.protolca.services.Fl" +
-      "owStatus\0227\n\007PutFlow\022\016.protolca.Flow\032\034.pr" +
-      "otolca.services.RefStatus\022G\n\021GetFlowProp" +
-      "erties\022\030.protolca.services.Empty\032\026.proto" +
-      "lca.FlowProperty0\001\022G\n\017GetFlowProperty\022\r." +
-      "protolca.Ref\032%.protolca.services.FlowPro" +
-      "pertyStatus\022G\n\017PutFlowProperty\022\026.protolc" +
-      "a.FlowProperty\032\034.protolca.services.RefSt" +
-      "atus\022K\n\023GetImpactCategories\022\030.protolca.s" +
-      "ervices.Empty\032\030.protolca.ImpactCategory0" +
-      "\001\022K\n\021GetImpactCategory\022\r.protolca.Ref\032\'." +
-      "protolca.services.ImpactCategoryStatus\022K" +
-      "\n\021PutImpactCategory\022\030.protolca.ImpactCat" +
-      "egory\032\034.protolca.services.RefStatus\022F\n\020G" +
-      "etImpactMethods\022\030.protolca.services.Empt" +
-      "y\032\026.protolca.ImpactMethod0\001\022G\n\017GetImpact" +
-      "Method\022\r.protolca.Ref\032%.protolca.service" +
-      "s.ImpactMethodStatus\022G\n\017PutImpactMethod\022" +
-      "\026.protolca.ImpactMethod\032\034.protolca.servi" +
-      "ces.RefStatus\022>\n\014GetLocations\022\030.protolca" +
-      ".services.Empty\032\022.protolca.Location0\001\022?\n" +
-      "\013GetLocation\022\r.protolca.Ref\032!.protolca.s" +
-      "ervices.LocationStatus\022?\n\013PutLocation\022\022." +
-      "protolca.Location\032\034.protolca.services.Re" +
-      "fStatus\022@\n\rGetParameters\022\030.protolca.serv" +
-      "ices.Empty\032\023.protolca.Parameter0\001\022A\n\014Get" +
-      "Parameter\022\r.protolca.Ref\032\".protolca.serv" +
-      "ices.ParameterStatus\022A\n\014PutParameter\022\023.p" +
-      "rotolca.Parameter\032\034.protolca.services.Re" +
-      "fStatus\022=\n\014GetProcesses\022\030.protolca.servi" +
-      "ces.Empty\032\021.protolca.Process0\001\022=\n\nGetPro" +
-      "cess\022\r.protolca.Ref\032 .protolca.services." +
-      "ProcessStatus\022=\n\nPutProcess\022\021.protolca.P" +
-      "rocess\032\034.protolca.services.RefStatus\022H\n\021" +
-      "GetProductSystems\022\030.protolca.services.Em" +
-      "pty\032\027.protolca.ProductSystem0\001\022I\n\020GetPro" +
-      "ductSystem\022\r.protolca.Ref\032&.protolca.ser" +
-      "vices.ProductSystemStatus\022I\n\020PutProductS" +
-      "ystem\022\027.protolca.ProductSystem\032\034.protolc" +
-      "a.services.RefStatus\022<\n\013GetProjects\022\030.pr" +
-      "otolca.services.Empty\032\021.protolca.Project" +
-      "0\001\022=\n\nGetProject\022\r.protolca.Ref\032 .protol" +
-      "ca.services.ProjectStatus\022=\n\nPutProject\022" +
-      "\021.protolca.Project\032\034.protolca.services.R" +
-      "efStatus\022L\n\023GetSocialIndicators\022\030.protol" +
-      "ca.services.Empty\032\031.protolca.SocialIndic" +
-      "ator0\001\022M\n\022GetSocialIndicator\022\r.protolca." +
-      "Ref\032(.protolca.services.SocialIndicatorS" +
-      "tatus\022M\n\022PutSocialIndicator\022\031.protolca.S" +
-      "ocialIndicator\032\034.protolca.services.RefSt" +
-      "atus\022:\n\nGetSources\022\030.protolca.services.E" +
-      "mpty\032\020.protolca.Source0\001\022;\n\tGetSource\022\r." +
-      "protolca.Ref\032\037.protolca.services.SourceS" +
-      "tatus\022;\n\tPutSource\022\020.protolca.Source\032\034.p" +
-      "rotolca.services.RefStatus\022@\n\rGetUnitGro" +
-      "ups\022\030.protolca.services.Empty\032\023.protolca" +
-      ".UnitGroup0\001\022A\n\014GetUnitGroup\022\r.protolca." +
-      "Ref\032\".protolca.services.UnitGroupStatus\022" +
-      "A\n\014PutUnitGroup\022\023.protolca.UnitGroup\032\034.p" +
-      "rotolca.services.RefStatusB<\n\032org.openlc" +
-      "a.proto.servicesZ\n.;protolca\252\002\021ProtoLCA." +
-      "ServicesP\000b\006proto3"
+      "ca.UnitGroup\022\r\n\005error\030\003 \001(\t\"O\n\rFlowMapSt" +
+      "atus\022\n\n\002ok\030\001 \001(\010\022#\n\010flow_map\030\002 \001(\0132\021.pro" +
+      "tolca.FlowMap\022\r\n\005error\030\003 \001(\t\"\033\n\013FlowMapI" +
+      "nfo\022\014\n\004name\030\001 \001(\t2\212\032\n\013DataService\0222\n\006Del" +
+      "ete\022\r.protolca.Ref\032\031.protolca.services.S" +
+      "tatus\0228\n\tGetActors\022\030.protolca.services.E" +
+      "mpty\032\017.protolca.Actor0\001\0229\n\010GetActor\022\r.pr" +
+      "otolca.Ref\032\036.protolca.services.ActorStat" +
+      "us\0229\n\010PutActor\022\017.protolca.Actor\032\034.protol" +
+      "ca.services.RefStatus\022?\n\rGetCategories\022\030" +
+      ".protolca.services.Empty\032\022.protolca.Cate" +
+      "gory0\001\022?\n\013GetCategory\022\r.protolca.Ref\032!.p" +
+      "rotolca.services.CategoryStatus\022?\n\013PutCa" +
+      "tegory\022\022.protolca.Category\032\034.protolca.se" +
+      "rvices.RefStatus\022?\n\rGetCurrencies\022\030.prot" +
+      "olca.services.Empty\032\022.protolca.Currency0" +
+      "\001\022?\n\013GetCurrency\022\r.protolca.Ref\032!.protol" +
+      "ca.services.CurrencyStatus\022?\n\013PutCurrenc" +
+      "y\022\022.protolca.Currency\032\034.protolca.service" +
+      "s.RefStatus\022>\n\014GetDQSystems\022\030.protolca.s" +
+      "ervices.Empty\032\022.protolca.DQSystem0\001\022?\n\013G" +
+      "etDQSystem\022\r.protolca.Ref\032!.protolca.ser" +
+      "vices.DQSystemStatus\022?\n\013PutDQSystem\022\022.pr" +
+      "otolca.DQSystem\032\034.protolca.services.RefS" +
+      "tatus\0226\n\010GetFlows\022\030.protolca.services.Em" +
+      "pty\032\016.protolca.Flow0\001\0227\n\007GetFlow\022\r.proto" +
+      "lca.Ref\032\035.protolca.services.FlowStatus\0227" +
+      "\n\007PutFlow\022\016.protolca.Flow\032\034.protolca.ser" +
+      "vices.RefStatus\022G\n\021GetFlowProperties\022\030.p" +
+      "rotolca.services.Empty\032\026.protolca.FlowPr" +
+      "operty0\001\022G\n\017GetFlowProperty\022\r.protolca.R" +
+      "ef\032%.protolca.services.FlowPropertyStatu" +
+      "s\022G\n\017PutFlowProperty\022\026.protolca.FlowProp" +
+      "erty\032\034.protolca.services.RefStatus\022K\n\023Ge" +
+      "tImpactCategories\022\030.protolca.services.Em" +
+      "pty\032\030.protolca.ImpactCategory0\001\022K\n\021GetIm" +
+      "pactCategory\022\r.protolca.Ref\032\'.protolca.s" +
+      "ervices.ImpactCategoryStatus\022K\n\021PutImpac" +
+      "tCategory\022\030.protolca.ImpactCategory\032\034.pr" +
+      "otolca.services.RefStatus\022F\n\020GetImpactMe" +
+      "thods\022\030.protolca.services.Empty\032\026.protol" +
+      "ca.ImpactMethod0\001\022G\n\017GetImpactMethod\022\r.p" +
+      "rotolca.Ref\032%.protolca.services.ImpactMe" +
+      "thodStatus\022G\n\017PutImpactMethod\022\026.protolca" +
+      ".ImpactMethod\032\034.protolca.services.RefSta" +
+      "tus\022>\n\014GetLocations\022\030.protolca.services." +
+      "Empty\032\022.protolca.Location0\001\022?\n\013GetLocati" +
+      "on\022\r.protolca.Ref\032!.protolca.services.Lo" +
+      "cationStatus\022?\n\013PutLocation\022\022.protolca.L" +
+      "ocation\032\034.protolca.services.RefStatus\022@\n" +
+      "\rGetParameters\022\030.protolca.services.Empty" +
+      "\032\023.protolca.Parameter0\001\022A\n\014GetParameter\022" +
+      "\r.protolca.Ref\032\".protolca.services.Param" +
+      "eterStatus\022A\n\014PutParameter\022\023.protolca.Pa" +
+      "rameter\032\034.protolca.services.RefStatus\022=\n" +
+      "\014GetProcesses\022\030.protolca.services.Empty\032" +
+      "\021.protolca.Process0\001\022=\n\nGetProcess\022\r.pro" +
+      "tolca.Ref\032 .protolca.services.ProcessSta" +
+      "tus\022=\n\nPutProcess\022\021.protolca.Process\032\034.p" +
+      "rotolca.services.RefStatus\022H\n\021GetProduct" +
+      "Systems\022\030.protolca.services.Empty\032\027.prot" +
+      "olca.ProductSystem0\001\022I\n\020GetProductSystem" +
+      "\022\r.protolca.Ref\032&.protolca.services.Prod" +
+      "uctSystemStatus\022I\n\020PutProductSystem\022\027.pr" +
+      "otolca.ProductSystem\032\034.protolca.services" +
+      ".RefStatus\022<\n\013GetProjects\022\030.protolca.ser" +
+      "vices.Empty\032\021.protolca.Project0\001\022=\n\nGetP" +
+      "roject\022\r.protolca.Ref\032 .protolca.service" +
+      "s.ProjectStatus\022=\n\nPutProject\022\021.protolca" +
+      ".Project\032\034.protolca.services.RefStatus\022L" +
+      "\n\023GetSocialIndicators\022\030.protolca.service" +
+      "s.Empty\032\031.protolca.SocialIndicator0\001\022M\n\022" +
+      "GetSocialIndicator\022\r.protolca.Ref\032(.prot" +
+      "olca.services.SocialIndicatorStatus\022M\n\022P" +
+      "utSocialIndicator\022\031.protolca.SocialIndic" +
+      "ator\032\034.protolca.services.RefStatus\022:\n\nGe" +
+      "tSources\022\030.protolca.services.Empty\032\020.pro" +
+      "tolca.Source0\001\022;\n\tGetSource\022\r.protolca.R" +
+      "ef\032\037.protolca.services.SourceStatus\022;\n\tP" +
+      "utSource\022\020.protolca.Source\032\034.protolca.se" +
+      "rvices.RefStatus\022@\n\rGetUnitGroups\022\030.prot" +
+      "olca.services.Empty\032\023.protolca.UnitGroup" +
+      "0\001\022A\n\014GetUnitGroup\022\r.protolca.Ref\032\".prot" +
+      "olca.services.UnitGroupStatus\022A\n\014PutUnit" +
+      "Group\022\023.protolca.UnitGroup\032\034.protolca.se" +
+      "rvices.RefStatus\022<\n\017GetProvidersFor\022\021.pr" +
+      "otolca.FlowRef\032\024.protolca.ProcessRef0\0012\320" +
+      "\001\n\016FlowMapService\022C\n\006Delete\022\036.protolca.s" +
+      "ervices.FlowMapInfo\032\031.protolca.services." +
+      "Status\022D\n\006GetAll\022\030.protolca.services.Emp" +
+      "ty\032\036.protolca.services.FlowMapInfo0\001\0223\n\003" +
+      "Put\022\021.protolca.FlowMap\032\031.protolca.servic" +
+      "es.StatusB<\n\032org.openlca.proto.servicesZ" +
+      "\n.;protolca\252\002\021ProtoLCA.ServicesP\000b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15732,6 +17162,18 @@ public final class Services {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_services_UnitGroupStatus_descriptor,
         new java.lang.String[] { "Ok", "UnitGroup", "Error", });
+    internal_static_protolca_services_FlowMapStatus_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_protolca_services_FlowMapStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_services_FlowMapStatus_descriptor,
+        new java.lang.String[] { "Ok", "FlowMap", "Error", });
+    internal_static_protolca_services_FlowMapInfo_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_protolca_services_FlowMapInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protolca_services_FlowMapInfo_descriptor,
+        new java.lang.String[] { "Name", });
     org.openlca.proto.Proto.getDescriptor();
   }
 

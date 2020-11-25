@@ -203,4 +203,36 @@ service DataService {
   rpc GetUnitGroups(Empty) returns (stream protolca.UnitGroup);
   rpc GetUnitGroup(protolca.Ref) returns (UnitGroupStatus);
   rpc PutUnitGroup(protolca.UnitGroup) returns (RefStatus);
+
+  // Get possible providers for the given flow. For products
+  // these are processes with that product on the output side
+  // and for waste flows processes with that waste flow on the
+  // input side. For elementary flows, an empty stream is
+  // returned.
+  rpc GetProvidersFor(FlowRef) returns (stream ProcessRef);
+}
+
+message FlowMapStatus {
+  bool ok = 1;
+  protolca.FlowMap flow_map = 2;
+  string error = 3;
+}
+
+message FlowMapInfo {
+  string name = 1;
+}
+
+service FlowMapService {
+
+  // Delete the flow map with the given name.
+  rpc Delete(FlowMapInfo) returns (Status);
+
+  // Get the information (basically just the names) of all
+  // flow maps that are available in the database.
+  rpc GetAll(Empty) returns (stream FlowMapInfo);
+
+  // Inserts the given flow map into the database. It overwrites
+  // an existing flow map if there is a flow map with the same
+  // name already available in the database.
+  rpc Put(protolca.FlowMap) returns (Status);
 }

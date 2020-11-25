@@ -1,5 +1,6 @@
 package org.openlca.proto.server;
 
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -23,6 +24,7 @@ import org.openlca.core.database.ProjectDao;
 import org.openlca.core.database.SocialIndicatorDao;
 import org.openlca.core.database.SourceDao;
 import org.openlca.core.database.UnitGroupDao;
+import org.openlca.core.matrix.cache.ProcessTable;
 import org.openlca.core.model.Actor;
 import org.openlca.core.model.CategorizedEntity;
 import org.openlca.core.model.Category;
@@ -30,18 +32,22 @@ import org.openlca.core.model.Currency;
 import org.openlca.core.model.DQSystem;
 import org.openlca.core.model.Flow;
 import org.openlca.core.model.FlowProperty;
+import org.openlca.core.model.FlowType;
 import org.openlca.core.model.ImpactCategory;
 import org.openlca.core.model.ImpactMethod;
 import org.openlca.core.model.Location;
 import org.openlca.core.model.ModelType;
 import org.openlca.core.model.Parameter;
 import org.openlca.core.model.Process;
+import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.ProductSystem;
 import org.openlca.core.model.Project;
 import org.openlca.core.model.RootEntity;
 import org.openlca.core.model.SocialIndicator;
 import org.openlca.core.model.Source;
 import org.openlca.core.model.UnitGroup;
+import org.openlca.core.model.Version;
+import org.openlca.core.model.descriptors.ProcessDescriptor;
 import org.openlca.jsonld.input.UpdateMode;
 import org.openlca.proto.MemStore;
 import org.openlca.proto.Proto;
@@ -67,6 +73,7 @@ import org.openlca.proto.output.UnitGroupWriter;
 import org.openlca.proto.output.WriterConfig;
 import org.openlca.proto.services.DataServiceGrpc;
 import org.openlca.proto.services.Services;
+import org.openlca.util.CategoryPathBuilder;
 import org.openlca.util.Strings;
 
 class DataService extends DataServiceGrpc.DataServiceImplBase {
@@ -900,6 +907,69 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .run();
     resp.onNext(importStatusOf(UnitGroup.class, req.getId()));
     resp.onCompleted();
+  }
+
+  @Override
+  public void getProvidersFor(Proto.FlowRef req, StreamObserver<Proto.ProcessRef> resp) {
+    Consumer<Flow> onFlowExists = flow -> {
+      if (flow.flowType == FlowType.ELEMENTARY_FLOW) {
+        resp.onCompleted();
+        return;
+      }
+
+      var locationCodes = new LocationDao(db).getCodes();
+      var categories = new CategoryPathBuilder(db);
+
+      ProcessTable.create(db)
+        .getProviders(flow.id)
+        .stream()
+        .map(p -> p.process)
+        .filter(p -> p instanceof ProcessDescriptor)
+        .map(p -> (ProcessDescriptor) p)
+        .forEach(p -> {
+
+          var ref = Proto.ProcessRef.newBuilder()
+            .setId(Strings.orEmpty(p.refId))
+            .setName(Strings.orEmpty(p.name))
+            .setDescription(Strings.orEmpty(p.description))
+            .setVersion(Version.asString(p.version))
+            .setType("Process");
+
+          if (p.lastChange != 0) {
+            var instant = Instant.ofEpochMilli(p.lastChange);
+            ref.setLastChange(instant.toString());
+          }
+
+          if (p.category != null) {
+            var path = categories.build(p.category);
+            if (path != null) {
+              Arrays.stream(path.split("/"))
+                .forEach(ref::addCategoryPath);
+            }
+          }
+
+          if (p.location != null) {
+            var code = locationCodes.get(p.location);
+            if (code != null) {
+              ref.setLocation(code);
+            }
+          }
+
+          ref.setProcessType(
+            p.processType == ProcessType.LCI_RESULT
+              ? Proto.ProcessType.LCI_RESULT
+              : Proto.ProcessType.UNIT_PROCESS);
+
+          resp.onNext(ref.build());
+
+        });
+
+      resp.onCompleted();
+    };
+
+    Consumer<String> onFlowMissing = error -> resp.onCompleted();
+
+    handleGetOf(Flow.class, req.getId(), req::getName, onFlowExists, onFlowMissing);
   }
 
   private Services.RefStatus importStatusOf(

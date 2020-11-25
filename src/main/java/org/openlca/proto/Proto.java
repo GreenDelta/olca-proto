@@ -108776,8 +108776,8 @@ public final class Proto {
       "\022\036\n\032UNDEFINED_UNCERTAINTY_TYPE\020\000\022\033\n\027LOG_" +
       "NORMAL_DISTRIBUTION\020\001\022\027\n\023NORMAL_DISTRIBU" +
       "TION\020\002\022\031\n\025TRIANGLE_DISTRIBUTION\020\003\022\030\n\024UNI" +
-      "FORM_DISTRIBUTION\020\004B&\n\021org.openlca.proto" +
-      "B\005ProtoZ\n.;protolcab\006proto3"
+      "FORM_DISTRIBUTION\020\004B1\n\021org.openlca.proto" +
+      "B\005ProtoZ\n.;protolca\252\002\010ProtoLCAb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
