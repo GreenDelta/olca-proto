@@ -1,12 +1,17 @@
 package org.openlca.proto.input;
 
 import org.openlca.core.model.AllocationMethod;
+import org.openlca.core.model.FlowType;
 import org.openlca.core.model.Uncertainty;
 import org.openlca.proto.Proto;
 
-class Util {
+/**
+ * Utility methods for converting incoming proto-objects to openLCA model
+ * objects.
+ */
+public final class In {
 
-  private Util() {
+  private In() {
   }
 
   static Uncertainty uncertainty(Proto.Uncertainty proto) {
@@ -46,4 +51,22 @@ class Util {
         return AllocationMethod.NONE;
     }
   }
+
+  public static FlowType flowTypeOf(Proto.FlowType proto) {
+    if (proto == null)
+      return null;
+    switch (proto) {
+      case ELEMENTARY_FLOW:
+        return FlowType.ELEMENTARY_FLOW;
+      case PRODUCT_FLOW:
+        return FlowType.PRODUCT_FLOW;
+      case WASTE_FLOW:
+        return FlowType.WASTE_FLOW;
+      default:
+        return null;
+    }
+  }
+
+  public static 
+
 }

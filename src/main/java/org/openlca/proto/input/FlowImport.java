@@ -62,7 +62,7 @@ public class FlowImport {
 
   private void map(Proto.Flow proto, Flow flow) {
 
-    flow.flowType = typeOf(proto);
+    flow.flowType = In.flowTypeOf(proto.getFlowType());
     flow.casNumber = proto.getCas();
     flow.synonyms = proto.getSynonyms();
     flow.synonyms = proto.getFormula();
@@ -107,19 +107,6 @@ public class FlowImport {
         flow.referenceFlowProperty = factor.flowProperty;
       }
       flow.flowPropertyFactors.add(factor);
-    }
-  }
-
-  private FlowType typeOf(Proto.Flow proto) {
-    switch (proto.getFlowType()) {
-      case ELEMENTARY_FLOW:
-        return FlowType.ELEMENTARY_FLOW;
-      case PRODUCT_FLOW:
-        return FlowType.PRODUCT_FLOW;
-      case WASTE_FLOW:
-        return FlowType.WASTE_FLOW;
-      default:
-        return null;
     }
   }
 }

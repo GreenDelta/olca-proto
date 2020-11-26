@@ -77,7 +77,7 @@ public class ProcessImport {
       ? ProcessType.LCI_RESULT
       : ProcessType.UNIT_PROCESS;
     p.infrastructureProcess = proto.getInfrastructureProcess();
-    p.defaultAllocationMethod = Util.allocationMethod(
+    p.defaultAllocationMethod = In.allocationMethod(
       proto.getDefaultAllocationMethod());
     p.documentation = doc(proto.getProcessDocumentation());
 
@@ -238,7 +238,7 @@ public class ProcessImport {
     e.formula = Strings.nullIfEmpty(proto.getAmountFormula());
     e.dqEntry = Strings.nullIfEmpty(proto.getDqEntry());
     e.description = Strings.nullIfEmpty(proto.getDescription());
-    e.uncertainty = Util.uncertainty(proto.getUncertainty());
+    e.uncertainty = In.uncertainty(proto.getUncertainty());
 
     // costs
     e.costFormula = Strings.nullIfEmpty(proto.getCostFormula());
@@ -356,7 +356,7 @@ public class ProcessImport {
     if (f.productId == 0L)
       return null;
 
-    f.method = Util.allocationMethod(proto.getAllocationType());
+    f.method = In.allocationMethod(proto.getAllocationType());
     f.value = proto.getValue();
     f.formula = Strings.nullIfEmpty(proto.getFormula());
 
