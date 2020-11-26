@@ -73,11 +73,12 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
 
   private FlowRef toModelRef(Proto.FlowMapRef protoRef) {
     var flowRef = new FlowRef();
-    if (protoRef == null)
+    if (Messages.isEmpty(protoRef))
       return flowRef;
 
-
     flowRef.flow = In.descriptorOf(protoRef.getFlow());
+
+    // category path
     var categories = protoRef.getFlow().getCategoryPathList();
     if (!categories.isEmpty()) {
       flowRef.flowCategory = categories.stream()
@@ -87,12 +88,20 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
             : path + "/" + elem);
     }
 
+    // location code
     flowRef.flowLocation = Strings.orNull(
       protoRef.getFlow().getLocation());
 
-    var prop = protoRef.getFlowProperty();
-    if (Messages.isNotEmpty(prop)) {
-      //flddowRef.property = protoRef.getFlowProperty().is
+    // flow property
+    var property = protoRef.getFlowProperty();
+    if (Messages.isNotEmpty(property)) {
+      flowRef.property = In.descriptorOf(property);
+    }
+
+    // provider
+    var provider = protoRef.getProvider();
+    if (Messages.isNotEmpty(provider)) {
+      flowRef.provider = In.descriptorOf(provider);
     }
 
 

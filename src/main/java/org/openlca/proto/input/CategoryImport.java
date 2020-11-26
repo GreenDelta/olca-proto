@@ -2,9 +2,6 @@ package org.openlca.proto.input;
 
 import org.openlca.core.database.CategoryDao;
 import org.openlca.core.model.Category;
-import org.openlca.core.model.ModelType;
-import org.openlca.jsonld.Enums;
-import org.openlca.proto.Proto;
 import org.openlca.util.Categories;
 import org.openlca.util.Strings;
 
@@ -46,7 +43,7 @@ public class CategoryImport {
       category = new Category();
     }
     wrap.mapTo(category, imp);
-    map(proto, category);
+    category.modelType = In.modelTypeOf(proto.getModelType());
 
     // update a possible parent
     var dao = new CategoryDao(imp.db);
@@ -88,10 +85,4 @@ public class CategoryImport {
     imp.putHandled(category);
     return category;
   }
-
-  private void map(Proto.Category proto, Category category) {
-    category.modelType = Enums.getValue(
-      proto.getModelType().name(), ModelType.class);
-  }
-
 }

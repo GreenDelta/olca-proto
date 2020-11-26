@@ -2,9 +2,14 @@ package org.openlca.proto.input;
 
 import org.openlca.core.model.AllocationMethod;
 import org.openlca.core.model.FlowType;
+import org.openlca.core.model.ModelType;
+import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.Uncertainty;
 import org.openlca.core.model.Version;
+import org.openlca.core.model.descriptors.Descriptor;
 import org.openlca.core.model.descriptors.FlowDescriptor;
+import org.openlca.core.model.descriptors.ProcessDescriptor;
+import org.openlca.jsonld.Enums;
 import org.openlca.jsonld.Json;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
@@ -86,6 +91,18 @@ public final class In {
     }
   }
 
+  public static ProcessType processTypeOf(Proto.ProcessType proto) {
+    return proto == Proto.ProcessType.LCI_RESULT
+      ? ProcessType.LCI_RESULT
+      : ProcessType.UNIT_PROCESS;
+  }
+
+  public static ModelType modelTypeOf(Proto.ModelType proto) {
+    return proto == null
+      ? ModelType.UNKNOWN
+      : Enums.getValue(proto.name(), ModelType.class);
+  }
+
   public static FlowDescriptor descriptorOf(Proto.FlowRef proto) {
     if (proto == null)
       return null;
@@ -96,6 +113,43 @@ public final class In {
     d.description = Strings.orNull(proto.getDescription());
     d.lastChange = timeOf(proto.getLastChange());
     d.version = versionOf(proto.getVersion());
+    return d;
+  }
+
+  public static ProcessDescriptor descriptorOf(Proto.ProcessRef proto) {
+    if (proto == null)
+      return null;
+    var d = new ProcessDescriptor();
+    d.refId = proto.getId();
+    d.processType = processTypeOf(proto.getProcessType());
+    d.name = proto.getName();
+    d.description = Strings.orNull(proto.getDescription());
+    d.lastChange = timeOf(proto.getLastChange());
+    d.version = versionOf(proto.getVersion());
+    return d;
+  }
+
+  public static Descriptor descriptorOf(Proto.Ref proto) {
+    if (proto == null)
+      return null;
+    var d = new Descriptor();
+    d.refId = proto.getId();
+    d.name = proto.getName();
+    d.description = Strings.orNull(proto.getDescription());
+    d.lastChange = timeOf(proto.getLastChange());
+    d.version = versionOf(proto.getVersion());
+
+    // try to determine the model type
+    try {
+      var type = proto.getType();
+      if (Strings.notEmpty(type)) {
+        var clazz = Class.forName(
+          "org.openlca.core.model." + type);
+        d.type = ModelType.forModelClass(clazz);
+      }
+    } catch (Exception ignored) {
+    }
+
     return d;
   }
 

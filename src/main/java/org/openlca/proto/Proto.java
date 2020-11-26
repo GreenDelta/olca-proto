@@ -33404,6 +33404,45 @@ public final class Proto {
      * <code>.protolca.Ref unit = 4;</code>
      */
     org.openlca.proto.Proto.RefOrBuilder getUnitOrBuilder();
+
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     * @return Whether the provider field is set.
+     */
+    boolean hasProvider();
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     * @return The provider.
+     */
+    org.openlca.proto.Proto.ProcessRef getProvider();
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     */
+    org.openlca.proto.Proto.ProcessRefOrBuilder getProviderOrBuilder();
   }
   /**
    * <pre>
@@ -33500,6 +33539,19 @@ public final class Proto {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(unit_);
                 unit_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              org.openlca.proto.Proto.ProcessRef.Builder subBuilder = null;
+              if (provider_ != null) {
+                subBuilder = provider_.toBuilder();
+              }
+              provider_ = input.readMessage(org.openlca.proto.Proto.ProcessRef.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(provider_);
+                provider_ = subBuilder.buildPartial();
               }
 
               break;
@@ -33701,6 +33753,56 @@ public final class Proto {
       return getUnit();
     }
 
+    public static final int PROVIDER_FIELD_NUMBER = 5;
+    private org.openlca.proto.Proto.ProcessRef provider_;
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     * @return Whether the provider field is set.
+     */
+    @java.lang.Override
+    public boolean hasProvider() {
+      return provider_ != null;
+    }
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     * @return The provider.
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ProcessRef getProvider() {
+      return provider_ == null ? org.openlca.proto.Proto.ProcessRef.getDefaultInstance() : provider_;
+    }
+    /**
+     * <pre>
+     * In case of a product or waste flow a flow mapping can contain a provider
+     * which is the process that produces the product or a waste treatment
+     * process that consumes the waste flow. This is useful when we want to apply
+     * mappings of product and waste flows on databases and link them in the
+     * corresponding processes and product systems.
+     * </pre>
+     *
+     * <code>.protolca.ProcessRef provider = 5;</code>
+     */
+    @java.lang.Override
+    public org.openlca.proto.Proto.ProcessRefOrBuilder getProviderOrBuilder() {
+      return getProvider();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -33727,6 +33829,9 @@ public final class Proto {
       if (unit_ != null) {
         output.writeMessage(4, getUnit());
       }
+      if (provider_ != null) {
+        output.writeMessage(5, getProvider());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -33750,6 +33855,10 @@ public final class Proto {
       if (unit_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getUnit());
+      }
+      if (provider_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getProvider());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -33783,6 +33892,11 @@ public final class Proto {
         if (!getUnit()
             .equals(other.getUnit())) return false;
       }
+      if (hasProvider() != other.hasProvider()) return false;
+      if (hasProvider()) {
+        if (!getProvider()
+            .equals(other.getProvider())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -33807,6 +33921,10 @@ public final class Proto {
       if (hasUnit()) {
         hash = (37 * hash) + UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getUnit().hashCode();
+      }
+      if (hasProvider()) {
+        hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+        hash = (53 * hash) + getProvider().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -33969,6 +34087,12 @@ public final class Proto {
           unit_ = null;
           unitBuilder_ = null;
         }
+        if (providerBuilder_ == null) {
+          provider_ = null;
+        } else {
+          provider_ = null;
+          providerBuilder_ = null;
+        }
         return this;
       }
 
@@ -34010,6 +34134,11 @@ public final class Proto {
           result.unit_ = unit_;
         } else {
           result.unit_ = unitBuilder_.build();
+        }
+        if (providerBuilder_ == null) {
+          result.provider_ = provider_;
+        } else {
+          result.provider_ = providerBuilder_.build();
         }
         onBuilt();
         return result;
@@ -34071,6 +34200,9 @@ public final class Proto {
         }
         if (other.hasUnit()) {
           mergeUnit(other.getUnit());
+        }
+        if (other.hasProvider()) {
+          mergeProvider(other.getProvider());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -34674,6 +34806,197 @@ public final class Proto {
           unit_ = null;
         }
         return unitBuilder_;
+      }
+
+      private org.openlca.proto.Proto.ProcessRef provider_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> providerBuilder_;
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       * @return Whether the provider field is set.
+       */
+      public boolean hasProvider() {
+        return providerBuilder_ != null || provider_ != null;
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       * @return The provider.
+       */
+      public org.openlca.proto.Proto.ProcessRef getProvider() {
+        if (providerBuilder_ == null) {
+          return provider_ == null ? org.openlca.proto.Proto.ProcessRef.getDefaultInstance() : provider_;
+        } else {
+          return providerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public Builder setProvider(org.openlca.proto.Proto.ProcessRef value) {
+        if (providerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          provider_ = value;
+          onChanged();
+        } else {
+          providerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public Builder setProvider(
+          org.openlca.proto.Proto.ProcessRef.Builder builderForValue) {
+        if (providerBuilder_ == null) {
+          provider_ = builderForValue.build();
+          onChanged();
+        } else {
+          providerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public Builder mergeProvider(org.openlca.proto.Proto.ProcessRef value) {
+        if (providerBuilder_ == null) {
+          if (provider_ != null) {
+            provider_ =
+              org.openlca.proto.Proto.ProcessRef.newBuilder(provider_).mergeFrom(value).buildPartial();
+          } else {
+            provider_ = value;
+          }
+          onChanged();
+        } else {
+          providerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public Builder clearProvider() {
+        if (providerBuilder_ == null) {
+          provider_ = null;
+          onChanged();
+        } else {
+          provider_ = null;
+          providerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public org.openlca.proto.Proto.ProcessRef.Builder getProviderBuilder() {
+        
+        onChanged();
+        return getProviderFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      public org.openlca.proto.Proto.ProcessRefOrBuilder getProviderOrBuilder() {
+        if (providerBuilder_ != null) {
+          return providerBuilder_.getMessageOrBuilder();
+        } else {
+          return provider_ == null ?
+              org.openlca.proto.Proto.ProcessRef.getDefaultInstance() : provider_;
+        }
+      }
+      /**
+       * <pre>
+       * In case of a product or waste flow a flow mapping can contain a provider
+       * which is the process that produces the product or a waste treatment
+       * process that consumes the waste flow. This is useful when we want to apply
+       * mappings of product and waste flows on databases and link them in the
+       * corresponding processes and product systems.
+       * </pre>
+       *
+       * <code>.protolca.ProcessRef provider = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder> 
+          getProviderFieldBuilder() {
+        if (providerBuilder_ == null) {
+          providerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openlca.proto.Proto.ProcessRef, org.openlca.proto.Proto.ProcessRef.Builder, org.openlca.proto.Proto.ProcessRefOrBuilder>(
+                  getProvider(),
+                  getParentForChildren(),
+                  isClean());
+          provider_ = null;
+        }
+        return providerBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -108541,11 +108864,12 @@ public final class Proto {
       "scription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013last" +
       "_change\030\006 \001(\t\022\"\n\004from\030\007 \001(\0132\024.protolca.F" +
       "lowMapRef\022 \n\002to\030\010 \001(\0132\024.protolca.FlowMap" +
-      "Ref\022\031\n\021conversion_factor\030\t \001(\001\"\205\001\n\nFlowM" +
+      "Ref\022\031\n\021conversion_factor\030\t \001(\001\"\255\001\n\nFlowM" +
       "apRef\022\023\n\004type\030\001 \001(\tR\005@type\022\037\n\004flow\030\002 \001(\013" +
       "2\021.protolca.FlowRef\022$\n\rflow_property\030\003 \001" +
       "(\0132\r.protolca.Ref\022\033\n\004unit\030\004 \001(\0132\r.protol" +
-      "ca.Ref\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001(\tR\005@" +
+      "ca.Ref\022&\n\010provider\030\005 \001(\0132\024.protolca.Proc" +
+      "essRef\"\230\002\n\014FlowProperty\022\023\n\004type\030\001 \001(\tR\005@" +
       "type\022\017\n\002id\030\002 \001(\tR\003@id\022\014\n\004name\030\003 \001(\t\022\023\n\013d" +
       "escription\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\022\023\n\013las" +
       "t_change\030\006 \001(\t\022\037\n\010category\030\007 \001(\0132\r.proto" +
@@ -108866,7 +109190,7 @@ public final class Proto {
     internal_static_protolca_FlowMapRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protolca_FlowMapRef_descriptor,
-        new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", });
+        new java.lang.String[] { "Type", "Flow", "FlowProperty", "Unit", "Provider", });
     internal_static_protolca_FlowProperty_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_protolca_FlowProperty_fieldAccessorTable = new

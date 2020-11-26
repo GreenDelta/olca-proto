@@ -13,7 +13,6 @@ import org.openlca.core.model.Exchange;
 import org.openlca.core.model.Parameter;
 import org.openlca.core.model.Process;
 import org.openlca.core.model.ProcessDocumentation;
-import org.openlca.core.model.ProcessType;
 import org.openlca.core.model.RiskLevel;
 import org.openlca.core.model.SocialAspect;
 import org.openlca.core.model.Source;
@@ -73,9 +72,7 @@ public class ProcessImport {
 
   private void map(Proto.Process proto, Process p) {
 
-    p.processType = proto.getProcessType() == Proto.ProcessType.LCI_RESULT
-      ? ProcessType.LCI_RESULT
-      : ProcessType.UNIT_PROCESS;
+    p.processType = In.processTypeOf(proto.getProcessType());
     p.infrastructureProcess = proto.getInfrastructureProcess();
     p.defaultAllocationMethod = In.allocationMethod(
       proto.getDefaultAllocationMethod());
