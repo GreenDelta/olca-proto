@@ -4,6 +4,7 @@ import com.google.protobuf.ProtocolStringList;
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.database.MappingFileDao;
+import org.openlca.core.model.MappingFile;
 import org.openlca.io.maps.FlowMap;
 import org.openlca.io.maps.FlowMapEntry;
 import org.openlca.io.maps.FlowRef;
@@ -36,11 +37,34 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
   }
 
   @Override
-  public void delete(Services.FlowMapInfo req, StreamObserver<Services.Status> resp) {
+  public void get(Services.FlowMapInfo req,
+                  StreamObserver<Services.FlowMapStatus> resp) {
+    var mapping = getOrError(req, resp);
+
+  }
+
+  @Override
+  public void delete(Services.FlowMapInfo req,
+                     StreamObserver<Services.Status> resp) {
+    var mapping = getOrError(req, resp);
+    if (mapping == null)
+      return;
+    try {
+      new MappingFileDao(db).delete(mapping);
+      Response.ok(resp);
+    } catch (Exception e) {
+      Response.error(resp, "Failed to delete mapping with name='"
+        + req.getName() + "' from database");
+    }
+  }
+
+  private MappingFile getOrError(
+    Services.FlowMapInfo req, StreamObserver<Services.Status> resp) {
+
     if (Strings.nullOrEmpty(req.getName())) {
       Response.error(resp, "No name of the flow map" +
         " that should be deleted was given.");
-      return;
+      return null;
     }
 
     // find the existing mapping with this name
@@ -54,7 +78,7 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     if (existing == null) {
       Response.error(resp, "A flow mapping with name='"
         + name + "' does not exist");
-      return;
+      return null;
     }
 
     // load the mapping
@@ -62,17 +86,9 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     if (mapping == null) {
       Response.error(resp, "Failed to load mapping with name='"
         + name + "' from database");
-      return;
+      return null;
     }
-
-    // try to delete it
-    try {
-      dao.delete(mapping);
-      Response.ok(resp);
-    } catch (Exception e) {
-      Response.error(resp, "Failed to delete mapping with name='"
-        + name + "' from database");
-    }
+    return mapping;
   }
 
   @Override

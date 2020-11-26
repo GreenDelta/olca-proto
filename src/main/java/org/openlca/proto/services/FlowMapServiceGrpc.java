@@ -58,6 +58,37 @@ public final class FlowMapServiceGrpc {
     return getDeleteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.FlowMapInfo,
+      org.openlca.proto.services.Services.FlowMapStatus> getGetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Get",
+      requestType = org.openlca.proto.services.Services.FlowMapInfo.class,
+      responseType = org.openlca.proto.services.Services.FlowMapStatus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.openlca.proto.services.Services.FlowMapInfo,
+      org.openlca.proto.services.Services.FlowMapStatus> getGetMethod() {
+    io.grpc.MethodDescriptor<org.openlca.proto.services.Services.FlowMapInfo, org.openlca.proto.services.Services.FlowMapStatus> getGetMethod;
+    if ((getGetMethod = FlowMapServiceGrpc.getGetMethod) == null) {
+      synchronized (FlowMapServiceGrpc.class) {
+        if ((getGetMethod = FlowMapServiceGrpc.getGetMethod) == null) {
+          FlowMapServiceGrpc.getGetMethod = getGetMethod =
+              io.grpc.MethodDescriptor.<org.openlca.proto.services.Services.FlowMapInfo, org.openlca.proto.services.Services.FlowMapStatus>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Get"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.services.Services.FlowMapInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.openlca.proto.services.Services.FlowMapStatus.getDefaultInstance()))
+              .setSchemaDescriptor(new FlowMapServiceMethodDescriptorSupplier("Get"))
+              .build();
+        }
+      }
+    }
+    return getGetMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<org.openlca.proto.services.Services.Empty,
       org.openlca.proto.services.Services.FlowMapInfo> getGetAllMethod;
 
@@ -180,6 +211,17 @@ public final class FlowMapServiceGrpc {
 
     /**
      * <pre>
+     * Get the flow map with the given name form the
+     * database.
+     * </pre>
+     */
+    public void get(org.openlca.proto.services.Services.FlowMapInfo request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowMapStatus> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get the information (basically just the names) of all
      * flow maps that are available in the database.
      * </pre>
@@ -210,6 +252,13 @@ public final class FlowMapServiceGrpc {
                 org.openlca.proto.services.Services.FlowMapInfo,
                 org.openlca.proto.services.Services.Status>(
                   this, METHODID_DELETE)))
+          .addMethod(
+            getGetMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.openlca.proto.services.Services.FlowMapInfo,
+                org.openlca.proto.services.Services.FlowMapStatus>(
+                  this, METHODID_GET)))
           .addMethod(
             getGetAllMethod(),
             asyncServerStreamingCall(
@@ -251,6 +300,18 @@ public final class FlowMapServiceGrpc {
         io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get the flow map with the given name form the
+     * database.
+     * </pre>
+     */
+    public void get(org.openlca.proto.services.Services.FlowMapInfo request,
+        io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowMapStatus> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -305,6 +366,17 @@ public final class FlowMapServiceGrpc {
 
     /**
      * <pre>
+     * Get the flow map with the given name form the
+     * database.
+     * </pre>
+     */
+    public org.openlca.proto.services.Services.FlowMapStatus get(org.openlca.proto.services.Services.FlowMapInfo request) {
+      return blockingUnaryCall(
+          getChannel(), getGetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get the information (basically just the names) of all
      * flow maps that are available in the database.
      * </pre>
@@ -355,6 +427,18 @@ public final class FlowMapServiceGrpc {
 
     /**
      * <pre>
+     * Get the flow map with the given name form the
+     * database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.openlca.proto.services.Services.FlowMapStatus> get(
+        org.openlca.proto.services.Services.FlowMapInfo request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Inserts the given flow map into the database. It overwrites
      * an existing flow map if there is a flow map with the same
      * name already available in the database.
@@ -368,8 +452,9 @@ public final class FlowMapServiceGrpc {
   }
 
   private static final int METHODID_DELETE = 0;
-  private static final int METHODID_GET_ALL = 1;
-  private static final int METHODID_PUT = 2;
+  private static final int METHODID_GET = 1;
+  private static final int METHODID_GET_ALL = 2;
+  private static final int METHODID_PUT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -391,6 +476,10 @@ public final class FlowMapServiceGrpc {
         case METHODID_DELETE:
           serviceImpl.delete((org.openlca.proto.services.Services.FlowMapInfo) request,
               (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.Status>) responseObserver);
+          break;
+        case METHODID_GET:
+          serviceImpl.get((org.openlca.proto.services.Services.FlowMapInfo) request,
+              (io.grpc.stub.StreamObserver<org.openlca.proto.services.Services.FlowMapStatus>) responseObserver);
           break;
         case METHODID_GET_ALL:
           serviceImpl.getAll((org.openlca.proto.services.Services.Empty) request,
@@ -462,6 +551,7 @@ public final class FlowMapServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new FlowMapServiceFileDescriptorSupplier())
               .addMethod(getDeleteMethod())
+              .addMethod(getGetMethod())
               .addMethod(getGetAllMethod())
               .addMethod(getPutMethod())
               .build();

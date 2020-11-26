@@ -227,6 +227,10 @@ service FlowMapService {
   // Delete the flow map with the given name.
   rpc Delete(FlowMapInfo) returns (Status);
 
+  // Get the flow map with the given name form the
+  // database.
+  rpc Get(FlowMapInfo) returns (FlowMapStatus);
+
   // Get the information (basically just the names) of all
   // flow maps that are available in the database.
   rpc GetAll(Empty) returns (stream FlowMapInfo);

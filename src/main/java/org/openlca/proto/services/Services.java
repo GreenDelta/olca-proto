@@ -17033,15 +17033,16 @@ public final class Services {
       "olca.services.UnitGroupStatus\022A\n\014PutUnit" +
       "Group\022\023.protolca.UnitGroup\032\034.protolca.se" +
       "rvices.RefStatus\022<\n\017GetProvidersFor\022\021.pr" +
-      "otolca.FlowRef\032\024.protolca.ProcessRef0\0012\320" +
-      "\001\n\016FlowMapService\022C\n\006Delete\022\036.protolca.s" +
+      "otolca.FlowRef\032\024.protolca.ProcessRef0\0012\231" +
+      "\002\n\016FlowMapService\022C\n\006Delete\022\036.protolca.s" +
       "ervices.FlowMapInfo\032\031.protolca.services." +
-      "Status\022D\n\006GetAll\022\030.protolca.services.Emp" +
-      "ty\032\036.protolca.services.FlowMapInfo0\001\0223\n\003" +
-      "Put\022\021.protolca.FlowMap\032\031.protolca.servic" +
-      "es.StatusB<\n\032org.openlca.proto.servicesZ" +
-      "\n.;protolca\252\002\021ProtoLCA.ServicesP\000b\006proto" +
-      "3"
+      "Status\022G\n\003Get\022\036.protolca.services.FlowMa" +
+      "pInfo\032 .protolca.services.FlowMapStatus\022" +
+      "D\n\006GetAll\022\030.protolca.services.Empty\032\036.pr" +
+      "otolca.services.FlowMapInfo0\001\0223\n\003Put\022\021.p" +
+      "rotolca.FlowMap\032\031.protolca.services.Stat" +
+      "usB<\n\032org.openlca.proto.servicesZ\n.;prot" +
+      "olca\252\002\021ProtoLCA.ServicesP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
