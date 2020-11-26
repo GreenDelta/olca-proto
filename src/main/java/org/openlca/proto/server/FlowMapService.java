@@ -1,7 +1,5 @@
 package org.openlca.proto.server;
 
-import java.util.function.Consumer;
-
 import com.google.protobuf.ProtocolStringList;
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.IDatabase;
@@ -39,8 +37,42 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
 
   @Override
   public void delete(Services.FlowMapInfo req, StreamObserver<Services.Status> resp) {
-    var name = req.getName();
+    if (Strings.nullOrEmpty(req.getName())) {
+      Response.error(resp, "No name of the flow map" +
+        " that should be deleted was given.");
+      return;
+    }
 
+    // find the existing mapping with this name
+    var dao = new MappingFileDao(db);
+    var name = req.getName().trim();
+    var existing = dao.getNames()
+      .stream()
+      .filter(name::equalsIgnoreCase)
+      .findAny()
+      .orElse(null);
+    if (existing == null) {
+      Response.error(resp, "A flow mapping with name='"
+        + name + "' does not exist");
+      return;
+    }
+
+    // load the mapping
+    var mapping = dao.getForName(existing);
+    if (mapping == null) {
+      Response.error(resp, "Failed to load mapping with name='"
+        + name + "' from database");
+      return;
+    }
+
+    // try to delete it
+    try {
+      dao.delete(mapping);
+      Response.ok(resp);
+    } catch (Exception e) {
+      Response.error(resp, "Failed to delete mapping with name='"
+        + name + "' from database");
+    }
   }
 
   @Override
