@@ -16,6 +16,7 @@ public class Server {
     this.port = port;
     this.server = ServerBuilder.forPort(port)
       .addService(new DataService(db))
+      .addService(new FlowMapService(db))
       .build();
   }
 
