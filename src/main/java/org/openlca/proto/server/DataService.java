@@ -93,39 +93,26 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
       .findAny()
       .orElse(null);
 
-    Consumer<String> error = msg -> {
-      var status = Services.Status.newBuilder()
-        .setOk(false)
-        .setError(msg)
-        .build();
-      resp.onNext(status);
-      resp.onCompleted();
-    };
-
     if (type == null) {
-      error.accept("Unknown model type: " + req.getType());
+      Response.error(resp, "Unknown model type: " + req.getType());
       return;
     }
 
     if (!CategorizedEntity.class.isAssignableFrom(type)) {
-      error.accept(req.getType() + " is not a standalone entity");
+      Response.error(resp, req.getType()
+        + " is not a standalone entity");
       return;
     }
 
     var entity = db.get(type, req.getId());
     if (entity == null) {
-      error.accept(
-        "A " + req.getType() + " with id="
-          + req.getId() + " does not exist");
+      Response.error(resp, "A " + req.getType()
+        + " with id=" + req.getId() + " does not exist");
       return;
     }
 
     db.delete(entity);
-    var status = Services.Status.newBuilder()
-      .setOk(true)
-      .build();
-    resp.onNext(status);
-    resp.onCompleted();
+    Response.ok(resp);
   }
 
   @Override

@@ -38,27 +38,16 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
   }
 
   @Override
+  public void delete(Services.FlowMapInfo req, StreamObserver<Services.Status> resp) {
+    var name = req.getName();
+
+  }
+
+  @Override
   public void put(Proto.FlowMap proto, StreamObserver<Services.Status> resp) {
-    Consumer<String> onError = error -> {
-      var status = Services.Status.newBuilder()
-        .setOk(false)
-        .setError(error)
-        .build();
-      resp.onNext(status);
-      resp.onCompleted();
-    };
-
-    Runnable onOk = () -> {
-      var status = Services.Status.newBuilder()
-        .setOk(true)
-        .build();
-      resp.onNext(status);
-      resp.onCompleted();
-    };
-
     var model = toModel(proto);
     if (Strings.nullOrEmpty(model.name)) {
-      onError.accept("A name of the flow map is required");
+      Response.error(resp, "A name of the flow map is required");
       return;
     }
 
@@ -77,10 +66,10 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
         try {
           model.updateContentOf(mapping);
           dao.update(mapping);
-          onOk.run();
+          Response.ok(resp);
         } catch (Exception e) {
-          onError.accept("Failed to update existing flow map "
-            + existing + ": " + e.getMessage());
+          Response.error(resp, "Failed to update existing" +
+            " flow map " + existing + ": " + e.getMessage());
         }
         return;
       }
@@ -90,9 +79,9 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     var mapping = model.toMappingFile();
     try {
       dao.insert(mapping);
-      onOk.run();
+      Response.ok(resp);
     } catch (Exception e) {
-      onError.accept("Failed to save mapping "
+      Response.error(resp, "Failed to save mapping "
         + model.name + ": " + e.getMessage());
     }
   }
