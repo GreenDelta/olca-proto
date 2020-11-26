@@ -235,13 +235,13 @@ public class ProcessImport {
       ? null
       : proto.getBaseUncertainty();
     e.amount = proto.getAmount();
-    e.formula = Strings.nullIfEmpty(proto.getAmountFormula());
-    e.dqEntry = Strings.nullIfEmpty(proto.getDqEntry());
-    e.description = Strings.nullIfEmpty(proto.getDescription());
+    e.formula = Strings.orNull(proto.getAmountFormula());
+    e.dqEntry = Strings.orNull(proto.getDqEntry());
+    e.description = Strings.orNull(proto.getDescription());
     e.uncertainty = In.uncertainty(proto.getUncertainty());
 
     // costs
-    e.costFormula = Strings.nullIfEmpty(proto.getCostFormula());
+    e.costFormula = Strings.orNull(proto.getCostFormula());
     e.costs = proto.getCostValue() == 0
       ? null
       : proto.getCostValue();
@@ -289,9 +289,9 @@ public class ProcessImport {
     if (Strings.notEmpty(indicatorID)) {
       a.indicator = new SocialIndicatorImport(imp).of(indicatorID);
     }
-    a.comment = Strings.nullIfEmpty(proto.getComment());
-    a.quality = Strings.nullIfEmpty(proto.getQuality());
-    a.rawAmount = Strings.nullIfEmpty(proto.getRawAmount());
+    a.comment = Strings.orNull(proto.getComment());
+    a.quality = Strings.orNull(proto.getQuality());
+    a.rawAmount = Strings.orNull(proto.getRawAmount());
     a.activityValue = proto.getActivityValue();
     a.riskLevel = riskLevel(proto.getRiskLevel());
     var sourceID = proto.getSource().getId();
@@ -358,7 +358,7 @@ public class ProcessImport {
 
     f.method = In.allocationMethod(proto.getAllocationType());
     f.value = proto.getValue();
-    f.formula = Strings.nullIfEmpty(proto.getFormula());
+    f.formula = Strings.orNull(proto.getFormula());
 
     // find the related exchange in case of
     // a causal allocation factor

@@ -1,5 +1,6 @@
 package org.openlca.proto.server;
 
+import com.google.protobuf.Message;
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.IDatabase;
 import org.openlca.core.database.MappingFileDao;
@@ -7,6 +8,7 @@ import org.openlca.core.model.descriptors.FlowDescriptor;
 import org.openlca.io.maps.FlowMap;
 import org.openlca.io.maps.FlowMapEntry;
 import org.openlca.io.maps.FlowRef;
+import org.openlca.proto.Messages;
 import org.openlca.proto.Proto;
 import org.openlca.proto.input.In;
 import org.openlca.proto.services.FlowMapServiceGrpc;
@@ -65,6 +67,8 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
 
       //protoEntry.getFrom()
     }
+
+    return flowMap;
   }
 
   private FlowRef toModelRef(Proto.FlowMapRef protoRef) {
@@ -72,15 +76,27 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     if (protoRef == null)
       return flowRef;
 
-    var protoFlow = protoRef.getFlow();
-    var flow = new FlowDescriptor();
-    flow.name = protoFlow.getName();
-    flow.flowType = In.flowTypeOf(protoFlow.getFlowType());
+
+    flowRef.flow = In.descriptorOf(protoRef.getFlow());
+    var categories = protoRef.getFlow().getCategoryPathList();
+    if (!categories.isEmpty()) {
+      flowRef.flowCategory = categories.stream()
+        .reduce("", (path, elem) ->
+          Strings.nullOrEmpty(path)
+            ? elem
+            : path + "/" + elem);
+    }
+
+    flowRef.flowLocation = Strings.orNull(
+      protoRef.getFlow().getLocation());
+
+    var prop = protoRef.getFlowProperty();
+    if (Messages.isNotEmpty(prop)) {
+      //flddowRef.property = protoRef.getFlowProperty().is
+    }
 
 
-    flowRef.flow = flow;
-
-
+    return flowRef;
   }
 
 }

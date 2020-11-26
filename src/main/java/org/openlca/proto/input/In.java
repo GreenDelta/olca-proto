@@ -3,7 +3,11 @@ package org.openlca.proto.input;
 import org.openlca.core.model.AllocationMethod;
 import org.openlca.core.model.FlowType;
 import org.openlca.core.model.Uncertainty;
+import org.openlca.core.model.Version;
+import org.openlca.core.model.descriptors.FlowDescriptor;
+import org.openlca.jsonld.Json;
 import org.openlca.proto.Proto;
+import org.openlca.util.Strings;
 
 /**
  * Utility methods for converting incoming proto-objects to openLCA model
@@ -52,6 +56,21 @@ public final class In {
     }
   }
 
+  public static long timeOf(String dateTime) {
+    if (Strings.nullOrEmpty(dateTime))
+      return 0;
+    var date = Json.parseDate(dateTime);
+    return date == null
+      ? 0
+      : date.getTime();
+  }
+
+  public static long versionOf(String version) {
+    return Strings.nullOrEmpty(version)
+      ? 0
+      : Version.fromString(version).getValue();
+  }
+
   public static FlowType flowTypeOf(Proto.FlowType proto) {
     if (proto == null)
       return null;
@@ -67,6 +86,17 @@ public final class In {
     }
   }
 
-  public static 
+  public static FlowDescriptor descriptorOf(Proto.FlowRef proto) {
+    if (proto == null)
+      return null;
+    var d = new FlowDescriptor();
+    d.refId = proto.getId();
+    d.flowType = flowTypeOf(proto.getFlowType());
+    d.name = proto.getName();
+    d.description = Strings.orNull(proto.getDescription());
+    d.lastChange = timeOf(proto.getLastChange());
+    d.version = versionOf(proto.getVersion());
+    return d;
+  }
 
 }

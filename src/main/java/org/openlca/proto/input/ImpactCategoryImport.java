@@ -77,7 +77,7 @@ public class ImpactCategoryImport {
       factor.formula = Strings.notEmpty(protoFac.getFormula())
         ? protoFac.getFormula()
         : null;
-      factor.uncertainty = Util.uncertainty(protoFac.getUncertainty());
+      factor.uncertainty = In.uncertainty(protoFac.getUncertainty());
 
       // flow
       var flowID = protoFac.getFlow().getId();

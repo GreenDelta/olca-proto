@@ -2,8 +2,6 @@ package org.openlca.proto.input;
 
 import com.google.protobuf.ProtocolStringList;
 import org.openlca.core.model.CategorizedEntity;
-import org.openlca.core.model.Version;
-import org.openlca.jsonld.Json;
 import org.openlca.proto.Proto;
 import org.openlca.util.Strings;
 
@@ -33,16 +31,8 @@ abstract class ProtoWrap {
     e.refId = id();
     e.name = name();
     e.description = description();
-    var version = version();
-    if (Strings.notEmpty(version)) {
-      e.version = Version.fromString(version).getValue();
-    }
-    if (Strings.notEmpty(lastChange())) {
-      var date = Json.parseDate(lastChange());
-      e.lastChange = date != null
-        ? date.getTime()
-        : 0;
-    }
+    e.version = In.versionOf(version());
+    e.lastChange = In.timeOf(lastChange());
 
     // categorized entity fields
     var catID = category().getId();

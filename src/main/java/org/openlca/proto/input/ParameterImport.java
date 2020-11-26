@@ -59,7 +59,7 @@ public class ParameterImport {
     param.isInputParameter = proto.getInputParameter();
     param.value = proto.getValue();
     param.formula = proto.getFormula();
-    param.uncertainty = Util.uncertainty(proto.getUncertainty());
+    param.uncertainty = In.uncertainty(proto.getUncertainty());
   }
 
   static ParameterScope scopeOf(Proto.Parameter proto) {
