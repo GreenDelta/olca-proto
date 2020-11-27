@@ -39,7 +39,7 @@ public class ImpactCategoryWriter {
         .forEach(proto::addTags);
     }
     if (impact.category != null) {
-      proto.setCategory(Out.toRef(impact.category, config));
+      proto.setCategory(Out.refOf(impact.category, config));
     }
 
     // model specific fields
@@ -60,26 +60,26 @@ public class ImpactCategoryWriter {
       var protoFac = Proto.ImpactFactor.newBuilder();
 
       if (factor.flow != null) {
-        protoFac.setFlow(Out.toFlowRef(factor.flow, config));
+        protoFac.setFlow(Out.flowRefOf(factor.flow, config));
       }
 
       var prop = factor.flowPropertyFactor;
       if (prop != null && prop.flowProperty != null) {
-        protoFac.setFlowProperty(Out.toRef(prop.flowProperty));
+        protoFac.setFlowProperty(Out.refOf(prop.flowProperty));
       }
 
       protoFac.setFormula(Strings.orEmpty(factor.formula));
 
       if (factor.location != null) {
-        protoFac.setLocation(Out.toRef(factor.location, config));
+        protoFac.setLocation(Out.refOf(factor.location, config));
       }
 
       if (factor.uncertainty != null) {
-        protoFac.setUncertainty(Util.uncertainty(factor.uncertainty));
+        protoFac.setUncertainty(Out.uncertaintyOf(factor.uncertainty));
       }
 
       if (factor.unit != null) {
-        protoFac.setUnit(Out.toRef(factor.unit));
+        protoFac.setUnit(Out.refOf(factor.unit));
       }
 
       protoFac.setValue(factor.value);

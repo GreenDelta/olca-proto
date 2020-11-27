@@ -1,5 +1,6 @@
 package org.openlca.proto.server;
 
+import java.util.Arrays;
 import java.util.function.Consumer;
 
 import com.google.protobuf.ProtocolStringList;
@@ -13,6 +14,7 @@ import org.openlca.io.maps.FlowRef;
 import org.openlca.proto.Messages;
 import org.openlca.proto.Proto;
 import org.openlca.proto.input.In;
+import org.openlca.proto.output.Out;
 import org.openlca.proto.services.FlowMapServiceGrpc;
 import org.openlca.proto.services.Services;
 import org.openlca.util.Pair;
@@ -60,7 +62,12 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     }
 
     var flowMap = FlowMap.of(mapping);
-
+    var status = Services.FlowMapStatus.newBuilder()
+      .setOk(true)
+      .setFlowMap(toProto(flowMap))
+      .build();
+    resp.onNext(status);
+    resp.onCompleted();
   }
 
   @Override
@@ -220,7 +227,13 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     for (var entry : model.entries) {
       var protoEntry = Proto.FlowMapEntry.newBuilder();
       protoEntry.setConversionFactor(entry.factor);
-
+      if (entry.sourceFlow != null) {
+        protoEntry.setFrom(toProtoRef(entry.sourceFlow));
+      }
+      if (entry.targetFlow != null) {
+        protoEntry.setTo(toProtoRef(entry.targetFlow));
+      }
+      proto.addMappings(protoEntry);
     }
 
     return proto.build();
@@ -231,12 +244,42 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     if (flowRef == null || flowRef.flow == null)
       return proto.build();
 
-    proto.setFlow()
+    // flow
+    var protoFlow = Out.flowRefOf(flowRef.flow);
+    if (flowRef.flowCategory != null) {
+      Arrays.stream(flowRef.flowCategory.split("/"))
+        .filter(Strings::notEmpty)
+        .forEach(protoFlow::addCategoryPath);
+    }
+    if (flowRef.flowLocation != null) {
+      protoFlow.setLocation(flowRef.flowLocation);
+    }
+    proto.setFlow(protoFlow);
 
+    // flow property & unit
+    if (flowRef.property != null) {
+        proto.setFlowProperty(Out.refOf(flowRef.property));
+    }
+    if (flowRef.unit != null) {
+      proto.setUnit(Out.refOf(flowRef.unit));
+    }
+
+    // provider
+    if (flowRef.provider != null) {
+      var protoProv = Out.processRefOf(flowRef.provider);
+      if (flowRef.providerLocation != null) {
+        protoProv.setLocation(flowRef.providerLocation);
+      }
+      if (flowRef.providerCategory != null) {
+        Arrays.stream(flowRef.providerCategory.split("/"))
+          .filter(Strings::notEmpty)
+          .forEach(protoProv::addCategoryPath);
+      }
+      proto.setProvider(protoProv);
+    }
 
     return proto.build();
   }
-
 }
 
 

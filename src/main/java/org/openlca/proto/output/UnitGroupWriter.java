@@ -40,13 +40,13 @@ public class UnitGroupWriter {
         .forEach(proto::addTags);
     }
     if (group.category != null) {
-      proto.setCategory(Out.toRef(group.category, config));
+      proto.setCategory(Out.refOf(group.category, config));
     }
 
     // model specific fields
     if (group.defaultFlowProperty != null) {
       proto.setDefaultFlowProperty(
-        Out.toRef(group.defaultFlowProperty, config));
+        Out.refOf(group.defaultFlowProperty, config));
     }
     writeUnits(group, proto);
 

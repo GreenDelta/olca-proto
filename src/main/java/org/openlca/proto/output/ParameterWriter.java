@@ -39,7 +39,7 @@ public class ParameterWriter {
         .forEach(proto::addTags);
     }
     if (parameter.category != null) {
-      proto.setCategory(Out.toRef(parameter.category, config));
+      proto.setCategory(Out.refOf(parameter.category, config));
     }
 
     // model specific fields
@@ -47,7 +47,7 @@ public class ParameterWriter {
     proto.setInputParameter(parameter.isInputParameter);
     if (parameter.uncertainty != null) {
       proto.setUncertainty(
-        Util.uncertainty(parameter.uncertainty));
+        Out.uncertaintyOf(parameter.uncertainty));
     }
     proto.setValue(parameter.value);
     proto.setParameterScope(scopeOf(parameter));

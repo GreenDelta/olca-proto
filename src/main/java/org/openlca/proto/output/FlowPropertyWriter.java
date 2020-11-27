@@ -39,13 +39,13 @@ public class FlowPropertyWriter {
         .forEach(proto::addTags);
     }
     if (property.category != null) {
-      proto.setCategory(Out.toRef(property.category, config));
+      proto.setCategory(Out.refOf(property.category, config));
     }
 
     // model specific fields
     writeFlowPropertyType(property, proto);
     if (property.unitGroup != null) {
-      proto.setUnitGroup(Out.toRef(property.unitGroup, config));
+      proto.setUnitGroup(Out.refOf(property.unitGroup, config));
     }
 
     return proto.build();

@@ -216,7 +216,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
         .setError("Import of category id=" + req.getId() + " failed");
     } else {
       status.setOk(true)
-        .setRef(Out.toRef(category));
+        .setRef(Out.refOf(category));
     }
     resp.onNext(status.build());
     resp.onCompleted();
@@ -970,7 +970,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     }
     return Services.RefStatus.newBuilder()
       .setOk(true)
-      .setRef(Out.toRef(e))
+      .setRef(Out.refOf(e))
       .build();
   }
 

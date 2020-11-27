@@ -39,17 +39,17 @@ public class SocialIndicatorWriter {
         .forEach(proto::addTags);
     }
     if (indicator.category != null) {
-      proto.setCategory(Out.toRef(indicator.category, config));
+      proto.setCategory(Out.refOf(indicator.category, config));
     }
 
     // model specific fields
     if (indicator.activityQuantity != null) {
       proto.setActivityQuantity(
-        Out.toRef(indicator.activityQuantity, config));
+        Out.refOf(indicator.activityQuantity, config));
     }
     if (indicator.activityUnit != null) {
       proto.setActivityUnit(
-        Out.toRef(indicator.activityUnit));
+        Out.refOf(indicator.activityUnit));
     }
     proto.setActivityVariable(
       Strings.orEmpty(indicator.activityVariable));

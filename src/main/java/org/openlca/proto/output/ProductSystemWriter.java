@@ -39,7 +39,7 @@ public class ProductSystemWriter {
         .forEach(proto::addTags);
     }
     if (system.category != null) {
-      proto.setCategory(Out.toRef(system.category, config));
+      proto.setCategory(Out.refOf(system.category, config));
     }
 
     // model specific fields
