@@ -40,7 +40,7 @@ public class FlowWriter {
         .forEach(proto::addTags);
     }
     if (flow.category != null) {
-      proto.setCategory(Refs.toRef(flow.category, config));
+      proto.setCategory(Out.toRef(flow.category, config));
     }
 
     // model specific fields
@@ -50,7 +50,7 @@ public class FlowWriter {
     proto.setSynonyms(Strings.orEmpty(flow.synonyms));
     proto.setFlowType(Util.flowTypeOf(flow));
     if (flow.location != null) {
-      proto.setLocation(Refs.toRef(flow.location, config));
+      proto.setLocation(Out.toRef(flow.location, config));
     }
     writeFlowProperties(flow, proto);
 
@@ -62,7 +62,7 @@ public class FlowWriter {
       var protoF = Proto.FlowPropertyFactor.newBuilder();
       protoF.setConversionFactor(f.conversionFactor);
       if (f.flowProperty != null) {
-        protoF.setFlowProperty(Refs.toRef(f.flowProperty, config));
+        protoF.setFlowProperty(Out.toRef(f.flowProperty, config));
         protoF.setReferenceFlowProperty(
           Objects.equals(f.flowProperty, flow.referenceFlowProperty));
       }

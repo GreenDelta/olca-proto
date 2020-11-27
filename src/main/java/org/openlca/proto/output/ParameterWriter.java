@@ -39,7 +39,7 @@ public class ParameterWriter {
         .forEach(proto::addTags);
     }
     if (parameter.category != null) {
-      proto.setCategory(Refs.toRef(parameter.category, config));
+      proto.setCategory(Out.toRef(parameter.category, config));
     }
 
     // model specific fields

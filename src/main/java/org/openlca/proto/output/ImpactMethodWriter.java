@@ -39,12 +39,12 @@ public class ImpactMethodWriter {
         .forEach(proto::addTags);
     }
     if (method.category != null) {
-      proto.setCategory(Refs.toRef(method.category, config));
+      proto.setCategory(Out.toRef(method.category, config));
     }
 
     // model specific fields
     for (var impact : method.impactCategories) {
-      proto.addImpactCategories(Refs.toImpactRef(impact, config));
+      proto.addImpactCategories(Out.toImpactRef(impact, config));
     }
     writeNwSets(method, proto);
 
@@ -64,7 +64,7 @@ public class ImpactMethodWriter {
         var protoFactor = Proto.NwFactor.newBuilder();
         if (nwFactor.impactCategory != null) {
           protoFactor.setImpactCategory(
-            Refs.toImpactRef(nwFactor.impactCategory, config));
+            Out.toImpactRef(nwFactor.impactCategory, config));
         }
         if (nwFactor.normalisationFactor != null) {
           protoFactor.setNormalisationFactor(

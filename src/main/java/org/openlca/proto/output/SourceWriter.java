@@ -39,7 +39,7 @@ public class SourceWriter {
         .forEach(proto::addTags);
     }
     if (source.category != null) {
-      proto.setCategory(Refs.toRef(source.category, config));
+      proto.setCategory(Out.toRef(source.category, config));
     }
 
     // model specific fields

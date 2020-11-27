@@ -1,5 +1,7 @@
 package org.openlca.proto.server;
 
+import java.util.function.Consumer;
+
 import com.google.protobuf.ProtocolStringList;
 import io.grpc.stub.StreamObserver;
 import org.openlca.core.database.IDatabase;
@@ -13,6 +15,7 @@ import org.openlca.proto.Proto;
 import org.openlca.proto.input.In;
 import org.openlca.proto.services.FlowMapServiceGrpc;
 import org.openlca.proto.services.Services;
+import org.openlca.util.Pair;
 import org.openlca.util.Strings;
 
 class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
@@ -39,16 +42,36 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
   @Override
   public void get(Services.FlowMapInfo req,
                   StreamObserver<Services.FlowMapStatus> resp) {
-    var mapping = getOrError(req, resp);
+    Consumer<String> onError = error -> {
+      var status = Services.FlowMapStatus.newBuilder()
+        .setOk(false)
+        .setError(error)
+        .build();
+      resp.onNext(status);
+      resp.onCompleted();
+    };
+
+    var p = getExistingOrError(req.getName());
+    var mapping = p.first;
+    if (mapping == null) {
+      onError.accept("Flow map '"
+        + req.getName() + "' does not exist");
+      return;
+    }
+
+    var flowMap = FlowMap.of(mapping);
 
   }
 
   @Override
   public void delete(Services.FlowMapInfo req,
                      StreamObserver<Services.Status> resp) {
-    var mapping = getOrError(req, resp);
-    if (mapping == null)
+    var p = getExistingOrError(req.getName());
+    var mapping = p.first;
+    if (mapping == null) {
+      Response.error(resp, p.second);
       return;
+    }
     try {
       new MappingFileDao(db).delete(mapping);
       Response.ok(resp);
@@ -58,37 +81,32 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     }
   }
 
-  private MappingFile getOrError(
-    Services.FlowMapInfo req, StreamObserver<Services.Status> resp) {
+  private Pair<MappingFile, String> getExistingOrError(String name) {
 
-    if (Strings.nullOrEmpty(req.getName())) {
-      Response.error(resp, "No name of the flow map" +
-        " that should be deleted was given.");
-      return null;
+    if (Strings.nullOrEmpty(name)) {
+      var err = "No name of the flow map was given.";
+      return Pair.of(null, err);
     }
 
     // find the existing mapping with this name
     var dao = new MappingFileDao(db);
-    var name = req.getName().trim();
     var existing = dao.getNames()
       .stream()
       .filter(name::equalsIgnoreCase)
       .findAny()
       .orElse(null);
     if (existing == null) {
-      Response.error(resp, "A flow mapping with name='"
-        + name + "' does not exist");
-      return null;
+      var err = "A flow map '" + name + "' does not exist";
+      return Pair.of(null, err);
     }
 
     // load the mapping
     var mapping = dao.getForName(existing);
     if (mapping == null) {
-      Response.error(resp, "Failed to load mapping with name='"
-        + name + "' from database");
-      return null;
+      var err = "Failed to load flow map '" + name + "'";
+      return Pair.of(null, err);
     }
-    return mapping;
+    return Pair.of(mapping, null);
   }
 
   @Override
@@ -100,31 +118,24 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
     }
 
     var dao = new MappingFileDao(db);
-    var name = model.name.trim();
 
     // check if we should update an existing map
-    var existing = dao.getNames()
-      .stream()
-      .filter(name::equalsIgnoreCase)
-      .findAny()
-      .orElse(null);
-    if (existing != null) {
-      var mapping = dao.getForName(existing);
-      if (mapping != null) {
-        try {
-          model.updateContentOf(mapping);
-          dao.update(mapping);
-          Response.ok(resp);
-        } catch (Exception e) {
-          Response.error(resp, "Failed to update existing" +
-            " flow map " + existing + ": " + e.getMessage());
-        }
-        return;
+    var p = getExistingOrError(model.name);
+    var mapping = p.first;
+    if (mapping != null) {
+      try {
+        model.updateContentOf(mapping);
+        dao.update(mapping);
+        Response.ok(resp);
+      } catch (Exception e) {
+        Response.error(resp, "Failed to update existing" +
+          " flow map " + model.name + ": " + e.getMessage());
       }
+      return;
     }
 
     // save it as new flow map
-    var mapping = model.toMappingFile();
+    mapping = model.toMappingFile();
     try {
       dao.insert(mapping);
       Response.ok(resp);
@@ -196,6 +207,34 @@ class FlowMapService extends FlowMapServiceGrpc.FlowMapServiceImplBase {
         Strings.nullOrEmpty(path)
           ? elem
           : path + "/" + elem);
+  }
+
+  private Proto.FlowMap toProto(FlowMap model) {
+    var proto = Proto.FlowMap.newBuilder();
+    if (model == null)
+      return proto.build();
+    proto.setId(Strings.orEmpty(model.refId));
+    proto.setName(Strings.orEmpty(model.name));
+    proto.setDescription(Strings.orEmpty(model.name));
+
+    for (var entry : model.entries) {
+      var protoEntry = Proto.FlowMapEntry.newBuilder();
+      protoEntry.setConversionFactor(entry.factor);
+
+    }
+
+    return proto.build();
+  }
+
+  private Proto.FlowMapRef toProtoRef(FlowRef flowRef) {
+    var proto = Proto.FlowMapRef.newBuilder();
+    if (flowRef == null || flowRef.flow == null)
+      return proto.build();
+
+    proto.setFlow()
+
+
+    return proto.build();
   }
 
 }

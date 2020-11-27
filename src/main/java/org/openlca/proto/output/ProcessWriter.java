@@ -45,7 +45,7 @@ public class ProcessWriter {
         .forEach(proto::addTags);
     }
     if (process.category != null) {
-      proto.setCategory(Refs.toRef(process.category, config));
+      proto.setCategory(Out.toRef(process.category, config));
     }
 
     // model specific fields
@@ -54,22 +54,22 @@ public class ProcessWriter {
       allocationType(process.defaultAllocationMethod));
     proto.setInfrastructureProcess(process.infrastructureProcess);
     if (process.location != null) {
-      proto.setLocation(Refs.toRef(process.location, config));
+      proto.setLocation(Out.toRef(process.location, config));
     }
     proto.setLastInternalId(process.lastInternalId);
 
     // DQ systems
     if (process.dqSystem != null) {
-      proto.setDqSystem(Refs.toRef(process.dqSystem, config));
+      proto.setDqSystem(Out.toRef(process.dqSystem, config));
     }
     proto.setDqEntry(Strings.orEmpty(process.dqEntry));
     if (process.exchangeDqSystem != null) {
       proto.setExchangeDqSystem(
-        Refs.toRef(process.exchangeDqSystem, config));
+        Out.toRef(process.exchangeDqSystem, config));
     }
     if (process.socialDqSystem != null) {
       proto.setSocialDqSystem(
-        Refs.toRef(process.socialDqSystem, config));
+        Out.toRef(process.socialDqSystem, config));
     }
 
     // parameters
@@ -129,7 +129,7 @@ public class ProcessWriter {
         pe.setCostValue(e.costs);
       }
       if (e.currency != null) {
-        pe.setCurrency(Refs.toRef(e.currency, config));
+        pe.setCurrency(Out.toRef(e.currency, config));
       }
       pe.setInternalId(e.internalId);
       if (e.uncertainty != null) {
@@ -141,22 +141,22 @@ public class ProcessWriter {
         var provider = new ProcessDao(config.db)
           .getDescriptor(e.defaultProviderId);
         if (provider != null) {
-          pe.setDefaultProvider(Refs.toProcessRef(provider));
+          pe.setDefaultProvider(Out.toProcessRef(provider));
         }
       }
 
       // flow references
       if (e.flow != null) {
-        pe.setFlow(Refs.toFlowRef(e.flow, config));
+        pe.setFlow(Out.toFlowRef(e.flow, config));
       }
       if (e.flowPropertyFactor != null) {
         var fp = e.flowPropertyFactor.flowProperty;
         if (fp != null) {
-          pe.setFlowProperty(Refs.toRef(fp));
+          pe.setFlowProperty(Out.toRef(fp));
         }
       }
       if (e.unit != null) {
-        pe.setUnit(Refs.toRef(e.unit));
+        pe.setUnit(Out.toRef(e.unit));
       }
 
       if (Objects.equals(e, p.quantitativeReference)) {
@@ -171,7 +171,7 @@ public class ProcessWriter {
     for (var aspect : p.socialAspects) {
       var pa = Proto.SocialAspect.newBuilder();
       if (aspect.indicator != null) {
-        pa.setSocialIndicator(Refs.toRef(aspect.indicator, config));
+        pa.setSocialIndicator(Out.toRef(aspect.indicator, config));
       }
       pa.setComment(Strings.orEmpty(aspect.comment));
       pa.setQuality(Strings.orEmpty(aspect.quality));
@@ -179,7 +179,7 @@ public class ProcessWriter {
       pa.setActivityValue(aspect.activityValue);
       pa.setRiskLevel(riskLevel(aspect));
       if (aspect.source != null) {
-        pa.setSource(Refs.toRef(aspect.source, config));
+        pa.setSource(Out.toRef(aspect.source, config));
       }
       proto.addSocialAspects(pa);
     }
@@ -199,7 +199,7 @@ public class ProcessWriter {
     LongFunction<Proto.FlowRef> product = flowID -> {
       for (var e : p.exchanges) {
         if (e.flow != null && e.flow.id == flowID) {
-          return Refs.toFlowRef(e.flow, config);
+          return Out.toFlowRef(e.flow, config);
         }
       }
       return null;

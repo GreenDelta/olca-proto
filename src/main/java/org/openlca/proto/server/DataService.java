@@ -66,7 +66,7 @@ import org.openlca.proto.output.ParameterWriter;
 import org.openlca.proto.output.ProcessWriter;
 import org.openlca.proto.output.ProductSystemWriter;
 import org.openlca.proto.output.ProjectWriter;
-import org.openlca.proto.output.Refs;
+import org.openlca.proto.output.Out;
 import org.openlca.proto.output.SocialIndicatorWriter;
 import org.openlca.proto.output.SourceWriter;
 import org.openlca.proto.output.UnitGroupWriter;
@@ -216,7 +216,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
         .setError("Import of category id=" + req.getId() + " failed");
     } else {
       status.setOk(true)
-        .setRef(Refs.toRef(category));
+        .setRef(Out.toRef(category));
     }
     resp.onNext(status.build());
     resp.onCompleted();
@@ -970,7 +970,7 @@ class DataService extends DataServiceGrpc.DataServiceImplBase {
     }
     return Services.RefStatus.newBuilder()
       .setOk(true)
-      .setRef(Refs.toRef(e))
+      .setRef(Out.toRef(e))
       .build();
   }
 

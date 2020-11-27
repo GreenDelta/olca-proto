@@ -11,7 +11,7 @@ final class Response {
   static void error(StreamObserver<Services.Status> resp, String message) {
     var status = Services.Status.newBuilder()
       .setOk(false)
-      .setError(message)
+      .setError(message == null ? "error" : message)
       .build();
     resp.onNext(status);
     resp.onCompleted();

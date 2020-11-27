@@ -8,14 +8,15 @@ import org.openlca.core.model.ImpactCategory;
 import org.openlca.core.model.RootEntity;
 import org.openlca.core.model.Version;
 import org.openlca.core.model.descriptors.Descriptor;
+import org.openlca.core.model.descriptors.FlowDescriptor;
 import org.openlca.core.model.descriptors.ProcessDescriptor;
 import org.openlca.proto.Proto;
 import org.openlca.util.Categories;
 import org.openlca.util.Strings;
 
-public final class Refs {
+public final class Out {
 
-  private Refs() {
+  private Out() {
   }
 
   public static Proto.Ref toRef(RootEntity e) {
@@ -27,10 +28,7 @@ public final class Refs {
     proto.setDescription(Strings.orEmpty(e.description));
     proto.setVersion(Version.asString(e.version));
     proto.setType(e.getClass().getSimpleName());
-    if (e.lastChange != 0L) {
-      var instant = Instant.ofEpochMilli(e.lastChange);
-      proto.setLastChange(instant.toString());
-    }
+    proto.setLastChange(toDateTime(e.lastChange));
 
     // add a the category path
     if (e instanceof CategorizedEntity) {
@@ -53,6 +51,7 @@ public final class Refs {
     proto.setName(Strings.orEmpty(d.name));
     proto.setDescription(Strings.orEmpty(d.description));
     proto.setVersion(Version.asString(d.version));
+    proto.setLastChange(toDateTime(d.lastChange));
 
     // entity type
     if (d.type != null) {
@@ -62,12 +61,26 @@ public final class Refs {
       }
     }
 
-    if (d.lastChange != 0L) {
-      var instant = Instant.ofEpochMilli(d.lastChange);
-      proto.setLastChange(instant.toString());
-    }
-
     return proto.build();
+  }
+
+  public static Proto.FlowRef toFlowRef(FlowDescriptor d) {
+    var proto = Proto.FlowRef.newBuilder();
+    if (d == null)
+      return proto.build();
+    proto.setId(Strings.orEmpty(d.refId));
+    proto.setName(Strings.orEmpty(d.name));
+    proto.setDescription(Strings.orEmpty(d.description));
+    proto.setVersion(Version.asString(d.version));
+    proto.setType("Flow");
+    proto.setLastChange(toDateTime(d.lastChange));
+    return proto.build();
+  }
+
+  private static String toDateTime(long time) {
+    return time == 0
+      ? ""
+      : Instant.ofEpochMilli(time).toString();
   }
 
   public static Proto.ProcessRef toProcessRef(ProcessDescriptor d) {
@@ -78,20 +91,8 @@ public final class Refs {
     proto.setName(Strings.orEmpty(d.name));
     proto.setDescription(Strings.orEmpty(d.description));
     proto.setVersion(Version.asString(d.version));
-
-    // entity type
-    if (d.type != null) {
-      var type = d.type.getModelClass();
-      if (type != null) {
-        proto.setType(type.getSimpleName());
-      }
-    }
-
-    if (d.lastChange != 0L) {
-      var instant = Instant.ofEpochMilli(d.lastChange);
-      proto.setLastChange(instant.toString());
-    }
-
+    proto.setType("Process");
+    proto.setLastChange(toDateTime(d.lastChange));
     return proto.build();
   }
 
@@ -122,11 +123,8 @@ public final class Refs {
     proto.setName(Strings.orEmpty(flow.name));
     proto.setDescription(Strings.orEmpty(flow.description));
     proto.setVersion(Version.asString(flow.version));
-    proto.setType(flow.getClass().getSimpleName());
-    if (flow.lastChange != 0L) {
-      var instant = Instant.ofEpochMilli(flow.lastChange);
-      proto.setLastChange(instant.toString());
-    }
+    proto.setType("Flow");
+    proto.setLastChange(toDateTime(flow.lastChange));
 
     // add a the category path
     if (flow.category != null) {
@@ -165,11 +163,8 @@ public final class Refs {
     proto.setName(Strings.orEmpty(impact.name));
     proto.setDescription(Strings.orEmpty(impact.description));
     proto.setVersion(Version.asString(impact.version));
-    proto.setType(impact.getClass().getSimpleName());
-    if (impact.lastChange != 0L) {
-      var instant = Instant.ofEpochMilli(impact.lastChange);
-      proto.setLastChange(instant.toString());
-    }
+    proto.setType("ImpactCategory");
+    proto.setLastChange(toDateTime(impact.lastChange));
 
     // add a the category path
     if (impact.category != null) {

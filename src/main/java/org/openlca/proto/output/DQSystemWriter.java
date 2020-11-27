@@ -39,13 +39,13 @@ public class DQSystemWriter {
         .forEach(proto::addTags);
     }
     if (dqSystem.category != null) {
-      proto.setCategory(Refs.toRef(dqSystem.category, config));
+      proto.setCategory(Out.toRef(dqSystem.category, config));
     }
 
     // model specific fields
     proto.setHasUncertainties(dqSystem.hasUncertainties);
     if (dqSystem.source != null) {
-      proto.setSource(Refs.toRef(dqSystem.source, config));
+      proto.setSource(Out.toRef(dqSystem.source, config));
     }
     writeIndicators(dqSystem, proto);
 

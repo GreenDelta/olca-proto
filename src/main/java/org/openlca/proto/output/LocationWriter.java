@@ -40,7 +40,7 @@ public class LocationWriter {
         .forEach(proto::addTags);
     }
     if (location.category != null) {
-      proto.setCategory(Refs.toRef(location.category, config));
+      proto.setCategory(Out.toRef(location.category, config));
     }
 
     // model specific fields
