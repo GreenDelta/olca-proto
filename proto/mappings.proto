@@ -1,7 +1,7 @@
 syntax = "proto3";
 package protolca.services;
 
-option java_package = "org.openlca.proto.generated.mappings";
+option java_package = "org.openlca.proto.grpc.mappings";
 option java_multiple_files = true;
 option java_outer_classname = "MappingsProto";
 
