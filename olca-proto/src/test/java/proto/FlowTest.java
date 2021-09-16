@@ -2,7 +2,7 @@ package proto;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openlca.proto.generated.Proto;
+import org.openlca.proto.Proto;
 
 public class FlowTest {
 
