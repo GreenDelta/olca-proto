@@ -2,12 +2,19 @@ package proto;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.openlca.proto.generated.Proto;
 
 public class FlowTest {
 
   @Test
-  public void test() {
-	  System.out.println("running a test ...");
-	  Assert.assertTrue(true);
+  public void testWriteRead() throws Exception {
+    var flow = Proto.Flow.newBuilder()
+      .setName("CO2")
+      .setFlowType(Proto.FlowType.ELEMENTARY_FLOW)
+      .build();
+    var data = flow.toByteArray();
+    var clone = Proto.Flow.parseFrom(data);
+    Assert.assertEquals("CO2", clone.getName());
+    Assert.assertEquals(Proto.FlowType.ELEMENTARY_FLOW, clone.getFlowType());
   }
 }
