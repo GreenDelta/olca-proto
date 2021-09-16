@@ -545,42 +545,26 @@ message FlowMap {
 
 }
 
-// A mapping from one flow to another.
+// A mapping from a source flow to a target flow.
 message FlowMapEntry {
 
-  // The reference ID (typically an UUID) of the entity.
-  string id = 1 [json_name = "@id"];
+  // Describes the source flow of the mapping.
+  FlowMapRef from = 1;
 
-  // The name of the entity.
-  string name = 2;
+  // Describes the target of the mapping.
+  FlowMapRef to = 2;
 
-  // The description of the entity.
-  string description = 3;
-
-  // A version number in MAJOR.MINOR.PATCH format where the MINOR and PATCH
-  // fields are optional and the fields may have leading zeros (so 01.00.00 is
-  // the same as 1.0.0 or 1).
-  string version = 4;
-
-  // The timestamp when the entity was changed the last time.
-  string last_change = 5;
-
-  // The flow, flow property, and unit of the source flow.
-  FlowMapRef from = 6;
-
-  // The flow, flow property, and unit of the target flow.
-  FlowMapRef to = 7;
-
-  // The factor to convert the original source flow to the target flow.
-  double conversion_factor = 8;
+  // The conversion factor to convert the amount of 1 unit of the source flow
+  // into the corresponding quantity of the target flow.
+  double conversion_factor = 3;
 
 }
 
-// Describes a the source or target flow of a flow mapping in a `FlowMap`. Such
-// a flow reference can also optionally specify the unit and flow property
-// (quantity) for which the mapping is valid. If the unit and quantity are not
-// given, the mapping is based on the reference unit of the reference flow
-// property of the respective flow.
+// Describes a source or target flow in a `FlowMappingEntry` of a `FlowMap`.
+// Such a flow reference can also optionally specify the unit and flow property
+// (quantity) for which the mapping is valid. If the unit or quantity is not
+// given, the mapping is based on the respective reference unit and reference
+// flow property of the flow.
 message FlowMapRef {
 
   // The reference to the flow data set.

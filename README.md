@@ -27,49 +27,29 @@ For the gRPC service interface, add this:
 
 ## Generating the model
 
-The [genproto](./scripts/genproto/main.go) tool directly generates the
+The [genproto](./genproto/main.go) tool directly generates the
 [olca.proto](./proto/olca.proto) definition from the YAML files of the
-`olca-schema` project:
+`olca-schema` project. It takes the path to the `olca-schema` folder as first
+argument and the path to the output file of the proto3 definitions as second
+argument:
 
-```
-$ genproto path/to/olca-schema path/to/olca.proto
-```
-
-From the `olca.proto` definition we then generate the APIs with the `gen`
-script:
-
-```
-$ scripts/gen
+```bash
+cd genproto
+# go build    # to build the tool
+genproto ../../olca-schema ../proto/olca.proto
+cd ..
 ```
 
-This requires that the Protocol Buffers and gRPC compiler is in your path (see
-the `scripts/gen.bat` script).
-
-__Building the server__
-
-The standalone server can be created via the `server-app` Maven profile:
+To generate the Java source code, we use the
+[protobuf-maven-plugin](https://github.com/xolstice/protobuf-maven-plugin):
 
 ```
-$ mvn package -P server-app
+mvn compile
 ```
 
-This will generate the server application in the `target/dist` folder. The
-server can be started via:
+## Examples
 
-```
-$ run -db <database> [-port <port>]
-```
-
-Where database is the name of a database in the openLCA database folder
-(`~/openLCA-1.4-data/databases/<database>`). The port number is optional,
-`8080` is chosen by default if it is not specified.
-
-__API Examples__
-
-A Python package for client-side communication is in development here:
-https://github.com/msrocka/olca-grpc.py
-
-For Java, a single class `Proto` is generated:
+A single class `Proto` is generated:
 
 ```java
 import org.openlca.proto;
@@ -93,23 +73,5 @@ This will generate the following output:
   "@id": "481682dd-c2a2-4646-9760-b0fe3e242676",
   "name": "Steel",
   "flowType": "PRODUCT_FLOW"
-}
-```
-
-To generate the `Go` package, you need put the
-[Go plugin protoc-gen-go](https://github.com/protocolbuffers/protobuf-go) of the
-protocol buffers compiler in your path.
-
-```go
-func main() {
-  id, _ := uuid.NewRandom()
-  flow := &proto.Flow{
-    Type:     "Flow",
-    Id:       id.String(),
-    Name:     "Steel",
-    FlowType: proto.FlowType_PRODUCT_FLOW,
-  }
-  json := protojson.Format(flow)
-  fmt.Println(string(json))
 }
 ```
