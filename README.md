@@ -1,12 +1,31 @@
 # olca-proto
-`olca-proto` is an implementation of the
-[olca-schema](https://github.com/GreenDelta/olca-schema) based on
-[Protocol Buffers](https://developers.google.com/protocol-buffers). It supports
-serialization in JSON(-LD) and a fast binary format. In addition, it and comes
-with a [gRPC server](https://grpc.io/) that may could replace the current IPC
-implementation in openLCA.
+`olca-proto` is a [Protocol Buffers](https://developers.google.com/protocol-buffers)
+implementation of the [olca-schema format](https://github.com/GreenDelta/olca-schema)
+with some extensions. It also defines a [gRPC](https://grpc.io/) service
+interface for calling [openLCA](https://www.openlca.org) functions.
 
-__Generating the model__
+## Usage
+If you use Maven, just add the following dependency:
+
+```xml
+<dependency>
+  <groupId>org.openlca</groupId>
+  <artifactId>olca-proto</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+For the gRPC service interface, add this:
+
+```xml
+<dependency>
+  <groupId>org.openlca</groupId>
+  <artifactId>olca-grpc</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+## Generating the model
 
 The [genproto](./scripts/genproto/main.go) tool directly generates the
 [olca.proto](./proto/olca.proto) definition from the YAML files of the
