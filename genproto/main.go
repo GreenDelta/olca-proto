@@ -70,13 +70,19 @@ type EnumItem struct {
 // ProtoHeader is the file header that is written to the
 // generated proto3 file. This is the place where you want
 // to define global options
-const ProtoHeader = `syntax = "proto3";
+const ProtoHeader = `// Generated from olca-schema (https://github.com/GreenDelta/olca-schema).
+// DO NOT EDIT!
+
+syntax = "proto3";
+
 package protolca;
 
-option java_package = "org.openlca.proto";
+option java_package = "org.openlca.proto.generated";
 option java_outer_classname = "Proto";
 option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
+
+import "entity_type.proto";
 
 `
 
@@ -186,7 +192,7 @@ func collectTypes(yamlDir string) []*TypeDef {
 }
 
 // Writes the fields of the given class to the given buffer. This function
-// climbs up the class hierarchy and inlines the fields of the correponding
+// climbs up the class hierarchy and inlines the fields of the corresponding
 // super classes (as there is no extension mechanism in proto3).
 func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offset int) int {
 	count := offset
@@ -200,10 +206,9 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	}
 
 	// @type field
-	if class.Name == "Entity" {
-		buff.WriteString("  // The type name of the respectiven entity.\n")
-		buff.WriteString("  // This field is used for JSON-LD compatibility.\n")
-		buff.WriteString("  string type = " + strconv.Itoa(count))
+	if class.Name == "Ref" || class.Name == "CategorizedEntity" {
+		buff.WriteString("  // The type name of the respective entity.\n")
+		buff.WriteString("  protolca.commons.EntityType entity_type = " + strconv.Itoa(count))
 		buff.WriteString(" [json_name = \"@type\"];\n\n")
 		count++
 	}
