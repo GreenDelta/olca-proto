@@ -10,62 +10,8 @@ import (
 	"strings"
 	"unicode"
 
-	yaml "gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v2"
 )
-
-// TypeDef contains the defenition of a class or enumeration.
-type TypeDef struct {
-	Class *ClassDef `yaml:"class"`
-	Enum  *EnumDef  `yaml:"enum"`
-}
-
-func (def *TypeDef) String() string {
-	if def.Class != nil {
-		return "ClassDef " + def.Class.Name
-	}
-	if def.Enum != nil {
-		return "EnumDef " + def.Enum.Name
-	}
-	return "Unknown TypeDef"
-}
-
-func (def *TypeDef) name() string {
-	if def.Class != nil {
-		return def.Class.Name
-	}
-	if def.Enum != nil {
-		return def.Enum.Name
-	}
-	return "Unknown"
-}
-
-// ClassDef contains the definition of a class.
-type ClassDef struct {
-	Name       string      `yaml:"name"`
-	SuperClass string      `yaml:"superClass"`
-	Doc        string      `yaml:"doc"`
-	Fields     []*FieldDef `yaml:"properties"`
-}
-
-// FieldDef is a field (property) declaration of a class.
-type FieldDef struct {
-	Name string `yaml:"name"`
-	Type string `yaml:"type"`
-	Doc  string `yaml:"doc"`
-}
-
-// EnumDef contains the definition of an enumeration.
-type EnumDef struct {
-	Name  string      `yaml:"name"`
-	Doc   string      `yaml:"doc"`
-	Items []*EnumItem `yaml:"items"`
-}
-
-// EnumItem is an item of an enumeration definition.
-type EnumItem struct {
-	Name string `yaml:"name"`
-	Doc  string `yaml:"doc"`
-}
 
 // ProtoHeader is the file header that is written to the
 // generated proto3 file. This is the place where you want
@@ -97,13 +43,8 @@ const BytesHint = `  // When we map to the bytes type it means that we have no m
 
 func main() {
 
-	if len(os.Args) < 2 {
-		fmt.Println("ERROR: no path an olca-schema folder given")
-		return
-	}
-
 	// parse the YAML files
-	yamlDir := filepath.Join(os.Args[1], "yaml")
+	yamlDir := findYamlDir()
 	types := collectTypes(yamlDir)
 	typeMap := make(map[string]*TypeDef)
 	for i := range types {
@@ -272,7 +213,7 @@ func mapType(schemaType string) string {
 	return schemaType
 }
 
-// Formats the given comment to have a line lenght of max. 80 characters.
+// Formats the given comment to have a line length of max. 80 characters.
 func formatComment(comment string, indent string) string {
 	if strings.TrimSpace(comment) == "" {
 		return ""
@@ -318,7 +259,7 @@ func formatComment(comment string, indent string) string {
 
 // Generates the name of the `UNDEFINED` option for the given
 // enumeration type. As this option has to have a unique name
-// we include the name of the enumration into that name.
+// we include the name of the enumeration into that name.
 func undefinedOf(enum *EnumDef) string {
 	var buff bytes.Buffer
 	for _, char := range enum.Name {
