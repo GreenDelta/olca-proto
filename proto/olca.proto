@@ -118,40 +118,39 @@ message CalculationSetup {
   // The type of calculation that should be performed.
   CalculationType calculation_type = 1;
 
-  // The product system that should be calculated (required).
+  // The product system that should be calculated.
   Ref product_system = 2;
 
-  // The LCIA method for the calculation (optional).
-  Ref impact_method = 3;
+  // The process that should be calculated.
+  Ref process = 3;
 
-  // Indicates whether life cycle costs should be also calculated (optional).
-  bool with_costs = 4;
+  // The LCIA method for the calculation.
+  Ref impact_method = 4;
 
-  // Indicates whether a regionalized result should be calculated or not. If
-  // this is set to true, the intervention matrix is indexed by (elementary
-  // flow, location) - pairs instead of just elementary flows. The LCI result
-  // then contains results for these pairs which can be then used in
-  // regionalized impact assessments.
-  bool with_regionalization = 5;
+  // The normalisation and weighting set for the calculation.
+  Ref nw_set = 5;
 
-  // The normalisation and weighting set for the calculation (optional).
-  Ref nw_set = 6;
+  // A list of parameter redefinitions that should be used in the calculation.
+  repeated ParameterRedef parameters = 6;
 
-  // The calculation type to be used in the calculation (optional).
-  AllocationType allocation_method = 7;
+  // The calculation type to be used in the calculation.
+  AllocationType allocation = 7;
 
-  // A list of parameter redefinitions to be used in the calculation
-  // (optional).
-  repeated ParameterRedef parameter_redefs = 8;
+  // Indicates whether life cycle costs should be also calculated.
+  bool with_costs = 8;
 
-  // (optional)
-  double amount = 9;
+  // Indicates whether a regionalized result should be calculated or not.
+  bool with_regionalization = 9;
 
-  // (optional)
   Ref unit = 10;
 
-  // (optional)
-  Ref flow_property = 11;
+  double amount = 11;
+
+  Ref flow_property = 12;
+
+  // This field is only valid when this setup describes a Monte Carlo
+  // simulation and contains the number of simulation runs in that case.
+  int32 number_of_runs = 13;
 
 }
 
@@ -178,18 +177,12 @@ enum CalculationType {
   // demand of the process in the product system.
   UPSTREAM_ANALYSIS = 3;
 
-  // A regionalized calculation is a contribution analysis but with an LCIA
-  // method that supports regionalized characterization factors (via region
-  // specific parameters in formulas) and a product system with processes that
-  // have geographic information assigned (point, line, or polygon shapes).
-  REGIONALIZED_CALCULATION = 4;
-
   // A Monte Carlo simulation generates for each run, of a given number of a
   // given number of iterations, random values according to the uncertainty
   // distributions of process inputs/outputs, parameters, characterization
   // factors, etc. of a product system and then performs a simple calculation
   // for that specific run.
-  MONTE_CARLO_SIMULATION = 5;
+  MONTE_CARLO_SIMULATION = 4;
 
 }
 
