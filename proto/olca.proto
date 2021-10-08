@@ -11,8 +11,6 @@ option java_package = "org.openlca.proto";
 option java_outer_classname = "Proto";
 option java_multiple_files = true;
 
-import "proto_type.proto";
-
 
 // An actor is a person or organisation.
 message ProtoActor {
@@ -35,7 +33,7 @@ message ProtoActor {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -212,7 +210,7 @@ message ProtoCategory {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -227,7 +225,7 @@ message ProtoCategory {
   string library = 9;
 
   // The type of models that can be linked to the category.
-  ProtoModelType model_type = 10;
+  ProtoCategoryType model_type = 10;
 
 }
 
@@ -251,7 +249,7 @@ message ProtoCurrency {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -340,7 +338,7 @@ message ProtoDQSystem {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -461,7 +459,7 @@ message ProtoFlow {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -602,7 +600,7 @@ message ProtoFlowProperty {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -727,7 +725,7 @@ message ProtoImpactCategory {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -801,7 +799,7 @@ message ProtoImpactMethod {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -855,7 +853,7 @@ message ProtoLocation {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -886,51 +884,6 @@ message ProtoLocation {
   // To indicate that this is a different field than the field in the
   // olca-schema definition, we append the _bytes suffix to the field name
   bytes geometry_bytes = 13;
-
-}
-
-// An enumeration of the root entity types.
-enum ProtoModelType {
-
-  // This default option was added automatically
-  // and means that no values was set.
-  UNDEFINED_MODEL_TYPE = 0;
-
-  ACTOR = 1;
-
-  CATEGORY = 2;
-
-  CURRENCY = 3;
-
-  DQ_SYSTEM = 4;
-
-  FLOW = 5;
-
-  FLOW_PROPERTY = 6;
-
-  IMPACT_CATEGORY = 7;
-
-  IMPACT_METHOD = 8;
-
-  LOCATION = 9;
-
-  NW_SET = 10;
-
-  PARAMETER = 11;
-
-  PROCESS = 12;
-
-  PRODUCT_SYSTEM = 13;
-
-  PROJECT = 14;
-
-  SOCIAL_INDICATOR = 15;
-
-  SOURCE = 16;
-
-  UNIT = 17;
-
-  UNIT_GROUP = 18;
 
 }
 
@@ -1004,7 +957,7 @@ message ProtoParameter {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1126,7 +1079,7 @@ message ProtoProcess {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1303,7 +1256,7 @@ message ProtoProductSystem {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1368,7 +1321,7 @@ message ProtoProject {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1413,7 +1366,7 @@ message ProtoRef {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The full path of the category of the referenced entity from top to bottom,
   // e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
@@ -1527,7 +1480,7 @@ message ProtoSocialIndicator {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1579,7 +1532,7 @@ message ProtoSource {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1733,7 +1686,7 @@ message ProtoUnitGroup {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
+  ProtoType type = 6 [json_name = "@type"];
 
   // The category of the entity.
   ProtoRef category = 7;
@@ -1757,3 +1710,56 @@ message ProtoUnitGroup {
 
 }
 
+
+
+// We map the openLCA ModelType to this enumeration type because it is only
+// used in the categories. In order to be compatible with the JSON-LD '@type'
+// field we use the ProtoType enumeration type
+enum ProtoCategoryType {
+
+  UNDEFINED_CATEGORY_TYPE = 0;
+  ACTOR = 1;
+  CURRENCY = 3;
+  DQ_SYSTEM = 4;
+  FLOW = 5;
+  FLOW_PROPERTY = 6;
+  IMPACT_CATEGORY = 7;
+  IMPACT_METHOD = 8;
+  LOCATION = 9;
+  PARAMETER = 11;
+  PROCESS = 12;
+  PRODUCT_SYSTEM = 13;
+  PROJECT = 14;
+  SOCIAL_INDICATOR = 15;
+  SOURCE = 16;
+  UNIT_GROUP = 18;
+	RESULT = 19;
+}
+
+// This enumeration type is added for compatibility with the @type attribute of
+// the openLCA JSON-LD format. In the proto messages we limit its usage to
+// instances of CategorizedEntity and Ref while it is allowed for every type in
+// the JSON-LD format. Thus, you should use ignoringUnknownFields flag when
+// parsing openLCA JSON-LD messages with the generated proto parsers.
+enum ProtoType {
+  Undefined = 0;
+  Actor = 1;
+  Category = 2;
+  Currency = 3;
+  DQSystem = 4;
+  Flow = 5;
+  FlowProperty = 6;
+  ImpactCategory = 7;
+  ImpactMethod = 8;
+  Location = 9;
+  NwSet = 10;
+  Parameter = 11;
+  Process = 12;
+  ProductSystem = 13;
+  Project = 14;
+	Result = 15;
+  SocialIndicator = 16;
+  Source = 17;
+  Unit = 18;
+  UnitGroup = 19;
+}

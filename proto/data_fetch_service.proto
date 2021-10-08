@@ -61,13 +61,13 @@ service DataFetchService {
 }
 
 message GetRequest {
-  ProtoModelType model_type = 1;
+  ProtoType type = 1;
   string id = 2;
 }
 
 message FindRequest {
 
-  ProtoModelType model_type = 1;
+  ProtoType type = 1;
 
   oneof by {
     string id = 2;
@@ -82,7 +82,7 @@ message FindRequest {
 message GetAllRequest {
 
   // The type of the requested data sets.
-  ProtoModelType model_type = 1;
+  ProtoType type = 1;
 
   // The number of data sets that should be returned per response page (defaults
   // to 100)
@@ -102,17 +102,17 @@ message GetAllRequest {
 }
 
 message GetAllResponse {
-  ProtoModelType type = 1;
+  ProtoType type = 1;
   int32 total_count = 2;
   int32 page_size = 3;
   int32 page = 4;
-  repeated DataSet data_set = 5;
+  repeated ProtoDataSet data_set = 5;
 }
 
 message SearchRequest {
 
   // The model type of the searched entities.
-  ModelType model_type = 1;
+  ProtoType type = 1;
 
   // The search query.
   string query = 2;
@@ -132,7 +132,7 @@ message GetDescriptorsRequest {
   }
 
   // The model type of the requested descriptor(s).
-  ModelType model_type = 1;
+  ProtoType type = 1;
 
   oneof by {
     // The ID of the requested descriptor. Setting this field means that you
@@ -143,25 +143,24 @@ message GetDescriptorsRequest {
   }
 }
 
-
 message GetCategoryContentRequest {
-  ModelType model_type = 1;
+  ProtoType type = 1;
   string category = 2;
 }
 
 message GetCategoryTreeRequest {
-  ModelType model_type = 1;
+  ProtoType type = 1;
 }
 
 message CategoryTree {
-  ModelType model_type = 1;
+  ProtoType type = 1;
   string id = 2;
   string name = 3;
   repeated CategoryTree sub_tree = 4;
 }
 
 message GetCountRequest {
-  ModelType model_type = 1;
+  ProtoType type = 1;
 }
 
 message GetCountResponse {

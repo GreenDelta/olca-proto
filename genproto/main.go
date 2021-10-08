@@ -13,35 +13,6 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-// ProtoHeader is the file header that is written to the generated proto3 file.
-// This is the place where you want to define global options
-const ProtoHeader = `// Generated from olca-schema (https://github.com/GreenDelta/olca-schema).
-// DO NOT EDIT!
-
-syntax = "proto3";
-
-package protolca;
-
-option csharp_namespace = "ProtoLCA";
-option go_package = ".;protolca";
-option java_package = "org.openlca.proto";
-option java_outer_classname = "Proto";
-option java_multiple_files = true;
-
-import "proto_type.proto";
-
-
-`
-
-// BytesHint is a comment we add to fields with `bytes` as data type.
-const BytesHint = `  // When we map to the bytes type it means that we have no matching message
-  // type and just put the raw bytes into the field. This is specifically true
-  // for our geometry data of locations which cannot be translated to valid
-  // GeoJSON using Protocol Buffers (as they do not support arrays of arrays).
-  // To indicate that this is a different field than the field in the
-  // olca-schema definition, we append the _bytes suffix to the field name
-`
-
 func main() {
 
 	// parse the YAML files
@@ -54,7 +25,7 @@ func main() {
 	}
 
 	var buff bytes.Buffer
-	buff.WriteString(ProtoHeader)
+	buff.WriteString(FileHeader)
 
 	// write the message and enumeration types
 	for _, typeDef := range types {
@@ -79,11 +50,16 @@ func main() {
 		// write an enumeration
 		enum := typeDef.Enum
 		if enum != nil {
+			if enum.Name == "ModelType" {
+				continue
+			}
 			comment := formatComment(enum.Doc, "")
 			if comment != "" {
 				buff.WriteString(comment)
 			}
+
 			buff.WriteString("enum Proto" + enum.Name + " {\n\n")
+
 			buff.WriteString("  // This default option was added automatically\n")
 			buff.WriteString("  // and means that no values was set.\n")
 			buff.WriteString("  " + undefinedOf(enum) + " = 0;\n\n")
@@ -98,6 +74,8 @@ func main() {
 			buff.WriteString("}\n\n")
 		}
 	}
+
+	buff.WriteString(FileFooter)
 
 	// print to console or write to file
 	if len(os.Args) < 3 {
@@ -150,7 +128,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	// @type field
 	if class.Name == "Ref" || class.Name == "CategorizedEntity" {
 		buff.WriteString("  // The type name of the respective entity.\n")
-		buff.WriteString("  protolca.commons.ProtoType proto_type = " + strconv.Itoa(count))
+		buff.WriteString("  ProtoType type = " + strconv.Itoa(count))
 		buff.WriteString(" [json_name = \"@type\"];\n\n")
 		count++
 	}
@@ -200,6 +178,8 @@ func mapType(schemaType string) string {
 		return "bool"
 	case "GeoJSON":
 		return "bytes"
+	case "ModelType":
+		return "ProtoCategoryType"
 	}
 
 	if strings.HasPrefix(schemaType, "Ref[") {
