@@ -1,15 +1,15 @@
 syntax = "proto3";
 package protolca.services;
 
+option csharp_namespace = "ProtoLCA.Services";
+option go_package = ".;protolca";
 option java_package = "org.openlca.proto.grpc";
 option java_multiple_files = true;
 option java_outer_classname = "DataFetchProto";
 
-option csharp_namespace = "ProtoLCA.Services";
-option go_package = ".;protolca";
-
-import "olca.proto";
 import "commons.proto";
+import "google/protobuf/empty.proto";
+import "olca.proto";
 
 service DataFetchService {
 
@@ -27,6 +27,10 @@ service DataFetchService {
   // (page <= 0) it defaults to 100. An unset page (page <= 0) defaults to the
   // first page.
   rpc GetAll(GetAllRequest) returns (GetAllResponse);
+
+  // Get the number of data sets of the given model type
+  // that are stored in the database.
+  rpc GetCount(GetCountRequest) returns (GetCountResponse);
 
   // Get all descriptors that match the given request.
   rpc GetDescriptors(GetDescriptorsRequest) returns (stream Ref);
@@ -48,6 +52,12 @@ service DataFetchService {
   // that waste flow on the input side. For elementary flows, an empty stream is
   // returned.
   rpc GetProvidersFor(Ref) returns (stream Ref);
+
+  // Get all technosphere flows from the database. These are all process-flow
+  // pairs that can be used as providers for product inputs or waste outputs in
+  // other processes or product systems.
+  rpc GetTechFlows(google.protobuf.Empty) returns (stream TechFlow);
+
 }
 
 message GetRequest {
@@ -150,3 +160,10 @@ message CategoryTree {
   repeated CategoryTree sub_tree = 4;
 }
 
+message GetCountRequest {
+  ModelType model_type = 1;
+}
+
+message GetCountResponse {
+  int32 count = 1;
+}

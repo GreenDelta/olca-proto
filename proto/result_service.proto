@@ -11,7 +11,7 @@ option go_package = ".;protolca";
 
 import "google/protobuf/empty.proto";
 import "olca.proto";
-import "result_types.proto";
+import "commons.proto";
 
 service ResultService {
 
@@ -88,6 +88,16 @@ message TechFlowContributionRequest {
   Result result = 1;
   TechFlow tech_flow = 2;
   oneof result_ref {
+    EnviFlow envi_flow = 3;
+    Ref impact = 4;
+    bool costs = 5;
+  }
+}
+
+message ResultValue {
+  double value = 1;
+  oneof result_reference {
+    TechFlow tech_flow = 2;
     EnviFlow envi_flow = 3;
     Ref impact = 4;
     bool costs = 5;

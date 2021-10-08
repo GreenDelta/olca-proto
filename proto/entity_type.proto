@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package protolca.commons;
 
-option java_package = "org.openlca.proto";
-option java_outer_classname = "CommonsProto";
-option java_multiple_files = true;
 option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
+option java_package = "org.openlca.proto";
+option java_outer_classname = "EntityProto";
+option java_multiple_files = true;
 
 // This enumeration type is added for compatibility with the @type attribute of
 // the openLCA JSON-LD format. In the proto messages we limit its usage to
