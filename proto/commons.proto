@@ -9,24 +9,24 @@ option java_outer_classname = "CommonsProto";
 
 import "olca.proto";
 
-message DataSet {
+message ProtoDataSet {
   oneof model {
-    Actor actor = 1;
-    Category category = 2;
-    Currency currency = 3;
-    DQSystem dq_system = 4;
-    Flow flow = 5;
-    FlowProperty flow_property = 6;
-    ImpactCategory impact_category = 7;
-    ImpactMethod impact_method = 8;
-    Location location = 9;
-    Parameter parameter = 10;
-    Process process = 11;
-    ProductSystem product_system = 12;
-    Project project = 13;
-    SocialIndicator social_indicator = 14;
-    Source source = 15;
-    UnitGroup unit_group = 16;
+    ProtoActor actor = 1;
+    ProtoCategory category = 2;
+    ProtoCurrency currency = 3;
+    ProtoDQSystem dq_system = 4;
+    ProtoFlow flow = 5;
+    ProtoFlowProperty flow_property = 6;
+    ProtoImpactCategory impact_category = 7;
+    ProtoImpactMethod impact_method = 8;
+    ProtoLocation location = 9;
+    ProtoParameter parameter = 10;
+    ProtoProcess process = 11;
+    ProtoProductSystem product_system = 12;
+    ProtoProject project = 13;
+    ProtoSocialIndicator social_indicator = 14;
+    ProtoSource source = 15;
+    ProtoUnitGroup unit_group = 16;
   }
 }
 
@@ -37,16 +37,16 @@ message DataSet {
 // side. In a product system, there can be multiple tech-flows with the same
 // product or waste flow but different processes, e.g. when there are multiple
 // processes that produce the same product.
-message TechFlow {
-  Ref process = 1;
+message ProtoTechFlow {
+  ProtoRef process = 1;
   oneof flow {
-    Ref product = 2;
-    Ref waste = 3;
+    ProtoRef product = 2;
+    ProtoRef waste = 3;
   }
 }
 
-message EnviFlow {
-  Ref flow = 1;
-  Ref location = 2;
+message ProtoEnviFlow {
+  ProtoRef flow = 1;
+  ProtoRef location = 2;
   bool is_input = 3;
 }

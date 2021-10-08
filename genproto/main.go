@@ -13,9 +13,8 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-// ProtoHeader is the file header that is written to the
-// generated proto3 file. This is the place where you want
-// to define global options
+// ProtoHeader is the file header that is written to the generated proto3 file.
+// This is the place where you want to define global options
 const ProtoHeader = `// Generated from olca-schema (https://github.com/GreenDelta/olca-schema).
 // DO NOT EDIT!
 
@@ -23,12 +22,14 @@ syntax = "proto3";
 
 package protolca;
 
-option java_package = "org.openlca.proto";
-option java_outer_classname = "Proto";
 option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
+option java_package = "org.openlca.proto";
+option java_outer_classname = "Proto";
+option java_multiple_files = true;
 
-import "entity_type.proto";
+import "proto_type.proto";
+
 
 `
 
@@ -69,7 +70,7 @@ func main() {
 			if comment != "" {
 				buff.WriteString(comment)
 			}
-			buff.WriteString("message " + class.Name + " {\n\n")
+			buff.WriteString("message Proto" + class.Name + " {\n\n")
 			fields(class, &buff, typeMap, 1)
 			buff.WriteString("}\n\n")
 			continue
@@ -82,7 +83,7 @@ func main() {
 			if comment != "" {
 				buff.WriteString(comment)
 			}
-			buff.WriteString("enum " + enum.Name + " {\n\n")
+			buff.WriteString("enum Proto" + enum.Name + " {\n\n")
 			buff.WriteString("  // This default option was added automatically\n")
 			buff.WriteString("  // and means that no values was set.\n")
 			buff.WriteString("  " + undefinedOf(enum) + " = 0;\n\n")
@@ -149,7 +150,7 @@ func fields(class *ClassDef, buff *bytes.Buffer, types map[string]*TypeDef, offs
 	// @type field
 	if class.Name == "Ref" || class.Name == "CategorizedEntity" {
 		buff.WriteString("  // The type name of the respective entity.\n")
-		buff.WriteString("  protolca.commons.EntityType entity_type = " + strconv.Itoa(count))
+		buff.WriteString("  protolca.commons.ProtoType proto_type = " + strconv.Itoa(count))
 		buff.WriteString(" [json_name = \"@type\"];\n\n")
 		count++
 	}
@@ -202,7 +203,7 @@ func mapType(schemaType string) string {
 	}
 
 	if strings.HasPrefix(schemaType, "Ref[") {
-		return "Ref"
+		return "ProtoRef"
 	}
 	if strings.HasPrefix(schemaType, "List[") {
 		t := strings.TrimSuffix(
@@ -210,7 +211,7 @@ func mapType(schemaType string) string {
 		return "repeated " + mapType(t)
 	}
 
-	return schemaType
+	return "Proto" + schemaType
 }
 
 // Formats the given comment to have a line length of max. 80 characters.

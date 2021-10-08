@@ -5,7 +5,7 @@ package protolca.commons;
 option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
 option java_package = "org.openlca.proto";
-option java_outer_classname = "EntityProto";
+option java_outer_classname = "ProtoType";
 option java_multiple_files = true;
 
 // This enumeration type is added for compatibility with the @type attribute of
@@ -13,7 +13,7 @@ option java_multiple_files = true;
 // instances of CategorizedEntity and Ref while it is allowed for every type in
 // the JSON-LD format. Thus, you should use ignoringUnknownFields flag when
 // parsing openLCA JSON-LD messages with the generated proto parsers.
-enum EntityType {
+enum ProtoType {
   Undefined = 0;
   Actor = 1;
   Category = 2;

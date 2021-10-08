@@ -5,15 +5,17 @@ syntax = "proto3";
 
 package protolca;
 
-option java_package = "org.openlca.proto";
-option java_outer_classname = "Proto";
 option csharp_namespace = "ProtoLCA";
 option go_package = ".;protolca";
+option java_package = "org.openlca.proto";
+option java_outer_classname = "Proto";
+option java_multiple_files = true;
 
-import "entity_type.proto";
+import "proto_type.proto";
+
 
 // An actor is a person or organisation.
-message Actor {
+message ProtoActor {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -33,10 +35,10 @@ message Actor {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -66,15 +68,15 @@ message Actor {
 }
 
 // A single allocation factor in a process.
-message AllocationFactor {
+message ProtoAllocationFactor {
 
   // The type of allocation.
-  AllocationType allocation_type = 1;
+  ProtoAllocationType allocation_type = 1;
 
   // The output product (or waste input) to which this allocation factor is
   // related. The must be an exchange with this product output (or waste input)
   // in this process.
-  Ref product = 2;
+  ProtoRef product = 2;
 
   // The value of the allocation factor.
   double value = 3;
@@ -86,7 +88,7 @@ message AllocationFactor {
   // A product input, waste output, or elementary flow exchange which is
   // allocated by this factor. This is only valid for causal allocation where
   // allocation factors can be assigned to single exchanges.
-  ExchangeRef exchange = 5;
+  ProtoExchangeRef exchange = 5;
 
 }
 
@@ -94,7 +96,7 @@ message AllocationFactor {
 // type of an [AllocationFactor], the default allocation method of a
 // multi-functional [Process], or the allocation method in a
 // [CalculationSetup].
-enum AllocationType {
+enum ProtoAllocationType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -113,28 +115,28 @@ enum AllocationType {
 }
 
 // A setup for a product system calculation.
-message CalculationSetup {
+message ProtoCalculationSetup {
 
   // The type of calculation that should be performed.
-  CalculationType calculation_type = 1;
+  ProtoCalculationType calculation_type = 1;
 
   // The product system that should be calculated.
-  Ref product_system = 2;
+  ProtoRef product_system = 2;
 
   // The process that should be calculated.
-  Ref process = 3;
+  ProtoRef process = 3;
 
   // The LCIA method for the calculation.
-  Ref impact_method = 4;
+  ProtoRef impact_method = 4;
 
   // The normalisation and weighting set for the calculation.
-  Ref nw_set = 5;
+  ProtoRef nw_set = 5;
 
   // A list of parameter redefinitions that should be used in the calculation.
-  repeated ParameterRedef parameters = 6;
+  repeated ProtoParameterRedef parameters = 6;
 
   // The calculation type to be used in the calculation.
-  AllocationType allocation = 7;
+  ProtoAllocationType allocation = 7;
 
   // Indicates whether life cycle costs should be also calculated.
   bool with_costs = 8;
@@ -142,11 +144,11 @@ message CalculationSetup {
   // Indicates whether a regionalized result should be calculated or not.
   bool with_regionalization = 9;
 
-  Ref unit = 10;
+  ProtoRef unit = 10;
 
   double amount = 11;
 
-  Ref flow_property = 12;
+  ProtoRef flow_property = 12;
 
   // This field is only valid when this setup describes a Monte Carlo
   // simulation and contains the number of simulation runs in that case.
@@ -155,7 +157,7 @@ message CalculationSetup {
 }
 
 // An enumeration of the different calculation methods supported by openLCA.
-enum CalculationType {
+enum ProtoCalculationType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -190,7 +192,7 @@ enum CalculationType {
 // etc. The tricky thing is that the `Category` class inherits also from the
 // [CategorizedEntity] type so that a category can have a category attribute
 // which is then the parent category of this category (uff).
-message Category {
+message ProtoCategory {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -210,10 +212,10 @@ message Category {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -225,11 +227,11 @@ message Category {
   string library = 9;
 
   // The type of models that can be linked to the category.
-  ModelType model_type = 10;
+  ProtoModelType model_type = 10;
 
 }
 
-message Currency {
+message ProtoCurrency {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -249,10 +251,10 @@ message Currency {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -267,24 +269,24 @@ message Currency {
 
   double conversion_factor = 11;
 
-  Ref reference_currency = 12;
+  ProtoRef reference_currency = 12;
 
 }
 
 // An indicator of a data quality system ([DQSystem]).
-message DQIndicator {
+message ProtoDQIndicator {
 
   string name = 1;
 
   int32 position = 2;
 
-  repeated DQScore scores = 3;
+  repeated ProtoDQScore scores = 3;
 
 }
 
 // An score value of an indicator ([DQIndicator]) in a data quality system
 // ([DQSystem]).
-message DQScore {
+message ProtoDQScore {
 
   int32 position = 1;
 
@@ -318,7 +320,7 @@ message DQScore {
 // scores can be assigned by the user. These labels are then displayed instead
 // of `1, 2, 3 ...` in the user interface or result exports. However,
 // internally the numeric values are used in the data model and calculations.
-message DQSystem {
+message ProtoDQSystem {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -338,10 +340,10 @@ message DQSystem {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -354,9 +356,9 @@ message DQSystem {
 
   bool has_uncertainties = 10;
 
-  Ref source = 11;
+  ProtoRef source = 11;
 
-  repeated DQIndicator indicators = 12;
+  repeated ProtoDQIndicator indicators = 12;
 
 }
 
@@ -365,7 +367,7 @@ message DQSystem {
 // the flow. The allowed units and flow properties that can be used for a flow
 // in an exchange are defined by the flow property information in that flow
 // (see also the [FlowPropertyFactor] type).
-message Exchange {
+message ProtoExchange {
 
   // Indicates whether this exchange is an avoided product.
   bool avoided_product = 1;
@@ -377,7 +379,7 @@ message Exchange {
   double cost_value = 3;
 
   // The currency in which the costs of this exchange are given.
-  Ref currency = 4;
+  ProtoRef currency = 4;
 
   // The process internal ID of the exchange. This is used to identify
   // exchanges unambiguously within a process (e.g. when linking exchanges in a
@@ -386,10 +388,10 @@ message Exchange {
   int32 internal_id = 5;
 
   // The reference to the flow of the exchange.
-  Ref flow = 6;
+  ProtoRef flow = 6;
 
   // The quantity in which the amount is given.
-  Ref flow_property = 7;
+  ProtoRef flow_property = 7;
 
   bool input = 8;
 
@@ -405,13 +407,13 @@ message Exchange {
   // product systems in openLCA. The user is always free to link processes in
   // product systems ignoring these defaults (but the flows and flow directions
   // have to match of course).
-  Ref default_provider = 11;
+  ProtoRef default_provider = 11;
 
   double amount = 12;
 
   string amount_formula = 13;
 
-  Ref unit = 14;
+  ProtoRef unit = 14;
 
   // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
   // quality values that need to match the data quality scheme for flow inputs
@@ -420,7 +422,7 @@ message Exchange {
   // `dqEntry` vector map to these positions.
   string dq_entry = 15;
 
-  Uncertainty uncertainty = 16;
+  ProtoUncertainty uncertainty = 16;
 
   // A general comment about the input or output.
   string description = 17;
@@ -430,7 +432,7 @@ message Exchange {
 // An instance of this class describes a reference to an exchange in a process.
 // When we reference such an exchange we only need the information to indentify
 // that exchange unambiguously in a process.
-message ExchangeRef {
+message ProtoExchangeRef {
 
   // The internal ID of the exchange.
   int32 internal_id = 1;
@@ -439,7 +441,7 @@ message ExchangeRef {
 
 // Everything that can be an input or output of a process (e.g. a substance, a
 // product, a waste, a service etc.)
-message Flow {
+message ProtoFlow {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -459,10 +461,10 @@ message Flow {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -475,7 +477,7 @@ message Flow {
 
   // The type of the flow. Note that this type is more a descriptor of how the
   // flow is handled in calculations.
-  FlowType flow_type = 10;
+  ProtoFlowType flow_type = 10;
 
   // A CAS number of the flow.
   string cas = 11;
@@ -486,12 +488,12 @@ message Flow {
   // The flow properties (quantities) in which amounts of the flow can be
   // expressed together with conversion factors between these flow flow
   // properties.
-  repeated FlowPropertyFactor flow_properties = 13;
+  repeated ProtoFlowPropertyFactor flow_properties = 13;
 
   // The location of the flow. Normally the location of a flow is defined by
   // the process location where the flow is an input or output. However, some
   // data formats define a location as a property of a flow.
-  Ref location = 14;
+  ProtoRef location = 14;
 
   // A list of synonyms but packed into a single field. Best is to use
   // semicolons as separator as commas are sometimes used in names of
@@ -507,7 +509,7 @@ message Flow {
 }
 
 // A crosswalk of flows from a source flow list to a target flow list.
-message FlowMap {
+message ProtoFlowMap {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -527,25 +529,25 @@ message FlowMap {
   string last_change = 5;
 
   // The reference (id, name, description) of the source flow list.
-  Ref source = 6;
+  ProtoRef source = 6;
 
   // The reference (id, name, description) of the target flow list.
-  Ref target = 7;
+  ProtoRef target = 7;
 
   // A list of flow mappings from flows in a source flow list to flows in a
   // target flow list.
-  repeated FlowMapEntry mappings = 8;
+  repeated ProtoFlowMapEntry mappings = 8;
 
 }
 
 // A mapping from a source flow to a target flow.
-message FlowMapEntry {
+message ProtoFlowMapEntry {
 
   // Describes the source flow of the mapping.
-  FlowMapRef from = 1;
+  ProtoFlowMapRef from = 1;
 
   // Describes the target of the mapping.
-  FlowMapRef to = 2;
+  ProtoFlowMapRef to = 2;
 
   // The conversion factor to convert the amount of 1 unit of the source flow
   // into the corresponding quantity of the target flow.
@@ -558,29 +560,29 @@ message FlowMapEntry {
 // (quantity) for which the mapping is valid. If the unit or quantity is not
 // given, the mapping is based on the respective reference unit and reference
 // flow property of the flow.
-message FlowMapRef {
+message ProtoFlowMapRef {
 
   // The reference to the flow data set.
-  Ref flow = 1;
+  ProtoRef flow = 1;
 
   // An optional reference to a flow property of the flow for which the mapping
   // is valid.
-  Ref flow_property = 2;
+  ProtoRef flow_property = 2;
 
   // An optional reference to a unit of the flow for which the mapping is valid
-  Ref unit = 3;
+  ProtoRef unit = 3;
 
   // In case of a product or waste flow a flow mapping can contain a provider
   // which is the process that produces the product or a waste treatment
   // process that consumes the waste flow. This is useful when we want to apply
   // mappings of product and waste flows on databases and link them in the
   // corresponding processes and product systems.
-  Ref provider = 4;
+  ProtoRef provider = 4;
 
 }
 
 // A flow property is a quantity that can be used to express amounts of a flow.
-message FlowProperty {
+message ProtoFlowProperty {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -600,10 +602,10 @@ message FlowProperty {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -615,11 +617,11 @@ message FlowProperty {
   string library = 9;
 
   // The type of the flow property
-  FlowPropertyType flow_property_type = 10;
+  ProtoFlowPropertyType flow_property_type = 10;
 
   // The units of measure that can be used to express quantities of the flow
   // property.
-  Ref unit_group = 11;
+  ProtoRef unit_group = 11;
 
 }
 
@@ -644,10 +646,10 @@ message FlowProperty {
 // Another thing to note is that different flow properties can refer to the
 // same unit group (e.g. MJ upper calorific value and MJ lower calorific
 // value.)
-message FlowPropertyFactor {
+message ProtoFlowPropertyFactor {
 
   // The flow property (quantity) of the factor.
-  Ref flow_property = 1;
+  ProtoRef flow_property = 1;
 
   // The value of the conversion factor.
   double conversion_factor = 2;
@@ -660,7 +662,7 @@ message FlowPropertyFactor {
 }
 
 // An enumeration of flow property types.
-enum FlowPropertyType {
+enum ProtoFlowPropertyType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -673,10 +675,10 @@ enum FlowPropertyType {
 }
 
 // A result value for a flow; given in the reference unit of the flow.
-message FlowResult {
+message ProtoFlowResult {
 
   // The flow reference.
-  Ref flow = 1;
+  ProtoRef flow = 1;
 
   // Indicates whether the flow is an input or not.
   bool input = 2;
@@ -686,12 +688,12 @@ message FlowResult {
 
   // The (reference to the) location of this flow result in case of a
   // regionalized result.
-  Ref location = 4;
+  ProtoRef location = 4;
 
 }
 
 // The basic flow types.
-enum FlowType {
+enum ProtoFlowType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -705,7 +707,7 @@ enum FlowType {
 
 }
 
-message ImpactCategory {
+message ProtoImpactCategory {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -725,10 +727,10 @@ message ImpactCategory {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -744,28 +746,28 @@ message ImpactCategory {
 
   // A set of parameters which can be used in formulas of the characterisation
   // factors in this impact category.
-  repeated Parameter parameters = 11;
+  repeated ProtoParameter parameters = 11;
 
   // The characterisation factors of the LCIA category.
-  repeated ImpactFactor impact_factors = 12;
+  repeated ProtoImpactFactor impact_factors = 12;
 
 }
 
 // A single characterisation factor of a LCIA category for a flow.
-message ImpactFactor {
+message ProtoImpactFactor {
 
   // The [Flow] of the impact assessment factor.
-  Ref flow = 1;
+  ProtoRef flow = 1;
 
   // In case of a regionalized impact category, this field can contain the
   // location for which this factor is valid.
-  Ref location = 2;
+  ProtoRef location = 2;
 
   // The quantity of the flow to which the LCIA factor is related (e.g. Mass).
-  Ref flow_property = 3;
+  ProtoRef flow_property = 3;
 
   // The flow unit to which the LCIA factor is related (e.g. kg).
-  Ref unit = 4;
+  ProtoRef unit = 4;
 
   // The value of the impact assessment factor.
   double value = 5;
@@ -774,12 +776,12 @@ message ImpactFactor {
   string formula = 6;
 
   // The uncertainty distribution of the factors' value.
-  Uncertainty uncertainty = 7;
+  ProtoUncertainty uncertainty = 7;
 
 }
 
 // An impact assessment method.
-message ImpactMethod {
+message ProtoImpactMethod {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -799,10 +801,10 @@ message ImpactMethod {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -814,18 +816,18 @@ message ImpactMethod {
   string library = 9;
 
   // The impact categories of the method.
-  repeated Ref impact_categories = 10;
+  repeated ProtoRef impact_categories = 10;
 
   // The normalization and weighting sets of the method.
-  repeated NwSet nw_sets = 11;
+  repeated ProtoNwSet nw_sets = 11;
 
 }
 
 // A result value for an impact assessment category.
-message ImpactResult {
+message ProtoImpactResult {
 
   // The reference to the impact assessment category.
-  Ref impact_category = 1;
+  ProtoRef impact_category = 1;
 
   // The value of the flow amount.
   double value = 2;
@@ -833,7 +835,7 @@ message ImpactResult {
 }
 
 // A location like a country, state, city, etc.
-message Location {
+message ProtoLocation {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -853,10 +855,10 @@ message Location {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -888,7 +890,7 @@ message Location {
 }
 
 // An enumeration of the root entity types.
-enum ModelType {
+enum ProtoModelType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -935,9 +937,9 @@ enum ModelType {
 // A normalization and weighting factor of a [NwSet] related to an impact
 // category. Depending on the purpose of the [NwSet] (normalization, weighting,
 // or both) the normalization and weighting factor can be present or not.
-message NwFactor {
+message ProtoNwFactor {
 
-  Ref impact_category = 1;
+  ProtoRef impact_category = 1;
 
   double normalisation_factor = 2;
 
@@ -946,7 +948,7 @@ message NwFactor {
 }
 
 // A normalization and weighting set.
-message NwSet {
+message ProtoNwSet {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -970,7 +972,7 @@ message NwSet {
   string weighted_score_unit = 6;
 
   // The list of normalization and weighting factors of this set.
-  repeated NwFactor factors = 7;
+  repeated ProtoNwFactor factors = 7;
 
 }
 
@@ -982,7 +984,7 @@ message NwSet {
 // input parameter can have an optional uncertainty distribution but not a
 // formula. A dependent parameter can (should) have a formula (where also other
 // parameters can be used) but no uncertainty distribution.
-message Parameter {
+message ProtoParameter {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1002,10 +1004,10 @@ message Parameter {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1017,7 +1019,7 @@ message Parameter {
   string library = 9;
 
   // The scope where the parameter is valid.
-  ParameterScope parameter_scope = 10;
+  ProtoParameterScope parameter_scope = 10;
 
   // Indicates whether the parameter is an input parameter (true) or a
   // dependent/calculated parameter (false). A parameter can have a formula if
@@ -1032,16 +1034,16 @@ message Parameter {
 
   // An uncertainty distribution of the parameter value. This is only valid for
   // input parameters.
-  Uncertainty uncertainty = 14;
+  ProtoUncertainty uncertainty = 14;
 
 }
 
 // A redefinition of a parameter in a product system.
-message ParameterRedef {
+message ProtoParameterRedef {
 
   // The context of the paramater (a process or LCIA method). If no context is
   // provided it is assumed that this is a redefinition of a global parameter.
-  Ref context = 1;
+  ProtoRef context = 1;
 
   // A description of this parameter redefinition.
   string description = 2;
@@ -1053,7 +1055,7 @@ message ParameterRedef {
   string name = 3;
 
   // An uncertainty distribution for the redefined parameter value.
-  Uncertainty uncertainty = 4;
+  ProtoUncertainty uncertainty = 4;
 
   // The value of the redefined parameter.
   double value = 5;
@@ -1064,7 +1066,7 @@ message ParameterRedef {
 // to a product system. It can have a name and a description. One of the
 // parameter sets can be defined as the baseline of the product system. In the
 // calculation the baseline set is then taken by default.
-message ParameterRedefSet {
+message ProtoParameterRedefSet {
 
   // The name of the parameter set.
   string name = 1;
@@ -1077,7 +1079,7 @@ message ParameterRedefSet {
   bool is_baseline = 3;
 
   // The parameter redefinitions of this redefinition set.
-  repeated ParameterRedef parameters = 4;
+  repeated ProtoParameterRedef parameters = 4;
 
 }
 
@@ -1085,7 +1087,7 @@ message ParameterRedefSet {
 // processes, or impact categories. They can be redefined in calculation setups
 // on the project and product system level, but the initial definition is
 // always only global, in a process, or an LCIA category.
-enum ParameterScope {
+enum ProtoParameterScope {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -1104,7 +1106,7 @@ enum ParameterScope {
 
 }
 
-message Process {
+message ProtoProcess {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1124,10 +1126,10 @@ message Process {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1138,12 +1140,12 @@ message Process {
   // library name and version.
   string library = 9;
 
-  repeated AllocationFactor allocation_factors = 10;
+  repeated ProtoAllocationFactor allocation_factors = 10;
 
-  AllocationType default_allocation_method = 11;
+  ProtoAllocationType default_allocation_method = 11;
 
   // The inputs and outputs of the process.
-  repeated Exchange exchanges = 12;
+  repeated ProtoExchange exchanges = 12;
 
   // This field holds the last internal ID that was used in an exchange (which
   // may have been deleted, so it can be larger than the largest internal ID of
@@ -1156,26 +1158,26 @@ message Process {
   int32 last_internal_id = 13;
 
   // The location of the process.
-  Ref location = 14;
+  ProtoRef location = 14;
 
-  repeated Parameter parameters = 15;
+  repeated ProtoParameter parameters = 15;
 
-  ProcessDocumentation process_documentation = 16;
+  ProtoProcessDocumentation process_documentation = 16;
 
-  ProcessType process_type = 17;
+  ProtoProcessType process_type = 17;
 
   // A reference to a data quality system ([DQSystem]) with which the overall
   // quality of the process can be assessed.
-  Ref dq_system = 18;
+  ProtoRef dq_system = 18;
 
   // A reference to a data quality system ([DQSystem]) with which the quality
   // of individual inputs and outputs ([Exchange]s) of the process can be
   // assessed.
-  Ref exchange_dq_system = 19;
+  ProtoRef exchange_dq_system = 19;
 
   // A reference to a data quality system ([DQSystem]) with which the quality
   // of individual social aspects of the process can be assessed.
-  Ref social_dq_system = 20;
+  ProtoRef social_dq_system = 20;
 
   // A data quality entry like `(1;3;2;5;1)`. The entry is a vector of data
   // quality values that need to match the overall data quality system of the
@@ -1191,11 +1193,11 @@ message Process {
   bool infrastructure_process = 22;
 
   // A set of social aspects related to this process.
-  repeated SocialAspect social_aspects = 23;
+  repeated ProtoSocialAspect social_aspects = 23;
 
 }
 
-message ProcessDocumentation {
+message ProtoProcessDocumentation {
 
   string time_description = 1;
 
@@ -1219,11 +1221,11 @@ message ProcessDocumentation {
 
   string modeling_constants_description = 11;
 
-  Ref reviewer = 12;
+  ProtoRef reviewer = 12;
 
   string sampling_description = 13;
 
-  repeated Ref sources = 14;
+  repeated ProtoRef sources = 14;
 
   string restrictions_description = 15;
 
@@ -1231,43 +1233,43 @@ message ProcessDocumentation {
 
   string creation_date = 17;
 
-  Ref data_documentor = 18;
+  ProtoRef data_documentor = 18;
 
-  Ref data_generator = 19;
+  ProtoRef data_generator = 19;
 
-  Ref data_set_owner = 20;
+  ProtoRef data_set_owner = 20;
 
   string intended_application = 21;
 
   string project_description = 22;
 
-  Ref publication = 23;
+  ProtoRef publication = 23;
 
   string geography_description = 24;
 
 }
 
 // A process link is a connection between two processes in a product system.
-message ProcessLink {
+message ProtoProcessLink {
 
   // The descriptor of the process or product system that provides a product or
   // a waste treatment.
-  Ref provider = 1;
+  ProtoRef provider = 1;
 
   // The descriptor of the flow that is exchanged between the two processes.
-  Ref flow = 2;
+  ProtoRef flow = 2;
 
   // The descriptor of the process that is linked to the provider.
-  Ref process = 3;
+  ProtoRef process = 3;
 
   // The exchange of the linked process (this is useful if the linked process
   // has multiple exchanges with the same flow that are linked to different
   // provides, e.g. in an electricity mix).
-  ExchangeRef exchange = 4;
+  ProtoExchangeRef exchange = 4;
 
 }
 
-enum ProcessType {
+enum ProtoProcessType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -1281,7 +1283,7 @@ enum ProcessType {
 
 // A product system describes the supply chain of a product (the functional
 // unit) ...
-message ProductSystem {
+message ProtoProductSystem {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1301,10 +1303,10 @@ message ProductSystem {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1317,36 +1319,36 @@ message ProductSystem {
 
   // The descriptors of all processes and sub-systems that are contained in the
   // product system.
-  repeated Ref processes = 10;
+  repeated ProtoRef processes = 10;
 
   // The descriptor of the process that provides the flow of the functional
   // unit of the product system.
-  Ref reference_process = 11;
+  ProtoRef reference_process = 11;
 
   // The exchange of the reference processes (typically the product output)
   // that provides the flow of the functional unit of the product system.
-  ExchangeRef reference_exchange = 12;
+  ProtoExchangeRef reference_exchange = 12;
 
   // The flow amount of the functional unit of the product system.
   double target_amount = 13;
 
   // The unit in which the flow amount of the functional unit is given.
-  Ref target_unit = 14;
+  ProtoRef target_unit = 14;
 
   // The flow property in which the flow amount of the functional unit is
   // given.
-  Ref target_flow_property = 15;
+  ProtoRef target_flow_property = 15;
 
   // The process links of the product system.
-  repeated ProcessLink process_links = 16;
+  repeated ProtoProcessLink process_links = 16;
 
   // A list of possible sets of parameter redefinitions for this product
   // system.
-  repeated ParameterRedefSet parameter_sets = 17;
+  repeated ProtoParameterRedefSet parameter_sets = 17;
 
 }
 
-message Project {
+message ProtoProject {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1366,10 +1368,10 @@ message Project {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1380,9 +1382,9 @@ message Project {
   // library name and version.
   string library = 9;
 
-  Ref impact_method = 10;
+  ProtoRef impact_method = 10;
 
-  NwSet nw_set = 11;
+  ProtoNwSet nw_set = 11;
 
 }
 
@@ -1391,7 +1393,7 @@ message Project {
 // [Exchange]) we do not want to write the complete referenced entity into the
 // serialized JSON object but just a reference. However, the reference contains
 // some meta-data like name, category path etc. that are useful to display.
-message Ref {
+message ProtoRef {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1411,7 +1413,7 @@ message Ref {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The full path of the category of the referenced entity from top to bottom,
   // e.g. `"Elementary flows", "Emissions to air", "unspecified"`.
@@ -1433,15 +1435,15 @@ message Ref {
 
   // In case of a reference to a flow, this field can contain the type of flow
   // that is referenced.
-  FlowType flow_type = 11;
+  ProtoFlowType flow_type = 11;
 
   // In case of a reference to a process, this fiel can contain the type of
   // process that is referenced.
-  ProcessType process_type = 12;
+  ProtoProcessType process_type = 12;
 
 }
 
-enum RiskLevel {
+enum ProtoRiskLevel {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -1473,17 +1475,17 @@ enum RiskLevel {
 
 }
 
-message SimpleResult {
+message ProtoSimpleResult {
 
-  repeated FlowResult flow_results = 1;
+  repeated ProtoFlowResult flow_results = 1;
 
-  repeated ImpactResult impact_results = 2;
+  repeated ProtoImpactResult impact_results = 2;
 
 }
 
 // An instance of this class describes a social aspect related to a social
 // indicator in a process.
-message SocialAspect {
+message ProtoSocialAspect {
 
   // The value of the activity variable of the related indicator.
   double activity_value = 1;
@@ -1497,15 +1499,15 @@ message SocialAspect {
   // numeric currently)
   string raw_amount = 4;
 
-  RiskLevel risk_level = 5;
+  ProtoRiskLevel risk_level = 5;
 
-  Ref social_indicator = 6;
+  ProtoRef social_indicator = 6;
 
-  Ref source = 7;
+  ProtoRef source = 7;
 
 }
 
-message SocialIndicator {
+message ProtoSocialIndicator {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1525,10 +1527,10 @@ message SocialIndicator {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1543,10 +1545,10 @@ message SocialIndicator {
   string activity_variable = 10;
 
   // The quantity of the activity variable.
-  Ref activity_quantity = 11;
+  ProtoRef activity_quantity = 11;
 
   // The unit of the activity variable.
-  Ref activity_unit = 12;
+  ProtoRef activity_unit = 12;
 
   // The unit in which the indicator is measured.
   string unit_of_measurement = 13;
@@ -1557,7 +1559,7 @@ message SocialIndicator {
 }
 
 // A source is a literature reference.
-message Source {
+message ProtoSource {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1577,10 +1579,10 @@ message Source {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1607,10 +1609,10 @@ message Source {
 
 // Defines the parameter values of an uncertainty distribution. Depending on
 // the uncertainty distribution type different parameters could be used.
-message Uncertainty {
+message ProtoUncertainty {
 
   // The uncertainty distribution type
-  UncertaintyType distribution_type = 1;
+  ProtoUncertaintyType distribution_type = 1;
 
   // The arithmetic mean (used for normal distributions).
   double mean = 2;
@@ -1658,7 +1660,7 @@ message Uncertainty {
 
 // Enumeration of uncertainty distribution types that can be used in exchanges,
 // parameters, LCIA factors, etc.
-enum UncertaintyType {
+enum ProtoUncertaintyType {
 
   // This default option was added automatically
   // and means that no values was set.
@@ -1675,7 +1677,7 @@ enum UncertaintyType {
 }
 
 // An unit of measure
-message Unit {
+message ProtoUnit {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1711,7 +1713,7 @@ message Unit {
 }
 
 // A group of units that can be converted into each other.
-message UnitGroup {
+message ProtoUnitGroup {
 
   // The reference ID (typically an UUID) of the entity.
   string id = 1 [json_name = "@id"];
@@ -1731,10 +1733,10 @@ message UnitGroup {
   string last_change = 5;
 
   // The type name of the respective entity.
-  protolca.commons.EntityType entity_type = 6 [json_name = "@type"];
+  protolca.commons.ProtoType proto_type = 6 [json_name = "@type"];
 
   // The category of the entity.
-  Ref category = 7;
+  ProtoRef category = 7;
 
   // A list of optional tags. A tag is just a string which should not contain
   // commas (and other special characters).
@@ -1748,10 +1750,10 @@ message UnitGroup {
   // Some LCA data formats do not have the concept of flow properties or
   // quantities. This field provides a default link to a flow property for
   // units that are contained in this group.
-  Ref default_flow_property = 10;
+  ProtoRef default_flow_property = 10;
 
   // The units of the unit group.
-  repeated Unit units = 11;
+  repeated ProtoUnit units = 11;
 
 }
 

@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package protolca.services;
 
+option csharp_namespace = "ProtoLCA.Services";
+option go_package = ".;protolca";
 option java_package = "org.openlca.proto.grpc";
 option java_multiple_files = true;
 option java_outer_classname = "AboutServiceProto";
-option csharp_namespace = "ProtoLCA.Services";
-option go_package = ".;protolca";
 
 import "google/protobuf/empty.proto";
 
