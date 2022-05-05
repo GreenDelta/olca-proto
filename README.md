@@ -47,6 +47,18 @@ To generate the Java source code, we use the
 mvn compile
 ```
 
+You need to have the `protoc` compiler with the gRPC plugin for Java installed.
+One way to install it, is to just put the binaries of these tools into your
+system path. The `protoc` binary can be downloaded from its Github release page:
+https://github.com/protocolbuffers/protobuf/releases. The gRPC Java plugin
+can be downloaded from the Maven Central repository:
+https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/. You may need to
+rename the plugin to `protoc-gen-grpc-java` and set the executable flags:
+
+```bash
+chmod +x protoc-gen-grpc-java
+```
+
 ## Examples
 
 A single class `Proto` is generated:
