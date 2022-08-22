@@ -168,7 +168,7 @@ message ProtoDQScore {
 
   int32 position = 4;
 
-  double uncertainty = 5;
+  optional double uncertainty = 5;
 
 }
 
@@ -345,13 +345,13 @@ message ProtoExchange {
 
   string amount_formula = 3;
 
-  double base_uncertainty = 4;
+  optional double base_uncertainty = 4;
 
   // A formula for calculating the costs of this exchange.
   string cost_formula = 5;
 
   // The costs of this exchange.
-  double cost_value = 6;
+  optional double cost_value = 6;
 
   // The currency in which the costs of this exchange are given.
   ProtoRef currency = 7;
@@ -862,10 +862,10 @@ message ProtoLocation {
   string code = 10;
 
   // The average latitude of the location.
-  double latitude = 11;
+  optional double latitude = 11;
 
   // The average longitude of the location.
-  double longitude = 12;
+  optional double longitude = 12;
 
   // A GeoJSON object.
   // When we map to the bytes type it means that we have no matching message
@@ -885,9 +885,9 @@ message ProtoNwFactor {
 
   ProtoRef impact_category = 2;
 
-  double normalisation_factor = 3;
+  optional double normalisation_factor = 3;
 
-  double weighting_factor = 4;
+  optional double weighting_factor = 4;
 
 }
 
@@ -1566,7 +1566,7 @@ message ProtoSource {
   string url = 12;
 
   // The publication year of the source.
-  int32 year = 13;
+  optional int32 year = 13;
 
 }
 
@@ -1578,46 +1578,25 @@ message ProtoUncertainty {
   ProtoUncertaintyType distribution_type = 2;
 
   // The geometric mean value (used for log-normal distributions).
-  double geom_mean = 3;
-
-  // A mathematical formula for the geometric mean.
-  string geom_mean_formula = 4;
+  optional double geom_mean = 3;
 
   // The geometric standard deviation (used for log-normal distributions).
-  double geom_sd = 5;
-
-  // A mathematical formula for the geometric standard deviation.
-  string geom_sd_formula = 6;
+  optional double geom_sd = 4;
 
   // The maximum value (used for uniform and triangle distributions).
-  double maximum = 7;
-
-  // A mathematical formula for the maximum value.
-  string maximum_formula = 8;
+  optional double maximum = 5;
 
   // The arithmetic mean (used for normal distributions).
-  double mean = 9;
-
-  // A mathematical formula for the arithmetic mean.
-  string mean_formula = 10;
+  optional double mean = 6;
 
   // The minimum value (used for uniform and triangle distributions).
-  double minimum = 11;
-
-  // A mathematical formula for the minimum value.
-  string minimum_formula = 12;
+  optional double minimum = 7;
 
   // The most likely value (used for triangle distributions).
-  double mode = 13;
-
-  // A mathematical formula for the most likely value.
-  string mode_formula = 14;
+  optional double mode = 8;
 
   // The arithmetic standard deviation (used for normal distributions).
-  double sd = 15;
-
-  // A mathematical formula for the arithmetic standard deviation.
-  string sd_formula = 16;
+  optional double sd = 9;
 
 }
 
