@@ -1,8 +1,8 @@
 # olca-proto
 `olca-proto` is a [Protocol Buffers](https://developers.google.com/protocol-buffers)
-implementation of the [olca-schema format](https://github.com/GreenDelta/olca-schema)
-with some extensions. It also defines a [gRPC](https://grpc.io/) service
-interface for calling [openLCA](https://www.openlca.org) functions.
+implementation of the [olca-schema format](https://github.com/GreenDelta/olca-schema).
+It also defines a [gRPC](https://grpc.io/) service interface for calling
+[openLCA](https://www.openlca.org) functions.
 
 ## Usage
 If you use Maven, just add the following dependency:
@@ -11,7 +11,7 @@ If you use Maven, just add the following dependency:
 <dependency>
   <groupId>org.openlca</groupId>
   <artifactId>olca-proto</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 
@@ -21,69 +21,32 @@ For the gRPC service interface, add this:
 <dependency>
   <groupId>org.openlca</groupId>
   <artifactId>olca-grpc</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 
-## Generating the model
+## Building from source
 
-The [genproto](./genproto/main.go) tool directly generates the
-[olca.proto](./proto/olca.proto) definition from the YAML files of the
-`olca-schema` project. It takes the path to the `olca-schema` folder as first
-argument and the path to the output file of the proto3 definitions as second
-argument:
-
-```bash
-cd genproto
-# go build    # to build the tool
-genproto ../../olca-schema ../proto/olca.proto
-cd ..
-```
+The Java source code is generated from proto3 files in the `proto` folder of
+this project. The `olca.proto` file contains the definition of the openLCA
+schema format and is generated via the `osch` tool of the [olca-schema project](
+https://github.com/GreenDelta/olca-schema).
 
 To generate the Java source code, we use the
 [protobuf-maven-plugin](https://github.com/xolstice/protobuf-maven-plugin):
 
-```
+```bash
 mvn compile
 ```
 
 You need to have the `protoc` compiler with the gRPC plugin for Java installed.
 One way to install it, is to just put the binaries of these tools into your
-system path. The `protoc` binary can be downloaded from its Github release page:
+system path. The `protoc` binary can be downloaded from its GitHub release page:
 https://github.com/protocolbuffers/protobuf/releases. The gRPC Java plugin
-can be downloaded from the Maven Central repository:
+can be downloaded from the Maven Central Repository:
 https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/. You may need to
 rename the plugin to `protoc-gen-grpc-java` and set the executable flags:
 
 ```bash
 chmod +x protoc-gen-grpc-java
-```
-
-## Examples
-
-A single class `Proto` is generated:
-
-```java
-import org.openlca.proto;
-import com.google.protobuf.util.JsonFormat;
-
-var flow = Proto.Flow.newBuilder()
-    .setType("Flow")
-    .setId(UUID.randomUUID().toString())
-    .setName("Steel")
-    .setFlowType(Proto.FlowType.PRODUCT_FLOW)
-    .build();
-var json = JsonFormat.printer().print(flow);
-System.out.println(json);
-```
-
-This will generate the following output:
-
-```json
-{
-  "@type": "Flow",
-  "@id": "481682dd-c2a2-4646-9760-b0fe3e242676",
-  "name": "Steel",
-  "flowType": "PRODUCT_FLOW"
-}
 ```
